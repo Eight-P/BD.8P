@@ -1,0 +1,140 @@
+#app-mount:not(.da-appMount) {
+  background: transparent ;
+  
+  [class*="layers-"] {
+    background: transparent ;
+    
+    > [class*="layer-"] {
+      background: transparent ;
+      
+      [class*="standardSidebarView-"] {
+        background: transparent ;
+        
+        > [class*="sidebarRegion-"] { background: transparent }
+        
+        > [class*="contentRegion-"] { background: transparent }
+      }
+      > [class*="flex-"] {
+        background: transparent ;
+        
+        [class*="guildsWrapper-"] { background: transparent }
+        
+        > [class*="flex-"] {
+          background: transparent ;
+          
+          [class*="channels-"] {
+            background: transparent ;
+            
+            > [class*="flex-"] { background: transparent } 
+          }
+          [class*="activityFeed-"] { 
+            background: transparent ;
+            
+            [class*="flex-"] { background: transparent }
+          }
+          [class*="gameLibrary-"] { 
+            background: transparent ;
+            
+            [class*="flex-"] { background: transparent }
+          }
+          [class*="applicationStore-"] { 
+            background: transparent ;
+            
+            [class*="flex-"] { background: transparent }
+          }
+          [class*="container-"] { 
+            background: transparent ;
+            
+            [class*="flex-"] { background: transparent }
+          } 
+          [class*="chat-"] {
+            background: transparent ;
+            
+            [class*="titleWrapper-"] > [class*="flex-"] { background: transparent }
+            
+            [class*="content-"] {
+              background: transparent ;
+              
+              [class*="messagesWrapper-"]  { background: transparent }
+              
+              [class*="flex-"] > form { background: transparent }
+              
+              [class*="membersWrap-"] [class*="scroller-"] { background: transparent }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//making use of Bandages's "Normalize Classes" Option if available
+.da-appMount {
+  background: transparent ;
+
+  .da-layers {
+    background: transparent ;
+
+    > .da-layer {
+      background: transparent ;
+      
+      .da-standardSidebarView {
+        background: transparent ;
+        
+        .da-sidebarRegion { background: transparent }
+        
+        .da-contentRegion, > [class*="contentRegion-"] { background: transparent }
+      }
+      > .da-container {
+        background: transparent ;
+
+        .da-guildsWrapper { background: transparent }
+
+        .da-base {
+          background: transparent ;
+          
+          .da-channels { 
+            background: transparent ;
+            
+            > .da-container { background: transparent }
+          }
+          .da-activityFeed {
+            background: transparent ;
+            
+            .da-headerBar { background: transparent }
+          }
+          .da-gameLibrary {
+            background: transparent ;
+            
+            .da-headerBar { background: transparent }
+          }
+          [class*="applicationStore-"] {
+            background: transparent ;
+            
+            .da-headerBar { background: transparent }
+          }
+          .da-container {
+            background: transparent ;
+            
+            .da-headerBar { background: transparent }
+          }
+          .da-chat {
+            background: transparent ;
+            
+            .da-headerBar { background: transparent }
+            
+            > .da-content {
+              background: transparent ;
+              
+              .da-messagesWrapper { background: transparent }
+              
+              [class*="flex-"] > form { background: transparent }
+              
+              .da-membersWrap .da-members { background: transparent }
+            }
+          }
+        }
+      }
+    }
+  }
+}
