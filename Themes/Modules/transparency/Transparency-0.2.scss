@@ -1,4 +1,4 @@
-#app-mount:not(.da-appMount) {
+#app-mount:not(.da-appMount) { 
   background: transparent ;
   
   [class*="layers-"] {
@@ -55,7 +55,17 @@
             [class*="content-"] {
               background: transparent ;
               
-              [class*="messagesWrapper-"]  { background: transparent }
+              [class*="messagesWrapper-"]  {
+                background: transparent ;
+                
+                [class*="scroller-"] {
+                  &::-webkit-scrollbar-track-piece {
+                    background-color: transparent ;
+				            border: none ;
+                  }
+                  &::-webkit-scrollbar-thumb { border-color: transparent }
+                }
+              }
               
               [class*="flex-"] > form { background: transparent }
               
@@ -126,7 +136,17 @@
             > .da-content {
               background: transparent ;
               
-              .da-messagesWrapper { background: transparent }
+              .da-messagesWrapper { 
+                background: transparent ;
+                
+                .da-scroller {
+                  &::-webkit-scrollbar-track-piece {
+                    background-color: transparent ;
+				            border: none ;
+                  }
+                  &::-webkit-scrollbar-thumb { border-color: transparent }
+                }
+              }
               
               [class*="flex-"] > form { background: transparent }
               
