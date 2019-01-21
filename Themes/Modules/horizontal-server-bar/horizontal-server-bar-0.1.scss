@@ -1,9 +1,8 @@
-[class*="guildsWrapper"] {
+[class*="guildsWrapper"] { 
   
   ~ div {
     height: calc(100vh - 76px) ; // 76px: bc, gildwrapper + top bar
-    
-    [class*="chat-"] > [class*="content-"] > [class*="spacer-"] { width: calc(100vw - 480px) }
+    width: 100vw ;
   }
   
   position: absolute ;
