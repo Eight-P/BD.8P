@@ -1,13 +1,14 @@
 /* V_0.2 */
-#app-mount:not(.da-appMount) { 
+#app-mount {
   background: transparent ;
   
-  [class*="layers-"] {
+  [class*="app-"] > [class*="layers-"] {
     background: transparent ;
     
     > [class*="layer-"] {
       background: transparent ;
       
+      // Settings Menu
       [class*="standardSidebarView-"] {
         background: transparent ;
         
@@ -15,63 +16,91 @@
         
         > [class*="contentRegion-"] { background: transparent }
       }
+      
+      // Main Layer
       > [class*="flex-"] {
         background: transparent ;
         
+        @mixin Scrollbar () {
+          [class*="scroller-"] {
+            &::-webkit-scrollbar-track-piece {
+              background-color: transparent ;
+              border: none ;
+            }
+            &::-webkit-scrollbar-track { background: transparent }
+            &::-webkit-scrollbar-thumb { border-color: transparent }
+          }
+        }
+        
+        // Server-bar
         [class*="guildsWrapper-"] { background: transparent }
         
-        > [class*="flex-"] {
+        // Server-channels/friends
+        [class*="flex-"] > [class*="channels-"] {
           background: transparent ;
           
-          [class*="channels-"] {
-            background: transparent ;
+          > [class*="container-"] { background: transparent }
+        }
+        
+        // Game Feed
+        [class*="activityFeed-"] {
+          background: transparent ;
+          
+          [class*="flex-"] > [class*="headerBar-"]{ background: transparent }
+          @include Scrollbar ;
+        }
+        
+        // Game Libary
+        [class*="gameLibrary-"] {
+          background: transparent ;
+          
+          [class*="headerBar-"] { background: transparent }
+          @include Scrollbar ;
+        }
+        
+        // Store
+        [class*="applicationStore-"] {
+          background: transparent ;
+          
+          [class*="headerBar-"]{ background: transparent }
+          @include Scrollbar ;
+        }
+        
+        // Friends
+        [class*="flex-"] > [class*="channels-"] ~ [class*="container-"] {
+          background: transparent ;
+          
+          [class*="headerBar-"]{ background: transparent }
+          @include Scrollbar ;
+        }
+        
+        // Chat-Container
+        [class*="flex-"] > [class*="chat-"] {
+          background: transparent ;
+          
+          // Title
+          > [class*="titleWrapper-"] > [class*="flex-"] { background: transparent }
+          
+          > [class*="content-"] {
+             background: transparent ;
             
-            > [class*="flex-"] { background: transparent } 
-          }
-          [class*="activityFeed-"] { 
-            background: transparent ;
-            
-            [class*="flex-"] { background: transparent }
-          }
-          [class*="gameLibrary-"] { 
-            background: transparent ;
-            
-            [class*="flex-"] { background: transparent }
-          }
-          [class*="applicationStore-"] { 
-            background: transparent ;
-            
-            [class*="flex-"] { background: transparent }
-          }
-          [class*="container-"] { 
-            background: transparent ;
-            
-            [class*="flex-"] { background: transparent }
-          } 
-          [class*="chat-"] {
-            background: transparent ;
-            
-            [class*="titleWrapper-"] > [class*="flex-"] { background: transparent }
-            
-            [class*="content-"] {
+            // Messages
+            [class*="messagesWrapper-"]  {
               background: transparent ;
               
-              [class*="messagesWrapper-"]  {
-                background: transparent ;
-                
-                [class*="scroller-"] {
-                  &::-webkit-scrollbar-track-piece {
-                    background-color: transparent ;
-				            border: none ;
-                  }
-                  &::-webkit-scrollbar-thumb { border-color: transparent }
+              [class*="scroller-"] {
+                &::-webkit-scrollbar-track-piece {
+                  background-color: transparent ;
+                  border: none ;
                 }
+                &::-webkit-scrollbar-thumb { border-color: transparent }
               }
               
-              [class*="flex-"] > form { background: transparent }
-              
-              [class*="membersWrap-"] [class*="scroller-"] { background: transparent }
+              ~ form { background: transparent }
             }
+            
+            // Members
+            [class*="membersWrap-"] [class*="scroller-"] { background: transparent }
           }
         }
       }
@@ -79,83 +108,83 @@
   }
 }
 
-//making use of Bandages's "Normalize Classes" Option if available
-.da-appMount {
-  background: transparent ;
-
-  .da-layers {
-    background: transparent ;
-
-    > .da-layer {
-      background: transparent ;
-      
-      .da-standardSidebarView {
-        background: transparent ;
-        
-        .da-sidebarRegion { background: transparent }
-        
-        .da-contentRegion, > [class*="contentRegion-"] { background: transparent }
-      }
-      > .da-container {
-        background: transparent ;
-
-        .da-guildsWrapper { background: transparent }
-
-        .da-base {
-          background: transparent ;
-          
-          .da-channels { 
-            background: transparent ;
-            
-            > .da-container { background: transparent }
-          }
-          .da-activityFeed {
-            background: transparent ;
-            
-            .da-headerBar { background: transparent }
-          }
-          .da-gameLibrary {
-            background: transparent ;
-            
-            .da-headerBar { background: transparent }
-          }
-          [class*="applicationStore-"] {
-            background: transparent ;
-            
-            .da-headerBar { background: transparent }
-          }
-          .da-container {
-            background: transparent ;
-            
-            .da-headerBar { background: transparent }
-          }
-          .da-chat {
-            background: transparent ;
-            
-            .da-headerBar { background: transparent }
-            
-            > .da-content {
-              background: transparent ;
-              
-              .da-messagesWrapper { 
-                background: transparent ;
-                
-                .da-scroller {
-                  &::-webkit-scrollbar-track-piece {
-                    background-color: transparent ;
-				            border: none ;
-                  }
-                  &::-webkit-scrollbar-thumb { border-color: transparent }
-                }
-              }
-              
-              [class*="flex-"] > form { background: transparent }
-              
-              .da-membersWrap .da-members { background: transparent }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+////making use of Bandages's "Normalize Classes" Option if available
+//.da-appMount {
+//  background: transparent ;
+//
+//  .da-layers {
+//    background: transparent ;
+//
+//    > .da-layer {
+//      background: transparent ;
+//      
+//      .da-standardSidebarView {
+//        background: transparent ;
+//        
+//        .da-sidebarRegion { background: transparent }
+//        
+//        .da-contentRegion, > [class*="contentRegion-"] { background: transparent }
+//      }
+//      > .da-container {
+//        background: transparent ;
+//
+//        .da-guildsWrapper { background: transparent }
+//
+//        .da-base {
+//          background: transparent ;
+//          
+//          .da-channels { 
+//            background: transparent ;
+//            
+//            > .da-container { background: transparent }
+//          }
+//          .da-activityFeed {
+//            background: transparent ;
+//            
+//            .da-headerBar { background: transparent }
+//          }
+//          .da-gameLibrary {
+//            background: transparent ;
+//            
+//            .da-headerBar { background: transparent }
+//          }
+//          [class*="applicationStore-"] {
+//            background: transparent ;
+//            
+//            .da-headerBar { background: transparent }
+//          }
+//          .da-container {
+//            background: transparent ;
+//            
+//            .da-headerBar { background: transparent }
+//          }
+//          .da-chat {
+//            background: transparent ;
+//            
+//            .da-headerBar { background: transparent }
+//            
+//            > .da-content {
+//              background: transparent ;
+//              
+//              .da-messagesWrapper { 
+//                background: transparent ;
+//                
+//                .da-scroller {
+//                  &::-webkit-scrollbar-track-piece {
+//                    background-color: transparent ;
+//				            border: none ;
+//                  }
+//                  &::-webkit-scrollbar-thumb { border-color: transparent }
+//                }
+//              }
+//              
+//              [class*="flex-"] > form { background: transparent }
+//              
+//              .da-membersWrap .da-members { background: transparent }
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
