@@ -88,13 +88,7 @@
             [class*="messagesWrapper-"]  {
               background: transparent ;
               
-              [class*="scroller-"] {
-                &::-webkit-scrollbar-track-piece {
-                  background-color: transparent ;
-                  border: none ;
-                }
-                &::-webkit-scrollbar-thumb { border-color: transparent }
-              }
+              @include Scrollbar ;
               
               ~ form { background: transparent }
             }
