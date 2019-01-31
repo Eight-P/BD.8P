@@ -1,0 +1,41 @@
+//META{"name":"T0","description":"simple design with focus on improvements, horizontal server bar","author":"Eight_P","version":"0.2.1"}*//{} 
+
+/* Transparency-Theme */
+@import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css);
+
+/* horizontal-server-bar */
+@import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/Modules/transparency/transparency.css);
+
+/* Main-Theme */
+
+
+/* 
+- "@import" links may not update as intended. if, disable discord cache or add a query string.
+
+- Color-Settings are pretty alpha and probably won't affect everything/work properly.
+*/
+:root {
+  
+/* Color-Settings */
+  --Color_1: #ebebeb ; /* #d4d4d4 */ 
+  --Color_2: #8b8a8a ; /* #8b8a8a */ 
+  --Color_3: #3c3b3b ; /* #3c3b3b */ 
+
+  --brightness: 20 ;
+/* darkening the Background (0 - 100) 
+*/
+
+  --brightness_Server: 0 ;
+/* darkening the Server_Background (0 - 100) 
+*/
+
+  --Background_Main: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/T0/Main-bg.jpg) ;
+  --Background_Server: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/T0/Server-bg.png) ;
+/* Backgrounds (can be image link or color code) " url(<link>) "
+*/
+
+/* Main: url(https://i.imgur.com/dUVKxuu.jpg), */
+/* Server: url("https://i.imgur.com/a7y0VWO.png") */
+
+  
+}
