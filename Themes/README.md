@@ -6,7 +6,7 @@
 4. enable the Theme and enjoy.
 
 # how to customize
-- open the theme.css file
+- edit the theme.css file
 
   -or-
  
