@@ -294,7 +294,6 @@ body:not(.bd-minimal) {
     // Bottom Right Search-bar
     > [class*="searchBar-"] {
       
-      &::before {background: url(/assets/4d254296157bb8927b7d53ed59beb0d8.svg) }
       &::after { color: var(--Color_2) }
       &:hover::after { color: var(--Color_1) }
     }
