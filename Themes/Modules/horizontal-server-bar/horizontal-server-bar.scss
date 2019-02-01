@@ -130,6 +130,15 @@
       }
       
       [class*="dms-"] { margin: 0px }
+      
+      #bd-pub-li {
+        padding: 15px 2px ;
+        
+        #bd-pub-button {
+          font-weight: 500 ;
+          font-size: 14px !important ;
+        }
+      }
     }
   }
 }
@@ -182,7 +191,64 @@
   }
 }
 
+//home Bottom Right Search-bar
+[class*="channels-"] > [class*="privateChannels-"] > [class*="searchBar-"] {
+  position: fixed;
+  width: 120px ;
+  height: 54px ;
+  right: 0 ;
+  bottom: 0 ;
+  padding: 0 ;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+
+    &::before { opacity: .9 }
+  }
+
+  &::before {
+    content: "" ;
+    background: url(/assets/4d254296157bb8927b7d53ed59beb0d8.svg) ;
+    background-repeat: no-repeat ;
+    background-size: cover ;
+    position: absolute ;
+    left: 80px ;
+    height: 20px ;
+    width: 20px ;
+    opacity: .5 ;
+  }
+  &::after {
+    content: "search" ;
+    position: absolute ;
+    top: 20px ; ;
+    left: 20px ;
+    font-weight: 500 ;
+    pointer-events: none ;
+  }
+
+
+  > [class*="searchBarComponent-"] {
+    background: transparent ;
+
+    [class*="searchBarInner-"] {
+      background: transparent ;
+      border: none ;
+      padding: 0 ;
+
+      input {
+        width: 120px ;
+        height: 54px ;
+        cursor: pointer ;
+
+        &::-webkit-input-placeholder { color: transparent }
+      }
+    }
+  }
+}
+
+
 [class*="popouts-"] .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.popouttop:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) { left: calc(100vw - 120px) !important }
+
 
 //to do: guildsError, da-class
 //maybe also: creative guild-verified and unread-Mentions Indicator
