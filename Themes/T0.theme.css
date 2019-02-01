@@ -1,13 +1,13 @@
-//META{"name":"T0","description":"simple design with focus on improvements, horizontal server bar","author":"Eight_P","version":"0.2.1"}*//{} 
+//META{"name":"T0","description":"simple design with focus on improvements, horizontal server bar","author":"Eight_P","version":"0.2.2"}*//{} 
 
 /* Transparency-Theme */
-@import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css);
+@import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/Modules/transparency/transparency.css);
 
 /* horizontal-server-bar */
-@import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/Modules/transparency/transparency.css);
+@import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css);
 
 /* Main-Theme */
-@import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/2e19b524b3c6d5db88b3300db55f3e60f02a2d32/Themes/T0/main.css);
+@import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/T0/main.css);
 
 /* 
 - "@import" links may not update as intended. if, disable discord cache or add a query string.
@@ -17,9 +17,12 @@
 :root {
   
 /* Color-Settings */
-  --Color_1: #ebebeb ; /* #d4d4d4 */ 
-  --Color_2: #8b8a8a ; /* #8b8a8a */ 
-  --Color_3: #3c3b3b ; /* #3c3b3b */ 
+
+  --Color_1: #ebebeb ;
+
+  --Color_2: #8b8a8a ;
+
+  --Color_3: #3c3b3b ;
 
   --brightness: 20 ;
 /* darkening the Background (0 - 100) 
@@ -30,6 +33,7 @@
 */
 
   --Background_Main: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/T0/Main-bg.jpg) ;
+
   --Background_Server: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/T0/Server-bg.png) ;
 /* Backgrounds (can be image link or color code) " url(<link>) "
 */
