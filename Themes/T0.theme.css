@@ -1,4 +1,4 @@
-//META{"name":"T0","description":"simple design with focus on improvements, horizontal server bar","author":"Eight_P","version":"0.2.2"}*//{} 
+//META{"name":"T0","description":"simple design with focus on improvements, horizontal server bar","author":"Eight_P","version":"0.2.3"}*//{} 
 
 /* Transparency-Theme */
 @import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/Modules/transparency/transparency.css);
@@ -10,19 +10,30 @@
 @import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/T0/main.css);
 
 /* 
+- in order to have the theme work properly:
+    - turn off "Minimal Mode"
+    - use discord's Dark-theme
+
 - "@import" links may not update as intended. if, disable discord cache or add a query string.
 
 - Color-Settings are pretty alpha and probably won't affect everything/work properly.
 */
 :root {
   
-/* Color-Settings */
-
+  
+/* -Color-Settings 
+    rgba(red, green, blue, alpha) ,
+    hsla(hue, saturation, lightness, alpha) ,
+    #RRGGBB
+*/
   --Color_1: #ebebeb ;
 
   --Color_2: #8b8a8a ;
 
-  --Color_3: #3c3b3b ;
+  --Color_3: #202225 ;
+  
+  --Color_4: #2f3136 ;
+
 
   --brightness: 20 ;
 /* darkening the Background (0 - 100) 
@@ -31,9 +42,12 @@
   --brightness_Server: 0 ;
 /* darkening the Server_Background (0 - 100) 
 */
+  
+  --Server_shadow: 1 ;
+/* Guilds Icon Shadow ( 0=off, 1=on)
+*/
 
   --Background_Main: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/T0/Main-bg.jpg) ;
-
   --Background_Server: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/T0/Server-bg.png) ;
 /* Backgrounds (can be image link or color code) " url(<link>) "
 */

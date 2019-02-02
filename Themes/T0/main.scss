@@ -1,18 +1,19 @@
-body:not(.bd-minimal) { 
-  // pseudo for BG darkening
-  @mixin BG-dark-before($height) {
-    &::before {
-      content: "" ;
-      position: absolute ;
-      top: 0 ;
-      left: 0 ;
-      height: $height ;
-      width: 100vw ;
-      background: black ;
-      opacity: calc(var(--brightness) / 100 ) ;
-    }
+// pseudo for BG darkening
+@mixin BG-dark-before($height) {
+  &::before {
+    content: "" ;
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+    height: $height ;
+    width: 100vw ;
+    background: black ;
+    opacity: calc(var(--brightness) / 100 ) ;
   }
-  // Main Background
+}
+
+// Main Background
+body { 
   background: var(--Background_Main) ;
 	background: {
 		size: cover ;
@@ -20,471 +21,559 @@ body:not(.bd-minimal) {
 		position: center ;
 		repeat: no-repeat ;
 	}
-  // general Stuff
-  #app-mount {
-    @include BG-dark-before(100vh) ;
-    // removing transition effect, also fixed flickering somehow
-    [class*="layers-"] > [class*="layer-"] {
-      transform: scale(1) translateZ(0px) !important ;
+}
 
-      &:first-child { opacity: 0 !important }
-      &:last-child { opacity: 1 !important }
-    }
-    // pluginNotice-bar
-    #pluginNotice, [class*="app-"] > [class*="notice-"]{
+// general Stuff
+#app-mount {
+  @include BG-dark-before(100vh) ;
+  // removing transition effect, also fixed flickering somehow
+  [class*="layers-"] > [class*="layer-"] {
+    transform: scale(1) translateZ(0px) !important ;
+
+    &:first-child { opacity: 0 !important }
+    &:last-child { opacity: 1 !important }
+  }
+  // pluginNotice-bar
+  #pluginNotice, [class*="app-"] > [class*="notice-"]{
+    position: absolute ;
+    width: 100vw ;
+
+    [class*="dismiss-"] { right: 36px }
+  }
+  // Window-bar
+  > [class*="titleBar-"] {
+    &::after {
+      content: "" ;
       position: absolute ;
+      top: 0 ;
+      left: 0 ;
+      height: 22px ;
       width: 100vw ;
-
-      [class*="dismiss-"] { right: 36px }
-    }
-    // Window-bar
-    > [class*="titleBar-"] {
-      &::after {
-        content: "" ;
-        position: absolute ;
-        top: 0 ;
-        left: 0 ;
-        height: 22px ;
-        width: 100vw ;
-        box-shadow: 0 1px 0 var(--Color_2);
-        opacity: .6 ;
-        pointer-events: none ;
-      }
+      box-shadow: 0 1px 0 var(--Color_2);
+      opacity: .6 ;
+      pointer-events: none ;
     }
   }
-  // Titel-bar
-  [class*="titleWrapper-"] {
+}
 
-    > [class*="flex-"] { box-shadow: none }
-  }
-  
-  // Server-channels
-  [class*="channels-"] > [class*="flex-"] {
-    top: 48px ;
-    margin-bottom: 48px;
+// Titel-bar
+[class*="titleWrapper-"] {
 
-    [class*="positionedContainer-"] [class*="unread-"] { padding: 0 8px }
+  > [class*="flex-"] { box-shadow: none }
+}
 
-    [class*="scroller-"] {
+// Server-channels
+[class*="channels-"] > [class*="flex-"] {
+  top: 48px ;
+  margin-bottom: 48px;
 
-      &::-webkit-scrollbar { display: none }
-      // Channel container
-      [class*="wrapper-"] {
+  [class*="positionedContainer-"] [class*="unread-"] { padding: 0 8px }
 
-        // default 
-        [class*="content-"] {
-          background: transparent;
+  [class*="scroller-"] {
 
-          [class*="name-"] { color: var(--Color_2) }
+    &::-webkit-scrollbar { display: none }
+    // Channel container
+    [class*="wrapper-"] {
 
-          [class*="icon-"] {
-            color: var(--Color_2);
-            opacity: .9 ;
-          }
-          // channel-options
-          [class*="iconSpacing-"] [class*="actionIcon-"] {
-            display: none ;
-            color: var(--Color_2);
-            opacity: .8 ;
+      // default 
+      [class*="content-"] {
+        background: transparent;
 
-            &:hover {
-              color: var(--Color_1);
-              opacity: 1 ;
-            }
-          }
-          &:hover [class*="iconSpacing-"] [class*="actionIcon-"] { display: block }
+        [class*="name-"] { color: var(--Color_2) }
 
-          // connection-limit
-          > [class*="flex-"] div:not([class*="iconSpacing-"]) [class*="wrapper-"] {
-            background: transparent ;
-            color: var(--Color_2) ;
-          }
-          // mentions indicator
-          [class*="iconSpacing-"] [class*="wrapper-"] {
-            background-color: transparent ;
-            border-bottom: 2px solid rgba(240, 71, 71, 0.7) ;
-            border-radius: 0 ;
-            box-shadow: none ;
-            color: var(--Color_1) ;
-          }
+        [class*="icon-"] {
+          color: var(--Color_2);
+          opacity: .9 ;
         }
+        // channel-options
+        [class*="iconSpacing-"] [class*="actionIcon-"] {
+          display: none ;
+          color: var(--Color_2);
+          opacity: .8 ;
 
-        [class*="contentSelectedText-"], [class*="contentConnectedVoice-"] {
-
-          [class*="name-"] { color: var(--Color_1) }
-
-          [class*="icon-"] { 
+          &:hover {
             color: var(--Color_1);
             opacity: 1 ;
           }
         }
-      }
-    }
-  }
-  
-  // Profile-, connection container
-  [class*="channels-"] > [class*="container-"] {
+        &:hover [class*="iconSpacing-"] [class*="actionIcon-"] { display: block }
 
-    &:nth-last-of-type(1) {
-      position: absolute ;
-      height: 48px ;
-      width: 240px ;
-      box-sizing: border-box ;
-
-      [class*="avatar-"] [class*="status-"] {
-        border: none ;
-        bottom: -1px ;
-        right: -1px ;
-      }
-      // moving/fixing tooltips
-      > [class*="flex-"] {
-        margin-top: 20px ;
-
-        > div { height: 22px }
-
-        [class*="iconButtonDefault-"] { margin-top: -10px }
-        button [class*="contents-"] { margin-top: -20px }
-      }
-    }
-    &:nth-of-type(2) { border: none }
-  }
-  
-  // Chat
-  [class*="chat-"] [class*="spacer-"] {
-    //Server-messages
-    [class*="messagesWrapper-"] {
-
-      [class*="scroller-"] {
-
-        &::-webkit-scrollbar-thumb {
-          background-color: var(--Color_3) ;
-          border-color: transparent  ;
-        }
-
-        &::-webkit-scrollbar { width: 10px }
-      }
-    }
-    // Text-Input
-    > form {
-      margin: 5px 0 0 0 ;
-
-      [class*="channelTextArea-"] {
-        margin: 0 ;
-        padding: 0 ;
-
-        [class*="inner-"] { background: transparent }
-      }
-      [class*="channelTextAreaDisabled-"] [class*="innerDisabled-"]::after {
-        content: " " ;
-        background: url("https://i.imgur.com/za6Yq9g.png") ;
-        position: absolute;
-        right: 0 ;
-        bottom: 0 ;
-        height: 36px ;
-        width: 36px ;
-        background-size: cover ;
-        background-repeat: no-repeat ;
-      }
-      [class*="typing-"] {
-        background: transparent ;
-        position: absolute ;
-        top: -15px ;
-        height: 15px ;
-        box-sizing: border-box ;
-        padding: 0 15px ;
-
-        [class*="text-"] { line-height: 15px }
-
-        [class*="spinner-"] { margin: 0 }
-
-        [class*="cooldownWrapper-"] {
-          font-size: 0 ;
-
-          [class*="slowModeIcon-"] {
-            margin: 0 ;
-            height: 15px ;
-
-            path { fill: var(--Color_2) }
-          }
-        }
-      }
-    }
-  }
-  
-  // Member-list
-  [class*="membersWrap-"] [class*="scroller-"] {
-
-    &::-webkit-scrollbar { display: none }
-
-    [class*="member-"] {
-      border-radius: 0 ;
-      height: 37px ;
-      margin: 4px 0 4px 14px ;
-
-      [class*="content-"] { 
-        background: transparent !important ;
-        padding: 8px 4px ;
-      }
-
-      &:hover {
-        border-right: 3px solid var(--Color_1) ;
-        background: rgba(255, 255, 255, 0.05) ;
-      }
-
-      &.popout-open { border-right: 3px solid var(--Color_1) }
-
-      [class*="status-"] {
-        border: none ;
-        bottom: -2px ;
-        right: -2px ;
-      }
-    }
-  }
-  
-  // Server-bar
-  [class*="guildsWrapper"] {
-    //Server-Background 
-    &::before {
-      content: "";
-      position: absolute ;
-      height: 54px ;
-      width: 100vw ;
-      background: var(--Background_Server) !important ;
-      background-repeat: no-repeat !important ;
-      background-position: center !important ;
-      transform: rotate(90deg) translateX(-54px) ;
-      transform-origin: bottom left ;
-    }
-    //Server-Brightness
-    [class*="scrollerWrap-"] { 
-      @include BG-dark-before(100vw);
-      &::before { 
-        opacity: calc(var(--brightness_Server) / 100 ) ;
-        width: 54px ;
-      }
-    }
-    //Server-bar
-    [class*="scroller-"] {
-
-      &::after, &::before { background: var(--Color_2) }
-
-      [class*="guild-"] {
-        &[class*="selected-"]:not([class*="unread-"]):before { background: var(--Color_1) }
-
-        &[class*="selected-"][class*="unread-"]:before { background: var(--Color_1) }
-
-        &[class*="unread-"]:not([class*="selected-"]):before { background: var(--Color_2) }
-      }
-      [class*="friendsOnline-"] { color: var(--Color_1) }
-
-      [class*="guildsAdd-"] [class*="guildsAddInner-"] { color: var(--Color_1) }
-    }
-  }
-  
-  // Server-Name/Options
-  [class*="channels-"] > [class*="flex-"] > [class*="flexChild-"] {
-    [class*="header-"] [class*="name-"] { color: var(--Color_1) }
-  }
-  
-  // DM's
-  [class*="channels-"] > [class*="privateChannels-"] {
-    top: 48px ;
-    margin-bottom: 48px;
-
-    // Bottom Right Search-bar
-    > [class*="searchBar-"] {
-      
-      &::after { color: var(--Color_2) }
-      &:hover::after { color: var(--Color_1) }
-    }
-
-    // Friends-channel
-    [class*="scroller-"] {
-      padding-top: 0 !important ;
-
-      &::-webkit-scrollbar {display: none }
-
-      [class*="channel-"] {
-
-        a { background: transparent }
-        [class*="wrapper-"] > [class*="status-"] { border-color: transparent }
-        [class*="close-"] { background-size: 22px 22px }
-        [class*="name-"] { color: var(--Color_2) }
-
-        &:hover [class*="name-"] { color: var(--Color_1) }
-
-        &[class*="selected-"] [class*="name-"] { color: var(--Color_1) }
-      }
-    }
-  }
-  
-  // Friends-list
-  [class*="channels-"] ~ [class*="container-"] {
-
-    > [class*="headerBar-"] {
-      
-    }
-
-    > [class*="friendsTable-"] {
-
-      [class*="friendsTableHeader-"] { display: none }
-
-      [class*="scroller-"] {
-        &::-webkit-scrollbar { display: none }
-  //      display: block ;
-        margin-left: 20px ;
-
-        [class*="friendsRow-"] {
-          position: relative ;
-          display: inline-block ;
-          border: none ;
-          margin: 20px ;
-          background: black ;
-          width: 350px ;
-          height: 80px !important ;
-          box-shadow: 0 10px 60px black ;
-          border-bottom-right-radius: 10px ;
-
-          &:hover { 
-            padding: 0 ;
-            border-radius: 0 ;
-            border-bottom-right-radius: 10px ;
-          }
-
-          [class*="friendsColumn-"] {
-            display: block ;
-
-            // Avatar, Name
-            &[class*="friendsColumnName-"] {
-              position: absolute ;
-              pointer-events: none ;
-              z-index: 1 ;
-
-              [class*="avatarSmall-"] {
-                height: 80px ;
-                width: 80px ;
-                margin: 0 0 0 5px ;
-
-                [class*="inner-"] { border-radius: 0 }
-              }
-
-              [class*="nameTag-"] {
-                position: absolute ;
-                display: block ;
-                top: 10px ;
-                left: 95px ;
-                width: 255px ;
-                font-size: 20px ;
-                color: var(--Color_1) ;
-
-                .username {
-                  display: inline-block ;
-                  height: 35px ;
-                }
-
-                .discriminator {
-                  float: right ;
-                  margin-right: 5px ;
-                  color: var(--Color_1) ;
-                  visibility: visible ;
-                }
-              }
-            }
-            // Status
-            &[class*="friendsColumnStatus-"] {
-              position: absolute ;
-              width: 100% ;
-              margin: 0 ;
-              pointer-events: none ;
-
-              [class*="status-"] {
-                height: 80px ;
-                width: 350px ;
-                border-radius: 0 ;
-                opacity: .8 ;
-              }
-
-              [class*="statusText-"] {
-                position: absolute ;
-                width: 240px ;
-                height: 35px ;
-                bottom: 10px ;
-                right: 5px ;
-
-                [class*="friendActivityText-"] {
-
-                  strong {
-                    position: absolute ;
-                    left: 0 ;
-                    top: 20px ;
-                    max-width: 240px ;
-                    overflow: hidden ;
-                    text-overflow: ellipsis ;
-                  }
-                }
-              }
-            }
-            // same Guilds
-            &[class*="friendsColumnGuilds-"] { display: none !important }
-            // Profile Options
-            &[class*="friendsColumnActions-"] {
-              margin-left: 100px ;
-              text-align: center ;
-              margin-top: 40px ;
-              padding: 0 ;
-
-              [class*="friendsAction-"] {
-                display: inline-block ;
-                margin: 0 20px ;
-                background-color: transparent ;
-                opacity: .6 ;
-
-                &:hover { opacity: .9 }
-              }
-            }
-          }
-          &:hover [class*="friendsColumnStatus-"] [class*="statusText-"] { display: none }
-        }
-      }
-    }
-  }
-  
-  // Popouts
-  [class*="popouts-"] {
-    // Server-Options -hopefully-
-    .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.popouttop:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) [class*="menu-"] { 
-      background: var(--Color_3) ;
-
-      [class*="separator-"] {
-        display: none ;
-      }
-      [class*="item-"] {
-        color: var(--Color_2) ;
-        padding: 5px 14px ;
-        margin: 5px 0 ;
-
-        &:hover {
-          color: var(--Color_1) ;
+        // connection-limit
+        > [class*="flex-"] div:not([class*="iconSpacing-"]) [class*="wrapper-"] {
           background: transparent ;
-          border-left: 2px solid var(--Color_1) ;
+          color: var(--Color_2) ;
+        }
+        // mentions indicator
+        [class*="iconSpacing-"] [class*="wrapper-"] {
+          background-color: transparent ;
+          border-bottom: 2px solid rgba(240, 71, 71, 0.7) ;
+          border-radius: 0 ;
+          box-shadow: none ;
+          color: var(--Color_1) ;
+        }
+      }
+
+      [class*="contentSelectedText-"], [class*="contentConnectedVoice-"] {
+
+        [class*="name-"] { color: var(--Color_1) }
+
+        [class*="icon-"] { 
+          color: var(--Color_1);
+          opacity: 1 ;
         }
       }
     }
-  }
-  
-  // Tooltips
-  [class*="tooltips-"] [class*="tooltip-"] {
-    background-color: var(--Color_3) ;
-    z-index: 3002 ;
-
-    &[class*="top-"]:after { border-top-color: var(--Color_3) }
-    &[class*="right-"]:after { border-right-color: var(--Color_3) }
-    &[class*="bottom-"]:after { border-bottom-color: var(--Color_3) }
-    &[class*="left-"]:after { border-left-color: var(--Color_3) }
   }
 }
 
-body.bd-minimal {
+// Profile-, connection container
+[class*="channels-"] > [class*="container-"] {
+
+  &:nth-last-of-type(1) {
+    position: absolute ;
+    height: 48px ;
+    width: 240px ;
+    box-sizing: border-box ;
+
+    [class*="avatar-"] [class*="status-"] {
+      border: none ;
+      bottom: -1px ;
+      right: -1px ;
+    }
+    // moving/fixing tooltips
+    > [class*="flex-"] {
+      margin-top: 20px ;
+
+      > div { height: 22px }
+
+      [class*="iconButtonDefault-"] { margin-top: -10px }
+      button [class*="contents-"] { margin-top: -20px }
+    }
+  }
+  &:nth-of-type(2) { border: none }
+}
+
+// Chat
+[class*="chat-"] [class*="spacer-"] {
+  //Server-messages
+  [class*="messagesWrapper-"] {
+
+    [class*="scroller-"] {
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--Color_3) ;
+        border-color: transparent  ;
+      }
+
+      &::-webkit-scrollbar { width: 10px }
+    }
+  }
+  // Text-Input
+  > form {
+    margin: 5px 0 0 0 ;
+
+    [class*="channelTextArea-"] {
+      margin: 0 ;
+      padding: 0 ;
+
+      [class*="inner-"] { background: transparent }
+    }
+    [class*="channelTextAreaDisabled-"] [class*="innerDisabled-"]::after {
+      content: " " ;
+      background: url("https://i.imgur.com/za6Yq9g.png") ;
+      position: absolute;
+      right: 0 ;
+      bottom: 0 ;
+      height: 36px ;
+      width: 36px ;
+      background-size: cover ;
+      background-repeat: no-repeat ;
+    }
+    [class*="typing-"] {
+      background: transparent ;
+      position: absolute ;
+      top: -15px ;
+      height: 15px ;
+      box-sizing: border-box ;
+      padding: 0 15px ;
+
+      [class*="text-"] { line-height: 15px }
+
+      [class*="spinner-"] { margin: 0 }
+
+      [class*="cooldownWrapper-"] {
+        font-size: 0 ;
+
+        [class*="slowModeIcon-"] {
+          margin: 0 ;
+          height: 15px ;
+
+          path { fill: var(--Color_2) }
+        }
+      }
+    }
+  }
+}
+
+// Member-list
+[class*="membersWrap-"] [class*="scroller-"] {
+
+  &::-webkit-scrollbar { display: none }
+
+  [class*="member-"] {
+    border-radius: 0 ;
+    height: 37px ;
+    margin: 4px 0 4px 14px ;
+
+    [class*="content-"] { 
+      background: transparent !important ;
+      padding: 8px 4px ;
+    }
+
+    &:hover {
+      border-right: 3px solid var(--Color_1) ;
+      background: rgba(255, 255, 255, 0.05) ;
+    }
+
+    &.popout-open { border-right: 3px solid var(--Color_1) }
+
+    [class*="status-"] {
+      border: none ;
+      bottom: -2px ;
+      right: -2px ;
+    }
+  }
+}
+
+// Server-bar
+[class*="guildsWrapper"] {
+  //Server-Background 
+  &::before {
+    content: "";
+    position: absolute ;
+    height: 54px ;
+    width: 100vw ;
+    background: var(--Background_Server) !important ;
+    background-repeat: no-repeat !important ;
+    background-position: center !important ;
+    transform: rotate(90deg) translateX(-54px) ;
+    transform-origin: bottom left ;
+  }
+  //Server-Brightness
+  [class*="scrollerWrap-"] { 
+    @include BG-dark-before(100vw);
+    &::before { 
+      opacity: calc(var(--brightness_Server) / 100 ) ;
+      width: 54px ;
+    }
+  }
+  //Server-bar
+  [class*="scroller-"] {
+
+    &::after, &::before { background: var(--Color_2) }
+
+    [class*="guild-"] {
+
+      &::before { 
+        background: var(--Color_1) ;
+        z-index: 1 ;
+      }
+
+      &[class*="unread-"]:not([class*="selected-"]):before {
+        opacity: .6 ;
+      }
+
+      &:not(:first-child) [class*="guildInner-"] {
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, var(--Server_shadow, 0)) ;
+      }
+    }
+    [class*="friendsOnline-"] { color: var(--Color_1) }
+
+    [class*="guildsAdd-"] [class*="guildsAddInner-"] { color: var(--Color_1) }
+  }
+}
+
+// Server-Name/Options
+[class*="channels-"] > [class*="flex-"] > [class*="flexChild-"] {
+  [class*="header-"] [class*="name-"] { color: var(--Color_1) }
+}
+
+// DM's
+[class*="channels-"] > [class*="privateChannels-"] {
+  top: 48px ;
+  margin-bottom: 48px;
+
+  // Bottom Right Search-bar
+  > [class*="searchBar-"] {
+
+    &::after { color: var(--Color_2) }
+    &:hover::after { color: var(--Color_1) }
+  }
+
+  // Friends-channel
+  [class*="scroller-"] {
+    padding-top: 0 !important ;
+
+    &::-webkit-scrollbar {display: none }
+
+    [class*="channel-"] {
+
+      a { background: transparent }
+      [class*="wrapper-"] > [class*="status-"] { border-color: transparent }
+      [class*="close-"] { background-size: 22px 22px }
+      [class*="name-"] { color: var(--Color_2) }
+
+      &:hover [class*="name-"] { color: var(--Color_1) }
+
+      &[class*="selected-"] [class*="name-"] { color: var(--Color_1) }
+    }
+  }
+}
+
+// Friends-list
+[class*="channels-"] ~ [class*="container-"] {
+
+  > [class*="headerBar-"] {
+
+  }
+
+  > [class*="friendsTable-"] {
+
+    [class*="friendsTableHeader-"] { display: none }
+
+    [class*="scroller-"] {
+      &::-webkit-scrollbar { display: none }
+//      display: block ;
+      margin-left: 20px ;
+
+      [class*="friendsRow-"] {
+        position: relative ;
+        display: inline-block ;
+        border: none ;
+        margin: 20px ;
+        background: black ;
+        width: 350px ;
+        height: 80px !important ;
+        box-shadow: 0 10px 60px black ;
+        border-bottom-right-radius: 10px ;
+
+        &:hover { 
+          padding: 0 ;
+          border-radius: 0 ;
+          border-bottom-right-radius: 10px ;
+        }
+
+        [class*="friendsColumn-"] {
+          display: block ;
+
+          // Avatar, Name
+          &[class*="friendsColumnName-"] {
+            position: absolute ;
+            pointer-events: none ;
+            z-index: 1 ;
+
+            [class*="avatarSmall-"] {
+              height: 80px ;
+              width: 80px ;
+              margin: 0 0 0 5px ;
+
+              [class*="inner-"] { border-radius: 0 }
+            }
+
+            [class*="nameTag-"] {
+              position: absolute ;
+              display: block ;
+              top: 10px ;
+              left: 95px ;
+              width: 255px ;
+              font-size: 20px ;
+              color: var(--Color_1) ;
+
+              .username {
+                display: inline-block ;
+                height: 35px ;
+              }
+
+              .discriminator {
+                float: right ;
+                margin-right: 5px ;
+                color: var(--Color_1) ;
+                visibility: visible ;
+              }
+            }
+          }
+          // Status
+          &[class*="friendsColumnStatus-"] {
+            position: absolute ;
+            width: 100% ;
+            margin: 0 ;
+            pointer-events: none ;
+
+            [class*="status-"] {
+              height: 80px ;
+              width: 350px ;
+              border-radius: 0 ;
+              opacity: .8 ;
+            }
+
+            [class*="statusText-"] {
+              position: absolute ;
+              width: 240px ;
+              height: 35px ;
+              bottom: 10px ;
+              right: 5px ;
+
+              [class*="friendActivityText-"] {
+
+                strong {
+                  position: absolute ;
+                  left: 0 ;
+                  top: 20px ;
+                  max-width: 240px ;
+                  overflow: hidden ;
+                  text-overflow: ellipsis ;
+                }
+              }
+            }
+          }
+          // same Guilds
+          &[class*="friendsColumnGuilds-"] { display: none !important }
+          // Profile Options
+          &[class*="friendsColumnActions-"] {
+            margin-left: 100px ;
+            text-align: center ;
+            margin-top: 40px ;
+            padding: 0 ;
+
+            [class*="friendsAction-"] {
+              display: inline-block ;
+              margin: 0 20px ;
+              background-color: transparent ;
+              opacity: .6 ;
+
+              &:hover { opacity: .9 }
+            }
+          }
+        }
+        &:hover [class*="friendsColumnStatus-"] [class*="statusText-"] { display: none }
+      }
+    }
+  }
+}
+
+// Popouts
+[class*="popouts-"] {
+  // Server-Options -hopefully-
+  .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.popouttop:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) [class*="menu-"] { 
+    background: var(--Color_3) ;
+
+    [class*="separator-"] {
+      display: none ;
+    }
+    [class*="item-"] {
+      color: var(--Color_2) ;
+      padding: 5px 14px ;
+      margin: 5px 0 ;
+
+      &:hover {
+        color: var(--Color_1) ;
+        background: transparent ;
+        border-left: 2px solid var(--Color_1) ;
+      }
+    }
+  }
+  // Profile Popout
+  [class*="userPopout-"] {
+    box-shadow: 2px 2px 10px black ;
+
+    [class*="header-"] {
+
+      &[class*="headerNormal-"] {
+        background-color: var(--Color_3) ;
+      }
+      &[class*="headerSpotify-"] {
+
+        [class*="timeBarUserPopout-"] ~ [class*="flex-"] {
+          display: none ;
+        }
+      }
+      &[class*="headerPlaying-"] {
+        background-color: var(--Color_3) ;
+      }
+//        &[class*="headerStreaming-"] {
+//          
+//        }
+    }
+    [class*="body-"] {
+      background-color: var(--Color_4) ;
+    }
+    [class*="footer-"] {
+
+      [class*="protip-"] { display: none }
+    }
+  }
+}
+
+// User Profile (modal)
+[class*="modal-"] {
+
+  [class*="topSection"] {
+
+    [class*="header-"] {
+
+      > [class*="wrapper-"] {
+        border-radius: 5px ;
+        overflow: hidden ;
+        box-shadow: 2px 2px 10px black ;
+
+        [class*="image-"][class*="profile-"] {
+          -webkit-mask: none ;
+          border-radius: 0 ;
+        }
+        [class*="status-"] {
+          border-radius: 0 ;
+          right: 0 ;
+          bottom: 0 ;
+          box-shadow: none ;
+        }
+      }
+    }
+  }
+
+  [class*="topSectionNormal-"] {
+    background-color: var(--Color_3) ;
+  }
+
+  [class*="topSectionPlaying-"] {
+    background-color: var(--Color_3) ;
+  }
+
+//    [class*="topSectionSpotify-"] {
+//      
+//    }
+//    
+//    [class*="topSectionStreaming-"] {
+//      
+//    }
+
+  [class*="body-"] {
+    background-color: var(--Color_4) ;
+  }
+}
+
+// Tooltips
+[class*="tooltips-"] [class*="tooltip-"] {
+  background-color: var(--Color_3) ;
+  z-index: 3002 ;
+
+  &[class*="top-"]:after { border-top-color: var(--Color_3) }
+  &[class*="right-"]:after { border-right-color: var(--Color_3) }
+  &[class*="bottom-"]:after { border-bottom-color: var(--Color_3) }
+  &[class*="left-"]:after { border-left-color: var(--Color_3) }
+}
+
+// info disclaimer 
+@mixin important_message_popout ($text) {
   
   [class*="layers-"] > [class*="layer-"]:first-child {
   
@@ -501,7 +590,7 @@ body.bd-minimal {
     > [class*="flex-"] {
       
       &::before {
-        content: 'PLs turn off "minimal mode" in order to use the Theme';
+        content: $text ;
         position: absolute ;
         top: calc(50vh - 50px) ;
         left: calc(50vw - 250px) ;
@@ -528,6 +617,8 @@ body.bd-minimal {
           z-index: 3002 ;
           margin: 5px ;
           
+          > [class*="contents-"] { margin-top: 0 }
+          
           svg {
             height: 30px ;
             width: 30px ;
@@ -548,4 +639,14 @@ body.bd-minimal {
       }
     }
   }
+}
+
+// if Minimal Mode is active
+body.bd-minimal {
+  @include important_message_popout ('PLs turn off "Minimal Mode" in order to use the Theme')
+}
+
+// if dark-theme is not used (LuL)
+#app-mount > [class*="app-"] > [class*="app-"]:not([class*="theme-dark"]) {
+  @include important_message_popout ('PLs use dark-mode in order to use the Theme')
 }
