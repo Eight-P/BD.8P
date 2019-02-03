@@ -1,3 +1,5 @@
+$v: 2 ;
+
 // pseudo for BG darkening
 @mixin BG-dark-before($height) {
   &::before {
@@ -12,8 +14,80 @@
   }
 }
 
-// Main Background
+// Info / disclaimer
+@mixin disclaimer ($text, $type) {
+  
+  // Header/Text
+  [class*="layers-"] > [class*="layer-"]:first-child {
+    
+    &::before {
+      content: "" ;
+      position: fixed ;
+      height: 100vh ;
+      width: 100vw ;
+      background: black ;
+      opacity: .6 ;
+      z-index: 3000 ;
+    }
+    
+    > [class*="flex-"]::before {
+      content: $text ;
+      position: absolute ;
+      top: calc(50vh - 50px) ;
+      left: calc(50vw - 250px) ;
+      height: 100px ;
+      width: 500px ;
+      background: #d8d8d8 ;
+      z-index: 3001 ;
+      border-radius: 15px ;
+      box-sizing: border-box ;
+      padding-top: 25px ;
+      text-align: center ;
+      color: black ;
+      font-weight: 500 ;
+    }
+    
+    // Body/Content
+    @if $type == "Settings" {
+        
+      [class*="channels-"] > [class*="container-"]:nth-last-of-type(1) {
+
+        > [class*="flex-"] > button {
+          position: fixed ;
+          top: calc(50vh) ;
+          left: calc(50vw - 25px ) ;
+          height: 40px ;
+          width: 40px ;
+          z-index: 3002 ;
+          margin: 5px ;
+
+          > [class*="contents-"] { margin-top: 0 }
+
+          svg {
+            height: 30px ;
+            width: 30px ;
+
+            path { fill: black }
+          }
+          &::before {
+            content: 'Settings';
+            position: absolute ;
+            right: 50px ;
+            line-height: 40px ;
+            color: black ;
+            font-weight: 500 ;
+            font-size: 15px ;
+            pointer-events: none ;
+          }
+        }
+      }
+    }
+  }
+}
+
+// general Stuff
 body { 
+  // Background main
   background: var(--Background_Main) ;
 	background: {
 		size: cover ;
@@ -21,11 +95,33 @@ body {
 		position: center ;
 		repeat: no-repeat ;
 	}
-}
-
-// general Stuff
-#app-mount {
-  @include BG-dark-before(100vh) ;
+  
+  // if Minimal Mode is active
+  &.bd-minimal { @include disclaimer ('PLs turn off "Minimal Mode" in order to use the Theme', "Settings") }
+  
+  // popup in case the theme file itself needs an update
+  &::before {
+    // somewhy "ä" would cause the hole theme to crash LuL
+    content: "updated theme file available, check : github.com/Eight-P/BetterDiscord-Stuff -PS : Oli laesst heut Abend hart vergleichen <3" ;
+    position: absolute;
+    height: 22px ;
+    width: 100vw ;
+    background: var(--Color_3) ;
+    z-index: 3000 ;
+    opacity: calc( #{$v} - var(--F_V,0)) ;
+    color: var(--Color_1) ;
+    padding-left: 100px ;
+    line-height: 22px ;
+    font-size: 14px ;
+    letter-spacing: .4px ;
+  }
+  #app-mount {
+    @include BG-dark-before(100vh) ;
+    // if dark-theme is not used (LuL)
+    > [class*="app-"] > [class*="app-"]:not([class*="theme-dark"]) {
+      @include disclaimer ('PLs use dark-mode in order to use the Theme', "Settings")
+    }
+  }
   // removing transition effect, also fixed flickering somehow
   [class*="layers-"] > [class*="layer-"] {
     transform: scale(1) translateZ(0px) !important ;
@@ -40,23 +136,24 @@ body {
 
     [class*="dismiss-"] { right: 36px }
   }
-  // Window-bar
-  > [class*="titleBar-"] {
-    &::after {
-      content: "" ;
-      position: absolute ;
-      top: 0 ;
-      left: 0 ;
-      height: 22px ;
-      width: 100vw ;
-      box-shadow: 0 1px 0 var(--Color_2);
-      opacity: .6 ;
-      pointer-events: none ;
-    }
+}
+
+// Window-bar
+#app-mount > [class*="titleBar-"] {
+  &::after {
+    content: "" ;
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+    height: 22px ;
+    width: 100vw ;
+    box-shadow: 0 1px 0 var(--Color_2);
+    opacity: .6 ;
+    pointer-events: none ;
   }
 }
 
-// Titel-bar
+// Server-Titel-bar
 [class*="titleWrapper-"] {
 
   > [class*="flex-"] { box-shadow: none }
@@ -279,13 +376,13 @@ body {
         z-index: 1 ;
       }
 
-      &[class*="unread-"]:not([class*="selected-"]):before {
-        opacity: .6 ;
+      &[class*="unread-"]:not([class*="selected-"]):before { opacity: .6 }
+      
+      [class*="guildInner-"] {
+        filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0)) );
+//        box-shadow: 2px 2px 10px rgba(0, 0, 0, var(--Server_shadow, 0)) ;
       }
-
-      &:not(:first-child) [class*="guildInner-"] {
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, var(--Server_shadow, 0)) ;
-      }
+      
     }
     [class*="friendsOnline-"] { color: var(--Color_1) }
 
@@ -419,8 +516,8 @@ body {
             [class*="statusText-"] {
               position: absolute ;
               width: 240px ;
-              height: 35px ;
-              bottom: 10px ;
+              height: 45px ;
+              bottom: 0 ;
               right: 5px ;
 
               [class*="friendActivityText-"] {
@@ -504,7 +601,7 @@ body {
 //          
 //        }
     }
-    [class*="body-"] {
+    > [class*="body-"] {
       background-color: var(--Color_4) ;
     }
     [class*="footer-"] {
@@ -518,46 +615,62 @@ body {
 [class*="modal-"] {
 
   [class*="topSection"] {
-
+    background-color: var(--Color_3) ;
+    
     [class*="header-"] {
 
       > [class*="wrapper-"] {
         border-radius: 5px ;
         overflow: hidden ;
-        box-shadow: 2px 2px 10px black ;
+        filter: drop-shadow( 2px 2px 3px black );
 
         [class*="image-"][class*="profile-"] {
           -webkit-mask: none ;
           border-radius: 0 ;
         }
         [class*="status-"] {
-          border-radius: 0 ;
-          right: 0 ;
-          bottom: 0 ;
+//          border-radius: 0 ;
+          right: -1px ;
+          bottom: -1px ;
           box-shadow: none ;
         }
+      }
+      [class*="actionButton-"] {
+        background-color: var(--Color_1) ;
+        
+        [class*="contents-"] { color: var(--Color_3) }
       }
     }
   }
 
-  [class*="topSectionNormal-"] {
-    background-color: var(--Color_3) ;
-  }
-
-  [class*="topSectionPlaying-"] {
-    background-color: var(--Color_3) ;
-  }
-
-//    [class*="topSectionSpotify-"] {
-//      
-//    }
+//  [class*="topSectionNormal-"] {
 //    
-//    [class*="topSectionStreaming-"] {
-//      
-//    }
+//  }
+//
+//  [class*="topSectionPlaying-"] {
+//    
+//  }
+//
+//  [class*="topSectionSpotify-"] {
+//
+//  }
+//    
+//  [class*="topSectionStreaming-"] {
+//
+//  }
 
-  [class*="body-"] {
+  [class*="flex-"] > [class*="body-"] {
     background-color: var(--Color_4) ;
+    
+    [class*="userInfoSection-"]:last-child { border-color: var(--Color_3) }
+    
+    [class*="connectedAccounts-"] > [class*="flex-"]{
+      border: none ;
+      
+      [class*="connectedAccountName-"] {
+        color:  var(--Color_2) ;
+      }
+    }
   }
 }
 
@@ -570,83 +683,4 @@ body {
   &[class*="right-"]:after { border-right-color: var(--Color_3) }
   &[class*="bottom-"]:after { border-bottom-color: var(--Color_3) }
   &[class*="left-"]:after { border-left-color: var(--Color_3) }
-}
-
-// info disclaimer 
-@mixin important_message_popout ($text) {
-  
-  [class*="layers-"] > [class*="layer-"]:first-child {
-  
-    &::before {
-      content: "" ;
-      position: fixed ;
-      height: 100vh ;
-      width: 100vw ;
-      background: black ;
-      opacity: .6 ;
-      z-index: 3000 ;
-    }
-    
-    > [class*="flex-"] {
-      
-      &::before {
-        content: $text ;
-        position: absolute ;
-        top: calc(50vh - 50px) ;
-        left: calc(50vw - 250px) ;
-        height: 100px ;
-        width: 500px ;
-        background: #d8d8d8 ;
-        z-index: 3001 ;
-        border-radius: 15px ;
-        box-sizing: border-box ;
-        padding-top: 25px ;
-        text-align: center ;
-        color: black ;
-        font-weight: 500 ;
-      }
-      
-      [class*="channels-"] > [class*="container-"]:nth-last-of-type(1) {
-        
-        > [class*="flex-"] > button {
-          position: fixed ;
-          top: calc(50vh) ;
-          left: calc(50vw - 25px ) ;
-          height: 40px ;
-          width: 40px ;
-          z-index: 3002 ;
-          margin: 5px ;
-          
-          > [class*="contents-"] { margin-top: 0 }
-          
-          svg {
-            height: 30px ;
-            width: 30px ;
-            
-            path { fill: black }
-          }
-          &::before {
-            content: 'Settings';
-            position: absolute ;
-            right: 50px ;
-            line-height: 40px ;
-            color: black ;
-            font-weight: 500 ;
-            font-size: 15px ;
-            pointer-events: none ;
-          }
-        }
-      }
-    }
-  }
-}
-
-// if Minimal Mode is active
-body.bd-minimal {
-  @include important_message_popout ('PLs turn off "Minimal Mode" in order to use the Theme')
-}
-
-// if dark-theme is not used (LuL)
-#app-mount > [class*="app-"] > [class*="app-"]:not([class*="theme-dark"]) {
-  @include important_message_popout ('PLs use dark-mode in order to use the Theme')
 }
