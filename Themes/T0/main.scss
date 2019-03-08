@@ -157,6 +157,53 @@ body {
 [class*="titleWrapper-"] {
 
   > [class*="flex-"] { box-shadow: none }
+  
+  [class*="title-"] {
+    
+    [class*="channelName-"] {
+      color: var(--Color_1)
+    }
+    [class*="topic-"] {
+      color: var(--Color_1) ;
+      opacity: .7 ;
+    }
+  }
+  [class*="title-"] ~ [class*="flex-"] {
+    
+    > [class*="search-"] {
+      
+      [class*="searchBar-"] {
+        width: 28px ;
+        background: transparent ;
+        cursor: pointer ;
+        border-radius: 0 ;
+        
+        [class*="searchBarIcon-"] {
+          padding: 0 ;
+          pointer-events: none ;
+          
+          [class*="icon-"]:first-child { opacity: .8 }
+        }
+      }
+      
+      &[class*="popout-open"] {
+        margin-right: 30px ;
+        
+        [class*="searchBar-"] {
+          width: 244px ;
+          border-bottom: 1px solid var(--Color_1) ;
+          
+          [class*="searchBarIcon-"] {
+            margin: 4px -22px 4px 0 ;
+            
+            [class*="icon-"]:first-child { opacity: 0 }
+            
+            [class*="icon-"]:last-child { opacity: .8 }
+          }
+        }
+      }
+    }
+  }
 }
 
 // Server-channels
@@ -321,19 +368,23 @@ body {
     border-radius: 0 ;
     height: 37px ;
     margin: 4px 0 4px 14px ;
-
-    [class*="content-"] { 
-      background: transparent !important ;
-      padding: 8px 4px ;
-    }
-
+    color: var(--Color_1) ;
+    
     &:hover {
       border-right: 3px solid var(--Color_1) ;
       background: rgba(255, 255, 255, 0.05) ;
     }
-
+    
     &.popout-open { border-right: 3px solid var(--Color_1) }
 
+    &[class*="memberOffline-"] {
+      color: var(--Color_2) ;
+    }
+    
+    [class*="content-"] { 
+      background: transparent !important ;
+      padding: 8px 4px ;
+    }
     [class*="status-"] {
       border: none ;
       bottom: -2px ;
@@ -343,7 +394,7 @@ body {
 }
 
 // Server-bar
-[class*="guildsWrapper"] {
+[class*="layers-"] > [class*="layer-"] > [class*="flex-"] > [class*="wrapper-"] {
   //Server-Background 
   &::before {
     content: "";
@@ -369,7 +420,7 @@ body {
 
     &::after, &::before { background: var(--Color_2) }
 
-    [class*="guild-"] {
+    [class*="container-"] {
 
       &::before { 
         background: var(--Color_1) ;
@@ -378,15 +429,14 @@ body {
 
       &[class*="unread-"]:not([class*="selected-"]):before { opacity: .6 }
       
-      [class*="guildInner-"] {
+      &:first-child [class*="wrapper-"], [class*="dragfix-"], > [class*="wrapper-"]:first-child {
         filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0)) );
-//        box-shadow: 2px 2px 10px rgba(0, 0, 0, var(--Server_shadow, 0)) ;
       }
       
     }
     [class*="friendsOnline-"] { color: var(--Color_1) }
-
-    [class*="guildsAdd-"] [class*="guildsAddInner-"] { color: var(--Color_1) }
+    
+    > div:last-child [class*="circleIconButton-"] [class*="plus"] { color: var(--Color_1) !important }
   }
 }
 
@@ -403,8 +453,11 @@ body {
   // Bottom Right Search-bar
   > [class*="searchBar-"] {
 
-    &::after { color: var(--Color_2) }
-    &:hover::after { color: var(--Color_1) }
+    &::after { 
+      color: var(--Color_1) ;
+      opacity: .7 ;
+    }
+    &:hover::after { opacity: 1; }
   }
 
   // Friends-channel
@@ -614,6 +667,7 @@ body {
 // User Profile (modal)
 [class*="modal-"] {
 
+  // header
   [class*="topSection"] {
     background-color: var(--Color_3) ;
     
@@ -629,11 +683,25 @@ body {
           border-radius: 0 ;
         }
         [class*="status-"] {
-//          border-radius: 0 ;
           right: -1px ;
           bottom: -1px ;
           box-shadow: none ;
         }
+      }
+      // Colored Profile-Badges
+      [class*="profileBadgeWrapper-"] {
+        // Bravery
+        [class*="profileBadgeHypeSquadOnlineHouse1-"] {background-image: url(https://discordapp.com/assets/64ae1208b6aefc0a0c3681e6be36f0ff.svg)}
+        // Brilliance
+        [class*="profileBadgeHypeSquadOnlineHouse2-"] {background-image: url(https://discordapp.com/assets/48cf0556d93901c8cb16317be2436523.svg)}
+        // Balance
+        [class*="profileBadgeHypeSquadOnlineHouse3-"] {background-image: url(https://discordapp.com/assets/9fdc63ef8a3cc1617c7586286c34e4f1.svg)}
+        // EarlySupporter
+        [class*="profileBadgeEarlySupporter-"] {background-image: url(https://discordapp.com/assets/23e59d799436a73c024819f84ea0b627.svg)}
+        // Nitro
+        [class*="profileBadgePremium-"] {background-image: url(https://discordapp.com/assets/386884eecd36164487505ddfbac35a9d.svg)}
+        // Partenr
+        [class*="profileBadgePartner-"] {background-image: url(https://discordapp.com/assets/33fedf082addb91d88abc272b4b18daa.svg)}
       }
       [class*="actionButton-"] {
         background-color: var(--Color_1) ;
@@ -659,6 +727,7 @@ body {
 //
 //  }
 
+   // body
   [class*="flex-"] > [class*="body-"] {
     background-color: var(--Color_4) ;
     
