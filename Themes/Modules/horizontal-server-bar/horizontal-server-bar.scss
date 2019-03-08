@@ -1,5 +1,5 @@
-/* V_0.1 */
-[class*="guildsWrapper"] { 
+/* V_0.2 */
+[class*="layers-"] > [class*="layer-"] > [class*="flex-"] > [class*="wrapper-"] { 
   
   ~ div {
     height: calc(100vh - 76px) ; // 76px: bc, gildwrapper + top bar
@@ -25,7 +25,7 @@
 			max-height: calc(100vw - 240px) ;
 			padding: 0 ;
       
-      &::-webkit-scrollbar {display: none }
+      &::-webkit-scrollbar { display: none }
       
       &::after, &::before {
 				content: "" ;
@@ -39,27 +39,40 @@
       
       &::before { top: 120px }
       
-      [class*="guild-"] {
+      [class*="container-"] {
+        padding: 5px 2px 5px 2px ;
+        margin: 0px ;
+        height: 50px !important ;
         
-        &:not([class*="guildsAdd-"]){
-					padding: 5px 2px 5px 2px ;
-    			margin: 0px ;
-				}
-        
-        [class*="guildInner-"] {
-					height: 40px ;
+        @mixin GuildIcon () {
+          height: 40px ;
 					width: 40px ;
 					margin: 5px ;
 					background-color: transparent !important ;
           transform: rotate(90deg) ;
           
-          a, [class*="guildIcon-"] {
-						height: 40px ;
+          [class*="wrapper-"] {
+            height: 40px ;
 						width: 40px ;
-						line-height: 40px;
-						background-size: cover !important;
-					}
+            background-color: transparent !important ;
+            
+            a, [class*="guildIcon-"] {
+              height: 40px ;
+              width: 40px ;
+              line-height: 40px ;
+              background-size: cover !important ;
+            }
+          }
         }
+        
+        //home
+        &:first-child [class*="wrapper-"] { @include GuildIcon() }
+        
+        // normal 
+        [class*="dragfix-"] { @include GuildIcon() }
+        
+        //dms'
+        > [class*="wrapper-"]:first-child { @include GuildIcon() }
         
         &[class*="selected-"]:not([class*="unread-"]):before {
           margin-top: -18px ;
@@ -86,6 +99,7 @@
           width: 16px ;
         }
         
+        // Mentions Indicator
         [class*="badge-"] {
           transform: rotate(90deg);
           top: 38px ;
@@ -102,34 +116,43 @@
       
       [class*="friendsOnline-"] {
 				position: absolute ;
-				top: 70px ; 
+				top: 80px ; 
 				transform: rotate(90deg) translateY(-10px) ;
 			}
       
-      [class*="guildsAdd-"] {
+       // guildsAdd
+      > div:last-child {
         position: absolute ;
 				top: 80px ;
-        border: none ;
-        border-radius: 0 ;
-        margin: 0 ;
-				background: transparent ;
+        left: 9px ;
         height: 16px ;
 				width: 16px ;
-        left: 9px ;
         
-        &:hover [class*="guildsAddInner-"] { opacity: 1 }
+        [class*="circleIconButton-"] {
+          height: 100% ;
+          width: 100% ;
+          background: transparent ;
+          border: none ;
+          border-radius: 0 ;
+          margin: 0 ;
+        }
         
-        [class*="guildsAddInner-"] {
-          position: absolute ;
-					left: 0px ;
-					pointer-events: none ;
-					line-height: 50% ;
-					font-size: 32px ;
-          opacity: 0.6 ;
+        &:hover [class*="plus"] { opacity: 1 ; }
+        
+        [class*="plus"] {
+          color: white ;
+          font-size: 28px ;
+          opacity: .6 ;
         }
       }
       
-      [class*="dms-"] { margin: 0px }
+      // !
+//      [class*="guildsError-"] {
+//        transform: rotate(90deg) ;
+//        background: transparent ;
+//        border: none ;
+//        color: #f04747 ;
+//      }
       
       #bd-pub-li {
         padding: 15px 2px ;
@@ -150,9 +173,10 @@
     100% { opacity: 1 ; left: -7px }
 }
 
-[class*="guildsWrapper"] ~ [class*="flex-"] {
-  overflow: visible ;
-}
+// seems to be unnecessary
+//[class*="guildsWrapper"] ~ [class*="flex-"] {
+//  overflow: visible ;
+//}
 
 [class*="channels-"] > [class*="flex-"] > [class*="flexChild-"] {
   position: fixed;
