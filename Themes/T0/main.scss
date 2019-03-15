@@ -436,7 +436,11 @@ body {
     }
     [class*="friendsOnline-"] { color: var(--Color_1) }
     
-    > div:last-child [class*="circleIconButton-"] [class*="plus"] { color: var(--Color_1) !important }
+    // guildsAdd
+    > div:nth-last-of-type(2):not([class*="container-"]) [class*="circleIconButton-"] [class*="plus"] { color: var(--Color_1) !important }
+    
+    // Server Discovery
+    [class*="container-"]:last-child svg path { fill: var(--Color_1) }
   }
 }
 
@@ -753,3 +757,4 @@ body {
   &[class*="bottom-"]:after { border-bottom-color: var(--Color_3) }
   &[class*="left-"]:after { border-left-color: var(--Color_3) }
 }
+

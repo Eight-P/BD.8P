@@ -121,10 +121,10 @@
 			}
       
        // guildsAdd
-      > div:last-child {
+      > div:nth-last-of-type(2):not([class*="container-"]) {
         position: absolute ;
-				top: 80px ;
-        left: 9px ;
+				top: 65px ;
+        left: 8px ;
         height: 16px ;
 				width: 16px ;
         
@@ -140,12 +140,33 @@
         &:hover [class*="plus"] { opacity: 1 ; }
         
         [class*="plus"] {
-          color: white ;
-          font-size: 28px ;
+          font-size: 27px ;
           opacity: .6 ;
+          color: aliceblue ;
         }
       }
       
+      [class*="container-"]:last-child {
+        position: absolute ;
+				top: 85px ;
+        left: 6px ;
+        height: 16px !important ;
+				width: 16px ;
+        transform: rotate(90deg) ;
+        
+        [class*="circleIconButton-"] {
+          height: 100% ;
+          width: 100% ;
+          background: transparent ;
+          border: none ;
+          border-radius: 0 ;
+          margin: 0 ;
+        }
+        
+        &:hover svg { opacity: 1 ; }
+        
+        svg { opacity: .6 }
+      }
       // !
 //      [class*="guildsError-"] {
 //        transform: rotate(90deg) ;
@@ -274,5 +295,5 @@
 [class*="popouts-"] .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.popouttop:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) { left: calc(100vw - 120px) !important }
 
 
-//to do: guildsError, da-class
+//to do: guildsError, da-class, Mentions Indicator position
 //maybe also: creative guild-verified and unread-Mentions Indicator
