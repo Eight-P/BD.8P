@@ -39,6 +39,8 @@
       
       &::before { top: 120px }
       
+      
+      
       [class*="container-"] {
         padding: 5px 2px 5px 2px ;
         margin: 0px ;
@@ -146,7 +148,8 @@
         }
       }
       
-      [class*="container-"]:last-child {
+      // Discovereee
+      > [class*="container-"]:last-child {
         position: absolute ;
 				top: 85px ;
         left: 6px ;
@@ -194,11 +197,6 @@
     100% { opacity: 1 ; left: -7px }
 }
 
-// seems to be unnecessary
-//[class*="guildsWrapper"] ~ [class*="flex-"] {
-//  overflow: visible ;
-//}
-
 [class*="channels-"] > [class*="flex-"] > [class*="flexChild-"] {
   position: fixed;
   width: 120px ;
@@ -233,6 +231,8 @@
       }
       [class*="button-"], [class*="verified-"] { display: none }
     }
+    
+    [class*="bannerImage-"] { display: none }
   }
 }
 

@@ -214,6 +214,10 @@ body {
   [class*="positionedContainer-"] [class*="unread-"] { padding: 0 8px }
 
   [class*="scroller-"] {
+    
+    > div:first-of-type:not([class*="container-"]) {
+      display: none ;
+    }
 
     &::-webkit-scrollbar { display: none }
     // Channel container
@@ -309,7 +313,9 @@ body {
         border-color: transparent  ;
       }
 
-      &::-webkit-scrollbar { width: 10px }
+      &::-webkit-scrollbar { width: 12px }
+      
+      &:hover::-webkit-scrollbar-thumb { background-color: var(--Color_2) }
     }
   }
   // Text-Input
@@ -742,6 +748,29 @@ body {
       
       [class*="connectedAccountName-"] {
         color:  var(--Color_2) ;
+      }
+    }
+  }
+}
+
+// Discoveree
+[class*="flex-"] > [class*="flex-"] > [class*="pageWrapper-"] {
+  
+  background: transparent ;
+  
+  > img { display: none }
+  
+  [class*="scroller-"] {
+    
+    &::-webkit-scrollbar-track { background: transparent }
+    &::-webkit-scrollbar-thumb { background-color: var(--Color_2) }
+    
+    [class*="body-"] {
+      
+      [class*="search-"] [class*="searchBox-"] {
+        border-radius: 0 ;
+        background: transparent ;
+        box-shadow: 0 2px 0px 0 var(--Color_2) ;
       }
     }
   }
