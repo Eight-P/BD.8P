@@ -42,11 +42,11 @@
           > [class*="container-"] { background: transparent }
         }
         
-        // Game Feed
+        // Activity Feed
         [class*="activityFeed-"] {
           background: transparent ;
           
-          [class*="flex-"] > [class*="headerBar-"]{ background: transparent }
+          [class*="headerBar-"] { background: transparent }
           @include Scrollbar ;
         }
         
