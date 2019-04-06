@@ -115,14 +115,14 @@
     			top: 5px ; 
 				}
       }
-      
+      // freinds counter
       [class*="friendsOnline-"] {
 				position: absolute ;
 				top: 80px ; 
 				transform: rotate(90deg) translateY(-10px) ;
 			}
       
-       // guildsAdd
+      // guildsAdd
       > div:nth-last-of-type(2):not([class*="container-"]) {
         position: absolute ;
 				top: 65px ;
@@ -171,12 +171,20 @@
         svg { opacity: .6 }
       }
       // !
-//      [class*="guildsError-"] {
-//        transform: rotate(90deg) ;
-//        background: transparent ;
-//        border: none ;
-//        color: #f04747 ;
-//      }
+      [class*="guildsErrorContainer-"] {
+        padding: 5px 2px 5px 2px ;
+        margin: 0px ;
+        height: 50px !important ;
+        
+        > a {
+          transform: rotate(90deg) ;
+          height: 40px ;
+					width: 40px ;
+					margin: 5px ;
+          line-height: 36px ;
+          background: transparent ;
+        }
+      }
       
       #bd-pub-li {
         padding: 15px 2px ;
