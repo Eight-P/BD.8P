@@ -1,4 +1,4 @@
-/* V_0.2 */
+/* V_0.3 */  
 [class*="layers-"] > [class*="layer-"] > [class*="flex-"] > [class*="wrapper-"] { 
   
   ~ div {
@@ -150,9 +150,16 @@
             width: 20px ;
           }
           foreignObject svg {
-           height: 40px ;
+            height: 40px ;
             width: 40px ;
           }
+        }
+        
+        // guildsError (not the best solution, but ok)
+        [class*="guildsError-"] {
+          transform: rotate(90deg) ;
+          background: transparent ;
+          height: 20px ;
         }
       }
     }
