@@ -101,8 +101,7 @@ body {
   
   // popup in case the theme file itself needs an update
   &::before {
-    // somewhy "ä" would cause the hole theme to crash LuL
-    content: "updated theme file available, check : github.com/Eight-P/BetterDiscord-Stuff -PS : Oli laesst heut Abend hart vergleichen <3" ;
+    content: "updated theme file available, pls check : github.com/Eight-P/BetterDiscord-Stuff" ;
     position: absolute;
     height: 22px ;
     width: 100vw ;
@@ -163,7 +162,7 @@ body {
     [class*="toolbar-"] {
       //Icons
       > [class*="iconWrapper-"], > [class*="anchor-"] {
-        margin: 0 8px ;
+        margin: 0 9px ;
 
         > div { margin: 0 }
 
@@ -323,8 +322,9 @@ body {
           color: var(--Color_1) ;
         }
       }
-
-      [class*="contentSelectedText-"], [class*="contentConnectedVoice-"] {
+      
+      // selected, connected
+      [class*="modeSelected-"], [class*="modeConnected-"] {
 
         [class*="name-"] { color: var(--Color_1) }
 
@@ -357,8 +357,15 @@ body {
 
       > div { height: 22px }
 
-      [class*="iconButtonDefault-"] { margin-top: -10px }
-      button [class*="contents-"] { margin-top: -20px }
+      [class*="iconButtonDefault-"] { 
+        margin-top: -10px ;
+        background-color: transparent ;
+      }
+      button {
+        background-color: transparent ;
+        
+        [class*="contents-"] { margin-top: -20px }
+      }
     }
   }
   &:nth-of-type(2) { border: none }
@@ -683,6 +690,46 @@ body {
         &:hover [class*="friendsColumnStatus-"] [class*="statusText-"] { display: none }
       }
     }
+  }
+}
+
+// Settings Tab
+[class*="layers-"] > [class*="layer-"]:nth-child(2) [class*="standardSidebarView-"] {
+  
+  // Side bar
+  [class*="sidebarRegion-"] [class*="scroller-"]{
+    &::-webkit-scrollbar { display: none }
+    
+    [class*="sidebar-"] [class*="side-"] {
+      
+      // Header
+      [class*="header-"], .ui-tab-bar-header { 
+        color: var(--Color_1) !important ;
+        opacity: .8 ;
+      }
+      
+      // Settings Tab-Obj
+      [class*="item-"], .ui-tab-bar-item {
+        color: var(--Color_2) !important ;
+        background: transparent !important ;
+        border-radius: 0 !important ;
+        padding: 4px 10px 4px 10px  !important ;
+        margin: 2px 0 4px 0 !important ;
+        
+        &:hover {
+          color: var(--Color_1) !important ;
+        }
+      }
+      [class*="item-"][class*="selected-"], .ui-tab-bar-item.selected {
+        border-left: 2px solid var(--Color_1) ;
+        color: var(--Color_1) !important ;
+      }
+    }
+  }
+  
+  // Content
+  [class*="contentRegion-"] {
+    
   }
 }
 
