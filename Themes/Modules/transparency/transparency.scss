@@ -1,4 +1,4 @@
-/* V_0.2 */
+/* V_0.2 */ 
 #app-mount {
   background: transparent ;
   
@@ -32,21 +32,30 @@
           }
         }
         
+        @mixin TitelBar () {
+          [class*="container-"] {
+            background: transparent ;
+            box-shadow: none ;
+            
+            [class*="children-"]::after {display: none }
+          }
+        }
+        
         // Server-bar
         [class*="guildsWrapper-"] { background: transparent }
         
-        // Server-channels/friends
+        // DMs list
         [class*="flex-"] > [class*="channels-"] {
           background: transparent ;
           
-          > [class*="container-"] { background: transparent }
+          [class*="container-"] { background: transparent }
         }
         
         // Activity Feed
         [class*="activityFeed-"] {
           background: transparent ;
           
-          [class*="headerBar-"] { background: transparent }
+          > { @include TitelBar } ;
           @include Scrollbar ;
         }
         
@@ -54,7 +63,7 @@
         [class*="gameLibrary-"] {
           background: transparent ;
           
-          [class*="headerBar-"] { background: transparent }
+          > { @include TitelBar } ;
           @include Scrollbar ;
         }
         
@@ -62,7 +71,7 @@
         [class*="applicationStore-"] {
           background: transparent ;
           
-          [class*="headerBar-"]{ background: transparent }
+          [class*="homeWrapperNormal-"] > { @include TitelBar } ;
           @include Scrollbar ;
         }
         
@@ -70,7 +79,7 @@
         [class*="flex-"] > [class*="channels-"] ~ [class*="container-"] {
           background: transparent ;
           
-          [class*="headerBar-"]{ background: transparent }
+          > { @include TitelBar } ;
           @include Scrollbar ;
         }
         
@@ -79,7 +88,7 @@
           background: transparent ;
           
           // Title
-          > [class*="titleWrapper-"] > [class*="flex-"] { background: transparent }
+          > { @include TitelBar } ;
           
           > [class*="content-"] {
              background: transparent ;
