@@ -14,7 +14,7 @@
 	transform-origin: top left ;
   border-radius: 0 ;
   
-  [class*="unreadMentionsIndicator"], [class*="guildSeparator-"] { display: none }
+  [class*="unreadMentionsIndicator"] { display: none }
   
   [class*="scrollerWrap-"] {
     width: 54px ;
@@ -39,172 +39,127 @@
       
       &::before { top: 120px }
       
-      
-      
-      [class*="container-"] {
+      // Server Icon Obj
+      [class*="listItem-"] {
         padding: 5px 2px 5px 2px ;
         margin: 0px ;
-        height: 50px !important ;
+        height: 50px ;
+        width: 50px ;
         
-        @mixin GuildIcon () {
+        //Icon Container
+        [class*="blobContainer-"] > [class*="wrapper-"]{
+          margin: 5px ;
           height: 40px ;
-					width: 40px ;
-					margin: 5px ;
-					background-color: transparent !important ;
-          transform: rotate(90deg) ;
+          width: 40px ;
           
-          [class*="wrapper-"] {
+          svg {
             height: 40px ;
-						width: 40px ;
-            background-color: transparent !important ;
+            width: 40px ;
+            background-color: transparent  ;
             
-            a, [class*="guildIcon-"] {
-              height: 40px ;
-              width: 40px ;
-              line-height: 40px ;
-              background-size: cover !important ;
+            // Icon
+            foreignObject [class*="wrapper-"]{
+              transform: rotate(90deg) ;
+              
+              &:hover img { border-radius: 25% }
+              
+              //Image
+              img {
+                border-radius: 50% ;
+                transition: .4s ;
+              }
+              
+              //Text
+              div { background-color: transparent }
+            }
+            
+            //Mask Obj (wich idk how it works)
+            mask { display: none }
+          }
+          
+          // Badges
+          [class*="badgeWrapper-"] {
+            transform: rotate(90deg) ;
+            
+            // unread Mentions
+            [class*="lowerBadge-"] {
+              right: -5px ;
+              bottom: -5px ;
+            }
+            
+            // voice Icon
+            [class*="upperBadge-"] {
+              top: -5px ;
+              
+              [class*="iconBadge-"] {
+                height: 18px ;
+                width: 18px ;
+              }
             }
           }
         }
         
-        //home
-        &:first-child [class*="wrapper-"] { @include GuildIcon() }
-        
-        // normal 
-        [class*="dragfix-"] { @include GuildIcon() }
-        
-        //dms'
-        > [class*="wrapper-"]:first-child { @include GuildIcon() }
-        
-        &[class*="selected-"]:not([class*="unread-"]):before {
-          margin-top: -18px ;
-          height: 36px ;
-          width: 10px ;
-          animation: selected .3s ease-in-out forwards ;
-        }
-        
-        &[class*="selected-"][class*="unread-"]:before {
-          margin-top: -18px ;
-          left: -7px ;
-          height: 36px ;
-        }
-        
-        &[class*="unread-"]:not([class*="selected-"]):before {
-          left: -5px ;
-        }
-        
-        &[class*="audio-"]:after {
-          transform: rotate(90deg);
-          top: 38px ;
-          right: 35px ;
-          height: 16px ;
-          width: 16px ;
-        }
-        
-        // Mentions Indicator
-        [class*="badge-"] {
-          transform: rotate(90deg);
-          top: 38px ;
-          right: 37px ;
-          bottom: auto ;
-          padding: 2px 3.5px ;
-        }
-        
-        &:first-child {
-					position: absolute ;
-    			top: 5px ; 
-				}
-      }
-      // freinds counter
-      [class*="friendsOnline-"] {
-				position: absolute ;
-				top: 80px ; 
-				transform: rotate(90deg) translateY(-10px) ;
-			}
-      
-      // guildsAdd
-      > div:nth-last-of-type(2):not([class*="container-"]) {
-        position: absolute ;
-				top: 65px ;
-        left: 8px ;
-        height: 16px ;
-				width: 16px ;
-        
-        [class*="circleIconButton-"] {
-          height: 100% ;
-          width: 100% ;
-          background: transparent ;
-          border: none ;
-          border-radius: 0 ;
-          margin: 0 ;
-        }
-        
-        &:hover [class*="plus"] { opacity: 1 ; }
-        
-        [class*="plus"] {
-          font-size: 27px ;
-          opacity: .6 ;
-          color: aliceblue ;
-        }
-      }
-      
-      // Discovereee
-      > [class*="container-"]:last-child {
-        position: absolute ;
-				top: 85px ;
-        left: 6px ;
-        height: 16px !important ;
-				width: 16px ;
-        transform: rotate(90deg) ;
-        
-        [class*="circleIconButton-"] {
-          height: 100% ;
-          width: 100% ;
-          background: transparent ;
-          border: none ;
-          border-radius: 0 ;
-          margin: 0 ;
-        }
-        
-        &:hover svg { opacity: 1 ; }
-        
-        svg { opacity: .6 }
-      }
-      // !
-      [class*="guildsErrorContainer-"] {
-        padding: 5px 2px 5px 2px ;
-        margin: 0px ;
-        height: 50px !important ;
-        
-        > a {
-          transform: rotate(90deg) ;
+        // unread messages, Server selected
+        [class*="pill-"] {
           height: 40px ;
-					width: 40px ;
-					margin: 5px ;
-          line-height: 36px ;
-          background: transparent ;
+          top: 10px ;
+          
+          [class*="item-"] {
+            width: 15px ;
+            margin-left: -12px ;
+            border-radius: 0 12px 12px 0 ;
+          }
         }
-      }
-      
-      #bd-pub-li {
-        padding: 15px 2px ;
         
-        #bd-pub-button {
-          font-weight: 500 ;
-          font-size: 14px !important ;
+        // Buttons (home, add, disc.)
+        > [class*="wrapper-"] foreignObject {
+          
+          [class*="button-"], [class*="circleIconButton-"] {
+            transform: rotate(90deg) ;
+            background-color: transparent  ;
+          }
+        }
+        
+        // Home Icon
+        &:first-child {
+          position: absolute ;
+          top: 5px ;
+        }
+        
+        // guild seperator
+        &:nth-of-type(2) { display: none }
+        
+        // 10-48-6-20-6-20-10
+        // guilds Add
+        &:nth-last-of-type(2) { top: 64px }
+        
+        // Discovereeeeee
+        &:last-child { top: 90px}
+        
+        &:nth-last-of-type(2), &:last-child {
+          position: absolute ;
+          left: 17px ;
+          padding: 0 ;
+          height: 20px ;
+          width: 20px ;
+          
+          [class*="pill-"] { display: none }
+          
+          [class*="wrapper-"], [class*="svg-"] {
+            height: 20px ;
+            width: 20px ;
+          }
+          foreignObject svg {
+           height: 40px ;
+            width: 40px ;
+          }
         }
       }
     }
   }
 }
-@keyframes selected {
-    0%   { opacity: 0 ; left: -10px }
-    25%  { opacity: 0.25 ; left: -10px }
-    50%  { opacity: 0.5 ; left: -9px }
-    75%  { opacity: 0.75 ; left: -8px }
-    100% { opacity: 1 ; left: -7px }
-}
 
+// Server Button
 [class*="channels-"] > [class*="flex-"] > [class*="flexChild-"] {
   position: fixed;
   width: 120px ;
@@ -244,7 +199,7 @@
   }
 }
 
-//home Bottom Right Search-bar
+// Search Button (home)
 [class*="channels-"] > [class*="privateChannels-"] > [class*="searchBar-"] {
   position: fixed;
   width: 120px ;
@@ -282,26 +237,16 @@
 
   > [class*="searchBarComponent-"] {
     background: transparent ;
+    
+    [class*="inner-"] input {
+      width: 120px ;
+      height: 54px ;
+      cursor: pointer ;
 
-    [class*="searchBarInner-"] {
-      background: transparent ;
-      border: none ;
-      padding: 0 ;
-
-      input {
-        width: 120px ;
-        height: 54px ;
-        cursor: pointer ;
-
-        &::-webkit-input-placeholder { color: transparent }
-      }
+      &::-webkit-input-placeholder { color: transparent }
     }
   }
 }
 
 
 [class*="popouts-"] .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.popouttop:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) { left: calc(100vw - 120px) !important }
-
-
-//to do: guildsError, da-class, Mentions Indicator position
-//maybe also: creative guild-verified and unread-Mentions Indicator
