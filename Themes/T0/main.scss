@@ -153,118 +153,105 @@ body {
   }
 }
 
-// Server-Titel-bar
-[class*="titleWrapper-"] {
+//Titel-bar
+[class*="channels-"] {
+  ~ [class*="chat-"] > [class*="title-"],
+  ~ [class*="activityFeed-"] > [class*="container-"],
+  ~ [class*="gameLibrary-"] [class*="libraryHeader-"],
+  ~ [class*="applicationStore-"] [class*="headerBar-"],
+  ~ [class*="container-"] > [class*="container-"] {
+    [class*="toolbar-"] {
+      //Icons
+      > [class*="iconWrapper-"], > [class*="anchor-"] {
+        margin: 0 8px ;
+
+        > div { margin: 0 }
+
+        svg {
+          width: 20px ;
+          color: var(--Color_1) ;
+          opacity: .7 ;
+        }
+
+        &:hover svg { opacity: 1 }
+      }
+    }
+  }
+}
+
+//Titel-bar Server-view
+[class*="channels-"] ~ [class*="chat-"] [class*="title-"]{
+  box-shadow: none ;
   
-  > [class*="flex-"] { box-shadow: none }
-  
-  [class*="title-"] {
+  //Channel info
+  [class*="children-"] {
     
-    [class*="channelName-"] { color: var(--Color_1) }
+    // #
+    [class*="iconWrapper-"] svg {
+      width: 20px ;  
+      color: var(--Color_2) ;
+    }
     
+    // Channel Name
+    [class*="title-"] { color: var(--Color_1) }
+    
+     // Channel Topic
     [class*="topic-"] {
       color: var(--Color_1) ;
       opacity: .7 ;
     }
   }
   
-  // Icon Bar
-  [class*="toolbar-"] {
-    
-    > [class*="iconMargin-"], > [class*="search-"] {
-      margin: 0 6px ;
-    }
-    
+  //Search
+  [class*="toolbar-"] > [class*="search-"] {
+    pointer-events: none ;
+    margin: 0 8px ;
+
     //Search Bar
     > [class*="search-"] {
-      pointer-events: none ;
-      
-      > [class*="search-"] {
-        
-        [class*="searchBar-"] {
-          width: 24px ;
-          background: transparent ;
-          
-          .DraftEditor-root {
-            position: absolute ;
-            width: 24px ;
-            cursor: pointer ;
-            pointer-events: auto ;
-            
-            .public-DraftEditor-content .public-DraftStyleDefault-block span { display: none }
-            .public-DraftEditorPlaceholder-root { display: none }
-          }
-          
-          [class*="searchBarIcon-"] {
-            
-            [class*="iconSearchBarEyeGlass-"] { 
-              transform: rotate(0deg) ;
-              opacity: .6 ;
-            }
-            
-            [class*="iconSearchBarClear-"] { opacity: 0 }
-          }
-        }
-        
-        &:not([class*="focused-"]) {
-          .DraftEditor-root:hover ~ [class*="searchBarIcon-"] [class*="iconSearchBarEyeGlass-"] { opacity: 1 }
-        }
-        
-        &[class*="focused-"] {
-          border-bottom: 1px solid var(--Color_1) ;
-          
-          [class*="searchBar-"] {
-            width: 244px ;
-            
-            .DraftEditor-root { 
-              position: relative ;
-              
-              .public-DraftEditor-content .public-DraftStyleDefault-block span { display: block }
-            }
-            
-            [class*="searchBarIcon-"] {
-              
-              [class*="iconSearchBarEyeGlass-"] { opacity: 0 }
-              
-              [class*="iconSearchBarClear-"] { opacity: .6 }
-            }
-          }
-        }
-      }
-    }
-  }
-  
-  [class*="title-"] ~ [class*="flex-"] {
-    
-    > [class*="search-"] {
-      
+
       [class*="searchBar-"] {
-        width: 28px ;
+        width: 20px ;
         background: transparent ;
-        cursor: pointer ;
-        border-radius: 0 ;
-        
-        [class*="searchBarIcon-"] {
-          padding: 0 ;
-          pointer-events: none ;
-          
-          [class*="icon-"]:first-child { opacity: .8 }
+
+        .DraftEditor-root {
+          position: absolute ;
+          width: 20px ;
+          cursor: pointer ;
+          pointer-events: auto ;
+
+          .public-DraftEditor-content .public-DraftStyleDefault-block span { display: none }
+          .public-DraftEditorPlaceholder-root { display: none }
         }
+
+        [class*="icon-"] svg {
+          color: var(--Color_1) ;
+          transition: none ;
+
+          &:first-child { opacity: .7 }
+        }
+
+        &:hover [class*="icon-"] svg:first-child { opacity: 1 }
       }
-      
-      &[class*="popout-open"] {
-        margin-right: 30px ;
-        
+
+      //Search Bar opend
+      &[class*="open-"] {
+        border-bottom: 1px solid var(--Color_1) ;
+
         [class*="searchBar-"] {
           width: 244px ;
-          border-bottom: 1px solid var(--Color_1) ;
-          
-          [class*="searchBarIcon-"] {
-            margin: 4px -22px 4px 0 ;
-            
-            [class*="icon-"]:first-child { opacity: 0 }
-            
-            [class*="icon-"]:last-child { opacity: .8 }
+          transition: .3s ;
+
+          .DraftEditor-root { 
+            position: relative ;
+
+            .public-DraftEditor-content .public-DraftStyleDefault-block span { display: block }
+          }
+
+          [class*="icon-"] svg {
+
+            &:first-child { opacity: 0 }
+            &:last-child { opacity: .7 }
           }
         }
       }
@@ -288,7 +275,7 @@ body {
 
     &::-webkit-scrollbar { display: none }
     // Channel container
-    [class*="wrapper-"] {
+    [class*="containerDefault-"] {
 
       // default 
       [class*="content-"] {
@@ -297,11 +284,12 @@ body {
         [class*="name-"] { color: var(--Color_2) }
 
         [class*="icon-"] {
+          width: 15px ;
           color: var(--Color_2);
           opacity: .9 ;
         }
         // channel-options
-        [class*="iconSpacing-"] [class*="actionIcon-"] {
+        [class*="children-"] [class*="iconItem-"] {
           display: none ;
           color: var(--Color_2);
           opacity: .8 ;
@@ -311,12 +299,20 @@ body {
             opacity: 1 ;
           }
         }
-        &:hover [class*="iconSpacing-"] [class*="actionIcon-"] { display: block }
+        &:hover [class*="children-"] [class*="iconItem-"] { display: block }
 
         // connection-limit
-        > [class*="flex-"] div:not([class*="iconSpacing-"]) [class*="wrapper-"] {
-          background: transparent ;
+        [class*="children-"] [class*="userLimit-"] [class*="wrapper-"]{
           color: var(--Color_2) ;
+          
+          [class*="users-"], [class*="total-"] { background: transparent }
+          
+          [class*="total-"]::after {
+            border: none ;
+            content: "|" ;
+            left: -5px ;
+            top: -1px ;
+          }
         }
         // mentions indicator
         [class*="iconSpacing-"] [class*="wrapper-"] {
@@ -492,28 +488,30 @@ body {
   [class*="scroller-"] {
 
     &::after, &::before { background: var(--Color_2) }
-
-    [class*="container-"] {
-
-      &::before { 
-        background: var(--Color_1) ;
-        z-index: 1 ;
-      }
-
-      &[class*="unread-"]:not([class*="selected-"]):before { opacity: .6 }
+    
+    // Server Icon Obj
+    [class*="listItem-"] {
+      filter: drop-shadow( -2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0)) );
       
-      &:first-child [class*="wrapper-"], [class*="dragfix-"], > [class*="wrapper-"]:first-child {
-        filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0)) );
+      // unread messages, Server selected
+      [class*="pill-"] [class*="item-"] { background-color: var(--Color_1) }
+      
+      foreignObject [class*="wrapper-"] {
+        
+        //Text Color
+        div { color: var(--Color_1) }
       }
       
+      // guild seperator, Discovereeeeee
+      &:nth-last-of-type(2), &:last-child {
+        [class*="circleIconButton-"] {
+          color: var(--Color_1) ;
+          opacity: .75 ;
+        }
+        
+        &:hover [class*="circleIconButton-"] { opacity: 1 }
+      }
     }
-    [class*="friendsOnline-"] { color: var(--Color_1) }
-    
-    // guildsAdd
-    > div:nth-last-of-type(2):not([class*="container-"]) [class*="circleIconButton-"] [class*="plus"] { color: var(--Color_1) !important }
-    
-    // Server Discovery
-    [class*="container-"]:last-child svg path { fill: var(--Color_1) }
   }
 }
 
@@ -860,13 +858,12 @@ body {
 }
 
 // Tooltips
-[class*="tooltips-"] [class*="tooltip-"] {
+[class*="layerContainer-"] [class*="tooltip-"] {
   background-color: var(--Color_3) ;
   z-index: 3002 ;
 
-  &[class*="top-"]:after { border-top-color: var(--Color_3) }
-  &[class*="right-"]:after { border-right-color: var(--Color_3) }
-  &[class*="bottom-"]:after { border-bottom-color: var(--Color_3) }
-  &[class*="left-"]:after { border-left-color: var(--Color_3) }
+  [class*="tooltipPointer-"] {
+    border-top-color: var(--Color_3) ;
+  }
 }
 
