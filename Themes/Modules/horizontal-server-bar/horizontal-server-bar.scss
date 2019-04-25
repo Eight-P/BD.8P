@@ -14,7 +14,7 @@
 	transform-origin: top left ;
   border-radius: 0 ;
   
-  [class*="unreadMentionsIndicator"] { display: none }
+  [class*="unreadMentionsIndicator"], [class*="guildSeparator-"] { display: none }
   
   [class*="scrollerWrap-"] {
     width: 54px ;
@@ -40,60 +40,63 @@
       &::before { top: 120px }
       
       // Server Icon Obj
-      [class*="listItem-"] {
-        padding: 5px 2px 5px 2px ;
+      > [class*="listItem-"] {
         margin: 0px ;
-        height: 50px ;
-        width: 50px ;
+        max-height: 60px ;
+        width: 54px ;
         
         //Icon Container
-        [class*="blobContainer-"] > [class*="wrapper-"]{
-          margin: 5px ;
-          height: 40px ;
-          width: 40px ;
+        [class*="blobContainer-"] {
+          padding: 5px 2px 5px 2px ;
           
-          svg {
+          > [class*="wrapper-"] {
+            margin: 5px ;
             height: 40px ;
             width: 40px ;
-            background-color: transparent  ;
-            
-            // Icon
-            foreignObject [class*="wrapper-"]{
-              transform: rotate(90deg) ;
-              
-              &:hover img { border-radius: 25% }
-              
-              //Image
-              img {
-                border-radius: 50% ;
-                transition: .4s ;
+
+            svg {
+              height: 40px ;
+              width: 40px ;
+              background-color: transparent  ;
+
+              // Icon
+              foreignObject [class*="wrapper-"]{
+                transform: rotate(90deg) ;
+
+                &:hover img { border-radius: 25% }
+
+                //Image
+                img {
+                  border-radius: 50% ;
+                  transition: .4s ;
+                }
+
+                //Text
+                div { background-color: transparent }
               }
-              
-              //Text
-              div { background-color: transparent }
+
+              //Mask Obj (wich idk how it works)
+              mask { display: none }
             }
-            
-            //Mask Obj (wich idk how it works)
-            mask { display: none }
-          }
-          
-          // Badges
-          [class*="badgeWrapper-"] {
-            transform: rotate(90deg) ;
-            
-            // unread Mentions
-            [class*="lowerBadge-"] {
-              right: -5px ;
-              bottom: -5px ;
-            }
-            
-            // voice Icon
-            [class*="upperBadge-"] {
-              top: -5px ;
-              
-              [class*="iconBadge-"] {
-                height: 18px ;
-                width: 18px ;
+
+            // Badges
+            [class*="badgeWrapper-"] {
+              transform: rotate(90deg) ;
+
+              // unread Mentions
+              [class*="lowerBadge-"] {
+                right: -5px ;
+                bottom: -5px ;
+              }
+
+              // voice Icon
+              [class*="upperBadge-"] {
+                top: -5px ;
+
+                [class*="iconBadge-"] {
+                  height: 18px ;
+                  width: 18px ;
+                }
               }
             }
           }
@@ -124,6 +127,8 @@
         &:first-child {
           position: absolute ;
           top: 5px ;
+          padding: 5px 2px 5px 2px ;
+          width: 50px ;
         }
         
         // guild seperator
@@ -160,6 +165,56 @@
           transform: rotate(90deg) ;
           background: transparent ;
           height: 20px ;
+        }
+      }
+      
+      // DMs
+      > div:not([class*="listItem-"]) > [class*="listItem-"] {
+        margin: 0px ;
+        max-height: 60px ;
+        width: 54px ;
+          
+        > [class*="blob-"] {
+//            padding: 5px 2px 5px 2px ;
+          margin: 5px ;
+          height: 40px ;
+          width: 40px ;
+
+          svg {
+            height: 40px ;
+            width: 40px ;
+            background-color: transparent  ;
+
+            // Icon
+            foreignObject [class*="wrapper-"]{
+              transform: rotate(90deg) ;
+
+              &:hover img { border-radius: 25% }
+
+              //Image
+              img {
+                border-radius: 50% ;
+                transition: .4s ;
+              }
+
+              //Text
+              div { background-color: transparent }
+            }
+
+            //Mask Obj (wich idk how it works)
+            mask { display: none }
+          }
+
+          // Badges
+          [class*="badgeWrapper-"] {
+            transform: rotate(90deg) ;
+
+            // unread Mentions
+            [class*="lowerBadge-"] {
+              right: -5px ;
+              bottom: -5px ;
+            }
+          }
         }
       }
     }
