@@ -222,7 +222,7 @@
 }
 
 // Server Button
-[class*="channels-"] > [class*="flex-"] > [class*="flexChild-"] {
+[class*="channels-"] > [class*="container-"]:nth-of-type(1) > [class*="flexChild-"] {
   position: fixed;
   width: 120px ;
   height: 54px ;

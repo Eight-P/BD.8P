@@ -1,6 +1,6 @@
 /* V_0.2 */ 
 #app-mount {
-  background: transparent ;
+  background: transparent !important ;
   
   [class*="app-"] > [class*="layers-"] {
     background: transparent ;
