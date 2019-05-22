@@ -509,7 +509,10 @@ body {
       foreignObject [class*="wrapper-"] {
         
         //Text Color
-        div { color: var(--Color_1) }
+        [class*="acronym-"] { 
+          color: var(--Color_1);
+          filter: drop-shadow( -2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0)) );
+        }
       }
       
       // guild seperator, Discovereeeeee
@@ -520,6 +523,12 @@ body {
         }
         
         &:hover [class*="circleIconButton-"] { opacity: 1 }
+      }
+      
+      // Public Server List
+      &#bd-pub-li [class*="wrapper-"] {
+        color: var(--Color_1) ;
+        filter: drop-shadow( -2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0)) );
       }
     }
   }

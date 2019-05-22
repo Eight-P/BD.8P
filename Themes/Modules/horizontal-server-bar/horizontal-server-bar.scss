@@ -72,7 +72,7 @@
                 }
 
                 //Text
-                div { background-color: transparent }
+                [class*="acronym-"] { background-color: transparent }
               }
 
               //Mask Obj (wich idk how it works)
@@ -138,6 +138,7 @@
         // guilds Add
         &:nth-last-of-type(2) { top: 64px }
         
+        
         // Discovereeeeee
         &:last-child { top: 90px}
         
@@ -157,6 +158,22 @@
           foreignObject svg {
             height: 40px ;
             width: 40px ;
+          }
+        }
+        
+        // Public Server List
+        &#bd-pub-li {
+          height: 60px;
+          width: 54px ;
+          margin: 0 ;
+          
+          [class*="wrapper-"] {
+            transform: rotate(90deg) ;
+            margin: auto ;
+            line-height: 48px ;
+            background: transparent ;
+            font-weight: 500 ;
+            font-size: 80% ;
           }
         }
         
