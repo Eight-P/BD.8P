@@ -213,13 +213,20 @@ body {
         width: 20px ;
         background: transparent ;
 
+        // Input Container
         .DraftEditor-root {
           position: absolute ;
           width: 20px ;
           cursor: pointer ;
           pointer-events: auto ;
+          
+          .public-DraftEditor-content {
+            
+            //search text
+            .public-DraftStyleDefault-block > span { display: none }
+          }
 
-          .public-DraftEditor-content .public-DraftStyleDefault-block span { display: none }
+          //placeholder text
           .public-DraftEditorPlaceholder-root { display: none }
         }
 
@@ -244,7 +251,7 @@ body {
           .DraftEditor-root { 
             position: relative ;
 
-            .public-DraftEditor-content .public-DraftStyleDefault-block span { display: block }
+            .public-DraftEditor-content .public-DraftStyleDefault-block > span { display: inline-block }
           }
 
           [class*="icon-"] svg {
@@ -259,7 +266,7 @@ body {
 }
 
 // Server-channels
-[class*="channels-"] > [class*="flex-"] {
+[class*="channels-"] > [class*="container-"]:nth-of-type(1) {
   top: 48px ;
   margin-bottom: 48px;
 
@@ -267,12 +274,8 @@ body {
 
   [class*="scroller-"] {
     
-    > div:first-of-type:not([class*="container-"]),
-    > div:last-of-type:not([class*="container-"]){
-      //
-    }
-
     &::-webkit-scrollbar { display: none }
+    
     // Channel container
     [class*="containerDefault-"] {
 
@@ -688,6 +691,32 @@ body {
           }
         }
         &:hover [class*="friendsColumnStatus-"] [class*="statusText-"] { display: none }
+      }
+    }
+  }
+}
+
+
+// Activity-Feed
+[class*="channels-"] ~ [class*="activityFeed-"] [class*="scroller-"] {
+  background: transparent ;
+  
+  [class*="wrappedCard-"] {
+    background: transparent ;
+    
+    [class*="wrapper-"] {
+      padding-bottom: 10px ;
+    }
+  }
+  
+  [class*="outer-"] {
+    background: transparent ;
+    
+    [class*="card-"] {
+      background: transparent ;
+      
+      [class*="body-"] [class*="section-"] {
+        background: transparent ;
       }
     }
   }
