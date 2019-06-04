@@ -705,7 +705,6 @@ body {
   }
 }
 
-
 // Activity-Feed
 [class*="channels-"] ~ [class*="activityFeed-"] [class*="scroller-"] {
   background: transparent ;
@@ -774,7 +773,8 @@ body {
 // Popouts
 [class*="popouts-"] {
   // Server-Options -hopefully-
-  .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.popouttop:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) [class*="menu-"] { 
+  
+  .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.theme-undefined:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) [class*="menu-"] { 
     background: var(--Color_3) ;
 
     [class*="separator-"] {

@@ -114,6 +114,8 @@
           }
         }
         
+        &.bd-guild:not(.bd-unread):not(.bd-selected):hover [class*="pill-"] { display: none }
+        
         // Buttons (home, add, disc.)
         > [class*="wrapper-"] foreignObject {
           
@@ -263,6 +265,8 @@
       
       &:hover {background-color: rgba(0, 0, 0, 0.2)}
       
+      [class*="guildIconContainer-"] { display: none }
+      
       [class*="name-"] {
         text-align: center ;
         line-height: 1 ;
@@ -327,5 +331,4 @@
   }
 }
 
-
-[class*="popouts-"] .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.popouttop:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) { left: calc(100vw - 120px) !important }
+[class*="popouts-"] .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.theme-undefined:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) { left: calc(100vw - 120px) !important }
