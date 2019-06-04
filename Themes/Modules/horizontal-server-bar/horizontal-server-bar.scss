@@ -114,7 +114,10 @@
           }
         }
         
-        &.bd-guild:not(.bd-unread):not(.bd-selected):hover [class*="pill-"] { display: none }
+        &.bd-guild [class*="pill-"] { display: none }
+        
+        &.bd-guild.bd-unread [class*="pill-"], 
+        &.bd-guild.bd-selected [class*="pill-"] { display: flex }
         
         // Buttons (home, add, disc.)
         > [class*="wrapper-"] foreignObject {
@@ -131,15 +134,15 @@
           top: 5px ;
           padding: 5px 2px 5px 2px ;
           width: 50px ;
+          
+          [class*="pill-"] { display: none }
         }
         
         // guild seperator
         &:nth-of-type(2) { display: none }
         
-        // 10-48-6-20-6-20-10
         // guilds Add
         &:nth-last-of-type(2) { top: 64px }
-        
         
         // Discovereeeeee
         &:last-child { top: 90px}
