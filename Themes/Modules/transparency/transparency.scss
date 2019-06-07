@@ -108,6 +108,19 @@
         }
       }
     }
+    
+    // BD's public server list
+    #pubslayerroot .bd-layer {
+      background: transparent ;
+
+      [class*="standardSidebarView-"] {
+        background: transparent ;
+
+        [class*="sidebarRegion-"], [class*="contentRegion-"] {
+          background: transparent ;
+        }
+      }
+    }
   }
 }
 

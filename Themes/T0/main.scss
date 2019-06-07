@@ -526,10 +526,7 @@ body {
       }
       
       // Public Server List
-      &#bd-pub-li [class*="wrapper-"] {
-        color: var(--Color_1) ;
-        filter: drop-shadow( -2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0)) );
-      }
+      &#bd-pub-li [class*="wrapper-"] { color: var(--Color_1) }
     }
   }
 }
@@ -951,4 +948,3 @@ body {
     border-top-color: var(--Color_3) ;
   }
 }
-
