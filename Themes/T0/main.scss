@@ -1,4 +1,14 @@
 $v: 2 ;
+$current_version: "0.3.0" ;
+// Version
+[class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar > span:after {
+  content: "T0-Theme v#{$current_version} by Eight_P";
+  display: block;
+  font-size: 12px ;
+  font-weight: 600 ;
+  color: rgb(114, 118, 125);
+  padding: 2px 10px;
+}
 
 // pseudo for BG darkening
 @mixin BG-dark-before($height) {
@@ -138,18 +148,16 @@ body {
 }
 
 // Window-bar
-#app-mount > [class*="titleBar-"] {
-  &::after {
-    content: "" ;
-    position: absolute ;
-    top: 0 ;
-    left: 0 ;
-    height: 22px ;
-    width: 100vw ;
-    box-shadow: 0 1px 0 var(--Color_2);
-    opacity: .6 ;
-    pointer-events: none ;
-  }
+#app-mount > [class*="app-"]::before {
+  content: "" ;
+  position: absolute ;
+  top: 0 ;
+  left: 0 ;
+  height: 1px ;
+  width: 100vw ;
+  box-shadow: 0 -1px 0 var(--Color_2);
+  opacity: .6 ;
+  pointer-events: none ;
 }
 
 //Titel-bar
@@ -516,7 +524,9 @@ body {
       }
       
       // guild seperator, Discovereeeeee
-      &:nth-last-of-type(2), &:last-child {
+      &:nth-last-of-type(2), 
+      &:last-child, 
+      &:nth-last-of-type(3):not(.bd-guild) {
         [class*="circleIconButton-"] {
           color: var(--Color_1) ;
           opacity: .75 ;
