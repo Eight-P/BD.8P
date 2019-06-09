@@ -1,11 +1,16 @@
-/* V_0.3 */  
-[class*="layers-"] > [class*="layer-"] > [class*="flex-"] > [class*="wrapper-"] { 
-  
-  ~ div {
-    height: calc(100vh - 76px) ; // 76px: bc, gildwrapper + top bar
-    width: 100vw ;
-  }
-  
+$current_version: "0.3.1" ;
+// Version
+[class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar::after {
+  content: "ServerBar v#{$current_version} by Eight_P";
+  display: block;
+  font-size: 12px ;
+  font-weight: 600 ;
+  color: rgb(114, 118, 125);
+  padding: 2px 10px;
+}
+
+//ServerBar
+[class*="layers-"] > [class*="layer-"] > [class*="flex-"] > [class*="wrapper-"] {
   position: absolute ;
 	top: 0 ;
 	height: 100vw ;
@@ -13,6 +18,11 @@
 	transform: rotate(-90deg) translateX(-100vh);
 	transform-origin: top left ;
   border-radius: 0 ;
+  
+  ~ div {
+    height: calc(100vh - 76px) ; // 76px: bc, gildwrapper + top bar
+    width: 100vw ;
+  }
   
   [class*="unreadMentionsIndicator"], [class*="guildSeparator-"] { display: none }
   
@@ -26,37 +36,32 @@
 			padding: 0 ;
       
       &::-webkit-scrollbar { display: none }
-      
+      &::before { top: 120px }
       &::after, &::before {
 				content: "" ;
-				position: absolute ;
-				bottom: 120px ;
+				position: absolute ; 
+        left: 20% ; right: 20% ;
 				height: 2px ;
-				left: 20% ;
-				right: 20% ;
 				opacity: 0.8 ;
+        bottom: 120px ; 
 			}
       
-      &::before { top: 120px }
-      
-      // Server Icon Obj
-      > [class*="listItem-"] {
+      @mixin ServerIcon($main_wrapper) {
+      //Icon Obj
         margin: 0px ;
         max-height: 60px ;
         width: 54px ;
         
         //Icon Container
-        [class*="blobContainer-"] {
+        [class*="#{$main_wrapper}"] {
           padding: 5px 2px 5px 2px ;
           
           > [class*="wrapper-"] {
             margin: 5px ;
-            height: 40px ;
-            width: 40px ;
-
+            height: 40px ; width: 40px ;
+            
             svg {
-              height: 40px ;
-              width: 40px ;
+              height: 40px ; width: 40px ;
               background-color: transparent  ;
 
               // Icon
@@ -70,32 +75,26 @@
                   border-radius: 50% ;
                   transition: .4s ;
                 }
-
                 //Text
                 [class*="acronym-"] { background-color: transparent }
               }
-
               //Mask Obj (wich idk how it works)
               mask { display: none }
             }
-
             // Badges
             [class*="badgeWrapper-"] {
               transform: rotate(90deg) ;
 
               // unread Mentions
               [class*="lowerBadge-"] {
-                right: -5px ;
-                bottom: -5px ;
+                right: -5px ; bottom: -5px ;
               }
-
               // voice Icon
               [class*="upperBadge-"] {
                 top: -5px ;
 
                 [class*="iconBadge-"] {
-                  height: 18px ;
-                  width: 18px ;
+                  height: 18px ; width: 18px ;
                 }
               }
             }
@@ -113,77 +112,81 @@
             border-radius: 0 12px 12px 0 ;
           }
         }
-        
         &.bd-guild [class*="pill-"] { display: none }
         
         &.bd-guild.bd-unread [class*="pill-"], 
         &.bd-guild.bd-selected [class*="pill-"] { display: flex }
+      }
+      
+      > [class*="listItem-"] {
+        // Server Icons
+        @include ServerIcon ("blobContainer-");
         
-        
+        // 10-48-6-20-6-20-10
         // Home Icon
         &:first-child {
           position: absolute ;
-          top: 5px ;
-          padding: 5px 2px 5px 2px ;
-          width: 50px ;
+          top: 10px ;
           
           [class*="pill-"] { display: none }
-        
-          [class*="listItemWrapper-"] > [class*="wrapper-"] {
-            height: 40px ;
-            width: 40px ;
-
-            svg {
-              height: 40px ;
-              width: 40px ;
-
-              //Mask Obj (wich idk how it works)
-              mask { display: none }
-              
-              // Icon
-              foreignObject [class*="wrapper-"]{
-                transform: rotate(90deg) ;
-                background-color: transparent  ;
-              }
-            }
-
-            // Badges (don't know why there here)
-            [class*="badgeWrapper-"] { display: none }
+          
+          mask { display: none }
+          
+          foreignObject [class*="wrapper-"] {
+            transform: rotate(90deg) ;
+            background-color: transparent ;
           }
         }
         
-        // guilds Add
-        &:nth-last-of-type(2) { top: 64px }
-        
-        // Discovereeeeee
-        &:last-child { top: 90px}
-        
-        &:nth-last-of-type(2), &:last-child {
+        // guildsAdd, guildsError, Discovereeeeee
+        &:last-child,
+        &:nth-last-of-type(2),
+        &:nth-last-of-type(3):not(.bd-guild) {
           position: absolute ;
-          left: 17px ;
+          left: 17px ; top: 90px ;
           padding: 0 ;
-          height: 20px ;
-          width: 20px ;
+          height: 20px ; width: 20px ;
+          pointer-events: none ;
+          
+//          [class*="listItemWrapper-"] { pointer-events: auto }
           
           [class*="pill-"] { display: none }
           
-          [class*="wrapper-"], [class*="svg-"] {
-            height: 20px ;
-            width: 20px ;
+          [class*="circleButtonMask-"] {
+            height: 20px ; width: 20px ;
+            pointer-events: auto ;
+            
+            > [class*="svg-"] {
+              height: 20px ; width: 20px ;
+            }
           }
           
-          foreignObject [class*="circleIconButton-"] {
+          [class*="circleIconButton-"] {
             transform: rotate(90deg) ;
             background-color: transparent  ;
             
-            svg {
-              height: 40px ;
-              width: 40px ;
+            > svg {
+              height: 40px ; width: 40px ;
             }
           }
         }
+        &:nth-last-of-type(2) { top: 64px }
+
+        [class*="guildsError-"] {
+          transform: rotate(90deg) ;
+          background: transparent ;
+          height: 20px ;
+          width: 20px ;
+          margin: -93px 30px 0 0 ;
+          border: none ;
+          
+          span {
+            font-size: 85% ;
+            color: #f04747 ;
+          }
+        }
         
-        // Public Server List
+        // BD's Public Server List
         &#bd-pub-li {
           height: 60px;
           width: 54px ;
@@ -203,68 +206,11 @@
             &:hover { border-radius: 25% }
           }
         }
-        
-        // guildsError (not the best solution, but ok)
-        [class*="guildsError-"] {
-          transform: rotate(90deg) ;
-          background: transparent ;
-          height: 20px ;
-        }
       }
       
       // DMs
-      > div:not([class*="listItem-"]) > [class*="listItem-"] {
-        margin: 0px ;
-        max-height: 60px ;
-        width: 54px ;
-        
-        [class*="pill-"] { display: none }
-          
-        [class*="listItemWrapper-"] {
-          padding: 5px 2px 5px 2px ;
-          
-          [class*="wrapper-"] {
-            margin: 5px ;
-            height: 40px ;
-            width: 40px ;
-            
-            svg {
-              height: 40px ;
-              width: 40px ;
-              background-color: transparent  ;
-
-              // Icon
-              foreignObject [class*="wrapper-"]{
-                transform: rotate(90deg) ;
-
-                &:hover img { border-radius: 25% }
-
-                //Image
-                img {
-                  border-radius: 50% ;
-                  transition: .4s ;
-                }
-
-                //Text
-                div { background-color: transparent }
-              }
-
-              //Mask Obj (wich idk how it works)
-              mask { display: none }
-            }
-
-            // Badges
-            [class*="badgeWrapper-"] {
-              transform: rotate(90deg) ;
-
-              // unread Mentions
-              [class*="lowerBadge-"] {
-                right: -5px ;
-                bottom: -5px ;
-              }
-            }
-          }
-        }
+      > div:not([class*="listItem-"]) > [class*="listItem-"] { 
+        @include ServerIcon ("listItemWrapper-");
       }
     }
   }
