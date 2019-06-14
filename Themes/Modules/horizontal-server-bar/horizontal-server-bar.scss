@@ -1,4 +1,4 @@
-$current_version: "0.3.1" ;
+$current_version: "0.3.2" ;
 // Version
 [class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -140,24 +140,23 @@ $current_version: "0.3.1" ;
         
         // guildsAdd, guildsError, Discovereeeeee
         &:last-child,
-        &:nth-last-of-type(2),
-        &:nth-last-of-type(3):not(.bd-guild) {
+        &:nth-last-of-type(2) {
           position: absolute ;
-          left: 17px ; top: 90px ;
+          left: 17px ; 
+          top: 90px ;
           padding: 0 ;
-          height: 20px ; width: 20px ;
-          pointer-events: none ;
-          
-//          [class*="listItemWrapper-"] { pointer-events: auto }
+          height: 20px ; 
+          width: 20px ;
           
           [class*="pill-"] { display: none }
           
           [class*="circleButtonMask-"] {
-            height: 20px ; width: 20px ;
-            pointer-events: auto ;
+            height: 20px ; 
+            width: 20px ;
             
             > [class*="svg-"] {
-              height: 20px ; width: 20px ;
+              height: 20px ; 
+              width: 20px ;
             }
           }
           
@@ -165,20 +164,24 @@ $current_version: "0.3.1" ;
             transform: rotate(90deg) ;
             background-color: transparent  ;
             
-            > svg {
-              height: 40px ; width: 40px ;
-            }
+            > svg { height: 40px ; width: 40px }
           }
         }
         &:nth-last-of-type(2) { top: 64px }
+        
+        // not a great solution
+        &:nth-last-of-type(3) [class*="listItemWrapper-"] [class*="circleIconButton-"] {
+          transform: rotate(90deg) ;
+          background-color: transparent  ;
+        }
 
         [class*="guildsError-"] {
+          height: 20px ; 
+          width: 20px ;
           transform: rotate(90deg) ;
           background: transparent ;
-          height: 20px ;
-          width: 20px ;
-          margin: -93px 30px 0 0 ;
           border: none ;
+          padding: 0 ;
           
           span {
             font-size: 85% ;
@@ -229,6 +232,7 @@ $current_version: "0.3.1" ;
     height: 54px ;
     padding: 0 ;
   }
+  
   [class*="container-"] {
     width: 120px ;
     height: 54px ;
@@ -239,7 +243,7 @@ $current_version: "0.3.1" ;
       height: 54px ;
       padding: 0 ;
       
-      &:hover {background-color: rgba(0, 0, 0, 0.2)}
+      &:hover { background-color: rgba(0, 0, 0, 0.2) }
       
       [class*="guildIconContainer-"] { display: none }
       
@@ -251,6 +255,7 @@ $current_version: "0.3.1" ;
         font-weight: 400 ;
         padding: 0 5px ;
       }
+      
       [class*="button-"], [class*="verified-"] { display: none }
     }
     
@@ -284,6 +289,7 @@ $current_version: "0.3.1" ;
     width: 20px ;
     opacity: .5 ;
   }
+  
   &::after {
     content: "search" ;
     position: absolute ;
