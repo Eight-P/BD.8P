@@ -1,5 +1,5 @@
 $v: 2 ;
-$current_version: "0.3.0" ;
+$current_version: "0.3.1" ;
 // Version
 [class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar > span:after {
   content: "T0-Theme v#{$current_version} by Eight_P";
@@ -298,6 +298,7 @@ body {
           color: var(--Color_2);
           opacity: .9 ;
         }
+        
         // channel-options
         [class*="children-"] [class*="iconItem-"] {
           display: none ;
@@ -309,8 +310,7 @@ body {
             opacity: 1 ;
           }
         }
-        &:hover [class*="children-"] [class*="iconItem-"] { display: block }
-
+        
         // connection-limit
         [class*="children-"] [class*="userLimit-"] [class*="wrapper-"]{
           color: var(--Color_2) ;
@@ -324,6 +324,7 @@ body {
             top: -1px ;
           }
         }
+        
         // mentions indicator
         [class*="iconSpacing-"] [class*="wrapper-"] {
           background-color: transparent ;
@@ -331,6 +332,13 @@ body {
           border-radius: 0 ;
           box-shadow: none ;
           color: var(--Color_1) ;
+        }
+        
+        // Highlight on hover
+        &:hover {
+          [class*="children-"] [class*="iconItem-"] { display: block }
+          [class*="name-"] { color: var(--Color_1) }
+          [class*="icon-"] { color: var(--Color_1) }
         }
       }
       
@@ -357,11 +365,16 @@ body {
     width: 240px ;
     box-sizing: border-box ;
 
+    // Avatar/Icon
     [class*="avatar-"] [class*="status-"] {
       border: none ;
       bottom: -1px ;
       right: -1px ;
     }
+    
+    // Custom Status Icon
+    [class*="nameTag-"] [class*="customStatusWrapper-"] { display: none }
+    
     // moving/fixing tooltips
     > [class*="flex-"] {
       margin-top: 20px ;
@@ -509,6 +522,7 @@ body {
     
     // Server Icon Obj
     [class*="listItem-"] {
+      // can cause bugs, for some reason
       filter: drop-shadow( -2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0)) );
       
       // unread messages, Server selected
