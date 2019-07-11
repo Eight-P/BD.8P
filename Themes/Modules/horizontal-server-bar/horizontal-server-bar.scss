@@ -1,4 +1,4 @@
-$current_version: "0.3.2" ;
+$current_version: "0.3.3" ;
 // Version
 [class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -313,4 +313,4 @@ $current_version: "0.3.2" ;
   }
 }
 
-[class*="popouts-"] .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.theme-undefined:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) { left: calc(100vw - 120px) !important }
+[class*="popouts-"] [class*="popoutInvert-"][class*="noArrow-"][class*="popout-"][class*="popoutTop-"][class*="arrowAlignmentTop-"]:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) { left: calc(100vw - 120px) !important }
