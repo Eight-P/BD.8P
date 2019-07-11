@@ -1,5 +1,5 @@
 $v: 2 ;
-$current_version: "0.3.1" ;
+$current_version: "0.3.2" ;
 // Version
 [class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar > span:after {
   content: "T0-Theme v#{$current_version} by Eight_P";
@@ -795,7 +795,7 @@ body {
 [class*="popouts-"] {
   // Server-Options -hopefully-
   
-  .popoutInvert-3UdKhn.noArrow-3BYQ0Z.popout-3sVMXz.popoutTop-3uu9vG.arrowAlignmentTop-iGQczz.theme-undefined:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) [class*="menu-"] { 
+  [class*="popoutInvert-"][class*="noArrow-"][class*="popout-"][class*="popoutTop-"][class*="arrowAlignmentTop-"]:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) [class*="menu-"] { 
     background: var(--Color_3) ;
 
     [class*="separator-"] {
