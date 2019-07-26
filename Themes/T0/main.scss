@@ -1,5 +1,5 @@
 $v: 2 ;
-$current_version: "0.3.3" ;
+$current_version: "0.3.4" ;
 // Version
 [class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar > span:after {
   content: "T0-Theme v#{$current_version} by Eight_P";
@@ -555,6 +555,9 @@ body {
       // Public Server List
       &#bd-pub-li [class*="wrapper-"] { color: var(--Color_1) }
     }
+    
+    // Server Folders
+    > [class*="wrapper-"] > [class*="expandedGuilds-"]::after { background-color: var(--Color_2) }
   }
 }
 

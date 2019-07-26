@@ -1,4 +1,4 @@
-$current_version: "0.3.3" ;
+$current_version: "0.3.4" ;
 // Version
 [class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -44,6 +44,7 @@ $current_version: "0.3.3" ;
 				height: 2px ;
 				opacity: 0.8 ;
         bottom: 120px ; 
+        background-color: #8b8a8a ;
 			}
       
       @mixin ServerIcon($main_wrapper) {
@@ -118,8 +119,9 @@ $current_version: "0.3.3" ;
         &.bd-guild.bd-selected [class*="pill-"] { display: flex }
       }
       
+      // Server Icons
       > [class*="listItem-"] {
-        // Server Icons
+        
         @include ServerIcon ("blobContainer-");
         
         // 10-48-6-20-6-20-10
@@ -211,10 +213,86 @@ $current_version: "0.3.3" ;
         }
       }
       
-      // DMs
-      > div:not([class*="listItem-"]) > [class*="listItem-"] { 
-        @include ServerIcon ("listItemWrapper-");
+      // Server Folders
+      > [class*="wrapper-"] {
+        width: 54px ;
+        
+        [class*="FolderBackground-"] { display: none }
+        
+        // Foler Icon
+        > [class*="listItem-"] {
+          margin: 0px ;
+          height: 60px ;
+          width: 54px ;
+          
+          //Icon Container
+          > div > [class*="wrapper-"] {
+            margin: 10px 7px ;
+            height: 40px ; width: 40px ;
+            
+            > svg {
+              height: 40px ; width: 40px ;
+              transform: rotate(90deg);
+              
+              foreignObject > [class*="folder-"] {
+                background: transparent ;
+                
+                [class*="folderIconWrapper-"] {
+                  border-radius: 50% ;
+                  transition: .4s ;
+                  
+                  &:hover { border-radius: 25% }
+                }
+                
+                // folder open
+                [class*="expandedFolderIconWrapper-"] svg { 
+                  height: 40px ; 
+                  width: 40px ;
+                  
+                  
+                }
+                
+                // folder closed
+                [class*="closedFolderIconWrapper-"] { padding: 0 }
+              }
+            }
+            [class*="badgeWrapper-"] {
+              transform: rotate(90deg);
+            }
+          }
+          
+          [class*="pill-"] {
+            height: 40px ;
+            top: 10px ;
+
+            [class*="item-"] {
+              width: 15px ;
+              margin-left: -12px ;
+              border-radius: 0 12px 12px 0 ;
+            }
+          }
+        }
+        
+        // Server Icons in folder
+        [class*="expandedGuilds-"] {
+          height: auto !important ;
+          
+          &::after {
+            content: "" ;
+            position: absolute ; 
+            left: 20% ; right: 20% ;
+            height: 2px ;
+            opacity: 0.8 ;
+            bottom: 0 ;
+            background-color: #8b8a8a ;
+          }
+          
+          [class*="listItem-"] { @include ServerIcon ("blobContainer-") }
+        }
       }
+      
+      // DMs
+      > div:not([class*="listItem-"]):not([class*="wrapper-"]) > [class*="listItem-"] { @include ServerIcon ("listItemWrapper-") }
     }
   }
 }
