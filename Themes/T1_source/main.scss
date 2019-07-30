@@ -1,8 +1,8 @@
-$v: 2 ;
+$v: 3 ;
 $current_version: "0.3.4" ;
 // Version
 [class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar > span:after {
-  content: "T0-Theme v#{$current_version} by Eight_P";
+  content: "T1-Theme v#{$current_version} by Eight_P";
   display: block;
   font-size: 12px ;
   font-weight: 600 ;
@@ -96,7 +96,7 @@ $current_version: "0.3.4" ;
 }
 
 // general Stuff
-body { 
+body {
   // Background main
   background: var(--Background_Main) ;
 	background: {
