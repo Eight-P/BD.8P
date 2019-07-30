@@ -1,4 +1,4 @@
-//META{"name":"T1","description":"simple design with focus on improvements, horizontal server bar","author":"Eight_P","version":"0.2.4"}*//{} 
+//META{"name":"T1","description":"simple design with focus on improvements, horizontal server bar ","author":"Eight_P","version":"0.3.0","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//{} 
 
 /* Transparency-Theme */
 @import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/Modules/transparency/transparency.css);
@@ -7,7 +7,7 @@
 @import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css);
 
 /* Main-Theme */
-@import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/T0/main.css);
+@import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1_source/main.css);
 
 /* 
 - in order to have the theme work properly:
@@ -15,23 +15,22 @@
     - use discord's Dark-theme
 
 - "@import" links may not update as intended. if, disable discord cache or add a query string.
-
 */
+
 :root {
   
 /*  Settings  */
   
---Color_1: #ebebeb ;
+  --Color_1: #ebebeb ;
 
---Color_2: #8b8a8a ;
+  --Color_2: #8b8a8a ;
 
---Color_3: #202225 ;
-
---Color_4: #2f3136 ;
-
+  --Color_3: #202225 ;
+  
+  --Color_4: #2f3136 ;
+  
 /* Colors may won't affect everything/work properly.
 */
-
 
   --brightness: 20 ;
 /* darkening the Background (0 - 100) 
@@ -42,11 +41,11 @@
 */
   
   --Server_shadow: 1 ;
-/* Guilds Icon Shadow ( 0=off, 1=on)
+/* Guilds Icon Shadow ( 0=off, 1=on) 
 */
 
-  --Background_Main: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/T0/Main-bg.jpg) ;
-  --Background_Server: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/1053d726ccc464f127fd67894d4ebd32664c2246/Themes/T0/Server-bg.png) ;
+  --Background_Main: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/0ee7d1c27dad5f9a1163fd1be8231d04c2831de6/Themes/T1_source/Main-bg.jpg) !important;
+  --Background_Server: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/0ee7d1c27dad5f9a1163fd1be8231d04c2831de6/Themes/T1_source/Server-bg.png) !important;
 /* Backgrounds (can be image link or color code) " url(<link>) "
 */
 
@@ -54,5 +53,5 @@
 /* Server: url("https://i.imgur.com/a7y0VWO.png") */
 
   
-  --F_V:2 /* don't touch */
+  --F_V:3 /* don't touch */
 }
