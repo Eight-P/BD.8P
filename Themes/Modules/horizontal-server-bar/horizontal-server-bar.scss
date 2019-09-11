@@ -1,4 +1,4 @@
-$current_version: "0.3.4" ;
+$current_version: "0.3.5" ;
 // Version
 [class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -9,19 +9,19 @@ $current_version: "0.3.4" ;
   padding: 2px 10px;
 }
 
-//ServerBar
-[class*="layers-"] > [class*="layer-"] > [class*="flex-"] > [class*="wrapper-"] {
+// -- ServerBar
+[class*="wrapper-"][class*="guilds-"] {
   position: absolute ;
 	top: 0 ;
 	height: 100vw ;
   width: 54px ;
-	transform: rotate(-90deg) translateX(-100vh);
+	transform: rotate(-90deg) translateX(calc(-100vh + 22px));
 	transform-origin: top left ;
-  border-radius: 0 ;
   
-  ~ div {
+  ~ [class*="base-"] {
     height: calc(100vh - 76px) ; // 76px: bc, gildwrapper + top bar
     width: 100vw ;
+    left: 0 ;
   }
   
   [class*="unreadMentionsIndicator"], [class*="guildSeparator-"] { display: none }
@@ -42,9 +42,9 @@ $current_version: "0.3.4" ;
 				position: absolute ; 
         left: 20% ; right: 20% ;
 				height: 2px ;
-				opacity: 0.8 ;
+				opacity: 0.6 ;
         bottom: 120px ; 
-        background-color: #8b8a8a ;
+        background-color: var(--header-secondary) ;
 			}
       
       @mixin ServerIcon($main_wrapper) {
@@ -136,7 +136,10 @@ $current_version: "0.3.4" ;
           
           foreignObject [class*="wrapper-"] {
             transform: rotate(90deg) ;
-            background-color: transparent ;
+            
+            [class*="childWrapper-"] {
+              background: none ;
+            }
           }
         }
         
@@ -165,9 +168,13 @@ $current_version: "0.3.4" ;
           [class*="circleIconButton-"] {
             transform: rotate(90deg) ;
             background-color: transparent  ;
+            color: var(--text-normal) ;
+            opacity: .75 ;
             
             > svg { height: 40px ; width: 40px }
           }
+          
+          &:hover [class*="circleIconButton-"] { opacity: 1 }
         }
         &:nth-last-of-type(2) { top: 64px }
         
@@ -207,6 +214,7 @@ $current_version: "0.3.4" ;
             width: 40px ;
             border-radius: 50% ;
             transition: .4s ;
+            color: var(--text-normal);
             
             &:hover { border-radius: 25% }
           }
@@ -282,9 +290,9 @@ $current_version: "0.3.4" ;
             position: absolute ; 
             left: 20% ; right: 20% ;
             height: 2px ;
-            opacity: 0.8 ;
+            opacity: 0.6 ;
             bottom: 0 ;
-            background-color: #8b8a8a ;
+            background-color: var(--header-secondary) ;
           }
           
           [class*="listItem-"] { @include ServerIcon ("blobContainer-") }
@@ -297,52 +305,62 @@ $current_version: "0.3.4" ;
   }
 }
 
-// Server Button
-[class*="channels-"] > [class*="container-"]:nth-of-type(1) > [class*="flexChild-"] {
-  position: fixed;
+// -- Server Button
+// visibility fix
+[class*="guilds-"] ~ [class*="base-"] {
+  overflow: visible ;
+  contain: size layout;
+  
+  > [class*="content-"], [class*="sidebar-"], [class*="sidebar-"] > [class*="container-"] { contain: layout }
+}
+
+[class*="sidebar-"] > [class*="container-"] > [class*="container-"]:nth-of-type(1) {
+  position: absolute ;
   width: 120px ;
   height: 54px ;
-  right: 0 ;
-  bottom: 0 ;
-  
-  [class*="container-"], & [class*="header-"] {
+  left: calc(100vw - 120px);
+  top: calc(100vh - 76px - 48px);
+    
+  [class*="header-"] {
     width: 120px ;
     height: 54px ;
     padding: 0 ;
+    color: var(--text-normal);
+
+    &:hover { background-color: rgba(0, 0, 0, 0.2) }
+
+    [class*="guildIconContainer-"] { display: none }
+
+    [class*="name-"] {
+      text-align: center ;
+      line-height: 1 ;
+      white-space: normal ;
+      max-height: 32px ;
+      font-weight: 400 ;
+      padding: 0 5px ;
+    }
+
+    [class*="button-"], [class*="verified-"] { display: none }
   }
   
-  [class*="container-"] {
-    width: 120px ;
-    height: 54px ;
-    padding: 0 ;
+  [class*="animatedContainer-"] {
+    overflow: visible ;
+    contain: size layout;
+    background: none ;
     
-    [class*="header-"] {
-      width: 120px ;
-      height: 54px ;
-      padding: 0 ;
-      
-      &:hover { background-color: rgba(0, 0, 0, 0.2) }
-      
-      [class*="guildIconContainer-"] { display: none }
-      
-      [class*="name-"] {
-        text-align: center ;
-        line-height: 1 ;
-        white-space: normal ;
-        max-height: 32px ;
-        font-weight: 400 ;
-        padding: 0 5px ;
-      }
-      
-      [class*="button-"], [class*="verified-"] { display: none }
+    // Server-Banner
+    [class*="bannerImage-"] { 
+      position: absolute ;
+      top: calc(-100vh + 54px + 22px) ;
+      left: calc(-100vw + 120px) ;
+      opacity: calc(var(--Server_banner,0) - .2) ;
+      border-bottom-right-radius: 10% ;
     }
-    
-    [class*="bannerImage-"] { display: none }
   }
 }
 
 // Search Button (home)
-[class*="channels-"] > [class*="privateChannels-"] > [class*="searchBar-"] {
+[class*="privateChannels-"] > [class*="searchBar-"] {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -350,45 +368,28 @@ $current_version: "0.3.4" ;
   bottom: 0 ;
   padding: 0 ;
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-
-    &::before { opacity: .9 }
-  }
-
-  &::before {
-    content: "" ;
-    background: url(https://discordapp.com/assets/4d254296157bb8927b7d53ed59beb0d8.svg) ;
-    background-repeat: no-repeat ;
-    background-size: cover ;
-    position: absolute ;
-    left: 80px ;
-    height: 20px ;
-    width: 20px ;
-    opacity: .5 ;
-  }
-  
-  &::after {
-    content: "search" ;
-    position: absolute ;
-    top: 20px ; ;
-    left: 20px ;
-    font-weight: 500 ;
-    pointer-events: none ;
-  }
-
+  &:hover { background-color: rgba(0, 0, 0, 0.2) }
 
   > [class*="searchBarComponent-"] {
+    width: 120px ;
+    height: 54px ;
     background: transparent ;
     
-    [class*="inner-"] input {
+    [class*="inner-"] {
       width: 120px ;
       height: 54px ;
-      cursor: pointer ;
-
-      &::-webkit-input-placeholder { color: transparent }
+      
+      input {
+        cursor: pointer ;
+        height: 100px ;
+        margin-top: -34px ;
+        
+        &::placeholder {
+          color: var(--text-normal);
+          white-space: normal ;
+          text-align: center ;
+        }
+      }
     }
   }
 }
-
-[class*="popouts-"] [class*="popoutInvert-"][class*="noArrow-"][class*="popout-"][class*="popoutTop-"][class*="arrowAlignmentTop-"]:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) { left: calc(100vw - 120px) !important }
