@@ -1,206 +1,113 @@
-/* V_0.2 */ 
-#app-mount {
-  background: transparent !important ;
+/* V_0.3 */ 
+
+// for testing 
+//#app-mount::before {
+//  content: " " ;
+//  position: absolute ;
+//  height: 100vh ;
+//  width: 100vw ;
+//  background: #126da5 ;
+//  z-index: -1 ;
+//}
+
+ @mixin Scrollbar () {
+  &::-webkit-scrollbar-track-piece {
+    background-color: transparent ;
+    border: none ;
+  }
+  &::-webkit-scrollbar-track { background: transparent }
+  &::-webkit-scrollbar-thumb { border-color: transparent }
+}
+
+body {
+  background: none ;
   
-  [class*="app-"] > [class*="layers-"] {
-    background: transparent ;
+  #app-mount {
+     background: none ;
     
-    > [class*="layer-"] {
-      background: transparent ;
+    > [class*="app-"] > [class*="app-"] {
+      background: none ;
       
-      // Settings Menu
-      [class*="standardSidebarView-"] {
-        background: transparent ;
+      [class*="baseLayer-"] {
+        background: none ;
         
-        > [class*="sidebarRegion-"] { background: transparent }
+        // serverbar
+        [class*="guilds-"] { background: none }
         
-        > [class*="contentRegion-"] { background: transparent }
+        // server-channels
+        [class*="sidebar-"] {
+          > [class*="container-"] { background: none }
+          > [class*="panels-"] { background: none }
+        }
+        
+        // server-chat
+        [class*="chat-"] {
+          background: none ;
+          
+          // titlebar
+          [class*="title-"] { background: none }
+          
+          // messages
+          [class*="content-"] {
+            [class*="scroller-"] { @include Scrollbar }
+            
+            // text-input
+            form [class*="channelTextArea-"] [class*="inner-"] { background: none }
+          }
+          
+          // memberlist
+          [class*="membersWrap-"] [class*="scroller-"] { background: none }
+        }
+        
+        // PMs
+        [class*="privateChannels-"] { background: none }
+        
+        // activity
+        [class*="activityFeed-"] { 
+          background: none;
+          
+          [class*="container-"] { background: none }
+        }
+        
+        // libary
+        [class*="gameLibrary-"] { 
+          background: none;
+          
+          [class*="libraryHeader-"] { background: none }
+          [class*="scroller-"] { @include Scrollbar }
+        }
+        
+        // nitro
+        [class*="applicationStore-"] { 
+          background: none;
+          
+          [class*="headerBar-"] { background: none }
+          [class*="scroller-"] { @include Scrollbar }
+        }
+        
+        // friends
+        [class*="sidebar-"] ~ [class*="container-"] { 
+          background: none;
+          
+          [class*="container-"] { background: none }
+          [class*="scroller-"] { @include Scrollbar }
+        }
       }
       
-      // Main Layer
-      > [class*="flex-"] {
-        background: transparent ;
+      #user-settings {
+        background: none;
         
-        @mixin Scrollbar () {
-          [class*="scroller-"] {
-            &::-webkit-scrollbar-track-piece {
-              background-color: transparent ;
-              border: none ;
-            }
-            &::-webkit-scrollbar-track { background: transparent }
-            &::-webkit-scrollbar-thumb { border-color: transparent }
-          }
-        }
-        
-        @mixin TitelBar () {
-          [class*="container-"] {
-            background: transparent ;
-            box-shadow: none ;
+        [class*="standardSidebarView-"] {
+           background: none;
+          
+          > [class*="sidebarRegion-"] { background: none }
+          > [class*="contentRegion-"] {
+            background: none;
             
-            [class*="children-"]::after {display: none }
+            [class*="scroller-"] { @include Scrollbar }
           }
-        }
-        
-        // Server-bar
-        [class*="guildsWrapper-"] { background: transparent }
-        
-        // DMs list
-        [class*="flex-"] > [class*="channels-"] {
-          background: transparent ;
-          
-          [class*="container-"] { background: transparent }
-        }
-        
-        // Activity Feed
-        [class*="activityFeed-"] {
-          background: transparent ;
-          
-          > { @include TitelBar } ;
-          @include Scrollbar ;
-        }
-        
-        // Game Libary
-        [class*="gameLibrary-"] {
-          background: transparent ;
-          
-          > { @include TitelBar } ;
-          @include Scrollbar ;
-        }
-        
-        // Store
-        [class*="applicationStore-"] {
-          background: transparent ;
-          
-          [class*="homeWrapperNormal-"] > { @include TitelBar } ;
-          @include Scrollbar ;
-        }
-        
-        // Friends
-        [class*="flex-"] > [class*="channels-"] ~ [class*="container-"] {
-          background: transparent ;
-          
-          > { @include TitelBar } ;
-          @include Scrollbar ;
-        }
-        
-        // Chat-Container
-        [class*="flex-"] > [class*="chat-"] {
-          background: transparent ;
-          
-          // Title
-          > { @include TitelBar } ;
-          
-          > [class*="content-"] {
-             background: transparent ;
-            
-            // Messages
-            [class*="messagesWrapper-"]  {
-              background: transparent ;
-              
-              @include Scrollbar ;
-              
-              ~ form { background: transparent }
-            }
-            
-            // Members
-            [class*="membersWrap-"] [class*="scroller-"] { background: transparent }
-          }
-        }
-      }
-    }
-    
-    // BD's public server list
-    #pubslayerroot .bd-layer {
-      background: transparent ;
-
-      [class*="standardSidebarView-"] {
-        background: transparent ;
-
-        [class*="sidebarRegion-"], [class*="contentRegion-"] {
-          background: transparent ;
         }
       }
     }
   }
 }
-
-////making use of Bandages's "Normalize Classes" Option if available
-//.da-appMount {
-//  background: transparent ;
-//
-//  .da-layers {
-//    background: transparent ;
-//
-//    > .da-layer {
-//      background: transparent ;
-//      
-//      .da-standardSidebarView {
-//        background: transparent ;
-//        
-//        .da-sidebarRegion { background: transparent }
-//        
-//        .da-contentRegion, > [class*="contentRegion-"] { background: transparent }
-//      }
-//      > .da-container {
-//        background: transparent ;
-//
-//        .da-guildsWrapper { background: transparent }
-//
-//        .da-base {
-//          background: transparent ;
-//          
-//          .da-channels { 
-//            background: transparent ;
-//            
-//            > .da-container { background: transparent }
-//          }
-//          .da-activityFeed {
-//            background: transparent ;
-//            
-//            .da-headerBar { background: transparent }
-//          }
-//          .da-gameLibrary {
-//            background: transparent ;
-//            
-//            .da-headerBar { background: transparent }
-//          }
-//          [class*="applicationStore-"] {
-//            background: transparent ;
-//            
-//            .da-headerBar { background: transparent }
-//          }
-//          .da-container {
-//            background: transparent ;
-//            
-//            .da-headerBar { background: transparent }
-//          }
-//          .da-chat {
-//            background: transparent ;
-//            
-//            .da-headerBar { background: transparent }
-//            
-//            > .da-content {
-//              background: transparent ;
-//              
-//              .da-messagesWrapper { 
-//                background: transparent ;
-//                
-//                .da-scroller {
-//                  &::-webkit-scrollbar-track-piece {
-//                    background-color: transparent ;
-//				            border: none ;
-//                  }
-//                  &::-webkit-scrollbar-thumb { border-color: transparent }
-//                }
-//              }
-//              
-//              [class*="flex-"] > form { background: transparent }
-//              
-//              .da-membersWrap .da-members { background: transparent }
-//            }
-//          }
-//        }
-//      }
-//    }
-//  }
-//}
