@@ -1,4 +1,4 @@
-$current_version: "0.3.5" ;
+$current_version: "0.3.6" ;
 // Version
 [class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
