@@ -744,7 +744,7 @@ body {
 }
 
 // Settings Tab
-[class*="layers-"] > [class*="layer-"]:nth-child(2) [class*="standardSidebarView-"] {
+#user-settings {
   
   // Side bar
   [class*="sidebarRegion-"] [class*="scroller-"]{
@@ -784,31 +784,31 @@ body {
 }
 
 // Popouts
-[class*="popouts-"] {
+[class*="layerContainer-"] {
   
   // Server-Options -hopefully-
-  [class*="popoutInvert-"][class*="noArrow-"][class*="popout-"][class*="popoutTop-"][class*="arrowAlignmentTop-"]:not([class*="popoutBottom-"]):not([class*="popoutTopLeft-"]):not([class*="popoutBottomRight-"]):not([class*="popoutBottomLeft-"]) [class*="menu-"] { 
-    background: var(--Color_3) ;
+  [class*="animatorTop-"] [class*="menu-"]{ 
+    background: var(--activity-card-background) ;
+    padding: 6px 0 ;
 
-    [class*="separator-"] {
-      display: none ;
-    }
     [class*="item-"] {
-      color: var(--Color_2) ;
-      padding: 5px 14px ;
-      margin: 5px 0 ;
+      height: 22px ;
+      min-height: inherit ;
+      border-radius: 0 ;
+      padding: 0 17px ;
+      margin: 12px 0 ;
 
       &:hover {
-        color: var(--Color_1) ;
-        background: transparent ;
-        border-left: 2px solid var(--Color_1) ;
+        color: var(--interactive-hover) ;
+        background: var(--background-modifier-selected) ;
+        border-left: 3px solid var(--interactive-hover) ;
       }
     }
   }
-  
-  // Profile Popout
+
+  // userProfile Popout
   [class*="userPopout-"] {
-//    box-shadow: 2px 2px 10px black ;
+  //    box-shadow: 2px 2px 10px black ;
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
 
     [class*="header-"] {
@@ -829,32 +829,36 @@ body {
 
       [class*="avatarWrapper-"] {
         filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
-      
+
         foreignObject img, [class*="avatarHintInner-"] {
           filter: opacity(100%);
           border-radius: 7.5% ;
         }
       }
     }
-    
+
     > [class*="body-"] { background-color: var(--Color_4) }
-    
+
     [class*="footer-"] {
 
       [class*="protip-"] { display: none }
     }
   }
+}
+
+// Popouts (old container)
+[class*="popouts-"] {
   
-  // Search-Popout
-  .noArrow-3BYQ0Z.noShadow-321ZPm.popout-3sVMXz.popoutBottom-1YbShG.arrowAlignmentTop-iGQczz.popoutbottom {
+  // searchbar options popout
+  [class*="noArrow-"][class*="noShadow-"][class*="popout-"][class*="popoutBottom-"][class*="arrowAlignmentTop-"] {
     [class*="container-"] {
-      background: var(--Color_3) ;
+      background: var(--activity-card-background) ;
       box-shadow: 2px 2px 10px black ;
-      
+
       [class*="resultsGroup-"] {
-        
+
         [class*="option-"] {
-          
+
           &:after { display: none }
         }
       }
@@ -879,22 +883,6 @@ body {
           border-radius: 7.5% ;
         }
       }
-      
-      // Colored Profile-Badges
-//      [class*="profileBadgeWrapper-"] {
-//        // Bravery
-//        [class*="profileBadgeHypeSquadOnlineHouse1-"] {background-image: url(https://discordapp.com/assets/64ae1208b6aefc0a0c3681e6be36f0ff.svg)}
-//        // Brilliance
-//        [class*="profileBadgeHypeSquadOnlineHouse2-"] {background-image: url(https://discordapp.com/assets/48cf0556d93901c8cb16317be2436523.svg)}
-//        // Balance
-//        [class*="profileBadgeHypeSquadOnlineHouse3-"] {background-image: url(https://discordapp.com/assets/9fdc63ef8a3cc1617c7586286c34e4f1.svg)}
-//        // EarlySupporter
-//        [class*="profileBadgeEarlySupporter-"] {background-image: url(https://discordapp.com/assets/23e59d799436a73c024819f84ea0b627.svg)}
-//        // Nitro
-//        [class*="profileBadgePremium-"] {background-image: url(https://discordapp.com/assets/386884eecd36164487505ddfbac35a9d.svg)}
-//        // Partenr
-//        [class*="profileBadgePartner-"] {background-image: url(https://discordapp.com/assets/33fedf082addb91d88abc272b4b18daa.svg)}
-//      }
     }
   }
 
@@ -915,7 +903,7 @@ body {
 }
 
 // Discoveree
-[class*="flex-"] > [class*="flex-"] > [class*="pageWrapper-"] {
+[class*="guilds-"] ~ [class*="base-"] [class*="pageWrapper-"] {
   
   background: transparent ;
   
@@ -924,25 +912,25 @@ body {
   [class*="scroller-"] {
     
     &::-webkit-scrollbar-track { background: transparent }
-    &::-webkit-scrollbar-thumb { background-color: var(--Color_2) }
+    &::-webkit-scrollbar-thumb { background-color: var(--header-secondary) }
     
     [class*="body-"] {
       
-      [class*="search-"] [class*="searchBox-"] {
-        border-radius: 0 ;
-        background: transparent ;
-        box-shadow: 0 2px 0px 0 var(--Color_2) ;
-      }
+//      [class*="search-"] [class*="searchBox-"] {
+//        border-radius: 0 ;
+//        background: transparent ;
+//        box-shadow: 0 2px 0px 0 var(--Color_2) ;
+//      }
+      
+//      [class*="searchHelpText-"] { display: none }
     }
   }
 }
 
 // Tooltips
 [class*="layerContainer-"] [class*="tooltip-"] {
-  background-color: var(--Color_3) ;
+  background-color: var(--activity-card-background) ;
   z-index: 3002 ;
 
-  [class*="tooltipPointer-"] {
-    border-top-color: var(--Color_3) ;
-  }
+  [class*="tooltipPointer-"] { border-top-color: var(--activity-card-background) }
 }
