@@ -1,4 +1,4 @@
-/* V_0.3 */ 
+/* V_0.3.2 */ 
 
 // for testing 
 //#app-mount::before {
@@ -25,89 +25,92 @@ body {
   #app-mount {
      background: none ;
     
-    > [class*="app-"] > [class*="app-"] {
-      background: none ;
-      
-      [class*="baseLayer-"] {
-        background: none ;
-        
-        // serverbar
-        [class*="guilds-"] { background: none }
-        
-        // server-channels
-        [class*="sidebar-"] {
-          > [class*="container-"] { background: none }
-          > [class*="panels-"] { background: none }
-        }
-        
-        // server-chat
-        [class*="chat-"] {
-          background: none ;
-          
-          // titlebar
-          [class*="title-"] { background: none }
-          
-          // messages
-          [class*="content-"] {
-            [class*="scroller-"] { @include Scrollbar }
-            
-            // text-input
-            form [class*="channelTextArea-"] [class*="inner-"] { background: none }
-          }
-          
-          // memberlist
-          [class*="membersWrap-"] [class*="scroller-"] { background: none }
-        }
-        
-        // PMs
-        [class*="privateChannels-"] { background: none }
-        
-        // activity
-        [class*="activityFeed-"] { 
-          background: none;
-          
-          [class*="container-"] { background: none }
-        }
-        
-        // libary
-        [class*="gameLibrary-"] { 
-          background: none;
-          
-          [class*="libraryHeader-"] { background: none }
-          [class*="scroller-"] { @include Scrollbar }
-        }
-        
-        // nitro
-        [class*="applicationStore-"] { 
-          background: none;
-          
-          [class*="headerBar-"] { background: none }
-          [class*="scroller-"] { @include Scrollbar }
-        }
-        
-        // friends
-        [class*="sidebar-"] ~ [class*="container-"] { 
-          background: none;
-          
-          [class*="container-"] { background: none }
-          [class*="scroller-"] { @include Scrollbar }
-        }
-      }
-      
-      #user-settings {
-        background: none;
-        
-        [class*="standardSidebarView-"] {
-           background: none;
-          
-          > [class*="sidebarRegion-"] { background: none }
-          > [class*="contentRegion-"] {
-            background: none;
-            
-            [class*="scroller-"] { @include Scrollbar }
-          }
-        }
-      }
+    > [class*="app-"] > [class*="app-"] { background: none ; }
+  }
+}
+
+
+[class*="baseLayer-"] {
+  background: none ;
+
+  // serverbar
+  [class*="guilds-"] { background: none }
+
+  // server-channels
+  [class*="sidebar-"] {
+    > [class*="container-"] { background: none }
+    > [class*="panels-"] { background: none }
+  }
+
+  // server-chat
+  [class*="chat-"] {
+    background: none ;
+
+    // titlebar
+    [class*="title-"] { background: none }
+
+    // messages
+    [class*="content-"] {
+      [class*="scroller-"] { @include Scrollbar }
+
+      // text-input
+      form [class*="channelTextArea-"] [class*="inner-"] { background: none }
+    }
+
+    // memberlist
+    [class*="membersWrap-"] [class*="scroller-"] { background: none }
+  }
+
+  // PMs
+  [class*="privateChannels-"] { background: none }
+
+  // activity
+  [class*="activityFeed-"] { 
+    background: none;
+
+    [class*="container-"] { background: none }
+  }
+
+  // libary
+  [class*="gameLibrary-"] { 
+    background: none;
+
+    [class*="libraryHeader-"] { background: none }
+    [class*="scroller-"] { @include Scrollbar }
+  }
+
+  // nitro
+  [class*="applicationStore-"] { 
+    background: none;
+
+    [class*="headerBar-"] { background: none }
+    [class*="scroller-"] { @include Scrollbar }
+  }
+
+  // friends
+  [class*="sidebar-"] ~ [class*="container-"] { 
+    background: none;
+
+    [class*="container-"] { background: none }
+    [class*="scroller-"] { @include Scrollbar }
+  }
+
+  // Discovereeeee
+  [class*="guilds-"] ~ [class*="base-"] [class*="pageWrapper-"] { background: none }
+}
+
+// settings tab
+#user-settings {
+  background: none;
+
+  [class*="standardSidebarView-"] {
+     background: none;
+
+    > [class*="sidebarRegion-"] { background: none }
+    > [class*="contentRegion-"] {
+      background: none;
+
+      [class*="scroller-"] { @include Scrollbar }
     }
   }
 }
