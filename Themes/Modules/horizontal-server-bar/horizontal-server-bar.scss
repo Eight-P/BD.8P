@@ -309,9 +309,12 @@ $current_version: "0.3.6" ;
 // visibility fix
 [class*="guilds-"] ~ [class*="base-"] {
   overflow: visible ;
-  contain: size layout;
+  contain: size layout ;
   
-  > [class*="content-"], [class*="sidebar-"], [class*="sidebar-"] > [class*="container-"] { contain: layout }
+  > [class*="content-"], [class*="sidebar-"], [class*="sidebar-"] > [class*="container-"] { 
+    contain: layout ;  
+    overflow: visible ;
+  }
 }
 
 [class*="sidebar-"] > [class*="container-"] > [class*="container-"]:nth-of-type(1) {
