@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.7" ;
+$current_version: "0.3.71" ;
 
 
 // Version
@@ -462,19 +462,6 @@ body {
       position: center ;
       repeat: no-repeat ;
       blend-mode: overlay ;
-    }
-  }
-
-  //Server-bar
-  [class*="scroller-"] {
-    
-    // Server Icon Obj
-    [class*="listItem-"] {
-      // shadows can cause bugs for some reason
-      filter: drop-shadow( -2px 2px 3px black );
-      
-      // text-icon
-      [class*="acronym-"] { filter: drop-shadow( -2px 2px 3px black ) }
     }
   }
 }
