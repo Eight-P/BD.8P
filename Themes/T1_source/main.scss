@@ -1,12 +1,9 @@
-$v: 3 ;
-$current_version: "0.3.6" ;
+$v: 4 ; // required theme file version
+$current_version: "0.3.7" ;
 
-.theme-dark {
-  --red: #f04747 ;
-}
 
 // Version
-[class*="standardSidebarView-"] [class*="sidebar-"] #bd-settings-sidebar > span:after {
+#user-settings #bd-settings-sidebar > span:after {
   content: "T1-Theme v#{$current_version} by Eight_P";
   display: block;
   font-size: 12px ;
@@ -15,78 +12,64 @@ $current_version: "0.3.6" ;
   padding: 2px 10px;
 }
 
-// Info / disclaimer
-@mixin disclaimer ($text, $type) {
+// Disclaimer
+@mixin disclaimer ($text, $op) {
   
-  // Header/Text
-  [class*="layers-"] > [class*="layer-"]:first-child {
-    
-    &::before {
-      content: $text ;
-      position: absolute ;
-      top: calc(50vh - 50px) ;
-      left: calc(50vw - 250px) ;
-      height: 100px ;
-      width: 500px ;
-      background: #d8d8d8 ;
-      border-radius: 15px ;
-      box-sizing: border-box ;
-      padding-top: 25px ;
-      text-align: center ;
-      color: black ;
-      font-weight: 500 ;
-    }
-    
-    [class*="container-"] {
-      display: none ;
-    }
+  &::before {
+    content: $text ;
+    position: absolute;
+    height: 22px ;
+    width: 100vw ;
+    background: var(--activity-card-background) ;
+    opacity: $op ;
+    color: var(--text-normal) ;
+    text-align: center ;
+    line-height: 22px ;
+    font-size: 12px ;
+    font-weight: 600 ;
+    letter-spacing: .5px ;
   }
   
-  // Body/Content
-  @if $type == "Settings" {
+  &::after {
+    content: url(/assets/4757a3d415435a57d4db6fca022872e3.svg);
+    position: absolute;
+    padding: 1px ;
+    height: 19px ;
+    width: 19px ;
+    opacity: $op ;
+  }
+  
+  #app-mount [class*="titleBar-"] [class*="wordmarkWindows-"] { opacity: calc(1 - #{$op}) }
+}
 
-    [class*="sidebar-"] > [class*="panels-"] {
-      contain: none ;
+@mixin scrollbar () {
+  [class*="scroller-"] {
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--background-secondary);
     }
+    
+    &::-webkit-scrollbar-track { background: transparent }
 
-    [class*="sidebar-"] > [class*="panels-"] > [class*="container-"]:nth-last-of-type(1) {
+    &::-webkit-scrollbar { width: 12px }
 
-      > [class*="flex-"] > button:nth-last-of-type(1) {
-        position: absolute;
-        display: block ;
-        top: calc(50vh - 20px) ;
-        left: calc(50vw - 25px ) ;
-        height: 40px ;
-        width: 40px ;
-        z-index: 5002 ;
-        margin: 5px ;
-
-        > [class*="contents-"] { margin-top: 0 }
-
-        svg {
-          height: 30px ;
-          width: 30px ;
-
-          path { fill: black }
-        }
-        &::before {
-          content: 'Settings';
-          position: absolute ;
-          right: 50px ;
-          line-height: 40px ;
-          color: black ;
-          font-weight: 500 ;
-          font-size: 15px ;
-          pointer-events: none ;
-        }
-      }
-    }
+    &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
   }
 }
 
 // general Stuff
 body {
   
+  // if the Theme file needs an update
+  @include disclaimer (
+    'Theme update requires a local file update!  Pls check : " github.com/Eight-P/BetterDiscord-Stuff " and replace your "T1.theme.css" file ', 
+    calc( #{$v} - var(--F_V,0))
+  );
+
+  // if Minimal Mode is active
+  &.bd-minimal { @include disclaimer ('Pls turn off "Minimal Mode" in order to use the Theme', 1) }
+  
+  // Main BG
   #app-mount::before {
     content: " " ;
     position: absolute ;
@@ -102,37 +85,14 @@ body {
     z-index: -1 ;
   }
   
-  // if Minimal Mode is active
-//  &.bd-minimal { @include disclaimer ('PLs turn off "Minimal Mode" in order to use the Theme', "Settings") }
-  
-  // disclaimer in case the theme file itself needs an update
-  &::before {
-    content: "updated theme file available, pls check : github.com/Eight-P/BetterDiscord-Stuff" ;
-    position: absolute;
-    height: 22px ;
-    width: 100vw ;
-    background: var(--Color_3) ;
-    z-index: 3000 ;
-    opacity: calc( #{$v} - var(--F_V,0)) ;
-    color: var(--Color_1) ;
-    padding-left: 100px ;
-    line-height: 22px ;
-    font-size: 14px ;
-    letter-spacing: .4px ;
-  }
-
-  // if dark-theme is not used (LuL)
-//  #app-mount > [class*="app-"] > [class*="app-"]:not([class*="theme-dark"]) {
-//    @include disclaimer ('PLs use dark-mode in order to use the Theme', "Settings")
-//  }
-  
-  // removing transition effect, also fixed flickering somehow
+  // removing transition effect 
   [class*="layers-"] > [class*="layer-"] {
     transform: scale(1) translateZ(0px) !important ;
 
     &:first-child { opacity: 0 !important }
     &:last-child { opacity: 1 !important }
   }
+
   // pluginNotice-bar
   #pluginNotice, [class*="app-"] > [class*="notice-"]{
     position: absolute ;
@@ -150,8 +110,8 @@ body {
   left: 0 ;
   height: 1px ;
   width: 100vw ;
-  box-shadow: 0 -1px 0 var(--Color_2);
-  opacity: .6 ;
+  box-shadow: 0 -1px 0 var(--header-secondary);
+  opacity: .5 ;
   pointer-events: none ;
 }
 
@@ -162,6 +122,9 @@ body {
   ~ [class*="gameLibrary-"] [class*="libraryHeader-"],
   ~ [class*="applicationStore-"] [class*="headerBar-"],
   ~ [class*="container-"] > [class*="container-"] {
+    
+    [class*="children-"]::after { display: none }
+    
     [class*="toolbar-"] {
       //Icons
       > [class*="iconWrapper-"], > [class*="anchor-"] {
@@ -171,11 +134,10 @@ body {
 
         svg {
           width: 20px ;
-          color: var(--Color_1) ;
-          opacity: .7 ;
+          color: var(--interactive-normal) ;
         }
 
-        &:hover svg { opacity: 1 }
+        &:hover svg { color: var(--interactive-hover) }
       }
     }
   }
@@ -183,24 +145,18 @@ body {
 
 //Titel-bar Server-view
 [class*="sidebar-"] ~ [class*="chat-"] [class*="title-"]{
-  box-shadow: none ;
   
   //Channel info
   [class*="children-"] {
     
-    // #
-    [class*="iconWrapper-"] svg {
-      width: 20px ;  
-      color: var(--Color_2) ;
-    }
-    
-    // Channel Name
-    [class*="title-"] { color: var(--Color_1) }
+    [class*="iconWrapper-"], [class*="title-"], [class*="divider-"] { display: none }
     
      // Channel Topic
     [class*="topic-"] {
-      color: var(--Color_1) ;
-      opacity: .7 ;
+      margin: 0 8px ;
+      text-align: center ;
+      
+      &:hover { color: var(--interactive-hover) }
     }
   }
   
@@ -234,18 +190,16 @@ body {
         }
 
         [class*="icon-"] svg {
-          color: var(--Color_1) ;
+          color: var(--interactive-normal) ;
           transition: none ;
-
-          &:first-child { opacity: .7 }
         }
-
-        &:hover [class*="icon-"] svg:first-child { opacity: 1 }
       }
+      
+      &:not([class*="open-"]):hover [class*="icon-"] svg { color: var(--interactive-hover) }
 
       //Search Bar opend
       &[class*="open-"] {
-        border-bottom: 1px solid var(--Color_1) ;
+        border-bottom: 1px solid var(--header-secondary) ;
 
         [class*="searchBar-"] {
           width: 244px ;
@@ -259,8 +213,8 @@ body {
 
           [class*="icon-"] svg {
 
-            &:first-child { opacity: 0 }
-            &:last-child { opacity: .7 }
+            &:first-child { visibility: hidden }
+            &:last-child { opacity: 1 }
           }
         }
       }
@@ -286,29 +240,17 @@ body {
       [class*="content-"] {
         background: transparent;
 
-        [class*="name-"] { color: var(--Color_2) }
-
         [class*="icon-"] {
           width: 15px ;
-          color: var(--Color_2);
-          opacity: .9 ;
+          color: var(--channels-default);
+          opacity: .8 ;
         }
         
         // channel-options
-        [class*="children-"] [class*="iconItem-"] {
-          display: none ;
-          color: var(--Color_2);
-          opacity: .8 ;
-
-          &:hover {
-            color: var(--Color_1);
-            opacity: 1 ;
-          }
-        }
+        [class*="children-"] [class*="iconItem-"] { display: none }
         
         // connection-limit
         [class*="children-"] [class*="userLimit-"] [class*="wrapper-"]{
-          color: var(--Color_2) ;
           
           [class*="users-"], [class*="total-"] { background: transparent }
           
@@ -321,31 +263,35 @@ body {
         }
         
         // mentions indicator
-        [class*="iconSpacing-"] [class*="wrapper-"] {
-          background-color: transparent ;
-          border-bottom: 2px solid rgba(240, 71, 71, 0.7) ;
+        [class*="numberBadge-"] {
+          background-color: transparent !important ;
+          border-bottom: 2px solid var(--red) ;
           border-radius: 0 ;
-          box-shadow: none ;
-          color: var(--Color_1) ;
+          color: var(--text-normal) ;
         }
         
-        // Highlight on hover
-        &:hover {
-          [class*="children-"] [class*="iconItem-"] { display: block }
-          [class*="name-"] { color: var(--Color_1) }
-          [class*="icon-"] { color: var(--Color_1) }
-        }
+        // icon on hover
+        &:hover [class*="children-"] [class*="iconItem-"] { display: block } 
+      }
+      
+      // muted
+      [class*="modeMuted-"] {
+        
+        [class*="name-"] { color: var(--channels-default) }
+        [class*="icon-"] { color: var(--interactive-muted) }
+      }
+      
+      // unread
+      [class*="modeUnread-"] {
+        
+        [class*="unread-"] { background-color: var(--interactive-hover) }
+        [class*="name-"] { color: var(--channels-default) }
       }
       
       // selected, connected
       [class*="modeSelected-"], [class*="modeConnected-"] {
 
-        [class*="name-"] { color: var(--Color_1) }
-
-        [class*="icon-"] { 
-          color: var(--Color_1);
-          opacity: 1 ;
-        }
+        [class*="icon-"] { color: var(--interactive-active) }
       }
     }
   }
@@ -355,6 +301,7 @@ body {
 [class*="sidebar-"] > [class*="panels-"] {
   contain: layout ;
 
+  // Profile Container
   [class*="container-"]:nth-last-of-type(1) {
     position: absolute ;
     height: 48px ;
@@ -389,67 +336,81 @@ body {
       }
     }
   }
-  [class*="container-"]:nth-of-type(2) { border: none }
+  
+  // connection Container
+  [class*="container-"] { 
+    border: none ;
+    
+    button { background: none }
+  }
 }
 
 // Chat
-[class*="chat-"] [class*="spacer-"] {
-  //Server-messages
-  [class*="messagesWrapper-"] {
+[class*="chat-"]  {
+  
+  > [class*="content-"]::before { display: none }
+  
+  [class*="spacer-"] {
+    //Server-messages
+    [class*="messagesWrapper-"] { @include scrollbar() }
 
-    [class*="scroller-"] {
+    // Text-Input
+    > form {
+      margin: 5px 0 0 0 ;
 
-      &::-webkit-scrollbar-thumb {
-        background-color: var(--Color_3) ;
-        border-color: transparent  ;
+      [class*="channelTextArea-"] {
+        margin: 0 ;
+        padding: 0 ;
+
+        [class*="inner-"] { 
+          background: transparent ;
+
+          [class*="buttons-"] {
+
+            [class*="emojiButton-"] {
+              opacity: .6 ;
+
+              &[class*="emojiButtonHovered-"] { opacity: 1 }
+            }
+          }
+        }
+      }
+      // no permission to write
+      [class*="channelTextAreaDisabled-"] [class*="innerDisabled-"]::after {
+        content: " " ;
+        background: url("https://i.imgur.com/za6Yq9g.png") ;
+        position: absolute;
+        right: 0 ;
+        bottom: 0 ;
+        height: 36px ;
+        width: 36px ;
+        background-size: cover ;
+        background-repeat: no-repeat ;
       }
 
-      &::-webkit-scrollbar { width: 12px }
-      
-      &:hover::-webkit-scrollbar-thumb { background-color: var(--Color_2) }
-    }
-  }
-  // Text-Input
-  > form {
-    margin: 5px 0 0 0 ;
+      // typing indicator
+      [class*="typing-"] {
+        background: transparent ;
+        position: absolute ;
+        top: -15px ;
+        height: 15px ;
+        box-sizing: border-box ;
+        padding: 0 15px ;
 
-    [class*="channelTextArea-"] {
-      margin: 0 ;
-      padding: 0 ;
+        [class*="text-"] { line-height: 15px }
 
-      [class*="inner-"] { background: transparent }
-    }
-    [class*="channelTextAreaDisabled-"] [class*="innerDisabled-"]::after {
-      content: " " ;
-      background: url("https://i.imgur.com/za6Yq9g.png") ;
-      position: absolute;
-      right: 0 ;
-      bottom: 0 ;
-      height: 36px ;
-      width: 36px ;
-      background-size: cover ;
-      background-repeat: no-repeat ;
-    }
-    [class*="typing-"] {
-      background: transparent ;
-      position: absolute ;
-      top: -15px ;
-      height: 15px ;
-      box-sizing: border-box ;
-      padding: 0 15px ;
+        [class*="spinner-"] { margin: 0 }
 
-      [class*="text-"] { line-height: 15px }
+        [class*="cooldownWrapper-"] {
+          color: transparent !important;
+          width: 15px ;
 
-      [class*="spinner-"] { margin: 0 }
+          [class*="slowModeIcon-"] {
+            position: absolute ;
+            height: 15px ;
 
-      [class*="cooldownWrapper-"] {
-        font-size: 0 ;
-
-        [class*="slowModeIcon-"] {
-          margin: 0 ;
-          height: 15px ;
-
-          path { fill: var(--Color_2) }
+            path { fill: var(--interactive-normal) }
+          }
         }
       }
     }
@@ -467,23 +428,15 @@ body {
     height: 37px ;
     margin: 5px 0 5px 14px ;
     
-    [class*="layout-"] {
-      height: 37px ;
-      
-      // status cut-out
-//      [class*="avatar-"] img {
-//        filter: opacity(100%);
-//        border-radius: 50% ;
-//      }
-    }
+    [class*="layout-"] { height: 37px }
     
     &[class*="selected-"] { 
-      border-right: 3px solid var(--Color_1);
+      border-right: 3px solid var(--interactive-hover);
       
       [class*="layout-"] { background: none }
     }
     
-    &:hover { border-right: 3px solid var(--Color_1) }
+    &:hover { border-right: 3px solid var(--interactive-hover) }
 
     &[class*="offline-"] { 
       
@@ -517,18 +470,66 @@ body {
     
     // Server Icon Obj
     [class*="listItem-"] {
-      // can cause bugs for some reason
-      filter: drop-shadow( -2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0)) );
-//      filter: drop-shadow( -2px 2px 3px black);
+      // shadows can cause bugs for some reason
+      filter: drop-shadow( -2px 2px 3px black );
       
       // text-icon
-      [class*="acronym-"] { filter: drop-shadow( -2px 2px 3px rgba(0, 0, 0, var(--Server_shadow, 0))) }
+      [class*="acronym-"] { filter: drop-shadow( -2px 2px 3px black ) }
     }
   }
 }
 
 //Home
 [class*="sidebar-"] {
+  
+  @mixin searchbar () {
+    
+    [class*="libraryFilter-"], [class*="browseSearch-"] { width: auto }
+    
+    [class*="toolbar-"] > div {
+      
+      [class*="searchBar-"] {
+        Background: transparent ;
+
+        input {
+          width: 22px ;
+          height: 22px ;
+          padding: 0 ;
+          margin: 0 ;
+          min-width: 22px ;
+          line-height: 22px ;
+          cursor: pointer ;
+          transition: width .2s ;
+          color: transparent ;
+          
+          &::placeholder {
+            visibility: hidden ;
+          }
+          
+          &:not(:placeholder-shown) {
+            width: 240px ;
+            border-bottom: 1px solid var(--interactive-hover);
+            color: var(--text-normal) ;
+          }
+        }
+
+        [class*="iconLayout-"] {
+          position: absolute ;
+          right: 0 ;
+          pointer-events: none ;
+        }
+      }
+      
+      &[class*="focused-"] [class*="searchBar-"] {
+        
+        input {
+          width: 240px ;
+          border-bottom: 1px solid var(--interactive-hover);
+          color: var(--text-normal) ;
+        }
+      }
+    }
+  }
   
   // DMs
   > [class*="privateChannels-"] {
@@ -555,12 +556,12 @@ body {
         }
         
         &[class*="selected-"] [class*="layout-"]{
-          border-left: 3px solid var(--interactive-active) ;
+          border-left: 3px solid var(--interactive-hover) ;
           background: transparent ;
         }
         
         &:hover [class*="layout-"] {
-          border-left: 3px solid var(--interactive-active) ;
+          border-left: 3px solid var(--interactive-hover) ;
           background: var(--background-modifier-selected) ;
         }
       }
@@ -568,38 +569,56 @@ body {
   }
   
   // Activity-Feed
-  ~ [class*="activityFeed-"] [class*="scroller-"] {
-    background: transparent ;
-  
-    [class*="wrappedCard-"] {
+  ~ [class*="activityFeed-"] {
+    
+    [class*="scroller-"] {
       background: transparent ;
-
-      [class*="wrapper-"] {
-        padding-bottom: 10px ;
-      }
-    }
-
-    [class*="outer-"] {
-      background: transparent ;
-
-      [class*="card-"] {
+      
+      &::-webkit-scrollbar { display: none }
+      
+      [class*="wrappedCard-"] {
         background: transparent ;
 
-        [class*="body-"] [class*="section-"] {
-          background: transparent ;
+        [class*="wrapper-"] {
+          padding-bottom: 10px ;
         }
       }
+
+      [class*="outer-"] {
+        background: transparent ;
+
+        [class*="card-"] {
+          background: transparent ;
+          
+          [class*="itemContainer-"] [class*="popout-"] {
+            z-index: 3001 ;
+          }
+
+          [class*="body-"] {
+            background: transparent ;
+          }
+        }
+      }
+
+      // nitro ad (hopefully)
+      [class*="flex-"] > [class*="column-"] .card-GqTca8.card-3SDdMD.outer-2IVh5n.interactive-1BeKSi { display: none }
     }
   }
   
   // Game-Library
   ~ [class*="gameLibrary-"] {
     
+    [class*="libraryHeader-"] { @include searchbar() }
+    
+    [class*="scroller-"]::-webkit-scrollbar { display: none }
   }
   
   // Nitro (applicationStore)
   ~ [class*="applicationStore-"] {
     
+    [class*="homeWrapperNormal-"] { @include searchbar() }
+    
+    [class*="scroller-"]::-webkit-scrollbar { display: none }
   }
   
   // Friends-list
@@ -718,6 +737,7 @@ body {
             text-align: center ;
             margin-top: 40px ;
             padding: 0 ;
+            display: none ;
 
             [class*="friendsAction-"] {
               display: inline-block ;
@@ -737,6 +757,7 @@ body {
         }
         &:hover {
           [class*="friendsColumnStatus-"] [class*="statusText-"] { display: none }
+          [class*="friendsColumnActions-"] { display: block }
         }
       }
     }
@@ -758,29 +779,29 @@ body {
         opacity: .8 ;
       }
       
-      // Settings Tab-Obj
+      // categorie name
       [class*="item-"], .ui-tab-bar-item {
-        color: var(--channels-default) !important ;
-        background: transparent !important ;
-        border-radius: 0 !important ;
-        padding: 4px 10px 4px 10px  !important ;
-        margin: 2px 0 4px 0 !important ;
+        color: var(--interactive-normal) ;
+        background: none !important ;
+        border-radius: 0 ;
+        padding: 0 10px ;
+        margin: 6px 0 ;
+        box-sizing: border-box ;
         
-        &:hover {
-          color: var(--interactive-hover) !important ;
-        }
+        &:hover { color: var(--interactive-hover) }
       }
+      
+      .ui-tab-bar-item { margin: 12px 0 }
+      
       [class*="item-"][class*="selected-"], .ui-tab-bar-item.selected {
         border-left: 2px solid var(--interactive-active) ;
-        color: var(--interactive-active) !important ;
+        color: var(--interactive-active) ;
       }
     }
   }
   
   // Content
-  [class*="contentRegion-"] {
-    
-  }
+  [class*="contentRegion-"] { @include scrollbar() }
 }
 
 // Popouts
@@ -813,19 +834,14 @@ body {
 
     [class*="header-"] {
 
-      &[class*="headerNormal-"] {
-        background-color: var(--Color_3) ;
-      }
+      &[class*="headerNormal-"] { background-color: var(--background-tertiary) }
       &[class*="headerSpotify-"] {
-        background-color: var(--Color_3) ;
+        background-color: var(--background-tertiary) ;
 
-        [class*="timeBarUserPopout-"] ~ [class*="flex-"] {
-          display: none ;
-        }
+        [class*="timeBarUserPopout-"] ~ [class*="flex-"] { display: none }
       }
-      &[class*="headerPlaying-"] {
-        background-color: var(--Color_3) ;
-      }
+      &[class*="headerPlaying-"] { background-color: var(--background-tertiary) }
+      &[class*="headerStreaming-"] { background-color: #593695 }
 
       [class*="avatarWrapper-"] {
         filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
@@ -836,13 +852,8 @@ body {
         }
       }
     }
-
-    > [class*="body-"] { background-color: var(--Color_4) }
-
-    [class*="footer-"] {
-
-      [class*="protip-"] { display: none }
-    }
+    // weird note thing
+    [class*="footer-"] { [class*="protip-"] { display: none } }
   }
 }
 
@@ -855,13 +866,7 @@ body {
       background: var(--activity-card-background) ;
       box-shadow: 2px 2px 10px black ;
 
-      [class*="resultsGroup-"] {
-
-        [class*="option-"] {
-
-          &:after { display: none }
-        }
-      }
+      [class*="resultsGroup-"] [class*="option-"]::after { display: none }
     }
   }
 }
@@ -871,7 +876,7 @@ body {
 
   // header
   [class*="topSection"] {
-    background-color: var(--Color_3) ;
+    background-color: var(--background-tertiary) ;
     
     [class*="header-"] {
 
@@ -883,47 +888,52 @@ body {
           border-radius: 7.5% ;
         }
       }
+      
+      // Colored Profile-Badges
+      [class*="profileBadgeWrapper-"] {
+        // Bravery
+        [class*="profileBadgeHypeSquadOnlineHouse1-"] {background-image: url(https://discordapp.com/assets/64ae1208b6aefc0a0c3681e6be36f0ff.svg)}
+        // Brilliance
+        [class*="profileBadgeHypeSquadOnlineHouse2-"] {background-image: url(https://discordapp.com/assets/48cf0556d93901c8cb16317be2436523.svg)}
+        // Balance
+        [class*="profileBadgeHypeSquadOnlineHouse3-"] {background-image: url(https://discordapp.com/assets/9fdc63ef8a3cc1617c7586286c34e4f1.svg)}
+        // EarlySupporter
+        [class*="profileBadgeEarlySupporter-"] {background-image: url(https://discordapp.com/assets/23e59d799436a73c024819f84ea0b627.svg)}
+        // Nitro
+        [class*="profileBadgePremium-"] {background-image: url(https://discordapp.com/assets/386884eecd36164487505ddfbac35a9d.svg)}
+        // Partenr
+        [class*="profileBadgePartner-"] {background-image: url(https://discordapp.com/assets/33fedf082addb91d88abc272b4b18daa.svg)}
+        // Guild-Sub-1
+        [class*="profileGuildSubscriberlvl1-"] {background-image: url(https://discordapp.com/assets/7dc50a46914f03a1c6698133199ad39c.svg)}
+        // Guild-Sub-4
+        [class*="profileGuildSubscriberlvl4-"] {background-image: url(https://discordapp.com/assets/ac20c019c11f36fb22b4ce13725a1aff.svg)}
+      }
     }
   }
 
    // body
   [class*="flex-"] > [class*="body-"] {
-    background-color: var(--Color_4) ;
     
-    [class*="userInfoSection-"]:last-child { border-color: var(--Color_3) }
+    [class*="userInfoSection-"]:last-child { border-color: var(--background-tertiary) }
     
     [class*="connectedAccounts-"] > [class*="flex-"]{
       border: none ;
       
-      [class*="connectedAccountName-"] {
-        color:  var(--Color_2) ;
-      }
+      [class*="connectedAccountName-"] { color:  var(--channels-default) }
     }
   }
 }
 
 // Discoveree
 [class*="guilds-"] ~ [class*="base-"] [class*="pageWrapper-"] {
-  
   background: transparent ;
   
   > img { display: none }
   
-  [class*="scroller-"] {
+  @include scrollbar();
     
-    &::-webkit-scrollbar-track { background: transparent }
-    &::-webkit-scrollbar-thumb { background-color: var(--header-secondary) }
-    
-    [class*="body-"] {
-      
-//      [class*="search-"] [class*="searchBox-"] {
-//        border-radius: 0 ;
-//        background: transparent ;
-//        box-shadow: 0 2px 0px 0 var(--Color_2) ;
-//      }
-      
-//      [class*="searchHelpText-"] { display: none }
-    }
+  [class*="body-"] [class*="search-"] {
+    [class*="searchBox-"], [class*="languageSelector-"] [class*="container"] { background: var(--background-primary) }
   }
 }
 
