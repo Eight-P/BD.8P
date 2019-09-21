@@ -1,4 +1,4 @@
-/* V_0.3.2 */ 
+/* V_0.3.3 */ 
 
 // for testing 
 //#app-mount::before {
@@ -11,6 +11,8 @@
 //}
 
  @mixin Scrollbar () {
+  background: none ;
+   
   &::-webkit-scrollbar-track-piece {
     background-color: transparent ;
     border: none ;
@@ -30,16 +32,23 @@ body {
 }
 
 
-[class*="baseLayer-"] {
+[class*="layers-"] [class*="layer-"] {
   background: none ;
 
   // serverbar
-  [class*="guilds-"] { background: none }
+  [class*="guilds-"] { 
+    background: none ;
+    
+    [class*="scroller-"] { background: none }
+  }
 
   // server-channels
   [class*="sidebar-"] {
+    background: none ;
+    
     > [class*="container-"] { background: none }
     > [class*="panels-"] { background: none }
+    [class*="privateChannels-"] [class*="scroller-"]{ background: none }
   }
 
   // server-chat
@@ -50,8 +59,9 @@ body {
     [class*="title-"] { background: none }
 
     // messages
-    [class*="content-"] {
-      [class*="scroller-"] { @include Scrollbar }
+    [class*="content-"] [class*="scroller-"] {
+      @include Scrollbar ;
+      background: none ;
 
       // text-input
       form [class*="channelTextArea-"] [class*="inner-"] { background: none }
@@ -106,11 +116,19 @@ body {
   [class*="standardSidebarView-"] {
      background: none;
 
-    > [class*="sidebarRegion-"] { background: none }
+    > [class*="sidebarRegion-"] { 
+      background: none ;
+      
+      [class*="scroller-"] { background: none }
+    }
+    
     > [class*="contentRegion-"] {
       background: none;
 
-      [class*="scroller-"] { @include Scrollbar }
+      [class*="scroller-"] { 
+        @include Scrollbar ;
+        background: none
+      }
     }
   }
 }
