@@ -1,4 +1,4 @@
-$current_version: "0.3.7" ;
+$current_version: "0.3.71" ;
 // Version
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -53,7 +53,7 @@ $current_version: "0.3.7" ;
         margin: 0px ;
         max-height: 60px ;
         width: 54px ;
-        display: -webkit-inline-box ;
+//        display: -webkit-inline-box ;
         
         //Icon Container
         [class*="#{$main_wrapper}"] {
@@ -66,6 +66,7 @@ $current_version: "0.3.7" ;
             width: 40px ;
             
             svg {
+              filter: drop-shadow( 2px 2px 3px black );
               height: 40px ; width: 40px ;
               background-color: transparent  ;
 
@@ -81,7 +82,10 @@ $current_version: "0.3.7" ;
                 }
                 
                 //Text
-                [class*="acronym-"] { background-color: transparent }
+                [class*="acronym-"] { 
+                  background-color: transparent;
+                  filter: drop-shadow( 2px 2px 3px black );
+                }
               }
               
               //Mask Obj (wich idk how it works)
@@ -133,6 +137,10 @@ $current_version: "0.3.7" ;
         &:first-child {
           position: absolute ;
           top: 10px ;
+          
+          svg[name="Nova_Discord"] {
+            filter: drop-shadow( 2px 2px 3px black );
+          }
           
           [class*="pill-"] { display: none }
           
@@ -253,7 +261,9 @@ $current_version: "0.3.7" ;
             width: 40px ;
             
             > svg {
-              height: 40px ; width: 40px ;
+              filter: drop-shadow( 2px 2px 3px black );
+              height: 40px ; 
+              width: 40px ;
               
               foreignObject > [class*="folder-"] {
                 background: transparent ;
