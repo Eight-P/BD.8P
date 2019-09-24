@@ -1,4 +1,4 @@
-/* V_0.3.3 */ 
+/* V_0.3.4 */ 
 
 // for testing 
 //#app-mount::before {
@@ -83,6 +83,14 @@ body {
 
   // libary
   [class*="gameLibrary-"] { 
+    background: none;
+
+    [class*="libraryHeader-"] { background: none }
+    [class*="scroller-"] { @include Scrollbar }
+  }
+  
+  // Gift Inventory
+  [class*="sidebar-"] ~ [class*="root-"]{ 
     background: none;
 
     [class*="libraryHeader-"] { background: none }
