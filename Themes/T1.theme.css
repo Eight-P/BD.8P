@@ -1,4 +1,4 @@
-//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":"0.3.8","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//{} 
+//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":"0.4.1","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//{} 
 
 /* -- Transparency-Theme -- */
 @import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/Modules/transparency/transparency.css?v=1);
@@ -39,13 +39,13 @@
 /* darkening the Server_Background (0 - 100) 
 */
   
-  --Server_banner: 1 ;
+  --Server_banner: 0 ;
 /* show/hide server banner ( 0=off, 1=on) 
 */
 
   --Background_Main: url(https://i.imgur.com/dUVKxuu.jpg);
   --Background_Server: url(https://i.imgur.com/a7y0VWO.png);
-/* Backgrounds (can be image link or color code) " url(<link>) "
+/* Backgrounds can be an image link as well as color code. Syntax for links: "url(<link>);"
 */
 
 /* - Defaults
@@ -55,116 +55,117 @@
   
 }
 
-.theme-dark {
+
+/* --- Discord's weird color themes --- */
+/* (i) to the right are the defaults */ 
+
+
+.theme-dark {  /*  - Dark-mode  */
   
-  /*  --- Discord's weird color themes */
+  --header-primary: #fff ;                                            /* #fff */
+  --header-secondary: #b9bbbe ;                                       /* #b9bbbe */
   
-  /*  - Dark-mode  */
+  --text-normal: #dcddde ;                                            /* #dcddde */
+  --text-muted: #72767d ;                                             /* #72767d */
+  --text-link: #00b0f4 ;                                              /* #00b0f4 */
   
-  --header-primary: #fff ;            /* #fff */
-  --header-secondary: #b9bbbe ;       /*  #b9bbbe */
+  --channels-default: #8e9297 ;                                       /* #8e9297 */
   
-  --text-normal: #dcddde ;            /* #dcddde */
-  --text-muted: #72767d ;             /* #72767d */
-  --text-link: #00b0f4 ;              /* #00b0f4 */
+  --interactive-normal: #7c7d7e ;                                     /* #b9bbbe */
+  --interactive-hover: #dcddde ;                                      /* #dcddd */
+  --interactive-active: #fff ;                                        /* #fff */
+  --interactive-muted: #4f545c ;                                      /* #4f545c */
   
-  --channels-default: #8e9297 ;       /* #8e9297 */
+  --background-primary: #36393f ;                                     /* #36393fh */
+  --background-secondary: #2f3136 ;                                   /* #2f3136 */
+  --background-tertiary: #202225 ;                                    /* #202225 */
+  --background-accent: #4f545c ;                                      /* #4f545c */
+  --background-floating: #18191c ;                                    /* #18191c */
   
-  --interactive-normal: #7c7d7e ;     /* #b9bbbe */
-  --interactive-hover: #dcddde ;      /* #dcddd */
-  --interactive-active: #fff ;        /* #fff */
-  --interactive-muted: #4f545c ;      /* #4f545c */
-  
-  --background-primary: #36393f ;     /* #36393fh */
-  --background-secondary: #2f3136 ;   /* #2f3136 */
-  --background-tertiary: #202225 ;    /* #202225 */
-  --background-accent: #4f545c ;      /* #4f545c */
-  --background-floating: #18191c ;    /* #18191c */
-  
-  --background-modifier-hover: rgba(79,84,92,0.16);    /* rgba(79,84,92,0.16) */
-  --background-modifier-active: rgba(79,84,92,0.24);   /* rgba(79,84,92,0.24) */
-  --background-modifier-selected: rgba(79,84,92,0.32); /* rgba(79,84,92,0.32) */
-  --background-modifier-accent: hsla(0,0%,100%,0.06);  /* hsla(0,0%,100%,0.06) */
+  --background-modifier-hover: rgba(79,84,92,0.16);                   /* rgba(79,84,92,0.16) */
+  --background-modifier-active: rgba(79,84,92,0.24);                  /* rgba(79,84,92,0.24) */
+  --background-modifier-selected: rgba(79,84,92,0.32);                /* rgba(79,84,92,0.32) */
+  --background-modifier-accent: hsla(0,0%,100%,0.06);                 /* hsla(0,0%,100%,0.06) */
   
   --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05); 
   /* 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05) */
-  --elevation-high: 0 8px 16px rgba(0,0,0,0.24); /* 0 8px 16px rgba(0,0,0,0.24) */
+  --elevation-high: 0 8px 16px rgba(0,0,0,0.24);                      /* 0 8px 16px rgba(0,0,0,0.24) */
   
-  --logo-primary: #fff ;                                   /* #fff */
-  --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);   /* 0 1px 1px rgba(0,0,0,0.4) */
-  --channeltextarea-background: #40444b ;                  /* #40444b */
-  --activity-card-background: #202225 ;                    /* #202225 */
+  --logo-primary: #fff ;                                              /* #fff */
+  --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);              /* 0 1px 1px rgba(0,0,0,0.4) */
+  --channeltextarea-background: #40444b ;                             /* #40444b */
+  --activity-card-background: #202225 ;                               /* #202225 */
   
-  --red: #f04747 ;                                         /* #f04747 */
+  --red: #f04747 ;                                                    /* #f04747 */
   
   /* deprecated */
   
-  --deprecated-panel-background: #292b2f ;                           /* #292b2f */
-  --deprecated-card-bg: rgba(32,34,37,0.6);                          /* rgba(32,34,37,0.6) */
-  --deprecated-card-editable-bg: rgba(32,34,37,0.3);                 /* rgba(32,34,37,0.3) */
-  --deprecated-store-bg: #36393f ;                                   /* #36393f */
-  --deprecated-quickswitcher-input-background: #72767d ;             /* #72767d */
-  --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3); /* hsla(0,0%,100%,0.3) */
-  --deprecated-text-input-bg: rgba(0,0,0,0.1);                       /* rgba(0,0,0,0.1) */
-  --deprecated-text-input-border: rgba(0,0,0,0.3);                   /* rgba(0,0,0,0.3) */
-  --deprecated-text-input-border-hover: #040405 ;                    /* #040405 */
-  --deprecated-text-input-border-disabled: #202225 ;                 /* #202225 */
-  --deprecated-text-input-prefix: #dcddde ;                          /* #dcddde */
+  --deprecated-panel-background: #292b2f ;                            /* #292b2f */
+  --deprecated-card-bg: rgba(32,34,37,0.6);                           /* rgba(32,34,37,0.6) */
+  --deprecated-card-editable-bg: rgba(32,34,37,0.3);                  /* rgba(32,34,37,0.3) */
+  --deprecated-store-bg: #36393f ;                                    /* #36393f */
+  --deprecated-quickswitcher-input-background: #72767d ;              /* #72767d */
+  --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);  /* hsla(0,0%,100%,0.3) */
+  --deprecated-text-input-bg: rgba(0,0,0,0.1);                        /* rgba(0,0,0,0.1) */
+  --deprecated-text-input-border: rgba(0,0,0,0.3);                    /* rgba(0,0,0,0.3) */
+  --deprecated-text-input-border-hover: #040405 ;                     /* #040405 */
+  --deprecated-text-input-border-disabled: #202225 ;                  /* #202225 */
+  --deprecated-text-input-prefix: #dcddde ;                           /* #dcddde */
   
 }
-.theme-light {
+
+
+.theme-light {  /*  - Light-mode  */
+
+  --header-primary: #060607 ;                                         /* #060607 */
+  --header-secondary: #4f5660 ;                                       /* #4f5660 */
+
+  --text-normal: #2e3338 ;                                            /* #2e3338 */
+  --text-muted: #747f8d ;                                             /* #747f8d */
+  --text-link: #0067e0 ;                                              /* #0067e0 */
+
+  --channels-default: #6a7480 ;                                       /* #6a7480 */
   
-   /*  - Light-mode  */
+  --interactive-normal: #4f5660 ;                                     /* #4f5660 */
+  --interactive-hover: #2e3338 ;                                      /* #2e3338 */
+  --interactive-active: #060607 ;                                     /* #060607 */
+  --interactive-muted: #c7ccd1 ;                                      /* #c7ccd1 */
 
-  --header-primary: #060607 ;         /* #060607 */
-  --header-secondary: #4f5660 ;       /* #4f5660 */
+  --background-primary: #fff ;                                        /* #fff */
+  --background-secondary: #f2f3f5 ;                                   /* #f2f3f5 */
+  --background-tertiary: #e3e5e8 ;                                    /* #e3e5e8 */
+  --background-accent: #747f8d ;                                      /* #747f8d */
+  --background-floating: #fff ;                                       /* #fff */
 
-  --text-normal: #2e3338 ;            /* #2e3338 */
-  --text-muted: #747f8d ;             /* #747f8d */
-  --text-link: #0067e0 ;              /* #0067e0 */
-
-  --channels-default: #6a7480 ;       /* #6a7480 */
-  
-  --interactive-normal: #4f5660 ;     /* #4f5660 */
-  --interactive-hover: #2e3338 ;      /* #2e3338 */
-  --interactive-active: #060607 ;     /* #060607 */
-  --interactive-muted: #c7ccd1 ;      /* #c7ccd1 */
-
-  --background-primary: #fff ;        /* #fff */
-  --background-secondary: #f2f3f5 ;   /* #f2f3f5 */
-  --background-tertiary: #e3e5e8 ;    /* #e3e5e8 */
-  --background-accent: #747f8d ;      /* #747f8d */
-  --background-floating: #fff ;       /* #fff */
-
-  --background-modifier-hover: rgba(116,127,141,0.08); /* rgba(116,127,141,0.08) */
-  --background-modifier-active: rgba(116,127,141,0.16); /* rgba(116,127,141,0.16) */
-  --background-modifier-selected: rgba(116,127,141,0.24); /* rgba(116,127,141,0.24) */
-  --background-modifier-accent: rgba(6,6,7,0.08); /*rgba(6,6,7,0.08)  */
+  --background-modifier-hover: rgba(116,127,141,0.08);                /* rgba(116,127,141,0.08) */
+  --background-modifier-active: rgba(116,127,141,0.16);               /* rgba(116,127,141,0.16) */
+  --background-modifier-selected: rgba(116,127,141,0.24);             /* rgba(116,127,141,0.24) */
+  --background-modifier-accent: rgba(6,6,7,0.08);                     /* rgba(6,6,7,0.08)  */
 
   --elevation-low: 0 1px 0 rgba(6,6,7,0.1),0 1.5px 0 rgba(6,6,7,0.025),0 2px 0 rgba(6,6,7,0.025); 
   /* 0 1px 0 rgba(6,6,7,0.1),0 1.5px 0 rgba(6,6,7,0.025),0 2px 0 rgba(6,6,7,0.025) */
-  --elevation-high: 0 8px 16px rgba(0,0,0,0.16); /* 0 8px 16px rgba(0,0,0,0.16) */
+  --elevation-high: 0 8px 16px rgba(0,0,0,0.16);                      /* 0 8px 16px rgba(0,0,0,0.16) */
 
-  --logo-primary: #7289da ; /* #7289da */
-  --guild-header-text-shadow: 0 1px 1px hsla(0,0%,100%,0.4); /* 0 1px 1px hsla(0,0%,100%,0.4) */
-  --channeltextarea-background: #ebedef ; /* #ebedef */
-  --activity-card-background: #fff ; /* #fff */
+  --logo-primary: #7289da ;                                           /* #7289da */
+  --guild-header-text-shadow: 0 1px 1px hsla(0,0%,100%,0.4);          /* 0 1px 1px hsla(0,0%,100%,0.4) */
+  --channeltextarea-background: #ebedef ;                             /* #ebedef */
+  --activity-card-background: #fff ;                                  /* #fff */
   
-  --red: #f04747 ; /* #f04747 */
+  --red: #f04747 ;                                                    /* #f04747 */
   
   /* deprecated */
 
-  --deprecated-panel-background: #ebedef ; /* #ebedef */
-  --deprecated-card-bg: #f8f9f9 ; /* #f8f9f9 */
-  --deprecated-card-editable-bg: rgba(246,246,247,0.6); /* rgba(246,246,247,0.6) */
-  --deprecated-store-bg: #f8f9f9 ; /* #f8f9f9 */
-  --deprecated-quickswitcher-input-background: #fff ; /* #fff */
-  --deprecated-quickswitcher-input-placeholder: rgba(79,84,92,0.3); /* rgba(79,84,92,0.3) */
-  --deprecated-text-input-bg: rgba(79,84,92,0.02); /*rgba(79,84,92,0.02)  */
-  --deprecated-text-input-border: rgba(79,84,92,0.3); /* rgba(79,84,92,0.3) */
-  --deprecated-text-input-border-hover: #b9bbbe ; /* #b9bbbe */
-  --deprecated-text-input-border-disabled: #dcddde ; /* #dcddde */
-  --deprecated-text-input-prefix: #b9bbbe ; /* #b9bbbe */
+  --deprecated-panel-background: #ebedef ;                            /* #ebedef */
+  --deprecated-card-bg: #f8f9f9 ;                                     /* #f8f9f9 */
+  --deprecated-card-editable-bg: rgba(246,246,247,0.6);               /* rgba(246,246,247,0.6) */
+  --deprecated-store-bg: #f8f9f9 ;                                    /* #f8f9f9 */
+  --deprecated-quickswitcher-input-background: #fff ;                 /* #fff */
+  --deprecated-quickswitcher-input-placeholder: rgba(79,84,92,0.3);   /* rgba(79,84,92,0.3) */
+  --deprecated-text-input-bg: rgba(79,84,92,0.02);                    /*rgba(79,84,92,0.02)  */
+  --deprecated-text-input-border: rgba(79,84,92,0.3);                 /* rgba(79,84,92,0.3) */
+  --deprecated-text-input-border-hover: #b9bbbe ;                     /* #b9bbbe */
+  --deprecated-text-input-border-disabled: #dcddde ;                  /* #dcddde */
+  --deprecated-text-input-prefix: #b9bbbe ;                           /* #b9bbbe */
   
 }
 
