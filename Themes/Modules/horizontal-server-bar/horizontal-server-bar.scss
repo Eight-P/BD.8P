@@ -1,4 +1,4 @@
-$current_version: "0.3.71" ;
+$current_version: "0.3.72" ;
 // Version
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -19,7 +19,7 @@ $current_version: "0.3.71" ;
 	transform-origin: top left ;
   
   ~ [class*="base-"] {
-    height: calc(100vh - 76px) ; // 76px: bc, gildwrapper + top bar
+    height: calc(100vh - 76px);
     width: 100vw ;
     left: 0 ;
   }
@@ -32,7 +32,7 @@ $current_version: "0.3.71" ;
     
     [class*="scroller-"] {
       margin: 120px 0 120px 0 ;
-			max-height: calc(100vw - 240px) ;
+			max-height: calc(100vw - 240px);
 			padding: 0 ;
       contain: layout ;
       
@@ -53,7 +53,6 @@ $current_version: "0.3.71" ;
         margin: 0px ;
         max-height: 60px ;
         width: 54px ;
-//        display: -webkit-inline-box ;
         
         //Icon Container
         [class*="#{$main_wrapper}"] {
@@ -92,20 +91,16 @@ $current_version: "0.3.71" ;
               mask { display: none }
             }
             
-            // Badges
-
-            // unread Mentions
+            // Badges-unread
             [class*="lowerBadge-"] {
-              right: -5px ; bottom: -5px ;
+              pointer-events: none ;
+              
+              > div { background-color: var(--red) !important }
             }
-
-            // voice Icon
+            
+            // Badges-voice
             [class*="upperBadge-"] {
-              top: -5px ;
-
-              [class*="iconBadge-"] {
-                height: 18px ; width: 18px ;
-              }
+              pointer-events: none ;
             }
           }
         }
@@ -132,35 +127,30 @@ $current_version: "0.3.71" ;
         
         @include ServerIcon ("blobContainer-");
         
-        // 10-48-6-20-6-20-10
-        // Home Icon
+        // Home Icon ( 10-48-6-20-6-20-10 )
         &:first-child {
           position: absolute ;
           top: 10px ;
           
-          svg[name="Nova_Discord"] {
-            filter: drop-shadow( 2px 2px 3px black );
-          }
-          
+          // hover thing
           [class*="pill-"] { display: none }
           
-          mask { display: none }
-          
-          foreignObject [class*="wrapper-"] {
+          // Container
+          > [class*="listItemWrapper-"] > [class*="wrapper-"] {
             transform: rotate(90deg) ;
-            
-            [class*="childWrapper-"] {
-              background: none ;
-            }
-          }
-          [class*="badgeWrapper-"] {
-              transform: rotate(90deg) ;
 
-              // unread Mentions
-              [class*="lowerBadge-"] {
-                left: 0px ; bottom: 2px ;
-              }
-            }
+            [class*="childWrapper-"] { background: none }
+          }
+          
+          // Discord Icon
+          svg[name="Nova_Discord"] { filter: drop-shadow( 2px 2px 3px black ) }
+
+
+          // unread Mentions
+          [class*="lowerBadge-"] {
+            pointer-events: none ; 
+            bottom: 3px ;
+          }
         }
         
         // guildsAdd, guildsError, Discovereeeeee
@@ -190,8 +180,12 @@ $current_version: "0.3.71" ;
             background-color: transparent  ;
             color: var(--text-normal) ;
             opacity: .75 ;
+            filter: drop-shadow( 2px 2px 3px black );
             
-            > svg { height: 40px ; width: 40px }
+            > svg { 
+              height: 40px ; 
+              width: 40px ;
+            }
           }
           
           &:hover [class*="circleIconButton-"] { opacity: 1 }
@@ -204,6 +198,7 @@ $current_version: "0.3.71" ;
           background-color: transparent  ;
         }
 
+        // Guild Error
         [class*="guildsError-"] {
           height: 20px ; 
           width: 20px ;
@@ -211,6 +206,7 @@ $current_version: "0.3.71" ;
           background: transparent ;
           border: none ;
           padding: 0 ;
+          filter: drop-shadow( 2px 2px 3px black );
           
           span {
             font-size: 85% ;
@@ -284,6 +280,17 @@ $current_version: "0.3.71" ;
                 // folder closed
                 [class*="closedFolderIconWrapper-"] { padding: 0 }
               }
+            }
+            
+            [class*="lowerBadge-"] {
+              pointer-events: none ;
+              
+              > div { background-color: var(--red) !important }
+            }
+            
+            // Badges-voice
+            [class*="upperBadge-"] {
+              pointer-events: none ;
             }
           }
           
