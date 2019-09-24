@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.71" ;
+$current_version: "0.3.72" ;
 
 
 // Version
@@ -115,15 +115,20 @@ body {
   pointer-events: none ;
 }
 
-//Titel-bar
+//Titel-bar in general
 [class*="sidebar-"] {
   ~ [class*="chat-"] > [class*="title-"],
   ~ [class*="activityFeed-"] > [class*="container-"],
   ~ [class*="gameLibrary-"] [class*="libraryHeader-"],
+  ~ [class*="root-"] [class*="libraryHeader-"],
   ~ [class*="applicationStore-"] [class*="headerBar-"],
   ~ [class*="container-"] > [class*="container-"] {
     
-    [class*="children-"]::after { display: none }
+    [class*="children-"] {
+      [class*="iconWrapper-"], [class*="title-"], [class*="divider-"] { display: none }
+      
+      &::after { display: none }
+    }
     
     [class*="toolbar-"] {
       //Icons
@@ -143,13 +148,13 @@ body {
   }
 }
 
-//Titel-bar Server-view
+// Titel-bar Server/DMs
 [class*="sidebar-"] ~ [class*="chat-"] [class*="title-"]{
   
   //Channel info
   [class*="children-"] {
     
-    [class*="iconWrapper-"], [class*="title-"], [class*="divider-"] { display: none }
+    [class*="status-"], [class*="akaBadge-"] { display: none }
     
      // Channel Topic
     [class*="topic-"] {
@@ -158,6 +163,8 @@ body {
       
       &:hover { color: var(--interactive-hover) }
     }
+    
+    [class*="nicknames-"] { margin-left: 224px }
   }
   
   //Search
@@ -520,8 +527,9 @@ body {
   
   // DMs
   > [class*="privateChannels-"] {
+    overflow: visible ;
     top: 48px ;
-    margin-bottom: 48px;
+    margin-bottom: 48px ;
 
     // Friends-channel
     [class*="scroller-"] {
@@ -542,14 +550,18 @@ body {
           [class*="close-"] { background-size: 22px 22px }
         }
         
-        &[class*="selected-"] [class*="layout-"]{
-          border-left: 3px solid var(--interactive-hover) ;
-          background: transparent ;
-        }
+        &[class*="selected-"] [class*="layout-"] { background: transparent }
         
         &:hover [class*="layout-"] {
           border-left: 3px solid var(--interactive-hover) ;
           background: var(--background-modifier-selected) ;
+        }
+        
+        //friends continer to title-bar
+        &[class*="selected-"][href*="/channels/@me/"] {
+          position: absolute ;
+          top: -48px ;
+          left: 243px ;
         }
       }
     }
@@ -559,33 +571,31 @@ body {
   ~ [class*="activityFeed-"] {
     
     [class*="scroller-"] {
-      background: transparent ;
+      background: none ;
       
       &::-webkit-scrollbar { display: none }
       
       [class*="wrappedCard-"] {
-        background: transparent ;
+        background: none ;
 
-        [class*="wrapper-"] {
-          padding-bottom: 10px ;
-        }
+        [class*="wrapper-"] { padding-bottom: 10px }
       }
 
       [class*="outer-"] {
-        background: transparent ;
+        background: none ;
 
         [class*="card-"] {
-          background: transparent ;
+          background: none ;
           
           [class*="itemContainer-"] [class*="popout-"] {
             z-index: 3001 ;
           }
 
-          [class*="body-"] {
-            background: transparent ;
-          }
+          [class*="body-"] { background: none }
         }
       }
+      
+      [class*="card-"] { background: none }
 
       // nitro ad (hopefully)
       [class*="flex-"] > [class*="column-"] .card-GqTca8.card-3SDdMD.outer-2IVh5n.interactive-1BeKSi { display: none }
@@ -593,9 +603,24 @@ body {
   }
   
   // Game-Library
-  ~ [class*="gameLibrary-"] {
+  ~ [class*="gameLibrary-"], ~ [class*="root-"] {
     
-    [class*="libraryHeader-"] { @include searchbar() }
+    [class*="libraryHeader-"] { 
+      @include searchbar();
+      
+      [class*="topPill-"] [class*="item-"]{
+        color: var(--interactive-normal) !important ;
+        background: none !important ;
+
+        &[class*="selected-"] {
+          color: var(--interactive-active) !important ;
+        }
+
+        &:hover {
+          color: var(--interactive-hover) !important ;
+        }
+      }
+    }
     
     [class*="scroller-"]::-webkit-scrollbar { display: none }
   }
@@ -609,142 +634,163 @@ body {
   }
   
   // Friends-list
-  ~ [class*="container-"] > [class*="friendsTable-"] {
+  ~ [class*="container-"] {
+    
+    // Header
+    > [class*="container-"] [class*="tabBar-"] [class*="item-"]{
+      color: var(--interactive-normal) !important ;
+      background: none !important ;
+      
+      &[class*="selected-"] {
+        color: var(--interactive-active) !important ;
+      }
+      
+      &:hover {
+        color: var(--interactive-hover) !important ;
+      }
+    }
+    
+    // Body
+    > [class*="friendsTable-"] {
 
-    [class*="friendsTableHeader-"] { display: none }
+      [class*="friendsTableHeader-"] { display: none }
 
-    [class*="scroller-"] {
-      &::-webkit-scrollbar { display: none }
-      margin-left: 20px ;
+      [class*="scroller-"] {
+        &::-webkit-scrollbar { display: none }
+        margin-left: 20px ;
 
-      [class*="friendsRow-"] {
-        position: relative ;
-        display: inline-block ;
-        border: none ;
-        margin: 20px ;
-        background: black ;
-        width: 350px ;
-        height: 80px !important ;
-        box-shadow: 0 10px 60px black ;
-        border-bottom-right-radius: 10px ;
-
-        &:hover { 
-          padding: 0 ;
-          border-radius: 0 ;
+        [class*="friendsRow-"] {
+          position: relative ;
+          display: inline-block ;
+          border: none ;
+          margin: 20px ;
+          background: var(--background-floating) ;
+          width: 350px ;
+          height: 80px !important ;
+          box-shadow: 0 10px 60px black ;
           border-bottom-right-radius: 10px ;
-        }
 
-        [class*="friendsColumn-"] {
-          display: block ;
-
-          // Avatar, Name
-          &[class*="friendsColumnName-"] {
-            position: absolute ;
-            pointer-events: none ;
-            z-index: 1 ;
-
-            [class*="avatarSmall-"] {
-              height: 80px !important;
-              width: 80px !important;
-              margin: 0 0 0 5px ;
-
-              img { filter: opacity(100%) }
-            }
-
-            [class*="nameTag-"] {
-              position: absolute ;
-              display: block ;
-              top: 10px ;
-              left: 95px ;
-              width: 255px ;
-              font-size: 20px ;
-
-              [class*="username-"] {
-                display: inline-block ;
-                height: 35px ;
-              }
-
-              [class*="discriminator-"] {
-                float: right ;
-                margin-right: 5px ;
-                visibility: visible ;
-              }
-            }
-          }
-          // Status
-          &[class*="friendsColumnStatus-"] {
-            position: absolute ;
-            width: 100% ;
-            margin: 0 ;
-            pointer-events: none ;
-
-            [class*="status-"] {
-
-              svg {
-                overflow: visible ;
-
-                mask { display: none }
-
-                rect {
-                  height: 80px ;
-                  width: 350px ;
-                  opacity: .8 ;
-                }
-              }
-            }
-
-            [class*="statusText-"] {
-              position: absolute ;
-              width: 240px ;
-              height: 45px ;
-              bottom: 0 ;
-              right: 5px ;
-              top: 35px ;
-
-              [class*="friendActivityText-"] {
-
-                strong {
-                  position: absolute ;
-                  left: 0 ;
-                  top: 20px ;
-                  max-width: 240px ;
-                  overflow: hidden ;
-                  text-overflow: ellipsis ;
-                }
-              }
-
-              [class*="friendActivityIcon-"] { display: none }
-            }
-          }
-          // same Guilds
-          &[class*="friendsColumnGuilds-"] { display: none !important }
-          // Profile Options
-          &[class*="friendsColumnActions-"] {
-            margin-left: 100px ;
-            text-align: center ;
-            margin-top: 40px ;
+          &:hover { 
             padding: 0 ;
-            display: none ;
+            border-radius: 0 ;
+            border-bottom-right-radius: 10px ;
+          }
 
-            [class*="friendsAction-"] {
-              display: inline-block ;
-              height: 24px ;
-              width: 24px ;
-              margin: 0 20px ;
-              background-color: transparent !important;
-              opacity: .6 ;
+          [class*="friendsColumn-"] {
+            display: block ;
 
-              &:hover { opacity: .9 }
+            // Avatar, Name
+            &[class*="friendsColumnName-"] {
+              position: absolute ;
+              pointer-events: none ;
+              z-index: 1 ;
 
-              &:last-child:hover path {
-                fill: var(--red) ;
+              [class*="avatarSmall-"] {
+                height: 80px !important;
+                width: 80px !important;
+                margin: 0 0 0 5px ;
+
+                img { filter: opacity(100%) }
+              }
+
+              [class*="nameTag-"] {
+                position: absolute ;
+                display: block ;
+                top: 10px ;
+                left: 95px ;
+                width: 255px ;
+                font-size: 20px ;
+
+                [class*="username-"] {
+                  display: inline-block ;
+                  height: 35px ;
+                }
+
+                [class*="discriminator-"] {
+                  float: right ;
+                  margin-right: 5px ;
+                  visibility: visible ;
+                }
+              }
+            }
+            // Status
+            &[class*="friendsColumnStatus-"] {
+              position: absolute ;
+              width: 100% ;
+              margin: 0 ;
+              pointer-events: none ;
+
+              [class*="status-"] {
+
+                svg {
+                  overflow: visible ;
+
+                  mask { display: none }
+
+                  rect {
+                    height: 80px ;
+                    width: 350px ;
+                    opacity: .8 ;
+                  }
+                }
+              }
+
+              [class*="statusText-"] {
+                position: absolute ;
+                width: 240px ;
+                height: 45px ;
+                bottom: 0 ;
+                right: 5px ;
+                top: 35px ;
+
+                [class*="friendActivityText-"] {
+
+                  strong {
+                    position: absolute ;
+                    left: 0 ;
+                    top: 20px ;
+                    max-width: 240px ;
+                    overflow: hidden ;
+                    text-overflow: ellipsis ;
+                  }
+                }
+
+                [class*="friendActivityIcon-"] { display: none }
+              }
+            }
+            // same Guilds
+            &[class*="friendsColumnGuilds-"] { display: none !important }
+            // Profile Options
+            &[class*="friendsColumnActions-"] {
+              margin-left: 100px ;
+              text-align: center ;
+              margin-top: 40px ;
+              padding: 0 ;
+              display: none ;
+
+              [class*="friendsAction-"] {
+                position: relative ;
+                display: inline-block ;
+                height: 24px ;
+                width: 24px ;
+                margin: 0 20px ;
+                color: var(--interactive-hover) ;
+
+                &:hover {
+                  color: var(--interactive-active) ;
+                  background: none !important ;
+                }
+
+                &:last-child:hover path {
+                  fill: var(--red) ;
+                }
               }
             }
           }
-        }
-        &:hover {
-          [class*="friendsColumnStatus-"] [class*="statusText-"] { display: none }
-          [class*="friendsColumnActions-"] { display: block }
+          &:hover {
+            [class*="friendsColumnStatus-"] [class*="statusText-"] { display: none }
+            [class*="friendsColumnActions-"] { display: block }
+          }
         }
       }
     }
