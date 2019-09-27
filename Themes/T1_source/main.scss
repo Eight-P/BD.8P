@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.72" ;
+$current_version: "0.3.73" ;
 
 
 // Version
@@ -357,7 +357,7 @@ body {
   
   > [class*="content-"]::before { display: none }
   
-  [class*="spacer-"] {
+  [class*="chatContent-"] {
     //Server-messages
     [class*="messagesWrapper-"] { @include scrollbar() }
 
@@ -562,6 +562,15 @@ body {
           position: absolute ;
           top: -48px ;
           left: 243px ;
+          z-index: 5000 ;
+          cursor: default ;
+          
+          &:hover [class*="layout-"] {
+            border-left: none ;
+            background: none ;
+            
+            [class*="children-"] { display: none }
+          }
         }
       }
     }
@@ -837,32 +846,10 @@ body {
   [class*="contentRegion-"] { @include scrollbar() }
 }
 
-// Popouts
-[class*="layerContainer-"] {
+// User Popout
+[class*="layerContainer-"], [class*="popouts-"] {
   
-  // Server-Options -hopefully-
-  [class*="animatorTop-"] [class*="menu-"]{ 
-    background: var(--activity-card-background) ;
-    padding: 6px 0 ;
-
-    [class*="item-"] {
-      height: 22px ;
-      min-height: inherit ;
-      border-radius: 0 ;
-      padding: 0 17px ;
-      margin: 12px 0 ;
-
-      &:hover {
-        color: var(--interactive-hover) ;
-        background: var(--background-modifier-selected) ;
-        border-left: 3px solid var(--interactive-hover) ;
-      }
-    }
-  }
-
-  // userProfile Popout
   [class*="userPopout-"] {
-  //    box-shadow: 2px 2px 10px black ;
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
 
     [class*="header-"] {
@@ -887,6 +874,30 @@ body {
     }
     // weird note thing
     [class*="footer-"] { [class*="protip-"] { display: none } }
+  }
+}
+
+// Popouts
+[class*="layerContainer-"] {
+  
+  // Server-Options -hopefully-
+  [class*="animatorTop-"] [class*="menu-"]{ 
+    background: var(--activity-card-background) ;
+    padding: 6px 0 ;
+
+    [class*="item-"] {
+      height: 22px ;
+      min-height: inherit ;
+      border-radius: 0 ;
+      padding: 0 17px ;
+      margin: 12px 0 ;
+
+      &:hover {
+        color: var(--interactive-hover) ;
+        background: var(--background-modifier-selected) ;
+        border-left: 3px solid var(--interactive-hover) ;
+      }
+    }
   }
 }
 
