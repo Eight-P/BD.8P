@@ -1,4 +1,4 @@
-//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":"0.4.1","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//{} 
+//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":"0.4.2","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//{} 
 
 /* -- Transparency-Theme -- */
 @import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/Modules/transparency/transparency.css?v=1);
@@ -30,23 +30,16 @@
   
 /* ---- Settings ---- */
   
-
-  --brightness: 20 ;
-/* darkening the Background (0 - 100) 
-*/
-
-  --brightness_Server: 0 ;
-/* darkening the Server_Background (0 - 100) 
-*/
+  --brightness: 20 ; /* darkening the Background (0 - 100) */
   
-  --Server_banner: 0 ;
-/* show/hide server banner ( 0=off, 1=on) 
-*/
+  --brightness_Server: 0 ; /* darkening the Server_Background (0 - 100) */
 
-  --Background_Main: url(https://i.imgur.com/dUVKxuu.jpg);
-  --Background_Server: url(https://i.imgur.com/a7y0VWO.png);
-/* Backgrounds can be an image link as well as color code. Syntax for links: "url(<link>);"
-*/
+  --Server_banner: 0 ; /* show/hide server banner ( 0=off, 1=on) */
+
+  --Background_Main: url(https://i.imgur.com/dUVKxuu.jpg); 
+  
+  --Background_Server: url(https://i.imgur.com/a7y0VWO.png); /* Backgrounds can be an image link as well as color code. Syntax for links: "url(<https-link>);" */
+  
 
 /* - Defaults
   Main: url(https://i.imgur.com/dUVKxuu.jpg) 
