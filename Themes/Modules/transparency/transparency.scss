@@ -1,4 +1,4 @@
-/* V_0.3.4 */ 
+/* V_0.3.6 */ 
 
 // for testing 
 //#app-mount::before {
@@ -27,7 +27,11 @@ body {
   #app-mount {
      background: none ;
     
-    > [class*="app-"] > [class*="app-"] { background: none ; }
+    > [class*="app-"] > [class*="app-"] { 
+      background: none ;
+      
+      [class*="bg-"] { background: none }
+    }
   }
 }
 
@@ -118,7 +122,7 @@ body {
 }
 
 // settings tab
-#user-settings {
+[aria-label="USER_SETTINGS"], [aria-label="GUILD_SETTINGS"] {
   background: none;
 
   [class*="standardSidebarView-"] {
@@ -133,10 +137,7 @@ body {
     > [class*="contentRegion-"] {
       background: none;
 
-      [class*="scroller-"] { 
-        @include Scrollbar ;
-        background: none
-      }
+      [class*="scroller-"] { @include Scrollbar }
     }
   }
 }
