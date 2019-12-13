@@ -1,4 +1,4 @@
-$current_version: "0.3.72" ;
+$current_version: "0.3.73" ;
 // Version
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -145,8 +145,7 @@ $current_version: "0.3.72" ;
           // Discord Icon
           svg[name="Nova_Discord"] { filter: drop-shadow( 2px 2px 3px black ) }
 
-
-          // unread Mentions
+          //unread Mentions
           [class*="lowerBadge-"] {
             pointer-events: none ; 
             bottom: 3px ;
@@ -399,25 +398,12 @@ $current_version: "0.3.72" ;
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
 
   > [class*="searchBarComponent-"] {
-    width: 120px ;
     height: 54px ;
     background: transparent ;
-    
-    [class*="inner-"] {
-      width: 120px ;
-      height: 54px ;
-      
-      input {
-        cursor: pointer ;
-        height: 100px ;
-        margin-top: -34px ;
-        
-        &::placeholder {
-          color: var(--text-normal);
-          white-space: normal ;
-          text-align: center ;
-        }
-      }
-    }
+    color: var(--text-normal);
+    text-align: center ;
+    line-height: 1.3 ;
+    overflow: hidden ;
+    text-overflow: ellipsis ;
   }
 }
