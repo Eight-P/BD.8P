@@ -1,4 +1,4 @@
-/* V_0.3.6 */ 
+/* V_0.3.7 */
 
 // for testing 
 //#app-mount::before {
@@ -83,6 +83,7 @@ body {
     background: none;
 
     [class*="container-"] { background: none }
+    [class*="scrollerWrap-"]::before { display: none }
   }
 
   // libary
@@ -91,6 +92,7 @@ body {
 
     [class*="libraryHeader-"] { background: none }
     [class*="scroller-"] { @include Scrollbar }
+    [class*="scrollerWrap-"]::before { display: none }
   }
   
   // Gift Inventory
@@ -107,6 +109,7 @@ body {
 
     [class*="headerBar-"] { background: none }
     [class*="scroller-"] { @include Scrollbar }
+    [class*="scrollerWrap-"]::before { display: none }
   }
 
   // friends
@@ -115,6 +118,7 @@ body {
 
     [class*="container-"] { background: none }
     [class*="scroller-"] { @include Scrollbar }
+    [class*="friendsTable-"]::before { display: none }
   }
 
   // Discovereeeee
@@ -122,7 +126,7 @@ body {
 }
 
 // settings tab
-[aria-label="USER_SETTINGS"], [aria-label="GUILD_SETTINGS"] {
+#user-settings, [aria-label="GUILD_SETTINGS"] {
   background: none;
 
   [class*="standardSidebarView-"] {
