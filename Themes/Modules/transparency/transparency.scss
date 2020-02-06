@@ -1,4 +1,4 @@
-/* V_0.3.7 */
+/* V_0.3.71 */
 
 // for testing 
 //#app-mount::before {
@@ -63,12 +63,13 @@ body {
     [class*="title-"] { background: none }
 
     // messages
-    [class*="content-"] [class*="scroller-"] {
-      @include Scrollbar ;
+    [class*="content-"] [class*="scroller-"] { @include Scrollbar }
+    
+    // text-input
+    form [class*="channelTextArea-"] {
       background: none ;
-
-      // text-input
-      form [class*="channelTextArea-"] [class*="inner-"] { background: none }
+      
+      [class*="scrollableContainer-"] { background: none }
     }
 
     // memberlist
