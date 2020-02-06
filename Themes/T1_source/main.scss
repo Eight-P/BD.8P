@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.74" ;
+$current_version: "0.3.8" ;
 
 
 // Version
@@ -367,12 +367,47 @@ body {
   > [class*="content-"]::before { display: none }
   
   [class*="chatContent-"] {
+    
     //Server-messages
-    [class*="messagesWrapper-"] { @include scrollbar() }
+    [class*="messagesWrapper-"] { 
+      @include scrollbar() ;
+      
+      // Seperator (Date)
+      [class*="divider-"] {
+        border: none ;
+        margin: 26px 14px 10px 14px ;
+        
+        &::before, &::after {
+          content: "" ;
+          height: 1px ;
+          width: 100% ;
+          background: var(--background-modifier-accent) ;
+        }
+        
+        span { background: none }
+      }
+      
+      //Buttons
+      [class*="message-"] {
+        background: transparent ;
+        
+        [class*="buttonContainer-"] {
+          top: 13px ;
+          
+          [class*="buttons-"]:not([class*="isHeader-"]) { top: -16px }
+          [class*="wrapper-"] {
+            background: none ;
+            box-shadow: none ;
+          }
+        }
+      }
+    }
 
     // Text-Input
     > form {
       margin: 5px 0 0 0 ;
+      
+      &::before { display: none }
 
       [class*="channelTextArea-"] {
         margin: 0 ;
@@ -667,6 +702,9 @@ body {
         color: var(--interactive-hover) !important ;
       }
     }
+    
+    // Body
+    > [class*="tabBody-"]::before { display: none }
     
     // Body
     > [class*="friendsTable-"] {
