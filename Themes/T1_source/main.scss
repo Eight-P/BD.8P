@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.8" ;
+$current_version: "0.3.9" ;
 
 
 // Version
@@ -307,7 +307,8 @@ body {
 
 // Profile-, connection container
 [class*="sidebar-"] > [class*="panels-"] {
-  contain: layout ;
+  contain: initial ;
+  position: initial;
 
   // Profile Container
   [class*="container-"]:last-of-type  {
@@ -571,7 +572,7 @@ body {
   
   // DMs
   > [class*="privateChannels-"] {
-    overflow: visible ;
+//    overflow: visible ;
     top: 48px ;
     margin-bottom: 48px ;
 
