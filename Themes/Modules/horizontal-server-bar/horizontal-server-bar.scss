@@ -1,4 +1,4 @@
-$current_version: "0.3.8" ;
+$current_version: "0.3.9" ;
 // Version
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -35,7 +35,7 @@ $current_version: "0.3.8" ;
       margin: 120px 0 120px 0 ;
 			max-height: calc(100vw - 240px);
 			padding: 0 ;
-      contain: layout ;
+      contain: initial ;
       
       &::-webkit-scrollbar { display: none }
       &::before { top: 120px }
@@ -330,18 +330,20 @@ $current_version: "0.3.8" ;
   }
 }
 
-// -- Server Button
-// visibility fix
+// visibility fix for both Buttons
 [class*="guilds-"] ~ [class*="base-"] {
   overflow: visible ;
-  contain: size layout ;
   
-  > [class*="content-"], [class*="sidebar-"], [class*="sidebar-"] > [class*="container-"] { 
-    contain: layout ;  
+  > [class*="content-"], [class*="sidebar-"] { 
+    overflow: visible ;
+  }
+  
+  > [class*="sidebar-"] > [class*="container-"] { 
     overflow: visible ;
   }
 }
 
+// Server Button
 [class*="sidebar-"] > [class*="container-"] > [class*="container-"]:nth-of-type(1) {
   position: absolute ;
   width: 120px ;
@@ -386,6 +388,7 @@ $current_version: "0.3.8" ;
     }
   }
 }
+
 
 // Search Button (home)
 [class*="privateChannels-"] > [class*="searchBar-"] {
