@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.9" ;
+$current_version: "0.3.91" ;
 
 
 // Version
@@ -390,15 +390,20 @@ body {
       
       //Buttons
       [class*="message-"] {
-        background: transparent ;
+//        background: none ;
         
         [class*="buttonContainer-"] {
-          top: 13px ;
           
-          [class*="buttons-"]:not([class*="isHeader-"]) { top: -16px }
+          [class*="buttons-"] { top: -20px }
+          [class*="buttons-"][class*="isHeader-"] { top: 0px }
+
           [class*="wrapper-"] {
             background: none ;
             box-shadow: none ;
+            
+            [class*="emojiButton-"], [class*="emojiSeparator-"] {
+              display: none ;
+            }
           }
         }
       }
@@ -407,6 +412,7 @@ body {
     // Text-Input
     > form {
       margin: 5px 0 0 0 ;
+      border-top: 1px solid var(--background-modifier-accent);
       
       &::before { display: none }
 
@@ -416,6 +422,16 @@ body {
 
         [class*="scrollableContainer-"] { 
           background: transparent ;
+          
+          [class*="attachWrapper-"]::after {
+            content: "" ;
+            position: absolute ; 
+            top: 5px ;
+            right: -1px ;
+            height: 34px ;
+            width: 1px ;
+            background-color: var(--background-primary) ;
+          }
 
           [class*="buttons-"] {
 
@@ -572,7 +588,6 @@ body {
   
   // DMs
   > [class*="privateChannels-"] {
-//    overflow: visible ;
     top: 48px ;
     margin-bottom: 48px ;
 
@@ -595,28 +610,30 @@ body {
           [class*="close-"] { background-size: 22px 22px }
         }
         
-        &[class*="selected-"] [class*="layout-"] { background: transparent }
+        &[class*="selected-"] [class*="layout-"] { 
+          border-left: 3px solid var(--interactive-hover) ;
+          background: transparent 
+        }
         
         &:hover [class*="layout-"] {
           border-left: 3px solid var(--interactive-hover) ;
-          background: var(--background-modifier-selected) ;
         }
         
         //friends continer to title-bar
-        &[class*="selected-"][href*="/channels/@me/"] {
-          position: absolute ;
-          top: -48px ;
-          left: 243px ;
-          z-index: 5000 ;
-          cursor: default ;
-          
-          &:hover [class*="layout-"] {
-            border-left: none ;
-            background: none ;
-            
-            [class*="children-"] { display: none }
-          }
-        }
+//        &[class*="selected-"][href*="/channels/@me/"] {
+//          position: absolute ;
+//          top: -48px ;
+//          left: 243px ;
+//          z-index: 5000 ;
+//          cursor: default ;
+//          
+//          &:hover [class*="layout-"] {
+//            border-left: none ;
+//            background: none ;
+//            
+//            [class*="children-"] { display: none }
+//          }
+//        }
       }
     }
   }
