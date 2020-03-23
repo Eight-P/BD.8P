@@ -1,4 +1,4 @@
-$current_version: "0.3.9" ;
+$current_version: "0.3.91" ;
 // Version
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -78,7 +78,7 @@ $current_version: "0.3.9" ;
                 //Image
                 img {
                   border-radius: 50% ;
-                  transition: .4s ;
+                  transition: .3s ;
                 }
                 
                 //Text
@@ -144,7 +144,7 @@ $current_version: "0.3.9" ;
           }
           
           // Discord Icon
-          svg[name="Nova_Discord"] { filter: drop-shadow( 2px 2px 3px black ) }
+          [class*="homeIcon-"] { filter: drop-shadow( 2px 2px 3px black ) }
 
           //unread Mentions
           [class*="lowerBadge-"] {
