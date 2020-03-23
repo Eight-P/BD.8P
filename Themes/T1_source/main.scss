@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.91" ;
+$current_version: "0.3.92" ;
 
 
 // Version
@@ -76,7 +76,7 @@ body {
     position: absolute ;
     height: 100vh ;
     width: 100vw ;
-	  background: var(--Background_Main), rgba(0, 0, 0, calc(var(--brightness) / 100 )) {
+	  background: var(--Background_Main),  rgba(0, 0, 0, calc(var(--brightness) / 100 )) {
       size: cover ;
       attachment: fixed ;
       position: center ;
@@ -127,7 +127,7 @@ body {
     
     [class*="children-"] {
       [class*="iconWrapper-"], [class*="title-"], [class*="divider-"] { display: none }
-      
+     
       &::after { display: none }
     }
     
@@ -163,6 +163,11 @@ body {
       text-align: center ;
       
       &:hover { color: var(--interactive-hover) }
+    }
+    
+    // Channel Follow 
+    button[class*="followButton-"] {
+      background: none ;
     }
     
     [class*="nicknames-"] { margin-left: 224px }
@@ -370,8 +375,21 @@ body {
   [class*="chatContent-"] {
     
     //Server-messages
-    [class*="messagesWrapper-"] { 
+    [class*="messagesWrapper-"] {
+      z-index: 101 ;
+      
       @include scrollbar() ;
+      
+      // Mark as Read
+      [class*="newMessagesBar-"] {
+        position: absolute ;
+        top: -38px ;
+        left: 5px ;
+        right: 5px ;
+        background: var(--activity-card-background);
+        opacity: 1 ;
+        padding: 5px ;
+      }
       
       // Seperator (Date)
       [class*="divider-"] {
@@ -390,7 +408,6 @@ body {
       
       //Buttons
       [class*="message-"] {
-//        background: none ;
         
         [class*="buttonContainer-"] {
           
@@ -406,6 +423,8 @@ body {
             }
           }
         }
+        
+        &[class*="mentioned-"]::before { display: none }
       }
     }
 
@@ -481,6 +500,8 @@ body {
           }
         }
       }
+      // Follow thing idk
+      > [class*="wrapper-"] { display: none }
     }
   }
 }
@@ -534,64 +555,14 @@ body {
   }
 }
 
-//Home
+// Home
 [class*="sidebar-"] {
   
-  @mixin searchbar () {
-    
-    [class*="libraryFilter-"], [class*="browseSearch-"] { width: auto }
-    
-    [class*="toolbar-"] > div {
-      
-      [class*="searchBar-"] {
-        Background: transparent ;
-
-        input {
-          width: 22px ;
-          height: 22px ;
-          padding: 0 ;
-          margin: 0 ;
-          min-width: 22px ;
-          line-height: 22px ;
-          cursor: pointer ;
-          transition: width .2s ;
-          color: transparent ;
-          
-          &::placeholder {
-            visibility: hidden ;
-          }
-          
-          &:not(:placeholder-shown) {
-            width: 240px ;
-            border-bottom: 1px solid var(--interactive-hover);
-            color: var(--text-normal) ;
-          }
-        }
-
-        [class*="iconLayout-"] {
-          position: absolute ;
-          right: 0 ;
-          pointer-events: none ;
-        }
-      }
-      
-      &[class*="focused-"] [class*="searchBar-"] {
-        
-        input {
-          width: 240px ;
-          border-bottom: 1px solid var(--interactive-hover);
-          color: var(--text-normal) ;
-        }
-      }
-    }
-  }
-  
-  // DMs
+  // DMs (left sidebar)
   > [class*="privateChannels-"] {
     top: 48px ;
     margin-bottom: 48px ;
 
-    // Friends-channel
     [class*="scroller-"] {
       padding: 0 10px 0 0 !important ;
 
@@ -618,256 +589,67 @@ body {
         &:hover [class*="layout-"] {
           border-left: 3px solid var(--interactive-hover) ;
         }
-        
-        //friends continer to title-bar
-//        &[class*="selected-"][href*="/channels/@me/"] {
-//          position: absolute ;
-//          top: -48px ;
-//          left: 243px ;
-//          z-index: 5000 ;
-//          cursor: default ;
-//          
-//          &:hover [class*="layout-"] {
-//            border-left: none ;
-//            background: none ;
-//            
-//            [class*="children-"] { display: none }
-//          }
-//        }
       }
     }
   }
   
-  // Activity-Feed
-  ~ [class*="activityFeed-"] {
-    
-    [class*="scroller-"] {
-      background: none ;
+  // Friends
+  ~ [class*="container-"] {
+
+    // Friends Header
+    > [class*="container-"] [class*="tabBar-"] {
+      display: block ;
+      width: 100% ;
+      text-align: center ;
       
-      &::-webkit-scrollbar { display: none }
-      
-      [class*="wrappedCard-"] {
-        background: none ;
-
-        [class*="wrapper-"] { padding-bottom: 10px }
-      }
-
-      [class*="outer-"] {
-        background: none ;
-
-        [class*="card-"] {
-          background: none ;
-          
-          [class*="itemContainer-"] [class*="popout-"] {
-            z-index: 3001 ;
-          }
-
-          [class*="body-"] { background: none }
-        }
-      }
-      
-      [class*="card-"] { background: none }
-
-      // nitro ad (hopefully)
-      [class*="flex-"] > [class*="column-"] .card-GqTca8.card-3SDdMD.outer-2IVh5n.interactive-1BeKSi { display: none }
-    }
-  }
-  
-  // Game-Library
-  ~ [class*="gameLibrary-"], ~ [class*="root-"] {
-    
-    [class*="libraryHeader-"] { 
-      @include searchbar();
-      
-      [class*="topPill-"] [class*="item-"]{
-        color: var(--interactive-normal) !important ;
+      [class*="item-"] {
         background: none !important ;
-
-        &[class*="selected-"] {
-          color: var(--interactive-active) !important ;
-        }
-
-        &:hover {
-          color: var(--interactive-hover) !important ;
+        display: inline ;
+        
+        // add friend
+        &:last-of-type {
+          float: right ;
+          margin-right: 15px ;
+          color: var(--interactive-normal) !important ;
+          
+          &:hover {
+            color: var(--interactive-hover) !important ;
+          }
         }
       }
     }
     
-    [class*="scroller-"]::-webkit-scrollbar { display: none }
+    // Friends body
+    [class*="tabBody-"] {
+      margin-top: 10px ;
+      
+      &::before { display: none }
+
+      //Friends - online list
+      [class*="peopleColumn-"] { 
+        @include scrollbar();
+        
+        header[class*="title-"] { display: none }
+        
+        // User Item
+        [class*="peopleListItem-"] {
+          border: none ;
+        
+          [class*="actions-"] [class*="actionButton-"] { background: none }
+        }
+      }
+      
+      // Friends active list
+      [class*="nowPlayingColumn-"] { display: none }
+    }
   }
   
-  // Nitro (applicationStore)
+    // Nitro (applicationStore)
   ~ [class*="applicationStore-"] {
     
-    [class*="homeWrapperNormal-"] { @include searchbar() }
+//    [class*="homeWrapperNormal-"] { @include searchbar() }
     
     [class*="scroller-"]::-webkit-scrollbar { display: none }
-  }
-  
-  // Friends-list
-  ~ [class*="container-"] {
-    
-    // Header
-    > [class*="container-"] [class*="tabBar-"] [class*="item-"]{
-      color: var(--interactive-normal) !important ;
-      background: none !important ;
-      
-      &[class*="selected-"] {
-        color: var(--interactive-active) !important ;
-      }
-      
-      &:hover {
-        color: var(--interactive-hover) !important ;
-      }
-    }
-    
-    // Body
-    > [class*="tabBody-"]::before { display: none }
-    
-    // Body
-    > [class*="friendsTable-"] {
-
-      [class*="friendsTableHeader-"] { display: none }
-
-      [class*="scroller-"] {
-        &::-webkit-scrollbar { display: none }
-        margin-left: 20px ;
-
-        [class*="friendsRow-"] {
-          position: relative ;
-          display: inline-block ;
-          border: none ;
-          margin: 20px ;
-          background: var(--background-floating) ;
-          width: 350px ;
-          height: 80px !important ;
-          box-shadow: 0 10px 60px black ;
-          border-bottom-right-radius: 10px ;
-
-          &:hover { 
-            padding: 0 ;
-            border-radius: 0 ;
-            border-bottom-right-radius: 10px ;
-          }
-
-          [class*="friendsColumn-"] {
-            display: block ;
-
-            // Avatar, Name
-            &[class*="friendsColumnName-"] {
-              position: absolute ;
-              pointer-events: none ;
-              z-index: 1 ;
-
-              [class*="avatarSmall-"] {
-                height: 80px !important;
-                width: 80px !important;
-                margin: 0 0 0 5px ;
-
-                img { filter: opacity(100%) }
-              }
-
-              [class*="nameTag-"] {
-                position: absolute ;
-                display: block ;
-                top: 10px ;
-                left: 95px ;
-                width: 255px ;
-                font-size: 20px ;
-
-                [class*="username-"] {
-                  display: inline-block ;
-                  height: 35px ;
-                }
-
-                [class*="discriminator-"] {
-                  float: right ;
-                  margin-right: 5px ;
-                  visibility: visible ;
-                }
-              }
-            }
-            // Status
-            &[class*="friendsColumnStatus-"] {
-              position: absolute ;
-              width: 100% ;
-              margin: 0 ;
-              pointer-events: none ;
-
-              [class*="status-"] {
-
-                svg {
-                  overflow: visible ;
-
-                  mask { display: none }
-
-                  rect {
-                    height: 80px ;
-                    width: 350px ;
-                    opacity: .8 ;
-                  }
-                }
-              }
-
-              [class*="statusText-"] {
-                position: absolute ;
-                width: 240px ;
-                height: 45px ;
-                bottom: 0 ;
-                right: 5px ;
-                top: 35px ;
-
-                [class*="friendActivityText-"] {
-
-                  strong {
-                    position: absolute ;
-                    left: 0 ;
-                    top: 20px ;
-                    max-width: 240px ;
-                    overflow: hidden ;
-                    text-overflow: ellipsis ;
-                  }
-                }
-
-                [class*="friendActivityIcon-"] { display: none }
-              }
-            }
-            // same Guilds
-            &[class*="friendsColumnGuilds-"] { display: none !important }
-            // Profile Options
-            &[class*="friendsColumnActions-"] {
-              margin-left: 100px ;
-              text-align: center ;
-              margin-top: 40px ;
-              padding: 0 ;
-              display: none ;
-
-              [class*="friendsAction-"] {
-                position: relative ;
-                display: inline-block ;
-                height: 24px ;
-                width: 24px ;
-                margin: 0 20px ;
-                color: var(--interactive-hover) ;
-
-                &:hover {
-                  color: var(--interactive-active) ;
-                  background: none !important ;
-                }
-
-                &:last-child:hover path {
-                  fill: var(--red) ;
-                }
-              }
-            }
-          }
-          &:hover {
-            [class*="friendsColumnStatus-"] [class*="statusText-"] { display: none }
-            [class*="friendsColumnActions-"] { display: block }
-          }
-        }
-      }
-    }
   }
 }
 
