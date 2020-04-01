@@ -1,5 +1,5 @@
 // Theme version
-$current_version: "0.3.92" ;
+$current_version: "0.4.0" ;
 
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -215,12 +215,12 @@ $current_version: "0.3.92" ;
       }
       
       // DMs
-      > div:not([class]):not([aria-label*="Servers"]) > [class*="listItem-"] {
+      > div:not([class]):not([aria-label*="Server"]) > [class*="listItem-"] {
         @include ServerIcon ("listItemWrapper-") 
       }
       
       // Server wrapper
-      [aria-label*="Servers"] {
+      [aria-label*="Server"] {
         
         // Server Folders
         > [class*="wrapper-"] {
