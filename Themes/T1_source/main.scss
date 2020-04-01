@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.92" ;
+$current_version: "0.3.93" ;
 
 
 // Version
@@ -28,6 +28,7 @@ $current_version: "0.3.92" ;
     font-size: 12px ;
     font-weight: 600 ;
     letter-spacing: .5px ;
+    z-index: 1 ;
   }
   
   &::after {
@@ -37,6 +38,7 @@ $current_version: "0.3.92" ;
     height: 19px ;
     width: 19px ;
     opacity: $op ;
+    z-index: 1 ;
   }
   
   #app-mount [class*="titleBar-"] [class*="wordmarkWindows-"] { opacity: calc(1 - #{$op}) }
@@ -63,36 +65,49 @@ body {
   
   // if the Theme file needs an update
   @include disclaimer (
-    'Theme update requires a local file update!  Pls check : " github.com/Eight-P/BetterDiscord-Stuff " and replace your "T1.theme.css" file ', 
+    'A new Theme version requires a local file update!  Pls check : " github.com/Eight-P/BetterDiscord-Stuff " and replace your "T1.theme.css" file ', 
     calc( #{$v} - var(--F_V,0))
   );
 
   // if Minimal Mode is active
-  &.bd-minimal { @include disclaimer ('Pls turn off "Minimal Mode" in order to use the Theme', 1) }
+  &.bd-minimal { @include disclaimer ('Pls turn off "Minimal Mode" for the Theme to work properly ("ctrl" + "," : to open settings)', 1) }
   
   // Main BG
-  #app-mount::before {
-    content: " " ;
-    position: absolute ;
-    height: 100vh ;
-    width: 100vw ;
-	  background: var(--Background_Main),  rgba(0, 0, 0, calc(var(--brightness) / 100 )) {
-      size: cover ;
-      attachment: fixed ;
+//  #app-mount::before {
+//    content: " " ;
+//    position: absolute ;
+//    height: 100vh ;
+//    width: 100vw ;
+//	  background: var(--Background_Main),  rgba(0, 0, 0, calc(var(--brightness) / 100 )) {
+//      size: cover ;
+//      attachment: fixed ;
+//      position: center ;
+//      repeat: no-repeat ;
+//      blend-mode: overlay ;
+//    }
+//    z-index: -1 ;
+//  }
+
+  #app-mount {
+    background: var(--Background_Main) !important {
+      size: cover !important ;
+      attachment: fixed !important ;
       position: center ;
       repeat: no-repeat ;
       blend-mode: overlay ;
     }
-    z-index: -1 ;
+      
+    &::before {
+      content: " " ;
+      position: absolute ;
+      height: 100vh ;
+      width: 100vw ;
+      background: rgba(0, 0, 0, calc(var(--brightness) / 100 ));
+    } 
   }
   
   // removing transition effect 
-  [class*="layers-"] > [class*="layer-"] {
-    transform: scale(1) translateZ(0px) !important ;
-
-    &:first-child { opacity: 0 !important }
-    &:last-child { opacity: 1 !important }
-  }
+  [class*="layers-"] > [class*="layer-"] { transform: scale(1) translateZ(0px) !important }
 
   // pluginNotice-bar
   #pluginNotice, [class*="app-"] > [class*="notice-"]{
@@ -165,9 +180,11 @@ body {
       &:hover { color: var(--interactive-hover) }
     }
     
-    // Channel Follow 
-    button[class*="followButton-"] {
-      background: none ;
+    // Channel Follow Button as spacer for the other follow button shit
+    button[class*="followButton-"] { 
+      visibility: hidden ;
+      pointer-events: none ;
+      padding: 4px 16px ;
     }
     
     [class*="nicknames-"] { margin-left: 224px }
@@ -430,6 +447,7 @@ body {
 
     // Text-Input
     > form {
+      position: initial ;
       margin: 5px 0 0 0 ;
       border-top: 1px solid var(--background-modifier-accent);
       
@@ -453,7 +471,11 @@ body {
           }
 
           [class*="buttons-"] {
+            
+            // gift menu
+            [aria-label*="Send a gift"] { display: none }
 
+            // emoji meniu
             [class*="emojiButton-"] {
               opacity: .6 ;
 
@@ -479,7 +501,8 @@ body {
       [class*="typing-"] {
         background: transparent ;
         position: absolute ;
-        top: -15px ;
+        bottom: 42px ;
+        left: -10px ;
         height: 15px ;
         box-sizing: border-box ;
         padding: 0 15px ;
@@ -501,7 +524,28 @@ body {
         }
       }
       // Follow thing idk
-      > [class*="wrapper-"] { display: none }
+      > [class*="wrapper-"] { 
+        position: absolute ;
+        width: 100px ;
+        top: -35px ;
+        left: 0 ;
+        padding: 0 ;
+        margin: 0 ;
+        background: none ;
+        z-index: 100 ;
+        
+        [class*="content-"] {
+          display: none ;
+        }
+        
+        button {
+          &:first-child { display: none }
+          &:last-child { display: flex }
+        }
+      }
+      
+      // crap
+      > [class*="activityInviteEducation-"] { display: none }
     }
   }
 }
@@ -615,6 +659,10 @@ body {
           &:hover {
             color: var(--interactive-hover) !important ;
           }
+          
+          &[style*="; color: rgb(67, 181, 129)"] {
+            color: white !important ;
+          }
         }
       }
     }
@@ -691,6 +739,25 @@ body {
   
   // Content
   [class*="contentRegion-"] { @include scrollbar() }
+}
+
+// BD's Public Server List
+#pubslayerroot {
+  // - sidebar
+  .sidebar-region-scroller {
+    padding: 20px 0 ;
+    
+    &::-webkit-scrollbar { display: none }
+  }
+  
+  // - content region
+  [class*="content-region"] { background: none }
+  
+  // scroller 
+  .content-region [class*="scrollerWrap"] { @include scrollbar() }
+  
+  // content container
+  .content-column { padding: 20px 40px 80px }
 }
 
 // User Popout
