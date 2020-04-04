@@ -1,4 +1,4 @@
-/* V_0.3.71 */
+/* V_0.3.72 */
 
 // for testing 
 //#app-mount::before {
@@ -10,7 +10,7 @@
 //  z-index: -1 ;
 //}
 
- @mixin Scrollbar () {
+@mixin Scrollbar () {
   background: none ;
    
   &::-webkit-scrollbar-track-piece {
@@ -127,7 +127,7 @@ body {
 }
 
 // settings tab
-#user-settings, [aria-label="GUILD_SETTINGS"] {
+#user-settings, [aria-label="GUILD_SETTINGS"], [aria-label="CHANNEL_SETTINGS"] {
   background: none;
 
   [class*="standardSidebarView-"] {
