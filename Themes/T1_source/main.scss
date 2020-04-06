@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.93" ;
+$current_version: "0.3.94" ;
 
 
 // Version
@@ -60,8 +60,18 @@ $current_version: "0.3.93" ;
   }
 }
 
-// general Stuff
 body {
+  
+  // Main Background
+  background: var(--Background_Main) !important {
+    size: cover !important ;
+    attachment: fixed !important ;
+    position: center !important ;
+    repeat: no-repeat !important ;
+  }
+    
+  // Background darkening
+  #app-mount { background: rgba(0, 0, 0, calc(var(--brightness) / 100 )) !important }
   
   // if the Theme file needs an update
   @include disclaimer (
@@ -71,40 +81,6 @@ body {
 
   // if Minimal Mode is active
   &.bd-minimal { @include disclaimer ('Pls turn off "Minimal Mode" for the Theme to work properly ("ctrl" + "," : to open settings)', 1) }
-  
-  // Main BG
-//  #app-mount::before {
-//    content: " " ;
-//    position: absolute ;
-//    height: 100vh ;
-//    width: 100vw ;
-//	  background: var(--Background_Main),  rgba(0, 0, 0, calc(var(--brightness) / 100 )) {
-//      size: cover ;
-//      attachment: fixed ;
-//      position: center ;
-//      repeat: no-repeat ;
-//      blend-mode: overlay ;
-//    }
-//    z-index: -1 ;
-//  }
-
-  #app-mount {
-    background: var(--Background_Main) !important {
-      size: cover !important ;
-      attachment: fixed !important ;
-      position: center ;
-      repeat: no-repeat ;
-      blend-mode: overlay ;
-    }
-      
-    &::before {
-      content: " " ;
-      position: absolute ;
-      height: 100vh ;
-      width: 100vw ;
-      background: rgba(0, 0, 0, calc(var(--brightness) / 100 ));
-    } 
-  }
   
   // removing transition effect 
   [class*="layers-"] > [class*="layer-"] { transform: scale(1) translateZ(0px) !important }
@@ -449,6 +425,7 @@ body {
     > form {
       position: initial ;
       margin: 5px 0 0 0 ;
+      padding: 0 ;
       border-top: 1px solid var(--background-modifier-accent);
       
       &::before { display: none }
@@ -505,7 +482,8 @@ body {
         left: -10px ;
         height: 15px ;
         box-sizing: border-box ;
-        padding: 0 15px ;
+        padding: 0 5px ;
+        overflow: hidden ;
 
         [class*="text-"] { line-height: 15px }
 
@@ -791,7 +769,7 @@ body {
   }
 }
 
-// Popouts
+// Popouts shit
 [class*="layerContainer-"] {
   
   // Server-Options -hopefully-
@@ -900,5 +878,16 @@ body {
   background-color: var(--activity-card-background) ;
   z-index: 3002 ;
 
-  [class*="tooltipPointer-"] { border-top-color: var(--activity-card-background) }
+  [class*="tooltipPointer-"] { border-top-color: var(--activity-card-background) !important ; }
+}
+
+
+
+// - Plugin support
+
+// DetailedServerTooltips (by Metalloriff)
+[class*="layerContainer-"] .dst-tooltip {
+  transform: translateY(calc(-100% + 40px));
+  left: -20px !important ;
+  background-color: var(--activity-card-background) !important ;
 }
