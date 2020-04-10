@@ -1,5 +1,5 @@
 // Theme version
-$current_version: "0.4.0" ;
+$current_version: "0.4.1" ;
 
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -13,11 +13,11 @@ $current_version: "0.4.0" ;
 // -- ServerBar
 [class*="wrapper-"][class*="guilds-"] {
   position: absolute ;
-	top: 0 ;
-	height: 100vw ;
+  top: 0 ;
+  height: 100vw ;
   width: 54px ;
-	transform: rotate(-90deg) translateX(calc(-100vh + 22px));
-	transform-origin: top left ;
+  transform: rotate(-90deg) translateX(calc(-100vh + 22px));
+  transform-origin: top left ;
   
   ~ [class*="base-"] {
     height: calc(100vh - 76px);
@@ -108,22 +108,22 @@ $current_version: "0.4.0" ;
     [class*="scroller-"] {
       position: static ;
       margin: 120px 0 120px 0 ;
-			max-height: calc(100vw - 240px);
-			padding: 0 ;
+      max-height: calc(100vw - 240px);
+      padding: 0 ;
       contain: initial ;
-      
+
       &::-webkit-scrollbar { display: none }
       &::before { top: 120px }
       &::after, &::before {
-				content: "" ;
-				position: absolute ; 
+        content: "" ;
+        position: absolute ; 
         left: 20% ; right: 20% ;
-				height: 2px ;
-				opacity: 0.6 ;
+        height: 2px ;
+        opacity: 0.6 ;
         bottom: 120px ; 
         background-color: var(--header-secondary) ;
-			}
-      
+      }
+
       // Left side spacing ( 10-48-6-20-6-20-10 )
       
       // Home 
@@ -170,8 +170,8 @@ $current_version: "0.4.0" ;
         }
       }
       
-      // guildsAdd / Discovereeeeee
-      .tutorialContainer-SGrQ1h > [class*="listItem-"], > [class*="listItem-"]:last-child {
+      // guildsAdd / Discovereeeeee / Discovere + guildsError
+      .tutorialContainer-SGrQ1h > [class*="listItem-"], > [class*="listItem-"]:last-child, > [class*="listItem-"]:nth-last-child(2) {
         position: absolute ;
         left: 17px ; 
         top: 90px ;
@@ -212,6 +212,32 @@ $current_version: "0.4.0" ;
         position: initial ;
         
         > [class*="listItem-"] { top: 64px }
+      }
+      
+      // guildsError and Discovere pointer fix
+      > [class*="listItem-"]:last-child {
+        pointer-events: none ;
+        
+        [class*="listItemWrapper-"] {
+          pointer-events: none ;
+          
+          > a, [class*="circleButtonMask-"] { pointer-events: auto }
+        }
+      }
+      
+      > [class*="listItem-"]:last-child [class*="listItemWrapper-"] > a {
+        position: absolute ;
+        top: -88px ;
+        left: 14px ;
+        transform: rotate(90deg);
+        height: 20px ; 
+        width: 20px ;
+        background: none ;
+        border: none ;
+        
+        span {
+          color: var(--red);
+        }
       }
       
       // DMs
@@ -375,7 +401,6 @@ $current_version: "0.4.0" ;
   }
 }
 
-
 // Search Button (home)
 [class*="privateChannels-"] > [class*="searchBar-"] {
   position: fixed;
@@ -397,4 +422,16 @@ $current_version: "0.4.0" ;
     text-overflow: ellipsis ;
     white-space: normal ;
   }
+}
+
+// shitty Tooltips shit
+.tooltip-2QfLtc.tooltipRight-2JM5PQ.tooltipBlack-PPG47z.listItemTooltip-CDcY8J [class*="rowGuildName-"] {
+  [class*="guildNameText-"] {
+      white-space: nowrap;
+      text-overflow: ellipsis ;
+      overflow: hidden ;
+    }
+  
+  // voice-channel user
+  ~ [class*="row-"] { display: none }
 }
