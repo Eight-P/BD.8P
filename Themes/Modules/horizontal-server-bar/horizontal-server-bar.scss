@@ -1,5 +1,5 @@
 // Theme version
-$current_version: "0.4.1" ;
+$current_version: "0.4.11" ;
 
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -432,6 +432,6 @@ $current_version: "0.4.1" ;
       overflow: hidden ;
     }
   
-  // voice-channel user
-  ~ [class*="row-"] { display: none }
+  // voice-channel user / "server muted"
+  ~ [class*="row-"],  ~ [class*="colorMuted-"] { display: none }
 }
