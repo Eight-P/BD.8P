@@ -1,5 +1,5 @@
 $v: 4 ; // required theme file version
-$current_version: "0.3.94" ;
+$current_version: "0.4.0" ;
 
 
 // Version
@@ -107,123 +107,28 @@ body {
   pointer-events: none ;
 }
 
-//Titel-bar in general
-[class*="sidebar-"] {
-  ~ [class*="chat-"] > [class*="title-"],
-  ~ [class*="activityFeed-"] > [class*="container-"],
-  ~ [class*="gameLibrary-"] [class*="libraryHeader-"],
-  ~ [class*="root-"] [class*="libraryHeader-"],
-  ~ [class*="applicationStore-"] [class*="headerBar-"],
-  ~ [class*="container-"] > [class*="container-"] {
+// general HeaderBar (Server/Dms/Friends)
+[class*="sidebar-"] ~ [class*="container-"] > [class*="container-"], [class*="chat-"] > [class*="title-"] {
     
-    [class*="children-"] {
-      [class*="iconWrapper-"], [class*="title-"], [class*="divider-"] { display: none }
-     
-      &::after { display: none }
-    }
-    
-    [class*="toolbar-"] {
-      //Icons
-      > [class*="iconWrapper-"], > [class*="anchor-"] {
-        margin: 0 9px ;
-
-        > div { margin: 0 }
-
-        svg {
-          width: 20px ;
-          color: var(--interactive-normal) ;
-        }
-
-        &:hover svg { color: var(--interactive-hover) }
-      }
-    }
-  }
-}
-
-// Titel-bar Server/DMs
-[class*="sidebar-"] ~ [class*="chat-"] [class*="title-"]{
-  
-  //Channel info
   [class*="children-"] {
-    
-    [class*="status-"], [class*="akaBadge-"] { display: none }
-    
-     // Channel Topic
-    [class*="topic-"] {
-      margin: 0 8px ;
-      text-align: center ;
-      
-      &:hover { color: var(--interactive-hover) }
-    }
-    
-    // Channel Follow Button as spacer for the other follow button shit
-    button[class*="followButton-"] { 
-      visibility: hidden ;
-      pointer-events: none ;
-      padding: 4px 16px ;
-    }
-    
-    [class*="nicknames-"] { margin-left: 224px }
+    [class*="iconWrapper-"], [class*="title-"], [class*="divider-"] { display: none }
+
+    &::after { display: none }
   }
-  
-  //Search
-  [class*="toolbar-"] > [class*="search-"] {
-    pointer-events: none ;
-    margin: 0 8px ;
 
-    //Search Bar
-    > [class*="search-"] {
+  [class*="toolbar-"] {
+    //Icons
+    > [class*="iconWrapper-"], > [class*="anchor-"] {
+      margin: 0 9px ;
 
-      [class*="searchBar-"] {
+      > div { margin: 0 }
+
+      svg {
         width: 20px ;
-        background: transparent ;
-
-        // Input Container
-        .DraftEditor-root {
-          position: absolute ;
-          width: 20px ;
-          cursor: pointer ;
-          pointer-events: auto ;
-          
-          .public-DraftEditor-content {
-            
-            //search text
-            .public-DraftStyleDefault-block > span { display: none }
-          }
-
-          //placeholder text
-          .public-DraftEditorPlaceholder-root { display: none }
-        }
-
-        [class*="icon-"] svg {
-          color: var(--interactive-normal) ;
-          transition: none ;
-        }
+        color: var(--interactive-normal) ;
       }
-      
-      &:not([class*="open-"]):hover [class*="icon-"] svg { color: var(--interactive-hover) }
 
-      //Search Bar opend
-      &[class*="open-"] {
-        border-bottom: 1px solid var(--header-secondary) ;
-
-        [class*="searchBar-"] {
-          width: 244px ;
-          transition: .3s ;
-
-          .DraftEditor-root { 
-            position: relative ;
-
-            .public-DraftEditor-content .public-DraftStyleDefault-block > span { display: inline-block }
-          }
-
-          [class*="icon-"] svg {
-
-            &:first-child { visibility: hidden }
-            &:last-child { opacity: 1 }
-          }
-        }
-      }
+      &:hover svg { color: var(--interactive-hover) }
     }
   }
 }
@@ -360,16 +265,104 @@ body {
   }
 }
 
-// Chat
+// Server/DM Chat
 [class*="chat-"]  {
   
-  > [class*="content-"]::before { display: none }
+  // HeaderBar
+  > [class*="title-"] {
   
-  [class*="chatContent-"] {
+    //Channel info
+    [class*="children-"] {
+
+      [class*="status-"], [class*="akaBadge-"] { display: none }
+
+       // Channel Topic
+      [class*="topic-"] {
+        margin: 0 8px ;
+        text-align: center ;
+
+        &:hover { color: var(--interactive-hover) }
+      }
+
+      // Channel Follow Button as spacer for the other follow button shit
+      button[class*="followButton-"] { 
+        visibility: hidden ;
+        pointer-events: none ;
+        padding: 4px 16px ;
+      }
+
+      [class*="nicknames-"] { margin-left: 224px }
+    }
+
+    //Search
+    [class*="toolbar-"] > [class*="search-"] {
+      pointer-events: none ;
+      margin: 0 8px ;
+
+      //Search Bar
+      > [class*="search-"] {
+
+        [class*="searchBar-"] {
+          width: 20px ;
+          background: transparent ;
+
+          // Input Container
+          .DraftEditor-root {
+            position: absolute ;
+            width: 20px ;
+            cursor: pointer ;
+            pointer-events: auto ;
+
+            .public-DraftEditor-content {
+
+              //search text
+              .public-DraftStyleDefault-block > span { display: none }
+            }
+
+            //placeholder text
+            .public-DraftEditorPlaceholder-root { display: none }
+          }
+
+          [class*="icon-"] svg {
+            color: var(--interactive-normal) ;
+            transition: none ;
+          }
+        }
+
+        &:not([class*="open-"]):hover [class*="icon-"] svg { color: var(--interactive-hover) }
+
+        //Search Bar opend
+        &[class*="open-"] {
+          border-bottom: 1px solid var(--header-secondary) ;
+
+          [class*="searchBar-"] {
+            width: 244px ;
+            transition: .3s ;
+
+            .DraftEditor-root { 
+              position: relative ;
+
+              .public-DraftEditor-content .public-DraftStyleDefault-block > span { display: inline-block }
+            }
+
+            [class*="icon-"] svg {
+
+              &:first-child { visibility: hidden }
+              &:last-child { opacity: 1 }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  > [class*="content-"] {
+    
+    &::before { display: none }
     
     //Server-messages
     [class*="messagesWrapper-"] {
-      z-index: 101 ;
+      z-index: 101 ; // for Mark as Read
       
       @include scrollbar() ;
       
@@ -421,8 +414,8 @@ body {
       }
     }
 
-    // Text-Input
-    > form {
+    // Text-Input Container
+    [class*="chatContent-"] > form {
       position: initial ;
       margin: 5px 0 0 0 ;
       padding: 0 ;
@@ -430,6 +423,7 @@ body {
       
       &::before { display: none }
 
+      // Text-Input Field
       [class*="channelTextArea-"] {
         margin: 0 ;
         padding: 0 ;
@@ -461,6 +455,24 @@ body {
           }
         }
       }
+      // Text-Input Popout "autocomplete"
+      [class*="autocomplete-"] {
+        z-index: 102 ;
+        background-color: var(--background-tertiary) ;
+        
+        [class*="selectable-"] {
+          border-radius: 0 ;
+          background: none ;
+          
+          &:hover {
+            background: var(--background-modifier-selected) ;
+            border-left: 3px solid var(--interactive-hover) ;
+            
+            [class*="description-"] { color: var(--interactive-hover) }
+          }
+        }
+      }
+      
       // no permission to write
       [class*="channelTextAreaDisabled-"] [class*="innerDisabled-"]::after {
         content: " " ;
@@ -559,9 +571,8 @@ body {
   }
 }
 
-// Server-bar
+// Server-bar-Background
 [class*="wrapper-"][class*="guilds-"] {
-  //Server-Background 
   &::before {
     content: "";
     position: absolute ;
@@ -569,12 +580,14 @@ body {
     width: 100vw ;
     transform: rotate(90deg) translateX(-54px) ;
     transform-origin: bottom left ;
-    background: var(--Background_Server), rgba(0, 0, 0, calc(var(--brightness_Server) / 100 )) {
+    background: var(--Background_Server) {
       position: center ;
       repeat: no-repeat ;
-      blend-mode: overlay ;
+      size: cover ;
     }
   }
+  
+  [class*="scrollerWrap-"] { background: rgba(0, 0, 0, calc(var(--brightness_Server) / 100 )) }
 }
 
 // Home
@@ -589,8 +602,34 @@ body {
       padding: 0 10px 0 0 !important ;
 
       &::-webkit-scrollbar {display: none }
-
-      [class*="channel-"] {
+      
+      // Tabs Button
+      [class*="channel-"][aria-posinset="1"], [class*="channel-"][aria-posinset="2"] {
+        margin: 0 0 0 1px ;
+        width: 114px ;
+        display: inline-block ;
+        border-radius: 0 ;
+        
+        [class*="layout-"] { 
+          padding: 0 36px ;
+          background: none ;
+          
+          [class*="avatar-"] { margin: 5px }
+          [class*="content-"] { display: none }
+        }
+        
+        &[class*="selected-"] { border-bottom: 1px solid var(--interactive-active) }
+      }
+      
+      // Header Text
+      [class*="privateChannelsHeaderContainer-"] {
+        color: var(--channels-default) ;
+        
+        [class*="privateChannelRecipientsInviteButtonIcon-"] { display: none }
+      }
+      
+      // Friends Items
+      [class*="channel-"][href*="/channels/@me/"] {
         height: 38px !important ;
         margin: 6px 0 ;
         padding: 0 ;
@@ -608,9 +647,7 @@ body {
           background: transparent 
         }
         
-        &:hover [class*="layout-"] {
-          border-left: 3px solid var(--interactive-hover) ;
-        }
+        &:hover [class*="layout-"] { border-left: 3px solid var(--interactive-hover) }
       }
     }
   }
@@ -619,32 +656,54 @@ body {
   ~ [class*="container-"] {
 
     // Friends Header
-    > [class*="container-"] [class*="tabBar-"] {
-      display: block ;
-      width: 100% ;
-      text-align: center ;
+    > [class*="container-"] {
       
-      [class*="item-"] {
-        background: none !important ;
-        display: inline ;
-        
-        // add friend
-        &:last-of-type {
-          float: right ;
-          margin-right: 15px ;
-          color: var(--interactive-normal) !important ;
+      // Friends Tabs
+      [class*="tabBar-"] {
+        margin: 0 auto ;
+        padding-right: 40px ;
+
+        [class*="item-"] {
+          background: none !important ;
           
-          &:hover {
-            color: var(--interactive-hover) !important ;
-          }
-          
-          &[style*="; color: rgb(67, 181, 129)"] {
-            color: white !important ;
+          // Pending Tab
+          &[aria-label="Pending"] [class*="badge-"] { padding-right: 1px }
+
+          // add friend
+          &[aria-label="Add Friend"] {
+            position: absolute ;
+            right: 0 ;
+            height: 24px ;
+            width: 24px ;
+            overflow: visible ;
+            margin: 0 8 px;
+            padding: 0 ;
+
+            &::before {
+              content: " " ;
+              background-image:url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(67, 181, 129)"><path d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 15.67,10 13,10 C13,10 12.83,10 12.75,10 C8,10 4,6 4,1.5 L4,0 L0.5,0 Z M13,0 C10.790861,0 9,1.790861 9,4 C9,6.209139 10.790861,8 13,8 C15.209139,8 17,6.209139 17,4 C17,1.790861 15.209139,0 13,0 Z" transform="translate(2 4)" ></path></svg>');
+              position: absolute ;
+              display: block ;
+              height: 24px ;
+              width: 24px ;
+              opacity: .5 ;
+            }
+
+            &:hover::before { opacity: 1 }
+            &[style*="; color: rgb(67, 181, 129)"]::before { opacity: 1 }
+
+            span { display: none }
           }
         }
       }
+      
+      // right Icons bar (create group DM)
+      [class*="toolbar-"] > [class*="inviteToolbar-"] svg {
+        height: 22px ;
+        width: 22px ;
+      }
     }
-    
+
     // Friends body
     [class*="tabBody-"] {
       margin-top: 10px ;
@@ -655,13 +714,149 @@ body {
       [class*="peopleColumn-"] { 
         @include scrollbar();
         
-        header[class*="title-"] { display: none }
+        h2[class*="title-"] { display: none }
         
-        // User Item
+        // div alignment
+        @mixin margin($n) {
+          $min-width: $n * 340 + 240;
+          $max-width: ($n + 1) * 340 + 240 - 1;
+
+//          @debug "#{$n} :  min-width: #{$min-width} | max-width: #{$max-width} " ;
+
+          @media screen and (min-width: $min-width+"px") and (max-width: $max-width+"px") {
+            text-align: start !important ;
+
+            
+            // -- option 1: 1/2margin | container | 1/2margin
+            
+            > div {
+//              margin: 0 calc((100vw - #{$min-width}px) / 2) !important ;
+//              width: $n * 340px !important ;
+//              display: block !important ;
+              
+              
+            // -- option 2: margin | item | margin | item | margin ....
+              [class*="peopleListItem-"] {
+                margin: 40px 0 0 calc((100vw - #{$min-width}px) / (#{$n} + 1) + 10px) !important ;
+              }
+            }
+          }
+        }
+        
+        
+        // Friend's Card Container
+        [class*="scroller-"] {
+          text-align: center ;
+          
+          @for $i from 2 through 10 { @include margin($i) }
+          
+          > div {
+            display: inline ;
+            text-align: start ;
+            padding-bottom: 25px ;
+          }
+        }
+        
+        // Friend's Card
         [class*="peopleListItem-"] {
+          display: inline-block ;
+          margin: 40px 10px 0 10px ;
+          padding: 0 ;
           border: none ;
-        
-          [class*="actions-"] [class*="actionButton-"] { background: none }
+          width: 320px ;
+          background: var(--background-floating) ;
+          height: 70px !important ;
+          filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5)) ;
+          border-radius: 8px ;
+          transition: .1s ;
+          
+          &:hover {
+            border-radius: 0 ;
+            filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 1)) ;
+          }
+          
+          [class*="listItemContents-"] {
+            
+            [class*="userInfo-"] {
+              overflow: visible ;
+              
+              // Profile Picture, Status
+              > [class*="avatar-"] {
+                
+                svg {
+                  overflow: visible ;
+                  
+                  foreignObject { 
+                    mask: none ;
+                    y: 3px ;
+                    height: 67px ;
+                    width: 67px ;
+                  }
+                  
+                  rect {
+                    x: 0 ;
+                    y: 0 ;
+                    height: 3px ;
+                    width: 320px ;
+                    mask: none ;
+                    opacity: .8 ;
+                  }
+                }
+              }
+              
+              // Text
+              > [class*="text-"] {
+                margin-top: 3px ;
+                margin-left: 40px ;
+                
+                // Name
+                [class*="discordTag-"] {
+                  height: 34px ;
+                  max-width: 230px ;
+                  line-height: 34px ;
+                  
+                  [class*="discriminator-"] { 
+                    margin-left: 5px ;
+                    visibility: visible ;
+                    opacity: .7 ;
+                    line-height: 34px ;
+                  }
+                }
+                
+                // Activity
+                [class*="subtext-"] {
+                  position: relative ;
+                  height: 33px ;
+                  width: 230px ;
+                  
+                  [class*="activity-"] {
+                    
+                    [class*="text-"] {
+                      visibility: hidden ;
+                      
+                      strong {
+                        position: absolute ;
+                        left: 0 ;
+                        visibility: visible ;
+                      }
+                    }
+                    
+                    // in case of custom status
+                    > img ~ [class*="text-"] { visibility: visible }
+                    
+                    // idk, weird thing
+                    [class*="textRuler-"] { display: none }
+                    
+                    // Icon from Activity
+                    [class*="icon-"] { display: none }
+                  }
+                }
+              }
+            }
+            
+            // useless buttons
+            [class*="actions-"] { display: none }
+          }
         }
       }
       
@@ -672,10 +867,9 @@ body {
   
     // Nitro (applicationStore)
   ~ [class*="applicationStore-"] {
+    @include scrollbar();
     
-//    [class*="homeWrapperNormal-"] { @include searchbar() }
-    
-    [class*="scroller-"]::-webkit-scrollbar { display: none }
+    [class*="headerBar-"] { display: none }
   }
 }
 
@@ -876,7 +1070,7 @@ body {
 // Tooltips
 [class*="layerContainer-"] [class*="tooltip-"] {
   background-color: var(--activity-card-background) ;
-  z-index: 3002 ;
+  color: white ;
 
   [class*="tooltipPointer-"] { border-top-color: var(--activity-card-background) !important ; }
 }
