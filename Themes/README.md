@@ -2,18 +2,22 @@
 
 ###### CSS code that changes the default appearance of Discord.
 
-## Themes
+
+## Themes:
 
 - [T1 - Theme](T1.theme.css)
 
-## install
+
+## install:
 
 ###### 1. head into your "Themes" Settings.
 ###### 2. open Themes Folder.
-###### 3. drag and drop the "name.theme.css" file in.
+###### 3. drop in the theme.css file.
 ###### 4. enable the Theme and enjoy.
 
-## customize
+
+## customize:
+
 ###### Edit the theme.css file in a Texteditor or use [ThemeSettings](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Plugins/ThemeSettings) Plugin by DevilBro
 
 
