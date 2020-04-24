@@ -1,5 +1,5 @@
-$v: 4 ; // required theme file version
-$current_version: "0.4.0" ;
+$v: 5 ; // required theme file version
+$current_version: "0.4.1" ;
 
 
 // Version
@@ -19,24 +19,27 @@ $current_version: "0.4.0" ;
     content: $text ;
     position: absolute;
     height: 22px ;
-    width: 100vw ;
+    width: calc(100vw - 160px) ;
     background: var(--activity-card-background) ;
     opacity: $op ;
     color: var(--text-normal) ;
+    padding: 0 100px 0 60px ;
     text-align: center ;
     line-height: 22px ;
     font-size: 12px ;
     font-weight: 600 ;
     letter-spacing: .5px ;
     z-index: 1 ;
+    overflow: hidden ;
+    text-overflow: ellipsis ;
+    white-space: nowrap ;
   }
   
   &::after {
     content: url(/assets/4757a3d415435a57d4db6fca022872e3.svg);
     position: absolute;
-    padding: 1px ;
-    height: 19px ;
-    width: 19px ;
+    height: 22px ;
+    width: 22px ;
     opacity: $op ;
     z-index: 1 ;
   }
@@ -46,44 +49,62 @@ $current_version: "0.4.0" ;
 
 // Scrollbar mixin
 @mixin scrollbar () {
-  [class*="scroller-"] {
-
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--background-secondary);
-    }
-    
-    &::-webkit-scrollbar-track { background: transparent }
-
-    &::-webkit-scrollbar { width: 12px }
-
-    &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
+  &::-webkit-scrollbar { width: 12px }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--interactive-normal) ;
+    border-color: transparent
   }
+
+  &::-webkit-scrollbar-track { background-color: transparent !important  }
+  
+  &::-webkit-scrollbar-track-piece {
+    background-color: transparent ;
+    border: none ;
+  }
+
+  &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
 }
 
+// Layer independent stuff
 body {
-  
-  // Main Background
-  background: var(--Background_Main) !important {
-    size: cover !important ;
-    attachment: fixed !important ;
-    position: center !important ;
-    repeat: no-repeat !important ;
-  }
+  background-image: var(--Background_Main) !important ;
+  background-size: cover !important ;
+  background-attachment: fixed !important ;
+  background-position: center !important ;
+  background-repeat: no-repeat !important ;
     
-  // Background darkening
-  #app-mount { background: rgba(0, 0, 0, calc(var(--brightness) / 100 )) !important }
+  #app-mount { 
+    // Background_Main brightness control
+    background: rgba(0, 0, 0, calc(var(--brightness) / 100 )) !important ;
+    
+    // Windowbar seperatorline
+    > [class*="titleBar-"] { 
+      box-shadow: 0 .5px 0 var(--header-secondary) ;
+      z-index: 500 ;
+    }
+    
+    > [class*="app-"] > [class*="app-"] { 
+      background: none ;
+      
+      // Background_Main
+      [class*="bg-"] { background: none }
+    }
+  }
   
   // if the Theme file needs an update
   @include disclaimer (
-    'A new Theme version requires a local file update!  Pls check : " github.com/Eight-P/BetterDiscord-Stuff " and replace your "T1.theme.css" file ', 
+    'Local theme update required! Pls replace your "T1.theme.css" file with the latest version from "github.com/Eight-P/BetterDiscord-Stuff" ', 
     calc( #{$v} - var(--F_V,0))
   );
 
   // if Minimal Mode is active
   &.bd-minimal { @include disclaimer ('Pls turn off "Minimal Mode" for the Theme to work properly ("ctrl" + "," : to open settings)', 1) }
-  
-  // removing transition effect 
-  [class*="layers-"] > [class*="layer-"] { transform: scale(1) translateZ(0px) !important }
+   
+  [class*="layers-"] > [class*="layer-"] { 
+    transform: none !important ;
+    background: none ;
+}
 
   // pluginNotice-bar
   #pluginNotice, [class*="app-"] > [class*="notice-"]{
@@ -92,19 +113,6 @@ body {
 
     [class*="dismiss-"] { right: 36px }
   }
-}
-
-// Window-bar
-#app-mount > [class*="app-"]::before {
-  content: "" ;
-  position: absolute ;
-  top: 0 ;
-  left: 0 ;
-  height: 1px ;
-  width: 100vw ;
-  box-shadow: 0 -1px 0 var(--header-secondary);
-  opacity: .5 ;
-  pointer-events: none ;
 }
 
 // general HeaderBar (Server/Dms/Friends)
@@ -134,16 +142,17 @@ body {
 }
 
 // Server-channels
-[class*="sidebar-"] > [class*="container-"]:nth-of-type(1) {
+[class*="sidebar-"] > [class*="container-"] {
   top: 48px ;
   margin-bottom: 48px;
+  background: none ;
 
   [class*="positionedContainer-"] [class*="unread-"] { padding: 0 8px }
 
   [class*="scroller-"] {
-    
+
     &::-webkit-scrollbar { display: none }
-    
+
     // Channel container
     [class*="containerDefault-"] {
 
@@ -156,15 +165,15 @@ body {
           color: var(--channels-default);
           opacity: .8 ;
         }
-        
+
         // channel-options
         [class*="children-"] [class*="iconItem-"] { display: none }
-        
+
         // connection-limit
         [class*="children-"] [class*="userLimit-"] [class*="wrapper-"]{
-          
+
           [class*="users-"], [class*="total-"] { background: transparent }
-          
+
           [class*="total-"]::after {
             border: none ;
             content: "|" ;
@@ -172,7 +181,7 @@ body {
             top: -1px ;
           }
         }
-        
+
         // mentions indicator
         [class*="numberBadge-"] {
           background-color: transparent !important ;
@@ -180,25 +189,25 @@ body {
           border-radius: 0 ;
           color: var(--text-normal) ;
         }
-        
+
         // icon on hover
         &:hover [class*="children-"] [class*="iconItem-"] { display: block } 
       }
-      
+
       // muted
       [class*="modeMuted-"] {
-        
+
         [class*="name-"] { color: var(--channels-default) }
         [class*="icon-"] { color: var(--interactive-muted) }
       }
-      
+
       // unread
       [class*="modeUnread-"] {
-        
+
         [class*="unread-"] { background-color: var(--interactive-hover) }
         [class*="name-"] { color: var(--channels-default) }
       }
-      
+
       // selected, connected
       [class*="modeSelected-"], [class*="modeConnected-"] {
 
@@ -210,8 +219,7 @@ body {
 
 // Profile-, connection container
 [class*="sidebar-"] > [class*="panels-"] {
-  contain: initial ;
-  position: initial;
+  background: none ;
 
   // Profile Container
   [class*="container-"]:last-of-type  {
@@ -249,28 +257,28 @@ body {
     }
   }
   
-  // connection Container
-  [class*="container-"]:nth-last-of-type(2) { 
+  // voice Connection
+  [class*="container-"]:nth-last-of-type(2) {
     border: none ;
-    padding: 6px 8px ;
+    height: 32px ;
+    padding: 6px 10px ;
+    overflow: hidden ;
     
-    button { background: none }
-  }
-  
-  // activityPanel
-  [class*="activityPanel-"] { 
-    padding: 4px 8px ;
-    
-    button { background: none }
+    // Buttons
+    [class*="actionButtons-"] {
+      display: none ;
+    }
   }
 }
 
 // Server/DM Chat
 [class*="chat-"]  {
+  background: none ;
   
   // HeaderBar
   > [class*="title-"] {
-  
+    background: none ;
+    
     //Channel info
     [class*="children-"] {
 
@@ -356,6 +364,7 @@ body {
     }
   }
   
+  // Server Chat
   > [class*="content-"] {
     
     &::before { display: none }
@@ -364,7 +373,10 @@ body {
     [class*="messagesWrapper-"] {
       z-index: 101 ; // for Mark as Read
       
-      @include scrollbar() ;
+      [class*="scroller-"] { 
+        background: none ;
+        @include scrollbar() ;
+      } 
       
       // Mark as Read
       [class*="newMessagesBar-"] {
@@ -425,11 +437,12 @@ body {
 
       // Text-Input Field
       [class*="channelTextArea-"] {
+        background: none ;
         margin: 0 ;
         padding: 0 ;
 
         [class*="scrollableContainer-"] { 
-          background: transparent ;
+          background: none ;
           
           [class*="attachWrapper-"]::after {
             content: "" ;
@@ -538,10 +551,14 @@ body {
       > [class*="activityInviteEducation-"] { display: none }
     }
   }
+  
+  //Voice Channel Voice Call View thing, idk
+  > [class*="noChat-"] { background: none }
 }
 
 // Member-list
 [class*="membersWrap-"] [class*="scroller-"] {
+  background: none ;
 
   &::-webkit-scrollbar { display: none }
 
@@ -573,37 +590,51 @@ body {
 
 // Server-bar-Background
 [class*="wrapper-"][class*="guilds-"] {
-  &::before {
-    content: "";
+  
+  [class*="scroller-"] { background: none }
+  
+  // Backgroundimage
+  [class*="unreadMentionsIndicatorTop-"] {
+    top: 0 ;
+    left: 0 ;
     position: absolute ;
+    display: block !important ;
     height: 54px ;
     width: 100vw ;
+    padding: 0 ;
     transform: rotate(90deg) translateX(-54px) ;
     transform-origin: bottom left ;
-    background: var(--Background_Server) {
-      position: center ;
-      repeat: no-repeat ;
-      size: cover ;
-    }
+    background-image: var(--Background_Server) !important ;
+    background-size: cover !important ;
+    background-position: center !important ;
+    background-repeat: no-repeat !important ;
+    opacity: 1 ;
+    z-index: 0 ;
   }
   
-  [class*="scrollerWrap-"] { background: rgba(0, 0, 0, calc(var(--brightness_Server) / 100 )) }
+  // Brightnesscontrol
+  [class*="scrollerWrap-"] {
+    background: rgba(0, 0, 0, calc(var(--brightness_Server) / 100 )) ;
+  }
 }
 
 // Home
 [class*="sidebar-"] {
+  background: none ;
   
   // DMs (left sidebar)
   > [class*="privateChannels-"] {
+    background: none ;
     top: 48px ;
     margin-bottom: 48px ;
 
     [class*="scroller-"] {
+      background: none ;
       padding: 0 10px 0 0 !important ;
 
-      &::-webkit-scrollbar {display: none }
+      &::-webkit-scrollbar { display: none }
       
-      // Tabs Button
+      // Tab Buttons
       [class*="channel-"][aria-posinset="1"], [class*="channel-"][aria-posinset="2"] {
         margin: 0 0 0 1px ;
         width: 114px ;
@@ -620,6 +651,7 @@ body {
         
         &[class*="selected-"] { border-bottom: 1px solid var(--interactive-active) }
       }
+      
       
       // Header Text
       [class*="privateChannelsHeaderContainer-"] {
@@ -654,9 +686,11 @@ body {
   
   // Friends
   ~ [class*="container-"] {
-
+    background: none ;
+    
     // Friends Header
     > [class*="container-"] {
+      background: none ;
       
       // Friends Tabs
       [class*="tabBar-"] {
@@ -712,7 +746,7 @@ body {
 
       //Friends - online list
       [class*="peopleColumn-"] { 
-        @include scrollbar();
+        [class*="scroller-"] { @include scrollbar() } 
         
         h2[class*="title-"] { display: none }
         
@@ -778,7 +812,7 @@ body {
           [class*="listItemContents-"] {
             
             [class*="userInfo-"] {
-              overflow: visible ;
+              width: 320px ;
               
               // Profile Picture, Status
               > [class*="avatar-"] {
@@ -838,6 +872,9 @@ body {
                         position: absolute ;
                         left: 0 ;
                         visibility: visible ;
+                        width: 230px ;
+                        overflow: hidden ;
+                        text-overflow: ellipsis ;
                       }
                     }
                     
@@ -867,20 +904,33 @@ body {
   
     // Nitro (applicationStore)
   ~ [class*="applicationStore-"] {
-    @include scrollbar();
+     background: none;
+    
+    [class*="scrollerWrap-"] {
+      
+      &::before { display: none } 
+      
+      [class*="scroller-"] {
+        background: none ;
+        @include scrollbar(); 
+      } 
+    }
     
     [class*="headerBar-"] { display: none }
   }
 }
 
-// Settings Tab
-#user-settings {
+// Settings menu styling
+@mixin Settings () {
   
-  // Side bar
-  [class*="sidebarRegion-"] [class*="scroller-"]{
-    &::-webkit-scrollbar { display: none }
+  // Sidebar left
+  [class*="standardSidebarView-"] {
+    background: none ;
     
-    [class*="sidebar-"] [class*="side-"] {
+    [class*="sidebarRegion-"] [class*="scroller-"] { 
+      background: none ;
+      
+      &::-webkit-scrollbar { display: none }
       
       // Header
       [class*="header-"], .ui-tab-bar-header { 
@@ -890,28 +940,45 @@ body {
       
       // categorie name
       [class*="item-"], .ui-tab-bar-item {
-        color: var(--interactive-normal) ;
+        color: var(--interactive-normal) !important ;
         background: none !important ;
-        border-radius: 0 ;
-        padding: 0 10px ;
+        border-radius: 0 !important ;
+        padding: 0 10px !important ;
         margin: 6px 0 ;
-        box-sizing: border-box ;
         
-        &:hover { color: var(--interactive-hover) }
+        &:hover { color: var(--interactive-hover) !important }
+        
+        &[style*="color: rgb(240, 71, 71)"] {
+          color: var(--red) !important ;
+          opacity: .8 ;
+          
+          &:hover { color: var(--red) !important ; opacity: 1 !important }
+        }
       }
       
       .ui-tab-bar-item { margin: 12px 0 }
       
       [class*="item-"][class*="selected-"], .ui-tab-bar-item.selected {
         border-left: 2px solid var(--interactive-active) ;
-        color: var(--interactive-active) ;
+        color: var(--interactive-active) !important ;
       }
     }
   }
   
-  // Content
-  [class*="contentRegion-"] { @include scrollbar() }
+  // Tabcontent
+  [class*="contentRegion-"] {
+    background: none ;
+    
+    [class*="scroller-"] {
+      background: none ;
+      @include scrollbar() ;
+    }
+  }
 }
+
+[aria-label="USER_SETTINGS"] { @include Settings() }
+[aria-label="GUILD_SETTINGS"] { @include Settings() }
+[aria-label="CHANNEL_SETTINGS"] { @include Settings() }
 
 // BD's Public Server List
 #pubslayerroot {
@@ -926,7 +993,7 @@ body {
   [class*="content-region"] { background: none }
   
   // scroller 
-  .content-region [class*="scrollerWrap"] { @include scrollbar() }
+  .content-region [class*="scrollerWrap"] [class*="scroller-"] { @include scrollbar() } 
   
   // content container
   .content-column { padding: 20px 40px 80px }
@@ -1060,7 +1127,7 @@ body {
   
   > img { display: none }
   
-  @include scrollbar();
+  [class*="scroller-"] { @include scrollbar() } 
     
   [class*="body-"] [class*="search-"] {
     [class*="searchBox-"], [class*="languageSelector-"] [class*="container"] { background: var(--background-primary) }
