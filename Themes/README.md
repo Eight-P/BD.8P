@@ -8,7 +8,7 @@
 - [T1 - Theme](T1.theme.css)
 
 
-## install:
+## Install:
 
 ###### 1. head into your "Themes" Settings.
 ###### 2. open Themes Folder.
@@ -16,7 +16,7 @@
 ###### 4. enable the Theme and enjoy.
 
 
-## customize:
+## Customize:
 
 ###### Edit the theme.css file in a Texteditor or use [ThemeSettings](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Plugins/ThemeSettings) Plugin by DevilBro
 
