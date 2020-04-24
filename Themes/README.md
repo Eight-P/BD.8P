@@ -2,6 +2,9 @@
 
 ###### CSS code that changes the default appearance of Discord.
 
+## Themes
+
+- [T1 - Theme](T1.theme.css)
 
 ## install
 
@@ -12,5 +15,6 @@
 
 ## customize
 ###### Edit the theme.css file in a Texteditor or use [ThemeSettings](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Plugins/ThemeSettings) Plugin by DevilBro
+
 
 
