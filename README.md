@@ -1,3 +1,3 @@
-# BetterDiscord-Stuff
+# BetterDiscord Stuff by Eight_P
 
-I'd rather not expect too much
+#### [BetterDiscord](https://betterdiscord.net) is a software that allows the installation of user-created Themes and Plugins injected into Discord.
