@@ -1,3 +1,8 @@
+# Themes for BetterDiscord
+
+CSS code that changes the default appearance of Discord.
+
+
 # install
 
 1. head into your "Themes" Settings.
