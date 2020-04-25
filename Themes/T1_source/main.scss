@@ -1,5 +1,5 @@
 $v: 5 ; // required theme file version
-$current_version: "0.4.1" ;
+$current_version: "0.4.02" ;
 
 
 // Version
@@ -265,10 +265,24 @@ body {
     overflow: hidden ;
     
     // Buttons
-    [class*="actionButtons-"] {
-      display: none ;
+    [class*="actionButtons-"] { display: none }
+  }
+  
+  // activity Container
+  [class*="activityPanel-"] {
+    height: 32px ;
+    padding: 6px 10px ;
+    
+    [class*="gameWrapper-"] {
+      
+      [class*="gameIconWrapper-"] { height: 32px }
+      
+      [class*="title-"] { line-height: 32px }
     }
   }
+  
+  // Buttons hover effect
+  [class*="container-"]:nth-last-of-type(2), [class*="activityPanel-"] { button { background: none } }
 }
 
 // Server/DM Chat
@@ -435,7 +449,6 @@ body {
       
       &::before { display: none }
 
-      // Text-Input Field
       [class*="channelTextArea-"] {
         background: none ;
         margin: 0 ;
@@ -444,6 +457,7 @@ body {
         [class*="scrollableContainer-"] { 
           background: none ;
           
+          // attachButton
           [class*="attachWrapper-"]::after {
             content: "" ;
             position: absolute ; 
@@ -453,7 +467,13 @@ body {
             width: 1px ;
             background-color: var(--background-primary) ;
           }
+          
+          // Text Input
+          [class*="textArea-"] {
+            margin-left: 10px ;
+          }
 
+          // Gif/Emote Buttons
           [class*="buttons-"] {
             
             // gift menu
