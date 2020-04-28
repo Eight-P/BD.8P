@@ -1,12 +1,12 @@
-//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":"0.5","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//
+//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":"0.5.1","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//
 
-/* -- source code -- */
+/* -- source codes -- */
 
 /* - horizontal-server-bar - */
-@import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css?v=1);
+@import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/824d9aaa57fa5138fed27f7cd0dac07d7e51652f/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css);
 
 /* - Main-Theme - */
-@import url(https://raw.githack.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1_source/main.css?v=1);
+@import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/824d9aaa57fa5138fed27f7cd0dac07d7e51652f/Themes/T1_source/main.css);
 
 :root {
 /*
@@ -24,33 +24,30 @@
 
     - use discord's "Dark-theme"
 
-*/
-
   
-/* ---  Settings  --- */
   
-  --brightness: 20 ; /* darkening the Background (0 - 100) */
   
-  --brightness_Server: 0 ; /* darkening the Server_Background (0 - 100) */
+*/ /* ---  Settings  --- */
+  
+  
+  
+  --brightness: 20 ; /* darkening the main background (0 - 100) */
+  
+  --brightness_Server: 0 ; /* darkening the server background (0 - 100) */
 
   --Server_banner: 0 ; /* show/hide server banner ( 0=off, 1=on) */
   
   --Background_Main: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/c69e3eea77d03f4b9225985ca46e000662e878cf/Themes/T1_source/Main-bg.jpg);
   
-  --Background_Server: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/c69e3eea77d03f4b9225985ca46e000662e878cf/Themes/T1_source/Server-bg.png); /* Backgrounds can be a color or link to an image. Syntax for links: "url(<https-link>)" */
+  --Background_Server: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/e0fa0836f70668f41ebbb85b29a21bcd11be7770/Themes/T1_source/Server-bg.jpg); /* Backgrounds can be a color or link to an image. Should be a .jpg and https link. Syntax: url( <link> ) */
   
-
-/* - Defaults
-  Main: url(https://i.imgur.com/dUVKxuu.jpg) 
-  Server: url(https://i.imgur.com/a7y0VWO.png) 
-*/
   
 }
 
 
-/* -- Discord's color themes -- */
+/* -- Discord's color schemes  -- */
 
-/* -- theme-dark -- */
+/* -- dark -- */
 
 .theme-dark {
   --header-primary:#fff;
@@ -116,7 +113,7 @@
 }
 
 
-/* -- theme-light -- */
+/* -- light -- */
 
 .theme-light {
   --header-primary:#060607;
