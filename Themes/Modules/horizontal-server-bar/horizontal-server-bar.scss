@@ -1,5 +1,5 @@
 // Theme version
-$current_version: "0.4.11" ;
+$current_version: "0.4.02" ;
 
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -434,4 +434,15 @@ $current_version: "0.4.11" ;
   
   // voice-channel user / "server muted"
   ~ [class*="row-"],  ~ [class*="colorMuted-"] { display: none }
+}
+
+
+
+// - Plugin support
+
+// DetailedServerTooltips (by Metalloriff)
+[class*="layerContainer-"] .dst-tooltip {
+  transform: translateY(calc(-100% + 40px));
+  left: -20px !important ;
+  background-color: var(--activity-card-background) !important ;
 }
