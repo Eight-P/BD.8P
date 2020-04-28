@@ -1,5 +1,5 @@
 $v: 5 ; // required theme file version
-$current_version: "0.4.02" ;
+$current_version: "0.4.03" ;
 
 
 // Version
@@ -156,15 +156,19 @@ body {
     // Channel container
     [class*="containerDefault-"] {
 
-      // default 
+      // default (Text and Voice)
       [class*="content-"] {
         background: transparent;
 
+        // Icon (#, speaker, ..)
         [class*="icon-"] {
           width: 15px ;
           color: var(--channels-default);
           opacity: .8 ;
         }
+        
+        // Channel Name
+        [class*="name-"] { color: var(--channels-default) }
 
         // channel-options
         [class*="children-"] [class*="iconItem-"] { display: none }
@@ -189,29 +193,24 @@ body {
           border-radius: 0 ;
           color: var(--text-normal) ;
         }
-
-        // icon on hover
-        &:hover [class*="children-"] [class*="iconItem-"] { display: block } 
+        
+        &:hover {
+          [class*="name-"] { color: var(--interactive-hover) }
+          [class*="children-"] [class*="iconItem-"] { display: block } 
+        }
       }
 
       // muted
-      [class*="modeMuted-"] {
+      [class*="modeMuted-"] [class*="icon-"] { color: var(--interactive-muted) }
 
-        [class*="name-"] { color: var(--channels-default) }
-        [class*="icon-"] { color: var(--interactive-muted) }
-      }
+      // unread (pill)
+      [class*="modeUnread-"] [class*="unread-"] { background-color: var(--interactive-hover) }
 
-      // unread
-      [class*="modeUnread-"] {
-
-        [class*="unread-"] { background-color: var(--interactive-hover) }
-        [class*="name-"] { color: var(--channels-default) }
-      }
-
-      // selected, connected
+      // Text-selected, Voice-connected
       [class*="modeSelected-"], [class*="modeConnected-"] {
 
         [class*="icon-"] { color: var(--interactive-active) }
+        [class*="name-"] { color: var(--interactive-active) }
       }
     }
   }
@@ -395,18 +394,29 @@ body {
       // Mark as Read
       [class*="newMessagesBar-"] {
         position: absolute ;
-        top: -38px ;
+        top: -36px ;
         left: 5px ;
         right: 5px ;
-        background: var(--activity-card-background);
+        background: var(--background-primary);
         opacity: 1 ;
-        padding: 5px ;
+        border-radius: 8px ;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5)) ;
+        
+        button {
+          padding: 0 15px ;
+          color: var(--text-normal) ;
+          
+          &:hover  {
+            color: var(--interactive-active) ;
+            text-decoration: underline ;
+          }
+        }
       }
       
       // Seperator (Date)
       [class*="divider-"] {
         border: none ;
-        margin: 26px 14px 10px 14px ;
+        margin: 15px 0px 35px 0 ;
         
         &::before, &::after {
           content: "" ;
@@ -415,7 +425,23 @@ body {
           background: var(--background-modifier-accent) ;
         }
         
-        span { background: none }
+        // new unread messages
+        &[class*="isUnread-"] {
+          &::before, &::after {
+            background: var(--red);
+            opacity: .7 ;
+          }
+        }
+        
+        [class*="content-"] { background: none }
+        
+        [class*="unreadPill-"] { 
+          top: 0 ;
+          padding: 0 4px ;
+          border-radius: 0 0 4px 4px ;
+          
+          path { display: none }
+        }
       }
       
       //Buttons
@@ -608,7 +634,7 @@ body {
   }
 }
 
-// Server-bar-Background
+// Serverbar Background
 [class*="wrapper-"][class*="guilds-"] {
   
   [class*="scroller-"] { background: none }
@@ -618,16 +644,16 @@ body {
     top: 0 ;
     left: 0 ;
     position: absolute ;
-    display: block !important ;
+    display: block ;
     height: 54px ;
     width: 100vw ;
     padding: 0 ;
     transform: rotate(90deg) translateX(-54px) ;
     transform-origin: bottom left ;
-    background-image: var(--Background_Server) !important ;
-    background-size: cover !important ;
-    background-position: center !important ;
-    background-repeat: no-repeat !important ;
+    background-image: var(--Background_Server) ;
+    background-size: cover ;
+    background-position: center ;
+    background-repeat: no-repeat ;
     opacity: 1 ;
     z-index: 0 ;
   }
@@ -940,7 +966,7 @@ body {
   }
 }
 
-// Settings menu styling
+// Settings menu mixin
 @mixin Settings () {
   
   // Sidebar left
@@ -1160,15 +1186,4 @@ body {
   color: white ;
 
   [class*="tooltipPointer-"] { border-top-color: var(--activity-card-background) !important ; }
-}
-
-
-
-// - Plugin support
-
-// DetailedServerTooltips (by Metalloriff)
-[class*="layerContainer-"] .dst-tooltip {
-  transform: translateY(calc(-100% + 40px));
-  left: -20px !important ;
-  background-color: var(--activity-card-background) !important ;
 }
