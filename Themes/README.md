@@ -9,7 +9,8 @@
 
 ## Themes:
 
-- [T1 - Theme](T1.theme.css) | [download][T1-link] ![download-image]
+- [T1 - Theme](T1.theme.css) | [download][T1-link] [![download-image]][T1-link]
+
 
 
 ## Install:
