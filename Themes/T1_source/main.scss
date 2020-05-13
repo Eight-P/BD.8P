@@ -1,5 +1,5 @@
 $v: 5 ; // required theme file version
-$current_version: "0.4.04" ;
+$current_version: "0.4.041" ;
 
 
 // Version
@@ -557,7 +557,8 @@ body {
       // Emoji selector Menu
       #emoji-picker-tab-panel {
         height: 100% ;
-        grid-template-rows: auto 1fr auto ;
+        
+        [class*="emojiPicker-"] { grid-template-rows: auto 1fr auto }
         
         //header
         [class*="header-"] {
