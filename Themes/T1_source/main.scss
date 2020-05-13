@@ -1,5 +1,5 @@
 $v: 5 ; // required theme file version
-$current_version: "0.4.03" ;
+$current_version: "0.4.04" ;
 
 
 // Version
@@ -377,7 +377,7 @@ body {
     }
   }
   
-  // Server Chat
+  // Chat
   > [class*="content-"] {
     
     &::before { display: none }
@@ -475,6 +475,7 @@ body {
       
       &::before { display: none }
 
+      // Main Text input
       [class*="channelTextArea-"] {
         background: none ;
         margin: 0 ;
@@ -505,7 +506,7 @@ body {
             // gift menu
             [aria-label*="Send a gift"] { display: none }
 
-            // emoji meniu
+            // emoji menu
             [class*="emojiButton-"] {
               opacity: .6 ;
 
@@ -514,7 +515,8 @@ body {
           }
         }
       }
-      // Text-Input Popout "autocomplete"
+      
+      // autocomplete popout
       [class*="autocomplete-"] {
         z-index: 102 ;
         background-color: var(--background-tertiary) ;
@@ -531,6 +533,66 @@ body {
           }
         }
       }
+      
+      // Gifs/Emoji selector Menu
+      [class*="channelTextArea-"] > [class*="positionContainer-"] {
+        z-index: 102 ;
+        
+        [class*="contentWrapper-"] {
+          background-color: var(--background-tertiary) ;
+          padding-top: 8px ;
+          display: block ;
+          
+          [class*="nav-"] { display: none  }
+        }
+      }
+      
+      // Gifs selector Menu
+      #gif-picker-tab-panel {
+        height: 100% ;
+          
+        [class*="content-"] [class*="scroller-"] { @include scrollbar() } 
+      } 
+      
+      // Emoji selector Menu
+      #emoji-picker-tab-panel {
+        height: 100% ;
+        grid-template-rows: auto 1fr auto ;
+        
+        //header
+        [class*="header-"] {
+          margin-left: 36px ;
+        }
+        
+        // body 
+        [class*="bodyWrapper-"] [class*="scroller-"] {
+          @include scrollbar() ;
+          
+          // list container
+          [class*="listItems-"] { left: 14px !important }
+          
+          [class*="categoryWrapper-"] { 
+            background: none ;
+            position: relative ;
+          }
+        }
+        
+        // emoji preview
+        [class*="inspector-"] { 
+          position: absolute ;
+          top: -10px ;
+          background: none ;
+          
+          * { display: none }
+          
+          > img {
+            display: block ;
+          }
+        }
+        
+        // server/category list
+        > [class*="wrapper-"] { border-right: 1px solid var(--background-modifier-accent) }
+      } 
       
       // no permission to write
       [class*="channelTextAreaDisabled-"] [class*="innerDisabled-"]::after {
@@ -1168,15 +1230,34 @@ body {
 }
 
 // Discoveree
-[class*="guilds-"] ~ [class*="base-"] [class*="pageWrapper-"] {
-  background: transparent ;
+[class*="layer-"]:first-child [class*="sidebar-"] {
   
-  > img { display: none }
-  
-  [class*="scroller-"] { @include scrollbar() } 
+  // sidebar 
+  [class*="discoverHeader-"] {
+    margin-top: 64px ;
     
-  [class*="body-"] [class*="search-"] {
-    [class*="searchBox-"], [class*="languageSelector-"] [class*="container"] { background: var(--background-primary) }
+    // Items
+    ~ [class*="categoryItem-"] {
+      
+      [class*="itemInner-"] {
+        border-radius: 0 ;
+        padding: 0 4px ;
+        margin: 5px 4px ;
+      }
+      
+      &:hover [class*="itemInner-"] { border-left: 3px solid var(--interactive-hover) }
+      
+      &[class*="selectedCategoryItem-"] [class*="itemInner-"] {
+        background-color: transparent ;
+         border-left: 3px solid var(--interactive-hover) ;
+      }
+    }
+  }
+  
+  ~ [class*="pageWrapper-"] {
+    background: transparent ;
+    
+    [class*="scroller-"] { @include scrollbar() } 
   }
 }
 
