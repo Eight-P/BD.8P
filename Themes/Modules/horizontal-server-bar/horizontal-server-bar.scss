@@ -1,5 +1,10 @@
 // Theme version
-$current_version: "0.4.02" ;
+$current_version: "0.4.1" ;
+
+:root {  
+  --Brightness_S_D: var(--Server_Brightness, 100);
+  --BG_Blur_S_D: var(--Server_Background_blur, 0);
+}
 
 #user-settings #bd-settings-sidebar::after {
   content: "ServerBar v#{$current_version} by Eight_P";
@@ -11,13 +16,27 @@ $current_version: "0.4.02" ;
 }
 
 // -- ServerBar
-[class*="wrapper-"][class*="guilds-"] {
+.guilds-1SWlCJ {
   position: absolute ;
   top: 0 ;
   height: 100vw ;
   width: 54px ;
   transform: rotate(-90deg) translateX(calc(-100vh + 22px));
   transform-origin: top left ;
+  
+//  Background image
+  &:before {
+    content: "";
+    position: absolute ;
+    height: 54px ;
+    width: 100vw ;
+    transform: rotate(90deg) translateX(-54px) ;
+    transform-origin: bottom left ;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    filter: blur(calc((var(--BG_Blur_S_D) / 100) * 1px)) brightness(calc((var(--Brightness_S_D) / 100)));
+  }
   
   ~ [class*="base-"] {
     height: calc(100vh - 76px);
@@ -111,6 +130,7 @@ $current_version: "0.4.02" ;
       max-height: calc(100vw - 240px);
       padding: 0 ;
       contain: initial ;
+      background: none ;
 
       &::-webkit-scrollbar { display: none }
       &::before { top: 120px }
