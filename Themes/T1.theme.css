@@ -1,11 +1,11 @@
-//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":"0.5.1","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//
+//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":".F6.0","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//
 
 /* -- source codes -- */
 
-/* - horizontal-server-bar - */
+/*  horizontal-server-bar  */
 @import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/824d9aaa57fa5138fed27f7cd0dac07d7e51652f/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css);
 
-/* - Main-Theme - */
+/*  Main-Theme  */
 @import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/824d9aaa57fa5138fed27f7cd0dac07d7e51652f/Themes/T1_source/main.css);
 
 :root {
@@ -17,7 +17,7 @@
   
     - turn off "Minimal Mode" ( BetterDiscord-Settings )
 
-    - The Theme may not work properly when mixed with others.
+    - The Theme wont work properly when mixed with others.
 
 
   -- Recommended in addition :
@@ -25,23 +25,49 @@
     - use discord's "Dark-theme"
 
   
-  
-  
-*/ /* ---  Settings  --- */
-  
-  
-  
-  --brightness: 20 ; /* darkening the main background (0 - 100) */
-  
-  --brightness_Server: 0 ; /* darkening the server background (0 - 100) */
 
-  --Server_banner: 0 ; /* show/hide server banner ( 0=off, 1=on) */
+  * USER SETTINGS *
   
-  --Background_Main: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/c69e3eea77d03f4b9225985ca46e000662e878cf/Themes/T1_source/Main-bg.jpg);
+    --  Variables  
+*/
   
-  --Background_Server: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/e0fa0836f70668f41ebbb85b29a21bcd11be7770/Themes/T1_source/Server-bg.jpg); /* Backgrounds can be a color or link to an image. Should be a .jpg and https link. Syntax: url( <link> ) */
+  --Main_Brightness: 80 ;   /* darkening the main background */
   
+  --Server_Brightness: 100 ;   /* darkening the server background */
+
+  --Server_banner: 0 ;   /* show/hide server banner ( 0=off, 1=on) */
   
+  --Main_Background_blur: 0 ;   /* adds a Blur effect to the Main background */
+  
+  --Server_Background_blur: 0 ;   /* adds a Blur effect to the Server background */
+}
+/*   
+
+    --  Backgrounds  
+
+      -can be a color or link to an image. Syntax for links: url( <https-link> ) 
+
+*/
+.bg-h5JY_x {
+  
+  /* Main background */
+  
+  background: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/c69e3eea77d03f4b9225985ca46e000662e878cf/Themes/T1_source/Main-bg.jpg)
+  
+  /*  
+  Default : url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/c69e3eea77d03f4b9225985ca46e000662e878cf/Themes/T1_source/Main-bg.jpg); 
+  */
+
+}
+.guilds-1SWlCJ:before {
+  
+  /* Server background */
+  
+  background: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/e0fa0836f70668f41ebbb85b29a21bcd11be7770/Themes/T1_source/Server-bg.jpg)
+  
+  /*  
+  Default : url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/e0fa0836f70668f41ebbb85b29a21bcd11be7770/Themes/T1_source/Server-bg.jpg); 
+  */
 }
 
 
@@ -96,8 +122,6 @@
   --activity-card-background:#202225;
   --textbox-markdown-syntax:#8e9297;
   
-  --red: #f04747;
-  
   /* deprecated */
   
   --deprecated-card-bg:rgba(32,34,37,0.6);
@@ -110,6 +134,11 @@
   --deprecated-text-input-border-hover:#040405;
   --deprecated-text-input-border-disabled:#202225;
   --deprecated-text-input-prefix:#dcddde;
+  
+  /* additions */
+  
+  --red: #f04747;
+  --border-mentioned:rgba(250, 166, 26, 0.65) ;
 }
 
 
@@ -161,8 +190,6 @@
   --activity-card-background:#fff;
   --textbox-markdown-syntax:#6a7480;
   
-  --red: #f04747;
-  
   /* deprecated */
   
   --deprecated-card-bg:#f8f9f9;
@@ -175,8 +202,13 @@
   --deprecated-text-input-border-hover:#b9bbbe;
   --deprecated-text-input-border-disabled:#dcddde;
   --deprecated-text-input-prefix:#b9bbbe;
+  
+  /* additions */
+  
+  --red: #f04747;
+  --border-mentioned:rgba(250, 166, 26, 0.65) ;
 }
 
 
 
-body { --F_V:5 /* don't touch */ }
+body { --F_V:6 /* don't touch */ }
