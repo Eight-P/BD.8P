@@ -1,6 +1,11 @@
-$v: 5 ; // required theme file version
-$current_version: "0.4.041" ;
+$v: 6 ; // required theme file version
+$current_version: "0.4.1 v.F6" ;
 
+// Defaults
+:root {
+  --Brightness_M_D: var(--Main_Brightness, 100);
+  --BG_Blur_M_D: var(--Main_Background_blur, 0);
+}
 
 // Version
 #user-settings #bd-settings-sidebar > span:after {
@@ -11,6 +16,7 @@ $current_version: "0.4.041" ;
   color: rgb(114, 118, 125);
   padding: 2px 10px;
 }
+
 
 // Disclaimer mixin
 @mixin disclaimer ($text, $op) {
@@ -66,53 +72,49 @@ $current_version: "0.4.041" ;
   &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
 }
 
+
 // Layer independent stuff
 body {
-  background-image: var(--Background_Main) !important ;
-  background-size: cover !important ;
-  background-attachment: fixed !important ;
-  background-position: center !important ;
-  background-repeat: no-repeat !important ;
-    
-  #app-mount { 
-    // Background_Main brightness control
-    background: rgba(0, 0, 0, calc(var(--brightness) / 100 )) !important ;
-    
-    // Windowbar seperatorline
-    > [class*="titleBar-"] { 
-      box-shadow: 0 .5px 0 var(--header-secondary) ;
-      z-index: 500 ;
-    }
-    
-    > [class*="app-"] > [class*="app-"] { 
-      background: none ;
-      
-      // Background_Main
-      [class*="bg-"] { background: none }
-    }
-  }
   
   // if the Theme file needs an update
   @include disclaimer (
-    'Local theme update required! Pls replace your "T1.theme.css" file with the latest version from "github.com/Eight-P/BetterDiscord-Stuff" ', 
+    'T1 Update available! Pls replace your "T1.theme.css" file with the latest version (v.F#{$v}) ("website"-link in Themes tab)', 
     calc( #{$v} - var(--F_V,0))
   );
 
   // if Minimal Mode is active
-  &.bd-minimal { @include disclaimer ('Pls turn off "Minimal Mode" for the Theme to work properly ("ctrl" + "," : to open settings)', 1) }
-   
-  [class*="layers-"] > [class*="layer-"] { 
-    transform: none !important ;
-    background: none ;
+  &.bd-minimal { @include disclaimer ('Pls turn off "Minimal Mode" for the Theme to work properly | ["ctrl" + ","] => opens settings if needed', 1) }
+
+  // Background Main
+  .bg-h5JY_x {
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-position: center !important;
+    filter: blur(calc(var(--BG_Blur_M_D) / 100 * 1px)) brightness(calc((var(--Brightness_M_D) / 100)));
+  }
+
+  #app-mount {
+    > [class*="app-"] > [class*="app-"] { background: none }
+
+    [class*="layers-"] > [class*="layer-"] { 
+      transform: none !important ;
+      background: none ;
+    }
+
+    // Windowbar seperatorline
+    > [class*="titleBar-"] {
+      box-shadow: 0 .5px 0 var(--header-secondary) ;
+      z-index: 500 ;
+    }
+  }
 }
 
-  // pluginNotice-bar
-  #pluginNotice, [class*="app-"] > [class*="notice-"]{
-    position: absolute ;
-    width: 100vw ;
+// pluginNotice-bar
+#pluginNotice, [class*="app-"] > [class*="notice-"]{
+  position: absolute ;
+  width: 100vw ;
 
-    [class*="dismiss-"] { right: 36px }
-  }
+  [class*="dismiss-"] { right: 36px }
 }
 
 // general HeaderBar (Server/Dms/Friends)
@@ -286,7 +288,7 @@ body {
 
 // Server/DM Chat
 [class*="chat-"]  {
-  background: none ;
+  background: none;
   
   // HeaderBar
   > [class*="title-"] {
@@ -444,9 +446,11 @@ body {
         }
       }
       
-      //Buttons
+      // Message
       [class*="message-"] {
+        background: none ;
         
+        // Message buttons
         [class*="buttonContainer-"] {
           
           [class*="buttons-"] { top: -20px }
@@ -455,14 +459,20 @@ body {
           [class*="wrapper-"] {
             background: none ;
             box-shadow: none ;
-            
-            [class*="emojiButton-"], [class*="emojiSeparator-"] {
-              display: none ;
-            }
           }
         }
         
-        &[class*="mentioned-"]::before { display: none }
+        // mentioned
+        &[class*="mentioned-"] {
+          
+          [class*="contents-"] {
+            padding: 0 6px ;
+            border-left: solid 2px var(--border-mentioned) ;
+            background: var(--background-mentioned) ;
+          }
+          
+          &:before { display: none }
+        }
       }
     }
 
@@ -538,6 +548,10 @@ body {
       [class*="channelTextArea-"] > [class*="positionContainer-"] {
         z-index: 102 ;
         
+        [class*="drawerSizingWrapper-"] {
+          width: 432px !important;
+        }
+        
         [class*="contentWrapper-"] {
           background-color: var(--background-tertiary) ;
           padding-top: 8px ;
@@ -569,8 +583,10 @@ body {
         [class*="bodyWrapper-"] [class*="scroller-"] {
           @include scrollbar() ;
           
-          // list container
-          [class*="listItems-"] { left: 14px !important }
+          
+          [class*="listItems-"] { 
+            left: 12px !important;
+          }
           
           [class*="categoryWrapper-"] { 
             background: none ;
@@ -694,36 +710,6 @@ body {
         border-radius: 50% ;
       }
     }
-  }
-}
-
-// Serverbar Background
-[class*="wrapper-"][class*="guilds-"] {
-  
-  [class*="scroller-"] { background: none }
-  
-  // Backgroundimage
-  [class*="unreadMentionsIndicatorTop-"] {
-    top: 0 ;
-    left: 0 ;
-    position: absolute ;
-    display: block ;
-    height: 54px ;
-    width: 100vw ;
-    padding: 0 ;
-    transform: rotate(90deg) translateX(-54px) ;
-    transform-origin: bottom left ;
-    background-image: var(--Background_Server) ;
-    background-size: cover ;
-    background-position: center ;
-    background-repeat: no-repeat ;
-    opacity: 1 ;
-    z-index: 0 ;
-  }
-  
-  // Brightnesscontrol
-  [class*="scrollerWrap-"] {
-    background: rgba(0, 0, 0, calc(var(--brightness_Server) / 100 )) ;
   }
 }
 
@@ -1029,8 +1015,10 @@ body {
   }
 }
 
-// Settings menu mixin
-@mixin Settings () {
+// Settings menus [USER_SETTINGS, GUILD_SETTINGS, CHANNEL_SETTINGS, bd public server list]
+[class*="layers-"] > div:not(:first-child ) {
+  
+  [class*="layer-"] { background: none }
   
   // Sidebar left
   [class*="standardSidebarView-"] {
@@ -1083,29 +1071,6 @@ body {
       @include scrollbar() ;
     }
   }
-}
-
-[aria-label="USER_SETTINGS"] { @include Settings() }
-[aria-label="GUILD_SETTINGS"] { @include Settings() }
-[aria-label="CHANNEL_SETTINGS"] { @include Settings() }
-
-// BD's Public Server List
-#pubslayerroot {
-  // - sidebar
-  .sidebar-region-scroller {
-    padding: 20px 0 ;
-    
-    &::-webkit-scrollbar { display: none }
-  }
-  
-  // - content region
-  [class*="content-region"] { background: none }
-  
-  // scroller 
-  .content-region [class*="scrollerWrap"] [class*="scroller-"] { @include scrollbar() } 
-  
-  // content container
-  .content-column { padding: 20px 40px 80px }
 }
 
 // User Popout
