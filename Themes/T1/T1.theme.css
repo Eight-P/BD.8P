@@ -1,12 +1,9 @@
-//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":".F6.0","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//
+//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":".F6.1","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//
 
 /* -- source codes -- */
 
-/*  horizontal-server-bar  */
-@import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/824d9aaa57fa5138fed27f7cd0dac07d7e51652f/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css);
-
-/*  Main-Theme  */
-@import url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/824d9aaa57fa5138fed27f7cd0dac07d7e51652f/Themes/T1_source/main.css);
+/*  horizontal-server-bar */ @import url(https://eight-p.github.io/BD.8P/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css);
+/*  Main-Theme */ @import url(https://eight-p.github.io/BD.8P/Themes/T1/imports/T1.main.css);
 
 :root {
 /*
