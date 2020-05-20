@@ -23,7 +23,7 @@
 
 ## Customize:
 
-###### Edit the theme.css file in a Texteditor or use [ThemeSettings](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Plugins/ThemeSettings) Plugin by DevilBro
+###### Edit the theme.css file in a Texteditor
 
 
 
