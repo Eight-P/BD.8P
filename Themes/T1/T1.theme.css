@@ -1,4 +1,4 @@
-//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":".F6.1","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//
+//META{"name":"T1","description":"simple design with focus on improvements and horizontal server bar","author":"Eight_P","version":".F6.2","website":"https://github.com/Eight-P/BetterDiscord-Stuff/tree/master/Themes","source":"https://raw.githubusercontent.com/Eight-P/BetterDiscord-Stuff/master/Themes/T1.theme.css"}*//
 
 /* -- source codes -- */
 
@@ -49,7 +49,7 @@
   
   /* Main background */
   
-  background: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/c69e3eea77d03f4b9225985ca46e000662e878cf/Themes/T1_source/Main-bg.jpg)
+  background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg)
   
   /*  
   Default : url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/c69e3eea77d03f4b9225985ca46e000662e878cf/Themes/T1_source/Main-bg.jpg); 
@@ -60,7 +60,7 @@
   
   /* Server background */
   
-  background: url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/e0fa0836f70668f41ebbb85b29a21bcd11be7770/Themes/T1_source/Server-bg.jpg)
+  background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg)
   
   /*  
   Default : url(https://rawcdn.githack.com/Eight-P/BetterDiscord-Stuff/e0fa0836f70668f41ebbb85b29a21bcd11be7770/Themes/T1_source/Server-bg.jpg); 
