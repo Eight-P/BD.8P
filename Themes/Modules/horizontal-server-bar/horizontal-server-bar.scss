@@ -1,9 +1,10 @@
 // Theme version
-$current_version: "0.4.1" ;
+$current_version: "0.4.11" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
   --BG_Blur_S_D: var(--Server_Background_blur, 0);
+  --Banner_S_D: var(--Server_banner, 0);
 }
 
 #user-settings #bd-settings-sidebar::after {
@@ -234,6 +235,11 @@ $current_version: "0.4.1" ;
         > [class*="listItem-"] { top: 64px }
       }
       
+      // guildsAdd when in Discovereee Server preview
+      > [class*="listItem-"]:nth-last-child(2) {
+          top: 64px
+      }
+      
       // guildsError and Discovere pointer fix
       > [class*="listItem-"]:last-child {
         pointer-events: none ;
@@ -263,6 +269,11 @@ $current_version: "0.4.1" ;
       // DMs
       > div:not([class]):not([aria-label*="Server"]) > [class*="listItem-"] {
         @include ServerIcon ("listItemWrapper-") 
+      }
+      
+      // Discovereee Server preview Server icon
+      > [class*="listItem-"] {
+        @include ServerIcon ("blobContainer-") 
       }
       
       // Server wrapper
@@ -371,7 +382,7 @@ $current_version: "0.4.1" ;
   }
   
   > [class*="sidebar-"] > [class*="container-"] { 
-    overflow: visible ;
+//    overflow: visible ;
   }
 }
 
@@ -415,7 +426,7 @@ $current_version: "0.4.1" ;
       position: absolute ;
       top: calc(-100vh + 54px + 22px) ;
       left: calc(-100vw + 120px) ;
-      opacity: calc(var(--Server_banner,0) - .2) ;
+      opacity: calc(var(--Banner_S_D) - .2) ;
       border-bottom-right-radius: 10% ;
     }
   }
@@ -444,7 +455,7 @@ $current_version: "0.4.1" ;
   }
 }
 
-// shitty Tooltips shit
+// Servericon hover Tooltips shit
 .tooltip-2QfLtc.tooltipRight-2JM5PQ.tooltipBlack-PPG47z.listItemTooltip-CDcY8J [class*="rowGuildName-"] {
   [class*="guildNameText-"] {
       white-space: nowrap;
