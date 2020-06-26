@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.11 v.F6" ;
+$current_version: "0.4.12 v.F6" ;
 
 // Defaults
 :root {
@@ -135,10 +135,11 @@ body {
 }
 
 // general HeaderBar (Server/Dms/Friends)
-[class*="sidebar-"] ~ [class*="container-"] > [class*="container-"], [class*="chat-"] > [class*="title-"] {
+[class*="sidebar-"] ~ [class*="container-"] > [class*="container-"], [class*="chat-"] > [class*="title-"], [class*="headerWrapper-"] > [class*="title-"] {
     
   [class*="children-"] {
-    [class*="iconWrapper-"], [class*="title-"], [class*="divider-"] { display: none }
+    
+    [class*="iconWrapper-"], [class*="divider-"], [class*="title-"]:not([class*="cursorPonter-"]) { display: none }
 
     &::after { display: none }
   }
@@ -308,13 +309,13 @@ body {
   background: none;
   
   // HeaderBar
-  > [class*="title-"] {
+  > [class*="title-"], [class*="headerWrapper-"] > [class*="title-"] {
     background: none ;
     
     //Channel info
     [class*="children-"] {
 
-      [class*="status-"], [class*="akaBadge-"] { display: none }
+//      [class*="status-"], [class*="akaBadge-"] { display: none }
 
        // Channel Topic
       [class*="topic-"] {
@@ -390,6 +391,35 @@ body {
               &:first-child { visibility: hidden }
               &:last-child { opacity: 1 }
             }
+          }
+        }
+      }
+    }
+  }
+  
+  > [class*="wrapper-"] {
+    background: transparent ;
+//    height: 184px ;
+    
+    [class*="videoControls-"] {
+      
+      [class*="gradientContainer-"] { display: none }
+      
+      [class*="bottomControls-"] {
+        button {
+          background: transparent ;
+          
+          svg {
+            color: var(--interactive-normal) ;
+            
+            &:hover { color: white }
+          }
+          
+          &[aria-label="Disconnect"] svg {
+            color: var(--red) ;
+            opacity: .7 ;
+            
+            &:hover { opacity: 1 }
           }
         }
       }
@@ -593,7 +623,7 @@ body {
         
         //header
         [class*="header-"] {
-          margin-left: 36px ;
+          background: transparent ;
         }
         
         // body 
@@ -868,7 +898,7 @@ body {
 
       //Friends - online list
       [class*="peopleColumn-"] { 
-        [class*="scroller-"] { @include scrollbar() } 
+        [class*="scrollerBase-"] { @include scrollbar() } 
         
         h2[class*="title-"] { display: none }
         
@@ -901,7 +931,7 @@ body {
         
         
         // Friend's Card Container
-        [class*="scroller-"] {
+        [class*="scrollerBase-"] {
           text-align: center ;
           
           @for $i from 2 through 10 { @include margin($i) }
@@ -1051,7 +1081,7 @@ body {
   [class*="standardSidebarView-"] {
     background: none ;
     
-    [class*="sidebarRegion-"] [class*="scroller-"] { 
+    [class*="sidebarRegion-"] [class*="sidebarRegionScroller-"] { 
       background: none ;
       
       &::-webkit-scrollbar { display: none }
@@ -1093,7 +1123,7 @@ body {
   [class*="contentRegion-"] {
     background: none ;
     
-    [class*="scroller-"] {
+    [class*="contentRegionScroller-"] {
       background: none ;
       @include scrollbar() ;
     }
@@ -1133,7 +1163,7 @@ body {
   
   // Server-Options
   #guild-header-popout { 
-    background: var(--activity-card-background) ;
+    background: var(--background-tertiary) ;
     
     [class*="item-"] {
       
@@ -1168,6 +1198,27 @@ body {
       &#status-picker-custom-status[class*="focused-"] { background: var(--background-modifier-selected) }
     }
   }
+  
+//  [class*="recentMentionsPopout-"] {
+//    position: fixed ;
+//    top: 23px ;
+//    left: 0 ;
+//    max-height: none ;
+//    max-width: none ;
+//    height: calc(100vh - 77px) !important ;
+//    width: 100vw ;
+//    pointer-events: none ;
+//    
+//    * { pointer-events: auto }
+//    
+//    [class*="header-"] {
+//      margin-right: 56px ;
+//    }
+//    
+//    [class*="scroller-"] {
+//      
+//    }
+//  }
 }
 
 
@@ -1272,7 +1323,8 @@ body {
 
 // Tooltips
 [class*="layerContainer-"] [class*="tooltip-"] {
-  background-color: var(--activity-card-background) ;
+//  background-color: var(--activity-card-background) ;
+  background-color: var(--background-tertiary) ;
   color: white ;
 
   [class*="tooltipPointer-"] { border-top-color: var(--activity-card-background) !important ; }
