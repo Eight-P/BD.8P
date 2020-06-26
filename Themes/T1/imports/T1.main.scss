@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.12 v.F6" ;
+$current_version: "0.4.13 v.F6" ;
 
 // Defaults
 :root {
@@ -134,7 +134,7 @@ body {
   [class*="dismiss-"] { right: 36px }
 }
 
-// general HeaderBar (Server/Dms/Friends)
+// general HeaderBar (Server/Dms/Friends/voice call dm)
 [class*="sidebar-"] ~ [class*="container-"] > [class*="container-"], [class*="chat-"] > [class*="title-"], [class*="headerWrapper-"] > [class*="title-"] {
     
   [class*="children-"] {
@@ -314,8 +314,6 @@ body {
     
     //Channel info
     [class*="children-"] {
-
-//      [class*="status-"], [class*="akaBadge-"] { display: none }
 
        // Channel Topic
       [class*="topic-"] {
@@ -1014,31 +1012,12 @@ body {
                   position: relative ;
                   height: 33px ;
                   width: 230px ;
-                  
-                  [class*="activity-"] {
                     
-                    [class*="text-"] {
-                      visibility: hidden ;
-                      
-                      strong {
-                        position: absolute ;
-                        left: 0 ;
-                        visibility: visible ;
-                        width: 230px ;
-                        overflow: hidden ;
-                        text-overflow: ellipsis ;
-                      }
-                    }
-                    
-                    // in case of custom status
-                    > img ~ [class*="text-"] { visibility: visible }
-                    
-                    // idk, weird thing
-                    [class*="textRuler-"] { display: none }
-                    
-                    // Icon from Activity
-                    [class*="icon-"] { display: none }
-                  }
+                  // idk, weird thing
+                  [class*="textRuler-"] { display: none }
+
+                  // Icon from Activity
+                  [class*="icon-"] { display: none }
                 }
               }
             }
