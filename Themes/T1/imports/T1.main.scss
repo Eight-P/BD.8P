@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.13 v.F6" ;
+$current_version: "0.4.14 v.F6" ;
 
 // Defaults
 :root {
@@ -78,7 +78,7 @@ body {
   
   // if the Theme file needs an update
   @include disclaimer (
-    'T1 Update available! Pls replace your "T1.theme.css" file with the latest version (v.F#{$v}) ("website"-link in Themes tab)', 
+    'T1-Theme update available! Pls replace your "T1.theme.css" file with the latest version (v.F#{$v}) ("website"-link in Themes tab)', 
     calc( #{$v} - var(--F_V,0))
   );
 
@@ -107,31 +107,46 @@ body {
       z-index: 500 ;
     }
   }
-}
 
-// Notice bar 
-[class*="base-"] > [class*="notice-"] {
-  position: absolute ;
-  left: 240px ;
-  width: calc(100vw - 480px) ;
-  line-height: 32px ;
-  padding: 0 ;
-  top: 7px ;
-  border-radius: 5px ;
+  // Notice bar 
+  [class*="base-"] > [class*="notice-"] {
+    position: absolute ;
+    left: 240px ;
+    width: calc(100vw - 480px) ;
+    line-height: 32px ;
+    padding: 0 ;
+    top: 7px ;
+    border-radius: 5px ;
 
-  button {
-    
-    &[class*="back-"] { display: none }
+    button[class*="back-"] { display: none }
+
   }
 
-}
+  // BD plugin notice 
+  #pluginNotice {
+    position: absolute ;
+    z-index: 500 ;
+    margin: 0 140px ;
+    top: -22px ;
+    max-height: 30px ;
+    border-bottom-left-radius: 5px !important ;
+    border-bottom-right-radius: 5px !important ;
 
-// pluginNotice-bar
-#pluginNotice, [class*="app-"] > [class*="notice-"]{
-  position: absolute ;
-  width: 100vw ;
+    [class*="dismiss-"] { max-height: 30px }
 
-  [class*="dismiss-"] { right: 36px }
+    [class*="platformIcon-"] {
+      position: absolute ;
+      height: 20px ;
+      top: 10px ;
+      left: 10px ;
+    }
+
+    [class*="notice-message"] {
+      display: inline-block  ;
+      line-height: 30px ;
+      vertical-align: top ;
+    }
+  }
 }
 
 // general HeaderBar (Server/Dms/Friends/voice call dm)
@@ -1105,6 +1120,8 @@ body {
     [class*="contentRegionScroller-"] {
       background: none ;
       @include scrollbar() ;
+      
+      [class*="scroller-"] { background: transparent }
     }
   }
 }
@@ -1142,7 +1159,7 @@ body {
   
   // Server-Options
   #guild-header-popout { 
-    background: var(--background-tertiary) ;
+    background: var(--background-floating) ;
     
     [class*="item-"] {
       
@@ -1178,6 +1195,25 @@ body {
     }
   }
   
+  // user context menu
+  #user-context[aria-label="User Settings Actions"] {
+    
+    [class*="scroller-"]::-webkit-scrollbar { display: none }
+    
+    [class*="submenu-"] {
+      background: var(--background-floating) ;
+    }
+    
+    [class*="item-"][class*="focused-"] {
+      background: var(--background-modifier-selected);
+      
+      &[class*="colorDanger-"] { background: var(--red) }
+      
+    }
+  }
+  
+
+  // Inbox
 //  [class*="recentMentionsPopout-"] {
 //    position: fixed ;
 //    top: 23px ;
@@ -1200,6 +1236,8 @@ body {
 //  }
 }
 
+// idk what that is 
+.bd-context-menu { display: none }
 
 // Popouts (old container)
 [class*="popouts-"] {
