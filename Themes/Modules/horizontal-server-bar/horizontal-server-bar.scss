@@ -1,5 +1,5 @@
 // Theme version
-$current_version: "0.4.11" ;
+$current_version: "0.4.2" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -24,10 +24,11 @@ $current_version: "0.4.11" ;
   width: 54px ;
   transform: rotate(-90deg) translateX(calc(-100vh + 22px));
   transform-origin: top left ;
+  background: none ;
   
 //  Background image
   &:before {
-    content: "";
+    content: " " ;
     position: absolute ;
     height: 54px ;
     width: 100vw ;
@@ -47,9 +48,6 @@ $current_version: "0.4.11" ;
   
   [class*="unreadMentionsIndicator"], [class*="guildSeparator-"] { display: none }
   
-  [class*="scrollerWrap-"] {
-    width: 54px ;
-    align-items: center ;
     
     //Server Icon style
     @mixin ServerIcon($main_wrapper) {
@@ -127,11 +125,13 @@ $current_version: "0.4.11" ;
     
     [class*="scroller-"] {
       position: static ;
-      margin: 120px 0 120px 0 ;
-      max-height: calc(100vw - 240px);
+      max-height: calc(100vw - 244px);
+      contain: size ;
       padding: 0 ;
-      contain: initial ;
-      background: none ;
+      margin: 122px 0 ;
+      display: flex;
+      flex-direction: column ;
+      justify-content: center ;
 
       &::-webkit-scrollbar { display: none }
       &::before { top: 120px }
@@ -370,7 +370,7 @@ $current_version: "0.4.11" ;
         > [class*="listItem-"] { @include ServerIcon ("blobContainer-") }
       }
     }
-  }
+//  }
 }
 
 // visibility fix for both Buttons
@@ -472,8 +472,8 @@ $current_version: "0.4.11" ;
 // - Plugin support
 
 // DetailedServerTooltips (by Metalloriff)
-[class*="layerContainer-"] .dst-tooltip {
-  transform: translateY(calc(-100% + 40px));
-  left: -20px !important ;
-  background-color: var(--activity-card-background) !important ;
-}
+//[class*="layerContainer-"] .dst-tooltip {
+//  transform: translateY(calc(-100% + 40px));
+//  left: -20px !important ;
+//  background-color: var(--activity-card-background) !important ;
+//}
