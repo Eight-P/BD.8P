@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.14 v.F6" ;
+$current_version: "0.4.15 v.F6" ;
 
 // Defaults
 :root {
@@ -752,16 +752,18 @@ body {
 }
 
 // Member-list
-[class*="membersWrap-"] [class*="scroller-"] {
+[class*="membersWrap-"] [class*="members-"] {
   background: none ;
 
+  [class*="listContent-"] { background: none }
+  
   &::-webkit-scrollbar { display: none }
 
   // default Member card
   [class*="member-"] {
     border-radius: 0 ;
     height: 37px ;
-    margin: 5px 0 5px 14px ;
+    margin: 5px 0 5px 11px ;
     
     [class*="layout-"] { height: 37px }
     
