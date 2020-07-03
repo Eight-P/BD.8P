@@ -1,5 +1,5 @@
 // Theme version
-$current_version: "0.4.2" ;
+$current_version: "0.4.21" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -30,6 +30,7 @@ $current_version: "0.4.2" ;
   &:before {
     content: " " ;
     position: absolute ;
+    top: 0 ;
     height: 54px ;
     width: 100vw ;
     transform: rotate(90deg) translateX(-54px) ;
@@ -47,7 +48,6 @@ $current_version: "0.4.2" ;
   }
   
   [class*="unreadMentionsIndicator"], [class*="guildSeparator-"] { display: none }
-  
     
     //Server Icon style
     @mixin ServerIcon($main_wrapper) {
@@ -123,15 +123,19 @@ $current_version: "0.4.2" ;
       &.bd-guild.bd-selected [class*="pill-"] { display: flex }
     }
     
+    // THE SCROLLER aka HELL
     [class*="scroller-"] {
       position: static ;
-      max-height: calc(100vw - 244px);
-      contain: size ;
       padding: 0 ;
-      margin: 122px 0 ;
-      display: flex;
-      flex-direction: column ;
-      justify-content: center ;
+      background: none ;
+      contain: size ;
+      margin: 125px 0 ;
+      
+      display: inline-grid;
+      grid-template: "content" / auto ;
+      grid-auto-rows: 56px ;
+      align-items: center; 
+      row-gap: 5px ;
 
       &::-webkit-scrollbar { display: none }
       &::before { top: 120px }
@@ -192,7 +196,7 @@ $current_version: "0.4.2" ;
       }
       
       // guildsAdd / Discovereeeeee / Discovere + guildsError
-      .tutorialContainer-SGrQ1h > [class*="listItem-"], > [class*="listItem-"]:last-child, > [class*="listItem-"]:nth-last-child(2) {
+      .tutorialContainer-SGrQ1h > [class*="listItem-"], > [class*="listItem-"]:nth-last-child(3), > [class*="listItem-"]:nth-last-child(2), > [class*="listItem-"]:last-child {
         position: absolute ;
         left: 17px ; 
         top: 90px ;
@@ -230,13 +234,14 @@ $current_version: "0.4.2" ;
       
       // guildsAdd
       .tutorialContainer-SGrQ1h { 
-        position: initial ;
+        position: absolute ;
+        top: 0 ;
         
         > [class*="listItem-"] { top: 64px }
       }
       
       // guildsAdd when in Discovereee Server preview
-      > [class*="listItem-"]:nth-last-child(2) {
+      > [class*="listItem-"]:nth-last-child(3) {
           top: 64px
       }
       
@@ -267,8 +272,24 @@ $current_version: "0.4.2" ;
       }
       
       // DMs
-      > div:not([class]):not([aria-label*="Server"]) > [class*="listItem-"] {
-        @include ServerIcon ("listItemWrapper-") 
+      > div[style="opacity: 1; height: 56px; transform: scale(1);"]:not([class]) {
+        &::before {
+        content: "" ;
+        top: 0 ;
+        position: absolute ; 
+        left: 20% ; right: 20% ;
+        height: 2px ;
+        opacity: 0.6 ;
+        background-color: var(--header-secondary) ;
+      }
+        
+        ~ div[style="opacity: 1; height: 56px; transform: scale(1);"]:not([class]) {
+          &::before {
+            content: none ;
+          }
+        }
+        
+        > [class*="listItem-"] { @include ServerIcon ("listItemWrapper-") }
       }
       
       // Discovereee Server preview Server icon
@@ -276,8 +297,18 @@ $current_version: "0.4.2" ;
         @include ServerIcon ("blobContainer-") 
       }
       
+      
+      // removes "guildSeparator" / makes sure onle the correct "listItem"
+      .tutorialContainer-1v44GL ~ [class*="listItem-"] { 
+        display: none ;
+      }
+      > [aria-label*="Server"] ~ [class*="listItem-"] { display: flex !important }
+
+      
       // Server wrapper
       [aria-label*="Server"] {
+        grid-area: content ;
+        padding: 5px 0 ;
         
         // Server Folders
         > [class*="wrapper-"] {
@@ -370,7 +401,6 @@ $current_version: "0.4.2" ;
         > [class*="listItem-"] { @include ServerIcon ("blobContainer-") }
       }
     }
-//  }
 }
 
 // visibility fix for both Buttons
