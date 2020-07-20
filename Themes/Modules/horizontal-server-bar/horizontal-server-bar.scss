@@ -1,5 +1,5 @@
 // Theme version
-$current_version: "0.4.21" ;
+$current_version: "0.4.22" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -224,8 +224,8 @@ $current_version: "0.4.21" ;
           filter: drop-shadow( 2px 2px 3px black );
 
           > svg { 
-            height: 40px ; 
-            width: 40px ;
+            height: 120% ;
+            width: 120% ;
           }
         }
 
@@ -496,14 +496,3 @@ $current_version: "0.4.21" ;
   // voice-channel user / "server muted"
   ~ [class*="row-"],  ~ [class*="colorMuted-"] { display: none }
 }
-
-
-
-// - Plugin support
-
-// DetailedServerTooltips (by Metalloriff)
-//[class*="layerContainer-"] .dst-tooltip {
-//  transform: translateY(calc(-100% + 40px));
-//  left: -20px !important ;
-//  background-color: var(--activity-card-background) !important ;
-//}
