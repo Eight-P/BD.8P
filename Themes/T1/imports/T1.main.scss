@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.16 v.F6" ;
+$current_version: "0.4.17 v.F6" ;
 
 // Defaults
 :root {
@@ -635,8 +635,9 @@ body {
         [class*="emojiPicker-"] { grid-template-rows: auto 1fr auto }
         
         //header
-        [class*="header-"] {
+        [class*="emojiPicker-"] > [class*="header-"] { 
           background: transparent ;
+          padding-left: 45px ;
         }
         
         // body 
@@ -644,26 +645,28 @@ body {
           @include scrollbar() ;
           
           
-          [class*="listItems-"] { 
-            left: 12px !important;
-          }
+          [class*="listItems-"] { left: 12px !important }
           
-          [class*="categoryWrapper-"] { 
-            background: none ;
-            position: relative ;
-          }
+          [class*="categorySection-"] [class*="header-"] { background: none }
         }
         
         // emoji preview
         [class*="inspector-"] { 
           position: absolute ;
-          top: -10px ;
+          padding: 0 ;
+          top: 0px ;
+          left: 10px ;
+          height: 34px ;
+          width: 34px ;
           background: none ;
+          z-index: 101 ;
           
           * { display: none }
-          
-          > img {
+           
+          > img { 
             display: block ;
+            height: 34px ;
+            width: 34px ;
           }
         }
         
@@ -1055,14 +1058,9 @@ body {
   ~ [class*="applicationStore-"] {
      background: none;
     
-    [class*="scrollerWrap-"] {
-      
-      &::before { display: none } 
-      
-      [class*="scroller-"] {
-        background: none ;
-        @include scrollbar(); 
-      } 
+    [class*="scroller-"] {
+      background: none ;
+      @include scrollbar(); 
     }
     
     [class*="headerBar-"] { display: none }
