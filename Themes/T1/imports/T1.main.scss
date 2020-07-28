@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.17 v.F6" ;
+$current_version: "0.4.18 v.F6" ;
 
 // Defaults
 :root {
@@ -125,24 +125,18 @@ body {
   // BD plugin notice 
   #pluginNotice {
     position: absolute ;
+    width: calc(100vw - 480px);
     z-index: 500 ;
-    margin: 0 140px ;
+    margin: 0 240px ;
     top: -22px ;
+    box-sizing: border-box ;
     max-height: 30px ;
-    border-bottom-left-radius: 5px !important ;
-    border-bottom-right-radius: 5px !important ;
+    border-bottom-left-radius: 5px ;
+    border-bottom-right-radius: 5px ;
 
     [class*="dismiss-"] { max-height: 30px }
-
-    [class*="platformIcon-"] {
-      position: absolute ;
-      height: 20px ;
-      top: 10px ;
-      left: 10px ;
-    }
-
-    [class*="notice-message"] {
-      display: inline-block  ;
+    
+    span {
       line-height: 30px ;
       vertical-align: top ;
     }
