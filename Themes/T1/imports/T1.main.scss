@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.18 v.F6" ;
+$current_version: "0.4.181 v.F6" ;
 
 // Defaults
 :root {
@@ -752,7 +752,7 @@ body {
 [class*="membersWrap-"] [class*="members-"] {
   background: none ;
 
-  [class*="listContent-"] { background: none }
+  [class*="content-"] { background: none }
   
   &::-webkit-scrollbar { display: none }
 
