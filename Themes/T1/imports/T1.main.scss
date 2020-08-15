@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.181 v.F6" ;
+$current_version: "0.4.182 v.F6" ;
 
 // Defaults
 :root {
@@ -445,6 +445,14 @@ body {
       [class*="scroller-"] { 
         background: none ;
         @include scrollbar() ;
+        
+        [class*="scrollerInner-"] > [class*="wrapper-"] {
+          background: none ;
+          
+          [class*="wrapper-"][aria-hidden="true"] {
+            display: none ;
+          }
+        }
       } 
       
       // Mark as Read
