@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.183 v.F6" ;
+$current_version: "0.4.19 v.F6" ;
 
 // Defaults
 :root {
@@ -255,7 +255,7 @@ body {
   background: none ;
 
   // Profile Container
-  [class*="container-"]:last-of-type  {
+  > [class*="container-"]  {
     position: absolute ;
     height: 48px ;
     width: 240px ;
@@ -291,7 +291,7 @@ body {
   }
   
   // voice Connection
-  [class*="container-"]:nth-last-of-type(2) {
+  > [class*="wrapper-"] > [class*="container-"] {
     border: none ;
     height: 32px ;
     padding: 6px 10px ;
@@ -1167,34 +1167,76 @@ body {
 }
 
 // User popout-profile
-[class*="layerContainer-"], [class*="popouts-"] {
-  [class*="userPopout-"] {
-    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
+[class*="layerContainer-"] [class*="userPopout-"] {
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
 
-    [class*="header-"] {
+  // Header
+  [class*="header-"] {
 
-      &[class*="headerNormal-"] { background-color: var(--background-tertiary) }
-      &[class*="headerSpotify-"] {
-        background-color: var(--background-tertiary) ;
+    &[class*="headerNormal-"] { background-color: var(--background-tertiary) }
+    &[class*="headerSpotify-"] {
+      background-color: var(--background-tertiary) ;
 
-        [class*="timeBarUserPopout-"] ~ [class*="flex-"] { display: none }
+      [class*="timeBarUserPopout-"] ~ [class*="flex-"] { display: none }
+    }
+    &[class*="headerPlaying-"] { background-color: var(--background-tertiary) }
+    &[class*="headerStreaming-"] { background-color: #593695 }
+
+    // Profile img
+    [class*="avatarWrapper-"] {
+      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
+
+      foreignObject img, [class*="avatarHintInner-"] {
+        filter: opacity(100%);
+        border-radius: 7.5% ;
       }
-      &[class*="headerPlaying-"] { background-color: var(--background-tertiary) }
-      &[class*="headerStreaming-"] { background-color: #593695 }
 
-      [class*="avatarWrapper-"] {
-        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
-
-        foreignObject img, [class*="avatarHintInner-"] {
-          filter: opacity(100%);
-          border-radius: 7.5% ;
-        }
+      // status
+      rect[mask="url(#svg-mask-status-online)"] {
+        fill: var(--status-online, #43b581) ;
       }
     }
-    // "protip" 
-    [class*="footer-"] { [class*="protip-"] { display: none } }
+  }
+
+  // Footer
+  [class*="footer-"] input {
+    border-color: transparent ;
+    transition-delay: 0s ;
+
+    &:focus { border-color: var(--deprecated-text-input-border) }
+  }
+
+  // "protip" 
+  [class*="footer-"] { [class*="protip-"] { display: none } }
+}
+
+
+
+[class*="layerContainer-"] [class*="userPopout-"] {
+  width: 500px ;
+  display: grid ;
+  grid-template-areas:
+    "header body" 
+    "footer footer" ;
+  
+  // header
+  [class*="header-"] {
+    grid-area: header;
+  }
+  
+  // body
+  [class*="body-"] {
+    grid-area: body;
+  }
+  
+  // footer
+  [class*="footer-"] {
+    grid-area: footer;
+    padding: none ;
   }
 }
+
+
 
 // User Profile (modal)
 [class*="modal-"] {
