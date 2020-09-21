@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.191 v.F6" ;
+$current_version: "0.4.192 v.F6" ;
 
 // Defaults
 :root {
@@ -94,7 +94,21 @@ body {
   }
 
   #app-mount {
-    > [class*="app-"] > [class*="app-"] { background: none }
+    > [class*="app-"] {
+      position: absolute ;
+      height: calc(100vh - 22px);
+      width: 100vw ;
+      top: 22px ;
+      
+      > [class*="app-"] { 
+        background: none ;
+        
+        > [class*="uploadArea-"] {
+          top: -22px ;
+          height: calc(100vh + 22px);
+        }
+      }
+    }
 
     [class*="layers-"] > [class*="layer-"] { 
       transform: none !important ;
@@ -105,11 +119,6 @@ body {
     > [class*="titleBar-"] {
       box-shadow: 0 .5px 0 var(--header-secondary) ;
       z-index: 500 ;
-    }
-    
-    [class*="app-"] > [class*="uploadArea-"] {
-      top: -22px ;
-      height: calc(100vh + 22px);
     }
   }
 
