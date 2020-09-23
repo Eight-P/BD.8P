@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.192 v.F6" ;
+$current_version: "0.4.193 v.F6" ;
 
 // Defaults
 :root {
@@ -145,8 +145,9 @@ body {
     top: -22px ;
     box-sizing: border-box ;
     max-height: 30px ;
-    border-bottom-left-radius: 5px ;
-    border-bottom-right-radius: 5px ;
+    border-bottom-left-radius: 6px ;
+    border-bottom-right-radius: 6px ;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 
     [class*="dismiss-"] { max-height: 30px }
     
@@ -154,6 +155,17 @@ body {
       line-height: 30px ;
       vertical-align: top ;
     }
+  }
+
+  // BD plugin notice new addition
+  #pluginNotice {
+    background-color: var(--background-primary) ;
+    text-align: center ;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    
+    span { color: var(--text-normal) }
+    
+    strong > span { color: var(--bd-blue) }
   }
 }
 
