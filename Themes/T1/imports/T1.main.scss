@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.193 v.F6" ;
+$current_version: "0.4.194 v.F6" ;
 
 // Defaults
 :root {
@@ -689,12 +689,12 @@ body {
           background: none ;
           z-index: 101 ;
           
-          * { display: none }
-           
-          > img { 
-            display: block ;
+          *:not([class*="graphicPrimary-"]) > * { display: none }
+          
+          [class*="graphicPrimary-"], [class*="graphicPrimary-"] > img {
             height: 34px ;
             width: 34px ;
+            display: block ;
           }
         }
         
@@ -984,7 +984,7 @@ body {
           @for $i from 2 through 10 { @include margin($i) }
           
           > div {
-            display: inline ;
+//            display: inline ; // might cuase issues
             text-align: start ;
             padding-bottom: 25px ;
           }
