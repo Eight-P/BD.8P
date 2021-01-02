@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.194 v.F6" ;
+$current_version: "0.4.195 v.F6" ;
 
 // Defaults
 :root {
@@ -9,7 +9,7 @@ $current_version: "0.4.194 v.F6" ;
 
 // Version
 #user-settings #bd-settings-sidebar > span:after {
-  content: "T1-Theme v#{$current_version} by Eight_P";
+  content: "T1 v#{$current_version} by Eight_P";
   display: block;
   font-size: 12px ;
   font-weight: 600 ;
@@ -84,90 +84,95 @@ body {
 
   // if Minimal Mode is active
   &.bd-minimal { @include disclaimer ('Pls turn off "Minimal Mode" for the Theme to work properly | ["ctrl" + ","] => opens settings if needed', 1) }
+}
 
-  // Background Main
-  .bg-h5JY_x {
-    background-size: cover !important;
-    background-attachment: fixed !important;
-    background-position: center !important;
-    filter: blur(calc(var(--BG_Blur_M_D) / 100 * 1px)) brightness(calc((var(--Brightness_M_D) / 100)));
-  }
+// Background Main
+.bg-h5JY_x {
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  filter: blur(calc(var(--BG_Blur_M_D) / 100 * 1px)) brightness(calc((var(--Brightness_M_D) / 100)));
+}
 
-  #app-mount {
-    > [class*="app-"] {
-      position: absolute ;
-      height: calc(100vh - 22px);
-      width: 100vw ;
-      top: 22px ;
-      
-      > [class*="app-"] { 
-        background: none ;
-        
-        > [class*="uploadArea-"] {
-          top: -22px ;
-          height: calc(100vh + 22px);
-        }
+#app-mount {
+  > [class*="app-"] {
+//      just testing things (forgot why i did that :)
+
+//      position: absolute ;
+//      height: calc(100vh - 22px);
+//      width: 100vw ;
+//      top: 22px ;
+
+    > [class*="app-"] { 
+      background: none ;
+
+      > [class*="uploadArea-"] {
+        top: -22px ;
+        height: calc(100vh + 22px);
       }
     }
-
-    [class*="layers-"] > [class*="layer-"] { 
-      transform: none !important ;
-      background: none ;
-    }
-
-    // Windowbar seperatorline
-    > [class*="titleBar-"] {
-      box-shadow: 0 .5px 0 var(--header-secondary) ;
-      z-index: 500 ;
-    }
   }
 
-  // Notice bar 
-  [class*="base-"] > [class*="notice-"] {
-    position: absolute ;
-    left: 240px ;
-    width: calc(100vw - 480px) ;
-    line-height: 32px ;
-    padding: 0 ;
-    top: 7px ;
-    border-radius: 5px ;
-
-    button[class*="back-"] { display: none }
-
+  [class*="layers-"] > [class*="layer-"] { 
+    transform: none !important ;
+    background: none ;
   }
 
-  // BD plugin notice 
-  #pluginNotice {
-    position: absolute ;
-    width: calc(100vw - 480px);
+  // Windowbar seperatorline
+  > [class*="titleBar-"] {
+    box-shadow: 0 .5px 0 var(--header-secondary) ;
     z-index: 500 ;
-    margin: 0 240px ;
-    top: -22px ;
-    box-sizing: border-box ;
-    max-height: 30px ;
-    border-bottom-left-radius: 6px ;
-    border-bottom-right-radius: 6px ;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
-
-    [class*="dismiss-"] { max-height: 30px }
-    
-    span {
-      line-height: 30px ;
-      vertical-align: top ;
-    }
-  }
-
-  // BD plugin notice new addition
-  #pluginNotice {
-    background-color: var(--background-primary) ;
-    text-align: center ;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
-    
-    span { color: var(--text-normal) }
-    
-    strong > span { color: var(--bd-blue) }
   }
 }
+
+// Notice bar 
+[class*="base-"] > [class*="notice-"] {
+  position: absolute ;
+  left: 240px ;
+  width: calc(100vw - 480px) ;
+  line-height: 32px ;
+  padding: 0 ;
+  top: 7px ;
+  border-radius: 5px ;
+
+  button[class*="back-"] { display: none }
+
+}
+
+// BD plugin notice 
+#pluginNotice {
+  position: absolute ;
+  width: calc(100vw - 480px);
+  z-index: 500 ;
+  margin: 0 240px ;
+  top: -22px ;
+  box-sizing: border-box ;
+  max-height: 30px ;
+  border-bottom-left-radius: 6px ;
+  border-bottom-right-radius: 6px ;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+
+  [class*="dismiss-"] { max-height: 30px }
+
+  span {
+    line-height: 30px ;
+    vertical-align: top ;
+  }
+}
+
+// BD plugin notice new addition
+#pluginNotice {
+  background-color: var(--background-primary) ;
+  text-align: center ;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+
+  span { color: var(--text-normal) }
+
+  strong > span { color: var(--bd-blue) }
+}
+
+// popout on voice call (hopefully :)
+[class*="pictureInPicture-"] ~ [class*="wrapper-"] { z-index: 1000 }
 
 // general HeaderBar (Server/Dms/Friends/voice call dm)
 [class*="sidebar-"] ~ [class*="container-"] > [class*="container-"], [class*="chat-"] > [class*="title-"], [class*="headerWrapper-"] > [class*="title-"] {
@@ -430,6 +435,7 @@ body {
     }
   }
   
+  // voice call and voice channel, speaker view
   > [class*="wrapper-"] {
     background: transparent ;
 //    height: 184px ;
@@ -537,9 +543,11 @@ body {
       // Message
       [class*="message-"] {
         background: none ;
+        padding-right: 24px !important ;
         
         // Message buttons
         [class*="buttonContainer-"] {
+          right: 8px ;
           
           [class*="buttons-"] { top: -20px }
           [class*="buttons-"][class*="isHeader-"] { top: 0px }
@@ -1188,7 +1196,7 @@ body {
 }
 
 // User popout
-[class*="layerContainer-"] [class*="userPopout-"] {
+[class*="layerContainer-"] [class*="userPopout-"], [class*="popouts-"] > div > [class*="userPopout-"] {
   filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
   width: 500px ;
   display: grid ;
