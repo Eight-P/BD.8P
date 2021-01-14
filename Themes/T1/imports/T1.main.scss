@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.195 v.F6" ;
+$current_version: "0.4.196 v.F6" ;
 
 // Defaults
 :root {
@@ -206,8 +206,9 @@ body {
   top: 48px ;
   margin-bottom: 48px;
   background: none ;
-
-  [class*="positionedContainer-"] [class*="unread-"] { padding: 0 8px }
+  
+  // unread msg indicator
+  [class*="unread-"] { &[class*="unreadTop-"], &[class*="unreadBottom-"] { display: none }}
 
   [class*="scroller-"] {
 
@@ -252,6 +253,12 @@ body {
           border-bottom: 2px solid var(--red) ;
           border-radius: 0 ;
           color: var(--text-normal) ;
+        }
+        
+        //voice channel user "live" icon
+        [class*="live-"] {
+          background: none !important ;
+          color: var(--red) ;
         }
         
         &:hover {
@@ -1108,7 +1115,7 @@ body {
   
   // sidebar 
   [class*="discoverHeader-"] {
-    margin-top: 64px ;
+//    margin-top: 64px ;
     
     // Items
     ~ [class*="categoryItem-"] {
@@ -1268,8 +1275,6 @@ body {
     [class*="protip-"] { display: none }
   }
 }
-
-
 
 // User Profile (modal)
 [class*="modal-"] {
