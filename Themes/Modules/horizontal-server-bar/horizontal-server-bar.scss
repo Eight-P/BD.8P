@@ -1,5 +1,5 @@
 // Theme version
-$current_version: "0.4.22" ;
+$current_version: "0.4.23" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -411,8 +411,8 @@ $current_version: "0.4.22" ;
     overflow: visible ;
   }
   
-  > [class*="sidebar-"] > [class*="container-"] { 
-//    overflow: visible ;
+  [class*="sidebar-"] > [class*="thin-"] { 
+    overflow: visible !important ;
   }
 }
 
@@ -485,8 +485,31 @@ $current_version: "0.4.22" ;
   }
 }
 
+// Discovereeee head text
+[class*="base-"] [class*="sidebar-"] [class*="discoverHeader-"] {
+  position: absolute ;
+  width: 120px ;
+  height: 54px ;
+  left: calc(100vw - 120px);
+  top: calc(100vh - 22px - 54px );
+  margin: 0 ;
+  text-align: center ;
+  line-height: 54px ;
+  font-weight: 400 ;
+  font-size: 16px ;
+  color: var(--text-normal);
+  overflow: hidden ;
+  text-overflow: ellipsis ;
+  white-space: nowrap;
+  
+  
+  & ~ [class*="categoryItem-"]:nth-child(2) {
+    margin-top: 64px ;
+  }
+}
+
 // Servericon hover Tooltips shit
-.tooltip-2QfLtc.tooltipRight-2JM5PQ.tooltipBlack-PPG47z.listItemTooltip-CDcY8J [class*="rowGuildName-"] {
+[class*="layerContainer-"] [class*="tooltipContent-"] > [class*="rowGuildName-"] {
   [class*="guildNameText-"] {
       white-space: nowrap;
       text-overflow: ellipsis ;
