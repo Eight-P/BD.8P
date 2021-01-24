@@ -1,5 +1,5 @@
 // Theme version
-$current_version: "0.4.23" ;
+$current_version: "0.4.3" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -105,8 +105,7 @@ $current_version: "0.4.23" ;
           }
         }
       }
-
-      // unread messages, Server selected
+      
       [class*="pill-"] {
         height: 40px ;
         top: 10px ;
@@ -117,10 +116,8 @@ $current_version: "0.4.23" ;
           border-radius: 0 12px 12px 0 ;
         }
       }
-      &.bd-guild [class*="pill-"] { display: none }
-
-      &.bd-guild.bd-unread [class*="pill-"], 
-      &.bd-guild.bd-selected [class*="pill-"] { display: flex }
+      
+      &:hover { [class*="pill-"] [class*="item-"]:not([style*="height: 40px;"]) { display: none } }
     }
     
     // THE SCROLLER aka HELL
@@ -133,9 +130,9 @@ $current_version: "0.4.23" ;
       
       display: inline-grid;
       grid-template: "content" / auto ;
-      grid-auto-rows: 56px ;
+      grid-auto-rows: 60px ;
       align-items: center; 
-      row-gap: 5px ;
+//      row-gap: 8px ;
 
       &::-webkit-scrollbar { display: none }
       &::before { top: 120px }
@@ -241,9 +238,7 @@ $current_version: "0.4.23" ;
       }
       
       // guildsAdd when in Discovereee Server preview
-      > [class*="listItem-"]:nth-last-child(3) {
-          top: 64px
-      }
+      > [class*="listItem-"]:nth-last-child(3) { top: 64px }
       
       // guildsError and Discovere pointer fix
       > [class*="listItem-"]:last-child {
@@ -266,16 +261,17 @@ $current_version: "0.4.23" ;
         background: none ;
         border: none ;
         
-        span {
-          color: var(--red);
-        }
+        span { color: var(--red) }
       }
       
-      // DMs
+      // DMs div container
       > div[style="opacity: 1; height: 56px; transform: scale(1);"]:not([class]) {
+        height: 60px !important ;
+        
+        // spacer guilds | DMs
         &::before {
         content: "" ;
-        top: 0 ;
+        top: -4px ;
         position: absolute ; 
         left: 20% ; right: 20% ;
         height: 2px ;
@@ -283,13 +279,18 @@ $current_version: "0.4.23" ;
         background-color: var(--header-secondary) ;
       }
         
+        // remove spacer when mltp DMs
         ~ div[style="opacity: 1; height: 56px; transform: scale(1);"]:not([class]) {
           &::before {
             content: none ;
           }
         }
         
-        > [class*="listItem-"] { @include ServerIcon ("listItemWrapper-") }
+        > [class*="listItem-"] { 
+          @include ServerIcon ("listItemWrapper-");
+          
+          [class*="pill-"] { display: none }
+        }
       }
       
       // Discovereee Server preview Server icon
@@ -308,7 +309,7 @@ $current_version: "0.4.23" ;
       // Server wrapper
       [aria-label*="Server"] {
         grid-area: content ;
-        padding: 5px 0 ;
+        padding: 5px 0 13px 0;
         
         // Server Folders
         > [class*="wrapper-"] {
@@ -377,6 +378,10 @@ $current_version: "0.4.23" ;
                 border-radius: 0 12px 12px 0 ;
               }
             }
+            
+//            &:hover { [class*="pill-"] { display: none } }
+            
+            &:hover { [class*="pill-"] [class*="item-"]:not([style*="height: 40px;"]) { display: none } }
           }
 
           // Server Icons in folder
@@ -508,14 +513,16 @@ $current_version: "0.4.23" ;
   }
 }
 
-// Servericon hover Tooltips shit
-[class*="layerContainer-"] [class*="tooltipContent-"] > [class*="rowGuildName-"] {
-  [class*="guildNameText-"] {
-      white-space: nowrap;
-      text-overflow: ellipsis ;
-      overflow: hidden ;
-    }
+// Serverbar Tooltips 
+[class*="layerContainer-"] [class*="tooltip-"] [class*="tooltipContent-"] {
+  white-space: nowrap;
+  text-overflow: ellipsis ;
+  overflow: hidden ;
   
-  // voice-channel user / "server muted"
-  ~ [class*="row-"],  ~ [class*="colorMuted-"] { display: none }
+  // Servers/Guilds
+  [class*="rowGuildName-"]  {
+    
+    // voice-channel user / "server muted"
+    ~ [class*="row-"],  ~ [class*="colorMuted-"] { display: none }
+  }
 }
