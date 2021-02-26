@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.196 v.F6" ;
+$current_version: "0.4.197 v.F6" ;
 
 // Defaults
 :root {
@@ -95,13 +95,15 @@ body {
 }
 
 #app-mount {
+  background: none ;
+  
   > [class*="app-"] {
-//      just testing things (forgot why i did that :)
-
-//      position: absolute ;
-//      height: calc(100vh - 22px);
-//      width: 100vw ;
-//      top: 22px ;
+    
+    // App container placing bug hopefully fix
+      position: fixed !important;
+      height: calc(100vh - 22px)!important;
+      width: 100vw !important;
+      top: 22px !important;
 
     > [class*="app-"] { 
       background: none ;
@@ -476,6 +478,14 @@ body {
   > [class*="content-"] {
     
     &::before { display: none }
+    
+    .container-3RCQyg {
+      
+      .emptyChannelIcon-cc932w {
+        display: none ;
+      }
+      
+    }
     
     //Server-messages
     [class*="messagesWrapper-"] {
