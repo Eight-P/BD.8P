@@ -1,5 +1,5 @@
 $v: 6 ; // required theme file version
-$current_version: "0.4.197 v.F6" ;
+$current_version: "0.4.198 v.F6" ;
 
 // Defaults
 :root {
@@ -145,33 +145,26 @@ body {
 #pluginNotice {
   position: absolute ;
   width: calc(100vw - 480px);
-  z-index: 500 ;
   margin: 0 240px ;
-  top: -22px ;
+  top: 6px ;
   box-sizing: border-box ;
   max-height: 30px ;
-  border-bottom-left-radius: 6px ;
-  border-bottom-right-radius: 6px ;
+  border-radius: 6px ;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  background-color: var(--background-primary) ;
+  text-align: center ;
 
-  [class*="dismiss-"] { max-height: 30px }
+  #pluginNoticeDismiss { max-height: 30px }
 
   span {
     line-height: 30px ;
     vertical-align: top ;
+    color: var(--text-normal) ;
   }
-}
-
-// BD plugin notice new addition
-#pluginNotice {
-  background-color: var(--background-primary) ;
-  text-align: center ;
-  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
-
-  span { color: var(--text-normal) }
-
+  
   strong > span { color: var(--bd-blue) }
 }
+
 
 // popout on voice call (hopefully :)
 [class*="pictureInPicture-"] ~ [class*="wrapper-"] { z-index: 1000 }
