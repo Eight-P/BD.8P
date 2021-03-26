@@ -1,5 +1,5 @@
-// Theme version
-$current_version: "0.4.3" ;
+// hs version
+$current_version: "0.4.32" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -47,365 +47,381 @@ $current_version: "0.4.3" ;
     left: 0 ;
   }
   
-  [class*="unreadMentionsIndicator"], [class*="guildSeparator-"] { display: none }
+  [class*="unreadMentionsIndicator"] { display: none }
     
     //Server Icon style
-    @mixin ServerIcon($main_wrapper) {
-      margin: 0px ;
-      max-height: 60px ;
-      width: 54px ;
+  @mixin ServerIcon($main_wrapper) {
+    margin: 0px ;
+    max-height: 60px ;
+    width: 54px ;
 
-      //Icon Container
-      [class*="#{$main_wrapper}"] {
-        padding: 5px 2px 5px 2px ;
+    //Icon Container
+    [class*="#{$main_wrapper}"] {
+      padding: 5px 2px 5px 2px ;
 
-        > [class*="wrapper-"] {
-          transform: rotate(90deg) ;
-          margin: 5px ;
-          height: 40px ; 
-          width: 40px ;
+      > [class*="wrapper-"] {
+        transform: rotate(90deg) ;
+        margin: 5px ;
+        height: 40px ; 
+        width: 40px ;
 
-          svg {
-            filter: drop-shadow( 2px 2px 3px black );
-            height: 40px ; width: 40px ;
-            background-color: transparent  ;
+        svg {
+          filter: drop-shadow( 2px 2px 3px black );
+          height: 40px ; width: 40px ;
+          background-color: transparent  ;
 
-            // Icon
-            foreignObject [class*="wrapper-"]{
+          // Icon
+          foreignObject [class*="wrapper-"]{
 
-              &:hover img { border-radius: 25% }
+            &:hover img { border-radius: 25% }
 
-              //Image
-              img {
-                border-radius: 50% ;
-                transition: .3s ;
-              }
-
-              //Text
-              [class*="acronym-"] { 
-                background-color: transparent;
-                filter: drop-shadow( 2px 2px 3px black );
-              }
+            //Image
+            img {
+              border-radius: 50% ;
+              transition: .3s ;
             }
 
-            //Mask Obj (wich idk how it works)
-            mask { display: none }
+            //Text
+            [class*="acronym-"] { 
+              background-color: transparent;
+              filter: drop-shadow( 2px 2px 3px black );
+            }
           }
 
-          // Badges-unread
-          [class*="lowerBadge-"] {
-            pointer-events: none ;
+          //Mask Obj (wich idk how it works)
+          mask { display: none }
+        }
 
-            > div { background-color: var(--red) !important }
-          }
+        // Badges-unread
+        [class*="lowerBadge-"] {
+          pointer-events: none ;
 
-          // Badges-voice
-          [class*="upperBadge-"] {
-            pointer-events: none ;
-          }
+          > div { background-color: var(--red) !important }
+        }
+
+        // Badges-voice
+        [class*="upperBadge-"] {
+          pointer-events: none ;
         }
       }
-      
-      [class*="pill-"] {
-        height: 40px ;
-        top: 10px ;
-
-        [class*="item-"] {
-          width: 15px ;
-          margin-left: -12px ;
-          border-radius: 0 12px 12px 0 ;
-        }
-      }
-      
-      &:hover { [class*="pill-"] [class*="item-"]:not([style*="height: 40px;"]) { display: none } }
     }
+
+    [class*="pill-"] {
+      height: 40px ;
+      top: 10px ;
+
+      [class*="item-"] {
+        width: 15px ;
+        margin-left: -12px ;
+        border-radius: 0 12px 12px 0 ;
+      }
+    }
+
+    &:hover { [class*="pill-"] [class*="item-"]:not([style*="height: 40px;"]) { display: none } }
+  }
     
     // THE SCROLLER aka HELL
-    [class*="scroller-"] {
-      position: static ;
-      padding: 0 ;
-      background: none ;
-      contain: size ;
-      margin: 125px 0 ;
-      
-      display: inline-grid;
-      grid-template: "content" / auto ;
-      grid-auto-rows: 60px ;
-      align-items: center; 
+  [class*="scroller-"] {
+    position: static ;
+    padding: 0 ;
+    background: none ;
+    contain: size ;
+    margin: 125px 0 ;
+
+    display: inline-grid;
+    grid-template: "content" / auto ;
+    grid-auto-rows: 60px ;
+    align-items: center; 
 //      row-gap: 8px ;
 
-      &::-webkit-scrollbar { display: none }
-      &::before { top: 120px }
-      &::after, &::before {
-        content: "" ;
-        position: absolute ; 
-        left: 20% ; right: 20% ;
-        height: 2px ;
-        opacity: 0.6 ;
-        bottom: 120px ; 
-        background-color: var(--header-secondary) ;
-      }
+    &::-webkit-scrollbar { display: none }
+    &::before { top: 120px }
+    &::after, &::before {
+      content: "" ;
+      position: absolute ; 
+      left: 20% ; right: 20% ;
+      height: 2px ;
+      opacity: 0.6 ;
+      bottom: 120px ; 
+      background-color: var(--header-secondary) ;
+    }
 
-      // Left side spacing ( 10-48-6-20-6-20-10 )
-      
-      // Home 
-      .tutorialContainer-1v44GL {
-        position: absolute ;
-        top: 10px ;
-        
-        [class*="listItem-"] {
-          width: 54px ;
-          
-          [class*="listItemWrapper-"] > [class*="wrapper-"] {
-            transform: rotate(90deg) ;
+    // Left side spacing ( 10-48-6-20-6-20-10 )
 
-            [class*="childWrapper-"] { background: none }
-          }
-          
-          // hover thing
-          [class*="pill-"] { display: none }
-          
-          [class*="homeIcon-"] { filter: drop-shadow( 2px 2px 3px black ) }
-        }
-      }
-      
-      // BD's Public Server List
-      #bd-pub-li {
-        height: 60px;
+    // removing first listItem bc guildSeparator inside / initial for (hopefully) the rest 
+    > [class*="listItem-"] { display: none }
+    > [aria-label="Servers"] ~ [class*="listItem-"] { display: initial }
+    
+    // Home 
+    .tutorialContainer-2sGCg9 {
+      position: absolute ;
+      top: 10px ;
+
+      [class*="listItem-"] {
         width: 54px ;
-        margin: 0 ;
 
-        #bd-pub-button {
+        [class*="listItemWrapper-"] > [class*="wrapper-"] {
           transform: rotate(90deg) ;
-          margin: auto ;
-          font-weight: 500 ;
-          line-height: 40px ;
-          font-size: 80% ;
-          height: 40px ;
-          width: 40px ;
-          border-radius: 50% ;
-          transition: .4s ;
-          color: var(--text-normal);
-          filter: drop-shadow( 2px 2px 3px black );
 
-          &:hover { border-radius: 25% }
+          [class*="childWrapper-"] { background: none }
         }
+
+        // hover thing
+        [class*="pill-"] { display: none }
+
+        [class*="homeIcon-"] { filter: drop-shadow( 2px 2px 3px black ) }
       }
-      
-      // guildsAdd / Discovereeeeee / Discovere + guildsError
-      .tutorialContainer-SGrQ1h > [class*="listItem-"], > [class*="listItem-"]:nth-last-child(3), > [class*="listItem-"]:nth-last-child(2), > [class*="listItem-"]:last-child {
-        position: absolute ;
-        left: 17px ; 
-        top: 90px ;
-        padding: 0 ;
+    }
+
+    // BD's Public Server List
+    #bd-pub-li {
+      height: 60px;
+      width: 54px ;
+      margin: 0 ;
+
+      #bd-pub-button {
+        transform: rotate(90deg) ;
+        margin: auto ;
+        font-weight: 500 ;
+        line-height: 40px ;
+        font-size: 80% ;
+        height: 40px ;
+        width: 40px ;
+        border-radius: 50% ;
+        transition: .4s ;
+        color: var(--text-normal);
+        filter: drop-shadow( 2px 2px 3px black );
+
+        &:hover { border-radius: 25% }
+      }
+    }
+
+    // guildsAdd / Discovereeeeee / Discovere + guildsError
+    .tutorialContainer-30WoTp > [class*="listItem-"], > [class*="listItem-"]:nth-last-child(3), > [class*="listItem-"]:nth-last-child(2), > [class*="listItem-"]:last-child {
+      position: absolute ;
+      left: 17px ; 
+      top: 90px ;
+      padding: 0 ;
+      height: 20px ; 
+      width: 20px ;
+
+      [class*="pill-"] { display: none }
+
+      [class*="circleButtonMask-"] {
         height: 20px ; 
         width: 20px ;
-        
-        [class*="pill-"] { display: none }
-          
-        [class*="circleButtonMask-"] {
+
+        > [class*="svg-"] {
           height: 20px ; 
           width: 20px ;
-
-          > [class*="svg-"] {
-            height: 20px ; 
-            width: 20px ;
-          }
         }
+      }
 
-        [class*="circleIconButton-"] {
-          transform: rotate(90deg) ;
-          background-color: transparent  ;
-          color: var(--text-normal) ;
-          opacity: .75 ;
-          filter: drop-shadow( 2px 2px 3px black );
+      [class*="circleIconButton-"] {
+        transform: rotate(90deg) ;
+        background-color: transparent  ;
+        color: var(--text-normal) ;
+        opacity: .75 ;
+        filter: drop-shadow( 2px 2px 3px black );
 
-          > svg { 
-            height: 120% ;
-            width: 120% ;
-          }
+        > svg { 
+          height: 125% ;
+          width: 125% ;
         }
+      }
 
-        &:hover [class*="circleIconButton-"] { opacity: 1 }
+      &:hover [class*="circleIconButton-"] { opacity: 1 }
+    }
+
+    // guildsAdd
+    .tutorialContainer-30WoTp { 
+      position: absolute ;
+      top: 0 ;
+
+      > [class*="listItem-"] { top: 64px }
+
+      svg.circleIcon-1-oi1i {
+        height: 150% !important;
+        width: 150% !important;
       }
+    }
+
+    // guildsAdd when in Discovereee Server preview
+    > [class*="listItem-"]:nth-last-child(3) { 
+      top: 64px ;
       
-      // guildsAdd
-      .tutorialContainer-SGrQ1h { 
-        position: absolute ;
-        top: 0 ;
-        
-        > [class*="listItem-"] { top: 64px }
+      svg.circleIcon-1-oi1i {
+        height: 150% !important;
+        width: 150% !important;
       }
-      
-      // guildsAdd when in Discovereee Server preview
-      > [class*="listItem-"]:nth-last-child(3) { top: 64px }
-      
-      // guildsError and Discovere pointer fix
-      > [class*="listItem-"]:last-child {
+    }
+
+    // guildsError and Discovere pointer fix
+    > [class*="listItem-"]:last-child {
+      pointer-events: none ;
+
+      [class*="listItemWrapper-"] {
         pointer-events: none ;
-        
-        [class*="listItemWrapper-"] {
-          pointer-events: none ;
-          
-          > a, [class*="circleButtonMask-"] { pointer-events: auto }
-        }
+
+        > a, [class*="circleButtonMask-"] { pointer-events: auto }
       }
-      
-      > [class*="listItem-"]:last-child [class*="listItemWrapper-"] > a {
-        position: absolute ;
-        top: -88px ;
-        left: 14px ;
-        transform: rotate(90deg);
-        height: 20px ; 
-        width: 20px ;
-        background: none ;
-        border: none ;
-        
-        span { color: var(--red) }
-      }
-      
-      // DMs div container
-      > div[style="opacity: 1; height: 56px; transform: scale(1);"]:not([class]) {
-        height: 60px !important ;
-        
-        // spacer guilds | DMs
+    }
+
+    > [class*="listItem-"]:last-child [class*="listItemWrapper-"] > a {
+      position: absolute ;
+      top: -88px ;
+      left: 14px ;
+      transform: rotate(90deg);
+      height: 20px ; 
+      width: 20px ;
+      background: none ;
+      border: none ;
+
+      span { color: var(--red) }
+    }
+
+    // DMs div container
+    > div[style="opacity: 1; height: 56px; transform: scale(1);"]:not([class]) {
+      height: 60px !important ;
+
+      // spacer guilds | DMs
+      &::before {
+      content: "" ;
+      top: -4px ;
+      position: absolute ; 
+      left: 20% ; right: 20% ;
+      height: 2px ;
+      opacity: 0.6 ;
+      background-color: var(--header-secondary) ;
+    }
+
+      // remove spacer when mltp DMs
+      ~ div[style="opacity: 1; height: 56px; transform: scale(1);"]:not([class]) {
         &::before {
-        content: "" ;
-        top: -4px ;
-        position: absolute ; 
-        left: 20% ; right: 20% ;
-        height: 2px ;
-        opacity: 0.6 ;
-        background-color: var(--header-secondary) ;
-      }
-        
-        // remove spacer when mltp DMs
-        ~ div[style="opacity: 1; height: 56px; transform: scale(1);"]:not([class]) {
-          &::before {
-            content: none ;
-          }
-        }
-        
-        > [class*="listItem-"] { 
-          @include ServerIcon ("listItemWrapper-");
-          
-          [class*="pill-"] { display: none }
+          content: none ;
         }
       }
-      
-      // Discovereee Server preview Server icon
-      > [class*="listItem-"] {
-        @include ServerIcon ("blobContainer-") 
-      }
-      
-      
-      // removes "guildSeparator" / makes sure onle the correct "listItem"
-      .tutorialContainer-1v44GL ~ [class*="listItem-"] { 
-        display: none ;
-      }
-      > [aria-label*="Server"] ~ [class*="listItem-"] { display: flex !important }
 
-      
-      // Server wrapper
-      [aria-label*="Server"] {
-        grid-area: content ;
-        padding: 5px 0 13px 0;
-        
-        // Server Folders
-        > [class*="wrapper-"] {
+      > [class*="listItem-"] { 
+        @include ServerIcon ("listItemWrapper-");
+
+        [class*="pill-"] { display: none }
+      }
+    }
+
+    // Discovereee Server preview Server icon
+    > [class*="listItem-"] {
+      @include ServerIcon ("blobContainer-") 
+    }
+
+
+    // removes "guildSeparator" / makes sure onle the correct "listItem"
+    .tutorialContainer-1v44GL ~ [class*="listItem-"] { 
+      display: none ;
+    }
+    > [aria-label*="Server"] ~ [class*="listItem-"] { display: flex !important }
+
+
+    // Server wrapper
+    [aria-label*="Server"] {
+      grid-area: content ;
+      padding: 5px 0 13px 0;
+
+      // Server Folders
+      > [class*="wrapper-"] {
+        width: 54px ;
+
+        [class*="FolderBackground-"] { display: none }
+
+        // Foler Icon
+        > [class*="listItem-"] {
+          margin: 0px ;
+          height: 60px ;
           width: 54px ;
-        
-          [class*="FolderBackground-"] { display: none }
 
-          // Foler Icon
-          > [class*="listItem-"] {
-            margin: 0px ;
-            height: 60px ;
-            width: 54px ;
+          //Icon Container
+          > div > [class*="wrapper-"] {
+            transform: rotate(90deg);
+            margin: 10px 7px ;
+            height: 40px ; 
+            width: 40px ;
 
-            //Icon Container
-            > div > [class*="wrapper-"] {
-              transform: rotate(90deg);
-              margin: 10px 7px ;
+            > svg {
+              filter: drop-shadow( 2px 2px 3px black );
               height: 40px ; 
               width: 40px ;
 
-              > svg {
-                filter: drop-shadow( 2px 2px 3px black );
-                height: 40px ; 
-                width: 40px ;
+              foreignObject > [class*="folder-"] {
+                background: transparent ;
 
-                foreignObject > [class*="folder-"] {
-                  background: transparent ;
+                [class*="folderIconWrapper-"] {
+                  border-radius: 50% ;
+                  transition: .4s ;
 
-                  [class*="folderIconWrapper-"] {
-                    border-radius: 50% ;
-                    transition: .4s ;
-
-                    &:hover { border-radius: 25% }
-                  }
-
-                  // folder open
-                  [class*="expandedFolderIconWrapper-"] svg { 
-                    height: 40px ; 
-                    width: 40px ;
-                  }
-
-                  // folder closed
-                  [class*="closedFolderIconWrapper-"] { padding: 0 }
+                  &:hover { border-radius: 25% }
                 }
-              }
 
-              [class*="lowerBadge-"] {
-                pointer-events: none ;
+                // folder open
+                [class*="expandedFolderIconWrapper-"] svg { 
+                  height: 40px ; 
+                  width: 40px ;
+                }
 
-                > div { background-color: var(--red) !important }
-              }
-
-              // Badges-voice
-              [class*="upperBadge-"] {
-                pointer-events: none ;
+                // folder closed
+                [class*="closedFolderIconWrapper-"] { padding: 0 }
               }
             }
 
-            [class*="pill-"] {
-              height: 40px ;
-              top: 10px ;
+            [class*="lowerBadge-"] {
+              pointer-events: none ;
 
-              [class*="item-"] {
-                width: 15px ;
-                margin-left: -12px ;
-                border-radius: 0 12px 12px 0 ;
-              }
+              > div { background-color: var(--red) !important }
             }
-            
+
+            // Badges-voice
+            [class*="upperBadge-"] {
+              pointer-events: none ;
+            }
+          }
+
+          [class*="pill-"] {
+            height: 40px ;
+            top: 10px ;
+
+            [class*="item-"] {
+              width: 15px ;
+              margin-left: -12px ;
+              border-radius: 0 12px 12px 0 ;
+            }
+          }
+
 //            &:hover { [class*="pill-"] { display: none } }
-            
-            &:hover { [class*="pill-"] [class*="item-"]:not([style*="height: 40px;"]) { display: none } }
-          }
 
-          // Server Icons in folder
-          [role*="group"] {
-            height: auto !important ;
-
-            &::after {
-              content: "" ;
-              position: absolute ; 
-              left: 20% ; right: 20% ;
-              height: 2px ;
-              opacity: 0.6 ;
-              bottom: 0 ;
-              background-color: var(--header-secondary) ;
-            }
-
-            [class*="listItem-"] { @include ServerIcon ("blobContainer-") }
-          }
+          &:hover { [class*="pill-"] [class*="item-"]:not([style*="height: 40px;"]) { display: none } }
         }
-        
-        // Server Icons
-        > [class*="listItem-"] { @include ServerIcon ("blobContainer-") }
+
+        // Server Icons in folder
+        [role*="group"] {
+          height: auto !important ;
+
+          &::after {
+            content: "" ;
+            position: absolute ; 
+            left: 20% ; right: 20% ;
+            height: 2px ;
+            opacity: 0.6 ;
+            bottom: 0 ;
+            background-color: var(--header-secondary) ;
+          }
+
+          [class*="listItem-"] { @include ServerIcon ("blobContainer-") }
+        }
       }
+
+      // Server Icons
+      > [class*="listItem-"] { @include ServerIcon ("blobContainer-") }
     }
+  }
 }
 
 // visibility fix for both Buttons
