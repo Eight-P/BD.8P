@@ -1,5 +1,5 @@
-$v: 6 ; // required theme file version
-$current_version: "0.4.198 v.F6" ;
+$v: 7 ; // required theme file version
+$current_version: "0.4.199 v.F6" ;
 
 // Defaults
 :root {
@@ -78,7 +78,7 @@ body {
   
   // if the Theme file needs an update
   @include disclaimer (
-    'T1-Theme update available! Pls replace your "T1.theme.css" file with the latest version (v.F#{$v}) ("website"-link in Themes tab)', 
+    'T1-Theme update available! Replace your "T1.theme.css" file with the latest version (v.F#{$v}) (Download "website" link in Themes tab)', 
     calc( #{$v} - var(--F_V,0))
   );
 
