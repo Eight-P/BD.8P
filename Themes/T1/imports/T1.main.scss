@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$current_version: "0.4.199 v.F6" ;
+$current_version: "0.4.2 v.F6" ;
 
 // Defaults
 :root {
@@ -16,7 +16,6 @@ $current_version: "0.4.199 v.F6" ;
   color: rgb(114, 118, 125);
   padding: 2px 10px;
 }
-
 
 // Disclaimer mixin
 @mixin disclaimer ($text, $op) {
@@ -71,7 +70,6 @@ $current_version: "0.4.199 v.F6" ;
 
   &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
 }
-
 
 // Layer independent stuff
 body {
@@ -165,7 +163,6 @@ body {
   strong > span { color: var(--bd-blue) }
 }
 
-
 // popout on voice call (hopefully :)
 [class*="pictureInPicture-"] ~ [class*="wrapper-"] { z-index: 1000 }
 
@@ -174,7 +171,7 @@ body {
     
   [class*="children-"] {
     
-    [class*="iconWrapper-"], [class*="divider-"], [class*="title-"]:not([class*="cursorPonter-"]) { display: none }
+    [class*="iconWrapper-"], [class*="divider-"], [class*="title-"]:not([class*="cursorPointer-"]) { display: none }
 
     &::after { display: none }
   }
@@ -667,59 +664,6 @@ body {
         }
       }
       
-      // Gifs selector Menu
-      #gif-picker-tab-panel {
-        height: 100% ;
-          
-        [class*="content-"] [class*="scroller-"] { @include scrollbar() } 
-      } 
-      
-      // Emoji selector Menu
-      #emoji-picker-tab-panel {
-        height: 100% ;
-        
-        [class*="emojiPicker-"] { grid-template-rows: auto 1fr auto }
-        
-        //header
-        [class*="emojiPicker-"] > [class*="header-"] { 
-          background: transparent ;
-          padding-left: 45px ;
-        }
-        
-        // body 
-        [class*="bodyWrapper-"] [class*="scroller-"] {
-          @include scrollbar() ;
-          
-          
-          [class*="listItems-"] { left: 12px !important }
-          
-          [class*="categorySection-"] [class*="header-"] { background: none }
-        }
-        
-        // emoji preview
-        [class*="inspector-"] { 
-          position: absolute ;
-          padding: 0 ;
-          top: 0px ;
-          left: 10px ;
-          height: 34px ;
-          width: 34px ;
-          background: none ;
-          z-index: 101 ;
-          
-          *:not([class*="graphicPrimary-"]) > * { display: none }
-          
-          [class*="graphicPrimary-"], [class*="graphicPrimary-"] > img {
-            height: 34px ;
-            width: 34px ;
-            display: block ;
-          }
-        }
-        
-        // server/category list
-        > [class*="wrapper-"] { border-right: 1px solid var(--background-modifier-accent) }
-      } 
-      
       // no permission to write
       [class*="channelTextAreaDisabled-"] [class*="innerDisabled-"]::after {
         content: " " ;
@@ -798,6 +742,76 @@ body {
   
   //Voice Channel Voice Call View thing, idk
   > [class*="noChat-"] { background: none }
+}
+
+// Gifs/Emoji selector Menu
+.layerContainer-yqaFcK > .positionLayer-1KzSAt > .positionContainer-DEuh7X {
+  z-index: 102 ;
+
+  [class*="drawerSizingWrapper-"] {
+    width: 432px !important;
+  }
+
+  [class*="contentWrapper-"] {
+    background-color: var(--background-tertiary) ;
+    padding-top: 8px ;
+    display: block ;
+
+    [class*="nav-"] { display: none  }
+  }
+}
+
+// Gifs selector Menu
+#gif-picker-tab-panel {
+  height: 100% ;
+
+  [class*="content-"] [class*="scroller-"] { @include scrollbar() } 
+} 
+
+// Emoji selector Menu
+#emoji-picker-tab-panel {
+  height: 100% ;
+
+  [class*="emojiPicker-"] { grid-template-rows: auto 1fr auto }
+
+  //header
+  [class*="emojiPicker-"] > [class*="header-"] { 
+    background: transparent ;
+    padding-left: 45px ;
+  }
+
+  // body 
+  [class*="bodyWrapper-"] [class*="scroller-"] {
+    @include scrollbar() ;
+
+
+    [class*="listItems-"] { left: 12px !important }
+
+    [class*="categorySection-"] [class*="header-"] { background: none }
+  }
+
+  // emoji preview
+  [class*="inspector-"] { 
+    position: absolute ;
+    padding: 0 ;
+    top: 0px ;
+    left: 10px ;
+    height: 34px ;
+    width: 34px ;
+    background: none ;
+    z-index: 101 ;
+
+    *:not([class*="graphicPrimary-"]) > * { display: none }
+
+    [class*="graphicPrimary-"], [class*="graphicPrimary-"] > img {
+      height: 34px ;
+      width: 34px ;
+      display: block ;
+    }
+  }
+
+  // server/category list
+  > [class*="wrapper-"] { border-right: 1px solid var(--background-modifier-accent) }
 }
 
 // Member-list
