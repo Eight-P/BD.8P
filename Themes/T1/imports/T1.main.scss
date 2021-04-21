@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$current_version: "0.4.2 v.F6" ;
+$current_version: "0.4.21 v.F6" ;
 
 // Defaults
 :root {
@@ -8,13 +8,13 @@ $current_version: "0.4.2 v.F6" ;
 }
 
 // Version
-#user-settings #bd-settings-sidebar > span:after {
+.layer-3QrUeG[aria-label="USER_SETTINGS"] .info-1VyQPT:after{
   content: "T1 v#{$current_version} by Eight_P";
   display: block;
   font-size: 12px ;
   font-weight: 600 ;
   color: rgb(114, 118, 125);
-  padding: 2px 10px;
+  padding: 4px 0;
 }
 
 // Disclaimer mixin
@@ -919,6 +919,7 @@ body {
   ~ [class*="container-"] {
     background: none ;
     
+    > [class*="content-"] { background: none }
     // Friends Header
     > [class*="container-"] {
       background: none ;
