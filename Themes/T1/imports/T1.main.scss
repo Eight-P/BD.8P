@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$current_version: "0.4.21 v.F6" ;
+$current_version: "0.4.22" ;
 
 // Defaults
 :root {
@@ -15,6 +15,7 @@ $current_version: "0.4.21 v.F6" ;
   font-weight: 600 ;
   color: rgb(114, 118, 125);
   padding: 4px 0;
+  text-transform: none ;
 }
 
 // Disclaimer mixin
@@ -878,6 +879,12 @@ body {
           
           [class*="avatar-"] { margin: 5px }
           [class*="content-"] { display: none }
+          [class*="numberBadge-"] {
+            background-color: transparent !important ;
+            border-bottom: 2px solid var(--red) ;
+            border-radius: 0 ;
+            color: var(--text-normal) ;
+          }
         }
         
         &[class*="selected-"] { border-bottom: 1px solid var(--interactive-active) }
@@ -933,7 +940,12 @@ body {
           background: none !important ;
           
           // Pending Tab
-          &[aria-label="Pending"] [class*="badge-"] { padding-right: 1px }
+          &[aria-label="Pending"] [class*="numberBadge-"] {
+            background-color: transparent !important ;
+            border-bottom: 2px solid var(--red) ;
+            border-radius: 0 ;
+            color: var(--text-normal) ;
+          }
 
           // add friend
           &[aria-label="Add Friend"] {
