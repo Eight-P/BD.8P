@@ -1,4 +1,4 @@
-$current_version: "0.4.4" ;
+$current_version: "0.4.41" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -18,6 +18,7 @@ $current_version: "0.4.4" ;
     font-weight: 600 ;
     color: rgb(114, 118, 125);
     padding: 2px 0;
+    text-transform: none ;
   }
 }
 
@@ -54,7 +55,7 @@ $current_version: "0.4.4" ;
   
   [class*="unreadMentionsIndicator"] { display: none }
     
-    //Server Icon style
+  //Server Icon style
   @mixin ServerIcon($main_wrapper) {
     margin: 0px ;
     max-height: 60px ;
@@ -98,11 +99,7 @@ $current_version: "0.4.4" ;
         }
 
         // Badges-unread
-        [class*="lowerBadge-"] {
-          pointer-events: none ;
-
-          > div { background-color: var(--red) !important }
-        }
+        [class*="lowerBadge-"] > div { background-color: var(--red) !important }
 
         // Badges-voice
         [class*="upperBadge-"] {
@@ -175,29 +172,24 @@ $current_version: "0.4.4" ;
         [class*="pill-"] { display: none }
 
         [class*="homeIcon-"] { filter: drop-shadow( 2px 2px 3px black ) }
+        
+        [class*="lowerBadge-"] {
+          right: 4px ;
+          bottom: 4px ;
+        }
       }
-    }
-
-    // BD's Public Server List
+    }   
+    
     #bd-pub-li {
-      height: 60px;
-      width: 54px ;
+      position: absolute ;
+      left: -15px ;
+      bottom: -34px ;
+      transform: rotate(90deg) ;
       margin: 0 ;
 
       #bd-pub-button {
-        transform: rotate(90deg) ;
-        margin: auto ;
-        font-weight: 500 ;
-        line-height: 40px ;
-        font-size: 80% ;
-        height: 40px ;
-        width: 40px ;
-        border-radius: 50% ;
-        transition: .4s ;
-        color: var(--text-normal);
+        background-color: transparent ;
         filter: drop-shadow( 2px 2px 3px black );
-
-        &:hover { border-radius: 25% }
       }
     }
 
@@ -366,11 +358,7 @@ $current_version: "0.4.4" ;
               }
             }
 
-            [class*="lowerBadge-"] {
-              pointer-events: none ;
-
-              > div { background-color: var(--red) !important }
-            }
+            [class*="lowerBadge-"] > div { background-color: var(--red) !important }
 
             // Badges-voice
             [class*="upperBadge-"] {
