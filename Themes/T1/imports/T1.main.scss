@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$current_version: "0.4.23" ;
+$T1_version: "0.4.232" ;
 
 // Defaults
 :root {
@@ -9,7 +9,7 @@ $current_version: "0.4.23" ;
 
 // Version
 .layer-3QrUeG[aria-label="USER_SETTINGS"] .info-1VyQPT:after{
-  content: "T1 v#{$current_version} by Eight_P";
+  content: "T1 v#{$T1_version} by Eight_P";
   display: block;
   font-size: 12px ;
   font-weight: 600 ;
@@ -19,7 +19,7 @@ $current_version: "0.4.23" ;
 }
 
 // Disclaimer mixin
-@mixin disclaimer ($text, $op) {
+@mixin disclaimer1 ($text, $op) {
   
   &::before {
     content: $text ;
@@ -35,22 +35,33 @@ $current_version: "0.4.23" ;
     font-size: 12px ;
     font-weight: 600 ;
     letter-spacing: .5px ;
-    z-index: 1 ;
+    z-index: 2 ;
     overflow: hidden ;
     text-overflow: ellipsis ;
     white-space: nowrap ;
   }
-//  
-//  &::after {
-//    content: url(/assets/4757a3d415435a57d4db6fca022872e3.svg);
-//    position: absolute;
-//    height: 22px ;
-//    width: 22px ;
-//    opacity: $op ;
-//    z-index: 1 ;
-//  }
-  
-  #app-mount [class*="titleBar-"] [class*="wordmarkWindows-"] { opacity: calc(1 - #{$op}) }
+}
+
+@mixin disclaimer2 ($text, $op) {
+  .layer-3QrUeG[aria-label="USER_SETTINGS"]::before {
+    content: $text ;
+    position: relative;
+    background: var(--activity-card-background) ;
+    opacity: $op ;
+    color: var(--text-normal) ;
+    padding: 8px ;
+    text-align: center ;
+    font-size: 13px ;
+    font-weight: 600 ;
+    letter-spacing: .5px ;
+    z-index: 2000 ;
+    overflow: hidden ;
+    text-overflow: ellipsis ;
+    white-space: nowrap ; 
+    margin: 0 auto ;
+    border-radius: 4px ;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  }
 }
 
 // Scrollbar mixin
@@ -72,18 +83,15 @@ $current_version: "0.4.23" ;
   &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
 }
 
-// Layer independent stuff
-body {
-  
-  // if the Theme file needs an update
-  @include disclaimer (
-    'T1-Theme update available! Replace your "T1.theme.css" file with the latest version (v.F#{$v}) (Download "website" link in Themes tab)', 
-    calc( #{$v} - var(--F_V,0))
-  );
 
-  // if Minimal Mode is active
-  &.bd-minimal { @include disclaimer ('Pls turn off "Minimal Mode" for the Theme to work properly | ["ctrl" + ","] => opens settings if needed', 1) }
-}
+// if Minimal Mode is active
+body.bd-minimal { @include disclaimer1 ('Pls turn off "Minimal Mode" for the Theme to work properly | ["ctrl" + ","] => opens settings if needed', 1) }
+
+// if the Theme file needs an update
+@include disclaimer2 (
+  'T1-Theme update available! Pls replace your "T1.theme.css" file with the latest version (v.F#{$v}) (Download "website" link in Themes tab)', 
+  calc( #{$v} - var(--F_V,0))
+);
 
 // Background Main
 .bg-h5JY_x {
@@ -98,7 +106,7 @@ body {
   
   > [class*="app-"] {
     
-    // App container placing bug hopefully fix
+      // App container placing bug hopefully fix
       position: fixed !important;
       height: 100vh !important;
       width: 100vw !important;
@@ -282,7 +290,7 @@ body {
   background: none ;
 
   // Profile Container
-  > [class*="container-"]  {
+  > .container-3baos1  {
     position: absolute ;
     height: 48px ;
     width: 240px ;
