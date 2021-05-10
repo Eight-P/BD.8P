@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$current_version: "0.4.22" ;
+$current_version: "0.4.23" ;
 
 // Defaults
 :root {
@@ -40,15 +40,15 @@ $current_version: "0.4.22" ;
     text-overflow: ellipsis ;
     white-space: nowrap ;
   }
-  
-  &::after {
-    content: url(/assets/4757a3d415435a57d4db6fca022872e3.svg);
-    position: absolute;
-    height: 22px ;
-    width: 22px ;
-    opacity: $op ;
-    z-index: 1 ;
-  }
+//  
+//  &::after {
+//    content: url(/assets/4757a3d415435a57d4db6fca022872e3.svg);
+//    position: absolute;
+//    height: 22px ;
+//    width: 22px ;
+//    opacity: $op ;
+//    z-index: 1 ;
+//  }
   
   #app-mount [class*="titleBar-"] [class*="wordmarkWindows-"] { opacity: calc(1 - #{$op}) }
 }
@@ -100,17 +100,17 @@ body {
     
     // App container placing bug hopefully fix
       position: fixed !important;
-      height: calc(100vh - 22px)!important;
+      height: 100vh !important;
       width: 100vw !important;
-      top: 22px !important;
 
     > [class*="app-"] { 
       background: none ;
 
-      > [class*="uploadArea-"] {
-        top: -22px ;
-        height: calc(100vh + 22px);
-      }
+//      forgot why I did that
+//      > [class*="uploadArea-"] {
+//        top: -22px ;
+//        height: calc(100vh + 22px);
+//      }
     }
   }
 
@@ -126,6 +126,8 @@ body {
   }
 }
 
+.platform-win #app-mount > [class*="app-"] > [class*="app-"] { top: 22px !important }
+
 // Notice bar 
 [class*="base-"] > [class*="notice-"] {
   position: absolute ;
@@ -137,7 +139,6 @@ body {
   border-radius: 5px ;
 
   button[class*="back-"] { display: none }
-
 }
 
 // BD plugin notice 
@@ -1431,9 +1432,6 @@ body {
     }
   }
 }
-
-// idk what that is 
-.bd-context-menu { display: none }
 
 // Tooltips
 [class*="layerContainer-"] [class*="tooltip-"] {
