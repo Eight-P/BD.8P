@@ -1,4 +1,4 @@
-$current_version: "0.4.41" ;
+$current_version: "0.4.42" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -6,6 +6,7 @@ $current_version: "0.4.41" ;
   --Banner_S_D: var(--Server_banner, 0);
 }
 
+// version
 .layer-3QrUeG[aria-label="USER_SETTINGS"] .info-1VyQPT {
   position: relative ;
 
@@ -17,7 +18,7 @@ $current_version: "0.4.41" ;
     font-size: 12px ;
     font-weight: 600 ;
     color: rgb(114, 118, 125);
-    padding: 2px 0;
+    padding: 2px 0 ;
     text-transform: none ;
   }
 }
@@ -25,10 +26,13 @@ $current_version: "0.4.41" ;
 // -- ServerBar
 .guilds-1SWlCJ {
   position: absolute ;
-  top: 0 ;
   height: 100vw ;
   width: 54px ;
-  transform: rotate(-90deg) translateX(calc(-100vh + 22px));
+//  transform: rotate(-90deg) translateX(calc(-100vh + 22px));
+  transform: rotate(-90deg) ;
+  left: 0px ;
+  top: 100% ;  
+  
   transform-origin: top left ;
   background: none ;
   
@@ -45,12 +49,6 @@ $current_version: "0.4.41" ;
     background-position: center !important;
     background-repeat: no-repeat !important;
     filter: blur(calc((var(--BG_Blur_S_D) / 100) * 1px)) brightness(calc((var(--Brightness_S_D) / 100)));
-  }
-  
-  ~ [class*="base-"] {
-    height: calc(100vh - 76px);
-    width: 100vw ;
-    left: 0 ;
   }
   
   [class*="unreadMentionsIndicator"] { display: none }
@@ -222,8 +220,8 @@ $current_version: "0.4.41" ;
         filter: drop-shadow( 2px 2px 3px black );
 
         > svg { 
-          height: 125% ;
-          width: 125% ;
+          height: 90% ;
+          width: 90% ;
         }
       }
 
@@ -236,10 +234,10 @@ $current_version: "0.4.41" ;
       top: 0 ;
 
       > [class*="listItem-"] { top: 64px }
-
-      svg.circleIcon-1-oi1i {
-        height: 150% !important;
-        width: 150% !important;
+      
+      [class*="circleIconButton-"] > svg {
+          height: 100% !important;
+          width: 100% !important;
       }
     }
 
@@ -309,7 +307,7 @@ $current_version: "0.4.41" ;
     > [aria-label*="Server"] ~ [class*="listItem-"] { display: flex !important }
 
     // Server wrapper
-    [aria-label*="Server"] {
+    > [aria-label*="Server"] {
       grid-area: content ;
       padding: 5px 0 13px 0;
 
@@ -406,18 +404,19 @@ $current_version: "0.4.41" ;
   }
 }
 
-// visibility fix for both Buttons
-[class*="guilds-"] ~ [class*="base-"] {
+
+.guilds-1SWlCJ ~ [class*="base-"] {
+  height: calc(100% - 54px) ;
+  width: 100vw ;
+  top: 0 ;
   overflow: visible ;
   
-  > [class*="content-"], [class*="sidebar-"] { 
-    overflow: visible ;
-  }
+  // Button visibility
+  > [class*="content-"], [class*="sidebar-"] { overflow: visible }
   
-  [class*="sidebar-"] > [class*="thin-"] { 
-    overflow: visible !important ;
-  }
+  [class*="sidebar-"] > [class*="thin-"] { overflow: visible !important }
 }
+
 
 // Server Button
 [class*="sidebar-"] > [class*="container-"] > [class*="container-"]:nth-of-type(1) {
