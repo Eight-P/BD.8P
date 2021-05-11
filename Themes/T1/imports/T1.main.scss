@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.4.232" ;
+$T1_version: "0.4.233" ;
 
 // Defaults
 :root {
@@ -586,6 +586,27 @@ body.bd-minimal { @include disclaimer1 ('Pls turn off "Minimal Mode" for the The
           
           &:before { display: none }
         }
+        
+        // reaction
+        .reaction-1hd86g {
+          background-color: var(--background-modifier-accent);
+          border: none;
+          border-radius:4px;
+          
+          &:hover { background-color: var(--background-accent) }
+        }
+        
+        // reaction active
+        .reaction-1hd86g.reactionMe-wv5HKu {
+          background-color: var(--Blurple-light, rgba(114, 137, 218, 0.3)) ;
+
+          &:hover { 
+            background-color: var(--Blurple-light-hover, rgba(114, 137, 218, 0.4))
+          }
+          
+          //number
+          .reactionCount-2mvXRV { color: var(--Blurple, rgb(114, 137, 218)) }
+        }
       }
     }
 
@@ -752,6 +773,22 @@ body.bd-minimal { @include disclaimer1 ('Pls turn off "Minimal Mode" for the The
   
   //Voice Channel Voice Call View thing, idk
   > [class*="noChat-"] { background: none }
+}
+
+// mentions (thx to Doggybootsy)
+.wrapper-3WhCwL, 
+.theme-dark .mentioned-xhSam7 .mention,
+.theme-light .mentioned-xhSam7 .mention {
+  color: var(--Blurple, rgb(114, 137, 218)) !important;
+  background-color: transparent !important;
+  border-radius: 3px ;
+  padding: 0 2px ;
+  font-weight: 500 ;
+
+  &:hover {
+    background-color: var(--Blurple-light, rgba(114, 137, 218, 0.2)) !important;
+    text-decoration: underline ;
+  }
 }
 
 // Gifs/Emoji selector Menu
