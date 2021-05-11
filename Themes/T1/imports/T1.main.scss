@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.4.233" ;
+$T1_version: "0.4.234" ;
 
 // Defaults
 :root {
@@ -157,7 +157,7 @@ body.bd-minimal { @include disclaimer1 ('Pls turn off "Minimal Mode" for the The
   top: 6px ;
   box-sizing: border-box ;
   max-height: 30px ;
-  border-radius: 6px ;
+  border-radius: 6px !important ;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
   background-color: var(--background-primary) ;
   text-align: center ;
@@ -913,9 +913,9 @@ body.bd-minimal { @include disclaimer1 ('Pls turn off "Minimal Mode" for the The
       &::-webkit-scrollbar { display: none }
       
       // Tab Buttons
-      [class*="channel-"][aria-posinset="1"], [class*="channel-"][aria-posinset="2"] {
-        margin: 0 0 0 1px ;
-        width: 114px ;
+      [class*="channel-"][aria-posinset="2"], [class*="channel-"][aria-posinset="3"], [class*="channel-"][aria-posinset="1"] {
+        margin: 0 ;
+        width: 115px ;
         display: inline-block ;
         border-radius: 0 ;
         
@@ -936,6 +936,19 @@ body.bd-minimal { @include disclaimer1 ('Pls turn off "Minimal Mode" for the The
         &[class*="selected-"] { border-bottom: 1px solid var(--interactive-active) }
       }
       
+      [class*="channel-"][aria-posinset="1"] {
+        width: 74px ;
+        margin: 0 2px ;
+        
+        [class*="layout-"] { padding: 0 16px  }
+        
+        & ~ [class*="channel-"][aria-posinset="2"], & ~ [class*="channel-"][aria-posinset="3"] {
+          width: 74px ;
+          margin: 0 0 0 2px ;
+          
+          [class*="layout-"] { padding: 0 16px  }
+        }
+      }
       
       // Header Text
       [class*="privateChannelsHeaderContainer-"] {
