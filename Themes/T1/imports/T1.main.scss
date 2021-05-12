@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.4.234" ;
+$T1_version: "0.4.235" ;
 
 // Defaults
 :root {
@@ -18,7 +18,7 @@ $T1_version: "0.4.234" ;
   text-transform: none ;
 }
 
-// Disclaimer mixin
+// Disclaimer 
 @mixin disclaimer1 ($text, $op) {
   
   &::before {
@@ -64,7 +64,7 @@ $T1_version: "0.4.234" ;
   }
 }
 
-// Scrollbar mixin
+// Scrollbar
 @mixin scrollbar () {
   &::-webkit-scrollbar { width: 12px }
   
@@ -136,7 +136,7 @@ body.bd-minimal { @include disclaimer1 ('Pls turn off "Minimal Mode" for the The
 
 .platform-win #app-mount > [class*="app-"] > [class*="app-"] { top: 22px !important }
 
-// Notice bar 
+// Notice bar forgot what that was tbh
 [class*="base-"] > [class*="notice-"] {
   position: absolute ;
   left: 240px ;
@@ -204,7 +204,7 @@ body.bd-minimal { @include disclaimer1 ('Pls turn off "Minimal Mode" for the The
 }
 
 // Server-channels
-[class*="sidebar-"] > [class*="container-"] {
+[class*="sidebar-"] > .container-3w7J-x {
   top: 48px ;
   margin-bottom: 48px;
   background: none ;
@@ -1287,6 +1287,25 @@ body.bd-minimal { @include disclaimer1 ('Pls turn off "Minimal Mode" for the The
       @include scrollbar() ;
       
       [class*="scroller-"] { background: transparent }
+    }
+    
+    .customContainer-1RHXqt .container-_phMUq {
+      background-color: transparent ;
+    }
+    
+    // Server roles tab on Community server
+    .page-3njELR {
+      .titleContainer-2CXtJo {
+        background-color: transparent ;
+      }
+      .contentContainer-14yMzC {
+        [class*="scroller-"] { @include scrollbar() }
+        
+        .header-2mZ9Ov {
+          background-color: transparent ;
+          position: relative ;
+        }
+      }
     }
   }
 }
