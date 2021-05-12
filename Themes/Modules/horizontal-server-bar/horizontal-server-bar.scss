@@ -1,4 +1,4 @@
-$current_version: "0.4.42" ;
+$SB_version: "0.4.43" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -11,7 +11,7 @@ $current_version: "0.4.42" ;
   position: relative ;
 
   &:before{
-    content: "ServerBar v#{$current_version} by Eight_P";
+    content: "ServerBar v#{$SB_version} by Eight_P";
     display: block;
     position: absolute ;
     bottom: -5px ;
@@ -199,18 +199,18 @@ $current_version: "0.4.42" ;
       padding: 0 ;
       height: 20px ; 
       width: 20px ;
-
-      [class*="pill-"] { display: none }
-
-      [class*="circleButtonMask-"] {
+      
+      [class*="listItemWrapper-"] > [class*="wrapper-"] {
         height: 20px ; 
         width: 20px ;
-
-        > [class*="svg-"] {
+        
+        > svg {
           height: 20px ; 
           width: 20px ;
         }
       }
+      
+      [class*="pill-"] { display: none }
 
       [class*="circleIconButton-"] {
         transform: rotate(90deg) ;
@@ -218,8 +218,8 @@ $current_version: "0.4.42" ;
         color: var(--text-normal) ;
         opacity: .75 ;
         filter: drop-shadow( 2px 2px 3px black );
-
-        > svg { 
+        
+        > svg {
           height: 90% ;
           width: 90% ;
         }
@@ -511,15 +511,14 @@ $current_version: "0.4.42" ;
 }
 
 // Serverbar Tooltips 
-[class*="layerContainer-"] [class*="tooltip-"] [class*="tooltipContent-"] {
-  white-space: nowrap;
-  text-overflow: ellipsis ;
-  overflow: hidden ;
+.layerContainer-yqaFcK .tooltip-2QfLtc.listItemTooltip-1JmWJ7:not(.reactionTooltip-3pvwwY) {
+  max-width: max-content ;
   
-  // Servers/Guilds
-  [class*="rowGuildName-"]  {
-    
-    // voice-channel user / "server muted"
-    ~ [class*="row-"],  ~ [class*="colorMuted-"] { display: none }
+  .rowGuildName-2wU3B_ ~ * { display: none }
+  
+  .tooltipContent-bqVLWK {
+    white-space: nowrap;
+    text-overflow: ellipsis ;
+    overflow: hidden ;
   }
 }
