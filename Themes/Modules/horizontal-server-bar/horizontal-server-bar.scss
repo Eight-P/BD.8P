@@ -1,4 +1,4 @@
-$SB_version: "0.4.44" ;
+$SB_version: "0.4.442" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -69,6 +69,8 @@ $SB_version: "0.4.44" ;
         margin: 5px ;
         height: 40px ; 
         width: 40px ;
+        
+        filter: drop-shadow( 2px 2px 3px black );
 
         svg {
           height: 40px ; 
@@ -88,7 +90,6 @@ $SB_version: "0.4.44" ;
             img {
               border-radius: 50% ;
               transition: .3s ;
-              filter: drop-shadow( 2px 2px 3px black );
             }
 
             //Text
@@ -98,17 +99,17 @@ $SB_version: "0.4.44" ;
             }
           }
 
-          //Mask Obj (wich idk how it works)
+          //Mask Obj
           mask { display: none }
         }
 
         // Badges-unread
         [class*="lowerBadge-"] > div { background-color: var(--red) !important }
 
-        // Badges-voice
-        [class*="upperBadge-"] {
-          pointer-events: none ;
-        }
+        // Badges-voice (idk i think there just annoying)
+        [class*="upperBadge-"] { display: none }
+        
+        [class*="Badge-"] { left: 0 }
       }
     }
 
@@ -356,13 +357,17 @@ $SB_version: "0.4.44" ;
                 // folder closed
                 [class*="closedFolderIconWrapper-"] { padding: 0 }
               }
+              
+              mask { display: none }
             }
 
             [class*="lowerBadge-"] > div { background-color: var(--red) !important }
 
             // Badges-voice
-            [class*="upperBadge-"] {
-              pointer-events: none ;
+            [class*="upperBadge-"] { display: none }
+            
+            [class*="Badge-"] {
+              left: 0 ;
             }
           }
 
