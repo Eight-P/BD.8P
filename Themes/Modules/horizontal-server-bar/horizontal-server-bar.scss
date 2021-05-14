@@ -1,4 +1,4 @@
-$SB_version: "0.4.43" ;
+$SB_version: "0.4.44" ;
 
 :root {  
   --Brightness_S_D: var(--Server_Brightness, 100);
@@ -62,7 +62,8 @@ $SB_version: "0.4.43" ;
     //Icon Container
     [class*="#{$main_wrapper}"] {
       padding: 5px 2px 5px 2px ;
-
+      
+      
       > [class*="wrapper-"] {
         transform: rotate(90deg) ;
         margin: 5px ;
@@ -70,12 +71,16 @@ $SB_version: "0.4.43" ;
         width: 40px ;
 
         svg {
-          filter: drop-shadow( 2px 2px 3px black );
-          height: 40px ; width: 40px ;
+          height: 40px ; 
+          width: 40px ;
           background-color: transparent  ;
 
           // Icon
-          foreignObject [class*="wrapper-"]{
+          foreignObject {
+            overflow: visible ;
+          }
+          
+          foreignObject [class*="wrapper-"] {
 
             &:hover img { border-radius: 25% }
 
@@ -83,6 +88,7 @@ $SB_version: "0.4.43" ;
             img {
               border-radius: 50% ;
               transition: .3s ;
+              filter: drop-shadow( 2px 2px 3px black );
             }
 
             //Text
@@ -146,11 +152,11 @@ $SB_version: "0.4.43" ;
       background-color: var(--header-secondary) ;
     }
 
-    // Left side spacing ( 10-48-6-20-6-20-10 )
-
-    // removing first listItem bc guildSeparator inside / initial for (hopefully) the rest 
+    // removes guildSeparator, revert for rest
     > [class*="listItem-"] { display: none }
-    > [aria-label="Servers"] ~ [class*="listItem-"] { display: initial }
+    > [aria-label*="Server"] ~ [class*="listItem-"] { display: flex }
+    
+    // Left side spacing ( 10-48-6-20-6-20-10 )
     
     // Home 
     .tutorialContainer-2sGCg9 {
@@ -191,8 +197,10 @@ $SB_version: "0.4.43" ;
       }
     }
 
-    // guildsAdd / Discovereeeeee / guildsError
-    .tutorialContainer-30WoTp > [class*="listItem-"], > [class*="listItem-"]:nth-child(5), > [class*="listItem-"]:nth-child(6) {
+    // guildsAdd / Discovereeeeee or guildsError if present / Discovereeeeee if guildsError
+    .tutorialContainer-30WoTp > [class*="listItem-"], 
+    > [class*="listItem-"]:nth-last-child(2), 
+    > [class*="listItem-"]:nth-last-child(3) {
       position: absolute ;
       left: 17px ; 
       top: 90px ;
@@ -242,7 +250,7 @@ $SB_version: "0.4.43" ;
     }
 
     // guildsError
-    > [class*="listItem-"]:nth-child(6) {
+    > [class*="listItem-"]:nth-last-child(3) ~ [class*="listItem-"]:nth-last-child(2) {
       pointer-events: none ;
 
       [class*="listItemWrapper-"] {
@@ -299,12 +307,6 @@ $SB_version: "0.4.43" ;
     > [class*="listItem-"] {
       @include ServerIcon ("blobContainer-") 
     }
-
-    // removes "guildSeparator" / makes sure onle the correct "listItem"
-    .tutorialContainer-1v44GL ~ [class*="listItem-"] { 
-      display: none ;
-    }
-    > [aria-label*="Server"] ~ [class*="listItem-"] { display: flex !important }
 
     // Server wrapper
     > [aria-label*="Server"] {
@@ -404,7 +406,7 @@ $SB_version: "0.4.43" ;
   }
 }
 
-
+// base adjustments
 .guilds-1SWlCJ ~ [class*="base-"] {
   height: calc(100% - 54px) ;
   width: 100vw ;
@@ -416,7 +418,6 @@ $SB_version: "0.4.43" ;
   
   [class*="sidebar-"] > [class*="thin-"] { overflow: visible !important }
 }
-
 
 // Server Button
 [class*="sidebar-"] > [class*="container-"] > [class*="container-"]:nth-of-type(1) {
