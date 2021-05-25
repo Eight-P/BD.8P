@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.4.237" ;
+$T1_version: "0.4.238" ;
 
 // Defaults
 :root {
@@ -73,7 +73,10 @@ $T1_version: "0.4.237" ;
     border-color: transparent
   }
 
-  &::-webkit-scrollbar-track { background-color: transparent !important  }
+  &::-webkit-scrollbar-track { 
+    background-color: transparent !important ;
+    border-color: transparent ;
+  }
   
   &::-webkit-scrollbar-track-piece {
     background-color: transparent ;
@@ -436,8 +439,12 @@ html.platform-win #app-mount {
     background: transparent ;
 //    height: 184px ;
     
-    .callContainer-36WRfH .tile-2gi3tr {
-      background-color: transparent ;
+    // idk
+    .callContainer-36WRfH  {
+      
+      .tile-2gi3tr {
+        background-color: transparent ;
+      }
     }
     
     [class*="videoControls-"] {
@@ -766,6 +773,37 @@ html.platform-win #app-mount {
   > [class*="noChat-"] { background: none }
 }
 
+// short term addition
+.container-pTf0Ly {
+  background-color: transparent ; 
+}
+
+.callContainer-3UuV6S  {
+  background-color: transparent ; 
+  
+  .gradientContainer-10lXLB {
+    display: none ;
+  }
+
+  .scroller-1SuHJo {
+    background-color: transparent ;
+    
+    @include scrollbar() ;
+    
+    .container-2t1JyW {
+      background-color: transparent ;
+    }
+    
+    .rowContainer-2tYerQ {
+      background-color: transparent ;
+    }
+    
+    .participants-soO0aD {
+      background-color: transparent ;
+    }
+  }
+}
+
 // mentions (thx to Doggybootsy)
 .wrapper-3WhCwL, 
 .theme-dark .mentioned-xhSam7 .mention,
@@ -888,6 +926,22 @@ html.platform-win #app-mount {
     }
   }
 }
+// - Live Stages
+.container-1a3EgQ {
+  //header bar 
+  section.headerBarContainer-31FKNA.container-1r6BKw.themed-ANHk51 {
+    box-shadow: none ;
+  }
+}
+// body
+#stage-discovery-tab {
+  background: none ;
+  
+  > .container-24CyRY {
+    @include scrollbar()
+  }
+}
+
 
 // Home
 [class*="sidebar-"] {
