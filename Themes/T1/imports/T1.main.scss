@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.4.2381" ;
+$T1_version: "0.4.2382" ;
 
 // Defaults
 :root {
@@ -491,6 +491,8 @@ html.platform-win #app-mount {
       
       [class*="scroller-"] { 
         background: none ;
+        -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 96%, transparent);
+        
         @include scrollbar() ;
         
         [class*="scrollerInner-"] > [class*="wrapper-"] {
