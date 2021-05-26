@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.4.238" ;
+$T1_version: "0.4.2381" ;
 
 // Defaults
 :root {
@@ -644,9 +644,6 @@ html.platform-win #app-mount {
 
           // Gif/Emote Buttons
           [class*="buttons-"] {
-            
-            // gift menu
-            [aria-label*="Send a gift"] { display: none }
 
             // emoji menu
             [class*="emojiButton-"] {
