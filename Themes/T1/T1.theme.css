@@ -2,15 +2,10 @@
  * @name T1
  * @description simple design with focus on improvements and horizontal server bar
  * @author Eight_P
- * @version F7.111
+ * @version F7.12
  * @website https://eight-p.github.io/BD.8P/Themes/
  * @source https://github.com/Eight-P/BD.8P/tree/master/Themes/T1
- * @updateUrl https://raw.githubusercontent.com/Eight-P/BD.8P/master/Themes/T1/T1.theme.css
 */
-
-
-/* -- source codes -- */
-
 
 /*  horizontal-server-bar */ @import url(https://eight-p.github.io/BD.8P/Themes/Modules/horizontal-server-bar/horizontal-server-bar.css);
 /*  Main-Theme */ @import url(https://eight-p.github.io/BD.8P/Themes/T1/imports/T1.main.css);
@@ -18,29 +13,24 @@
 :root {
 /*
   
-  (i) INFO 
-  
-  -- Important !
+  (ℹ) IMPORTANT 
   
     - turn off "Minimal Mode" ( BetterDiscord-Settings )
 
     - The Theme might not work properly when mixed with others.
 
+    - The Theme has only been tested on Windows and is not guaranteed to work on any other platform.
 
-  -- Recommended in addition :
+    - Use discord's "Dark-theme"
 
-    - use discord's "Dark-theme"
 
+  ⚙ THEME SETTINGS 
   
-
-  * THEME SETTINGS *
-  
-    --  Variables  
 */
   
-  --Main_Brightness: 80 ;   /* darkening the main background */
+  --Main_Brightness: 80 ;   /* Brightness of the Main background image (0-100) (dark-bright) */
   
-  --Server_Brightness: 100 ;   /* darkening the server background */
+  --Server_Brightness: 100 ;   /* Brightness of the Serverbar background image (0-100) (dark-bright) */
 
   --Server_banner: 0 ;   /* show/hide server banner ( 0=off, 1=on) */
   
@@ -80,10 +70,7 @@
 
 /* -- Discord color schemes  -- */
 
-/* -- dark -- */
-
 .theme-dark {
-  --test: #FFF ;
   --header-primary: #fff;
   --header-secondary: #b9bbbe;
 
@@ -149,97 +136,19 @@
   --deprecated-text-input-border-disabled: #202225;
   --deprecated-text-input-prefix: #dcddde;
   
-  /* Theme additions */
+  /* Theme's additions */
   
   --red: #f04747;
   --border-mentioned:rgba(250, 166, 26, 0.65) ;
+
+  --Blurple: rgb(114, 137, 218) ;
+  --Blurple-light: rgba(114, 137, 218, 0.2) ;
+  --Blurple-light-hover: rgba(114, 137, 218, 0.4) ;
   
   --status-online: #43b581 ;
   --status-idle: #faa61a ;
   --status-DnD: var(--red) ;
   --status-invisible: #747f8d ;
 }
-
-
-/* -- light -- */
-
-.theme-light {
-  --header-primary: #060607;
-  --header-secondary: #4f5660;
-  
-  --text-normal: #2e3338;
-  --text-muted: #747f8d;
-  --text-link: #0067e0;
-  
-  --channels-default: #6a7480;
-  
-  --interactive-normal: #4f5660;
-  --interactive-hover: #2e3338;
-  --interactive-active: #060607;
-  --interactive-muted: #c7ccd1;
-  
-  --background-primary: #fff;
-  --background-secondary: #f2f3f5;
-  --background-secondary-alt: #ebedef;
-  --background-tertiary: #e3e5e8;
-  --background-accent: #747f8d;
-  --background-floating: #fff;
-  --background-mobile-primary: #f8f9f9;
-  --background-mobile-secondary: #fff;
-  --background-modifier-hover: rgba(116,127,141,0.08);
-  --background-modifier-active: rgba(116,127,141,0.16);
-  --background-modifier-selected: rgba(116,127,141,0.24);
-  --background-modifier-accent: rgba(6,6,7,0.08);
-  --background-mentioned: rgba(250,166,26,0.1);
-  --background-mentioned-hover: rgba(250,166,26,0.2);
-  --background-message-hover: rgba(6,6,7,0.02);
-  --background-help-warning: rgba(250,166,26,0.1);
-  --background-help-info: rgba(0,103,224,0.1);
-  
-  --scrollbar-thin-thumb: rgba(79,84,92,0.3);
-  --scrollbar-thin-track: transparent;
-  --scrollbar-auto-thumb: #ccc;
-  --scrollbar-auto-track: #f2f2f2;
-  --scrollbar-auto-scrollbar-color-thumb: #e3e5e8;
-  --scrollbar-auto-scrollbar-color-track: #f2f3f5;
-  
-  --elevation-stroke: 0 0 0 1px rgba(6,6,7,0.08);
-  --elevation-low: 0 1px 0 rgba(6,6,7,0.1),0 1.5px 0 rgba(6,6,7,0.025),0 2px 0 rgba(6,6,7,0.025);
-  --elevation-medium: 0 4px 4px rgba(0,0,0,0.08);
-  --elevation-high: 0 8px 16px rgba(0,0,0,0.16);
-  
-  --logo-primary: #7289da;
-  --focus-primary: #00b0f4;
-  --radio-group-dot-foreground: #4e5d94;
-  --guild-header-text-shadow: 0 1px 1px hsla(0,0%,100%,0.4);
-  --channeltextarea-background: #ebedef;
-  --activity-card-background: #fff;
-  --textbox-markdown-syntax: #6a7480;
-  
-  /* deprecated */
-  
-  --deprecated-card-bg: #f8f9f9;
-  --deprecated-card-editable-bg: rgba(246,246,247,0.6);
-  --deprecated-store-bg: #f8f9f9;
-  --deprecated-quickswitcher-input-background: #fff;
-  --deprecated-quickswitcher-input-placeholder: rgba(79,84,92,0.3);
-  --deprecated-text-input-bg: rgba(79,84,92,0.02);
-  --deprecated-text-input-border: rgba(79,84,92,0.3);
-  --deprecated-text-input-border-hover: #b9bbbe;
-  --deprecated-text-input-border-disabled: #dcddde;
-  --deprecated-text-input-prefix: #b9bbbe;
-  
-  /* Theme additions */
-  
-  --red: #f04747;
-  --border-mentioned:rgba(250, 166, 26, 0.65) ;
-  
-  --status-online: #43b581 ;
-  --status-idle: #faa61a ;
-  --status-DnD: var(--red) ;
-  --status-invisible: #747f8d ;
-}
-
-
 
 body { --F_V:7 /* don't touch */ }
