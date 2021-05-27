@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.4.2382" ;
+$T1_version: "0.4.2383" ;
 
 // Defaults
 :root {
@@ -1368,37 +1368,56 @@ html.platform-win #app-mount {
       "header body" 
       "footer footer" ;
 
-    // header
-    > .header-2BwW8b {
+    // header old
+//    > .header-2BwW8b {
+//      grid-area: header;
+//      min-width: 175px ;
+//
+//      &.headerNormal-T_seeN { background-color: var(--background-tertiary) }
+//      &.headerSpotify-zpWxgT {
+//        background-color: var(--background-tertiary) ;
+//
+//        .timeBarUserPopout-AWPFf2 ~ .flex-1xMQg5 { display: none }
+//      }
+//      &.headerPlaying-j0WQBV { background-color: var(--background-tertiary) }
+//      &.headerStreaming-2FjmGz { background-color: #593695 }
+//
+//      // Profile img
+//      .avatarWrapper-3H_478 {
+//        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
+//
+//        img.avatar-VxgULZ, .avatarHintInner-Dco91E {
+//          filter: opacity(100%);
+//          border-radius: 7.5% ;
+//        }
+//
+//        // online status indicator icon
+//        rect[mask="url(#svg-mask-status-online)"] {
+//          fill: var(--status-online, #43b581) ;
+//        }
+//      }
+//
+//      // custom Status text
+//      .customStatus-1bh2V9 > img {
+//        width: 20px ;
+//        height: 20px ;
+//      }
+//    }
+    
+    //new header
+    // quick fix, will do more later when i got more time
+    .headerNormal-1l1Znk {
       grid-area: header;
       min-width: 175px ;
-
-      &.headerNormal-T_seeN { background-color: var(--background-tertiary) }
-      &.headerSpotify-zpWxgT {
-        background-color: var(--background-tertiary) ;
-
-        .timeBarUserPopout-AWPFf2 ~ .flex-1xMQg5 { display: none }
+      background-color: var(--background-tertiary);
+      
+      .headerTop-2y3V6H {
+        background-color: var(--background-tertiary);
+        border: none ;
       }
-      &.headerPlaying-j0WQBV { background-color: var(--background-tertiary) }
-      &.headerStreaming-2FjmGz { background-color: #593695 }
-
-      // Profile img
-      .avatarWrapper-3H_478 {
-        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
-
-        img.avatar-VxgULZ, .avatarHintInner-Dco91E {
-          filter: opacity(100%);
-          border-radius: 7.5% ;
-        }
-
-        // online status indicator icon
-        rect[mask="url(#svg-mask-status-online)"] {
-          fill: var(--status-online, #43b581) ;
-        }
-      }
-
+        
       // custom Status text
-      .customStatus-1bh2V9 > img {
+      .customStatus-3NamXG > img {
         width: 20px ;
         height: 20px ;
       }
@@ -1409,7 +1428,38 @@ html.platform-win #app-mount {
       grid-area: body ;
       padding-right: 16px !important;
       min-width: 175px ;
+      background-color: var(--background-secondary)
     }
+    
+    .activityUserPopout-2yItg2 {
+      padding: 8px 16px;
+    }
+    
+    .username-2b1r56 {
+      font-size: 18px ;
+      font-weight: 500 ;
+      
+      ~ span.discrimBase-1PEDoA {
+        font-size: 15px ;
+        font-weight: 400 ;
+      }
+    }
+    
+    .headerTagWithNickname-2YarQ8 {
+      .username-2b1r56 {
+        font-size: 15px ;
+        font-weight: 400 ;
+      }
+    }
+    
+    .headerTagNoNickname-3ak9o8 {
+      display: block !important ;
+      
+      > span {
+        display: block !important ;
+      }
+    }
+    
 
     // footer
     > .footer-1fjuF6 {
@@ -1439,84 +1489,6 @@ html.platform-win #app-mount {
 // popout from chat mentions .etc
 .popouts-2bnG9Z > div { > { @include userPopout() } }
 
-// User popout (profile card)
-//.layerContainer-yqaFcK .userPopout-3XzG_A, /* normal popout */
-//.popouts-2bnG9Z > div > .userPopout-3XzG_A /* popout from chat mentions .etc */ {
-//  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
-////  width: 500px !important ;
-//  width: auto !important ;
-//  min-width: 350px !important ;
-//  max-width: 500px !important ;
-//  display: grid ;
-//  grid-template-areas:
-//    "header body" 
-//    "footer footer" ;
-//  
-//  // header
-//  > .header-2BwW8b {
-//    grid-area: header;
-//    min-width: 175px ;
-//    
-//    &.headerNormal-T_seeN { background-color: var(--background-tertiary) }
-//    &.headerSpotify-zpWxgT {
-//      background-color: var(--background-tertiary) ;
-//
-//      .timeBarUserPopout-AWPFf2 ~ .flex-1xMQg5 { display: none }
-//    }
-//    &.headerPlaying-j0WQBV { background-color: var(--background-tertiary) }
-//    &.headerStreaming-2FjmGz { background-color: #593695 }
-//    
-//    // Profile img
-//    .avatarWrapper-3H_478 {
-//      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
-//
-//      img.avatar-VxgULZ, .avatarHintInner-Dco91E {
-//        filter: opacity(100%);
-//        border-radius: 7.5% ;
-//      }
-//
-//      // online status indicator icon
-//      rect[mask="url(#svg-mask-status-online)"] {
-//        fill: var(--status-online, #43b581) ;
-//      }
-//    }
-//    
-//    // custom Status text
-//    .customStatus-1bh2V9 > img {
-//      width: 20px ;
-//      height: 20px ;
-//    }
-//  }
-//  
-//  // body
-//  > .body-3iLsc4 {
-//    grid-area: body ;
-//    padding-right: 16px !important;
-//    min-width: 175px ;
-//  }
-//  
-//  // footer
-//  > .footer-1fjuF6 {
-//    grid-area: footer;
-//    padding: 0 ;
-//    
-//    // DM
-//    > .inputWrapper-31_8H8 { 
-//      
-//      > input {
-//        padding: 2px 10px ;
-//        border-color: transparent ;
-//        box-sizing: content-box ;
-//        border-radius: 0 ;
-//        transition-delay: 0s ;
-//
-//        &:focus { border-color: rgba(0, 0, 0, 0.3) }
-//      }
-//    }
-//    
-//    > .protip-YaFfgO { display: none }
-//  }
-//}
 
 // User Profile (modal)
 [class*="modal-"] {
