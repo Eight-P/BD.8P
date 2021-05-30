@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.4.2383" ;
+$T1_version: "0.4.2384" ;
 
 // Defaults
 :root {
@@ -612,7 +612,7 @@ html.platform-win #app-mount {
 
     // Text-Input Container
     [class*="chatContent-"] > form {
-      position: initial ;
+//      position: initial ; idk
       margin: 5px 0 0 0 ;
       padding: 0 ;
       border-top: 1px solid var(--background-modifier-accent);
@@ -706,17 +706,17 @@ html.platform-win #app-mount {
       }
 
       // typing indicator
-      [class*="typing-"] {
+      .typing-2GQL18 {
         background: transparent ;
         position: absolute ;
-        bottom: 42px ;
+        top: -14px ;
         left: -10px ;
         height: 15px ;
-        box-sizing: border-box ;
+//        box-sizing: border-box ;
         padding: 0 5px ;
         overflow: hidden ;
-
-        [class*="text-"] { line-height: 15px }
+        pointer-events: none ;
+        line-height: 15px ;
 
         [class*="spinner-"] { margin: 0 }
 
@@ -726,6 +726,7 @@ html.platform-win #app-mount {
 
           [class*="slowModeIcon-"] {
             position: absolute ;
+            top: -2px ;
             height: 15px ;
 
             path { fill: var(--interactive-normal) }
