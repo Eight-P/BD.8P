@@ -1,0 +1,339 @@
+// T1.chat.scss v0.1.0
+// Text chat, Voice chat
+
+// -- Text chat
+// Title bar sperator line
+.content-yTz4x3::before { display: none }
+
+// - Text chat container
+main.chatContent-a9vAAp {
+  z-index: 101 ; // for "Mark As Read" 
+  
+  // "#" Icon at the channels very top
+  .emptyChannelIcon-cc932w { display: none }
+  
+  // "Mark As Read" and "Jump To Present" 
+  .barBase-1c2Rfb {
+    background: var(--background-primary);
+    opacity: 1 ;
+    border-radius: 5px ;
+    padding: 0 ;
+    cursor: auto ;
+    
+    @include shadow_effekt("box_2");
+    
+    > button {
+      padding: 0 15px ;
+      color: var(--text-normal) ;
+      
+      &.barButtonMain-3K-jeJ {
+        flex: 0 1 auto ;
+        margin-right: auto ;
+      }
+
+      &:hover  {
+        color: var(--interactive-active) ;
+        text-decoration: underline ;
+      }
+    }
+    
+    // "Mark As Read"
+    &.newMessagesBar-265mhP {
+      position: absolute ;
+      top: -36px ;
+    }
+  }
+
+  // Messages scroller
+  .scroller-2LSbBU {
+    // fading out at top and bottom, not sure if like that tho
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 96%, transparent);
+  }
+  
+  // Messages seperator
+  .divider-3_HH5L {
+    border: none ;
+    margin: 20px 0 !important;
+    
+    // date 
+    .content-1o0f9g { background: none }
+    
+    // seperator lines
+    &::before, &::after {
+      content: "" ;
+      height: 1px ;
+      width: 100% ;
+      background: var(--background-modifier-accent) ;
+    }
+    
+    // new messages seperator
+    &.isUnread-3Ef-o9 {
+      &::before, &::after {
+        background: var(--red);
+        opacity: .7 ;
+      }
+      
+      .unreadPill-2HyYtt {
+        top: 0 ;
+        padding: 0 4px ;
+        border-radius: 0 0 4px 4px ;
+
+        path { display: none }
+      }
+    }
+  }
+  
+  // - Chat messages
+  .message-2qnXI6 {
+    background: none !important ;
+    padding-right: 14px !important ;
+    
+    // Message with Mention
+    &.mentioned-xhSam7 {
+      
+      > .contents-2mQqc9 {
+        padding: 0 6px ;
+        border-left: solid 2px var(--border-mentioned) ;
+        background: var(--background-mentioned) ;
+      }
+      
+      &:before { display: none }
+    }
+    
+    // Message buttons
+    .buttonContainer-DHceWr {
+      top: 19px ;
+      
+      // Container
+      .wrapper-2aW0bm {
+        height: 22px ;
+        background: none ;
+        box-shadow: none ;
+      }
+      
+      // Buttons
+      .button-1ZiXG9 {
+        height: 20px ;
+        padding: 1px 3px;
+        background: none ;
+      }
+    }
+    
+    // Message buttons - Message with Reply
+    &.hasReply-34In-r .buttonContainer-DHceWr { top: 37px }
+    
+    // Message buttons - Message Concatenation
+    &:not(.groupStart-23k01U) .buttonContainer-DHceWr { top: 27px }
+    
+    // Message reactions
+    .reaction-1hd86g {
+      background-color: var(--background-modifier-accent);
+      border: none;
+      border-radius:4px;
+
+      &:hover { background-color: var(--background-accent) }
+      
+      // Active reaction 
+      &.reactionMe-wv5HKu {
+        background-color: var(--Blurple-light, rgba(114, 137, 218, 0.3)) ;
+
+        &:hover { background-color: var(--Blurple-light-hover, rgba(114, 137, 218, 0.4)) }
+        
+        // number 
+        .reactionCount-2mvXRV { color: var(--Blurple, rgb(114, 137, 218)) }
+      }
+    }
+  }
+  
+  // - preload dummys
+  // container
+  .wrapper-3vR61M {
+    background: none !important;
+    
+    // messages
+    > .wrapper-1F5TKx {
+      background: none !important;
+    }
+  }
+  
+  // Text input
+  > .form-2fGMdU {
+    margin: 5px 0 0 0 ;
+    padding: 0 ;
+    border-top: 1px solid var(--background-modifier-accent);
+    
+    &::before { display: none }
+    
+    // container
+    .channelTextArea-rNsIhG {
+      background: none ;
+      margin: 0 ;
+      padding: 0 ;
+      
+      // another container
+      > .scrollableContainer-2NUZem { background: none }
+    }
+    
+    // Text input container
+    .channelTextArea-rNsIhG {
+      
+      // Text input
+      .textArea-12jD-V { margin-left: 10px }
+      
+      // Input on denied writing permission
+      &.channelTextAreaDisabled-8rmlrp .innerDisabled-1YTFPN::after {
+        content: " " ;
+        background: url("https://i.imgur.com/za6Yq9g.png") ;
+        position: absolute;
+        right: 0 ;
+        bottom: 0 ;
+        height: 36px ;
+        width: 36px ;
+        background-size: cover ;
+        background-repeat: no-repeat ;
+      }
+    }
+    
+    // Attach file Button container
+    .attachWrapper-2TRKBi {
+      width: 40px ;
+      
+      // Seperator line between button and text input
+      &::after {
+        content: "" ;
+        position: absolute ; 
+        top: 5px ;
+        bottom: 5px ;
+        right: 0px ;
+        width: 1px ;
+        background-color: var(--background-primary) ;
+      }
+      
+      // Button
+      .attachButton-2WznTc {
+        position: absolute;
+        top: 50% ;
+        transform: translateY(-50%) ;
+      }
+    }
+    
+    // typing indicator
+    >  .typing-2GQL18 {
+      background: transparent ;
+      position: absolute ;
+      top: -14px ;
+      left: -10px ;
+      height: 15px ;
+      padding: 0 5px ;
+      overflow: hidden ;
+      pointer-events: none ;
+      line-height: 15px ;
+      
+      // Channel slowmode indicator
+      .cooldownWrapper-3joyFc {
+        position: absolute ;
+        right: 0 ;
+        width: 15px ;
+        color: transparent !important;
+
+        .slowModeIcon-1BPDC_ {
+          position: absolute ;
+          margin: 0 ;
+
+          path { fill: var(--interactive-normal) }
+        }
+      }
+    }
+    
+    // Emoji button
+    .emojiButton-pET4wH {
+      opacity: .6 ;
+      
+      &.emojiButtonHovered-1rWNal { opacity: 1 }
+    }
+    
+    // Announcement channel follow option
+    .wrapper-39oAo3 {
+      height: 44px ;
+      border-top: 1px solid var(--background-modifier-accent);
+      padding: 0 ;
+      margin: 0 ;
+      background: none ;
+      
+      // Image
+      .image-3XsqGc { display: none }
+      
+      // Text
+      .title-FVgbgL {
+        color: var(--text-muted) ;
+        font-weight: 400 ;
+      }
+      
+      // "Follow" button
+      .button-1YxJv4 { @include button_normal() }
+    }
+  }
+}
+
+// - Mention in text
+.mention.wrapper-3WhCwL {
+  color: var(--Blurple, rgb(114, 137, 218)) !important;
+  background-color: transparent !important;
+  border-radius: 3px ;
+  padding: 0 2px ;
+  font-weight: 500 ;
+
+  &:hover {
+    background-color: var(--Blurple-light, rgba(114, 137, 218, 0.2)) !important;
+    text-decoration: underline ;
+  }
+}
+
+// -- Voicecall view
+.callContainer-36WRfH {
+  
+  // always show controls
+  .root-217Brm.idle-1j3olu .controlSection-2h3cS0 {
+    opacity: var(--always-show-voicecontrols, 1) ;
+    transform: translateZ(0) ;
+  }
+  
+  // Gradient effekt
+  .gradientContainer-10lXLB { display: none }
+  
+  // Controls main container
+  .videoControls-24w7Xp {
+    padding: 0 16px 0 16px;
+  }
+  
+  // Controls (bottom) (trash)
+  .bottomControls-lIJyYL {
+    
+    .button-38aScr { background: none }
+
+    // Icons
+    .controlIcon-35oS15 {
+      color: var(--interactive-normal) ;
+
+      &:hover { color: white }
+    }
+
+    // small icon for popout menu
+    .contextMenuNub-3yOOYo {
+      bottom: 5px ;
+    }
+
+    // Disconnect Icon
+    .controlButton-2MhVEL[aria-label="Disconnect"] .controlIcon-35oS15 {
+      color: var(--red) ;
+      opacity: .7 ;
+
+      &:hover { opacity: 1 }
+    }
+    
+    // left / right Buttons
+    .flex-1xMQg5:first-child, .flex-1xMQg5:last-child {
+      margin-top: 10px ;
+    }
+  }
+}

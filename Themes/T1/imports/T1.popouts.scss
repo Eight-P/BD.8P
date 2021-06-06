@@ -1,0 +1,217 @@
+// T1.popouts.scss v0.1.0
+// Text chat / Server options / User context / Search / User status
+
+// -- Text chat 
+// - Text chat Tag autocomplete popout
+.chatContent-a9vAAp .form-2fGMdU .autocomplete-1vrmpx {
+  background-color: var(--background-tertiary) !important ;
+      
+  .selectable-3dP3y- {
+    border-radius: 0 ;
+    background: none ;
+
+    &:hover {
+      background: var(--background-modifier-selected) ;
+      border-left: 3px solid var(--interactive-hover) ;
+
+      .colorInteractiveNormal-PB7JN3 { color: var(--interactive-hover) }
+    }
+  }
+}
+
+// - Gif / Emoji / BD emotes Popout container
+.layerContainer-yqaFcK .contentWrapper-SvZHNd {
+  background-color: var(--background-tertiary);
+
+  // Active tab button
+  .navButtonActive-1MkytQ { background: none }
+}
+
+// - Gif menu popout
+#gif-picker-tab-panel {
+  
+  // Serach bar
+  .searchBar--fTZYa .input-3Xdcic { border: 1px solid var(--background-modifier-accent) }
+}
+
+// - Emoji menu popout
+#emoji-picker-tab-panel {
+  
+  // Serach bar
+  .searchBar-5di9mG .input-1Rv96N { border: 1px solid var(--background-modifier-accent) }
+  
+  // Emotes category header
+  .header-ywPcAE { 
+    position: relative ;
+    background: none ;
+  }
+  
+  // Emoji inspector
+  .inspector-S2gM3e { display: none }
+  
+  // Categorys sidebar (left)
+  > .categoryList-2Kzf65 {
+    border-right: 1px solid var(--background-modifier-accent) ;
+    
+    .scroller-3gAZLs::-webkit-scrollbar { display: none } 
+    
+    // Category Icons
+    .categoryItemGuildCategory-3MisqI .guildIcon-3h-1IH { background: none }
+    
+    // Default emoji shortcut
+    .unicodeShortcut-15J8Ck { display: none }
+  }
+}
+
+// - BD Emotes menu popout
+.bd-emote-menu {
+  
+  // Emotes category header
+  .bd-emote-header { 
+    position: relative ;
+    background: none ;
+  }
+  
+  // Emote
+  .bd-emote-item {
+    cursor: pointer ;
+  }
+}
+
+
+// -- Server-Options popout
+#guild-header-popout { 
+  background-color: var(--background-tertiary) ;
+
+  // Options
+  .item-1tOPte {
+    background: none ;
+    
+    .icon-LYJorE { color: var(--interactive-normal) }
+    
+    // "invite People"
+    &.colorBrand-ROmMP1 { color: var(--brand-experiment) }
+    
+    // Hover
+    &.focused-3afm-j {
+
+      // "invite People"
+      &.colorBrand-ROmMP1 { color: var(--brand-experiment-330) }
+    }
+  }
+}
+
+
+// -- User context popout
+#user-context[aria-label="User Settings Actions"] {
+  background: var(--background-tertiary) ;
+  
+  .scroller-3BxosC {
+    padding: 6px !important;
+    
+    &::-webkit-scrollbar { display: none }
+  }
+
+  // Options
+  .item-1tOPte {
+    background: none ;
+    
+    // Critical option (like bann user,..)
+    &.colorDanger-2qLCe1.focused-3afm-j { background: var(--red) }
+  }
+  
+  // Secondray popout
+  .submenu-2-ysNh {
+    background: var(--background-tertiary) ;
+    
+    .scroller-3BxosC {
+      padding: 6px ;
+
+      &::-webkit-scrollbar { display: none }
+    }
+    
+    // Server roles 
+    &[aria-activedescendant^="user-context-roles"] {
+      
+      .item-1tOPte {
+      
+        // Checkbox
+        .checkbox-3s5GYZ { color: transparent }
+
+        // Checkbox checked ("x" icon for "uncheck")
+        &.focused-3afm-j[aria-checked="true"] path {
+          color: var(--red) ;
+          d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
+        }
+      }
+    }
+  }
+}
+
+
+// -- Search
+// - Searchbar options popout
+.layer-v9HyYc > #search-results {
+  background: var(--background-tertiary) ;
+  
+  @include shadow_effekt("box_1");
+  
+  // Search options
+  .option-96V44q {
+    
+    // weird gradiant to the right, idk
+    &::after { display: none }
+    
+    // hover
+    &.selected-rZcOL-  { background: var(--background-modifier-hover) }
+    
+    // unnecessary icon
+    .plusIcon-v0BTrL { display: none }
+  }
+}
+
+// - Searchbar results popout
+//.searchResultsWrap-3-pOjs {
+//  
+//}
+
+
+// -- User status 
+// - shorthand popout
+#status-picker {
+  background: var(--background-tertiary) ;
+  
+  // Separator line
+  .separator-2I32lJ { display: none }
+  
+  .item-1tOPte {
+    &#status-picker-online.focused-3afm-j { background: var(--status-online) }
+      
+    &#status-picker-idle.focused-3afm-j { background: var(--status-idle) }
+
+    &#status-picker-dnd.focused-3afm-j { background: var(--status-DnD) }
+
+    &#status-picker-invisible.focused-3afm-j { background: var(--status-invisible) }
+    
+    &#status-picker-custom-status.focused-3afm-j { background: var(--background-modifier-selected) }
+  }
+}
+
+// - Custom status popout
+.popout-VcNcHB.scrollerBase-289Jih {
+  background: var(--background-secondary) ;
+}
+ 
+
+// -- Tooltips
+.layerContainer-yqaFcK .tooltip-2QfLtc {
+  background: var(--background-tertiary) ;
+  
+  .tooltipPointer-3ZfirK {
+    border-top-color: var(--background-tertiary) ;
+  }
+}
+
+
+// - notifications popout on receiving voice call
+.bg-h5JY_x ~ .wrapper-3lJCnD { z-index: 1000 }

@@ -1,0 +1,91 @@
+// T1.settings.scss v0.1.0
+// Client / Guilds / Channels
+
+// general settings tabs
+.layer-3QrUeG:not(.baseLayer-35bLyl) {
+  
+  // Sidebar
+  .sidebarRegionScroller-3MXcoP {
+    &::-webkit-scrollbar { display: none }
+    
+    // category headers
+    .header-2RyJ0Y {
+      color: var(--header-primary) ;
+      opacity: .8 ;
+    }
+    
+    // Tab name
+    .item-PXvHYJ {
+      color: var(--interactive-normal) ;
+      background: none !important ;
+      border-radius: 0  ;
+      padding: 0 10px ;
+      margin: 6px 0 ;
+      
+      &:hover { color: var(--interactive-hover) }
+      
+      &.selected-3s45Ha {
+        border-left: 2px solid var(--interactive-active) ;
+        color: var(--interactive-active)  ;
+      }
+      
+      // "Log Out" Tab
+      &[aria-controls="logout-tab"], &[aria-controls="DELETE-tab"] {
+        color: var(--red) !important ;
+        opacity: .8 ;
+        
+        &:hover { opacity: 1 !important }
+      }
+    }
+  }
+  
+  // Content conatiner
+  .contentRegionScroller-26nc1e {
+    
+    @include scrollbar() ;
+  }
+}
+
+// - Client settings
+// Theme version (USER_SETTINGS)
+.layer-3QrUeG[aria-label="USER_SETTINGS"] .info-1VyQPT:after{
+  content: "T1 v#{$T1_version} by Eight_P";
+  display: block;
+  font-size: 12px ;
+  font-weight: 600 ;
+  color: rgb(114, 118, 125);
+  padding: 4px 0;
+  text-transform: none ;
+}
+
+// - Server settings
+.layer-3QrUeG[aria-label="GUILD_SETTINGS"] {
+  
+  // - Roles ( Discord beeing Discord once again )
+  
+  // deafult permission button
+  .container-_phMUq { background: none }
+  
+  // Edit role tab
+  .page-3njELR {
+    
+    // Roles sidebar
+    .list-I3aHXn::-webkit-scrollbar { display: none }
+    
+    // permission (content) container
+    .scroller-Utb7tO {
+      
+      .header-2mZ9Ov {
+        position: relative ;
+      }
+
+      &::-webkit-scrollbar-track { 
+        background-color: var(--scrollbar-auto-track) !important ;
+        border: 2px solid var(--scrollbar-auto-track) !important ;
+        border-radius: 0 ;
+      }
+
+      &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
+    }
+  }
+}

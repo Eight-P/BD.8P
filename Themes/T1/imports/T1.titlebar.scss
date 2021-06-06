@@ -1,0 +1,196 @@
+// T1.titlebar.scss v0.1.0
+// Server/DM - Text/Voice Chat | Friends-tab | Live Stages 
+
+// Search (Toolbar)
+@mixin TB_Search () {
+  pointer-events: none ;
+  margin: 0 8px ;
+  
+  // Container 2
+  .searchBar-3dMhjb {
+    width: 20px ;
+    background: transparent ;
+  }
+  
+  // Text input container
+  .DraftEditor-root {
+    position: absolute ;
+    width: 20px ;
+    cursor: pointer ;
+    pointer-events: auto ;
+
+    .public-DraftEditor-content {
+
+      //search text
+      .public-DraftStyleDefault-block > span { display: none }
+    }
+
+    //placeholder text
+    .public-DraftEditorPlaceholder-root { display: none }
+  }
+  
+  .icon-3cZ1F_ {
+    color: var(--interactive-normal) ;
+    transition: none ;
+  }
+  
+  // Main container
+  .search-2oPWTC {
+    
+    // Searchbar closed 
+    &:not(.open-6_Y_aH):hover .icon-3cZ1F_ { color: var(--interactive-hover) }
+    
+    // Searchbar opend
+    &.open-6_Y_aH {
+      border-bottom: 1px solid var(--header-secondary) ;
+      
+      // Container 2
+      > .searchBar-3dMhjb {
+        width: 244px ;
+        transition: .3s ;
+      }
+      
+      // Text input container
+      .DraftEditor-root { 
+        position: relative ;
+
+        .public-DraftEditor-content .public-DraftStyleDefault-block > span { display: inline-block }
+      }
+      
+      .icon-3cZ1F_ {
+        &:first-child { visibility: hidden }
+        &:last-child { opacity: 1 }
+      }
+    }
+  }
+}
+
+// -- General Titlebar
+.container-1r6BKw {
+  box-shadow: none ;
+  
+  // - Main content
+  > .children-19S4PO {
+    
+    // "#", friends, "@", speaker - icon
+    > .iconWrapper-2OrFZ1 { display: none }
+    
+    // random line (left)
+    > .divider-3FBTu8 { display: none }
+    
+    // "AKA" icon if chatpartner has a nickname in a server
+    > .akaBadge-1M-1Gw { display: none }
+    
+    // Channel name, "friends" text (not: Dm Partner name)
+    > h3.title-29uC1r:not(.cursorPointer-1j7DL8) { display: none }
+    
+    // ugly random line (right)
+    &::after { display: none }
+  }
+  
+  // - rightside iconbar
+  > .toolbar-1t6TWx {
+    @mixin TB_icons () {
+    margin: 0 9px ;
+
+      svg {
+        width: 20px ;
+        height: 22px ;
+        color: var(--interactive-normal) ; 
+      }
+
+      &:hover svg { color: var(--interactive-hover) }
+    }
+
+    // Icons
+    .iconWrapper-2OrFZ1 { @include TB_icons() }
+    
+    // Search
+    > .search-36MZv- { @include TB_Search() }
+
+    // Voicecall view buttons
+    .button-38aScr { @include TB_icons() }
+
+    // Discord "Help" (web-link) icon
+    > .anchor-3Z-8Bb {
+
+      @include TB_icons() ;
+
+      > div { margin: 0 }
+    }
+  }
+}
+
+// -- Chat (Server / DM )
+section.title-3qD0b-.container-1r6BKw.themed-ANHk51[aria-label="Channel header"] {
+  
+  // - channel name, topic
+  > .children-19S4PO {
+    
+    // Channel description
+    > .topic-TCb_qw {
+      margin: 0 8px ;
+      text-align: center ;
+
+      &:hover { color: var(--interactive-hover) }
+    }
+    
+    // Follow Announcement channel button
+    .followButton-L6L-Us { display: none }
+  }
+}
+
+// -- Home/Friends
+.container-1D34oG > section.container-1r6BKw.themed-ANHk51 {
+  
+  // - Nav bar / Friends tabs 
+  .tabBar-ZmDY9v {
+     margin: 0 auto ;
+    padding-right: 40px ;
+    
+    // Tabs
+    > .item-3HknzM {
+      background: none !important ;
+      
+      // unread indicator
+      > .numberBadge-2s8kKX { @include unread_indicator_inline() }
+      
+      // add friend Tab
+      &[aria-label="Add Friend"] {
+        position: absolute ;
+        right: 0 ;
+        width: 24px ;
+        height: 24px ;
+        min-width: unset ;
+        overflow: visible ;
+        margin: 0 9px;
+        padding: 0 ;
+        
+        // Icon
+        &::before {
+          content: " " ;
+          background-image:url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(67, 181, 129)"><path d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 15.67,10 13,10 C13,10 12.83,10 12.75,10 C8,10 4,6 4,1.5 L4,0 L0.5,0 Z M13,0 C10.790861,0 9,1.790861 9,4 C9,6.209139 10.790861,8 13,8 C15.209139,8 17,6.209139 17,4 C17,1.790861 15.209139,0 13,0 Z" transform="translate(2 4)" ></path></svg>');
+          position: absolute ;
+          display: block ;
+          height: 24px ;
+          width: 24px ;
+          opacity: .5 ;
+        }
+
+        &:hover::before { opacity: 1 }
+        
+        // Text
+        span { display: none }
+      }
+    }
+  }
+}
+
+// -- DM Voice call
+//section.title-3qD0b-.container-1r6BKw.transparent-2ZlE3R[aria-label="Channel header"] {}
+
+// -- Server Voice call
+//section.theme-dark.container-1r6BKw.transparent-2ZlE3R {}
+
+// -- Live Stages 
+//section.headerBarContainer-31FKNA.container-1r6BKw.themed-ANHk51 {}

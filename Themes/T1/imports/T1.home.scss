@@ -1,0 +1,302 @@
+// T1.home.scss v0.1.0
+// DMs Sidebar / Friendslist / Live Stages / Nitro store
+
+// -- Live Stages 
+#stage-discovery-tab {
+  
+  // no Stages / end of Stages container
+  .container-3u4ndt, .container-1WCE6w {
+    
+    // Wumpus
+    > img {
+      filter: grayscale(100%);
+      opacity: .8 ;
+    }
+    
+    // Text h1
+    > .header-3YnDzJ, .title-2TmeU7 {
+      color: var(--text-normal) ;
+      margin: 20px 0 5px 0 ;
+      font-weight: 600 ;
+    }
+    
+    // Text h2
+    > .subheader-2RpfyZ, .colorHeaderSecondary-3Sp3Ft { 
+      color: var(--text-muted) ;
+      font-weight: 400 ;
+    }
+    
+    // Refresh button
+    > .button-38aScr { @include button_normal() }
+  }
+  
+  // Friends activity list
+  ~ .nowPlayingSidebar-2OFn0o {
+    
+    .scroller-2ZPeAD { border: none }
+    
+    .itemCard-v9viV7 {
+      background: none ;
+      border: none ;
+      padding: 4px 16px 4px 4px ;
+      margin-top: 20px ; 
+      
+      &:hover {
+        background: var(--background-modifier-hover) ;
+        
+        @include shadow_effekt("drop_1");
+      }
+      
+      // Activity (like games,..)
+      .headerFull-1dyyvV {
+        grid-template-columns: 36px minmax(20px,auto) 24px;
+        
+        .headerAvatar-2MDZJn {
+          height: 36px !important ;
+        }
+      }
+      
+      // additional info on activity (like gamemode,..)
+      .body-1ld4H7 {
+        background: none ;
+        margin: 18px 0 0 6px ;
+        
+        > .section-2gLsgF {
+          background: none ;
+          border-radius: 0 ;
+          border-left: 1px solid white ;
+          padding: 6px 12px ;
+        }
+      }
+    }
+  }
+}
+
+// -- Friendslist
+.tabBody-3YRQ8W {
+  margin-top: 10px ;
+  
+  // Seperator line
+  &::before { display: none }
+  
+  // "Friends online" count
+  .title-30qZAO { display: none }
+  
+  @mixin Friendslist($n) {
+    $min-width: $n * 340 + 240;
+    $max-width: ($n + 1) * 340 + 240 - 1;
+
+    @media screen and (min-width: $min-width+"px") and (max-width: $max-width+"px") {
+      text-align: start !important ;
+
+      .peopleListItem-2nzedh {
+        margin: 40px 0 0 calc((100vw - #{$min-width}px) / (#{$n} + 1) + 10px) !important ;
+      }
+      
+//      > div {
+//        margin: 0 calc((100vw - #{$min-width}px) / 2) !important ;
+//        width: $n * 340px !important ;
+//        display: block !important ;
+//      }
+    }
+  }
+  
+  // Scroller
+  .peopleList-3c4jOR {
+    text-align: center ;
+    
+    @include scrollbar();
+    
+    @for $i from 2 through 10 { @include Friendslist($i) }
+    
+    > div {
+      text-align: start ;
+      padding-bottom: 25px ;
+    }
+  }
+  
+  // Friend's Card 
+  .peopleListItem-2nzedh {
+    display: inline-block ;
+    margin: 40px 10px 0 10px ;
+    padding: 0 ;
+    border: none ;
+    width: 320px ;
+    background: var(--background-floating) ;
+    height: 70px !important ;
+    border-radius: 8px ;
+    transition: .1s ;
+    
+    @include shadow_effekt("box_2");
+    
+    &:hover {
+      border-radius: 0 ;
+
+      @include shadow_effekt("drop_1");
+    }
+    
+    // Second container
+    .userInfo-2zN2z8 { width: 320px }
+    
+    // User avatar, Status icon
+    .avatar-3W3CeO > svg {
+      overflow: visible ;
+      
+      > foreignObject { 
+        mask: none ;
+        y: 3px ;
+        height: 67px ;
+        width: 67px ;
+      }
+      
+      > rect {
+        x: 0 ;
+        y: 0 ;
+        height: 3px ;
+        width: 320px ;
+        mask: none ;
+        opacity: .8 ;
+      }
+    }
+    
+    // User name, status text
+    .text-37NqbO {
+      margin-top: 3px ;
+      margin-left: 40px ;
+      
+      // User name
+      > .discordTag-2_tqUA {
+        height: 34px ;
+        max-width: 230px ;
+        line-height: 34px ;
+        
+        > .discriminator-22Okc1 {
+          margin-left: 5px ;
+          visibility: visible ;
+          opacity: .7 ;
+          line-height: 34px ;
+        }
+      }
+      
+      // status / activity
+      > .subtext-24R4-w {
+        position: relative ;
+        height: 33px ;
+        width: 230px ;
+        
+        // idk
+        .textRuler-wO-qHe { display: none }
+        
+        // Normal Activity (hiding the "playing",..) 
+        .activity-2myFBH .text-3MU_QQ > strong {
+          position: absolute ;
+          left: 0 ;
+          background: var(--background-floating) ;
+        }
+        
+        // Activity icon
+        .icon-15YQ1T { display: none }
+      }
+    }
+    
+    // User option buttons (useless)
+    .actions-1SQwjn { display: none }
+  }
+  
+  // Friends activity list (idk, I don't like it)
+  > .nowPlayingColumn-2sl4cE { display: none }
+}
+
+// -- Nitro store
+.sidebar-2K8pFh ~ .applicationStore-1pNvnv {
+  
+  .headerBar-1YYOfi { display: none }
+  
+  .scroller-9moviB { @include scrollbar() }
+}
+
+// -- DMs Sidebar
+.privateChannels-1nO12o {
+  top: 48px ;
+  margin-bottom: 48px ;
+  
+  .scroller-1JbKMe { 
+    padding: 0 10px 0 0 !important ;
+    
+    &::-webkit-scrollbar { display: none }
+  }
+  
+  // "Direct Messages" text
+  .headerText-2F0828 { color: var(--channels-default) }
+  
+  // create Group DM Button (not necessary, there is one at the top right)
+  .privateChannelRecipientsInviteButtonIcon-3A3uTc { display: none }
+    
+  // card container
+  a.channel-2QD9_O {
+
+    // Nav Tabs (Stages, Friends, Nitro, not library )
+    &:not([aria-label]):not(#private-channels-3) {
+      margin: 0 0 0 2px ;
+      width: 74px ;
+      display: inline-block ;
+      border-radius: 0 ;
+      padding: 0 ;
+
+      // second container
+      > .layout-2DM8Md {
+        padding: 0 16px ;
+        background: none ;
+      }
+
+      // Button icon container
+      .avatar-3uk_u9 { margin: 5px }
+
+      // Name container
+      .content-3QAtGj { display: none }
+
+      // Icons container
+      .children-gzQq2t { margin: 10px 0 0 0 }
+
+      // Notification icon
+      .numberBadge-2s8kKX {
+        background-color: transparent !important ;
+        border-bottom: 2px solid var(--red) ;
+        border-radius: 0 ;
+        color: var(--text-normal) ;
+      }
+
+      // Selected tab
+      &.selected-aXhQR6 { border-bottom: 1px solid var(--interactive-active) }
+
+      &[aria-posinset="1"] { margin: 0 2px }
+    }
+    
+    // DMs card / library tab(maybe)
+    &#private-channels-3:not([aria-label]),
+    &[href*="/channels/@me/"] {
+      height: 38px !important ;
+      margin: 6px 0 ;
+      padding: 0 ;
+      
+      // second container
+      > .layout-2DM8Md {
+        height: 38px ;
+        margin-left: 10px ;
+        border-radius: 0 ;
+      }
+      
+      .closeButton-2GCmT5 { background-size: 22px 22px }
+      
+      &.selected-aXhQR6 > .layout-2DM8Md {
+        border-left: 3px solid var(--interactive-hover) ;
+        background: transparent ;
+      }
+      
+      &:hover > .layout-2DM8Md { 
+        border-left: 3px solid var(--interactive-hover);
+        background: var(--background-modifier-hover) ;
+      }
+    }
+  }
+}

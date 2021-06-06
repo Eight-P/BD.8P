@@ -1,0 +1,215 @@
+// T1.server-view.scss v0.1.0
+// Channels, Panels / Members / Server discovery
+
+// -- Servers Text and Voice channels
+.sidebar-2K8pFh > .container-3w7J-x {
+  top: 48px ;
+  margin-bottom: 48px;
+  
+  // unread msg indicator
+  .unread-15xhX5.container-35XQWE { display: none }
+
+  // scrollbar on scroller
+  .scroller-RmtA4e.scrollerBase-289Jih::-webkit-scrollbar { display: none }
+  
+  // Text and Voice Channels
+  .iconVisibility-sTNpHs {
+    
+    // Icon ("#", speaker, ..)
+    .icon-1DeIlz {
+      width: 15px ;
+      color: var(--channels-default);
+      opacity: .8 ;
+    }
+    
+    // Channel name
+    .name-23GUGE { color: var(--channels-default) }
+    
+    // Channel options and infos
+    .children-3rEycc {
+      
+      // Settings and invite buttons
+      .iconItem-F7GRxr { display: none }
+      
+      // Mentions indicator
+      .numberBadge-2s8kKX {
+        background-color: transparent !important ;
+        border-bottom: 2px solid var(--red) ;
+        border-radius: 0 ;
+        color: var(--text-normal) ;
+      }
+      
+      // Connection limit (voice)
+      .userLimit-3aerPX {
+        
+        span { background: transparent }
+        
+        .total-i6us2n::after {
+          border: none ;
+          content: "|" ;
+          left: -5px ;
+          top: -1px ;
+        }
+      }
+    }
+    
+    // container for hover
+    > .content-1x5b-n {
+      background: transparent;
+      
+      &:hover {
+        .name-23GUGE { color: var(--interactive-hover) }
+        .iconItem-F7GRxr { display: block }
+      }
+    }
+    
+    // Channel selected / connected
+    &.modeSelected-346R90, &.modeConnected-3IsKId {
+      // Channel name
+      .name-23GUGE { color: var(--interactive-active) }
+      // Channel icon (left)
+      .icon-1DeIlz { color: var(--interactive-active) }
+    }
+    
+    // Channel muted
+    &.modeMuted-onO3r- {
+      // Channel icon (left)
+      .icon-1DeIlz { color: var(--interactive-muted) }
+    }
+    
+    // Channel unread
+    &.modeUnread-1qO3K1 {
+      // pill
+      .unread-2lAfLh { background-color: var(--interactive-hover) }
+    }
+  }
+  
+  // - User in Voice channel
+  .voiceUser-1K6Xox {
+
+    // "live" indicator
+    .live-vBWnV6 { 
+      background: none !important ;
+      color: var(--red) ;
+    }
+  }
+}
+
+// -- Sidebar Panels (Profile, Activity,..)
+.sidebar-2K8pFh > .panels-j1Uci_ {
+  
+  // Profile Container
+  > .container-3baos1 {
+    position: absolute ;
+    height: 48px ;
+    width: 240px ;
+    top: 0 ;
+    box-sizing: border-box ;
+    
+    // moving profile buttons for better tooltip position
+    > .flex-1xMQg5 {
+      margin-top: 20px ;
+      
+      > button {
+        background-color: transparent ;
+
+        > .contents-18-Yxp { margin-top: -20px }
+      }
+    }
+  }
+  
+  // Activity Container
+  > .activityPanel-28dQGo {
+    height: 32px ;
+    padding: 6px 10px ; 
+    
+    // Image
+    .gameIconWrapper-1YByCI { height: 32px }
+    
+    // Text
+    .title-eS5yk3 { line-height: 32px }
+    
+    button { background: none }
+  }
+  
+  // Voice Connection
+  > .wrapper-24pKcD > .container-1giJp5 {
+    border: none ;
+    height: 32px ;
+    padding: 6px 10px ;
+    overflow: hidden ;
+    
+    button { background: none }
+    
+    // video share buttons
+    .actionButtons-14eAc_ { display: none }
+  }
+  
+  // for the SpotifyControls Plugin by DevilBro
+  > .container-6sXIoE { 
+    margin: 0px ;
+    min-height: unset  ;
+    height: 44px ;
+    
+    &.maximized-vv2Wr0 { height: unset }
+
+    button { background: none }
+  }
+}
+
+// -- Members list 
+.members-1998pB {
+  &::-webkit-scrollbar { display: none }
+  
+  // default Member
+  .member-3-YXUe {
+    border-radius: 0 ;
+    height: 37px ;
+    margin: 5px 0 5px 11px ;
+    
+    > .layout-2DM8Md { height: 37px }
+    
+    &.selected-aXhQR6 {
+       border-right: 3px solid var(--interactive-hover);
+      
+      > .layout-2DM8Md { background: none }
+    }
+    
+    &:hover { border-right: 3px solid var(--interactive-hover) }
+    
+    // offline Member
+    &.offline-3nJYBR:not(:hover) img.avatar-VxgULZ {
+      filter: grayscale(100%);
+      border-radius: 50% ;
+    }
+  }
+}
+
+// -- Discovery Sidebar
+.discoverHeader-Ijkm_M {
+  
+  ~ .categoryItem-1QIroW > .itemInner-gPkiWb {
+    border-radius: 0 ;
+    padding: 0 4px ;
+    margin: 5px 4px ;
+  }
+  
+  ~ .categoryItem-1QIroW {
+    
+    > .itemInner-gPkiWb {
+      border-radius: 0 ;
+      padding: 0 4px ;
+      margin: 5px 4px ;
+    }
+    
+    &:hover .itemInner-gPkiWb { border-left: 3px solid var(--interactive-hover) }
+    
+    &.selected-aXhQR6 > .itemInner-gPkiWb {
+      background-color: transparent ;
+      border-left: 3px solid var(--interactive-hover) ;
+    }
+  }
+}
+
+// -- Discovery Content
+.sidebar-2K8pFh ~ .pageWrapper-1PgVDX > .scroller-1d5FgU { @include scrollbar() } 

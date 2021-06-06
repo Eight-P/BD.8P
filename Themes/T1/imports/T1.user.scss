@@ -1,0 +1,309 @@
+// T1.user.scss v0.1.0
+// User popout / Modal
+
+// -- User popout
+.userPopout-3XzG_A {
+  display: grid ;
+  width: 512px !important ;
+  grid-template-areas:
+    "header body" 
+    "footer footer" ;
+  background-color: var(--background-secondary) ;
+  
+  @include shadow_effekt("box_1");
+
+  // - header
+  > .headerNormal-1l1Znk {
+    position: relative ;
+    grid-area: header ;
+    background-color: var(--background-tertiary) ;
+    min-width: 258px ;  
+
+    // Colored Profile banner
+    > .profileBanner-33-uE1 { display: none }
+
+    // New custom image banner
+    > .profileBannerPremium-35utuo {
+      position: absolute ;
+      width: 512px ;
+      height: 100% ;
+      filter: brightness(0.5) ;
+
+      > .betaBadge-1Ve-yb { display: none }
+    }
+
+    // User Info (Name, Status, Badges)
+    > .headerTop-2cWpdB {
+      background: none ;
+      border: none ;
+      padding: 112px 16px 16px ;
+      text-align: center ;
+
+      // Badges container
+      > .profileBadges-3cJaE1 {
+        flex-direction: column ;
+        justify-content: flex-start ;
+        height: calc(24px * 3);
+        width: calc(26px * 2);
+        top: 20px ;
+        left: 20px ;
+        right: unset ;
+        overflow: hidden ;
+
+        // Badges
+        > div {
+          margin: 3px 4px;
+
+          .profileBadge18-NVHzY4 {
+            height: 18px ;
+            width: 18px ;
+          }
+        }
+      }
+
+      // User Name container
+      > .headerText-15Q25Z {
+
+        // h1 Nickname
+        .nickname-2gQ76l {
+          color: var(--header-primary);
+          font-size: 17px ;
+          font-weight: 500 ;
+        }
+
+        // h1 Name without Nickname
+        .headerTagNoNickname-1VyQza {
+
+          // Name
+          .username-2b1r56 {
+            color: var(--header-primary);
+            font-size: 17px ;
+            font-weight: 500 ;
+          }
+
+          // Discriminator
+          .discrimBase-1QwWzY {
+            margin-left: 2px ;
+            color: var(--header-secondary);
+            font-size: 15px ;
+            font-weight: 500 ;
+            line-height: 27px ;
+          }
+        }
+
+        // h2 Name with Nickname
+        .headerTagWithNickname-1SDMpI {
+
+          // Name
+          .username-2b1r56 {
+            color: var(--header-secondary);
+            font-size: 14px ;
+            font-weight: 500 ;
+          }
+
+          // Discriminator
+          .discrimBase-1QwWzY {
+            margin-left: 2px ;
+            color: var(--header-secondary);
+            font-size: 13px ;
+            font-weight: 500 ;
+            line-height: 20px ;
+          }
+        }
+
+        // Bot Tag
+        .headerBotTag-36eaSD { background-color: var(--background-secondary) }
+      }
+
+      // Custom status
+      > .customStatus-3NamXG > img {
+        width: 20px ;
+        height: 20px ;
+      }
+
+      // new (beta) "About Me" 
+      > .aboutMeSection---MkQa {
+        background: none ;
+
+        // header
+        .aboutMeTitle-2i3lnH {
+          display: none ;
+        }
+      }
+    }
+
+    // Profile image container
+    > .avatarWrapperNormal-2tu8Ts {
+      top: 16px ;
+      left: 50% ;
+      transform: translateX(-50%) ;
+
+      // Remove rounding effekt
+      foreignObject { mask: none }
+
+      // container 2
+      > .avatar-22FtUu {
+        border: none ;
+        background: none ;
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
+
+        // Image
+        .avatar-VxgULZ {
+          border-radius: 7.5% ;
+        }
+      }
+
+      > .avatarHint-1E3LMl {
+        top: 0 ;
+        left: 0 ;
+        border-radius: 7.5% ;
+      }
+    }
+
+    // Status
+    > .activityUserPopout-2yItg2 {
+      grid-area: status ;
+      padding: 4px 16px 10px 16px;
+
+      &.newPopoutActivityStyles button {
+        border: none ;
+        color: var(--interactive-normal) ;
+
+        &:hover {
+          color: var(--interactive-hover) ;
+        }
+      }
+
+      .spotifyIcon-2J9kSv {
+        display: none ;
+      }
+    }
+  }
+
+  // - body
+  > .body-3iLsc4 {
+    grid-area: body ;
+    min-width: 150px ;
+    background: none ;
+    padding: 16px 8px 8px 16px !important ;
+  }
+
+  // - Footer
+  > .footer-1fjuF6 {
+    grid-area: footer;
+    padding: 0 ;
+    background-color: var(--background-secondary-alt);
+
+    // Text input
+    .inputDefault-_djjkz {
+      border-color: transparent ;
+      border-radius: 0 ;
+      color: var(--text-normal) ;
+    }
+
+    // "pro tip" 
+    > .protip-YaFfgO { display: none }
+  }
+}
+
+// Transition effekt on Popout 
+.layer-v9HyYc > .animatorLeft-1EQxU0.translate-2dAEQ6 { transform: translateZ(0) }
+
+
+// -- User modal
+.modal-3c3bKg {
+  
+  // header
+  [class*="topSection"] {
+    background-color: var(--background-tertiary) ;
+    border-bottom: 1px solid var(--background-modifier-accent);
+    
+    // User avatar container
+    .avatar-3EQepX {
+      filter: drop-shadow( 2px 2px 3px black );
+      
+      // Profile img container
+      foreignObject { mask: none }
+      
+      // Profile img
+      .avatar-VxgULZ { border-radius: 7.5% }
+    }
+  }
+  
+  // replacing Badges with the colored version (some are missing tho)
+  .profileBadges-2vWUYb {
+    // HypeSquad Brilliance
+    .profileBadgeHypeSquadOnlineHouse2-2oU04B {
+      background-image: url(https://discordapp.com/assets/48cf0556d93901c8cb16317be2436523.svg)
+    }
+    // HypeSquad Bravery
+    .profileBadgeHypeSquadOnlineHouse1-3rBtjf {
+      background-image: url(https://discordapp.com/assets/64ae1208b6aefc0a0c3681e6be36f0ff.svg)
+    }
+    // HypeSquad Balance
+    .profileBadgeHypeSquadOnlineHouse3-1DoJkv {
+      background-image: url(https://discordapp.com/assets/9fdc63ef8a3cc1617c7586286c34e4f1.svg)
+    }
+    // Early Supporter (nitro)
+    .profileBadgeEarlySupporter-2ng_jL {
+      background-image: url(https://discordapp.com/assets/23e59d799436a73c024819f84ea0b627.svg)
+    }
+    // Nitro
+    .profileBadgePremium-1KDZYC {
+      background-image: url(https://discordapp.com/assets/386884eecd36164487505ddfbac35a9d.svg)
+    }
+    // Discord Partner
+    .profileBadgePartner-j6Lwhr {
+      background-image: url(https://discordapp.com/assets/33fedf082addb91d88abc272b4b18daa.svg)
+    }
+    // Server boosting lvl 1
+    .profileGuildSubscriberlvl1-3oI9tx {
+      background-image: url(https://discordapp.com/assets/7dc50a46914f03a1c6698133199ad39c.svg)
+    }
+    // Server boosting lvl 2
+    .profileGuildSubscriberlvl2-r6nJHT {
+      background-image: url(https://discord.com/assets/b4b741bef6c3de9b29e2e0653e294620.svg)
+    }
+    // Server boosting lvl 3
+    .profileGuildSubscriberlvl3-38s3Dj {
+      background-image: url(https://discord.com/assets/93f5a393e22796a850931483166d7cb9.svg)
+    }
+    // Server boosting lvl 4
+    [class*="profileGuildSubscriberlvl4-"] {
+      background-image: url(https://discordapp.com/assets/ac20c019c11f36fb22b4ce13725a1aff.svg)
+    }
+    // Server boosting lvl 5
+    .profileGuildSubscriberlvl5-3XIa2K {
+      background-image: url(https://discord.com/assets/438dd7ecbffcf21b6cbf2773ade51a04.svg)
+    }
+    // Server boosting lvl 8
+    .profileGuildSubscriberlvl8-1kXdFr {
+      background-image: url(https://discord.com/assets/f31d590e1f3629cd0b614330f4a8ee2a.svg)
+    }
+    // Server boosting lvl 19
+    .profileGuildSubscriberlvl9{
+      background-image: url(https://discord.com/assets/9ba64f1fa91ccde0eba506c1c33f3d1a.svg)
+    }
+    // Early Verified Bot Developer
+    .profileBadgeVerifiedDeveloper-195KfD {
+      background-image: url(https://discord.com/assets/45cd06af582dcd3c6b79370b4e3630de.svg)
+    }
+  }
+  
+  // body
+  .body-3ND3kc {
+    background-color: var(--background-tertiary) ;
+    
+    // Note (idk, I just don't like it)
+    .userInfoSection-2acyCx:first-child { display: none }
+    
+    .userInfoSection-2acyCx { border: none }
+    
+    // Connected account
+    .connectedAccount-36nQx7 {
+      border: none ;
+      
+      .connectedAccountName-f8AEe2 { color:  var(--channels-default) }
+    }
+  }
+}
