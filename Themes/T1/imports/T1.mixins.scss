@@ -1,4 +1,4 @@
-// T1.mixins.scss v0.1.0
+// T1.mixins.scss v0.1.01
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -99,8 +99,8 @@
   color: var(--text-normal) ;
 }
 
-// Shadow effekts
-@mixin shadow_effekt ($type:"drop_1") {
+// Shadow effects
+@mixin shadow_effect ($type:"drop_1") {
   
   // - Primary  
   @if $type == "drop_1" {

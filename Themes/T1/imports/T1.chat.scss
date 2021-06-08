@@ -1,4 +1,4 @@
-// T1.chat.scss v0.1.0
+// T1.chat.scss v0.1.01
 // Text chat, Voice chat
 
 // -- Text chat
@@ -14,13 +14,15 @@ main.chatContent-a9vAAp {
   
   // "Mark As Read" and "Jump To Present" 
   .barBase-1c2Rfb {
+    right: 0 ;
+    left: 0 ;
     background: var(--background-primary);
-    opacity: 1 ;
+//    opacity: 1 ;
     border-radius: 5px ;
     padding: 0 ;
     cursor: auto ;
     
-    @include shadow_effekt("box_2");
+    @include shadow_effect("box_2");
     
     > button {
       padding: 0 15px ;
@@ -41,6 +43,8 @@ main.chatContent-a9vAAp {
     &.newMessagesBar-265mhP {
       position: absolute ;
       top: -36px ;
+//      right: 0 ;
+//      left: 0 ;
     }
   }
 
@@ -95,6 +99,18 @@ main.chatContent-a9vAAp {
         padding: 0 6px ;
         border-left: solid 2px var(--border-mentioned) ;
         background: var(--background-mentioned) ;
+      }
+      
+      &:before { display: none }
+    }
+    
+    // Clyde (client-side info/error messages)
+    &.ephemeral-1PsL1r {
+      
+      > .contents-2mQqc9 {
+        padding: 0 6px ;
+        border-left: solid 2px var(--Blurple) ;
+        background: var(--Blurple-light) ;
       }
       
       &:before { display: none }
@@ -298,7 +314,7 @@ main.chatContent-a9vAAp {
     transform: translateZ(0) ;
   }
   
-  // Gradient effekt
+  // Gradient effect
   .gradientContainer-10lXLB { display: none }
   
   // Controls main container

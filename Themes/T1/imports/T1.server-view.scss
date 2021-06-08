@@ -1,4 +1,4 @@
-// T1.server-view.scss v0.1.0
+// T1.server-view.scss v0.1.01
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -165,7 +165,8 @@
   .member-3-YXUe {
     border-radius: 0 ;
     height: 37px ;
-    margin: 5px 0 5px 11px ;
+    margin: 5px 3px 5px 11px ;
+    padding-right: 3px ;
     
     > .layout-2DM8Md { height: 37px }
     
@@ -175,7 +176,10 @@
       > .layout-2DM8Md { background: none }
     }
     
-    &:hover { border-right: 3px solid var(--interactive-hover) }
+    &:hover { 
+      border-right: 3px solid var(--interactive-hover) ;
+      padding-right: 0px ;
+    }
     
     // offline Member
     &.offline-3nJYBR:not(:hover) img.avatar-VxgULZ {

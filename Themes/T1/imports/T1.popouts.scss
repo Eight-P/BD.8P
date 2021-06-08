@@ -1,5 +1,5 @@
-// T1.popouts.scss v0.1.0
-// Text chat / Server options / User context / Search / User status
+// T1.popouts.scss v0.1.01
+// Text chat / Server options / Context menus / Search / User status
 
 // -- Text chat 
 // - Text chat Tag autocomplete popout
@@ -79,31 +79,8 @@
 }
 
 
-// -- Server-Options popout
-#guild-header-popout { 
-  background-color: var(--background-tertiary) ;
-
-  // Options
-  .item-1tOPte {
-    background: none ;
-    
-    .icon-LYJorE { color: var(--interactive-normal) }
-    
-    // "invite People"
-    &.colorBrand-ROmMP1 { color: var(--brand-experiment) }
-    
-    // Hover
-    &.focused-3afm-j {
-
-      // "invite People"
-      &.colorBrand-ROmMP1 { color: var(--brand-experiment-330) }
-    }
-  }
-}
-
-
-// -- User context popout
-#user-context[aria-label="User Settings Actions"] {
+// -- Context menus
+.layer-v9HyYc .menu-3sdvDG {
   background: var(--background-tertiary) ;
   
   .scroller-3BxosC {
@@ -111,16 +88,45 @@
     
     &::-webkit-scrollbar { display: none }
   }
-
+  
   // Options
   .item-1tOPte {
     background: none ;
     
-    // Critical option (like bann user,..)
+    // Critical option (like: bann, kick, ..)
     &.colorDanger-2qLCe1.focused-3afm-j { background: var(--red) }
+    
+    // Options with checkbox
+    &[role="menuitemcheckbox"] {
+      
+      // Checkbox icon
+      .checkbox-3s5GYZ { color: transparent }
+
+      // Checkbox checked ("x" icon for "uncheck")
+      &.focused-3afm-j[aria-checked="true"] path {
+        color: var(--red) ;
+        d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
+      }
+    }
+    
+    // Sliderbar (like: User Volume, ..)
+    .slider-1PF9SW {
+      top: 0 ;
+
+      > .bar-2Qqk5Z {
+        background: var(--background-primary) ;
+        top: 7px ;
+        
+        > .barFill-23-gu- { background: var(--interactive-normal) }
+      }
+      
+      > .track-11EASc > .grabber-3mFHz2 { top: 0 }
+      
+      &:hover .barFill-23-gu- { background: var(--header-secondary) }
+    }
   }
   
-  // Secondray popout
+  // Secondary popout
   .submenu-2-ysNh {
     background: var(--background-tertiary) ;
     
@@ -128,22 +134,6 @@
       padding: 6px ;
 
       &::-webkit-scrollbar { display: none }
-    }
-    
-    // Server roles 
-    &[aria-activedescendant^="user-context-roles"] {
-      
-      .item-1tOPte {
-      
-        // Checkbox
-        .checkbox-3s5GYZ { color: transparent }
-
-        // Checkbox checked ("x" icon for "uncheck")
-        &.focused-3afm-j[aria-checked="true"] path {
-          color: var(--red) ;
-          d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
-        }
-      }
     }
   }
 }
@@ -154,7 +144,7 @@
 .layer-v9HyYc > #search-results {
   background: var(--background-tertiary) ;
   
-  @include shadow_effekt("box_1");
+  @include shadow_effect("box_1");
   
   // Search options
   .option-96V44q {

@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.5.0" ;
+$T1_version: "0.5.01" ; 
 
 @import 'imports/T1.mixins.scss';       // Global Mixins and Variables
 @import 'imports/T1.background.scss';   // Background image and Transparency
@@ -101,6 +101,12 @@ body.bd-minimal {
     height: 24px ;
     margin: 4px 10px ;
   }
+}
+
+// "Bot"/"server" Tag Indicator
+.botTag-2WPJ74 { 
+  color: var(--text-normal) ;
+  background-color: var(--background-secondary) ;
 }
 
 // default scrollbar design

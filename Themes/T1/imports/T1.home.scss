@@ -1,4 +1,4 @@
-// T1.home.scss v0.1.0
+// T1.home.scss v0.1.01
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages 
@@ -43,8 +43,6 @@
       
       &:hover {
         background: var(--background-modifier-hover) ;
-        
-        @include shadow_effekt("drop_1");
       }
       
       // Activity (like games,..)
@@ -56,21 +54,32 @@
         }
       }
       
-      // additional info on activity (like gamemode,..)
+      // Additional info on activity (like gamemode,..)
       .body-1ld4H7 {
         background: none ;
-        margin: 18px 0 0 6px ;
+        margin: 18px 0 0 12px ;
         
+        // Sections within body
         > .section-2gLsgF {
           background: none ;
           border-radius: 0 ;
-          border-left: 1px solid white ;
+          border-left: 1px solid var(--text-normal) ;
           padding: 6px 12px ;
+        }
+        
+        // Section seperator line
+        > .separator-XqIyoz { display: none }
+        
+        // "live" icon
+        .live-vBWnV6 { 
+          background: none !important ;
+          color: var(--red) ;
         }
       }
     }
   }
 }
+
 
 // -- Friendslist
 .tabBody-3YRQ8W {
@@ -127,12 +136,12 @@
     border-radius: 8px ;
     transition: .1s ;
     
-    @include shadow_effekt("box_2");
+    @include shadow_effect("box_2");
     
     &:hover {
       border-radius: 0 ;
 
-      @include shadow_effekt("drop_1");
+      @include shadow_effect("drop_1");
     }
     
     // Second container
