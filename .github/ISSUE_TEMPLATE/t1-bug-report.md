@@ -1,7 +1,8 @@
 ---
 name: T1 Bug report
-about: Report a problem/bug with the T1-Theme.
-title: ''
+about: Report a problem/bug with the T1-Theme. If the issue is related to another
+  add-on, please open a support request.
+title: "[BUG]"
 labels: bug
 assignees: Eight-P
 
@@ -9,18 +10,22 @@ assignees: Eight-P
 
 **Please describe the issue in detail and how to reproduce it, (preferably with screenshots).**
 
-**Please include the following information:**
-
-1. Which Discord client are you using?
 
 
-2. Which platform are you on?
 
 
-3. Which Discord Mod are you using?
+**Please include as much information as possible:**
 
-**Please note:**
+1. Which version of T1 do you have? (Themes tab and bottom of the user settings sidebar)
 
-* the Theme might not work properly when mixed with other Themes or Plugins.
--please make sure the issue is not caused by any external influence.
--if you want T1 to support any other Addon, please open a support request.
+
+2. Which Discord client are you using? (Stable, PTB, Canary, ..)
+
+
+3. Which platform are you on? (Windows, Mac, Linux, ...)
+
+
+4. Which Discord Mod are you using? (BetterDiscord, Powercord, Vizality, ...)
+
+
+5. Do you have any other additional Themes or Plugins enabled?
