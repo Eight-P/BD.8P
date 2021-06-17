@@ -1,4 +1,4 @@
-// T1.serverbar.scss v0.1.0
+// T1.serverbar.scss v0.1.01
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -214,7 +214,7 @@
   > .listItem-GuPuDH:nth-last-child(3) { @include GuildsAdd_Icon() }
   
   // When you decide to join club of the "normal human being".
-  > [aria-label="Servers"] {
+  > [aria-label^="Server"] {
     
     // Discovery
     ~ .listItem-GuPuDH { @include Discovery_Icon() }
