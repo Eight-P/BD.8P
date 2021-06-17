@@ -1,7 +1,7 @@
-// T1.background.scss v0.1.01
-// Background image / global Transparency
+// T1.background.scss v0.1.011
+// App background image + required transparency
 
-// totally necessary mixin
+// Totally necessary mixin
 @mixin no_BG ($i:false) {
   
   $property: "background" ;
@@ -18,7 +18,6 @@
   --blur: blur(calc(var(--Main_Background_blur, 0) / 100 * 1px)) ;
   --brightness: brightness(calc((var(--Main_Brightness, 80) / 100)));
   
-//  background: var(--Main_BG);
   background-size: cover !important ;
   background-attachment: fixed !important ;
   background-position: center !important ;
@@ -32,7 +31,7 @@
 .layers-3iHuyZ > .layer-3QrUeG { @include no_BG() }
 
 
-// voice-chat view
+// Voice-chat view
 .stageSection-3mAD8V { @include no_BG() }
 .wrapper-2qzCYF { @include no_BG("i") }
 
@@ -42,7 +41,7 @@
 // Title bar
 .container-1r6BKw { @include no_BG("i") }
 
-// baselayer sidebar
+// Baselayer sidebar
 .sidebar-2K8pFh {
   @include no_BG() ;
   // server channels container
@@ -59,6 +58,7 @@
   ~ .pageWrapper-1PgVDX { @include no_BG() }
 }
 
+
 // Friends Activity Sidebar
 .nowPlayingColumn-2sl4cE, .nowPlayingSidebar-2OFn0o {
   @include no_BG();
@@ -68,16 +68,18 @@
 }
 
 
-// pretty much every scroller
+// Pretty much every scroller
 .scrollerBase-289Jih { @include no_BG() }
 
-// members list
+// Members list
 .members-1998pB {
   @include no_BG() ;
   > .content-3YMskv { @include no_BG() }
 }
 
-// -- serverbar
+// -- Serverbar
+.guilds-1SWlCJ { @include no_BG() }
+
 
 // -- Settings
 .layer-3QrUeG .standardSidebarView-3F1I7i { 
@@ -88,7 +90,7 @@
   }
 }
 
-// roles Settings
+// Roles Settings
 .page-3njELR  {
   .titleContainer-2CXtJo { @include no_BG() }
   .header-2mZ9Ov { @include no_BG() }

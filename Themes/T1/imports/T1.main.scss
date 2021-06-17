@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version
-$T1_version: "0.5.02" ; 
+$T1_version: "0.5.1" ; 
 
 @import 'imports/T1.mixins.scss';       // Global Mixins and Variables
 @import 'imports/T1.background.scss';   // Background image and Transparency
@@ -10,8 +10,8 @@ $T1_version: "0.5.02" ;
 @import 'imports/T1.server-view.scss';  // Channels / Members / Discovery
 @import 'imports/T1.titlebar.scss';     // Titlebar | Notifications
 @import 'imports/T1.settings.scss';     // Settings menus
+@import 'imports/T1.serverbar.scss';    // Serverbar (horizontal) + Addons
 
-//@import 'imports/T1.serverbar.scss';    // to be done
 
 // - Platform dependent
 html {
@@ -42,17 +42,16 @@ html {
 // removing some layer transitions
 .layers-3iHuyZ > .layer-3QrUeG { transform: none !important }
 
-
 // "Bot"/"server" Tag Indicator
 .botTag-2WPJ74 { 
   color: var(--text-normal) ;
   background-color: var(--background-secondary) ;
 }
 
-// default scrollbar design
+// Default scrollbar design (needs some rework)
 .scrollerBase-289Jih { @include scrollbar() }
 
-// Tab focus thing (all)
+// Tab focus thing
 .ring-13rgEW {
   box-shadow: none ;
   border-bottom: 2px solid var(--interactive-active);

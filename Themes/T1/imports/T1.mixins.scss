@@ -1,4 +1,4 @@
-// T1.mixins.scss v0.1.01
+// T1.mixins.scss v0.1.02
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -99,7 +99,7 @@
   color: var(--text-normal) ;
 }
 
-// Shadow effects
+// Shadow effects | @include shadow_effect("drop_1");
 @mixin shadow_effect ($type:"drop_1") {
   
   // - Primary  
@@ -118,6 +118,10 @@
   
   @else if $type == "box_2" {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75) ;
+  }
+  
+  @else if $type == "server_1" {
+    filter: drop-shadow( 2px 2px 3px black );
   }
 }
 
@@ -145,6 +149,8 @@
   --text-muted: #72767d;
   --text-link: #00b0f4;
   --text-positive: #4fdc7b;
+  --text-link-low-saturation: hsl(197,100%,52.9%);
+  --text-link-low-saturation: #0fbbff ;
   
   --interactive-normal: #7c7d7e ; // #b9bbbe 
   --interactive-hover: #dcddde;
@@ -241,6 +247,8 @@
   --Blurple: rgb(114, 137, 218) ;
   --Blurple-light: rgba(114, 137, 218, 0.2) ;
   --Blurple-light-hover: rgba(114, 137, 218, 0.4) ;
+  
+  --BD-Blue: #3e82e5 ;
   
   --status-online: #3ba55c ;  /* #43b581 */
   --status-idle: #faa61a ;
