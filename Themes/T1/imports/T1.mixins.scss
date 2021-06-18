@@ -1,4 +1,4 @@
-// T1.mixins.scss v0.1.02
+// T1.mixins.scss v0.1.03
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -91,7 +91,7 @@
   }
 }
 
-// Inline unread indicator
+// Inline unread indicator 
 @mixin unread_indicator_inline () {
   background-color: transparent !important ;
   border-bottom: 2px solid var(--red) ;
@@ -138,7 +138,24 @@
   
   // to be added
   --always-show-voicecontrols: 0 ; // 1 = on / 0 = off (hover)
+  
+  // Fonts
+  --font-primary: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  
+  --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  
+  --font-code: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace !important;
+  
+  --font-korean: Whitney,"Apple SD Gothic Neo","NanumBarunGothic","\B9D1\C740   \ACE0\B515","Malgun Gothic",Gulim,êµ´ë¦¼,Dotum,ë‹ì›€,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  
+  --font-japanese: Whitney,Hiragino Sans,"\30D2\30E9\30AE\30CE\89D2\30B4   ProN W3","Hiragino Kaku Gothic ProN","\30E1\30A4\30EA\30AA",Meiryo,Osaka,"MS PGothic","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  
+  --font-chinese-simplified: Whitney,"Microsoft YaHei New",å¾®è½¯é›…é»‘,"Microsoft Yahei","Microsoft JhengHei",å®‹ä½“,SimSun,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  
+  --font-chinese-traditional: Whitney,"Microsoft JhengHei",å¾®è»Ÿæ­£é»‘é«”,"Microsoft JhengHei UI","Microsoft YaHei",å¾®è»Ÿé›…é»‘,å®‹ä½“,SimSun,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
+
+
 
 // - theme colors (dark)
 .theme-dark {

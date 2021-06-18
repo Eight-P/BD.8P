@@ -1,4 +1,4 @@
-// T1.chat.scss v0.1.01
+// T1.chat.scss v0.1.02
 // Text chat, Voice chat
 
 // -- Text chat
@@ -308,10 +308,15 @@ main.chatContent-a9vAAp {
 // -- Voicecall view
 .callContainer-36WRfH {
   
-  // always show controls
-  .root-217Brm.idle-1j3olu .controlSection-2h3cS0 {
-    opacity: var(--always-show-voicecontrols, 1) ;
-    transform: translateZ(0) ;
+  // Button overlay 
+  .root-217Brm {
+    
+    .controlSection-2h3cS0 {
+      opacity: var(--always-show-voicecontrols, 0) ;
+      transform: translateZ(0) ;
+    }
+    
+    &:hover .controlSection-2h3cS0 { opacity: 1 }
   }
   
   // Gradient effect
