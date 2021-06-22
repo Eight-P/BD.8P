@@ -1,4 +1,4 @@
-// T1.home.scss v0.1.01
+// T1.home.scss v0.1.02
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages 
@@ -242,9 +242,9 @@
   .privateChannelRecipientsInviteButtonIcon-3A3uTc { display: none }
     
   // card container
-  a.channel-2QD9_O {
-
-    // Nav Tabs (Stages, Friends, Nitro, not library )
+  .channel-2QD9_O {
+    
+    // Nav Tabs (Stages, Friends, Nitro  (not library) )
     &:not([aria-label]):not(#private-channels-3) {
       margin: 0 0 0 2px ;
       width: 74px ;
@@ -281,9 +281,9 @@
       &[aria-posinset="1"] { margin: 0 2px }
     }
     
-    // DMs card / library tab(maybe)
+    // library tab(maybe) / DMs
     &#private-channels-3:not([aria-label]),
-    &[href*="/channels/@me/"] {
+    &[href^="/channels/@me/"] {
       height: 38px !important ;
       margin: 6px 0 ;
       padding: 0 ;

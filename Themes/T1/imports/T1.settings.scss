@@ -1,4 +1,4 @@
-// T1.settings.scss v0.1.0
+// T1.settings.scss v0.1.01
 // Client / Guilds / Channels
 
 // general settings tabs
@@ -61,31 +61,59 @@
 // - Server settings
 .layer-3QrUeG[aria-label="GUILD_SETTINGS"] {
   
-  // - Roles ( Discord beeing Discord once again )
+  // - "Roles" Tab ( ohh Discord, what are you doing... )
   
-  // deafult permission button
+  // Default permission button
   .container-_phMUq { background: none }
   
-  // Edit role tab
+  // - Edit Roles view
   .page-3njELR {
     
-    // Roles sidebar
+    // Sidebar
     .list-I3aHXn::-webkit-scrollbar { display: none }
     
-    // permission (content) container
-    .scroller-Utb7tO {
+    // Content
+    // Navbar headers
+    .header-2mZ9Ov { 
+      position: fixed ;
+      top: 0 ;
+    }
+    
+    // List container ( "Display"/"Permission" )
+    .contentContainer-14yMzC {
+      border-right: 12px solid var(--scrollbar-auto-track) ;
       
-      .header-2mZ9Ov {
-        position: relative ;
+      > .scrollerBase-289Jih {
+        overflow: hidden ;
+        margin-right: -12px ;
+        
+        // Display
+        &.scroller-3ZpLaI {
+          margin-top: 175px ;
+          height: calc(100% - 175px) ;
+        }
+        
+        // Permission 
+        &.scroller-Utb7tO {
+          margin-top: 225px ;
+          height: calc(100% - 225px) ;
+        }
       }
-
-      &::-webkit-scrollbar-track { 
-        background-color: var(--scrollbar-auto-track) !important ;
-        border: 2px solid var(--scrollbar-auto-track) !important ;
-        border-radius: 0 ;
+    }
+    
+    // "Manage Members" 
+    .container-1Saj_P {
+      margin-top: 225px ;
+      overflow: hidden ;
+      margin-right: -12px ;
+      
+      // Navbar header
+      > .headerContainer-1X2CD8 { top: 0px }
+      
+      // Memberslist container
+      > .list-3a9fyp { 
+        padding-bottom: 250px ;
       }
-
-      &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
     }
   }
 }

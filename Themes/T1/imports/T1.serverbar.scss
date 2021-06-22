@@ -1,4 +1,4 @@
-// T1.serverbar.scss v0.1.02
+// T1.serverbar.scss v0.1.03
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -62,7 +62,7 @@
     
     // removing guildSeparator and Discovery preview server icon
     > .listItem-GuPuDH { display: none }
-    > [aria-label*="Server"] ~ .listItem-GuPuDH { display: flex }
+    > [aria-label^="Server"] ~ .listItem-GuPuDH { display: flex }
     }
   
   // Unread mentions indicators
@@ -214,7 +214,7 @@
   > .listItem-GuPuDH:nth-last-child(3) { @include GuildsAdd_Icon() }
   
   // When you decide to join club of the "normal human being".
-  > [aria-label*="Server"] {
+  > [aria-label^="Server"] {
     
     // Discovery
     ~ .listItem-GuPuDH { @include Discovery_Icon() }
@@ -314,7 +314,7 @@
     width: 40px ;
     margin: 4px ;
 
-    > mask { display: none }
+    > mask, > g { display: none }
 
     &:hover .icon-27yU2q { border-radius: 25% }
   }
@@ -376,7 +376,7 @@
 }
 
 // - Servers 
-.guilds-1SWlCJ .scroller-1Bvpku > [aria-label*="Server"] {
+.guilds-1SWlCJ .scroller-1Bvpku > [aria-label^="Server"] {
   grid-area: Servers ;
   width: 54px ;
   max-height: 100% ;
@@ -392,7 +392,7 @@
 }
 
 // - Server folder
-.guilds-1SWlCJ [aria-label*="Server"] > .wrapper-3Njo_c {
+.guilds-1SWlCJ [aria-label^="Server"] > .wrapper-3Njo_c {
   width: 54px ;
   margin: 6px 0 ;
 
@@ -423,13 +423,14 @@
 
       @include shadow_effect("drop_1");
 
-      mask { display: none }
+      > mask, > g { display: none }
     }
 
     .folder-1hbNCn { background: none }
 
     // Icon container 2
     .folderIconWrapper-1_bOZe {
+      position: absolute ;
       height: 40px ; 
       width: 40px ;
       margin: 4px ;
