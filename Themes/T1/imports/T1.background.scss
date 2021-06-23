@@ -1,4 +1,4 @@
-// T1.background.scss v0.1.011
+// T1.background.scss v0.1.012
 // App background image + required transparency
 
 // Totally necessary mixin
@@ -74,7 +74,7 @@
 // Members list
 .members-1998pB {
   @include no_BG() ;
-  > .content-3YMskv { @include no_BG() }
+  > div { @include no_BG() }
 }
 
 // -- Serverbar

@@ -1,4 +1,4 @@
-// T1.home.scss v0.1.02
+// T1.home.scss v0.1.03
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages 
@@ -144,8 +144,12 @@
       @include shadow_effect("drop_1");
     }
     
+    .listItemContents-2w6nwE { position: relative }
+    
     // Second container
-    .userInfo-2zN2z8 { width: 320px }
+    .userInfo-2zN2z8 { 
+      width: 320px ;
+    }
     
     // User avatar, Status icon
     .avatar-3W3CeO > svg {
@@ -210,6 +214,30 @@
     
     // User option buttons (useless)
     .actions-1SQwjn { display: none }
+    
+    
+    
+    // - User card friend request
+    // user name, status, etc.
+    .userInfo-3bsjnc { flex: 0 0 320px }
+    
+    // User option buttons (friend request: accept/ignore)
+    .actions-FAbeWr {
+      position: absolute ;
+      visibility: hidden ;
+      right: 10px ;
+      
+      .actionButton-uPB8Fs {
+        background: none ;
+        margin: 0 ;
+      }
+    }
+    
+    &:hover {
+      .actions-FAbeWr { visibility: visible }
+      
+      .text-37NqbO, .discordTag-2_tqUA { width: 150px }
+    }
   }
   
   // Friends activity list (idk, I don't like it)

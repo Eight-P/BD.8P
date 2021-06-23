@@ -1,4 +1,4 @@
-// T1.serverbar.scss v0.1.03
+// T1.serverbar.scss v0.1.04
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -88,10 +88,17 @@
     
     .pill-3N7f9r { display: none }
     
+    // Notification badge
+    .lowerBadge-29hYVK {
+      left: 4px ;
+      bottom: 4px ;
+    }
+    
+    .wrapper-25eVIn { transform: rotate(90deg) }
+    
     // SVG 2 conatiner
     .childWrapper-anI2G9 {
       background: none ;
-      transform: rotate(90deg) ;
       color: var(--text-normal) ;
       opacity: .75 ;
     }
@@ -449,6 +456,22 @@
       }
     }
   }
+  
+  // Server container
+  > ul {
+    height: auto !important;
+    margin-bottom: 24px ;
+    
+    &::after {
+      content: "" ;
+      position: absolute ;
+      bottom: -12px ;
+      width: 32px ;
+      height: 2px ;
+      margin: 0 11px ;
+      background-color: var(--interactive-normal) ;
+    }
+  }
 }
 
 
@@ -456,7 +479,7 @@
 // Channels list spacer for Server banner image
 #channels > .content-3YMskv > div[style="height: 84px;"]:not([class]) { display: none }
 
-// Server options button
+// - Server options button
 .sidebar-2K8pFh > nav.container-3w7J-x > .container-1taM1r {
   position: fixed;
   width: 120px ;
@@ -496,7 +519,7 @@
   .animatedContainer-1NSq4T { display: none }
 }
 
-// Search button (home)
+// - Search button (home)
 .privateChannels-1nO12o > .searchBar-6Kv8R2 {
   position: fixed;
   width: 120px ;
@@ -519,7 +542,7 @@
   }
 }
 
-// Discovery Text (button)
+// - Discovery Text (button)
 .sidebar-2K8pFh .discoverHeader-Ijkm_M {
   position: fixed ;
   width: 120px ;

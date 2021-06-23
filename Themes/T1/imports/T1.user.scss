@@ -1,4 +1,4 @@
-// T1.user.scss v0.1.03
+// T1.user.scss v0.1.04
 // User popout / Modal
 
 
@@ -323,17 +323,51 @@
   .body-r6_QPy {
     background-color: var(--background-tertiary) ;
     
-    // Note (will move it somewhere else at some point)
-    .userInfoSection-q_35fn:first-child { display: none }
+    // Body sections
+    .userInfoSection-q_35fn { 
+      padding: 16px 0 0 0 ;
+    }
     
-    .userInfoSection-q_35fn { border: none }
+    // About Me / Note section
+    .userInfoSection-q_35fn:first-child { 
+      display: grid ;
+      grid-template-columns: 50% 50% ;
+      grid-template-areas:
+        "Header_1 Header_2"
+        "Body_1 Body_2";
+      
+      > * {
+        &:nth-child(1) { grid-area: Header_1 }
+        &:nth-child(2) { grid-area: Body_1 }
+        &:nth-child(3) { grid-area: Header_2 }
+        &:nth-child(4) { grid-area: Body_2 }
+      }
+    }
     
     // Connected account
-    .connectedAccounts-QlRa4m {
+    .connectedAccount-2Jb-Z0 { 
+      color:  var(--channels-default) ;
+      border: none ;
+    }
+    
+    // Mutual Servers / Mutual Friends container
+    > .listScroller-3GmIYj {
+      display: grid ;
+      grid-template-columns: 50% 50% ;
+      grid-auto-rows: max-content ;
+      grid-gap: 5px ;
+      padding: 10px 0 ;
       
-      .connectedAccount-2Jb-Z0 { 
-        color:  var(--channels-default) ;
-        border: none ;
+      // No items in scroller
+      > .empty-39KnKA {
+        position: absolute ;
+        left: 50% ;
+        transform: translateX(-50%);
+      }
+      
+      // Activities
+      > .activityProfile-2bJRaP {
+        grid-column: span 2 ;
       }
     }
   }
