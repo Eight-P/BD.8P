@@ -1,5 +1,5 @@
 $v: 7 ; // required theme file version 
-$T1_version: "0.5.151" ; 
+$T1_version: "0.5.152" ; 
 
 @import 'imports/T1.mixins.scss';       // Global Mixins and Variables
 @import 'imports/T1.background.scss';   // Background image and Transparency
@@ -20,7 +20,7 @@ html {
     
     // - Top App bar 
     // reposition App Container
-    > .app-1q1i1E > .app-2rEoOp { top: 22px !important }
+//    > .app-1q1i1E > .app-2rEoOp { top: 22px !important }
     
     // App bar/-container seperator line
     > .titleBar-AC4pGV {
@@ -31,15 +31,15 @@ html {
 }
 
 
-// -- Container/Layer independent 
+// -- Container/Layer independent (don't think this is needed anymore)
 // ensures correct positioning of App container
-#app-mount > .app-1q1i1E {
-  position: fixed !important;
-  height: 100vh !important;
-  width: 100vw !important;
-}
+//#app-mount > .app-1q1i1E {
+//  position: fixed !important;
+//  height: 100vh !important;
+//  width: 100vw !important;
+//}
 
-// removing some layer transitions
+// Layer transitions
 .layers-3iHuyZ > .layer-3QrUeG { transform: none !important }
 
 // "Bot"/"server" Tag Indicator
