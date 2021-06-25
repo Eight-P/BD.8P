@@ -1,248 +1,30 @@
-// T1.user.scss v0.1.05
+// T1.user.scss v0.1.051
 // User popout / Modal
 
-
-// -- User popout (broken, will have to fix)
-.userPopout-xaxa6l .off {
-  display: grid ;
-  width: 512px !important ;
-  grid-template-areas:
-    "header body" 
-    "footer footer" ;
-  background-color: var(--background-secondary) ;
-  
-  @include shadow_effect("box_1");
-
-  // - Header
-  > .headerNormal-1mX3KY {
-    position: relative ;
-    grid-area: header ;
-    background-color: var(--background-tertiary) ;
-    min-width: 258px ;
-    
-    // Colored profile banner
-    > .popoutBanner-19WKGg { display: none }
-
-    // New custom image banner
-    > .bannerPremium-2hSAwz {
-      position: absolute ;
-      width: 512px ;
-      height: 100% ;
-      filter: brightness(0.5) ;
-
-      > .betaBadge-1Ve-yb { display: none }
-    }
-
-    // User Info (Name, Status, Badges)
-    > .headerTop-2cWpdB {
-      background: none ;
-      border: none ;
-      padding: 112px 16px 16px ;
-      text-align: center ;
-
-      // Badges container
-      > .profileBadges-3cJaE1 {
-        flex-direction: column ;
-        justify-content: flex-start ;
-        height: calc(24px * 3);
-        width: calc(26px * 2);
-        top: 20px ;
-        left: 20px ;
-        right: unset ;
-        overflow: hidden ;
-
-        // Badges
-        > div {
-          margin: 3px 4px;
-
-          .profileBadge18-NVHzY4 {
-            height: 18px ;
-            width: 18px ;
-          }
-        }
-      }
-
-      // User Name container
-      > .headerText-15Q25Z {
-
-        // h1 Nickname
-        .nickname-2gQ76l {
-          color: var(--header-primary);
-          font-size: 17px ;
-          font-weight: 500 ;
-        }
-
-        // h1 Name without Nickname
-        .headerTagNoNickname-1VyQza {
-
-          // Name
-          .username-2b1r56 {
-            color: var(--header-primary);
-            font-size: 17px ;
-            font-weight: 500 ;
-          }
-
-          // Discriminator
-          .discrimBase-1QwWzY {
-            margin-left: 2px ;
-            color: var(--header-secondary);
-            font-size: 15px ;
-            font-weight: 500 ;
-            line-height: 27px ;
-          }
-        }
-
-        // h2 Name with Nickname
-        .headerTagWithNickname-1SDMpI {
-
-          // Name
-          .username-2b1r56 {
-            color: var(--header-secondary);
-            font-size: 14px ;
-            font-weight: 500 ;
-          }
-
-          // Discriminator
-          .discrimBase-1QwWzY {
-            margin-left: 2px ;
-            color: var(--header-secondary);
-            font-size: 13px ;
-            font-weight: 500 ;
-            line-height: 20px ;
-          }
-        }
-      }
-
-      // Custom status
-      > .customStatus-oN4ZZY > img {
-        width: 20px ;
-        height: 20px ;
-      }
-
-      // new (beta) "About Me" 
-      > .aboutMeSection---MkQa {
-        background: none ;
-
-        // header
-        .aboutMeTitle-2i3lnH {
-          display: none ;
-        }
-      }
-    }
-
-    // Profile image container
-    > .avatarWrapper-3r9PdD {
-      top: 16px ;
-      left: 50% ;
-      transform: translateX(-50%) ;
-      
-      .svg-2V3M55 { overflow: visible }
-
-      // Remove rounding effect
-      foreignObject { 
-        mask: none ;
-        overflow: visible ;
-      }
-
-      // container 2
-      > .wrapper-3t9DeA {
-        border: none ;
-        background: none ;
-
-        // Image
-        .avatar-VxgULZ { 
-          border-radius: 7.5% ;
-          
-          // Shadow effect but not on gifs
-          &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
-        }
-      }
-
-      > .avatarHint-2A3RNb {
-        top: 0 ;
-        left: 0 ;
-        border-radius: 7.5% ;
-      }
-    }
-
-    // Status
-    > .activityUserPopout-2yItg2 {
-      grid-area: status ;
-      padding: 4px 16px 10px 16px;
-
-      &.newPopoutActivityStyles button {
-        border: none ;
-        color: var(--interactive-normal) ;
-
-        &:hover {
-          color: var(--interactive-hover) ;
-        }
-      }
-
-      .spotifyIcon-2J9kSv {
-        display: none ;
-      }
-    }
-  }
-
-  // - body
-  > .body-3HBlXn {
-    grid-area: body ;
-    min-width: 150px ;
-    background: none ;
-    padding: 16px 8px 8px 16px !important ;
-    
-    .textarea-2r0oV8 { background: none }
-  }
-
-  // - Footer
-  > .footer-1N3bR3 {
-    grid-area: footer;
-    padding: 0 ;
-    background-color: var(--background-secondary-alt);
-
-    // Text input
-    .inputDefault-_djjkz {
-      border-color: transparent ;
-      border-radius: 0 ;
-      color: var(--text-normal) ;
-    }
-
-    // "pro tip" 
-    > .protip-2urNh2 { display: none }
-  }
-  
-  // Clyde (when attr. available)
-  &[data-user-id="1"] {
-    display: flex ;
-    width: inherit !important ;
-    background-color: var(--background-tertiary) ;
-    padding: 10px 40px ;
-    
-    > .headerNormal-1mX3KY { min-width: unset }
-  }
-}
+// * User popout currently broken *
 
 // Transition effect on Popout 
 .layer-v9HyYc > .animatorLeft-1EQxU0.translate-2dAEQ6 { transform: translateZ(0) }
 
 
 // -- User modal
-.layer-2KE1M9 {
+.root-3QyAh1 {
   
   // - header
-  .topSection-y3p-_D {
+  > .topSection-y3p-_D {
     background-color: var(--background-tertiary) ;
     border-bottom: 1px solid var(--background-modifier-accent);
     
     // Profile banner normal
     .profileBanner-33-uE1 { display: none }
     
-    // Profile banner normal
+    // Profile banner custom image
     .profileBannerPremium-35utuo {
       position: absolute ;
-      height: 208px;
+      height: 208px ;
+//      height: 240px ;
       filter: brightness(0.5) ;
+      pointer-events: none ;
       
       .betaBadge-1Ve-yb { display: none }
       
@@ -252,20 +34,69 @@
     }
     
     // Top conatiner (avatar, badges, options, ..)
-    .header-4zuFdR { height: 152px }
+    .header-4zuFdR { 
+      height: 152px ;
+      
+      .actionButton-3vN-m0 {
+        transition: none ;
+        
+        &.colorGreen-29iAKY {
+          background-color: rgb(59, 165, 93, .7) ;
+          
+          &:hover { background-color: rgb(59, 165, 93) }
+        }
+        
+        &:hover { @include shadow_effect("box_2"); }
+      }
+      
+      
+      .additionalActionsIcon-365LnQ {
+        color: var(--interactive-hover) ;
+        
+        @include shadow_effect("drop_2");
+        
+        &:hover { color: var(--interactive-active) }
+      }
+      
+      .relationshipButtons-pUQVkf {
+        
+        > .button-38aScr ~ div {
+//          @include shadow_effect("drop_1");
+        }
+      }
+    }
 
     // Avatar container
-    .wrapper-3t9DeA {
+    .avatar-AvHqJA {
       top: 16px ;
       background: none ;
       border: none ;
-
-      .svg-2V3M55 { overflow: visible }
+      
+      > .svg-2V3M55 { 
+        overflow: visible ;
+        
+        // Status (works 95% of the time)
+        > rect {
+          x: 0px ;
+          y: 154px ;
+          height: 20px ;
+          width: 20px ;
+          
+          &[mask="url(#svg-mask-status-online-mobile)"] {
+            x: 6px ;
+            height: 20px ;
+            width: 14px ;
+          }
+        }
+        
+        // The weird status (when status changes while modal is open)
+        > .cursorDefault-dsQJ1n { display: none }
+      }
       
       // Profile img container
       foreignObject { 
-        mask: none ;
         overflow: visible ;
+        mask: none ;
       }
 
       // Profile img
@@ -277,11 +108,9 @@
       }
     }
 
-    // Container (badges, options, ..)
-    .headerTop-547GTz { padding: 24px 16px 0 180px }
-
     // Username container
-    .nameTag-ECvD8P { margin: 16px 24px }
+//    .nameTag-ECvD8P { margin: 16px 24px }
+    .nameTag-ECvD8P { margin: 16px 48px }
 
     // Username
     .username-2b1r56 {
@@ -320,7 +149,7 @@
   }
   
   // - body
-  .body-r6_QPy {
+  > .body-r6_QPy {
     background-color: var(--background-tertiary) ;
     
     // Body sections
