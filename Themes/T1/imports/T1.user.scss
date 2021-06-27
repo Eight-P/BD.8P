@@ -1,10 +1,379 @@
-// T1.user.scss v0.1.051
+// T1.user.scss v0.1.1
 // User popout / Modal
 
-// * User popout currently broken *
 
-// Transition effect on Popout 
-.layer-v9HyYc > .animatorLeft-1EQxU0.translate-2dAEQ6 { transform: translateZ(0) }
+
+// -- User popout container
+.layer-v9HyYc > .translate-2dAEQ6 { 
+  transform: translate3d(0,0,0) !important;
+  
+  // Popouts not from memberslist
+  &.animatorRight-3i_YPs {
+    transform: translateX(-240px) !important;
+  }
+}
+
+// Old popouts container (can happen e.g. with popouts from system msgs)
+.popouts-2bnG9Z > .popout-2iWAc-{
+  transform: translate3d(0,0,0) !important;
+  
+  // Popouts not from memberslist
+  &.popoutRight-1veHKi {
+    transform: translateX(-240px) !important;
+  }
+}
+
+
+// -- User popout
+.userPopout-xaxa6l {
+  width: 512px !important ;
+  background-color: var(--background-tertiary) ;
+  border-radius: 5px ;
+  
+  @include shadow_effect("box_1");
+  
+  // Banner image / right side background
+  > .headerNormal-3KXFBt { 
+    position: absolute ;
+    height: 100% ;
+    
+    // Background for right side 
+    > .popoutBanner-19WKGg:not(.bannerPremium-2hSAwz) {
+      width: 200px ;
+      height: 100% ;
+      background-color: var(--background-secondary) !important ;
+      margin-left: 312px ;
+      border-radius: 0 5px 5px 0 ;
+    }
+    
+    // Custom image banner
+    > .popoutBannerPremium-1n96gg {
+      width: 512px ;
+      height: 100% ;
+      filter: brightness(0.5) ;
+      border-radius: 5px ;
+      
+      > .bannerOverlay-1uIerX { display: none }
+    }
+  }
+  
+  // Profile img container
+  > .avatarWrapper-3r9PdD {
+    position: absolute ;
+    top: 20px ;
+    left: 20px ;
+    
+    .svg-2V3M55 { overflow: visible }
+    
+    foreignObject { 
+      mask: none ;
+      overflow: visible ;
+    }
+    
+    > .wrapper-3t9DeA {
+      border: none ;
+      background: none ;
+
+      // Image
+      .avatar-VxgULZ { 
+        border-radius: 7.5% ;
+
+        // Shadow effect but not on gifs
+        &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+      }
+    }
+    
+    > .avatarHint-2A3RNb {
+      top: 0 ;
+      left: 0 ;
+      border-radius: 7.5% ;
+    }
+  }
+  
+  // Username, Badges
+  > .headerTop-3vNv-a {
+    position: absolute ;
+    padding: 0 ;
+    left: 120px ;
+    top: 20px ;
+    height: 80px ;
+    width: 172px ;
+    display: flex ;
+    flex-direction: column-reverse ;
+    justify-content: space-evenly ;
+    z-index: 1 ;
+    
+    
+    // "set Nickname" option with own profile card
+    .setIdentityLink-1t8Ahd { display: none }
+    
+    // Badges container
+    .profileBadges-ohc0Vu {
+      display: inline-flex ;
+      position: relative ;
+      top: unset ; left: unset ; right: unset ; bottom: unset ;
+      max-width: 172px ;
+      justify-content: flex-start ;
+      flex-wrap: nowrap ;
+      overflow: hidden ;
+      margin: 0 ;
+      
+      // Badges
+      > div { margin: 0 5px 0 0 }
+      
+      // Badge imgs
+      .profileBadge22-LJmn9o {
+        height: 18px ;
+        width: 20px ;
+      }
+    }
+    
+    // Nickname (h1)
+    .nickname-3M3Jfa {
+      color: var(--header-primary);
+      font-size: 17px ;
+      font-weight: 500 ;
+      line-height: 22px ;
+      max-height: 44px ;
+      overflow: hidden ;
+    }
+    
+    // Name - without Nickname (h1)
+    .headerTagNoNickname-3qrd77 {
+
+      // Name
+      .username-2b1r56 {
+        color: var(--header-primary);
+        font-size: 17px ;
+        font-weight: 500 ;
+        line-height: 22px ;
+      }
+
+      // Discriminator
+      .discrimBase-24vY8o {
+        margin-left: 2px ;
+        color: var(--header-secondary);
+        font-size: 15px ;
+        font-weight: 500 ;
+        line-height: 22px ;
+      }
+    }
+    
+    // Name - with Nickname (h2)
+    .headerTagWithNickname-3l_x6x {
+      display: flex ;
+      height: 18px ;
+      
+      // Name
+      .username-2b1r56 {
+        color: var(--header-secondary);
+        font-size: 14px ;
+        font-weight: 500 ;
+        line-height: 18px ;
+        white-space: nowrap ;
+        overflow: hidden ;
+        text-overflow: ellipsis ;
+      }
+
+      // Discriminator
+      .discrimBase-24vY8o {
+        margin-left: 2px ;
+        color: var(--header-secondary);
+        font-size: 13px ;
+        font-weight: 500 ;
+        line-height: 17px ;
+        vertical-align: bottom ;
+      }
+    }
+    
+    // Bot Indicator
+    .botTag-2WPJ74 { 
+      position: fixed ;
+      top: 3px ;
+      left: 156px ;
+      margin: 0 !important ;
+      transform: translateX(-50%) ;
+      background-color: var(--background-tertiary) ;
+    }
+  }
+  
+  // Main user info container (About Me, Status, Activity, Roles, Note)
+  > .body-3HBlXn {
+
+    &::-webkit-scrollbar { display: none }
+    
+    > .divider-ewBQKj { display: none }
+    
+    > .customStatus-oN4ZZY, > .aboutMeSection-1Fw5Ia {
+      position: absolute ;
+      top: 120px ;
+      left: 20px ;
+      width: 272px ;
+      padding: 0 ; 
+      text-align: center ;
+      white-space: nowrap ;
+      overflow: hidden ;
+      text-overflow: ellipsis ;
+      
+      img {
+        width: 20px ;
+        height: 20px ;
+      }
+      
+      ~ .bodyInnerWrapper-26fQXj {
+         min-height: 160px ;
+        
+        > .activity-2INFPu { margin-top: 160px }
+      }
+    }
+    
+    > .aboutMeSection-1Fw5Ia {
+      
+      .aboutMeTitle-1IYtPE { display: none }
+      
+      .aboutMeBody-3GuvKk {
+        overflow: hidden ;
+        height: 40px ;
+      }
+      
+      ~ .bodyInnerWrapper-26fQXj {
+         min-height: 170px ;
+        
+        > .activity-2INFPu { margin-top: 170px }
+      }
+    }
+    
+    
+    > .customStatus-oN4ZZY ~ .aboutMeSection-1Fw5Ia {
+      top: 150px ;
+      
+      ~ .bodyInnerWrapper-26fQXj {
+         min-height: 200px ;
+        
+        > .activity-2INFPu { margin-top: 200px  }
+      }
+    }
+  }
+  
+  // Inner Container (Activity, Roles, Note)
+  .bodyInnerWrapper-26fQXj {
+    padding: 0 ;
+    display: grid ;
+    grid-template-columns: 312px 200px ;
+    grid-template-rows: 32px auto 24px auto ;
+    background: none ;
+    min-height: 120px ;
+
+    // Activity container
+    > .activity-2INFPu {
+      margin-top: 120px ;
+      padding: 4px 16px 10px 16px;
+      grid-row: span 4 ;
+      grid-column: 1 ;
+      
+      > .buttonsWrapper-2spIeK { flex-direction: row }
+      
+      button {
+        margin: 0 ;
+        flex-grow: 1 ;
+        background: none !important ;
+        color: var(--interactive-normal) ;
+
+        &:hover {
+          color: var(--interactive-hover) ;
+        }
+      }
+      
+      .spotifyIcon-2J9kSv {
+        display: none ;
+      }
+    }
+
+    // Roles header
+    > .bodyTitle-1ySSKn {
+      grid-row: 1 ;
+      grid-column: 2 ;
+      margin: 0 ;
+      height: 16px ;
+      padding: 16px 8px 0 10px;
+    }
+
+    // Roles container
+    > .rolesList-1geHY1 {
+      padding: 12px 8px 12px 12px ;
+      margin: 0 ;
+      grid-row: 2 ;
+      grid-column: 2 ;
+      align-content: flex-start;
+      
+      // Remove role button
+      .roleRemoveIcon-2-TeGW { cursor: pointer }
+      
+      // Add role button
+      > .addButton-pcyyf6 {
+        padding: 5px ;
+        color: var(--interactive-hover) ;
+        border-color: var(--interactive-muted) ;
+        
+        &:hover {
+          padding: 4px ;
+          color: var(--interactive-active) ;
+          border-color: var(--interactive-normal) ;
+          
+          svg {
+            height: 12px ;
+            width: 12px ;
+          }
+        }
+      }
+    }
+
+    // Note header
+    > .rolesList-1geHY1 + .bodyTitle-1ySSKn { 
+      grid-row: 3 ;
+      grid-column: 2 ;
+      padding: 8px 8px 0 10px;
+    }
+
+    // Note container
+    > .note-1oo11U { 
+      grid-row: 2 / 4 ;
+      grid-column: 2 ;
+      margin: 0 ;
+      padding: 0 0 8px 12px ;
+
+      // Inner textarea
+      > .textarea-2r0oV8 {
+        padding: 8px 8px 0 0 !important ;
+        background: none ;
+      }
+    }
+    
+    > .rolesList-1geHY1 ~ .note-1oo11U { grid-row: 4 }
+  }
+  
+  // - Quick DM
+  > .footer-3UKYOU {
+    position: relative !important ;
+    width: 512px !important ;
+    padding: 0 ;
+    background-color: var(--background-secondary-alt);
+    
+    // Container
+    > .quickMessage-3jDbBs { margin: 0 }
+    
+    // Text input 
+    .inputDefault-_djjkz {
+      border-color: transparent ;
+      border-radius: 0 ;
+      color: var(--text-normal) ;
+    }
+  }
+  
+  // "pro tip" (idk if that's still a thing or not)
+  [class|="protip"] { display: none }
+}
+
 
 
 // -- User modal
@@ -201,7 +570,3 @@
     }
   }
 }
-
-
-
-
