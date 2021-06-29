@@ -1,4 +1,4 @@
-// T1.mixins.scss v0.1.031
+// T1.mixins.scss v0.1.032
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -139,10 +139,19 @@
   // to be added
   --always-show-voicecontrols: 0 ; // 1 = on / 0 = off (hover)
   
-  // Fonts
-  --font-primary: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  // Backgrounds
+  --Main_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg);
   
-  --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  --Server_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
+  
+  // Fonts
+  
+  --Font: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif ;
+  
+  --font-primary: var(--Font) !important;
+  
+  --font-display: var(--Font) !important;
+  
   
   --font-code: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace !important;
   

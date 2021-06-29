@@ -1,4 +1,4 @@
-// T1.user.scss v0.1.1
+// T1.user.scss v0.1.11
 // User popout / Modal
 
 
@@ -199,7 +199,8 @@
   
   // Main user info container (About Me, Status, Activity, Roles, Note)
   > .body-3HBlXn {
-
+    padding: 0 ;
+    
     &::-webkit-scrollbar { display: none }
     
     > .divider-ewBQKj { display: none }

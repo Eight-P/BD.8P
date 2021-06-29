@@ -1,4 +1,4 @@
-// T1.serverbar.scss v0.1.041
+// T1.serverbar.scss v0.1.042
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -13,11 +13,32 @@
   --blur: blur(calc((var(--Server_Background_blur, 0) / 100) * 1px)) ;
   --brightness: brightness(calc((var(--Server_Brightness, 100) / 100)));
   
-  background-image: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  filter: var(--blur) var(--brightness) !important;
+  background: var(--Server_Background);
+  background-size: cover !important ;
+  background-position: center !important ;
+  background-repeat: no-repeat !important ;
+//  filter: var(--blur) var(--brightness) ;
+  filter: var(--brightness) ;
+  
+  // Background image (pseudo: bc weird bug with blur) (needs to be added with a file update)
+//  &:before {
+//    content: " " ;
+//    position: absolute ;
+//    top: 0 ;
+//    left: 0 ;
+//    height: 54px ;
+//    width: 100vw ;
+//    background-image: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
+//    background-size: cover !important;
+//    background-position: center !important;
+//    background-repeat: no-repeat !important;
+//    
+//    --blur: blur(calc((var(--Server_Background_blur, 0) / 100) * 1px)) ;
+//    --brightness: brightness(calc((var(--Server_Brightness, 100) / 100)));
+//    
+//    filter: var(--blur) var(--brightness) !important;
+//  }
+  
   
   // Child container (ul)
   .tree-2wKJdG {
