@@ -1,11 +1,12 @@
-// T1.mixins.scss v0.1.032
+// T1.mixins.scss v0.1.04
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
 // important global Notification
-@mixin note_critical ($text, $display) {
+@mixin note_critical ($text, $display:none) {
   &::before {
     content: $text ;
+    display: $display ;
     position: absolute;
     height: 22px ;
     width: calc(100vw - 160px) ;
@@ -21,31 +22,29 @@
     overflow: hidden ;
     text-overflow: ellipsis ;
     white-space: nowrap ;
-    
-    opacity: $display ;
   }
 }
 
 // less important Notification (User Settings-tab only)
-@mixin note_settings ($text, $op) {
+@mixin note_settings ($text, $display:none) {
   
   .layer-3QrUeG[aria-label="USER_SETTINGS"]::before {
     content: $text ;
+    display: var(#{$display}, grid) ;
     background: var(--background-primary) ;
-    opacity: $op ;
     color: var(--text-normal) ;
-    padding: 8px ;
+    padding: 4px 8px;
     text-align: center ;
-    font-size: 13px ;
+    font-size: 14px ;
     font-weight: 600 ;
+    line-height: 18px ;
     letter-spacing: .5px ;
     z-index: 2000 ;
-    overflow: hidden ;
-    text-overflow: ellipsis ;
-    white-space: nowrap ; 
+    white-space: break-spaces ;
     margin: 5px auto 0 auto ;
     border-radius: 4px ;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    
+    @include shadow_effect("box_2");
   }
 }
 
@@ -130,26 +129,23 @@
 // - User settings
 :root {
   
-  --Main_Brightness: 80 ; 
-  --Server_Brightness: 100 ;
-  --Server_banner: 0 ;
-  --Main_Background_blur: 0 ;
-  --Server_Background_blur: 0 ; 
-  
-  // to be added
-  --always-show-voicecontrols: 0 ; // 1 = on / 0 = off (hover)
-  
-  // Backgrounds
   --Main_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg);
+  --Main_Brightness: 80 ; 
+  --Main_Background_blur: 0 ;
   
   --Server_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
+  --Server_Brightness: 100 ;
+  --Server_Background_blur: 0 ;
   
-  // Fonts
-  
+  --show-nitro-btn: 0 ;
+  --show-gif-btn: 1 ;
+  --show-sticker-btn: 0 ;
+  --show-emoji-btn: 1 ;
+
+  --always-show-voicecontrols: 0 ;
+
   --Font: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif ;
-  
   --font-primary: var(--Font) !important;
-  
   --font-display: var(--Font) !important;
   
   

@@ -1,4 +1,4 @@
-// T1.titlebar.scss v0.1.01
+// T1.titlebar.scss v0.1.02
 // Server/DM - Text/Voice Chat | Friends-tab | Live Stages | Notifications
 
 // Search (Toolbar)
@@ -196,19 +196,6 @@ section.title-3qD0b-.container-1r6BKw.themed-ANHk51[aria-label="Channel header"]
 //section.headerBarContainer-31FKNA.container-1r6BKw.themed-ANHk51 {}
 
 
-
-// -- Theme notifications
-// - if Minimal Mode is active
-body.bd-minimal { 
-  @include note_critical ('Turn off "Minimal Mode" for the Theme to work properly | ["ctrl" + ","] => opens settings if needed', 1) 
-}
-
-// - if the Theme file is oudated
-@include note_settings (
-  'T1-Theme update available! Pls replace your "T1.theme.css" file with the latest version (v.F#{$v}) (Download "website" link in Themes description)', 
-  calc( #{$v} - var(--F_V,0))
-);
-
 // -- Notification bars 
 // - BD plugin notice
 #pluginNotice {
@@ -234,24 +221,3 @@ body.bd-minimal {
     color: var(--text-normal) ;
   }
 }
-
-// - Discord Notifications bar (needs inspection)
-//.notice-3bPHh- {
-//  position: absolute ;
-//  width: 100vw ;
-//  height: 32px ;
-//  margin: 8px 0 ;
-//  padding: 0 ;
-//  border-radius: 5px ;
-//  
-//  // close button
-//  .closeButton-3cJIM4 {
-//    height: 32px ;
-//  }
-//  
-//  // Icon before text
-//  .platformIcon-2NdO9F {
-//    height: 24px ;
-//    margin: 4px 10px ;
-//  }
-//}
