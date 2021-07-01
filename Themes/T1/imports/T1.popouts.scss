@@ -1,4 +1,4 @@
-// T1.popouts.scss v0.1.01
+// T1.popouts.scss v0.1.02
 // Text chat / Server options / Context menus / Search / User status
 
 // -- Text chat 
@@ -19,49 +19,39 @@
   }
 }
 
-// - Gif / Emoji / BD emotes Popout container
+// - Gif, Sticker, Emoji, BD emotes Picker
 .layerContainer-yqaFcK .contentWrapper-SvZHNd {
   background-color: var(--background-tertiary);
 
   // Active tab button
   .navButtonActive-1MkytQ { background: none }
-}
-
-// - Gif menu popout
-#gif-picker-tab-panel {
   
-  // Serach bar
-  .searchBar--fTZYa .input-3Xdcic { border: 1px solid var(--background-modifier-accent) }
-}
-
-// - Emoji menu popout
-#emoji-picker-tab-panel {
+  // search / text input 
+  input { border-bottom: 1px solid var(--interactive-muted) }
   
-  // Serach bar
-  .searchBar-5di9mG .input-1Rv96N { border: 1px solid var(--background-modifier-accent) }
+  .scroller-3gAZLs::-webkit-scrollbar { display: none } 
   
-  // Emotes category header
-  .header-ywPcAE { 
-    position: relative ;
-    background: none ;
-  }
-  
-  // Emoji inspector
-  .inspector-S2gM3e { display: none }
-  
-  // Categorys sidebar (left)
-  > .categoryList-2Kzf65 {
+  // - Sidebar left (Sticker/Emoji)
+  .wrapper-2Gsate {
     border-right: 1px solid var(--background-modifier-accent) ;
-    
-    .scroller-3gAZLs::-webkit-scrollbar { display: none } 
     
     // Category Icons
     .categoryItemGuildCategory-3MisqI .guildIcon-3h-1IH { background: none }
     
     // Default emoji shortcut
-    .unicodeShortcut-15J8Ck { display: none }
+//    .unicodeShortcut-15J8Ck { display: none }
   }
+  
+  // - Right side content (Sticker/Emoji)
+  // Category header
+  .wrapper-1-Fsb8 { 
+    position: relative ;
+    background: none ;
+  }
+  
+  .inspector-S2gM3e { display: none }
 }
+
 
 // - BD Emotes menu popout
 .bd-emote-menu {
@@ -73,9 +63,7 @@
   }
   
   // Emote
-  .bd-emote-item {
-    cursor: pointer ;
-  }
+  .bd-emote-item { cursor: pointer }
 }
 
 
