@@ -1,5 +1,5 @@
-$vv: "--TFV_V0_7" ; $vid: "0.7.2" ; // required theme file version 
-$T1_version: "0.5.164" ; 
+$vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ; // required theme file version 
+$T1_version: "0.5.165" ; 
 
 @import 'imports/T1.mixins.scss';       // Global Mixins and Variables
 @import 'imports/T1.background.scss';   // Background image and Transparency
@@ -20,7 +20,7 @@ body.bd-minimal {
 }
 
 // - If the Theme file is oudated
-//@include note_settings ( 'T1 version #{$vid} available! \a Please update your "T1.theme.css" file with the newest version from "https://betterdiscord.app/theme/T1"', $vv);
+@include note_settings ( 'T1 version #{$vid} available! \a Please update your "T1.theme.css" file with the newest version from "https://betterdiscord.app/theme/T1"', $vv);
 
 
 // Layer transitions
