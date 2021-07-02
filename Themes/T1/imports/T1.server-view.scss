@@ -1,4 +1,4 @@
-// T1.server-view.scss v0.1.01
+// - T1.server-view v0.1.02
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -145,13 +145,10 @@
     .actionButtons-14eAc_ { display: none }
   }
   
-  // for the SpotifyControls Plugin by DevilBro
+  // SpotifyControls by DevilBro
   > .container-6sXIoE { 
     margin: 0px ;
-    min-height: unset  ;
-    height: 44px ;
-    
-    &.maximized-vv2Wr0 { height: unset }
+    min-height: 44px ;
 
     button { background: none }
   }

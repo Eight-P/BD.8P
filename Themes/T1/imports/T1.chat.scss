@@ -1,4 +1,4 @@
-// T1.chat.scss v0.1.031
+// - T1.chat v0.1.032
 // Text chat, Voice chat
 
 // -- Text chat
@@ -265,25 +265,28 @@ main.chatContent-a9vAAp {
     .buttons-3JBrkn {
       
       // Nitro gift
-      > button {
+      > button[aria-label] {
         width: calc(40px * var(--show-nitro-btn));
         margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
       }
       
       // Gifs
-      > .buttonContainer-28fw2U:nth-child(2) {
+//      > .buttonContainer-28fw2U:nth-child(2) {
+      > .buttonContainer-28fw2U:nth-last-child(3) {
         width: calc(40px * var(--show-gif-btn));
         margin-top: calc(-100px * (1 - var(--show-gif-btn)));
       }
       
       // Sticker
-      > .buttonContainer-28fw2U:nth-child(3) {
+//      > .buttonContainer-28fw2U:nth-child(3) {
+      > .buttonContainer-28fw2U:nth-last-child(2) {
         width: calc(40px * var(--show-sticker-btn));
         margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
       }
       
       // Emojis
-      > .buttonContainer-28fw2U:nth-child(4) {
+//      > .buttonContainer-28fw2U:nth-child(4) {
+      > .buttonContainer-28fw2U:nth-last-child(1) {
         width: calc(40px * var(--show-emoji-btn));
         margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
       }

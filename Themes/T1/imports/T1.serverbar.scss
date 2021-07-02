@@ -1,4 +1,4 @@
-// T1.serverbar.scss v0.1.043
+// - T1.serverbar v0.1.044
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -80,11 +80,7 @@
       margin: 0 11px ;
       background-color: var(--interactive-normal) ;
     }
-    
-    // removing guildSeparator and Discovery preview server icon
-    > .listItem-GuPuDH { display: none }
-    > [aria-label^="Server"] ~ .listItem-GuPuDH { display: flex }
-    }
+  }
   
   // Unread mentions indicators
   .unreadMentionsIndicatorTop-2-tcdU,
@@ -95,6 +91,60 @@
 // -- Left side options
 // - Home / GuildsAd / Discovery / GuildsError
 .guilds-1SWlCJ .scroller-1Bvpku {
+  
+  // GuildSeparator / Discovery preview listItem 
+  > .listItem-GuPuDH:not(.frame-oXWS21) { display: none }
+  
+  // "Read all" btn from ReadAllNotifications plugin
+  > .listItem-GuPuDH.frame-oXWS21 {
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+    z-index: 1 ;
+    
+    &, * { height: 20px ; width: 20px  }
+    
+    .childWrapper-anI2G9 {
+      color: transparent ;
+      background: none ;
+      transform: rotate(90deg);
+      text-align: center ;
+      
+      // "R" Icon
+      &:before {
+        content: "R" ;
+        position: absolute ;
+        top: 0 ;
+        left: 0 ;
+        height: 20px ;
+        width: 20px ;
+        line-height: 20px ;
+        color: var(--header-secondary) ;
+        font-size: 18px ;
+        font-weight: 700 ;
+
+        @include shadow_effect("drop_1");
+      }
+    
+      // Tooltip on hover
+      &:hover::after {
+        content: "read all" ;
+        position: absolute ;
+        top: -10px ;
+        left: 25px ;
+        padding: 8px 12px ;
+        font-size: 16px ;
+        font-weight: 600 ;
+        line-height: 10px ;
+        background: var(--background-tertiary) ;
+        color: var(--text-normal) ;
+        border-radius: 5px ;
+        white-space: nowrap ;
+
+        @include shadow_effect("box_2");
+      }
+    }
+  }
   
   // general item container
   .listItem-GuPuDH { 
@@ -139,6 +189,7 @@
   
   // GuildsAd / Discovery
   @mixin Icons () {
+    display: flex ;
     width: 54px ;
     
     .pill-1aYSec { display: none }
