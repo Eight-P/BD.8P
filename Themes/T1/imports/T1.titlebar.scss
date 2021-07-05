@@ -1,4 +1,4 @@
-// T1.titlebar.scss v0.1.02
+// - T1.titlebar v0.1.021
 // Server/DM - Text/Voice Chat | Friends-tab | Live Stages | Notifications
 
 // Search (Toolbar)
@@ -133,6 +133,9 @@ section.title-3qD0b-.container-1r6BKw.themed-ANHk51[aria-label="Channel header"]
       text-align: center ;
 
       &:hover { color: var(--interactive-hover) }
+      
+      // Links
+      > * { pointer-events: none }
     }
     
     // Follow Announcement channel button
@@ -196,7 +199,20 @@ section.title-3qD0b-.container-1r6BKw.themed-ANHk51[aria-label="Channel header"]
 //section.headerBarContainer-31FKNA.container-1r6BKw.themed-ANHk51 {}
 
 
-// -- Notification bars 
+// -- Notification bars
+// - Default Discord notice
+.notice-3bPHh- {
+  border-radius: 0 0 8px 8px ;
+  background-color: var(--background-primary) ;
+  color: var(--text-normal) ;
+  
+  .button-2DhvE9 { @include btn_1() }
+  
+  // Sidebar position for Profile panel positioning
+  ~ .content-98HsJk > .sidebar-2K8pFh { position: relative }
+}
+
+
 // - BD plugin notice
 #pluginNotice {
   position: absolute ;

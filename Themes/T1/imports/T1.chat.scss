@@ -1,4 +1,4 @@
-// - T1.chat v0.1.032
+// - T1.chat v0.1.033
 // Text chat, Voice chat
 
 // -- Text chat
@@ -241,23 +241,26 @@ main.chatContent-a9vAAp {
       left: -10px ;
       height: 15px ;
       padding: 0 5px ;
-      overflow: hidden ;
+      overflow: visible ;
       pointer-events: none ;
       line-height: 15px ;
-      
-      // Channel slowmode indicator
-      .cooldownWrapper-3joyFc {
+    }
+    
+    //  Slowmode icon
+    .cooldownWrapper-3joyFc {
+      position: absolute ;
+      right: -20px ;
+      bottom: -14px ;
+      height: 16px ;
+      width: 16px ;
+      color: transparent !important;
+      pointer-events: auto ;
+
+      .slowModeIcon-1BPDC_ {
         position: absolute ;
-        right: 0 ;
-        width: 15px ;
-        color: transparent !important;
+        margin: 0 ;
 
-        .slowModeIcon-1BPDC_ {
-          position: absolute ;
-          margin: 0 ;
-
-          path { fill: var(--interactive-normal) }
-        }
+        path { fill: var(--interactive-normal) }
       }
     }
     
@@ -271,21 +274,18 @@ main.chatContent-a9vAAp {
       }
       
       // Gifs
-//      > .buttonContainer-28fw2U:nth-child(2) {
       > .buttonContainer-28fw2U:nth-last-child(3) {
         width: calc(40px * var(--show-gif-btn));
         margin-top: calc(-100px * (1 - var(--show-gif-btn)));
       }
       
       // Sticker
-//      > .buttonContainer-28fw2U:nth-child(3) {
       > .buttonContainer-28fw2U:nth-last-child(2) {
         width: calc(40px * var(--show-sticker-btn));
         margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
       }
       
       // Emojis
-//      > .buttonContainer-28fw2U:nth-child(4) {
       > .buttonContainer-28fw2U:nth-last-child(1) {
         width: calc(40px * var(--show-emoji-btn));
         margin-top: calc(-100px * (1 - var(--show-emoji-btn)));

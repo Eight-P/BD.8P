@@ -1,4 +1,4 @@
-// - T1.server-view v0.1.02
+// - T1.server-view v0.1.021
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -154,11 +154,12 @@
   }
 }
 
+
 // -- Members list 
 .members-1998pB {
   &::-webkit-scrollbar { display: none }
   
-  // default Member
+  // Members card
   .member-3-YXUe {
     border-radius: 0 ;
     height: 37px ;
@@ -183,8 +184,12 @@
       filter: grayscale(100%);
       border-radius: 50% ;
     }
+    
+    // Nitro icon 
+    .name-uJV0GL + div { pointer-events: none }
   }
 }
+
 
 // -- Discovery Sidebar
 .discoverHeader-Ijkm_M {
@@ -211,6 +216,7 @@
     }
   }
 }
+
 
 // -- Discovery Content
 .sidebar-2K8pFh ~ .pageWrapper-1PgVDX > .scroller-1d5FgU { @include scrollbar() } 

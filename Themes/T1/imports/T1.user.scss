@@ -1,16 +1,12 @@
-// T1.user.scss v0.1.11
+// - T1.user v0.1.12
 // User popout / Modal
-
-
 
 // -- User popout container
 .layer-v9HyYc > .translate-2dAEQ6 { 
   transform: translate3d(0,0,0) !important;
   
   // Popouts not from memberslist
-  &.animatorRight-3i_YPs {
-    transform: translateX(-240px) !important;
-  }
+  &.animatorRight-3i_YPs > .userPopout-xaxa6l { transform: translateX(-240px) !important }
 }
 
 // Old popouts container (can happen e.g. with popouts from system msgs)
@@ -18,9 +14,7 @@
   transform: translate3d(0,0,0) !important;
   
   // Popouts not from memberslist
-  &.popoutRight-1veHKi {
-    transform: translateX(-240px) !important;
-  }
+  &.popoutRight-1veHKi > .userPopout-xaxa6l { transform: translateX(-240px) !important }
 }
 
 

@@ -1,4 +1,4 @@
-// T1.mixins.scss v0.1.041
+// - T1.mixins v0.1.042
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -72,21 +72,36 @@
   &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
 }
 
-// normal Button Design
+// normal Button Design | @include button_normal();
 @mixin button_normal () {
-  background-color: var(--background-modifier-selected) ;
-  color: var(--channels-default) ;
+  background-color: var(--background-modifier-selected) !important ;
+  color: var(--channels-default) !important ;
+  border: none !important ;
   
   // Text inside
   .contents-18-Yxp { font-weight: 600 }
 
   &:hover {
 //    background-color: var(--interactive-hover) ;
-    background-color: var(--header-secondary) ;
-    color: black ;
+    background-color: var(--header-secondary) !important ;
+    color: black !important ;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.75));
     
-//    .contents-18-Yxp { font-weight: 600 }
+    .contents-18-Yxp { font-weight: 600 }
+  }
+}
+
+
+// Button as one element | @include btn_1();
+@mixin btn_1 () {
+  border: 1px solid var(--text-muted) !important ;
+  color: var(--text-normal) ;
+  background: var(--background-modifier-selected) !important ;
+    
+  &:hover {
+    color: black ;
+    background-color: var(--header-secondary) !important ;
+    border-color: transparent !important ;
   }
 }
 
