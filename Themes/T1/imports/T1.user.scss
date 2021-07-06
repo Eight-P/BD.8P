@@ -1,4 +1,4 @@
-// - T1.user v0.1.12
+// - T1.user v0.1.13
 // User popout / Modal
 
 // -- User popout container
@@ -6,7 +6,13 @@
   transform: translate3d(0,0,0) !important;
   
   // Popouts not from memberslist
-  &.animatorRight-3i_YPs > .userPopout-xaxa6l { transform: translateX(-240px) !important }
+  &.animatorRight-3i_YPs {
+    pointer-events: none ;
+    
+    > * { pointer-events: auto }
+    
+    > .userPopout-xaxa6l { transform: translateX(-240px) !important }
+  }
 }
 
 // Old popouts container (can happen e.g. with popouts from system msgs)
@@ -14,7 +20,13 @@
   transform: translate3d(0,0,0) !important;
   
   // Popouts not from memberslist
-  &.popoutRight-1veHKi > .userPopout-xaxa6l { transform: translateX(-240px) !important }
+  &.popoutRight-1veHKi {
+    pointer-events: none ;
+    
+    > * { pointer-events: auto }
+    
+    > .userPopout-xaxa6l { transform: translateX(-240px) !important }
+  }
 }
 
 
@@ -194,6 +206,8 @@
   // Main user info container (About Me, Status, Activity, Roles, Note)
   > .body-3HBlXn {
     padding: 0 ;
+    box-shadow: none ;
+    overflow: hidden !important ;
     
     &::-webkit-scrollbar { display: none }
     
@@ -363,6 +377,9 @@
       border-radius: 0 ;
       color: var(--text-normal) ;
     }
+    
+    // "New user" info
+    > .wumpusWrapper-2H_Ezt { display: none }
   }
   
   // "pro tip" (idk if that's still a thing or not)
