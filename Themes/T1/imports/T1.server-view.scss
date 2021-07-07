@@ -1,4 +1,4 @@
-// - T1.server-view v0.1.021
+// - T1.server-view v0.1.022
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -162,11 +162,14 @@
   // Members card
   .member-3-YXUe {
     border-radius: 0 ;
-    height: 37px ;
-    margin: 5px 3px 5px 11px ;
-    padding-right: 3px ;
+//    height: 37px ;
+//    margin: 5px 3px 5px 11px ;
+//    padding-right: 3px ;
+//    
+//    > .layout-2DM8Md { height: 37px }
     
-    > .layout-2DM8Md { height: 37px }
+    margin: 0 0 -2px 11px ;
+    
     
     &.selected-aXhQR6 {
        border-right: 3px solid var(--interactive-hover);

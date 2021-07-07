@@ -1,5 +1,5 @@
 $vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ; // required theme file version 
-$T1_version: "0.5.19" ; 
+$T1_version: "0.5.2" ; 
 
 @import 'imports/T1.mixins.scss';       // Global Mixins and Variables
 @import 'imports/T1.background.scss';   // Background image and Transparency
@@ -25,11 +25,6 @@ body.bd-minimal {
 
 // Layer transitions
 .layers-3iHuyZ > .layer-3QrUeG { transform: none !important }
-
-.base-3dtUhz > .content-98HsJk {
-  height: 100% !important ;
-  width: 100% !important ;
-}
 
 
 // "Bot"/"server" Tag Indicator

@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.044
+// - T1.serverbar v0.1.045
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -10,35 +10,15 @@
   height: 54px ;
   width: 100vw ;
   
-  // Serverbar background image
-  
+  // Background image
+  --blur: blur(calc((var(--Server_Background_blur, 0) / 100) * 1px)) ;
   --brightness: brightness(calc((var(--Server_Brightness, 100) / 100)));
   
-  // compatibility for < 0.7.3
+  background: var(--Server_Background) ;
   background-size: cover !important ;
   background-position: center !important ;
   background-repeat: no-repeat !important ;
-  filter: var(--brightness) ;
-  
-  // new version for >= 0.7.3 (pseudo, bc weird bug with blur)
-  &:before {
-    content: " " ;
-    position: absolute ;
-    top: 0 ;
-    left: 0 ;
-    height: 54px ;
-    width: 100vw ;
-    
-    --blur: blur(calc((var(--Server_Background_blur, 0) / 100) * 1px)) ;
-    --brightness: brightness(calc((var(--Server_Brightness, 100) / 100)));
-    
-    background: var(--Server_Background) ;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    filter: var(--blur) var(--brightness) !important;
-  }
-  
+  filter: var(--blur) var(--brightness) ;
   
   // Child container (ul)
   .tree-2wKJdG {
@@ -479,10 +459,12 @@
   // Folder Icon / preview 
   > .listItem-GuPuDH {
 
-    > .pill-1z4sAY > .item-2hkk8m {
-      height: 8px !important ;
-      margin-left: -5px ;
-    }
+//    > .pill-1z4sAY > .item-2hkk8m {
+//      height: 8px !important ;
+//      margin-left: -5px ;
+//    }
+    
+    > .pill-1z4sAY { display: none }
 
     // Icon container
     .wrapper-25eVIn { transform: rotate(90deg) }
