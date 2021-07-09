@@ -1,4 +1,4 @@
-// - T1.server-view v0.1.022
+// - T1.server-view v0.1.023
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -95,6 +95,7 @@
   }
 }
 
+
 // -- Sidebar Panels (Profile, Activity,..)
 .sidebar-2K8pFh > .panels-j1Uci_ {
   
@@ -105,10 +106,24 @@
     width: 240px ;
     top: 0 ;
     box-sizing: border-box ;
+    align-items: unset ;
+    
+    > .avatarWrapper-2yR4wp {
+      height: 32px ;
+      margin-top: 8px ;
+    }
+    
+    > .nameTag-3uD-yy {
+      height: 30px ;
+      margin-top: 9px ;
+    }
+    
+    .usernameContainer-1fp4nu { align-items: unset }
     
     // moving profile buttons for better tooltip position
     > .flex-1xMQg5 {
-      margin-top: 20px ;
+      height: 32px ;
+      margin-top: 18px ;
       
       > button {
         background-color: transparent ;
@@ -159,30 +174,32 @@
 .members-1998pB {
   &::-webkit-scrollbar { display: none }
   
-  // Members card
+  // Role header
+  .membersGroup-v9BXpm { margin-bottom: 4px }
+  
+  // Member
   .member-3-YXUe {
-    border-radius: 0 ;
-//    height: 37px ;
-//    margin: 5px 3px 5px 11px ;
-//    padding-right: 3px ;
-//    
-//    > .layout-2DM8Md { height: 37px }
+    padding-right: 3px ;
+    margin: 0 0 0 11px ;
     
-    margin: 0 0 -2px 11px ;
-    
-    
-    &.selected-aXhQR6 {
-       border-right: 3px solid var(--interactive-hover);
+    // Inner container 
+    > .layout-2DM8Md {
+      border-radius: 0 ;
+      background: none ;
       
-      > .layout-2DM8Md { background: none }
+      &:hover { 
+        border-right: 3px solid var(--interactive-hover) ;
+        padding-right: 0px ;
+        background-color: var(--background-modifier-hover) ;
+      }
     }
     
-    &:hover { 
-      border-right: 3px solid var(--interactive-hover) ;
-      padding-right: 0px ;
+    // User popout open
+    &.selected-aXhQR6 > .layout-2DM8Md {
+       border-right: 3px solid var(--interactive-hover);
     }
     
-    // offline Member
+    // Offline Member
     &.offline-3nJYBR:not(:hover) img.avatar-VxgULZ {
       filter: grayscale(100%);
       border-radius: 50% ;

@@ -1,4 +1,4 @@
-// - T1.mixins v0.1.042
+// - T1.mixins v0.1.043
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -25,6 +25,7 @@
   }
 }
 
+
 // less important Notification (User Settings-tab only)
 @mixin note_settings ($text, $display) {
   
@@ -47,6 +48,7 @@
     @include shadow_effect("box_2");
   }
 }
+
 
 // global Scrollbar
 @mixin scrollbar () {
@@ -72,6 +74,7 @@
   &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
 }
 
+// Buttons (beta)
 // normal Button Design | @include button_normal();
 @mixin button_normal () {
   background-color: var(--background-modifier-selected) !important ;
@@ -85,7 +88,7 @@
 //    background-color: var(--interactive-hover) ;
     background-color: var(--header-secondary) !important ;
     color: black !important ;
-    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.75));
+//    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.75));
     
     .contents-18-Yxp { font-weight: 600 }
   }
@@ -105,6 +108,7 @@
   }
 }
 
+
 // Inline unread indicator 
 @mixin unread_indicator_inline () {
   background-color: transparent !important ;
@@ -112,6 +116,7 @@
   border-radius: 0 ;
   color: var(--text-normal) ;
 }
+
 
 // Shadow effects | @include shadow_effect("drop_1");
 @mixin shadow_effect ($type:"drop_1") {
@@ -140,6 +145,7 @@
 }
 
 
+
 // -- Default Variables 
 // - User settings
 :root {
@@ -148,7 +154,7 @@
   --Main_Brightness: 80 ; 
   --Main_Background_blur: 0 ;
   
-//  --Server_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
+  --Server_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
   --Server_Brightness: 100 ;
   --Server_Background_blur: 0 ;
   

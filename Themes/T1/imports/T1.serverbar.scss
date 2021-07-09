@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.045
+// - T1.serverbar v0.1.046
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -73,10 +73,11 @@
 .guilds-1SWlCJ .scroller-1Bvpku {
   
   // GuildSeparator / Discovery preview listItem 
-  > .listItem-GuPuDH:not(.frame-oXWS21) { display: none }
+  > .listItem-GuPuDH { display: none }
   
   // "Read all" btn from ReadAllNotifications plugin
   > .listItem-GuPuDH.frame-oXWS21 {
+    display: flex !important ;
     position: absolute ;
     top: 0 ;
     left: 0 ;
@@ -126,6 +127,22 @@
     }
   }
   
+  // Online friends counter from FriendNotifications plugin
+  > .listItem-GuPuDH.friendsOnlineWrap-0gZ63m {
+    display: flex !important ;
+    position: absolute ;
+    transform: rotate(90deg) translateX(-50%) ;
+    transform-origin: bottom left ;
+    top: 60px ;
+    left: 2px ;
+    
+    > .label-2wRs_g {
+      color: var(--text-normal);
+      @include shadow_effect("server_1");
+    }
+  }
+  
+  
   // general item container
   .listItem-GuPuDH { 
     width: 54px ; 
@@ -169,7 +186,7 @@
   
   // GuildsAd / Discovery
   @mixin Icons () {
-    display: flex ;
+    display: flex !important ;
     width: 54px ;
     
     .pill-1aYSec { display: none }

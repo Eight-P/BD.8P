@@ -1,13 +1,14 @@
-// - T1.chat v0.1.034
+// - T1.chat v0.1.035
 // Text chat, Voice chat
 
-// -- Text chat
 // Title bar sperator line
 .content-yTz4x3::before { display: none }
+
 
 // - Messages
 main.chatContent-a9vAAp {
   z-index: 101 ; // for "Mark As Read" 
+  align-items: unset ;
   
   // "#" Icon at the channels very top
   .emptyChannelIcon-cc932w { display: none }
@@ -17,7 +18,7 @@ main.chatContent-a9vAAp {
     right: 0 ;
     left: 0 ;
     background: var(--background-primary);
-//    opacity: 1 ;
+    opacity: 1 ;
     border-radius: 5px ;
     padding: 0 ;
     cursor: auto ;
@@ -175,7 +176,6 @@ main.chatContent-a9vAAp {
 }
 
 
-
 // - Text input
 .form-2fGMdU {
   margin: 5px 0 0 0 ;
@@ -266,29 +266,52 @@ main.chatContent-a9vAAp {
 
   // Buttons
   .buttons-3JBrkn {
+    
+    // General btn container
+    .button-318s1X {
+      align-items: unset ;
+      height: 24px ;
+      padding: 10px 4px 10px 4px ;
+      
+      svg {
+        opacity: .6 ;
+        filter: brightness(1.5);
+      }
+      
+      &:hover svg { opacity: .8 }
+    }
 
-    // Nitro gift
+    // Nitro btn
     > button[aria-label] {
+      align-items: unset ;
       width: calc(40px * var(--show-nitro-btn));
       margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
     }
+    
+    // Normal btn contianer
+    > .buttonContainer-28fw2U {
+      
+      > .button-38aScr { align-items: unset }
+      
+      // Gifs
+      &:nth-last-child(3) {
+        width: calc(40px * var(--show-gif-btn));
+        margin-top: calc(-100px * (1 - var(--show-gif-btn)));
+      }
+      
+      // Sticker
+      &:nth-last-child(2) {
+        width: calc(36px * var(--show-sticker-btn));
+        margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
 
-    // Gifs
-    > .buttonContainer-28fw2U:nth-last-child(3) {
-      width: calc(40px * var(--show-gif-btn));
-      margin-top: calc(-100px * (1 - var(--show-gif-btn)));
-    }
-
-    // Sticker
-    > .buttonContainer-28fw2U:nth-last-child(2) {
-      width: calc(40px * var(--show-sticker-btn));
-      margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
-    }
-
-    // Emojis
-    > .buttonContainer-28fw2U:nth-last-child(1) {
-      width: calc(40px * var(--show-emoji-btn));
-      margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
+        .stickerIcon-3TP7EM { height: 24px !important }
+      }
+      
+      // Emojis
+      &:nth-last-child(1) {
+        width: calc(38px * var(--show-emoji-btn));
+        margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
+      }
     }
   }
 
@@ -322,8 +345,6 @@ main.chatContent-a9vAAp {
 }
 
 
-
-
 // - Mention in text
 .mention.wrapper-3WhCwL {
   color: var(--Blurple, rgb(114, 137, 218)) !important;
@@ -339,7 +360,7 @@ main.chatContent-a9vAAp {
 }
 
 
-// -- Voicecall view
+// - Voicecall view
 .callContainer-36WRfH {
   
   // Button overlay 
