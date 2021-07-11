@@ -1,5 +1,5 @@
 $vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ; // required theme file version 
-$T1_version: "0.5.21" ; 
+$T1_version: "0.5.22" ; 
 
 @import 'imports/T1.mixins.scss';       // Global Mixins and Variables
 @import 'imports/T1.background.scss';   // Background image and Transparency
@@ -11,6 +11,7 @@ $T1_version: "0.5.21" ;
 @import 'imports/T1.titlebar.scss';     // Titlebar / Notifications
 @import 'imports/T1.settings.scss';     // Settings menus
 @import 'imports/T1.serverbar.scss';    // Serverbar + Addons
+@import 'imports/T1.compatibility.scss';// Plugin Compatibility
 
 
 // -- Notifications
@@ -25,6 +26,9 @@ body.bd-minimal {
 
 // Layer transitions
 .layers-3iHuyZ > .layer-3QrUeG { transform: none !important }
+
+
+.base-3dtUhz { height: 100% !important }
 
 
 // "Bot"/"server" Tag Indicator

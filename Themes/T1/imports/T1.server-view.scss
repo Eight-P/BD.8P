@@ -1,4 +1,4 @@
-// - T1.server-view v0.1.023
+// - T1.server-view v0.1.024
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -150,22 +150,13 @@
   // Voice Connection
   > .wrapper-24pKcD > .container-1giJp5 {
     border: none ;
-    height: 32px ;
-    padding: 6px 10px ;
+    padding: 4px 10px ;
     overflow: hidden ;
     
     button { background: none }
     
     // video share buttons
     .actionButtons-14eAc_ { display: none }
-  }
-  
-  // SpotifyControls by DevilBro
-  > .container-6sXIoE { 
-    margin: 0px ;
-    min-height: 44px ;
-
-    button { background: none }
   }
 }
 
@@ -179,17 +170,16 @@
   
   // Member
   .member-3-YXUe {
-    padding-right: 3px ;
     margin: 0 0 0 11px ;
     
     // Inner container 
     > .layout-2DM8Md {
       border-radius: 0 ;
       background: none ;
+      border-right: 3px solid transparent ;
       
       &:hover { 
-        border-right: 3px solid var(--interactive-hover) ;
-        padding-right: 0px ;
+        border-color: var(--interactive-hover) ;
         background-color: var(--background-modifier-hover) ;
       }
     }

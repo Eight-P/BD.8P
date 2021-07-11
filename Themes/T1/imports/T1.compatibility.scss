@@ -1,0 +1,135 @@
+// - T1.compatibility v0.1.0
+// Compatibility for other plugins or snippets
+// - (The Theme's modules contain more code providing compatibility for different plugins, but new ones will be added in here for better readability.)
+
+// -- Content:
+// - Hide Channels by Farcrada (v1.0.1)
+// - FriendNotifications by DevilBro (v1.7.5)
+// - ReadAllNotificationsButton by DevilBro (v1.6.8)
+// - SpotifyControls by DevilBro (v1.1.7)
+
+
+
+// -- Hide Channels by Farcrada (checked: v1.0.1)
+// Show/Hide btn
+#toggleChannels {
+  filter: brightness(.6) ;
+//  opacity: .6 ;
+  
+  &.channelsHidden { 
+//    opacity: .8 ;
+    filter: brightness(.8) ;
+  }
+  
+  &:hover { 
+//    opacity: 1 ;
+    filter: brightness(1) ;
+  }
+}
+
+// Server channel sidebar
+.sidebar-2K8pFh {
+  transition: none !important ;
+  
+  // Server channel titlebar when sidebar is hidden
+  &.hideElement + .chat-3bRxxu .title-3qD0b- {
+    margin-left: 240px ;
+    width: auto ;
+    
+    // Channel name
+    .title-29uC1r { display: flex } 
+    
+    // "#" icon
+    .children-19S4PO > .iconWrapper-2OrFZ1 {
+      display: block ;
+      
+      svg {
+        margin-top: 2px ;
+        height: 20px ;
+        width: 20px ;
+      }
+    }
+  }
+}
+
+
+// -- FriendNotifications by DevilBro (v1.7.5)
+// Online friend counter
+.guilds-1SWlCJ .scroller-1Bvpku > .listItem-GuPuDH.friendsOnlineWrap-0gZ63m {
+  display: flex !important ;
+  position: absolute ;
+  transform: rotate(90deg) translateX(-50%) ;
+  transform-origin: bottom left ;
+  top: 60px ;
+  left: 2px ;
+
+  > .label-2wRs_g {
+    color: var(--text-normal);
+    @include shadow_effect("server_1");
+  }
+}
+
+
+// -- ReadAllNotificationsButton by DevilBro (v1.6.8)
+// "Read all" btn
+.guilds-1SWlCJ .scroller-1Bvpku > .listItem-GuPuDH.frame-oXWS21 {
+  display: flex !important ;
+  position: absolute ;
+  top: 0 ;
+  left: 0 ;
+  z-index: 1 ;
+
+  &, * { height: 20px ; width: 20px  }
+
+  .childWrapper-anI2G9 {
+    color: transparent ;
+    background: none ;
+    transform: rotate(90deg);
+    text-align: center ;
+
+    // "R" Icon
+    &:before {
+      content: "R" ;
+      position: absolute ;
+      top: 0 ;
+      left: 0 ;
+      height: 20px ;
+      width: 20px ;
+      line-height: 20px ;
+      color: var(--header-secondary) ;
+      font-size: 18px ;
+      font-weight: 700 ;
+
+      @include shadow_effect("drop_1");
+    }
+
+    // Tooltip on hover
+    &:hover::after {
+      content: "read all" ;
+      position: absolute ;
+      top: -10px ;
+      left: 25px ;
+      padding: 8px 12px ;
+      font-size: 16px ;
+      font-weight: 600 ;
+      line-height: 10px ;
+      background: var(--background-tertiary) ;
+      color: var(--text-normal) ;
+      border-radius: 5px ;
+      white-space: nowrap ;
+
+      @include shadow_effect("box_2");
+    }
+  }
+}
+
+
+// -- SpotifyControls by DevilBro (v1.1.7)
+// Sidebar control panel
+.panels-j1Uci_ > .container-6sXIoE { 
+  margin: 0px ;
+  min-height: 44px ;
+
+  .button-14-BFJ { background: none }
+}
+

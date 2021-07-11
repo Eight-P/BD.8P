@@ -1,4 +1,4 @@
-// - T1.chat v0.1.035
+// - T1.chat v0.1.036
 // Text chat, Voice chat
 
 // Title bar sperator line
@@ -8,7 +8,6 @@
 // - Messages
 main.chatContent-a9vAAp {
   z-index: 101 ; // for "Mark As Read" 
-  align-items: unset ;
   
   // "#" Icon at the channels very top
   .emptyChannelIcon-cc932w { display: none }
@@ -264,12 +263,19 @@ main.chatContent-a9vAAp {
     }
   }
 
-  // Buttons
-  .buttons-3JBrkn {
+  // Buttons conatiner
+  .buttons-3JBrkn { 
+    
+    // Buttons
+    .button-38aScr { 
+      align-items: unset ;
+      height: 44px ;
+    }
     
     // General btn container
     .button-318s1X {
       align-items: unset ;
+      box-sizing: content-box;
       height: 24px ;
       padding: 10px 4px 10px 4px ;
       
@@ -283,15 +289,12 @@ main.chatContent-a9vAAp {
 
     // Nitro btn
     > button[aria-label] {
-      align-items: unset ;
       width: calc(40px * var(--show-nitro-btn));
       margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
     }
     
     // Normal btn contianer
     > .buttonContainer-28fw2U {
-      
-      > .button-38aScr { align-items: unset }
       
       // Gifs
       &:nth-last-child(3) {

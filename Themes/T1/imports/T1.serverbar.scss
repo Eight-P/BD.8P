@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.046
+// - T1.serverbar v0.1.047
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -74,74 +74,6 @@
   
   // GuildSeparator / Discovery preview listItem 
   > .listItem-GuPuDH { display: none }
-  
-  // "Read all" btn from ReadAllNotifications plugin
-  > .listItem-GuPuDH.frame-oXWS21 {
-    display: flex !important ;
-    position: absolute ;
-    top: 0 ;
-    left: 0 ;
-    z-index: 1 ;
-    
-    &, * { height: 20px ; width: 20px  }
-    
-    .childWrapper-anI2G9 {
-      color: transparent ;
-      background: none ;
-      transform: rotate(90deg);
-      text-align: center ;
-      
-      // "R" Icon
-      &:before {
-        content: "R" ;
-        position: absolute ;
-        top: 0 ;
-        left: 0 ;
-        height: 20px ;
-        width: 20px ;
-        line-height: 20px ;
-        color: var(--header-secondary) ;
-        font-size: 18px ;
-        font-weight: 700 ;
-
-        @include shadow_effect("drop_1");
-      }
-    
-      // Tooltip on hover
-      &:hover::after {
-        content: "read all" ;
-        position: absolute ;
-        top: -10px ;
-        left: 25px ;
-        padding: 8px 12px ;
-        font-size: 16px ;
-        font-weight: 600 ;
-        line-height: 10px ;
-        background: var(--background-tertiary) ;
-        color: var(--text-normal) ;
-        border-radius: 5px ;
-        white-space: nowrap ;
-
-        @include shadow_effect("box_2");
-      }
-    }
-  }
-  
-  // Online friends counter from FriendNotifications plugin
-  > .listItem-GuPuDH.friendsOnlineWrap-0gZ63m {
-    display: flex !important ;
-    position: absolute ;
-    transform: rotate(90deg) translateX(-50%) ;
-    transform-origin: bottom left ;
-    top: 60px ;
-    left: 2px ;
-    
-    > .label-2wRs_g {
-      color: var(--text-normal);
-      @include shadow_effect("server_1");
-    }
-  }
-  
   
   // general item container
   .listItem-GuPuDH { 
@@ -634,21 +566,25 @@
 }
 
 // - Tooltips container
-.tooltip-2QfLtc.listItemTooltip-1JmWJ7 .tooltipContent-bqVLWK {
-  white-space: nowrap;
-  text-overflow: ellipsis ;
-  overflow: hidden ;
-  padding: 6px 10px ;
+.tooltip-2QfLtc.listItemTooltip-1JmWJ7 {
+  max-width: 240px ;
   
-  > .rowGuildName-2wU3B_ {
-    
-   .guildNameText-3Zwx4p {
-     display: block ;
-     text-overflow: ellipsis ;
+  .tooltipContent-bqVLWK {
+    white-space: nowrap;
+    text-overflow: ellipsis ;
+    overflow: hidden ;
+    padding: 6px 10px ;
+
+    > .rowGuildName-2wU3B_ {
+
+     .guildNameText-3Zwx4p {
+       display: block ;
+       text-overflow: ellipsis ;
+      }
+
+      > .flowerStarContainer-3zDVtj { display: none }
+
+      ~ * { display: none }
     }
-
-    > .flowerStarContainer-3zDVtj { display: none }
-
-    ~ * { display: none }
   }
 }
