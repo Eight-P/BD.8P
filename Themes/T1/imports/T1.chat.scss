@@ -1,4 +1,4 @@
-// - T1.chat v0.1.036
+// - T1.chat v0.1.037
 // Text chat, Voice chat
 
 // Title bar sperator line
@@ -381,34 +381,28 @@ main.chatContent-a9vAAp {
   .gradientContainer-10lXLB { display: none }
   
   // Controls main container
-  .videoControls-24w7Xp {
-    padding: 0 16px 0 16px;
-  }
+  .videoControls-24w7Xp { padding: 0 16px 0 16px }
   
   // Controls (bottom) (trash)
   .bottomControls-lIJyYL {
     
-    .button-38aScr { background: none }
-
     // Icons
-    .controlIcon-35oS15 {
-      color: var(--interactive-normal) ;
-
-      &:hover { color: white }
+    .controlIcon-35oS15 { color: var(--interactive-normal) }
+    
+    .button-38aScr:hover .controlIcon-35oS15 { color: white }
+    
+    // Centerd row btns
+    .centerButton-3CaNcJ {
+      padding: 8px ;
+      margin: 8px ;
+      background: none ;
+      
+      &.controlButton-2MhVEL { margin: 8px 16px }
     }
+
 
     // small icon for popout menu
-    .contextMenuNub-3yOOYo {
-      bottom: 5px ;
-    }
-
-    // Disconnect Icon
-    .controlButton-2MhVEL[aria-label="Disconnect"] .controlIcon-35oS15 {
-      color: var(--red) ;
-      opacity: .7 ;
-
-      &:hover { opacity: 1 }
-    }
+    .contextMenuNub-3yOOYo { bottom: 5px }
     
     // left / right Buttons
     .flex-1xMQg5:first-child, .flex-1xMQg5:last-child {

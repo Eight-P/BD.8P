@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.047
+// - T1.serverbar v0.1.05
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -221,7 +221,8 @@
   > .listItem-GuPuDH:nth-last-child(3) { @include GuildsAdd_Icon() }
   
   // When you decide to join club of the "normal human being".
-  > [aria-label^="Server"] {
+//  > [aria-label^="Server"] {
+  > div[aria-label]:not([class]) {
     
     // Discovery
     ~ .listItem-GuPuDH { @include Discovery_Icon() }
@@ -381,8 +382,9 @@
   .pill-1Z5PKm { display: none }
 }
 
-// - Servers 
-.guilds-1SWlCJ .scroller-1Bvpku > [aria-label^="Server"] {
+// - Servers container
+//.guilds-1SWlCJ .scroller-1Bvpku > [aria-label^="Server"] {
+.guilds-1SWlCJ .scroller-1Bvpku > div[aria-label]:not([class]) {
   grid-area: Servers ;
   width: 54px ;
   max-height: 100% ;
@@ -390,15 +392,17 @@
 
   &::-webkit-scrollbar { display: none }
 
-  // Server
+  // Server items
   > .listItem-GuPuDH { @include ServerIcon () }
 
-  // Server in folders
+  // Server items in folders
   ul > .listItem-GuPuDH { @include ServerIcon () }
 }
 
 // - Server folder
-.guilds-1SWlCJ [aria-label^="Server"] > .wrapper-3Njo_c {
+//.guilds-1SWlCJ [aria-label^="Server"] > .wrapper-3Njo_c {
+//.guilds-1SWlCJ [aria-label]:not([class]) > .wrapper-3Njo_c {
+.guilds-1SWlCJ .wrapper-3Njo_c {
   width: 54px ;
   margin: 6px 0 ;
 

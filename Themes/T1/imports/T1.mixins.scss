@@ -1,4 +1,4 @@
-// - T1.mixins v0.1.043
+// - T1.mixins v0.1.045
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -29,7 +29,8 @@
 // less important Notification (User Settings-tab only)
 @mixin note_settings ($text, $display) {
   
-  .layer-3QrUeG[aria-label="USER_SETTINGS"]::before {
+//  .layer-3QrUeG[aria-label="USER_SETTINGS"]::before {
+  .layer-3QrUeG .socialLinks-3jqNFy::before {
     content: $text ;
     display: var(#{$display}, block) ;
     background: var(--background-primary) ;
@@ -42,10 +43,22 @@
     letter-spacing: .5px ;
     z-index: 2000 ;
     white-space: break-spaces ;
-    margin: 5px auto 0 auto ;
-    border-radius: 4px ;
+//    margin: 5px auto 0 auto ;
+//    border-radius: 4px ;
     
     @include shadow_effect("box_2");
+    
+    top: 0 ;
+    left: 50% ;
+    width: 100vw ;
+    transform: translateX(-50%);
+    position: fixed ;
+    margin: 5px 0 0 0 ;
+  }
+  
+  .platform-win .layer-3QrUeG .socialLinks-3jqNFy::before {
+    top: 22px ;
+    margin: 0 ;
   }
 }
 

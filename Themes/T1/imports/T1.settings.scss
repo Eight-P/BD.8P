@@ -1,7 +1,20 @@
-// T1.settings.scss v0.1.01
+// - T1.settings v0.1.01
 // Client / Guilds / Channels
 
-// general settings tabs
+// - Theme version info
+.layer-3QrUeG .info-1VyQPT:before {
+  content: "T1 - Theme: \a v#{$T1_version} by Eight_P" !important;
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: rgb(114, 118, 125) !important;
+  white-space: break-spaces !important;
+  margin-bottom: 16px !important;
+  text-transform: none !important;
+}
+
+
+// Settings menus in general
 .layer-3QrUeG:not(.baseLayer-35bLyl) {
   
   // Sidebar
@@ -46,20 +59,9 @@
   }
 }
 
-// - Client settings
-// Theme version (USER_SETTINGS)
-.layer-3QrUeG[aria-label="USER_SETTINGS"] .info-1VyQPT:after{
-  content: "T1 v#{$T1_version} by Eight_P";
-  display: block;
-  font-size: 12px ;
-  font-weight: 600 ;
-  color: rgb(114, 118, 125);
-  padding: 4px 0;
-  text-transform: none ;
-}
 
 // - Server settings
-.layer-3QrUeG[aria-label="GUILD_SETTINGS"] {
+.layer-3QrUeG:not(.baseLayer-35bLyl) {
   
   // - "Roles" Tab ( ohh Discord, what are you doing... )
   
@@ -67,7 +69,7 @@
   .container-_phMUq { background: none }
   
   // - Edit Roles view
-  .page-3njELR {
+  .contentColumn-2hrIYH > .page-3njELR {
     
     // Sidebar
     .list-I3aHXn::-webkit-scrollbar { display: none }
