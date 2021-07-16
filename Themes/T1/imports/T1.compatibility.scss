@@ -1,8 +1,8 @@
-// - T1.compatibility v0.1.01
+// - T1.compatibility v0.1.02
 // Compatibility with plugins
 
 
-// - Hide Channels by Farcrada (v1.0.1)
+// - Hide Channels by Farcrada (v1.1.0)
 // - FriendNotifications by DevilBro (v1.7.5)
 // - ReadAllNotificationsButton by DevilBro (v1.6.8)
 // - SpotifyControls by DevilBro (v1.1.7)
@@ -25,12 +25,16 @@
   transition: none !important ;
   
   // Server channel titlebar when sidebar is hidden
-  &.hideElement + .chat-3bRxxu .title-3qD0b- {
+  &.hideChannelElement + .chat-3bRxxu .title-3qD0b- {
     margin-left: 240px ;
     width: auto ;
     
     // Channel name
     .title-29uC1r { display: flex } 
+  }
+  
+  &.hideChannelElement + .chat-3bRxxu .newMessagesBar-265mhP {
+    left: 240px ;
   }
 }
 

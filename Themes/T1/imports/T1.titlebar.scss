@@ -1,4 +1,4 @@
-// - T1.titlebar v0.1.022
+// - T1.titlebar v0.1.023
 // Server/DM - Text/Voice Chat | Friends-tab | Live Stages | Notifications
 
 // Search (Toolbar)
@@ -234,6 +234,7 @@
   border-radius: 6px !important ;
   background-color: var(--background-primary) ;
   text-align: center ;
+  z-index: 1000 ;
   
   @include shadow_effect("box_2");
 
