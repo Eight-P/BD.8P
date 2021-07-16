@@ -1,4 +1,4 @@
-// - T1.user v0.1.13
+// - T1.user v0.1.131
 // User popout / Modal
 
 // -- User popout container
@@ -317,6 +317,11 @@
       
       // Remove role button
       .roleRemoveIcon-2-TeGW { cursor: pointer }
+      
+      // Roles Name
+      .roleName-32vpEy {
+        max-width: 150px ;
+      }
       
       // Add role button
       > .addButton-pcyyf6 {

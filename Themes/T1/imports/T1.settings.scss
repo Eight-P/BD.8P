@@ -1,4 +1,4 @@
-// - T1.settings v0.1.01
+// - T1.settings v0.1.02
 // Client / Guilds / Channels
 
 // - Theme version info
@@ -79,6 +79,35 @@
     .header-2mZ9Ov { 
       position: fixed ;
       top: 0 ;
+      width: 460px ;
+      padding: 60px 0 0 0 ;
+      
+      // Bot role info
+      .warning-3C2pOH {
+        position: absolute ;
+        top: 108px ;
+        left: 0 ;
+        width: auto ;
+        background: none ;
+        border: none ; ;
+        padding: 0 ;
+        z-index: 1 ;
+        
+        .text-2J5crT {
+          display: none ;
+        }
+        
+        &:hover .text-2J5crT {
+          display: block ;
+          background: var(--background-tertiary) ;
+          border: 1px solid var(--info-warning-foreground) ;
+          padding: 10px ;
+        }
+        
+        ~ .tabBar-11f3uI {
+          margin-left: 40px ;
+        }
+      }
     }
     
     // List container ( "Display"/"Permission" )

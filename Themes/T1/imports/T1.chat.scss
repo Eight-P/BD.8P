@@ -1,12 +1,12 @@
-// - T1.chat v0.1.037
+// - T1.chat v0.1.04
 // Text chat, Voice chat
 
 // Title bar sperator line
 .content-yTz4x3::before { display: none }
 
 
-// - Messages
-main.chatContent-a9vAAp {
+// - Message scoller elms
+.chatContent-a9vAAp {
   z-index: 101 ; // for "Mark As Read" 
   
   // "#" Icon at the channels very top
@@ -87,93 +87,173 @@ main.chatContent-a9vAAp {
       }
     }
   }
-  
-  // - Chat messages
-  .message-2qnXI6 {
-    background: none !important ;
-    padding-right: 14px !important ;
-    
-    // Message with Mention
-    &.mentioned-xhSam7 {
-      
-      > .contents-2mQqc9 {
-        padding: 0 6px ;
-        border-left: solid 2px var(--border-mentioned) ;
-        background: var(--background-mentioned) ;
-      }
-      
-      &:before { display: none }
-    }
-    
-    // Clyde (client-side info/error messages)
-    &.ephemeral-1PsL1r {
-      
-      > .contents-2mQqc9 {
-        padding: 0 6px ;
-        border-left: solid 2px var(--Blurple) ;
-        background: var(--Blurple-light) ;
-      }
-      
-      &:before { display: none }
-    }
-    
-    // Message buttons
-    .buttonContainer-DHceWr {
-      top: 19px ;
-      
-      // Container
-      .wrapper-2aW0bm {
-        height: 22px ;
-        background: none ;
-        box-shadow: none ;
-      }
-      
-      // Buttons
-      .button-1ZiXG9 {
-        height: 20px ;
-        padding: 1px 3px;
-        background: none ;
-      }
-    }
-    
-    // Message buttons - Message with Reply
-    &.hasReply-34In-r .buttonContainer-DHceWr { top: 37px }
-    
-    // Message buttons - Message Concatenation
-    &:not(.groupStart-23k01U) .buttonContainer-DHceWr { top: 27px }
-    
-    // Message reactions
-    .reaction-1hd86g {
-      background-color: var(--background-modifier-accent);
-      border: none;
-      border-radius:4px;
-
-      &:hover { background-color: var(--background-accent) }
-      
-      // Active reaction 
-      &.reactionMe-wv5HKu {
-        background-color: var(--Blurple-light, rgba(114, 137, 218, 0.3)) ;
-
-        &:hover { background-color: var(--Blurple-light-hover, rgba(114, 137, 218, 0.4)) }
-        
-        // number 
-        .reactionCount-2mvXRV { color: var(--Blurple, rgb(114, 137, 218)) }
-      }
-    }
-  }
-  
+   
   // - preload dummys
   // container
   .wrapper-3vR61M {
-    background: none !important;
+    background: none !important ;
     
     // messages
-    > .wrapper-1F5TKx {
-      background: none !important;
-    }
+    > .wrapper-1F5TKx { background: none !important }
   }
 }
 
+
+// - Messages
+.chatContent-a9vAAp .message-2qnXI6.cozy-3raOZG {
+  background: none ;
+  padding: 2px 32px 0px 66px !important ;
+  
+  &:hover { 
+    background: none ;
+  }
+  
+  // Highlight border-left (Mention, Clyde, ..)
+  &:before { display: none }
+  
+  // Preview of replied msg
+  > .repliedMessage-VokQwo { 
+    height: 20px ;
+  }
+  
+  // Message container
+  > .contents-2mQqc9 { 
+    padding: 0 0 2px 6px ;
+    
+    // Profile image
+    .avatar-1BDn8e { 
+      left: 13px ;
+    }
+    
+    // Msg Header (Name, Date, ..)
+    .header-23xsNx { 
+      padding: 2px 0 ;
+    }
+  }
+  
+  // Mention
+  &.mentioned-xhSam7 > .contents-2mQqc9{
+    border-left: solid 2px var(--border-mentioned) ;
+    background: var(--background-mentioned) ;
+  }
+  
+  // Clyde (client-side info/error messages)
+  &.ephemeral-1PsL1r > .contents-2mQqc9 {
+    border-left: solid 2px var(--Blurple) ;
+    background: var(--Blurple-light) ;
+  }
+  
+  // Selected for reply
+  &.replying-1x3H0T > .contents-2mQqc9 {
+    border-right: solid 2px var(--header-secondary) ;
+    background: var(--background-modifier-hover) ;
+  }
+  
+  // Reply | &.hasReply-34In-r { }
+  // System Message (msg pinned, user joined server, ..) | &.isSystemMessage-2MkNHd { }
+  
+  
+  // - Message Buttons 
+  // Main container / Msg highlight hover effect
+  .buttonContainer-DHceWr {
+    position: static ;
+    
+    &:hover:after {
+      content: "";
+      position: absolute ;
+      top: 2px ;
+      left: 5px ;
+      bottom: 0px ;
+      right: 2px ;
+      pointer-events: none ;
+      background: rgba(255, 255, 255, 0.05) ; // black or white ? idk
+    }
+  }
+  
+  &.mentioned-xhSam7, &.ephemeral-1PsL1r { 
+    .buttonContainer-DHceWr:hover:after {
+      right: 32px ;
+    }
+  }
+  
+  // Btn container
+  .buttons-cl5qTG { 
+    top: 3px ;
+    padding: 0 1px 0 0 ;
+    
+    // Btn container grid
+    .wrapper-2aW0bm {
+      height: 24px ;
+      background: none ;
+      box-shadow: none ;
+
+      // Button
+      .button-1ZiXG9 {
+        padding: 0 4px ;
+        background: none ;
+      }
+    }
+  }
+  
+  // Btn container on reply Msg
+  &.hasReply-34In-r .buttons-cl5qTG { 
+    top: 27px ;
+  }
+  
+  // Message Buttons - Concatenating Msg / System Message
+  &:not(.groupStart-23k01U), &.isSystemMessage-2MkNHd {
+    
+    // Buttons container
+    .wrapper-2aW0bm {
+      height: 32px ;
+      
+      // Button
+      .button-1ZiXG9 {
+        display: none ;
+        padding: 4px ;
+
+        &:last-child {
+          display: flex ;
+        }
+      }
+      
+      &:hover {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) ;
+        
+        .button-1ZiXG9 {
+          display: flex ;
+          background-color: var(--background-tertiary) ;
+        }
+      }
+    }
+  }
+
+  
+  // Message reactions
+  .reaction-1hd86g {
+    background-color: var(--background-modifier-accent);
+    border: none;
+    border-radius:4px;
+
+    &:hover { 
+      background-color: var(--background-accent) ;
+    }
+
+    // Active reaction 
+    &.reactionMe-wv5HKu {
+      background-color: var(--Blurple-light) ;
+
+      &:hover { 
+        background-color: var(--Blurple-light-hover) ;
+      }
+
+      // number 
+      .reactionCount-2mvXRV { 
+        color: var(--Blurple) ;
+      }
+    }
+  }
+}
 
 // - Text input
 .form-2fGMdU {
@@ -193,7 +273,9 @@ main.chatContent-a9vAAp {
     > .scrollableContainer-2NUZem { background: none }
 
     // Text input
-    .textArea-12jD-V { margin-left: 10px }
+    .textArea-12jD-V { 
+      margin-left: 10px ;
+    }
 
     // Input on denied writing permission
     &.channelTextAreaDisabled-8rmlrp .innerDisabled-1YTFPN::after {
@@ -206,6 +288,16 @@ main.chatContent-a9vAAp {
       width: 36px ;
       background-size: cover ;
       background-repeat: no-repeat ;
+    }
+    
+    // Reply popout
+    > .attachedBars-tZDmyV {
+      background: none ;
+      
+      .replyBar-1YLQ2F {
+        background: none ;
+        margin-right: 10px ;
+      }
     }
   }
 
@@ -259,7 +351,9 @@ main.chatContent-a9vAAp {
       position: absolute ;
       margin: 0 ;
 
-      path { fill: var(--interactive-normal) }
+      path { 
+        fill: var(--interactive-normal) ;
+      }
     }
   }
 
@@ -284,7 +378,9 @@ main.chatContent-a9vAAp {
         filter: brightness(1.5);
       }
       
-      &:hover svg { opacity: .8 }
+      &:hover svg { 
+        opacity: .8 ;
+      }
     }
 
     // Nitro btn
@@ -322,7 +418,9 @@ main.chatContent-a9vAAp {
   .emojiButton-pET4wH {
     opacity: .6 ;
 
-    &.emojiButtonHovered-1rWNal { opacity: 1 }
+    &.emojiButtonHovered-1rWNal { 
+      opacity: 1 ;
+    }
   }
 
   // Announcement channel follow option
@@ -348,7 +446,7 @@ main.chatContent-a9vAAp {
 }
 
 
-// - Mention in text
+// - Inline Mentions
 .mention.wrapper-3WhCwL {
   color: var(--Blurple, rgb(114, 137, 218)) !important;
   background-color: transparent !important;
@@ -374,22 +472,30 @@ main.chatContent-a9vAAp {
       transform: translateZ(0) ;
     }
     
-    &:hover .controlSection-2h3cS0 { opacity: 1 }
+    &:hover .controlSection-2h3cS0 { 
+      opacity: 1 ;
+    }
   }
   
   // Gradient effect
   .gradientContainer-10lXLB { display: none }
   
   // Controls main container
-  .videoControls-24w7Xp { padding: 0 16px 0 16px }
+  .videoControls-24w7Xp { 
+    padding: 0 16px 0 16px ;
+  }
   
   // Controls (bottom) (trash)
   .bottomControls-lIJyYL {
     
     // Icons
-    .controlIcon-35oS15 { color: var(--interactive-normal) }
+    .controlIcon-35oS15 { 
+      color: var(--interactive-normal) ;
+    }
     
-    .button-38aScr:hover .controlIcon-35oS15 { color: white }
+    .button-38aScr:hover .controlIcon-35oS15 { 
+      color: white ;
+    }
     
     // Centerd row btns
     .centerButton-3CaNcJ {
@@ -397,12 +503,16 @@ main.chatContent-a9vAAp {
       margin: 8px ;
       background: none ;
       
-      &.controlButton-2MhVEL { margin: 8px 16px }
+      &.controlButton-2MhVEL { 
+        margin: 8px 16px ;
+      }
     }
 
 
     // small icon for popout menu
-    .contextMenuNub-3yOOYo { bottom: 5px }
+    .contextMenuNub-3yOOYo { 
+      bottom: 5px ;
+    }
     
     // left / right Buttons
     .flex-1xMQg5:first-child, .flex-1xMQg5:last-child {

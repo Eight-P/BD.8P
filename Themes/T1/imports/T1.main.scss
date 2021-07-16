@@ -1,5 +1,5 @@
 $vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ;   // required theme file version 
-$T1_version: "0.5.23" ; 
+$T1_version: "0.5.24" ;
 
 @import 'imports/T1.mixins.scss';       // Global Mixins and Variables
 @import 'imports/T1.background.scss';   // Background image and Transparency
@@ -24,11 +24,19 @@ body.bd-minimal {
 @include note_settings ( 'T1 version #{$vid} available! \a Please update your "T1.theme.css" file with the newest version from "https://betterdiscord.app/theme/T1"', $vv);
 
 
+.layerContainer-yqaFcK {
+  overflow: hidden ;
+}
+
 // Layer transitions
-.layers-3iHuyZ > .layer-3QrUeG { transform: none !important }
+.layers-3iHuyZ > .layer-3QrUeG { 
+  transform: none !important ;
+}
 
 
-.base-3dtUhz { height: 100% !important }
+.base-3dtUhz { 
+  height: 100% !important ;
+}
 
 
 // "Bot"/"server" Tag Indicator

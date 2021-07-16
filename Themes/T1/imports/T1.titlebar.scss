@@ -1,4 +1,4 @@
-// - T1.titlebar v0.1.021
+// - T1.titlebar v0.1.022
 // Server/DM - Text/Voice Chat | Friends-tab | Live Stages | Notifications
 
 // Search (Toolbar)
@@ -121,21 +121,28 @@
   }
 }
 
-// -- Chat (Server / DM )
-section.title-3qD0b-.container-1r6BKw.themed-ANHk51[aria-label="Channel header"] {
+// -- Chat (Server / DMs )
+.chat-3bRxxu > .container-1r6BKw {
   
-  // - channel name, topic
+  // - Channel name / topic
   > .children-19S4PO {
     
     // Channel description
     > .topic-TCb_qw {
       margin: 0 8px ;
       text-align: center ;
-
-      &:hover { color: var(--interactive-hover) }
       
-      // Links
-      > * { pointer-events: none }
+      // Links / Mentions
+      > * { 
+        pointer-events: none ;
+        opacity: .8 ;
+      }
+
+      &:hover { 
+        color: var(--interactive-hover) ;
+        
+        > * { opacity: 1 }
+      }
     }
     
     // Follow Announcement channel button
@@ -144,7 +151,7 @@ section.title-3qD0b-.container-1r6BKw.themed-ANHk51[aria-label="Channel header"]
 }
 
 // -- Home/Friends
-.container-1D34oG > section.container-1r6BKw.themed-ANHk51 {
+.container-1D34oG > .container-1r6BKw {
   
   // - Nav bar / Friends tabs 
   .tabBar-ZmDY9v {
@@ -159,7 +166,7 @@ section.title-3qD0b-.container-1r6BKw.themed-ANHk51[aria-label="Channel header"]
       > .numberBadge-2s8kKX { @include unread_indicator_inline() }
       
       // add friend Tab
-      &[aria-label="Add Friend"] {
+      &[aria-controls="ADD_FRIEND-tab"] {
         position: absolute ;
         right: 0 ;
         width: 24px ;
@@ -170,7 +177,7 @@ section.title-3qD0b-.container-1r6BKw.themed-ANHk51[aria-label="Channel header"]
         padding: 0 ;
         
         // Icon
-        &::before {
+        &:before {
           content: " " ;
           background-image:url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(67, 181, 129)"><path d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 15.67,10 13,10 C13,10 12.83,10 12.75,10 C8,10 4,6 4,1.5 L4,0 L0.5,0 Z M13,0 C10.790861,0 9,1.790861 9,4 C9,6.209139 10.790861,8 13,8 C15.209139,8 17,6.209139 17,4 C17,1.790861 15.209139,0 13,0 Z" transform="translate(2 4)" ></path></svg>');
           position: absolute ;
@@ -180,7 +187,10 @@ section.title-3qD0b-.container-1r6BKw.themed-ANHk51[aria-label="Channel header"]
           opacity: .5 ;
         }
 
-        &:hover::before { opacity: 1 }
+        &:hover:before { opacity: 1 }
+        
+        // Selected
+        &[aria-selected="true"]:before { opacity: .8 }
         
         // Text
         span { display: none }
