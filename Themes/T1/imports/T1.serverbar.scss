@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.05
+// - T1.serverbar v0.1.051
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -19,6 +19,11 @@
   background-position: center !important ;
   background-repeat: no-repeat !important ;
   filter: var(--blur) var(--brightness) ;
+  
+  // when in voice call view
+  &.hidden-3dXt4k {
+    height: 0 ;
+  }
   
   // Child container (ul)
   .tree-2wKJdG {

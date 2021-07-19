@@ -1,4 +1,4 @@
-// - T1.chat v0.1.04
+// - T1.chat v0.1.041
 // Text chat, Voice chat
 
 // Title bar sperator line
@@ -102,7 +102,7 @@
 // - Messages
 .chatContent-a9vAAp .message-2qnXI6.cozy-3raOZG {
   background: none ;
-  padding: 2px 32px 0px 66px !important ;
+  padding: 2px 32px 0px 4.125rem !important ;
   
   &:hover { 
     background: none ;
@@ -122,12 +122,16 @@
     
     // Profile image
     .avatar-1BDn8e { 
-      left: 13px ;
+      width: 2.5rem ;
+      height: 2.5rem ;
+      left: 0.8125rem ;
+      margin-top: .125rem ;
     }
     
     // Msg Header (Name, Date, ..)
     .header-23xsNx { 
       padding: 2px 0 ;
+      margin-left: 0 ;
     }
   }
   

@@ -1,5 +1,5 @@
 $vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ;   // required theme file version 
-$T1_version: "0.5.241" ;
+$T1_version: "0.5.242" ;
 
 @import 'imports/T1.mixins.scss';       // Global Mixins and Variables
 @import 'imports/T1.background.scss';   // Background image and Transparency
@@ -47,7 +47,7 @@ body.bd-minimal {
 
 
 // Default scrollbar design (needs some rework)
-.scrollerBase-289Jih { @include scrollbar() }
+.app-1q1i1E .scrollerBase-289Jih { @include scrollbar() }
 
 
 // Tab focus thing

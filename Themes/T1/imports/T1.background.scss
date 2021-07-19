@@ -1,5 +1,5 @@
-// T1.background.scss v0.1.013
-// App background image + required transparency
+// - T1.background v0.1.014
+// Background image + required transparency
 
 // Totally necessary mixin
 @mixin no_BG ($i:false) {
@@ -70,7 +70,7 @@
 
 
 // Pretty much every scroller
-.scrollerBase-289Jih { @include no_BG() }
+.app-1q1i1E .scrollerBase-289Jih { @include no_BG() }
 
 // Members list
 .members-1998pB {

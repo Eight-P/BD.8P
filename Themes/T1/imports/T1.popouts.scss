@@ -1,8 +1,8 @@
-// - T1.popouts v0.1.03
+// - T1.popouts v0.1.031
 // Text chat / Server options / Context menus / Search / User status
 
-// -- Text chat 
-// - Text chat Tag autocomplete popout
+// - Chat text input
+// Autocomplete popout
 .chatContent-a9vAAp .form-2fGMdU .autocomplete-1vrmpx {
   background-color: var(--background-tertiary) !important ;
       
@@ -18,7 +18,6 @@
     }
   }
 }
-
 
 // - Gif, Sticker, Emoji, BD emotes Picker
 .layerContainer-yqaFcK {
@@ -178,11 +177,6 @@
     
     &#status-picker-custom-status.focused-3afm-j { background: var(--background-modifier-selected) }
   }
-}
-
-// - Custom status popout
-.popout-VcNcHB.scrollerBase-289Jih {
-  background: var(--background-secondary) ;
 }
  
 
