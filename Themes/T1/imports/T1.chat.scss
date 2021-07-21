@@ -1,4 +1,4 @@
-// - T1.chat v0.1.041
+// - T1.chat v0.1.1
 // Text chat, Voice chat
 
 // Title bar sperator line
@@ -132,6 +132,50 @@
     .header-23xsNx { 
       padding: 2px 0 ;
       margin-left: 0 ;
+    }
+  }
+    
+  // BD emotes
+  .emotewrapper {
+    margin: 0 ;
+
+    // emote image
+    .emote {
+      transform: none ;
+    }
+
+    // Mutli-Emotes: Top-right, Bottom-right
+    .emotetr, .emotebr {
+      margin-left: -0.25rem ;
+    }
+
+    // Fav emote btn
+    .fav {
+      top: 0 ;
+      right: 0 ;
+      width: .65rem ;
+      height: .65rem ;
+      z-index: 1 ;
+      padding: .1rem ;
+      background-repeat: no-repeat ;
+      background-color: var(--background-secondary) ;
+      background-size: cover ;
+      box-sizing: content-box ;
+
+      @mixin Icon_star ($color:"rgb(124, 125, 126)", $stroke:"rgb(0, 0, 0)", $stroke-width:"1") {
+
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#{$color}" stroke="#{$stroke}" stroke-width="#{$stroke-width}"><path  d="M21.924 8.61789C21.77 8.24489 21.404 8.00089 21 8.00089H15.618L12.894 2.55389C12.555 1.87689 11.444 1.87689 11.105 2.55389L8.38199 8.00089H2.99999C2.59599 8.00089 2.22999 8.24489 2.07599 8.61789C1.92199 8.99089 2.00699 9.42289 2.29299 9.70789L6.87699 14.2919L5.03899 20.7269C4.92399 21.1299 5.07199 21.5619 5.40999 21.8089C5.74999 22.0569 6.20699 22.0659 6.55399 21.8329L12 18.2029L17.445 21.8329C17.613 21.9449 17.806 22.0009 18 22.0009C18.207 22.0009 18.414 21.9369 18.59 21.8089C18.928 21.5619 19.076 21.1299 18.961 20.7269L17.123 14.2919L21.707 9.70789C21.993 9.42289 22.078 8.99089 21.924 8.61789Z"></path></svg>');
+      }
+
+      @include Icon_star() ;
+
+      &.active { 
+        @include Icon_star("rgb(195, 173, 71)");
+
+        &:hover { @include Icon_star("rgba(0,0,0,0") }
+      }
+
+      &:hover { @include Icon_star("rgb(195, 173, 71)",) }
     }
   }
   
@@ -468,29 +512,28 @@
 // - Voicecall view
 .callContainer-36WRfH {
   
-  // Button overlay 
-  .root-217Brm {
+  // Button main container
+  .videoControls-24w7Xp { 
+    padding: 0 16px 0 16px ;
     
+    // Top / Bottom section
     .controlSection-2h3cS0 {
       opacity: var(--always-show-voicecontrols, 0) ;
       transform: translateZ(0) ;
     }
-    
-    &:hover .controlSection-2h3cS0 { 
-      opacity: 1 ;
-    }
   }
   
-  // Gradient effect
-  .gradientContainer-10lXLB { display: none }
-  
-  // Controls main container
-  .videoControls-24w7Xp { 
-    padding: 0 16px 0 16px ;
+  &:hover .controlSection-2h3cS0 { 
+    opacity: 1 ;
   }
   
   // Controls (bottom) (trash)
   .bottomControls-lIJyYL {
+    
+    // Group container
+    .flex-1xMQg5 {
+      margin: 0 !important ;
+    }
     
     // Icons
     .controlIcon-35oS15 { 
@@ -521,6 +564,134 @@
     // left / right Buttons
     .flex-1xMQg5:first-child, .flex-1xMQg5:last-child {
       margin-top: 10px ;
+    }
+  }
+  
+  // Gradient effect on hover
+  .gradientContainer-10lXLB { display: none }
+  
+  
+  .focusedVideo-AeFhkm .root-2sELX6 {
+    background: none ;
+  }
+  
+  
+  // Left side (non-grid) users in voice cards
+  
+//  .tile-2GMyYQ .tile-2gi3tr {
+  .tile-2gi3tr {
+    background: none ;
+    margin-right: 5px ;
+    
+    @include shadow_effect("box_2");
+    
+    
+    .indicators-3zIm5K {
+      left: 0px ;
+      
+      // "live" icon
+      .liveIndicator-3FNmiB { display: none }
+      
+      // stream quality transition container
+      .streamQualityIndicator-2Te7mW > div {
+        transform: none !important ;
+      }
+      
+      // stream quality
+      .liveQualityIndicator-3XCjEU {
+        background: var(--background-primary) !important ;
+        border-radius: 8px ;
+      }
+    }
+    
+    // Stream in user card
+    .videoWrapper-2v09vt .video-1kutKI{
+      height: calc(100% - 20px) ;
+    }
+    
+    // Stream preview image in user card
+    .streamPreview-3YL8OQ {
+      
+      .cta-3gK0Pu {
+        background: var(--background-primary) !important ;
+        margin-bottom: 20px ;
+      }
+    }
+    
+    .streamPreview-3YL8OQ .image-1npAv8 {
+      padding-bottom: 20px ;
+      box-sizing: border-box ;
+    }
+    
+    // - Normal (no stream) user
+    // Background
+    .background-ujHpbY {
+      background: var(--background-tertiary) !important ;
+      
+      padding-bottom: 25px ;
+      box-sizing: border-box ;
+    }
+    
+    // Prfile image container
+    .avatarWrapper-29j3CC {
+      
+      foreignObject {
+        mask: none ;
+        overflow: visible ;
+      }
+      
+      svg {
+        overflow: visible ;
+      }
+      
+      // Prfile image
+      .avatar-VxgULZ {
+        border-radius: 7.5% ;
+        
+        &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+      }
+    }
+    
+    // Overlay container
+    .overlay-1YJlCn {
+      position: absolute ;
+      padding: 0 ;
+      top: 0 ;
+      left: 0 ;
+      right: 0 ;
+      bottom: 0 ;
+      align-items: flex-end ;
+    }
+    
+    // User name container
+    .overlayTitle-8IcS01 {
+      width: 100% ;
+      margin-right: 0 ;
+      padding: 2px 6px ;
+      background: var(--background-secondary-alt) ;
+      border-radius: 0 ;
+      
+      // User name
+      .overlayTitleText-2mmQzi {
+        width: 100% ;
+        text-align: center ;
+      }
+      
+      &.idle-U-LIlZ {
+        opacity: 1 ;
+      }
+    }
+    
+    // User status container
+    .statusContainer-1gtabC {
+      position: absolute ;
+      top: 5px ;
+      right: 5px ;
+      
+      // User status
+      .status-254fhp {
+        background: none ;
+      }
     }
   }
 }
