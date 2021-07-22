@@ -1,4 +1,4 @@
-// T1.home.scss v0.1.03
+// - T1.home v0.1.04
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages 
@@ -144,7 +144,10 @@
       @include shadow_effect("drop_1");
     }
     
-    .listItemContents-2w6nwE { position: relative }
+    // Item container
+    > div {
+      position: relative ;
+    }
     
     // Second container
     .userInfo-2zN2z8 { 
@@ -189,6 +192,11 @@
           opacity: .7 ;
           line-height: 34px ;
         }
+        
+        > .botTag-2WPJ74 {
+          display: inline-flex ;
+          margin: 8px 0 9px 3px;
+        }
       }
       
       // status / activity
@@ -217,26 +225,57 @@
     
     
     
-    // - User card friend request
-    // user name, status, etc.
-    .userInfo-3bsjnc { flex: 0 0 320px }
-    
-    // User option buttons (friend request: accept/ignore)
-    .actions-FAbeWr {
-      position: absolute ;
-      visibility: hidden ;
-      right: 10px ;
+    // Pending - user
+    .listItemContents-2w6nwE {
       
-      .actionButton-uPB8Fs {
-        background: none ;
-        margin: 0 ;
+      > .userInfo-3bsjnc { 
+        flex: 1 ;
+      }
+      
+      // accept/ignore bnts
+      .actions-FAbeWr {
+        position: absolute ;
+        visibility: hidden ;
+        right: 10px ;
+
+        > .actionButton-uPB8Fs {
+          background: none ;
+          margin: 0 ;
+        }
+      }
+      
+      &:hover {
+        .actions-FAbeWr { 
+          visibility: visible ;
+        }
+
+        .text-37NqbO, .discordTag-2_tqUA { 
+          width: 150px ;
+        }
       }
     }
-    
-    &:hover {
-      .actions-FAbeWr { visibility: visible }
+
+    // Blocked - user
+    .listItemContents-BUaJR_ {
       
-      .text-37NqbO, .discordTag-2_tqUA { width: 150px }
+      // Unblock btn
+      > .actionButton-uPB8Fs {
+        position: absolute ;
+        right: 10px ;
+        background: none ;
+        margin: 0 ;
+        visibility: hidden ;
+      }
+      
+      &:hover {
+        .actionButton-uPB8Fs { 
+          visibility: visible ;
+        }
+
+        .text-37NqbO, .discordTag-2_tqUA { 
+          width: 150px ;
+        }
+      }
     }
   }
   
@@ -273,14 +312,14 @@
   .channel-2QD9_O {
     
     // Nav Tabs (Stages, Friends, Nitro  (not library) )
-    &:not([aria-label]):not(#private-channels-3) {
-      margin: 0 0 0 2px ;
+    @mixin Tabs () {
+      margin: 0 2px ;
       width: 74px ;
       display: inline-block ;
       border-radius: 0 ;
       padding: 0 ;
 
-      // second container
+      // Second container
       > .layout-2DM8Md {
         padding: 0 16px ;
         background: none ;
@@ -304,10 +343,18 @@
       }
 
       // Selected tab
-      &.selected-aXhQR6 { border-bottom: 1px solid var(--interactive-active) }
+      &.selected-aXhQR6 { 
+        border-bottom: 1px solid var(--interactive-active) ;
+      }
 
-      &[aria-posinset="1"] { margin: 0 2px }
+      &[aria-posinset="2"] { 
+        margin: 0 ;
+      }
     }
+    
+    &[href="/channels/@me"] { @include Tabs() }
+    &[href="/store"] { @include Tabs() }
+    &[href="/discovery"] { @include Tabs() }
     
     // library tab(maybe) / DMs
     &#private-channels-3:not([aria-label]),
