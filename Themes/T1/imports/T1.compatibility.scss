@@ -1,4 +1,4 @@
-// - T1.compatibility v0.1.02
+// - T1.compatibility v0.1.03
 // Compatibility with plugins
 
 
@@ -6,10 +6,10 @@
 // - FriendNotifications by DevilBro (v1.7.5)
 // - ReadAllNotificationsButton by DevilBro (v1.6.8)
 // - SpotifyControls by DevilBro (v1.1.7)
+// - CollapsibleUI by programmer2514 (v1.1.0)
 
 
-
-// -- Hide Channels by Farcrada (v1.0.1)
+// -- Hide Channels by Farcrada (v1.2.1)
 // Show/Hide btn
 #toggleChannels {
   filter: brightness(.6) ;
@@ -30,7 +30,9 @@
     width: auto ;
     
     // Channel name
-    .title-29uC1r { display: flex } 
+    .title-29uC1r { 
+      display: flex ;
+    } 
   }
   
   &.hideChannelElement + .chat-3bRxxu .newMessagesBar-265mhP {
@@ -119,3 +121,34 @@
   .button-14-BFJ { background: none }
 }
 
+
+// -- CollapsibleUI by programmer2514 (v1.1.0)
+// Server channel sidebar
+.sidebar-2K8pFh[style="display: none;"] {
+  display: flex !important ;
+  width: 0 ;
+  
+  // Titlebar adjustments
+  + .chat-3bRxxu .container-1r6BKw {
+    margin-left: 240px ;
+    width: auto ;
+    
+    // Channel name
+    .title-29uC1r { 
+      display: flex ;
+    } 
+  }
+  
+  + .chat-3bRxxu .newMessagesBar-265mhP {
+    left: 240px ;
+  }
+}
+
+// Serverbar
+.guilds-1SWlCJ[style="display: none;"] + .base-3dtUhz {
+    
+  // Home search, Server settings
+  .searchBar-6Kv8R2, .container-1taM1r {
+    display: none ;
+  }
+}

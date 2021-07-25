@@ -1,4 +1,4 @@
-// - T1.titlebar v0.1.023
+// - T1.titlebar v0.1.024
 // Server/DM - Text/Voice Chat | Friends-tab | Live Stages | Notifications
 
 // Search (Toolbar)
@@ -81,8 +81,13 @@
     // "AKA" icon if chatpartner has a nickname in a server
     > .akaBadge-1M-1Gw { display: none }
     
-    // Channel name, "friends" text (not: Dm Partner name)
-    > h3.title-29uC1r:not(.cursorPointer-1j7DL8) { display: none }
+    // Dm Partner / Channel name
+    > .title-29uC1r {
+      color: var(--interactive-hover) ;
+      
+      // Channel name by default
+      &:not(.cursorPointer-1j7DL8) { display: none }
+    }
     
     // ugly random line (right)
     &::after { display: none }

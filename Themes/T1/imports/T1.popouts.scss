@@ -1,5 +1,10 @@
-// - T1.popouts v0.1.031
+// - T1.popouts v0.1.032
 // Text chat / Server options / Context menus / Search / User status
+
+// Popouts container
+.layerContainer-yqaFcK {
+  overflow: hidden ;
+}
 
 // - Chat text input
 // Autocomplete popout
@@ -28,10 +33,10 @@
   // Navbar
   .navButtonActive-1MkytQ { background: none }
   
-  input { border-bottom: 1px solid var(--interactive-muted) }
-  
-  // Popout content (Emoji, Sticker)
-  .wrapper-1rqM3x, .wrapper-2iFQJ9 {
+  // Popout content (Emoji, Sticker, GIFs)
+  .wrapper-1rqM3x, .wrapper-2iFQJ9, .container-3ISnnM {
+    
+    input { border-bottom: 1px solid var(--interactive-muted) }
 
     > div { background-color: var(--background-tertiary) }
 
