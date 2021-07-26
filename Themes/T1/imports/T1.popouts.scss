@@ -1,4 +1,4 @@
-// - T1.popouts v0.1.032
+// - T1.popouts v0.1.04
 // Text chat / Server options / Context menus / Search / User status
 
 // Popouts container
@@ -139,7 +139,7 @@
 // -- Search
 // - Searchbar options popout
 .layer-v9HyYc > #search-results {
-  background: var(--background-tertiary) ;
+  background: var(--background-secondary-alt) ;
   
   @include shadow_effect("box_1");
   
@@ -158,9 +158,92 @@
 }
 
 // - Searchbar results popout
-//.searchResultsWrap-3-pOjs {
-//  
-//}
+.searchResultsWrap-3-pOjs {
+  background: var(--background-tertiary) ;
+  
+  // Header
+  > .searchHeader-2XoQg7 {
+    background: var(--background-secondary-alt) ;
+    
+    // n of search results
+    .colorHeaderPrimary-26Jzh- {
+      color: var(--text-normal) ;
+    }
+    
+    // Options btn
+    .tab-2j5AEF {
+      background: none ;
+      
+      &:hover {
+        color: var(--interactive-hover) ;
+      }
+    }
+  }
+  
+  // Content scroller
+  > .scroller-3GIiMh {
+    padding: 8px 0 0 0 !important ;
+    
+    &::-webkit-scrollbar { display: none }
+      
+    // Header - channel name
+    .channelName-1JRO3C {
+      background: none ;
+      background: var(--background-secondary-alt) ;
+      color: var(--interactive-normal) ;
+      justify-content: center ;
+      margin-bottom: 4px ;
+
+      &:hover {
+        text-decoration: none ;
+        background: var(--background-secondary) ;
+      }
+    }
+    
+    // Message container
+    .container-2j2llN:hover {
+      background: var(--background-modifier-hover);
+    }
+
+    // Message content container
+    .searchResult-9tQ1uo {
+      background: none ;
+
+      // Message
+      .wrapper-2a6GCs.cozy-3raOZG {
+        padding-left: 60px ;
+      }
+      
+      // pfp
+      .avatar-1BDn8e {
+        left: 8px ;
+      }
+    }
+  }
+  
+  // switch pages btns
+  .container-NdaZbY {
+    
+    .pageButton-2ruNwd {
+      color: var(--interactive-normal) ;
+      
+      &:hover {
+        color: var(--interactive-hover) ;
+      }
+      
+      &:disabled {
+        color: var(--interactive-muted) ;
+        pointer-events: none ;
+      }
+      
+      &.activeButton-rvKcqq {
+        background: none ;
+        color: var(--interactive-active) ;
+        cursor: default ;
+      }
+    }
+  }
+}
 
 
 // -- User status 

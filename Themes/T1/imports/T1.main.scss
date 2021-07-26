@@ -1,5 +1,5 @@
 $vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ;   // required theme file version 
-$T1_version: "0.5.27" ;
+$T1_version: "0.5.28" ;
 
 @import 'imports/T1.mixins.scss';       // Global Mixins and Variables
 @import 'imports/T1.background.scss';   // Background image and Transparency
@@ -8,7 +8,7 @@ $T1_version: "0.5.27" ;
 @import 'imports/T1.user.scss';         // User-Popout / Modal
 @import 'imports/T1.popouts.scss';      // Popouts / Tooltips
 @import 'imports/T1.server-view.scss';  // Channels / Member / Discovery
-@import 'imports/T1.titlebar.scss';     // Titlebar / Notifications
+@import 'imports/T1.titlebar.scss';     // Header-, Titlebar / Notifications
 @import 'imports/T1.settings.scss';     // Settings menus
 @import 'imports/T1.serverbar.scss';    // Serverbar + Addons
 @import 'imports/T1.compatibility.scss';// Plugin Compatibility
@@ -21,7 +21,7 @@ body.bd-minimal {
 }
 
 // - If the Theme file is oudated
-@include note_settings ( 'T1 version #{$vid} available! \a Please update your "T1.theme.css" file with the newest version from "https://betterdiscord.app/theme/T1"', $vv);
+@include note_settings ('T1 version #{$vid} available! \a Please update your "T1.theme.css" file with the newest version from "https://betterdiscord.app/theme/T1"', $vv);
 
 
 // Layer transitions
@@ -51,23 +51,4 @@ body.bd-minimal {
   box-shadow: none ;
   border-bottom: 2px solid var(--interactive-active);
   border-radius: 0;
-}
-
-
-// App headerbar
-.titleBar-AC4pGV.typeWindows-1za-n7 {
-  box-shadow: 0 .5px 0 var(--header-secondary) ;
-  z-index: 500 ;
-  
-  // Watermark
-  .wordmarkWindows-1v0lYD {
-    
-    g > path:not(:first-child) { display: none }
-    
-    g > path:first-child {
-      transform: scale(.58) translate(-6.5px, -2.5px);
-      
-      d: path("M 12.8 7.8 H 6.7 v 6.8 l 4.1 3.6 V 11.6 H 13 c 1.4 0 2.1 0.7 2.1 1.7 v 5 c 0 1 -0.6 1.8 -2.1 1.8 H 6.7 v 3.8 h 6.1 c 3.3 0 6.4 -1.6 6.4 -5.3 V 13.2 C 19.2 9.4 16.1 7.8 12.8 7.8 Z M 45 18.6 V 13 c 0 -2 3.7 -2.5 4.8 -0.5 l 3.4 -1.3 a 6.069 6.069 0 0 0 -5.8 -3.7 c -3.3 0 -6.5 1.9 -6.5 5.5 v 5.6 c 0 3.7 3.2 5.5 6.5 5.5 a 6.611 6.611 0 0 0 5.9 -3.6 l -3.7 -1.6 C 48.7 21.1 45 20.6 45 18.6 Z M 33.8 13.8 c -1.3 -0.3 -2.1 -0.7 -2.2 -1.5 c 0.1 -1.9 3 -1.9 4.7 -0.1 l 2.7 -2 a 6.884 6.884 0 0 0 -5.6 -2.6 c -3 0 -5.9 1.7 -5.9 4.8 s 2.4 4.7 5.1 5.1 c 1.3 0.2 2.8 0.7 2.8 1.6 c -0.1 1.7 -3.7 1.6 -5.4 -0.3 l -2.6 2.4 A 7.258 7.258 0 0 0 33 24.1 c 3 0 6.3 -1.7 6.5 -4.8 C 39.6 15.3 36.7 14.3 33.8 13.8 Z M 21.4 23.9 h 4.2 V 7.8 H 21.5 V 23.9 Z M 91.2 7.8 H 85.1 v 6.8 l 4.1 3.6 V 11.6 h 2.2 c 1.4 0 2.1 0.7 2.1 1.7 v 5 c 0 1 -0.6 1.8 -2.1 1.8 H 85.1 v 3.8 h 6.1 c 3.3 0 6.4 -1.6 6.4 -5.3 V 13.2 C 97.6 9.4 94.5 7.8 91.2 7.8 Z M 61.1 7.6 c -3.4 0 -6.8 1.8 -6.8 5.5 v 5.5 c 0 3.7 3.4 5.5 6.8 5.5 s 6.8 -1.8 6.8 -5.5 V 13.1 C 67.9 9.4 64.5 7.6 61.1 7.6 Z m 2.7 11 c 0 1.2 -1.3 1.8 -2.6 1.8 s -2.7 -0.6 -2.7 -1.8 V 13.1 c 0 -1.2 1.3 -1.8 2.6 -1.8 s 2.7 0.6 2.7 1.8 Z m 19 -5.5 c -0.1 -3.8 -2.7 -5.3 -6.1 -5.3 H 70.1 V 23.9 h 4.2 V 18.8 H 75 l 3.8 5.1 H 84 l -4.5 -5.5 C 81.6 17.8 82.8 16.1 82.8 13.1 Z m -6 2.2 H 74.4 V 11.6 h 2.4 A 1.853 1.853 0 1 1 76.8 15.3 Z");
-    }
-  }
 }

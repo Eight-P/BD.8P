@@ -1,4 +1,4 @@
-// - T1.compatibility v0.1.03
+// - T1.compatibility v0.1.04
 // Compatibility with plugins
 
 
@@ -7,10 +7,12 @@
 // - ReadAllNotificationsButton by DevilBro (v1.6.8)
 // - SpotifyControls by DevilBro (v1.1.7)
 // - CollapsibleUI by programmer2514 (v1.1.0)
+// - ChannelTabs by l0c4lh057 (v2.4.1)
+
 
 
 // -- Hide Channels by Farcrada (v1.2.1)
-// Show/Hide btn
+// - Show/Hide btn
 #toggleChannels {
   filter: brightness(.6) ;
   margin-right: 6px ;
@@ -20,7 +22,7 @@
   &:hover { filter: brightness(1) }
 }
 
-// Server channel sidebar
+// - Server channel sidebar
 .sidebar-2K8pFh {
   transition: none !important ;
   
@@ -42,7 +44,7 @@
 
 
 // -- FriendNotifications by DevilBro (v1.7.5)
-// Online friend counter
+// - Online friend counter
 .guilds-1SWlCJ .scroller-1Bvpku > .listItem-GuPuDH.friendsOnlineWrap-0gZ63m {
   display: flex !important ;
   position: absolute ;
@@ -59,7 +61,7 @@
 
 
 // -- ReadAllNotificationsButton by DevilBro (v1.6.8)
-// "Read all" btn
+// - "Read all" btn
 .guilds-1SWlCJ .scroller-1Bvpku > .listItem-GuPuDH.frame-oXWS21 {
   display: flex !important ;
   position: absolute ;
@@ -113,7 +115,7 @@
 
 
 // -- SpotifyControls by DevilBro (v1.1.7)
-// Sidebar control panel
+// - Sidebar control panel
 .panels-j1Uci_ > .container-6sXIoE { 
   margin: 0px ;
   min-height: 44px ;
@@ -123,7 +125,7 @@
 
 
 // -- CollapsibleUI by programmer2514 (v1.1.0)
-// Server channel sidebar
+// - Server channel sidebar
 .sidebar-2K8pFh[style="display: none;"] {
   display: flex !important ;
   width: 0 ;
@@ -144,11 +146,131 @@
   }
 }
 
-// Serverbar
+// - Serverbar
 .guilds-1SWlCJ[style="display: none;"] + .base-3dtUhz {
     
   // Home search, Server settings
   .searchBar-6Kv8R2, .container-1taM1r {
     display: none ;
+  }
+}
+
+
+// -- ChannelTabs by l0c4lh057 (v2.4.1)
+#channelTabs-container {
+  
+  // - Tabbar
+  .channelTabs-tabContainer {
+    background: none ;
+    
+    + .channelTabs-favContainer {
+      box-shadow: 0 .5px 0 var(--header-secondary) ;
+      margin-bottom: 1px ;
+    }
+  }
+  
+  // - Tab item
+  .channelTabs-tab {
+    color: var(--channels-default) ;
+    border-radius: 0 ;
+    
+    // Name
+    .channelTabs-tabName {
+      height: var(--channelTabs-tabHeight) ;
+      line-height: var(--channelTabs-tabHeight) ;
+      font-size: 17px ;
+    }
+    
+    // Name - hover
+    &:not(.channelTabs-selected):hover .channelTabs-tabName {
+      color: var(--interactive-hover) ;
+    }
+    
+    // Name - tab active
+    &.channelTabs-selected .channelTabs-tabName{
+      color: var(--interactive-hover) ;
+    }
+    
+    // Unread messages
+    .channelTabs-unreadBadge {
+      background: none ;
+      color: var(--text-normal) ;
+    }
+    
+    // Unread mentions 
+    .channelTabs-mentionBadge {
+      @include unread_indicator_inline() ;
+    }
+    
+    // Close btn
+    .channelTabs-closeTab {
+      height: var(--channelTabs-tabHeight) ;
+      line-height: var(--channelTabs-tabHeight) ;
+      font-size: var(--channelTabs-tabHeight) ;
+      background: none ;
+      color: var(--interactive-normal) ;
+      visibility: hidden ;
+      
+      &:hover {
+        color: var(--interactive-hover) ;
+      }
+    }
+    
+    // Close btn - hover
+    &:hover .channelTabs-closeTab{
+      visibility: visible ;
+    }
+  }
+  
+  // - New tab btn
+  .channelTabs-newTab {
+    bottom: unset ;
+    padding: 8px 6px;
+    height: var(--channelTabs-tabHeight) ;
+    width: var(--channelTabs-tabHeight) ;
+    line-height: var(--channelTabs-tabHeight) ;
+    font-size: var(--channelTabs-tabHeight) ;
+    background: none ;
+    color: var(--interactive-normal) ;
+    
+    &:hover {
+      color: var(--interactive-hover) ;
+    }
+  }
+    
+  // - Bookmark item
+  .channelTabs-fav {
+    cursor: pointer ;
+    color: var(--channels-default) ;
+    
+    // Name
+    .channelTabs-favName {
+      font-size: 15px ;
+    }
+    
+    &:hover {
+      background: var(--background-modifier-hover) ;
+      
+      .channelTabs-favName {
+        color: var(--interactive-hover) ;
+      }
+    }
+    
+    // Unread indicators
+    .channelTabs-mentionBadge, .channelTabs-unreadBadge {
+      background: none ;
+      color: var(--text-normal) ;
+    }
+    
+    // Normal state
+    .channelTabs-mentionBadge.channelTabs-noMention, .channelTabs-unreadBadge.channelTabs-noUnread {
+      color: var(--text-muted) ;
+    }
+    
+    // Unread mentions 
+    .channelTabs-mentionBadge:not(.channelTabs-noMention) {
+      @include unread_indicator_inline() ;
+      margin-bottom: -2px ;
+    }
   }
 }
