@@ -1,13 +1,13 @@
-// - T1.popouts v0.1.04
+// - T1.popouts v0.1.1
 // Text chat / Server options / Context menus / Search / User status
 
-// Popouts container
+// - Popouts container
 .layerContainer-yqaFcK {
   overflow: hidden ;
 }
 
-// - Chat text input
-// Autocomplete popout
+
+// - Autocomplete popout
 .chatContent-a9vAAp .form-2fGMdU .autocomplete-1vrmpx {
   background-color: var(--background-tertiary) !important ;
       
@@ -23,6 +23,7 @@
     }
   }
 }
+
 
 // - Gif, Sticker, Emoji, BD emotes Picker
 .layerContainer-yqaFcK {
@@ -61,8 +62,7 @@
   }
 }
 
-
-// - BD Emotes menu popout
+// BD Emotes menu popout
 .bd-emote-menu {
   
   // Emotes category header
@@ -76,7 +76,7 @@
 }
 
 
-// -- Context menus
+// - Context menus
 .layer-v9HyYc .menu-3sdvDG {
   background: var(--background-tertiary) ;
   
@@ -136,7 +136,6 @@
 }
 
 
-// -- Search
 // - Searchbar options popout
 .layer-v9HyYc > #search-results {
   background: var(--background-secondary-alt) ;
@@ -188,7 +187,6 @@
       
     // Header - channel name
     .channelName-1JRO3C {
-      background: none ;
       background: var(--background-secondary-alt) ;
       color: var(--interactive-normal) ;
       justify-content: center ;
@@ -246,8 +244,60 @@
 }
 
 
-// -- User status 
-// - shorthand popout
+// - Threads popout
+.browser-2NpbWS.container-7uh5fX {
+  background: var(--background-tertiary) ;
+  
+  // Header
+  .header-1VS4tm {
+    background: var(--background-secondary-alt) ;
+    
+    // "Threads"
+    .title-wn-Ecb {
+      color: var(--text-normal) ;
+    }
+    
+    // Active/Archived Buttons
+    .tab-PQvTH4 {
+      background: none !important ;
+    }
+    
+    // Create new thread button
+    .createButton-nlV8qH {
+      @include button_normal();
+    }
+  }
+  
+  // Thread item
+  .container-2I9Hud {
+    background: none ;
+    border: none ;
+    padding: 15px 0 ;
+
+    &:hover .threadName-2iLyXl{
+      background: var(--background-secondary) ;
+    }
+
+    .threadName-2iLyXl {
+      background: var(--background-secondary-alt) ;
+      color: var(--interactive-normal) ;
+      text-align: center ;
+      margin-bottom: 4px ;
+    }
+
+    .subtext-pjj1kJ {
+      margin-left: 8px ;
+    }
+  }
+  
+  // Public/Private Buttons
+  .tab-17bjMB {
+    background: none !important ;
+  }
+}
+
+
+// - User status shorthand popout
 #status-picker {
   background: var(--background-tertiary) ;
   
@@ -268,7 +318,7 @@
 }
  
 
-// -- Tooltips
+// - Tooltips
 .layerContainer-yqaFcK .tooltip-2QfLtc {
   background: var(--background-tertiary) ;
   

@@ -1,4 +1,4 @@
-// - T1.compatibility v0.1.04
+// - T1.compatibility v0.1.041
 // Compatibility with plugins
 
 
@@ -7,7 +7,7 @@
 // - ReadAllNotificationsButton by DevilBro (v1.6.8)
 // - SpotifyControls by DevilBro (v1.1.7)
 // - CollapsibleUI by programmer2514 (v1.1.0)
-// - ChannelTabs by l0c4lh057 (v2.4.1)
+// - ChannelTabs by l0c4lh057 (v2.5.1)
 
 
 
@@ -156,7 +156,7 @@
 }
 
 
-// -- ChannelTabs by l0c4lh057 (v2.4.1)
+// -- ChannelTabs by l0c4lh057 (v2.5.1)
 #channelTabs-container {
   
   // - Tabbar
@@ -171,14 +171,12 @@
   
   // - Tab item
   .channelTabs-tab {
+    background: var(--background-modifier-hover) ;
     color: var(--channels-default) ;
     border-radius: 0 ;
     
-    // Name
-    .channelTabs-tabName {
-      height: var(--channelTabs-tabHeight) ;
-      line-height: var(--channelTabs-tabHeight) ;
-      font-size: 17px ;
+    &:hover {
+      background:  var(--background-modifier-active) ;
     }
     
     // Name - hover
@@ -193,26 +191,21 @@
     
     // Unread messages
     .channelTabs-unreadBadge {
-      background: none ;
+      background: var(--background-secondary) ;
       color: var(--text-normal) ;
-    }
-    
-    // Unread mentions 
-    .channelTabs-mentionBadge {
-      @include unread_indicator_inline() ;
     }
     
     // Close btn
     .channelTabs-closeTab {
-      height: var(--channelTabs-tabHeight) ;
-      line-height: var(--channelTabs-tabHeight) ;
-      font-size: var(--channelTabs-tabHeight) ;
-      background: none ;
-      color: var(--interactive-normal) ;
+      margin: 2px ;
+      background: var(--background-primary);
+      color: var(--interactive-hover) ;
+      border-radius: 5px ;
       visibility: hidden ;
       
       &:hover {
-        color: var(--interactive-hover) ;
+        color: black ;
+        background-color: var(--header-secondary) ;
       }
     }
     
@@ -225,11 +218,12 @@
   // - New tab btn
   .channelTabs-newTab {
     bottom: unset ;
-    padding: 8px 6px;
+    padding: 6px ;
+    margin: 2px 0 ;
     height: var(--channelTabs-tabHeight) ;
     width: var(--channelTabs-tabHeight) ;
     line-height: var(--channelTabs-tabHeight) ;
-    font-size: var(--channelTabs-tabHeight) ;
+    font-size: min(var(--channelTabs-tabHeight), 25px);
     background: none ;
     color: var(--interactive-normal) ;
     
@@ -237,16 +231,10 @@
       color: var(--interactive-hover) ;
     }
   }
-    
+  
   // - Bookmark item
   .channelTabs-fav {
     cursor: pointer ;
-    color: var(--channels-default) ;
-    
-    // Name
-    .channelTabs-favName {
-      font-size: 15px ;
-    }
     
     &:hover {
       background: var(--background-modifier-hover) ;
@@ -272,5 +260,19 @@
       @include unread_indicator_inline() ;
       margin-bottom: -2px ;
     }
+  }
+}
+
+// - Settings btn
+#channelTabs-settingsMenu {
+  background: none !important ;
+  cursor: pointer ;
+  
+  rect {
+    fill: var(--interactive-normal) ;
+  }
+  
+  &:hover rect {
+    fill: var(--interactive-hover) ;
   }
 }

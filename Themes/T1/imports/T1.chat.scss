@@ -1,4 +1,4 @@
-// - T1.chat v0.1.11
+// - T1.chat v0.1.2
 // Text chat, Voice chat
 
 // Title bar sperator line
@@ -155,6 +155,14 @@
   
   // Reply | &.hasReply-34In-r { }
   // System Message (msg pinned, user joined server, ..) | &.isSystemMessage-2MkNHd { }
+  
+  // Thread
+  &.hasThread-2k82W0 {
+    
+    .container-3hZ-gs {
+      background: none ;
+    }
+  }
   
   
   // - Message Buttons 
@@ -525,6 +533,137 @@
 }
 
 
+// - Threads sidebar(split-view) (beta)
+// Fullscreen
+@media (min-width: 1151px) {
+  .threadSidebar-1o3BTy {
+    background: none ;
+    
+    .chat-15Vmww:before, .chat-1cCjJ5:before{
+      display: none ;
+    }
+    
+    // Create thread
+    > .container-2w6o5e {
+
+      // Content options 
+      .formSection-33c8Tg {
+
+        // Name text input
+        .input-cIJ7To {
+          background: none !important ;
+          border: 1px solid var(--background-modifier-accent) !important ;
+        }
+
+        // Starter-Message text input
+        .channelTextArea-3O-WhA {
+          background: none !important ;
+          border: 1px solid var(--background-modifier-accent) !important ;
+        }
+      }
+    }
+  }
+}
+// Popout
+@media (max-width: 1150px) {
+  .threadSidebar-1o3BTy {
+    top: 48px ;
+    background: var(--background-secondary-alt) ;
+    
+    @include shadow_effect("box_1");
+    
+    // Create thread
+    > .container-2w6o5e {
+
+      // Content options 
+      .formSection-33c8Tg {
+
+        // Name text input
+        .input-cIJ7To {
+          background: var(--background-tertiary) ;
+          border: none ;
+        }
+
+        // Starter-Message text input
+        .channelTextArea-3O-WhA {
+          background: var(--background-tertiary) ;
+          border: none ;
+        }
+      }
+    }
+    
+    // Thread Chat
+    > .chat-15Vmww {
+      
+      // Thread name
+      .children-19S4PO {
+        justify-content: center ;
+      }
+      
+      .messagesWrapper-1sRNjr {
+        background: var(--background-tertiary) ;
+      }
+      
+      // Text input
+      .form-2fGMdU {
+        margin: 0 ;
+      }
+    }
+  }
+}
+
+// Threads general
+.threadSidebar-1o3BTy {
+  filter: none ;
+  border: none ;
+  border-radius: 0 ;
+  z-index: 102 ;
+  
+  // Header section
+  .container-1r6BKw {
+    
+    // Thread name
+    .children-19S4PO {
+      margin-left: 8px ;
+    }
+  }
+  
+  // Threads icon
+  .iconWrapper-L3hQuc {
+    display: none ;
+  }
+  
+  // Create thread
+  .container-2w6o5e {
+    // Content options 
+    .formSection-33c8Tg {
+
+      // Name text input
+      .input-cIJ7To {
+        border-radius: 0 ;
+      }
+
+      // Starter-Message text input
+      .channelTextArea-3O-WhA {
+        border-radius: 0 ;
+
+        .channelTextAreaInner-1WnnRS {
+          background: none ;
+          border: none ;
+        }
+      }
+    }
+
+    // Create thread btn
+    .submitButton-10dlpk {
+      @include button_normal();
+    }
+  }
+  
+  // Thread Chat
+//  .chat-15Vmww { }
+}
+
 // - Voicecall view (beta)
 .callContainer-36WRfH {
   
@@ -592,9 +731,8 @@
   }
   
   
-  // Left side (non-grid) users in voice cards
-  
-//  .tile-2GMyYQ .tile-2gi3tr {
+  // User cards in voice
+  //  .tile-2GMyYQ .tile-2gi3tr {
   .tile-2gi3tr {
     background: none ;
     margin-right: 5px ;
