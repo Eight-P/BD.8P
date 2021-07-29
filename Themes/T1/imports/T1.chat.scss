@@ -1,4 +1,4 @@
-// - T1.chat v0.1.2
+// - T1.chat v0.1.21
 // Text chat, Voice chat
 
 // Title bar sperator line
@@ -41,10 +41,11 @@
     
     // "Mark As Read"
     &.newMessagesBar-265mhP {
-      position: absolute ;
-      top: -36px ;
-//      right: 0 ;
-//      left: 0 ;
+      top: -4px ;
+        
+      + .scroller-2LSbBU {
+        margin-top: 24px ;
+      }
     }
   }
 
@@ -612,7 +613,7 @@
   }
 }
 
-// Threads general
+// Threads create / chat
 .threadSidebar-1o3BTy {
   filter: none ;
   border: none ;
@@ -635,6 +636,8 @@
   
   // Create thread
   .container-2w6o5e {
+    overflow: auto ;
+    
     // Content options 
     .formSection-33c8Tg {
 

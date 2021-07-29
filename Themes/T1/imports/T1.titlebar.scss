@@ -1,4 +1,4 @@
-// - T1.titlebar v0.1.03
+// - T1.titlebar v0.1.04
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -246,7 +246,7 @@
   border-radius: 6px !important ;
   background-color: var(--background-primary) ;
   text-align: center ;
-  z-index: 1000 ;
+  z-index: 2000 ;
   
   @include shadow_effect("box_2");
 

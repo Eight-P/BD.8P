@@ -1,4 +1,4 @@
-// - T1.background v0.1.014
+// - T1.background v0.1.015
 // Background image + required transparency
 
 // Totally necessary mixin
@@ -92,13 +92,4 @@
 }
 
 // Roles Settings
-.page-3njELR  {
-  .titleContainer-2CXtJo { @include no_BG() }
-  .header-2mZ9Ov { @include no_BG() }
-}
-
-
-
-
-
-
+.page-3njELR  .titleContainer-2CXtJo { @include no_BG() }

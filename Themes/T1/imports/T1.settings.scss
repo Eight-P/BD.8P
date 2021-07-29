@@ -1,4 +1,4 @@
-// - T1.settings v0.1.02
+// - T1.settings v0.1.03
 // Client / Guilds / Channels
 
 // - Theme version info
@@ -61,89 +61,51 @@
 
 
 // - Server settings
+// Roles
 .layer-3QrUeG:not(.baseLayer-35bLyl) {
-  
-  // - "Roles" Tab ( ohh Discord, what are you doing... )
   
   // Default permission button
   .container-_phMUq { background: none }
   
-  // - Edit Roles view
+  // - Edit Role
   .contentColumn-2hrIYH > .page-3njELR {
     
-    // Sidebar
+    // Roles list Sidebar
     .list-I3aHXn::-webkit-scrollbar { display: none }
     
-    // Content
-    // Navbar headers
-    .header-2mZ9Ov { 
-      position: fixed ;
-      top: 0 ;
-      width: 460px ;
-      padding: 60px 0 0 0 ;
+    // Permissions content
+    .scroller-Utb7tO, .scroller-3ZpLaI, .container-1Saj_P {
+      background: var(--background-secondary-alt) ;
       
-      // Bot role info
-      .warning-3C2pOH {
-        position: absolute ;
-        top: 108px ;
-        left: 0 ;
-        width: auto ;
-        background: none ;
-        border: none ; ;
-        padding: 0 ;
-        z-index: 1 ;
-        
-        .text-2J5crT {
-          display: none ;
-        }
-        
-        &:hover .text-2J5crT {
-          display: block ;
-          background: var(--background-tertiary) ;
-          border: 1px solid var(--info-warning-foreground) ;
-          padding: 10px ;
-        }
-        
-        ~ .tabBar-11f3uI {
-          margin-left: 40px ;
-        }
+      .header-2mZ9Ov {
+        background: var(--background-secondary-alt) ;
       }
     }
     
-    // List container ( "Display"/"Permission" )
-    .contentContainer-14yMzC {
-      border-right: 12px solid var(--scrollbar-auto-track) ;
-      
-      > .scrollerBase-289Jih {
-        overflow: hidden ;
-        margin-right: -12px ;
-        
-        // Display
-        &.scroller-3ZpLaI {
-          margin-top: 175px ;
-          height: calc(100% - 175px) ;
-        }
-        
-        // Permission 
-        &.scroller-Utb7tO {
-          margin-top: 225px ;
-          height: calc(100% - 225px) ;
-        }
+    // Info on Bot roles
+    .warning-3C2pOH {
+      position: absolute ;
+      top: 108px ;
+      left: 8px ;
+      width: auto ;
+      background: none ;
+      border: none ; ;
+      padding: 0 ;
+      z-index: 1 ;
+
+      .text-2J5crT {
+        display: none ;
       }
-    }
-    
-    // "Manage Members" 
-    .container-1Saj_P {
-      margin-top: 225px ;
-      overflow: hidden ;
-      margin-right: -12px ;
-      
-      // Navbar header
-      > .headerContainer-1X2CD8 { top: 0px }
-      
-      // Memberslist container
-      > .list-3a9fyp { 
-        padding-bottom: 250px ;
+
+      &:hover .text-2J5crT {
+        display: block ;
+        background: var(--background-tertiary) ;
+        border: 1px solid var(--info-warning-foreground) ;
+        padding: 10px ;
+      }
+
+      ~ .tabBar-11f3uI {
+        margin-left: 40px ;
       }
     }
   }
