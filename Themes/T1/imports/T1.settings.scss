@@ -1,8 +1,8 @@
-// - T1.settings v0.1.03
+// - T1.settings v0.1.031
 // Client / Guilds / Channels
 
 // - Theme version info
-.layer-3QrUeG .info-1VyQPT:before {
+.layer-3QrUeG:not(.baseLayer-35bLyl) .socialLinks-3jqNFy + .info-1VyQPT:before {
   content: "T1 - Theme: \a v#{$T1_version} by Eight_P" !important;
   display: block !important;
   font-size: 12px !important;

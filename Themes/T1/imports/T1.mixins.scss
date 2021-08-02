@@ -1,9 +1,9 @@
-// - T1.mixins v0.1.045
+// - T1.mixins v0.1.046
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
-// important global Notification
-@mixin note_critical ($text, $display:none) {
+// Important notification
+@mixin note_critical ($text, $display:inline) {
   &::before {
     content: $text ;
     display: $display ;
@@ -26,16 +26,20 @@
 }
 
 
-// less important Notification (User Settings-tab only)
-@mixin note_settings ($text, $display) {
+// Notification (user settings only)
+@mixin note_settings ($text, $display:block) {
   
-//  .layer-3QrUeG[aria-label="USER_SETTINGS"]::before {
-  .layer-3QrUeG .socialLinks-3jqNFy::before {
+  .layer-3QrUeG:not(.baseLayer-35bLyl) .socialLinks-3jqNFy::before {
     content: $text ;
-    display: var(#{$display}, block) ;
+    display: $display ;
+    
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    right: 0 ;
+    padding: 4px 8px;
     background: var(--background-primary) ;
     color: var(--text-normal) ;
-    padding: 4px 8px;
     text-align: center ;
     font-size: 14px ;
     font-weight: 600 ;
@@ -43,27 +47,17 @@
     letter-spacing: .5px ;
     z-index: 2000 ;
     white-space: break-spaces ;
-//    margin: 5px auto 0 auto ;
-//    border-radius: 4px ;
     
     @include shadow_effect("box_2");
-    
-    top: 0 ;
-    left: 50% ;
-    width: 100vw ;
-    transform: translateX(-50%);
-    position: fixed ;
-    margin: 5px 0 0 0 ;
   }
   
   .platform-win .layer-3QrUeG .socialLinks-3jqNFy::before {
     top: 22px ;
-    margin: 0 ;
   }
 }
 
 
-// global Scrollbar
+// global Scrollbar | @include scrollbar();
 @mixin scrollbar () {
   &::-webkit-scrollbar { 
     width: 12px ;
@@ -87,23 +81,23 @@
   &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
 }
 
+
 // Buttons (beta)
 // normal Button Design | @include button_normal();
 @mixin button_normal () {
   background-color: var(--background-modifier-selected) !important ;
   color: var(--channels-default) !important ;
   border: none !important ;
+  font-weight: 600 ;
   
   // Text inside
-  .contents-18-Yxp { font-weight: 600 }
+  * { font-weight: inherit }
 
   &:hover {
-//    background-color: var(--interactive-hover) ;
     background-color: var(--header-secondary) !important ;
     color: black !important ;
-//    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.75));
-    
-    .contents-18-Yxp { font-weight: 600 }
+
+//    @include shadow_effect("box_2");
   }
 }
 

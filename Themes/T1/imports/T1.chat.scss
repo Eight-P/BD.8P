@@ -1,21 +1,38 @@
-// - T1.chat v0.1.21
+// - T1.chat v0.1.22
 // Text chat, Voice chat
 
-// Title bar sperator line
+// Header/Chat sperator line
 .content-yTz4x3::before { display: none }
 
+// Inline Mentions
+.mention.wrapper-3WhCwL {
+  color: var(--Blurple) !important;
+  background-color: transparent !important;
+  border-radius: 3px ;
+  padding: 0 2px ;
+  font-weight: 500 ;
 
-// - Message scoller elms
+  &:hover {
+    background-color: var(--Blurple-light) !important;
+    text-decoration: underline ;
+  }
+}
+
+
+// - Chat container
 .chatContent-a9vAAp {
   z-index: 101 ; // for "Mark As Read" 
+  width: -webkit-fill-available ; // for search results 
   
   // "#" Icon at the channels very top
-  .emptyChannelIcon-cc932w { display: none }
+  .container-3RCQyg {
+     .emptyChannelIcon-cc932w, .iconWrapper-L3hQuc { display: none }
+  }
   
   // "Mark As Read" and "Jump To Present" 
   .barBase-1c2Rfb {
-    right: 0 ;
-    left: 0 ;
+    right: 5px ;
+    left: 5px ;
     background: var(--background-primary);
     opacity: 1 ;
     border-radius: 5px ;
@@ -96,234 +113,6 @@
     
     // messages
     > .wrapper-1F5TKx { background: none !important }
-  }
-}
-
-
-// - Messages (cozy only for now)
-.chatContent-a9vAAp .message-2qnXI6.cozy-3raOZG {
-  background: none ;
-  padding: 2px 32px 0px 4.125rem !important ;
-  
-  &:hover { 
-    background: none ;
-  }
-  
-  // Highlight border-left (Mention, Clyde, ..)
-  &:before { display: none }
-  
-  // Preview of replied msg
-  > .repliedMessage-VokQwo { 
-    height: 20px ;
-  }
-  
-  // Message container
-  > .contents-2mQqc9 { 
-    padding: 0 0 2px 6px ;
-    
-    // Profile image
-    .avatar-1BDn8e { 
-      width: 2.5rem ;
-      height: 2.5rem ;
-      left: 0.8125rem ;
-      margin-top: .125rem ;
-    }
-    
-    // Msg Header (Name, Date, ..)
-    .header-23xsNx { 
-      padding: 2px 0 ;
-      margin-left: 0 ;
-    }
-  }
-  
-  // Mention
-  &.mentioned-xhSam7 > .contents-2mQqc9{
-    border-left: solid 2px var(--border-mentioned) ;
-    background: var(--background-mentioned) ;
-  }
-  
-  // Clyde (client-side info/error messages)
-  &.ephemeral-1PsL1r > .contents-2mQqc9 {
-    border-left: solid 2px var(--Blurple) ;
-    background: var(--Blurple-light) ;
-  }
-  
-  // Selected for reply
-  &.replying-1x3H0T > .contents-2mQqc9 {
-    border-right: solid 2px var(--header-secondary) ;
-    background: var(--background-modifier-hover) ;
-  }
-  
-  // Reply | &.hasReply-34In-r { }
-  // System Message (msg pinned, user joined server, ..) | &.isSystemMessage-2MkNHd { }
-  
-  // Thread
-  &.hasThread-2k82W0 {
-    
-    .container-3hZ-gs {
-      background: none ;
-    }
-  }
-  
-  
-  // - Message Buttons 
-  // Main container / Msg highlight hover effect
-  .buttonContainer-DHceWr {
-    position: static ;
-    
-    &:hover:after {
-      content: "";
-      position: absolute ;
-      top: 2px ;
-      left: 5px ;
-      bottom: 0px ;
-      right: 2px ;
-      pointer-events: none ;
-      background: rgba(255, 255, 255, 0.05) ; // black or white ? idk
-    }
-  }
-  
-  &.mentioned-xhSam7, &.ephemeral-1PsL1r { 
-    .buttonContainer-DHceWr:hover:after {
-      right: 32px ;
-    }
-  }
-  
-  // Btn container
-  .buttons-cl5qTG { 
-    top: 3px ;
-    padding: 0 1px 0 0 ;
-    
-    // Btn container grid
-    .wrapper-2aW0bm {
-      height: 24px ;
-      background: none ;
-      box-shadow: none ;
-
-      // Button
-      .button-1ZiXG9 {
-        padding: 0 4px ;
-        background: none ;
-      }
-    }
-  }
-  
-  // Btn container on reply Msg
-  &.hasReply-34In-r .buttons-cl5qTG { 
-    top: 27px ;
-  }
-  
-  // Message Buttons - Concatenating Msg / System Message
-  &:not(.groupStart-23k01U), &.isSystemMessage-2MkNHd {
-    
-    // Buttons container
-    .wrapper-2aW0bm {
-      height: 32px ;
-      
-      // Button
-      .button-1ZiXG9 {
-        display: none ;
-        padding: 4px ;
-
-        &:last-child {
-          display: flex ;
-        }
-      }
-      
-      &:hover {
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) ;
-        
-        .button-1ZiXG9 {
-          display: flex ;
-          background-color: var(--background-tertiary) ;
-        }
-      }
-    }
-  }
-}
-
-// BD emotes
-.message-2qnXI6 .emotewrapper {
-  margin: 0 ;
-
-  // - Mutli-Emotes
-  .emotetr, .emotebr, .emotebl  {
-    transform: none ;
-  }
-
-  // Top-right, Bottom-right
-  .emotetr, .emotebr {
-    margin-left: -0.25rem ;
-  }
-
-  // Fav emote btn
-  .fav {
-    top: 0 ;
-    right: 0 ;
-    width: .65rem ;
-    height: .65rem ;
-    z-index: 1 ;
-    padding: .1rem ;
-    background-repeat: no-repeat ;
-    background-color: var(--background-secondary) ;
-    background-size: cover ;
-    box-sizing: content-box ;
-
-    @mixin Icon_star ($color:"rgb(124, 125, 126)", $stroke:"rgb(0, 0, 0)", $stroke-width:"1") {
-
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#{$color}" stroke="#{$stroke}" stroke-width="#{$stroke-width}"><path  d="M21.924 8.61789C21.77 8.24489 21.404 8.00089 21 8.00089H15.618L12.894 2.55389C12.555 1.87689 11.444 1.87689 11.105 2.55389L8.38199 8.00089H2.99999C2.59599 8.00089 2.22999 8.24489 2.07599 8.61789C1.92199 8.99089 2.00699 9.42289 2.29299 9.70789L6.87699 14.2919L5.03899 20.7269C4.92399 21.1299 5.07199 21.5619 5.40999 21.8089C5.74999 22.0569 6.20699 22.0659 6.55399 21.8329L12 18.2029L17.445 21.8329C17.613 21.9449 17.806 22.0009 18 22.0009C18.207 22.0009 18.414 21.9369 18.59 21.8089C18.928 21.5619 19.076 21.1299 18.961 20.7269L17.123 14.2919L21.707 9.70789C21.993 9.42289 22.078 8.99089 21.924 8.61789Z"></path></svg>');
-    }
-
-    @include Icon_star() ;
-
-    &.active { 
-      @include Icon_star("rgb(195, 173, 71)");
-
-      &:hover { @include Icon_star("rgba(0,0,0,0") }
-    }
-
-    &:hover { @include Icon_star("rgb(195, 173, 71)",) }
-  }
-}
-
-// BD emote modifier
-.message-2qnXI6:hover .emote.stop-animation {
-  &.emoteflip,.emotespinflip { transform:scaleX(-1) }
-  &.emotespin { animation:1s emote-spin infinite linear }
-  &.emote1spin { animation:1s emote-spin-reverse infinite linear }
-  &.emotespin2 { animation:.5s emote-spin infinite linear }
-  &.emote2spin { animation:.5s emote-spin-reverse infinite linear }
-  &.emotespin3 { animation:.2s emote-spin infinite linear }
-  &.emote3spin { animation:.2s emote-spin-reverse infinite linear }
-  &.emotepulse { animation:1s emote-pulse infinite linear }
-  &.emoteshake { animation:1s emote-shake infinite linear }
-  &.emoteflap { transform:scaleY(-1) }
-  &.emoteshake2 { animation:emote-shake2 .3s linear infinite }
-  &.emoteshake3 { animation:emote-shake3 .1s linear infinite }
-}
-
-// Message reactions
-.message-2qnXI6 .reaction-1hd86g {
-  background-color: var(--background-modifier-accent);
-  border: none;
-  border-radius:4px;
-
-  &:hover { 
-    background-color: var(--background-accent) ;
-  }
-
-  // Active reaction 
-  &.reactionMe-wv5HKu {
-    background-color: var(--Blurple-light) ;
-
-    &:hover { 
-      background-color: var(--Blurple-light-hover) ;
-    }
-
-    // number 
-    .reactionCount-2mvXRV { 
-      color: var(--Blurple) ;
-    }
   }
 }
 
@@ -519,101 +308,238 @@
 }
 
 
-// - Inline Mentions
-.mention.wrapper-3WhCwL {
-  color: var(--Blurple, rgb(114, 137, 218)) !important;
-  background-color: transparent !important;
-  border-radius: 3px ;
-  padding: 0 2px ;
-  font-weight: 500 ;
-
-  &:hover {
-    background-color: var(--Blurple-light, rgba(114, 137, 218, 0.2)) !important;
-    text-decoration: underline ;
-  }
-}
-
-
-// - Threads sidebar(split-view) (beta)
-// Fullscreen
-@media (min-width: 1151px) {
-  .threadSidebar-1o3BTy {
+// - Messages (cozy only for now)
+.chatContent-a9vAAp .message-2qnXI6.cozy-3raOZG {
+  background: none ;
+  padding: 2px 32px 0px 4.125rem !important ;
+  
+  &:hover { 
     background: none ;
+  }
+  
+  // Highlight border-left (Mention, Clyde, ..)
+  &:before { display: none }
+  
+  // Preview of replied msg
+  > .repliedMessage-VokQwo { 
+    height: 20px ;
+  }
+  
+  // Message container
+  > .contents-2mQqc9 { 
+    padding: 0 0 2px 6px ;
     
-    .chat-15Vmww:before, .chat-1cCjJ5:before{
-      display: none ;
+    // Profile image
+    .avatar-1BDn8e { 
+      width: 2.5rem ;
+      height: 2.5rem ;
+      left: 0.8125rem ;
+      margin-top: .125rem ;
     }
     
-    // Create thread
-    > .container-2w6o5e {
+    // Msg Header (Name, Date, ..)
+    .header-23xsNx { 
+      padding: 2px 0 ;
+      margin-left: 0 ;
+    }
+  }
+  
+  // Mention
+  &.mentioned-xhSam7 > .contents-2mQqc9{
+    border-left: solid 2px var(--border-mentioned) ;
+    background: var(--background-mentioned) ;
+  }
+  
+  // Clyde (client-side info/error messages)
+  &.ephemeral-1PsL1r > .contents-2mQqc9 {
+    border-left: solid 2px var(--Blurple) ;
+    background: var(--Blurple-light) ;
+  }
+  
+  // Selected for reply
+  &.replying-1x3H0T > .contents-2mQqc9 {
+    border-right: solid 2px var(--header-secondary) ;
+    background: var(--background-modifier-hover) ;
+  }
+  
+  // Reply | &.hasReply-34In-r { }
+  // System Message (msg pinned, user joined server, ..) | &.isSystemMessage-2MkNHd { }
+  
+  // Thread
+  &.hasThread-2k82W0 {
+    
+    .container-3hZ-gs {
+      background: none ;
+    }
+  }
+  
+  
+  // - Message Buttons 
+  // Main container / Msg highlight hover effect
+  .buttonContainer-DHceWr {
+    position: static ;
+    
+    &:hover:after {
+      content: "";
+      position: absolute ;
+      top: 2px ;
+      left: 5px ;
+      bottom: 0px ;
+      right: 2px ;
+      pointer-events: none ;
+      background: rgba(255, 255, 255, 0.05) ; // black or white ? idk
+    }
+  }
+  
+  &.mentioned-xhSam7, &.ephemeral-1PsL1r { 
+    .buttonContainer-DHceWr:hover:after {
+      right: 32px ;
+    }
+  }
+  
+  // Btn container
+  .buttons-cl5qTG { 
+    top: 3px ;
+    padding: 0 1px 0 0 ;
+    
+    // Btn container grid
+    .wrapper-2aW0bm {
+      height: 24px ;
+      background: none ;
+      box-shadow: none ;
 
-      // Content options 
-      .formSection-33c8Tg {
+      // Button
+      .button-1ZiXG9 {
+        padding: 0 4px ;
+        background: none ;
+      }
+    }
+  }
+  
+  // Btn container on reply Msg
+  &.hasReply-34In-r .buttons-cl5qTG { 
+    top: 27px ;
+  }
+  
+  // Message Buttons - Concatenating Msg / System Message
+  &:not(.groupStart-23k01U), &.isSystemMessage-2MkNHd {
+    
+    // Buttons container
+    .wrapper-2aW0bm {
+      height: 32px ;
+      
+      // Button
+      .button-1ZiXG9 {
+        display: none ;
+        padding: 4px ;
 
-        // Name text input
-        .input-cIJ7To {
-          background: none !important ;
-          border: 1px solid var(--background-modifier-accent) !important ;
+        &:last-child {
+          display: flex ;
         }
-
-        // Starter-Message text input
-        .channelTextArea-3O-WhA {
-          background: none !important ;
-          border: 1px solid var(--background-modifier-accent) !important ;
+      }
+      
+      &:hover {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) ;
+        
+        .button-1ZiXG9 {
+          display: flex ;
+          background-color: var(--background-tertiary) ;
         }
       }
     }
   }
 }
-// Popout
-@media (max-width: 1150px) {
-  .threadSidebar-1o3BTy {
-    top: 48px ;
-    background: var(--background-secondary-alt) ;
-    
-    @include shadow_effect("box_1");
-    
-    // Create thread
-    > .container-2w6o5e {
+// Emotes
+.message-2qnXI6 {
+  
+  // BD emotes
+  .emotewrapper {
+    margin: 0 ;
 
-      // Content options 
-      .formSection-33c8Tg {
-
-        // Name text input
-        .input-cIJ7To {
-          background: var(--background-tertiary) ;
-          border: none ;
-        }
-
-        // Starter-Message text input
-        .channelTextArea-3O-WhA {
-          background: var(--background-tertiary) ;
-          border: none ;
-        }
-      }
+    // - Mutli-Emotes
+    .emotetr, .emotebr, .emotebl  {
+      transform: none ;
     }
+
+    // Top-right, Bottom-right
+    .emotetr, .emotebr {
+      margin-left: -0.25rem ;
+    }
+
+    // Fav emote btn
+    .fav {
+      top: 0 ;
+      right: 0 ;
+      width: .65rem ;
+      height: .65rem ;
+      z-index: 1 ;
+      padding: .1rem ;
+      background-repeat: no-repeat ;
+      background-color: var(--background-secondary) ;
+      background-size: cover ;
+      box-sizing: content-box ;
+
+      @mixin Icon_star ($color:"rgb(124, 125, 126)", $stroke:"rgb(0, 0, 0)", $stroke-width:"1") {
+
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#{$color}" stroke="#{$stroke}" stroke-width="#{$stroke-width}"><path  d="M21.924 8.61789C21.77 8.24489 21.404 8.00089 21 8.00089H15.618L12.894 2.55389C12.555 1.87689 11.444 1.87689 11.105 2.55389L8.38199 8.00089H2.99999C2.59599 8.00089 2.22999 8.24489 2.07599 8.61789C1.92199 8.99089 2.00699 9.42289 2.29299 9.70789L6.87699 14.2919L5.03899 20.7269C4.92399 21.1299 5.07199 21.5619 5.40999 21.8089C5.74999 22.0569 6.20699 22.0659 6.55399 21.8329L12 18.2029L17.445 21.8329C17.613 21.9449 17.806 22.0009 18 22.0009C18.207 22.0009 18.414 21.9369 18.59 21.8089C18.928 21.5619 19.076 21.1299 18.961 20.7269L17.123 14.2919L21.707 9.70789C21.993 9.42289 22.078 8.99089 21.924 8.61789Z"></path></svg>');
+      }
+
+      @include Icon_star() ;
+
+      &.active { 
+        @include Icon_star("rgb(195, 173, 71)");
+
+        &:hover { @include Icon_star("rgba(0,0,0,0") }
+      }
+
+      &:hover { @include Icon_star("rgb(195, 173, 71)",) }
+    }
+  }
+  
+  // BD emote modifier
+  &:hover .emote.stop-animation {
     
-    // Thread Chat
-    > .chat-15Vmww {
-      
-      // Thread name
-      .children-19S4PO {
-        justify-content: center ;
-      }
-      
-      .messagesWrapper-1sRNjr {
-        background: var(--background-tertiary) ;
-      }
-      
-      // Text input
-      .form-2fGMdU {
-        margin: 0 ;
-      }
+    &.emoteflip,.emotespinflip { transform:scaleX(-1) }
+    &.emotespin { animation:1s emote-spin infinite linear }
+    &.emote1spin { animation:1s emote-spin-reverse infinite linear }
+    &.emotespin2 { animation:.5s emote-spin infinite linear }
+    &.emote2spin { animation:.5s emote-spin-reverse infinite linear }
+    &.emotespin3 { animation:.2s emote-spin infinite linear }
+    &.emote3spin { animation:.2s emote-spin-reverse infinite linear }
+    &.emotepulse { animation:1s emote-pulse infinite linear }
+    &.emoteshake { animation:1s emote-shake infinite linear }
+    &.emoteflap { transform:scaleY(-1) }
+    &.emoteshake2 { animation:emote-shake2 .3s linear infinite }
+    &.emoteshake3 { animation:emote-shake3 .1s linear infinite }
+  }
+}
+// Reactions
+.message-2qnXI6 .reaction-1hd86g {
+  background-color: var(--background-modifier-accent);
+  border: none;
+  border-radius:4px;
+
+  &:hover { 
+    background-color: var(--background-accent) ;
+  }
+
+  // Active reaction 
+  &.reactionMe-wv5HKu {
+    background-color: var(--Blurple-light) ;
+
+    &:hover { 
+      background-color: var(--Blurple-light-hover) ;
+    }
+
+    // number 
+    .reactionCount-2mvXRV { 
+      color: var(--Blurple) ;
     }
   }
 }
 
-// Threads create / chat
+
+// - Threads split-view sidebar (beta)
 .threadSidebar-1o3BTy {
   filter: none ;
   border: none ;
@@ -666,6 +592,89 @@
   // Thread Chat
 //  .chat-15Vmww { }
 }
+// Fullscreen
+@media (min-width: 1151px) {
+  .threadSidebar-1o3BTy {
+    background: none ;
+    
+    .chat-15Vmww:before, .chat-1cCjJ5:before{
+      display: none ;
+    }
+    
+    // Create thread
+    > .container-2w6o5e {
+
+      // Content options 
+      .formSection-33c8Tg {
+
+        // Name text input
+        .input-cIJ7To {
+          background: none !important ;
+          border: 1px solid var(--background-modifier-accent) !important ;
+        }
+
+        // Starter-Message text input
+        .channelTextArea-3O-WhA {
+          background: none !important ;
+          border: 1px solid var(--background-modifier-accent) !important ;
+        }
+      }
+    }
+  }
+}
+// Overlap
+@media (max-width: 1150px) {
+  .threadSidebar-1o3BTy {
+    top: 48px ;
+    background: var(--background-secondary-alt) ;
+    
+    @include shadow_effect("box_1");
+    
+    // Create thread
+    > .container-2w6o5e {
+
+      // Content options 
+      .formSection-33c8Tg {
+
+        // Name text input
+        .input-cIJ7To {
+          background: var(--background-tertiary) ;
+          border: none ;
+        }
+
+        // Starter-Message text input
+        .channelTextArea-3O-WhA {
+          background: var(--background-tertiary) ;
+          border: none ;
+        }
+      }
+    }
+    
+    // Thread Chat
+    > .chat-15Vmww {
+      
+      // Thread name
+      .children-19S4PO {
+        justify-content: center ;
+      }
+      
+      .messagesWrapper-1sRNjr {
+        background: var(--background-tertiary) ;
+      }
+      
+      // Text input
+      .form-2fGMdU {
+        margin: 0 ;
+        border: none ;
+        
+        .cooldownWrapper-3joyFc {
+          right: -16px ;
+        }
+      }
+    }
+  }
+}
+
 
 // - Voicecall view (beta)
 .callContainer-36WRfH {

@@ -1,7 +1,7 @@
-// - T1.popouts v0.1.1
-// Text chat / Server options / Context menus / Search / User status
+// - T1.popouts v0.1.2
+// Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
-// - Popouts container
+// Popouts container
 .layerContainer-yqaFcK {
   overflow: hidden ;
 }
@@ -159,6 +159,12 @@
 // - Searchbar results popout
 .searchResultsWrap-3-pOjs {
   background: var(--background-tertiary) ;
+  width: -webkit-fill-available ;
+  min-width: 350px ;
+  max-width: 600px ;
+  
+  flex: 1 1 auto ;
+  -webkit-box-flex: 1 ;
   
   // Header
   > .searchHeader-2XoQg7 {
@@ -238,6 +244,229 @@
         background: none ;
         color: var(--interactive-active) ;
         cursor: default ;
+      }
+    }
+  }
+}
+
+
+// - Pins
+.messagesPopoutWrap-1MQ1bW:not(.recentMentionsPopout-3rCiI6) {
+  width: 50vw ;
+  max-width: 600px ;
+  min-width: 480px ;
+  max-height: 80vh !important ;
+  background: var(--background-tertiary) ;
+  
+  @include shadow_effect("box_2");
+  
+  // Header
+  .header-ykumBX {
+    background: var(--background-secondary-alt) ;
+    box-shadow: none ;
+    
+    // "Pinned Messages"
+    .base-1x0h_U {
+      color: var(--interactive-hover) ;
+    }
+  }
+  
+  // Messages container
+  .messagesPopout-24nkyi {
+    padding-left: 0 ;
+    
+    &::-webkit-scrollbar { display: none }
+    
+    // Messages Placeholder
+    .emptyPlaceholder-1zh-Eu {
+      margin: 8px 0 30px 0 ;
+      
+      // Text
+      .body-bvcIjN{
+        color: var(--text-muted) ;
+      }
+    }
+    
+    // Pinned message
+    .messageGroupWrapper-o-Zw7G {
+      border: none ;
+      background: none ;
+      
+      // Inner container
+      .messageGroupCozy-2iY6cT {
+        margin: 0 ;
+      }
+      
+      .jumpButton-3DTcS_ {
+        background: none ;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 500 ;
+      }
+    }
+  }
+  
+  // Footer "Protip"
+  .footer-1kmXd4 { display: none }
+}
+
+
+// - Inbox
+.recentMentionsPopout-3rCiI6 {
+  width: 50vw ;
+  max-width: 600px ;
+  min-width: 480px ;
+  max-height: 80vh !important ;
+  background: var(--background-tertiary) ;
+  
+  @include shadow_effect("box_2");
+  
+  .header-2-Imhb {
+    background: var(--background-secondary-alt) ;
+    
+    .tab-ck0077, .button-1-5Aqk {
+      background: none !important ;
+    }
+  }
+  
+  // Mentions
+  &.messagesPopoutWrap-1MQ1bW {
+    
+    // Scroller
+    .scrollerBase-289Jih {
+      
+      @include scrollbar();
+      
+      &::-webkit-scrollbar { 
+        background: var(--background-secondary-alt) ;
+      }
+      
+      // Inner container
+      > div {
+        padding: 3px 0 3px 0 ;
+      }
+      
+      // Messages container
+      .container-3iAQ-0 {
+        padding: 0 ;
+        margin-bottom: 24px ;
+        
+        // Channel name header
+        .channelHeader-3Gd2xq {
+          position: relative ;
+          padding: 12px 12px 12px 8px ;
+          background: var(--background-secondary-alt) ;
+          
+          // Channel name, Server name
+          .channelName-_v0rI4, .subtext-qy79y1 {
+            width: fit-content ;
+          }
+          
+          // Close btn
+          .closeButton-1152MI {
+            background: none ;
+          }
+        }
+        
+        // Message
+        .messageContainer-gbhlwo {
+          background: none ;
+        }
+      }
+      
+      // Footer
+      .scrollingFooterWrap-3FDlMn {
+        display: none ;
+      }
+    }
+  }
+  
+  // Unreads
+  &.container-enaOkj {
+    
+    // Scroller
+    .scrollerBase-289Jih {
+      margin: 3px 0 0 0 ;
+      padding: 0 !important ;
+
+      &::-webkit-scrollbar { display: none }
+    }
+    
+    // Channel container
+    .channel-3pEHab {
+      padding: 0 0 3px 0 ;
+    }
+    
+    // Channel header container
+    .channelHeader-3Gd2xq {
+      padding: 12px 12px 12px 8px ;
+      background: var(--background-secondary-alt) ;
+      
+      // Channel name, Server name
+      .channelName-_v0rI4, .guildName-GKOCI8 {
+        width: fit-content ;
+      }
+      
+      // Buttons
+      .button-1-5Aqk {
+        background: none ;
+      }
+      
+      // Collapse btn
+      .collapseButton-2ZsEjz {
+        position: static ;
+        display: flex ;
+        align-items: center ;
+        justify-content: center ;
+        height: 32px ;
+        width: 32px ;
+        margin-left: 12px ;
+        padding: 0 ;
+        color: var(--interactive-normal) ;
+        border-radius: 50% ;
+        
+        &:hover {
+          color: var(--interactive-hover) ;
+        }
+      }
+    }
+    
+    // Messages container
+    .messages-3G3erD {
+      background: none ;
+      padding: 16px 6px 16px 0 ;
+      
+      // Msg seperator with date
+      > .divider-JfaTT5 {
+        border: none ;
+
+        // Date 
+        .content-1o0f9g { background: none }
+
+        // Seperator lines
+        &::before, &::after {
+          content: "" ;
+          height: 1px ;
+          width: 100% ;
+          background: var(--background-modifier-accent) ;
+        }
+      }
+      
+      // Messages item
+      > .messageContainer-1ei2zM {
+        
+        // "jump" to msg btn
+        > .jumpButton-2dvRSC {
+          right: 16px ;
+          
+          > .text-3KVtey {
+            color: var(--interactive-normal) ;
+
+            &:hover {
+              color: var(--interactive-hover) ;
+            }
+          }
+        }
       }
     }
   }
