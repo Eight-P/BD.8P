@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.051
+// - T1.serverbar v0.1.052
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -9,6 +9,8 @@
 .guilds-1SWlCJ {
   height: 54px ;
   width: 100vw ;
+  margin: 0 !important ;
+  padding: 0 !important ;
   
   // Background image
   --blur: blur(calc((var(--Server_Background_blur, 0) / 100) * 1px)) ;
@@ -405,8 +407,6 @@
 }
 
 // - Server folder
-//.guilds-1SWlCJ [aria-label^="Server"] > .wrapper-3Njo_c {
-//.guilds-1SWlCJ [aria-label]:not([class]) > .wrapper-3Njo_c {
 .guilds-1SWlCJ .wrapper-3Njo_c {
   width: 54px ;
   margin: 6px 0 ;
