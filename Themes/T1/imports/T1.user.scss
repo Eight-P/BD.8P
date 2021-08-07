@@ -1,4 +1,4 @@
-// - T1.user v0.1.131
+// - T1.user v0.1.132
 // User popout / Modal
 
 // -- User popout container
@@ -315,28 +315,79 @@
       grid-column: 2 ;
       align-content: flex-start;
       
+      // Role item
+      .role-2irmRk:not(.addButton-pcyyf6) {
+        position: relative ;
+        border: 1px solid ;
+        border-radius: 10px ;
+        background: none ;
+        
+        // Background
+        &:before {
+          content: "" ;
+          position: absolute ;
+          left: 0 ;
+          right: 0 ;
+          height: 100% ;
+          border-radius: 9px ;
+          background: var(--background-secondary) ;
+          opacity: .5 ;
+          z-index: 1 ;
+        }
+      }
+      
+      // Colored circle
+      .roleCircle-3xAZ1j {
+        margin: 0 4px 0 0 ;
+        z-index: 2;
+      }
+      
       // Remove role button
       .roleRemoveIcon-2-TeGW { cursor: pointer }
       
       // Roles Name
       .roleName-32vpEy {
         max-width: 150px ;
+        z-index: 2 ;
       }
       
       // Add role button
       > .addButton-pcyyf6 {
-        padding: 5px ;
-        color: var(--interactive-hover) ;
-        border-color: var(--interactive-muted) ;
+        position: relative ;
+        color: var(--interactive-normal) ;
+        border: 1px solid var(--interactive-muted) ;
+        border-radius: 10px ;
+        background: none ;
+        transition: border-radius .1s ;
+        
+        path {
+          stroke: var(--interactive-normal) ;
+          stroke-width: 2px ;
+        }
+        
+        &:before {
+          content: "" ;
+          position: absolute ;
+          left: 0 ;
+          right: 0 ;
+          height: 100% ;
+          border-radius: 9px ;
+          background: var(--background-secondary) ;
+          opacity: .5 ;
+          z-index: 1 ;
+        }
         
         &:hover {
-          padding: 4px ;
           color: var(--interactive-active) ;
+          border-radius: 7px ;
           border-color: var(--interactive-normal) ;
           
-          svg {
-            height: 12px ;
-            width: 12px ;
+          &:before {
+            border-radius: 6px ;
+          }
+          
+          path {
+            stroke: var(--interactive-active) ;
           }
         }
       }

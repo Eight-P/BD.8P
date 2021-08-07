@@ -1,4 +1,4 @@
-// - T1.compatibility v0.1.042
+// - T1.compatibility v0.1.043
 // Compatibility with plugins
 
 
@@ -156,7 +156,8 @@
 }
 
 
-// -- ChannelTabs by l0c4lh057 (v2.5.1)
+// -- ChannelTabs by l0c4lh057 (v2.5.5)
+// - Main container
 #channelTabs-container {
   
   // - Tabbar
@@ -279,5 +280,57 @@
   
   &:hover rect {
     fill: var(--interactive-hover) ;
+  }
+}
+
+// - Mac
+.platform-osx {
+  
+  // Main container
+  #channelTabs-container {
+    min-height: 48px ;
+    
+    display: flex ;
+    flex-direction: column ;
+    justify-content: center ;
+
+    .channelTabs-tabContainer, .channelTabs-favContainer {
+      -webkit-app-region: drag ;
+      margin-right: 73px ;
+      margin-left: 26px ;
+      
+      width: -webkit-fill-available ;
+
+      > div {
+        -webkit-app-region: none ;
+      }
+    }
+    
+    .channelTabs-tabContainer + .channelTabs-favContainer {
+      -webkit-app-region: none ;
+      margin: 0 ;
+      padding-left: 26px ;
+    }
+  }
+  
+  // Settings btn
+  #channelTabs-settingsMenu {
+    -webkit-app-region: none !important;
+    
+    position: absolute ;
+    top: 0 ;
+    right: 0 ;
+    
+    // Settings btn icon
+    .channelTabs-settingsIcon {
+      margin-left: 0 !important;
+    }
+  }
+  
+  // User profile panel
+  #channelTabs-container ~ .layers-3iHuyZ .panels-j1Uci_ > .container-3baos1 {
+    margin-left: 0 ;
+    width: 240px ;
+    padding: 0 8px ;
   }
 }

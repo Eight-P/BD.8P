@@ -1,4 +1,4 @@
-// - T1.titlebar v0.1.1
+// - T1.titlebar v0.1.11
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -80,7 +80,7 @@
   // - rightside iconbar
   > .toolbar-1t6TWx {
     @mixin TB_icons () {
-    margin: 0 9px ;
+      margin: 0 9px ;
 
       svg {
         width: 20px ;
@@ -92,25 +92,18 @@
         color: var(--interactive-hover) ;
       }
     }
-
+    
     // Icons
     .iconWrapper-2OrFZ1 { @include TB_icons() }
     
     // Searchbar
     @include TB_Search() ;
-
+    
     // Voicecall view buttons
     .button-38aScr { @include TB_icons() }
-
+    
     // Discord "Help" (web-link) icon
-    > .anchor-3Z-8Bb {
-
-      @include TB_icons() ;
-
-      > div { 
-        margin: 0 ;
-      }
-    }
+    > .anchor-3Z-8Bb { display: none }
   }
 }
 
@@ -140,6 +133,11 @@
     
     // Follow Announcement channel button
     .followButton-L6L-Us { display: none }
+  }
+  
+  > .toolbar-1t6TWx {
+    min-width: 226px ;
+    justify-content: space-between ;
   }
 }
 
@@ -230,6 +228,7 @@ html {
       width: 48px ;
       transform: rotate(90deg);
       transform-origin: 13px 13px ;
+      -webkit-app-region: none;
 
       // Btn container
       .macButtons-2MuSAC {
@@ -245,6 +244,25 @@ html {
           height: 10px ;
         }
       }
+      
+      &:hover {
+        
+        .macButton-c_Adir > svg {
+          visibility: visible ;
+        }
+        
+        .macButtonClose-MwZ2nf {
+          background-color: #fc615d ;
+        }
+        
+        .macButtonMinimize-3EJ6wo {
+          background-color: #fdbc40 ;
+        }
+        
+        .macButtonMaximize-2FMHAO {
+          background-color: #34c749 ;
+        }
+      }
     }
 
     // move Profile panel for AppOS btns
@@ -256,6 +274,10 @@ html {
     
     .container-1r6BKw > .children-19S4PO {
       -webkit-app-region: none;
+      
+      + .toolbar-1t6TWx {
+        -webkit-app-region: none;
+      }
     }
   }
 }
