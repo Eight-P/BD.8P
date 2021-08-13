@@ -1,4 +1,4 @@
-// - T1.titlebar v0.1.11
+// - T1.titlebar v0.1.111
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -287,7 +287,7 @@ html {
 // - Default Discord notice
 .notice-3bPHh- {
   border-radius: 0 0 8px 8px ;
-  background-color: var(--background-primary) ;
+  background: var(--background-primary) ;
   color: var(--text-normal) ;
   
   .button-2DhvE9 { @include btn_1() }

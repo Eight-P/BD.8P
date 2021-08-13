@@ -1,4 +1,4 @@
-// - T1.chat v0.1.22
+// - T1.chat v0.1.23
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -79,7 +79,11 @@
     margin: 20px 0 !important;
     
     // date 
-    .content-1o0f9g { background: none }
+    .content-1o0f9g { 
+      height: fit-content ;
+      transform: translateY(-50%);
+      background: none ;
+    }
     
     // seperator lines
     &::before, &::after {
@@ -687,6 +691,10 @@
     .controlSection-2h3cS0 {
       opacity: var(--always-show-voicecontrols, 0) ;
       transform: translateZ(0) ;
+      
+      .streamQualityIndicator-2Te7mW {
+        display: none ;
+      }
     }
   }
   
@@ -742,15 +750,26 @@
     background: none ;
   }
   
+  // Focus view / Maincontainer .videoFrame-3JeHRb
+  
+  // Focus view / Sidebar user container .participantsWrapperAnimated-3yISdv
+  
+  // Grid view container .listItems-1uJgMC
+
+  .videoFrame-3JeHRb .videoWrapper-2v09vt {
+    background: none ;
+    
+    .video-1kutKI {
+      height: 100% !important ;
+    }
+  }
   
   // User cards in voice
-  //  .tile-2GMyYQ .tile-2gi3tr {
   .tile-2gi3tr {
     background: none ;
     margin-right: 5px ;
     
     @include shadow_effect("box_2");
-    
     
     .indicators-3zIm5K {
       left: 0px ;
@@ -771,7 +790,7 @@
     }
     
     // Stream in user card
-    .videoWrapper-2v09vt .video-1kutKI{
+    .videoWrapper-2v09vt .video-1kutKI {
       height: calc(100% - 20px) ;
     }
     
