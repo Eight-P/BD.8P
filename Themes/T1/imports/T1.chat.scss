@@ -1,4 +1,4 @@
-// - T1.chat v0.1.23
+// - T1.chat v0.1.24
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -543,8 +543,9 @@
 }
 
 
-// - Threads split-view sidebar (beta)
+// - Threads Split-view (beta)
 .threadSidebar-1o3BTy {
+  background: none ;
   filter: none ;
   border: none ;
   border-radius: 0 ;
@@ -565,7 +566,7 @@
   }
   
   // Create thread
-  .container-2w6o5e {
+  > .container-2w6o5e {
     overflow: auto ;
     
     // Content options 
@@ -574,11 +575,15 @@
       // Name text input
       .input-cIJ7To {
         border-radius: 0 ;
+        background: none  ;
+        border: 1px solid var(--background-modifier-accent) !important ;
       }
 
       // Starter-Message text input
       .channelTextArea-3O-WhA {
         border-radius: 0 ;
+        background: none ;
+        border: 1px solid var(--background-modifier-accent) !important ;
 
         .channelTextAreaInner-1WnnRS {
           background: none ;
@@ -594,35 +599,20 @@
   }
   
   // Thread Chat
-//  .chat-15Vmww { }
+  .chat-15Vmww {
+    
+    // Text input
+    .cooldownWrapper-3joyFc {
+      right: -16px ;
+    }
+  }
 }
-// Fullscreen
+// Fullscreen / Spilt view
 @media (min-width: 1151px) {
   .threadSidebar-1o3BTy {
-    background: none ;
     
     .chat-15Vmww:before, .chat-1cCjJ5:before{
       display: none ;
-    }
-    
-    // Create thread
-    > .container-2w6o5e {
-
-      // Content options 
-      .formSection-33c8Tg {
-
-        // Name text input
-        .input-cIJ7To {
-          background: none !important ;
-          border: 1px solid var(--background-modifier-accent) !important ;
-        }
-
-        // Starter-Message text input
-        .channelTextArea-3O-WhA {
-          background: none !important ;
-          border: 1px solid var(--background-modifier-accent) !important ;
-        }
-      }
     }
   }
 }
@@ -630,52 +620,23 @@
 @media (max-width: 1150px) {
   .threadSidebar-1o3BTy {
     top: 48px ;
-    background: var(--background-secondary-alt) ;
+    
+    // Background image
+    &:before {
+      content: "";
+      position: absolute ;
+      height: 100% ;
+      width: 100% ;
+      background: var(--Main_Background) rgba(0, 0, 0, .1);
+      background-blend-mode: overlay ;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      filter: var(--BGM_Blur) var(--BGM_Brightness) ;
+    }
     
     @include shadow_effect("box_1");
-    
-    // Create thread
-    > .container-2w6o5e {
-
-      // Content options 
-      .formSection-33c8Tg {
-
-        // Name text input
-        .input-cIJ7To {
-          background: var(--background-tertiary) ;
-          border: none ;
-        }
-
-        // Starter-Message text input
-        .channelTextArea-3O-WhA {
-          background: var(--background-tertiary) ;
-          border: none ;
-        }
-      }
-    }
-    
-    // Thread Chat
-    > .chat-15Vmww {
-      
-      // Thread name
-      .children-19S4PO {
-        justify-content: center ;
-      }
-      
-      .messagesWrapper-1sRNjr {
-        background: var(--background-tertiary) ;
-      }
-      
-      // Text input
-      .form-2fGMdU {
-        margin: 0 ;
-        border: none ;
-        
-        .cooldownWrapper-3joyFc {
-          right: -16px ;
-        }
-      }
-    }
   }
 }
 
@@ -744,30 +705,26 @@
   
   // Gradient effect on hover
   .gradientContainer-10lXLB { display: none }
-  
-  
-  .focusedVideo-AeFhkm .root-2sELX6 {
-    background: none ;
+
+  // Grid view container 
+  .listItems-1uJgMC .videoWrapper-2v09vt .video-1kutKI {
+    height: calc(100% - 20px) ;
   }
   
-  // Focus view / Maincontainer .videoFrame-3JeHRb
+  // Focus view / Sidebar user container 
+  .participantsWrapperAnimated-3yISdv .tile-2gi3tr {
+    margin-right: 5px ;
+  }
   
-  // Focus view / Sidebar user container .participantsWrapperAnimated-3yISdv
-  
-  // Grid view container .listItems-1uJgMC
-
-  .videoFrame-3JeHRb .videoWrapper-2v09vt {
-    background: none ;
-    
-    .video-1kutKI {
-      height: 100% !important ;
+  // Focus view / Focused card
+  .videoFrame-3JeHRb {
+    .tile-2gi3tr, .videoWrapper-2v09vt {
+      background: none ;
     }
   }
   
   // User cards in voice
   .tile-2gi3tr {
-    background: none ;
-    margin-right: 5px ;
     
     @include shadow_effect("box_2");
     
@@ -787,11 +744,6 @@
         background: var(--background-primary) !important ;
         border-radius: 8px ;
       }
-    }
-    
-    // Stream in user card
-    .videoWrapper-2v09vt .video-1kutKI {
-      height: calc(100% - 20px) ;
     }
     
     // Stream preview image in user card

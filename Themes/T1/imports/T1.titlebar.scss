@@ -1,4 +1,4 @@
-// - T1.titlebar v0.1.111
+// - T1.titlebar v0.1.12
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -146,7 +146,7 @@
   
   // - Nav bar / Friends tabs 
   .tabBar-ZmDY9v {
-     margin: 0 auto ;
+    margin: 0 auto ;
     padding-right: 40px ;
     
     // Tabs
@@ -157,7 +157,7 @@
       > .numberBadge-2s8kKX { @include unread_indicator_inline() }
       
       // add friend Tab
-      &[aria-controls="ADD_FRIEND-tab"] {
+      &[aria-controls="add_friend-tab"] {
         position: absolute ;
         right: 0 ;
         width: 24px ;

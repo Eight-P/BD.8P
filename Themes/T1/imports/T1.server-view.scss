@@ -1,4 +1,4 @@
-// - T1.server-view v0.1.024
+// - T1.server-view v0.1.03
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -197,6 +197,15 @@
     
     // Nitro icon 
     .name-uJV0GL + div { pointer-events: none }
+  }
+
+  // Preload Dummys
+  .placeholder-3KRNN9, .memberGroupsPlaceholder-3mwPub {
+    animation: none ;
+  }
+  .placeholderAvatar-damqh6, .placeholderUsername-2B_OA9, .memberGroupsPlaceholder-3mwPub {
+    background: var(--text-normal);
+    opacity: 0.1;
   }
 }
 
