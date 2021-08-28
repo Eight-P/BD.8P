@@ -1,4 +1,4 @@
-// - T1.home v0.1.04
+// - T1.home v0.1.05
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages 
@@ -208,11 +208,16 @@
         // idk
         .textRuler-wO-qHe { display: none }
         
-        // Normal Activity (hiding the "playing",..) 
-        .activity-2myFBH .text-3MU_QQ > strong {
-          position: absolute ;
-          left: 0 ;
-          background: var(--background-floating) ;
+        // Normal Activity (hiding the "playing" behind background) 
+        .activity-2myFBH .text-3MU_QQ {
+          width: 100% ;
+          
+          > strong {
+            position: absolute ;
+            left: 0 ;
+            background: var(--background-floating) ;
+            width: 100% ;
+          }
         }
         
         // Activity icon

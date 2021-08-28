@@ -1,4 +1,4 @@
-// - T1.mixins v0.1.05
+// - T1.mixins v0.1.06
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -115,6 +115,55 @@
   }
 }
 
+// New Button Design ( BETA ) | @include Btn();
+// $BG = [false, "background", <color>( + $C for Text)]
+@mixin Btn ($BG:false, $C:false) {
+  
+  $Text_normal: var(--interactive-normal);
+  $Text_hover: var(--interactive-hover);
+  $BG_normal: rgba(70, 75, 83, 0.25);
+  $BG_hover: rgba(70, 75, 83, 0.6);
+  
+  &, * {
+    border: none ;
+    font-size: 14px ;
+    font-weight: 600 ;
+  }
+  
+  // with Background
+  @if ($BG) {
+    background: if($BG == "background", $BG_normal, $BG);
+    border-radius: 5px ;
+    transition: .1s ;
+    color: if($C, $C, $Text_normal);
+    
+    * {
+      opacity: if($C, .7, 1);
+    }
+    
+    &:hover {
+      background: if($BG == "background", $BG_hover, $BG);
+      border-radius: 1px ;
+      color: if($C, $C, $Text_hover);
+      
+      * {
+        opacity: 1;
+      }
+    }
+  }
+  
+  // without Background
+  @else {
+    background: none ;
+    transition: none ;
+    color: $Text_normal;
+    
+    &:hover {
+      color: $Text_hover;
+    }
+  }
+}
+
 
 // Inline unread indicator 
 @mixin unread_indicator_inline () {
@@ -183,16 +232,7 @@
   --font-display: var(--Font) !important;
   
 //  --font-code: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace !important;
-//  
-//  --font-korean: Whitney,"Apple SD Gothic Neo","NanumBarunGothic","\B9D1\C740   \ACE0\B515","Malgun Gothic",Gulim,êµ´ë¦¼,Dotum,ë‹ì›€,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
-//  
-//  --font-japanese: Whitney,Hiragino Sans,"\30D2\30E9\30AE\30CE\89D2\30B4   ProN W3","Hiragino Kaku Gothic ProN","\30E1\30A4\30EA\30AA",Meiryo,Osaka,"MS PGothic","Helvetica Neue",Helvetica,Arial,sans-serif !important;
-//  
-//  --font-chinese-simplified: Whitney,"Microsoft YaHei New",å¾®è½¯é›…é»‘,"Microsoft Yahei","Microsoft JhengHei",å®‹ä½“,SimSun,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
-//  
-//  --font-chinese-traditional: Whitney,"Microsoft JhengHei",å¾®è»Ÿæ­£é»‘é«”,"Microsoft JhengHei UI","Microsoft YaHei",å¾®è»Ÿé›…é»‘,å®‹ä½“,SimSun,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
-
 
 
 // - theme colors (dark)

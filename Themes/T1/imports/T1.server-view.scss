@@ -1,4 +1,4 @@
-// - T1.server-view v0.1.03
+// - T1.server-view v0.1.04
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -91,6 +91,24 @@
     .live-vBWnV6 { 
       background: none !important ;
       color: var(--red) ;
+    }
+  }
+  
+  > .container-3O_wAf {
+    .icon-1SdhiF {
+      background: none ;
+    }
+    
+    .button-38aScr {
+      @include Btn("background");
+    }
+    
+    .close-20Ww5T .size12-3cLvbJ {
+      color: var(--interactive-normal);
+      
+      &:hover {
+        color: var(--interactive-hover);
+      }
     }
   }
 }

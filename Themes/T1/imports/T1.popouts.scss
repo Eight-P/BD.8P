@@ -1,4 +1,4 @@
-// - T1.popouts v0.1.2
+// - T1.popouts v0.1.21
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -481,10 +481,8 @@
   .header-1VS4tm {
     background: var(--background-secondary-alt) ;
     
-    // "Threads"
-    .title-wn-Ecb {
-      color: var(--text-normal) ;
-    }
+    // "#" Icon, "Threads" title, divider
+    .threadIcon-3XJhLD, .title-wn-Ecb, .divider-mDc_D8 { display: none }
     
     // Active/Archived Buttons
     .tab-PQvTH4 {
@@ -493,7 +491,7 @@
     
     // Create new thread button
     .createButton-nlV8qH {
-      @include button_normal();
+      @include Btn();
     }
   }
   
@@ -522,6 +520,78 @@
   // Public/Private Buttons
   .tab-17bjMB {
     background: none !important ;
+  }
+  
+  .container-1KFiob .button-38aScr {
+    @include Btn("background");
+  }
+}
+
+
+// - Invite to server
+.wrapper-O5i5-0 .modal-1k91nT.root-1gCeng {
+  background: var(--background-tertiary);
+  
+  // Header
+  .header-1TKi98 {
+    
+    .title-3sZWYQ {
+      color: var(--text-normal);
+    }
+    
+    // Search
+    .container-2XeR5Z {
+      background: var(--background-secondary);
+      background: var(--background-tertiary);
+      border-radius: 0 ;
+      padding-bottom: 3px ;
+      border-bottom: 1px solid var(--interactive-muted) ;
+      
+      .input-1Rv96N {
+        padding: 0 ;
+        margin: 0 ;      
+      }
+    }
+    
+    .closeButton-31ta9E {
+      top: 8px ;
+      right: 8px ;
+    }
+  }
+  
+  // Content 
+  .scroller-2hZ97C, .content-1LAB8Z {
+    max-height: 300px ;
+    padding: 16px 8px 8px 8px !important;
+    
+    &::-webkit-scrollbar { display: none }
+    
+    // User item
+    .inviteRow-2L02ae {
+      background: none ;
+      padding: 7px 8px ; 
+      margin-right: 0 ;
+      
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--background-modifier-hover) ;
+      }
+    }
+    
+    // invite btn
+    .inviteRowButton-3opYo2 {
+      padding: 2px 0 ;
+      width: auto ;
+      min-width: unset ;
+      
+      @include Btn();
+    }
+  }
+
+  
+  .footer-2gL1pp {
+    background: var(--background-tertiary);
+    
+    .title-3sZWYQ { display: none }
   }
 }
 

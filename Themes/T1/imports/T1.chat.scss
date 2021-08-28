@@ -1,4 +1,4 @@
-// - T1.chat v0.1.24
+// - T1.chat v0.1.25
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -8,9 +8,7 @@
 .mention.wrapper-3WhCwL {
   color: var(--Blurple) !important;
   background-color: transparent !important;
-  border-radius: 3px ;
-  padding: 0 2px ;
-  font-weight: 500 ;
+  text-decoration: none !important;
 
   &:hover {
     background-color: var(--Blurple-light) !important;
@@ -18,6 +16,12 @@
   }
 }
 
+// Inline Mentions in channel topic (what the hell discord, what are you doin again??)
+.topic-TCb_qw .mention.wrapper-3WhCwL .channelIcon-1MN1lz {
+  height: 100% ;
+  box-sizing: border-box ;
+  padding: .1em;
+}
 
 // - Chat container
 .chatContent-a9vAAp {
@@ -33,7 +37,7 @@
   .barBase-1c2Rfb {
     right: 5px ;
     left: 5px ;
-    background: var(--background-primary);
+    background: var(--background-secondary);
     opacity: 1 ;
     border-radius: 5px ;
     padding: 0 ;
@@ -619,7 +623,7 @@
 // Overlap
 @media (max-width: 1150px) {
   .threadSidebar-1o3BTy {
-    top: 48px ;
+//    top: 48px ;
     
     // Background image
     &:before {
@@ -640,6 +644,26 @@
   }
 }
 
+// Threads "unarchive" bar
+.chatHeaderBar-4vZS1x {
+  margin: 0 5px ;
+  background: var(--background-secondary);
+  border-radius: 5px ;
+  padding: 6px 10px ;
+
+  @include shadow_effect("box_2");
+
+  .chatHeaderBarButton-UiIh3z {
+    background: none !important;
+    color: var(--interactive-normal) !important;
+    font-weight: 600 ;
+    font-size: 15px ;
+
+    &:hover {
+      color: var(--interactive-hover) !important;
+    }
+  }
+}
 
 // - Voicecall view (beta)
 .callContainer-36WRfH {
