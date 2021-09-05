@@ -1,4 +1,4 @@
-// - T1.server-view v0.1.1
+// - T1.server-view v0.1.12
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -156,7 +156,7 @@
   // Activity Container
   > .activityPanel-28dQGo {
     height: 32px ;
-    padding: 6px 10px ; 
+    padding: 6px 10px ;
     
     // Image
     .gameIconWrapper-1YByCI { height: 32px }
@@ -169,13 +169,20 @@
   
   // Voice Connection
   .container-1giJp5 {
+    display: grid ;
     padding: 0 ;
     border: none ;
     
     // Voice channel info container
     .connection-3KRENF {
+      order: 2 ;
       margin-left: 32px ;
       padding: 6px 0 ;
+      align-items: unset ;
+      
+      .rtcConnectionStatus-2-jIsi {
+        padding: 1px 0 2px 0 ;
+      }
       
       .button-14-BFJ {
         background: none ;
@@ -187,15 +194,14 @@
     
     // Connected users container
     .voiceUsers-YsH5Db {
-      padding: 3px ;
-      margin: 0 0 0 32px ;
+      order: 3 ;
+      padding: 3px 8px ;
       box-sizing: border-box ;
       
       &::-webkit-scrollbar { display: none }
       
       ~ .actionButtons-14eAc_:after {
-        width: 74px ;
-        transform: rotate(90deg) translate(21px, 21px);
+        bottom: 42px ;
       }
     }
     
@@ -203,30 +209,32 @@
     .actionButtons-14eAc_ {
       height: 0 ;
       padding: 0 ;
+      overflow: hidden ;
+      transition: .1s linear;
       
       // Caret icon
       &:after {
-        content: ">" ;
+        content: "<" ;
         position: absolute ;
         display: flex ;
-        transform: rotate(90deg) translate(6px, 6px);
-        transform-origin: center ;
         width: 44px ;
         height: 32px ;
-        top: 0 ;
         left: 0 ;
+        bottom: 12px ;
         justify-content: center ;
         align-items: center ;
         color: var(--interactive-normal);
-        font-size: 20px ;
+        font-size: 18px ;
         font-weight: 700 ;
+        transform: rotate(90deg) translate(6px, 6px);
+        transform-origin: center ;
       }
       
       &:hover {
         height: 44px ;
         
         &:after {
-          content: "<" ;
+          content: ">" ;
           color: var(--interactive-hover);
         }
       }
