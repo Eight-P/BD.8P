@@ -1,4 +1,4 @@
-// - T1.chat v0.1.25
+// - T1.chat v0.1.251
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -9,18 +9,18 @@
   color: var(--Blurple) !important;
   background-color: transparent !important;
   text-decoration: none !important;
+  white-space: nowrap ;
 
   &:hover {
     background-color: var(--Blurple-light) !important;
     text-decoration: underline ;
   }
-}
-
-// Inline Mentions in channel topic (what the hell discord, what are you doin again??)
-.topic-TCb_qw .mention.wrapper-3WhCwL .channelIcon-1MN1lz {
-  height: 100% ;
-  box-sizing: border-box ;
-  padding: .1em;
+  
+  .channelIcon-1MN1lz {
+    height: 100% ;
+    box-sizing: border-box ;
+    padding: .15em 0 ;
+  }
 }
 
 // - Chat container
@@ -750,7 +750,8 @@
   // User cards in voice
   .tile-2gi3tr {
     
-    @include shadow_effect("box_2");
+    // Issue with new activities
+//    @include shadow_effect("box_2");
     
     .indicators-3zIm5K {
       left: 0px ;

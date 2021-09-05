@@ -1,4 +1,4 @@
-// - T1.popouts v0.1.21
+// - T1.popouts v0.1.22
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -528,73 +528,130 @@
 }
 
 
-// - Invite to server
-.wrapper-O5i5-0 .modal-1k91nT.root-1gCeng {
+// - Invite to Server / Add friends to Dm / New Group Dm
+.focusLock-Ns3yie > .root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y {
   background: var(--background-tertiary);
-  
-  // Header
+
+  // - Header
   .header-1TKi98 {
     
-    .title-3sZWYQ {
+    // Title
+    h2 {
       color: var(--text-normal);
     }
     
-    // Search
+    // Search container
     .container-2XeR5Z {
-      background: var(--background-secondary);
-      background: var(--background-tertiary);
       border-radius: 0 ;
       padding-bottom: 3px ;
       border-bottom: 1px solid var(--interactive-muted) ;
       
+      // Added friend tag
+      .tag-2gHSR7 {
+        margin-right: 5px ;
+      }
+      
+      // Text input
       .input-1Rv96N {
         padding: 0 ;
         margin: 0 ;      
       }
     }
     
+    // Invite to Server > Close btn
     .closeButton-31ta9E {
       top: 8px ;
       right: 8px ;
     }
+    
+    // Add friends to Dm > "Add" btn
+    .addButton-tsPCpZ .button-38aScr {
+      @include Btn("background");
+    }
   }
   
-  // Content 
-  .scroller-2hZ97C, .content-1LAB8Z {
-    max-height: 300px ;
-    padding: 16px 8px 8px 8px !important;
+  // - Content / Scroller
+  // Add friends to Dm / New Group Dm
+  .scroller-hUf6zQ {
+    max-height: 40vh ;
+    padding-right: 8px !important ;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 96%, transparent);
     
     &::-webkit-scrollbar { display: none }
     
+    .friendWrapper-2SrUFF {
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--background-modifier-hover) ;
+      }
+
+      .friendSelected-1sa4bG {
+        background: none ;
+      }
+
+      &:hover {
+        background: var(--background-modifier-hover) ;
+      }
+
+      .checkboxWrapper-SkhIWG {
+        cursor: pointer ;
+      }
+    }
+  }
+  
+  // Invite to Server
+  .scroller-2hZ97C {
+    max-height: 40vh ;
+    padding: 16px 8px 8px 8px !important;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 96%, transparent);
+
+    &::-webkit-scrollbar { display: none }
+
     // User item
     .inviteRow-2L02ae {
       background: none ;
       padding: 7px 8px ; 
       margin-right: 0 ;
-      
+
       &:not(:last-child) {
         border-bottom: 1px solid var(--background-modifier-hover) ;
       }
     }
-    
-    // invite btn
+
+    // Invite btn
     .inviteRowButton-3opYo2 {
       padding: 2px 0 ;
       width: auto ;
       min-width: unset ;
-      
+
       @include Btn();
     }
   }
-
   
-  .footer-2gL1pp {
+  // Footer
+  .footer-2gL1pp, .footer-1eyGBa {
     background: var(--background-tertiary);
     
+    .content-3CCvMx:before { display: none }
+    
+    // Info txt
     .title-3sZWYQ { display: none }
+    
+    // Invite link text filed
+    .input-cIJ7To {
+      border: none ;
+      background: var(--background-tertiary);
+    }
+    
+    .button-38aScr.lookFilled-1Gx00P {
+      @include Btn("background");
+    }
+    
+    .colorStandard-2KCXvj.size12-3cLvbJ {
+      text-align: center ;
+    }
   }
 }
-
 
 // - User status shorthand popout
 #status-picker {

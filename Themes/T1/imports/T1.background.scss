@@ -1,5 +1,5 @@
-// - T1.background v0.2.01
-// Background image + transparency
+// - T1.background v0.2.1
+// Background image + Transparency
 
 // Main background image
 .bg-h5JY_x {
@@ -10,9 +10,11 @@
   filter: var(--BGM_Blur) var(--BGM_Brightness) ;
 }
 
-$Classes_normal: (
+$Classes: (
+  // #app-mount
+  "",
   // App containers
-  "#app-mount", ".app-2rEoOp", ".layer-3QrUeG",
+  ".app-2rEoOp", ".layer-3QrUeG",
   // Voice-chat view
   ".stageSection-3mAD8V",
   // Text chat
@@ -41,14 +43,11 @@ $Classes_normal: (
   // Members list
   ".members-1998pB", ".members-1998pB > div",
   // Serverbar
-  ".guilds-1SWlCJ",
+//  ".guilds-1SWlCJ",
   // Settings
   ".layer-3QrUeG .standardSidebarView-3F1I7i", ".layer-3QrUeG .standardSidebarView-3F1I7i > .contentRegion-3nDuYy",
   // Roles Settings
   ".page-3njELR .titleContainer-2CXtJo",
-);
-
-$Classes_important: (
   // Voice-chat view
   ".wrapper-2qzCYF",
   // Title bar
@@ -57,13 +56,8 @@ $Classes_important: (
   "#gm-settings-inject",
 );
 
-@mixin BG ($class, $i:false) {
-  
-  $key: "background" ;
-  $value: if($i, "none !important", "none");
-  
-  #{$class} { #{$key}:#{$value} }
-}
+@each $class in $Classes { #app-mount #{$class} { background: none } }
 
-@each $class in $Classes_normal { @include BG($class) }
-@each $class in $Classes_important { @include BG($class,true) }
+body { background: none }
+
+

@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.0521
+// - T1.serverbar v0.1.0522
 // horizontal Serverbar + Addons
 
 // -- Base containers
@@ -6,20 +6,26 @@
 .layer-3QrUeG.baseLayer-35bLyl > .container-2lgZY8 { flex-direction: column-reverse }
 
 // - Serverbar container / scroller
+//#app-mount .guilds-1SWlCJ {
 .guilds-1SWlCJ {
   height: 54px ;
   width: 100vw ;
-  margin: 0 !important ;
-  padding: 0 !important ;
+//  margin: 0 !important ;
+  margin: 0 ;
+//  padding: 0 !important ;
+  padding: 0 ;
   
   // Background image
   --blur: blur(calc((var(--Server_Background_blur, 0) / 100) * 1px)) ;
   --brightness: brightness(calc((var(--Server_Brightness, 100) / 100)));
   
   background: var(--Server_Background) ;
-  background-size: cover !important ;
-  background-position: center !important ;
-  background-repeat: no-repeat !important ;
+//  background-size: cover !important ;
+  background-size: cover ;
+//  background-position: center !important ;
+  background-position: center ;
+//  background-repeat: no-repeat !important ;
+  background-repeat: no-repeat ;
   filter: var(--blur) var(--brightness) ;
   
   // when in voice call view
@@ -51,7 +57,8 @@
     ;
     margin: 0 0 120px 0 ;
     padding: 10px 0 2px 0 ;
-    overflow-y: hidden !important;
+//    overflow-y: hidden !important;
+//    overflow-y: hidden ;
     align-items: center;
     
     &::-webkit-scrollbar { display: none }
@@ -125,7 +132,8 @@
   
   // GuildsAd / Discovery
   @mixin Icons () {
-    display: flex !important ;
+//    display: flex !important ;
+    display: flex ;
     width: 54px ;
     
     .pill-1aYSec { display: none }
@@ -301,8 +309,8 @@
 // -- Servers / DMs
 // Icon Mixin
 @mixin ServerIcon() {
+  width: 54px ; 
   height: 48px !important ;
-  width: 54px ;
   margin: 12px 0 ;
 
   .wrapper-25eVIn {
@@ -312,13 +320,15 @@
     
     // Streaming badge (maybe more)
     .upperBadge-2XnnGB { display: none }
-    
-    // Unreads badge
-    > .lowerBadge-29hYVK {
-      left: 4px ;
-      bottom: 4px ;
-      
-      > .numberBadge-2s8kKX { background-color: var(--red) !important }
+  }
+  
+  // Unreads badge
+  .lowerBadge-29hYVK {
+    left: 4px ;
+    bottom: 4px ;
+
+    > .numberBadge-2s8kKX { 
+      background-color: var(--red) !important ;
     }
   }
 
@@ -365,9 +375,9 @@
 
 // - DMs
 .guilds-1SWlCJ .scroller-1Bvpku > div[style="opacity: 1; height: 56px; transform: scale(1);"] {
-  @include ServerIcon ();
+  @include ServerIcon();
 
-  margin: 12px 0 ;
+//  margin: 12px 0 ;
 
   &::before {
     content: "" ;
@@ -390,7 +400,6 @@
 }
 
 // - Servers container
-//.guilds-1SWlCJ .scroller-1Bvpku > [aria-label^="Server"] {
 .guilds-1SWlCJ .scroller-1Bvpku > div[aria-label]:not([class]) {
   grid-area: Servers ;
   width: 54px ;
@@ -400,10 +409,10 @@
   &::-webkit-scrollbar { display: none }
 
   // Server items
-  > .listItem-GuPuDH { @include ServerIcon () }
+  > .listItem-GuPuDH { @include ServerIcon() }
 
   // Server items in folders
-  ul > .listItem-GuPuDH { @include ServerIcon () }
+  ul > .listItem-GuPuDH { @include ServerIcon() }
 }
 
 // - Server folder

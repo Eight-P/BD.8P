@@ -1,4 +1,4 @@
-// - T1.server-view v0.1.04
+// - T1.server-view v0.1.1
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -94,7 +94,9 @@
     }
   }
   
+  // sidebar info thing
   > .container-3O_wAf {
+    
     .icon-1SdhiF {
       background: none ;
     }
@@ -166,15 +168,80 @@
   }
   
   // Voice Connection
-  > .wrapper-24pKcD > .container-1giJp5 {
+  .container-1giJp5 {
+    padding: 0 ;
     border: none ;
-    padding: 4px 10px ;
-    overflow: hidden ;
     
-    button { background: none }
+    // Voice channel info container
+    .connection-3KRENF {
+      margin-left: 32px ;
+      padding: 6px 0 ;
+      
+      .button-14-BFJ {
+        background: none ;
+        
+        // Noise Suppression Btn
+        &:first-child { display: none }
+      }
+    }
     
-    // video share buttons
-    .actionButtons-14eAc_ { display: none }
+    // Connected users container
+    .voiceUsers-YsH5Db {
+      padding: 3px ;
+      margin: 0 0 0 32px ;
+      box-sizing: border-box ;
+      
+      &::-webkit-scrollbar { display: none }
+      
+      ~ .actionButtons-14eAc_:after {
+        width: 74px ;
+        transform: rotate(90deg) translate(21px, 21px);
+      }
+    }
+    
+    // Voice channel button container
+    .actionButtons-14eAc_ {
+      height: 0 ;
+      padding: 0 ;
+      
+      // Caret icon
+      &:after {
+        content: ">" ;
+        position: absolute ;
+        display: flex ;
+        transform: rotate(90deg) translate(6px, 6px);
+        transform-origin: center ;
+        width: 44px ;
+        height: 32px ;
+        top: 0 ;
+        left: 0 ;
+        justify-content: center ;
+        align-items: center ;
+        color: var(--interactive-normal);
+        font-size: 20px ;
+        font-weight: 700 ;
+      }
+      
+      &:hover {
+        height: 44px ;
+        
+        &:after {
+          content: "<" ;
+          color: var(--interactive-hover);
+        }
+      }
+      
+      .button-1YfofB {
+        padding: 0 ;
+        margin: 8px 16px ;
+        background: none ;
+        color: var(--interactive-normal);
+        
+        &:not(.fauxDisabled-2ik0Vw):hover {
+          color: var(--interactive-hover);
+        }
+      }
+    }
   }
 }
 

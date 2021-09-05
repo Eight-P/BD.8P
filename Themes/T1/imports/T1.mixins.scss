@@ -1,4 +1,4 @@
-// - T1.mixins v0.1.06
+// - T1.mixins v0.1.07
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -82,7 +82,7 @@
 }
 
 
-// Buttons (beta)
+// Buttons (beta aka absolute mess)
 // normal Button Design | @include button_normal();
 @mixin button_normal () {
   background-color: var(--background-modifier-selected) !important ;
@@ -128,6 +128,12 @@
     border: none ;
     font-size: 14px ;
     font-weight: 600 ;
+    text-decoration: none ;
+    background-image: none !important ;
+  }
+  
+  &:disabled {
+    opacity: .5 ;
   }
   
   // with Background
@@ -141,7 +147,7 @@
       opacity: if($C, .7, 1);
     }
     
-    &:hover {
+    &:not(:disabled):hover {
       background: if($BG == "background", $BG_hover, $BG);
       border-radius: 1px ;
       color: if($C, $C, $Text_hover);
@@ -154,11 +160,11 @@
   
   // without Background
   @else {
-    background: none ;
+    background: none !important ;
     transition: none ;
     color: $Text_normal;
     
-    &:hover {
+    &:not(:disabled):hover {
       color: $Text_hover;
     }
   }
