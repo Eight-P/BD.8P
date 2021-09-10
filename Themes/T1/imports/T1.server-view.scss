@@ -1,4 +1,4 @@
-// - T1.server-view v0.1.12
+// - T1.server-view v0.1.121
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -172,6 +172,7 @@
     display: grid ;
     padding: 0 ;
     border: none ;
+    grid-template-columns: 100% ;
     
     // Voice channel info container
     .connection-3KRENF {
@@ -180,10 +181,12 @@
       padding: 6px 0 ;
       align-items: unset ;
       
+      // Ping / "Connected"
       .rtcConnectionStatus-2-jIsi {
         padding: 1px 0 2px 0 ;
       }
       
+      // Buttons container
       .button-14-BFJ {
         background: none ;
         
@@ -194,9 +197,11 @@
     
     // Connected users container
     .voiceUsers-YsH5Db {
-      order: 3 ;
+      height: 30px ;
       padding: 3px 8px ;
+      margin: 0 ;
       box-sizing: border-box ;
+      order: 3 ;
       
       &::-webkit-scrollbar { display: none }
       
@@ -239,6 +244,7 @@
         }
       }
       
+      // Buttons container
       .button-1YfofB {
         padding: 0 ;
         margin: 8px 16px ;
