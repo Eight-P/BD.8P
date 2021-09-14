@@ -1,4 +1,4 @@
-// - T1.chat v0.1.251
+// - T1.chat v0.1.252
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -312,6 +312,30 @@
 
     // "Follow" button
     .button-1YxJv4 { @include button_normal() }
+  }
+  
+  // Tips info for text input
+  .applicationCommandEducation-2jAJ0B {
+    bottom: unset ;
+    top: -20px ;
+    left: 5px ;
+    
+    &::-webkit-scrollbar { display: none }
+    
+    // Arrow icon
+    .applicationCommandEducationArrow-1DVDdr { display: none }
+    
+    // Text container
+    .applicationCommandEducationPrompt-1IxFoc {
+      display: flex ;
+      flex-direction: row-reverse ;
+      overflow: visible ;
+    }
+    
+    // Dismiss btn
+    .anchor-3Z-8Bb {
+      margin-right: 10px ;
+    }
   }
 }
 
