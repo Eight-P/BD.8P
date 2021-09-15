@@ -1,0 +1,116 @@
+name: Bug Report (T1)
+description: Report a problem/bug with the T1-Theme.
+labels: [bug]
+assignees:
+  - Eight-P
+  
+body:
+
+  # Header
+  - type: markdown
+    attributes:
+      value: |
+        ## Please try and isolate the root cause of the issue first!
+        - e.g. check you CustomCSS and disable any other Theme or Plugin.
+         
+        - If the issue is not caused by T1 alone, but in combination with another addon make sure to include that in the report!
+        
+        <br/>
+        
+        ## Please describe the issue in detail and how to reproduce it.
+        
+  # Main report textarea
+  - type: textarea
+    attributes:
+      label: "T1 Issue report:"
+      description: " - __(Screenshots can often help)__"
+    validations:
+      required: true
+
+  # Info section sub header
+  - type: markdown
+    attributes:
+      value: |
+        <br/>
+        
+        ## Please include as much information as possible.
+        They're not required, but might be very helpful.
+        
+        <br/>
+  
+  # T1 Version check
+  - type: input
+    attributes:
+      label: "T1 version:"
+      description: " > __What’s your current T1 main and file version?__ <br/> (Main version: bottom of the Settings-menu sidebar | File version: Themes-tab card)"
+  
+  # Spacer line
+  - type: markdown
+    attributes:
+      value: "##"
+  
+  # Discord client check
+  - type: dropdown
+    attributes:
+      label: "Discord client:"
+      description: " > __What Discord client are you using?__ <br/> (Info box at the bottom of the Settings-menu sidebar)"
+      multiple: true
+      options:
+        - Stable (Default)
+        - PTB
+        - Canary
+       
+  # Spacer line
+  - type: markdown
+    attributes:
+      value: "##"
+
+  # Platform check 
+  - type: dropdown
+    attributes:
+      label: "Platform:"
+      description: " > __What Platform are you using?__"
+      multiple: true
+      options:
+        - Windows
+        - Mac
+        - Linux
+        - Browser (Web)
+        - Other (list below)
+  
+  # Spacer line
+  - type: markdown
+    attributes:
+      value: "##"
+
+  # Mod check 
+  - type: dropdown
+    attributes:
+      label: "Discord Mod:"
+      description: " > __What Discord Mod are you using?__ <br/> (Please note, only BD is officially supported. I'll try and help, but no guarantee)"
+      multiple: true
+      options:
+        - BetterDiscord
+        - Powercord
+        - Vizality
+        - GooseMod
+        - Other (list below)
+  
+  # Spacer line
+  - type: markdown
+    attributes:
+      value: "##"
+  
+  # Additional notes
+  - type: textarea
+    attributes:
+      label: "Additional notes:"
+      description: ' > __If you selected "other" above, you can list them here__'
+
+  # Footnote
+  - type: markdown
+    attributes:
+      value: |
+        <br/>
+        
+        #### Thank you for taking the time to fill out this bug report.
