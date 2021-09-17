@@ -1,4 +1,4 @@
-// - T1.popouts v0.1.22
+// - T1.popouts v0.1.23
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -686,3 +686,21 @@
 
 // - notifications popout on receiving voice call
 .bg-h5JY_x ~ .wrapper-3lJCnD { z-index: 1000 }
+
+
+// - "try new feature" Notification popout
+.layerContainer-yqaFcK .layer-v9HyYc[style*="left: -"][style*="top: 8px;"] {
+  transform: translate( calc(50% + 25px), 25px);
+  
+  .subscribeTooltipWrapper-1JoUuw {
+    background-color: var(--background-tertiary);
+  }
+  
+  .button-38aScr {
+    @include Btn("background");
+  }
+  
+//  *:after {
+//    visibility: hidden ;
+//  }
+}

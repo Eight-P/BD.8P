@@ -1,4 +1,4 @@
-// - T1.chat v0.1.252
+// - T1.chat v0.1.253
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -130,6 +130,7 @@
   margin: 5px 0 0 0 ;
   padding: 0 ;
   border-top: 1px solid var(--background-modifier-accent);
+//  border-top: 1px solid var(--background-primary);
 
   &::before { display: none }
 
@@ -183,7 +184,7 @@
       bottom: 5px ;
       right: 0px ;
       width: 1px ;
-      background-color: var(--background-primary) ;
+      background-color: var(--background-modifier-accent) ;
     }
 
     // Button

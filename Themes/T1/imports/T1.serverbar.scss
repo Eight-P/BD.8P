@@ -1,18 +1,15 @@
-// - T1.serverbar v0.1.0522
-// horizontal Serverbar + Addons
+// - T1.serverbar v0.1.053
+// Horizontal serverbar + Addons
 
 // -- Base containers
 // App layer adjustments 
 .layer-3QrUeG.baseLayer-35bLyl > .container-2lgZY8 { flex-direction: column-reverse }
 
 // - Serverbar container / scroller
-//#app-mount .guilds-1SWlCJ {
 .guilds-1SWlCJ {
   height: 54px ;
   width: 100vw ;
-//  margin: 0 !important ;
   margin: 0 ;
-//  padding: 0 !important ;
   padding: 0 ;
   
   // Background image
@@ -20,11 +17,8 @@
   --brightness: brightness(calc((var(--Server_Brightness, 100) / 100)));
   
   background: var(--Server_Background) ;
-//  background-size: cover !important ;
   background-size: cover ;
-//  background-position: center !important ;
   background-position: center ;
-//  background-repeat: no-repeat !important ;
   background-repeat: no-repeat ;
   filter: var(--blur) var(--brightness) ;
   
@@ -81,6 +75,11 @@
   .unreadMentionsIndicatorBottom-2mDYbI { display: none }
 }
 
+// Margin on Mac
+.platform-osx .wrapper-3NnKdC {
+  margin: 0 ;
+}
+
 
 // -- Left side options
 // - Home / GuildsAd / Discovery / GuildsError
@@ -132,7 +131,6 @@
   
   // GuildsAd / Discovery
   @mixin Icons () {
-//    display: flex !important ;
     display: flex ;
     width: 54px ;
     
@@ -201,26 +199,6 @@
       color: var(--red) ;
       height: 20px ;
       width: 20px ;
-      
-      // Tooltip, idk if needed tho
-//      &:hover::after {
-//        content: attr(aria-label) ;
-//        position: absolute ;
-//        display: block ;
-//        top: 0 ;
-//        left: 25px ;
-//        font-size: 15px ;
-//        line-height: 10px ;
-//        max-height: 45px ;
-//        padding: 5px ;
-//        background: var(--background-tertiary) ;
-//        color: var(--text-normal) ;
-//        border-radius: 5px ;
-//        white-space: nowrap ;
-//        overflow: hidden ;
-//        text-overflow: ellipsis ;
-//        @include shadow_effect("box_2")
-//      }
     } 
   }
   
@@ -235,8 +213,7 @@
   > .listItem-GuPuDH:nth-last-child(2) { @include Discovery_Icon() }
   > .listItem-GuPuDH:nth-last-child(3) { @include GuildsAdd_Icon() }
   
-  // When you decide to join club of the "normal human being".
-//  > [aria-label^="Server"] {
+  // In case there are Servers.
   > div[aria-label]:not([class]) {
     
     // Discovery
@@ -249,8 +226,6 @@
     + .tutorialContainer-30WoTp + .listItem-GuPuDH + .listItem-GuPuDH { @include GuildsError_Icon() }
     + .listItem-GuPuDH + .listItem-GuPuDH + .listItem-GuPuDH { @include GuildsError_Icon() }
   }
-  
-  // And when there are is no "Servers" AND a GuildsError, you're fucked and I don't care.
 }
 
 // - BD public server list
@@ -376,8 +351,6 @@
 // - DMs
 .guilds-1SWlCJ .scroller-1Bvpku > div[style="opacity: 1; height: 56px; transform: scale(1);"] {
   @include ServerIcon();
-
-//  margin: 12px 0 ;
 
   &::before {
     content: "" ;
@@ -520,7 +493,7 @@
     max-height: 32px ;
     font-weight: 400 ;
     
-//    @include shadow_effect("drop_2");
+    @include shadow_effect("drop_2");
   }
   
   // Server icon (partnerd,..)
