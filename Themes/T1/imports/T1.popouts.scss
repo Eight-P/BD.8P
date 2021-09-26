@@ -1,4 +1,4 @@
-// - T1.popouts v0.1.23
+// - T1.popouts v0.1.231
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -694,13 +694,13 @@
   
   .subscribeTooltipWrapper-1JoUuw {
     background-color: var(--background-tertiary);
+    
+    &:after {
+      visibility: hidden ;
+    }
   }
   
   .button-38aScr {
     @include Btn("background");
   }
-  
-//  *:after {
-//    visibility: hidden ;
-//  }
 }

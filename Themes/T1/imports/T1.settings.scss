@@ -1,4 +1,4 @@
-// - T1.settings v0.1.04
+// - T1.settings v0.1.041
 // Client / Guilds / Channels
 
 // - Theme version info
@@ -69,6 +69,11 @@
   
   // - Edit Role
   .contentColumn-2hrIYH > .page-3njELR {
+    
+    // Sidebar container main
+    .sidebar-dLM-kh {
+      height: fit-content;
+    }
     
     // Roles list Sidebar
     .list-I3aHXn::-webkit-scrollbar { display: none }

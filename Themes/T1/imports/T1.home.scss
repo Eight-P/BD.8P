@@ -1,4 +1,4 @@
-// - T1.home v0.1.051
+// - T1.home v0.1.1
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages 
@@ -83,211 +83,170 @@
 
 // -- Friendslist
 .tabBody-3YRQ8W {
-  margin-top: 10px ;
   
-  // Seperator line
+  // Seperator line top
   &::before { display: none }
   
-  // "Friends online" count
-  .title-30qZAO { display: none }
-  
-  @mixin Friendslist($n) {
-    $min-width: $n * 340 + 240;
-    $max-width: ($n + 1) * 340 + 240 - 1;
-
-    @media screen and (min-width: $min-width+"px") and (max-width: $max-width+"px") {
-      text-align: start !important ;
-
-      .peopleListItem-2nzedh {
-        margin: 40px 0 0 calc((100vw - #{$min-width}px) / (#{$n} + 1) + 10px) !important ;
-      }
-      
-//      > div {
-//        margin: 0 calc((100vw - #{$min-width}px) / 2) !important ;
-//        width: $n * 340px !important ;
-//        display: block !important ;
-//      }
-    }
-  }
-  
-  // Scroller
+  // Mian Container / Scroller
   .peopleList-3c4jOR {
-    text-align: center ;
+    margin: 0 0 0 20px ;
+    padding: 0 ;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 1%, #000 99%, transparent);
     
-    @include scrollbar();
+    // "Friends online" Count
+    .title-30qZAO { display: none }
     
-    @for $i from 2 through 10 { @include Friendslist($i) }
-    
-    > div {
-      text-align: start ;
-      padding-bottom: 25px ;
+    // Sub container (Grid)
+    > div:first-child {
+      margin: 4% 5px 0 5px ;
+      display: grid ;
+      grid-template-columns: repeat(auto-fit, 300px);
+      justify-content: space-evenly ;
+      row-gap: 35px ;
+      grid-column-gap: 10px ;
     }
+    
+    // idk, this weird tab selection indicator ring thing
+    > .ring-13rgEW { display: none }
   }
   
-  // Friend's Card 
+  // Friend cards
   .peopleListItem-2nzedh {
-    display: inline-block ;
-    margin: 40px 10px 0 10px ;
+    height: 62px !important ;
+    width: 300px ;
+    margin: 0 ; 
     padding: 0 ;
+    opacity: 1 !important ;
     border: none ;
-    width: 320px ;
     background: var(--background-floating) ;
-    height: 70px !important ;
-    border-radius: 6px ;
+    border-radius: 10px ;
     border-top-left-radius: 2px ;
+    border-top-right-radius: 2px ;
     transition: .1s ;
     
     @include shadow_effect("box_2");
     
     &:hover {
-      border-radius: 0 ;
-
-      @include shadow_effect("drop_1");
-    }
-    
-    // Item container
-    > div {
-      position: relative ;
-    }
-    
-    // Second container
-    .userInfo-2zN2z8 { 
-      width: 320px ;
-    }
-    
-    // User avatar, Status icon
-    .avatar-3W3CeO > svg {
-      overflow: visible ;
+      border-radius: 5px ;
+      border-top-left-radius: 2px ;
+      border-top-right-radius: 2px ;
       
-      > foreignObject { 
+      @include shadow_effect("drop_1");
+      
+      // # Identifier
+      .discriminator-22Okc1 {
+        visibility: visible ;
+        width: auto ;
+      }
+    }
+    
+    // Container (Avatar, Name, Activity)
+    .userInfo-2zN2z8 {
+      margin: 0 12.5px ;
+      width: -webkit-fill-available ;
+      overflow: visible ;
+    }
+    
+    // Container (Name, Activity)
+    .text-37NqbO {
+      width: 100% ;
+    }
+    
+    // Username
+    .username-31C1TQ {
+      margin-right: 5px ;
+    }
+    
+    // # Identifier
+    .discriminator-22Okc1 {
+      width: 0 ;
+    }
+    
+    // Activity (hiding the "playing" behind background) 
+    .activity-2myFBH .text-3MU_QQ {
+      width: 100% ;
+      position: relative ;
+
+      strong {
+        position: absolute ;
+        left: 0 ;
+        background: var(--background-floating) ;
+      }
+    }
+    
+    // Idk
+    .textRuler-wO-qHe { display: none }
+    
+    // Activity icon
+    .icon-15YQ1T { display: none }
+    
+    // Avatar pfp
+    .avatar-3W3CeO {
+      margin-top: 2.5px ;
+      
+      // SVG Mask container
+      foreignObject, svg {
         mask: none ;
-        y: 3px ;
-        height: 67px ;
-        width: 67px ;
+        overflow: visible ;
       }
       
-      > rect {
-        x: 0 ;
-        y: 0 ;
-        height: 3px ;
-        width: 320px ;
+      // Image
+      .avatar-VxgULZ {
+        border-radius: 5px ;
+        
+        @include shadow_effect("box_2");
+      }
+      
+      // Status icon
+      rect {
+        x: -12.5px ;
+        y: -15px ;
         mask: none ;
+        width: 300px ;
+        height: 2px ;
         opacity: .8 ;
       }
     }
     
-    // User name, status text
-    .text-37NqbO {
-      margin-top: 3px ;
-      margin-left: 40px ;
-      
-      // User name
-      > .discordTag-2_tqUA {
-        height: 34px ;
-        max-width: 230px ;
-        line-height: 34px ;
-        
-        > .discriminator-22Okc1 {
-          margin-left: 5px ;
-          visibility: visible ;
-          opacity: .7 ;
-          line-height: 34px ;
-        }
-        
-        > .botTag-2WPJ74 {
-          display: inline-flex ;
-          margin: 8px 0 9px 3px;
-        }
-      }
-      
-      // status / activity
-      > .subtext-24R4-w {
-        position: relative ;
-        height: 33px ;
-        width: 230px ;
-        
-        // idk
-        .textRuler-wO-qHe { display: none }
-        
-        // Normal Activity (hiding the "playing" behind background) 
-        .activity-2myFBH .text-3MU_QQ {
-          width: 100% ;
-          
-          > strong {
-            position: absolute ;
-            left: 0 ;
-            background: var(--background-floating) ;
-            width: 100% ;
-          }
-        }
-        
-        // Activity icon
-        .icon-15YQ1T { display: none }
-      }
+    // Profile action btns
+    .actions-1SQwjn {
+      display: none ;
     }
     
-    // User option buttons (useless)
-    .actions-1SQwjn { display: none }
-    
-    
-    
-    // Pending - user
-    .listItemContents-2w6nwE {
+    // User - Blocked, Pending
+    .listItemContents-BUaJR_, .listItemContents-2w6nwE {
+      width: -webkit-fill-available ;
       
-      > .userInfo-3bsjnc { 
-        flex: 1 ;
+      // Container (Avatar, Name, Activity)
+      .userInfo-2zN2z8 {
+        overflow: hidden ;
+        flex: 1 1 auto ;
       }
-      
-      // accept/ignore bnts
-      .actions-FAbeWr {
-        position: absolute ;
-        visibility: hidden ;
-        right: 10px ;
-
-        > .actionButton-uPB8Fs {
-          background: none ;
-          margin: 0 ;
-        }
-      }
-      
-      &:hover {
-        .actions-FAbeWr { 
-          visibility: visible ;
-        }
-
-        .text-37NqbO, .discordTag-2_tqUA { 
-          width: 150px ;
-        }
-      }
-    }
-
-    // Blocked - user
-    .listItemContents-BUaJR_ {
       
       // Unblock btn
-      > .actionButton-uPB8Fs {
-        position: absolute ;
-        right: 10px ;
+      .actionButton-uPB8Fs {
+        display: none ;
+        margin: 0 10px 0 0 ;
         background: none ;
-        margin: 0 ;
-        visibility: hidden ;
       }
       
-      &:hover {
-        .actionButton-uPB8Fs { 
-          visibility: visible ;
-        }
-
-        .text-37NqbO, .discordTag-2_tqUA { 
-          width: 150px ;
-        }
+      // "Blocked" text
+      .subtext-24R4-w {
+        overflow: hidden ;
+        white-space: nowrap ;
+        text-overflow: ellipsis ;
+      }
+      
+      &:hover .actionButton-uPB8Fs {
+        display: flex ;
       }
     }
   }
   
-  // Friends activity list (idk, I don't like it)
+  // Friends activity sidebar (can be viewed in Stage tab)
   > .nowPlayingColumn-2sl4cE { display: none }
 }
+
 
 // -- Nitro store
 .sidebar-2K8pFh ~ .applicationStore-1pNvnv {
@@ -296,6 +255,7 @@
   
   .scroller-9moviB { @include scrollbar() }
 }
+
 
 // -- DMs Sidebar
 .privateChannels-1nO12o {

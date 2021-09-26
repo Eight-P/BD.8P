@@ -1,4 +1,4 @@
-// - T1.chat v0.1.253
+// - T1.chat v0.1.254
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -532,6 +532,9 @@
   // BD emote modifier
   &:hover .emote.stop-animation {
     
+    // :spin :spin2 :spin3 :1spin :2spin :3spin :flip :flap :pulse :shake :shake2 :shake3 
+    // :tr :bl :br
+    
     &.emoteflip,.emotespinflip { transform:scaleX(-1) }
     &.emotespin { animation:1s emote-spin infinite linear }
     &.emote1spin { animation:1s emote-spin-reverse infinite linear }
@@ -755,6 +758,11 @@
   // Gradient effect on hover
   .gradientContainer-10lXLB { display: none }
 
+  // Title card container 
+  .scroller-3gAZLs::-webkit-scrollbar {
+    display: none ;
+  }
+  
   // Grid view container 
   .listItems-1uJgMC .videoWrapper-2v09vt .video-1kutKI {
     height: calc(100% - 20px) ;
