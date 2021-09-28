@@ -1,4 +1,4 @@
-// - T1.home v0.1.1
+// - T1.home v0.1.11
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages 
@@ -87,20 +87,20 @@
   // Seperator line top
   &::before { display: none }
   
-  // Mian Container / Scroller
+  // Main container / Scroller
   .peopleList-3c4jOR {
     margin: 0 0 0 20px ;
     padding: 0 ;
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 1%, #000 99%, transparent);
+    -webkit-mask-image: linear-gradient(to top, transparent, #000 1%, #000 99%, transparent);
     
     // "Friends online" Count
     .title-30qZAO { display: none }
     
     // Sub container (Grid)
     > div:first-child {
-      margin: 4% 5px 0 5px ;
+      margin: 4% 5px ;
       display: grid ;
-      grid-template-columns: repeat(auto-fit, 300px);
+      grid-template-columns: repeat(auto-fill, 300px);
       justify-content: space-evenly ;
       row-gap: 35px ;
       grid-column-gap: 10px ;
@@ -247,6 +247,39 @@
   > .nowPlayingColumn-2sl4cE { display: none }
 }
 
+// -- Add Friend
+.tabBody-3YRQ8W {
+  
+  .addFriendInputWrapper-3PjsbB {
+    margin-top: 32px ;
+    border: none ;
+    background: none ;
+    border-radius: 0 ;
+    
+    .addFriendInput-4bcerK {
+      padding: 8px 10px ;
+      border-bottom: 1px solid transparent ;
+      border-radius: 5px ;
+      background: var(--background-modifier-selected) ;
+    }
+    
+    .addFriendHint-3Y70FX {
+      padding: 8px 10px ;
+    }
+    
+    
+    &:focus-within .addFriendInput-4bcerK {
+      border-color: var(--interactive-normal) ;
+      background: none ;
+      border-radius: 0px ;
+      box-shadow: none ;
+    }
+    
+    .button-38aScr {
+      @include Btn("background");
+    }
+  }
+}
 
 // -- Nitro store
 .sidebar-2K8pFh ~ .applicationStore-1pNvnv {
