@@ -11,7 +11,7 @@ body:
     attributes:
       value: |
         ## Please try and isolate the root cause of the issue first!
-        - e.g. check you CustomCSS and disable any other Theme or Plugin.
+        - e.g. check your CustomCSS and disable any other Theme or Plugin.
          
         - If the issue is not caused by T1 alone, but in combination with another addon make sure to include that in the report!
         
