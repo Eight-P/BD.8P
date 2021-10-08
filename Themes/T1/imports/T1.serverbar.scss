@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.053
+// - T1.serverbar v0.1.06
 // Horizontal serverbar + Addons
 
 // -- Base containers
@@ -86,10 +86,10 @@
 .guilds-1SWlCJ .scroller-1Bvpku {
   
   // GuildSeparator / Discovery preview listItem 
-  > .listItem-GuPuDH { display: none }
+  > .listItem-1hlISG { display: none }
   
   // general item container
-  .listItem-GuPuDH { 
+  .listItem-1hlISG { 
     width: 54px ; 
     margin: 0 ; 
   }
@@ -134,7 +134,7 @@
     display: flex ;
     width: 54px ;
     
-    .pill-1aYSec { display: none }
+    .pill-2IYbPt { display: none }
     
     // SVG 1 container, SVG 1
     .wrapper-25eVIn, .svg-1X37T1 {
@@ -143,13 +143,13 @@
     }
     
     // SVG 2 container
-    .circleIconButton-1QV--U {
+    .circleIconButton-1XqULR {
       transform: rotate(90deg) ;
       background: none ;
       color: var(--text-normal) ;
       opacity: .75 ;
       
-      &.selected-1JjBPm { opacity: 1 }
+      &.selected-2jcQaY { opacity: 1 }
       
       @include shadow_effect("drop_1");
       
@@ -177,7 +177,7 @@
     margin: 0 ;
     margin: 3px 0 10px 0;
     
-    .circleIconButton-1QV--U > svg {
+    .circleIconButton-1XqULR > svg {
       height: 90% ;
       width: 90% ;
     }
@@ -206,25 +206,25 @@
   > .tutorialContainer-2sGCg9 { @include Home_Icon() }
   
   // GuildsAdd
-  > .tutorialContainer-30WoTp { @include GuildsAdd_Icon() }
+  > .tutorialContainer-32VdNI { @include GuildsAdd_Icon() }
   
   // In case there are is no Servers.
-  > .tutorialContainer-30WoTp + .listItem-GuPuDH { @include Discovery_Icon() }
-  > .listItem-GuPuDH:nth-last-child(2) { @include Discovery_Icon() }
-  > .listItem-GuPuDH:nth-last-child(3) { @include GuildsAdd_Icon() }
+  > .tutorialContainer-32VdNI + .listItem-1hlISG { @include Discovery_Icon() }
+  > .listItem-1hlISG:nth-last-child(2) { @include Discovery_Icon() }
+  > .listItem-1hlISG:nth-last-child(3) { @include GuildsAdd_Icon() }
   
   // In case there are Servers.
   > div[aria-label]:not([class]) {
     
     // Discovery
-    ~ .listItem-GuPuDH { @include Discovery_Icon() }
+    ~ .listItem-1hlISG { @include Discovery_Icon() }
     
     // GuildsAdd in Discovery preview 
-    + .listItem-GuPuDH { @include GuildsAdd_Icon() }
+    + .listItem-1hlISG { @include GuildsAdd_Icon() }
     
-    // GuildsError
-    + .tutorialContainer-30WoTp + .listItem-GuPuDH + .listItem-GuPuDH { @include GuildsError_Icon() }
-    + .listItem-GuPuDH + .listItem-GuPuDH + .listItem-GuPuDH { @include GuildsError_Icon() }
+    // GuildsError (i think)
+    + .tutorialContainer-32VdNI + .listItem-1hlISG + .listItem-1hlISG { @include GuildsError_Icon() }
+    + .listItem-1hlISG + .listItem-1hlISG + .listItem-1hlISG { @include GuildsError_Icon() }
   }
 }
 
@@ -382,10 +382,10 @@
   &::-webkit-scrollbar { display: none }
 
   // Server items
-  > .listItem-GuPuDH { @include ServerIcon() }
+  > .listItem-1hlISG { @include ServerIcon() }
 
   // Server items in folders
-  ul > .listItem-GuPuDH { @include ServerIcon() }
+  ul > .listItem-1hlISG { @include ServerIcon() }
 }
 
 // - Server folder
@@ -397,7 +397,7 @@
   > .expandedFolderBackground-1cujaW { display: none }
 
   // Folder Icon / preview 
-  > .listItem-GuPuDH {
+  > .listItem-1hlISG {
     
     > .pill-1z4sAY { display: none }
 
@@ -552,7 +552,7 @@
 }
 
 // - Tooltips container
-.tooltip-2QfLtc.listItemTooltip-1JmWJ7 {
+.tooltip-2QfLtc.listItemTooltip-zWFTMS {
   max-width: 240px ;
   
   .tooltipContent-bqVLWK {
@@ -561,7 +561,7 @@
     overflow: hidden ;
     padding: 6px 10px ;
 
-    > .rowGuildName-2wU3B_ {
+    .rowGuildName-2wU3B_ {
 
      .guildNameText-3Zwx4p {
        display: block ;
