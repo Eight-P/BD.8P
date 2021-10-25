@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.06
+// - T1.serverbar v0.1.1
 // Horizontal serverbar + Addons
 
 // -- Base containers
@@ -98,6 +98,7 @@
   @mixin Home_Icon () {
     grid-area: Home ;
     
+    // Pill
     .pill-3N7f9r { display: none }
     
     // Notification badge
@@ -106,7 +107,10 @@
       bottom: 4px ;
     }
     
-    .wrapper-25eVIn { transform: rotate(90deg) } // also rotates Public SL.
+    // SVG 1 conatiner
+    .wrapper-25eVIn { 
+      transform: rotate(90deg);
+    }
     
     // SVG 2 conatiner
     .childWrapper-anI2G9 {
@@ -237,6 +241,7 @@
   width: 20px ;
   overflow: visible ;
   z-index: 1 ;
+  transform: rotate(90deg);
   
   #bd-pub-button {
     height: 20px ;
@@ -332,7 +337,7 @@
   }
   
   // Pill
-  > .pill-1z4sAY > .item-2hkk8m {
+  .item-2hkk8m {
     display: none ;
     margin-left: -5px ;
     
@@ -345,6 +350,12 @@
     
     // Unread indicator
     &[style="opacity: 1; height: 8px; transform: none;"] { display: block }
+  }
+  
+  // Pill with bd classes as an optional improvment
+  &.bd-unread:not(.bd-selected) .item-2hkk8m {
+    display: block ;
+    height: 8px !important ;
   }
 }
 
@@ -372,8 +383,8 @@
   .pill-1Z5PKm { display: none }
 }
 
-// - Servers container
-.guilds-1SWlCJ .scroller-1Bvpku > div[aria-label]:not([class]) {
+// - Server container
+.scroller-1Bvpku > [aria-label]:not([class]) {
   grid-area: Servers ;
   width: 54px ;
   max-height: 100% ;
@@ -394,12 +405,12 @@
   margin: 6px 0 ;
 
   // Background when open
-  > .expandedFolderBackground-1cujaW { display: none }
+  .expandedFolderBackground-1cujaW { display: none }
 
   // Folder Icon / preview 
   > .listItem-1hlISG {
     
-    > .pill-1z4sAY { display: none }
+    .pill-1z4sAY { display: none }
 
     // Icon container
     .wrapper-25eVIn { transform: rotate(90deg) }
@@ -409,15 +420,15 @@
       left: 4px ;
       bottom: 4px ;
 
-      > .numberBadge-2s8kKX { background-color: var(--red) !important }
+      .numberBadge-2s8kKX { background-color: var(--red) !important }
     }
 
-    // SVG 1 container
+    // SVG 1
     .svg-1X37T1 {
 
       @include shadow_effect("drop_1");
 
-      > mask, > g { display: none }
+      mask, g { display: none }
     }
 
     .folder-1hbNCn { background: none }
@@ -430,7 +441,8 @@
       margin: 4px ;
 
       // Icon container open and closed
-      > div {
+      .closedFolderIconWrapper-2sTcE6,
+      .expandedFolderIconWrapper-Huv7rA {
         height: 40px ; 
         width: 40px ;
         padding: 0 ;
@@ -464,10 +476,12 @@
 
 // -- Right side buttons
 // Channels list spacer for Server banner image
-#channels > .content-3YMskv > div[style="height: 84px;"]:not([class]) { display: none }
+//#channels .content-3YMskv > div[style="height: 84px;"]:not([class]) { display: none }
+.content-3YMskv > div[style="height: 84px;"]:not([class]) { display: none }
 
 // - Server options button
-.sidebar-2K8pFh > nav.container-3w7J-x > .container-1taM1r {
+//.sidebar-2K8pFh > .container-3w7J-x > .container-1taM1r {
+.sidebar-2K8pFh .container-1taM1r {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -480,7 +494,7 @@
   &.selected-31Nl7x { background-color: rgba(0, 0, 0, 0.2) }
   
   // container
-  > .header-2V-4Sw {
+  .header-2V-4Sw {
     padding: 0 5px ;
     height: 54px ;
   }
@@ -507,7 +521,7 @@
 }
 
 // - Search button (home)
-.privateChannels-1nO12o > .searchBar-6Kv8R2 {
+.privateChannels-1nO12o .searchBar-6Kv8R2 {
   position: fixed;
   width: 120px ;
   height: 54px ;

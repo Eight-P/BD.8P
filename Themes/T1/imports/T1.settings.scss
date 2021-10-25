@@ -1,4 +1,4 @@
-// - T1.settings v0.1.041
+// - T1.settings v0.1.05
 // Client / Guilds / Channels
 
 // - Theme version info
@@ -56,6 +56,19 @@
   .contentRegionScroller-26nc1e {
     
     @include scrollbar() ;
+  }
+  
+  // Checkbox item list option
+  .item-26Dhrx {
+    background: var(--background-modifier-accent) ;
+    
+    &[aria-checked="true"] {
+      background: var(--background-modifier-selected) ;
+    }
+    
+    &[aria-checked="false"]:hover {
+      background: var(--background-modifier-hover) ;
+    }
   }
 }
 

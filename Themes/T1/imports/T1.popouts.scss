@@ -1,4 +1,4 @@
-// - T1.popouts v0.1.231
+// - T1.popouts v0.1.232
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -703,4 +703,16 @@
   .button-38aScr {
     @include Btn("background");
   }
+}
+
+// Server boost screen
+.root-3R2ngo .perksModal-fSYqOq {
+  background: var(--Main_Background);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: var(--BGM_Blur) var(--BGM_Brightness) ;
+  
+  @include scrollbar();
 }
