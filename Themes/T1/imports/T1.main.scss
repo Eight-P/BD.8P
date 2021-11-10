@@ -1,19 +1,19 @@
 $vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ;
-$T1_version: "0.5.376" ;
+$T1_version: "0.5.38" ;
 
-@import 'imports/T1.mixins.scss';       // Global Mixins and Variables
-@import 'imports/T1.background.scss';   // Background image and Transparency
-@import 'imports/T1.chat.scss';         // Text and voice chat
-@import 'imports/T1.home.scss';         // Home Tabs / DMs-Sidebar
-@import 'imports/T1.popouts.scss';      // Popouts / Tooltips
-@import 'imports/T1.server-view.scss';  // Channels / Member / Discovery
-@import 'imports/T1.serverbar.scss';    // Serverbar + Addons
-@import 'imports/T1.settings.scss';     // Settings menus
-@import 'imports/T1.titlebar.scss';     // Header-, Titlebar / Notifications
-@import 'imports/T1.user.scss';         // User-Popout / Modal
-@import 'imports/T1.compatibility.scss';// Plugin Compatibility
+@import 'src/T1.mixins.scss';       // Global Mixins and Variables
+@import 'src/T1.background.scss';   // Background image and Transparency
+@import 'src/T1.chat.scss';         // Text and voice chat
+@import 'src/T1.home.scss';         // Home Tabs / DMs-Sidebar
+@import 'src/T1.popouts.scss';      // Popouts / Tooltips
+@import 'src/T1.server-view.scss';  // Channels / Member / Discovery
+@import 'src/T1.serverbar.scss';    // Serverbar + Addons
+@import 'src/T1.settings.scss';     // Settings menus
+@import 'src/T1.titlebar.scss';     // Header-, Titlebar / Notifications
+@import 'src/T1.user.scss';         // User-Popout / Modal
+@import 'src/T1.compatibility.scss';// Plugin Compatibility
 
-@import 'imports/T1.serverbar_n2.scss';    // temp. alt. serverbar version
+@import 'src/T1.serverbar_old.scss';    // temp. leaving in the old serverbar version
 
 
 // -- Notifications

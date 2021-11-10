@@ -1,5 +1,8 @@
-// - T1.chat v0.1.255
+// * T1.chat v0.1.26
 // Text chat, Voice chat
+
+$BG_Embed: var(--background-modifier-selected); // Code blocks, ..
+$BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
 
 // Header/Chat sperator line
 .content-yTz4x3::before { display: none }
@@ -354,12 +357,12 @@
   &:before { display: none }
   
   // Preview of replied msg
-  > .repliedMessage-VokQwo { 
+  .repliedMessage-VokQwo { 
     height: 20px ;
   }
   
   // Message container
-  > .contents-2mQqc9 { 
+  .contents-2mQqc9 { 
     padding: 0 0 2px 6px ;
     
     // Profile image
@@ -377,26 +380,98 @@
     }
   }
   
+  // File
+  .attachment-33OFj0 {
+    background: none ;
+    border: none ;
+  }
+  
+  // Code block
+  code:not(.codeView-1JPDeA, .inline) {
+    background: $BG_Embed ;
+    border: none ;
+    
+    .hljs-comment {
+      color: var(--interactive-normal);
+    }
+  }
+  
+  // File embed
+  .embedWrapper-lXpS3L {
+    
+    // File content, embed options
+    .textContainer-C0szpm, .footer-2yA7Ep {
+      background: $BG_Embed ;
+      border: none ;
+    }
+    
+    // File name
+    .attachmentName-1iFwvb {
+      color: var(--header-secondary);
+    }
+    
+    // File size
+    .formattedSize-2PXVec {
+      color: var(--interactive-normal);
+    }
+    
+    // Chnage code language btn
+    .codeIcon-3YZylx {
+      color: var(--interactive-normal);
+      cursor: pointer;
+      
+      &:hover {
+        color: var(--interactive-hover);
+      }
+    }
+  }
+  
+  // Inline Code, Text Spoilers
+  code.inline, .spoilerText-3p6IlD {
+    background: $BG_Embed-alt ;
+  }
+
+  // Image Spoiler
+  .spoilerContainer-331r0R {
+    box-shadow: none ;
+    
+    &.hidden-HHr2R9 {
+      background: $BG_Embed ;
+      border-radius: 4px ;
+    }
+    
+    .hiddenSpoilers-1ksnR6 {
+      visibility: hidden ;
+    }
+  }
+  
   // Mention
-  &.mentioned-xhSam7 > .contents-2mQqc9{
+  &.mentioned-xhSam7 .contents-2mQqc9{
     border-left: solid 2px var(--border-mentioned) ;
     background: var(--background-mentioned) ;
   }
   
   // Clyde (client-side info/error messages)
-  &.ephemeral-1PsL1r > .contents-2mQqc9 {
+  &.ephemeral-1PsL1r .contents-2mQqc9 {
     border-left: solid 2px var(--Blurple) ;
     background: var(--Blurple-light) ;
   }
   
   // Selected for reply
-  &.replying-1x3H0T > .contents-2mQqc9 {
+  &.replying-1x3H0T .contents-2mQqc9 {
     border-right: solid 2px var(--header-secondary) ;
     background: var(--background-modifier-hover) ;
   }
   
   // Reply | &.hasReply-34In-r { }
-  // System Message (msg pinned, user joined server, ..) | &.isSystemMessage-2MkNHd { }
+  // System Message (msg pinned, user joined server, ..) | 
+  &.isSystemMessage-2MkNHd {
+    
+    // "Wave to say hi!" btn
+    .welcomeCTA-2orRfU .button-38aScr {
+      @include Btn("background");
+    }
+  }
   
   // Thread
   &.hasThread-2k82W0 {
