@@ -224,13 +224,14 @@
   --show-gif-btn: 1 ;
   --show-sticker-btn: 0 ;
   --show-emoji-btn: 1 ;
+  
+  --show-home-tabs: 1 ; 
 
   --always-show-voicecontrols: 0 ;
 
   --Font: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif ;
   
   // Intern
-  
   --BGM_Blur: blur(calc(var(--Main_Background_blur, 0) / 100 * 1px));
   --BGM_Brightness: brightness(calc((var(--Main_Brightness, 80) / 100)));
   

@@ -1,4 +1,4 @@
-// - T1.chat v0.1.255
+// - T1.chat v0.1.26
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -354,12 +354,12 @@
   &:before { display: none }
   
   // Preview of replied msg
-  > .repliedMessage-VokQwo { 
+  .repliedMessage-VokQwo { 
     height: 20px ;
   }
   
   // Message container
-  > .contents-2mQqc9 { 
+  .contents-2mQqc9 { 
     padding: 0 0 2px 6px ;
     
     // Profile image
@@ -377,26 +377,66 @@
     }
   }
   
+  // Text with background color
+  code, // Code inline/block
+  .spoilerText-3p6IlD, // Spoiler
+  .embedWrapper-lXpS3L .textContainer-C0szpm, // Text file content
+  .embedWrapper-lXpS3L .footer-2yA7Ep // Text file embed options
+  {
+    background: var(--background-secondary-alt);
+    background: var(--background-modifier-selected);
+//    background: var(--background-modifier-hover);
+//    background: none ;
+    border: none ;
+  }
+  
+  // File, Spoiler, ..
+  .attachment-33OFj0 {
+    background: none ;
+    border: none ;
+  }
+  
+  // Embed
+  .embedFull-2tM8-- {
+    background: var(--background-secondary-alt);
+  }
+  
+  .spoilerContainer-331r0R.hidden-HHr2R9 {
+    background: var(--background-secondary-alt);
+    box-shadow: none ;
+    
+    .hiddenSpoilers-1ksnR6 {
+      visibility: hidden ;
+    }
+  }
+  
   // Mention
-  &.mentioned-xhSam7 > .contents-2mQqc9{
+  &.mentioned-xhSam7 .contents-2mQqc9{
     border-left: solid 2px var(--border-mentioned) ;
     background: var(--background-mentioned) ;
   }
   
   // Clyde (client-side info/error messages)
-  &.ephemeral-1PsL1r > .contents-2mQqc9 {
+  &.ephemeral-1PsL1r .contents-2mQqc9 {
     border-left: solid 2px var(--Blurple) ;
     background: var(--Blurple-light) ;
   }
   
   // Selected for reply
-  &.replying-1x3H0T > .contents-2mQqc9 {
+  &.replying-1x3H0T .contents-2mQqc9 {
     border-right: solid 2px var(--header-secondary) ;
     background: var(--background-modifier-hover) ;
   }
   
   // Reply | &.hasReply-34In-r { }
-  // System Message (msg pinned, user joined server, ..) | &.isSystemMessage-2MkNHd { }
+  // System Message (msg pinned, user joined server, ..) | 
+  &.isSystemMessage-2MkNHd {
+    
+    // "Wave to say hi!" btn
+    .welcomeCTA-2orRfU .button-38aScr {
+      @include Btn("background");
+    }
+  }
   
   // Thread
   &.hasThread-2k82W0 {

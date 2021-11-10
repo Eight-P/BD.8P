@@ -1,4 +1,4 @@
-// - T1.serverbar v0.1.1
+// - T1.serverbar v0.1.12
 // Horizontal serverbar + Addons
 
 // -- Base containers
@@ -86,10 +86,10 @@
 .guilds-1SWlCJ .scroller-1Bvpku {
   
   // GuildSeparator / Discovery preview listItem 
-  > .listItem-1hlISG { display: none }
+  > .listItem-2Ig28I { display: none }
   
   // general item container
-  .listItem-1hlISG { 
+  .listItem-2Ig28I { 
     width: 54px ; 
     margin: 0 ; 
   }
@@ -99,7 +99,7 @@
     grid-area: Home ;
     
     // Pill
-    .pill-3N7f9r { display: none }
+    .pill-gcH-8B { display: none }
     
     // Notification badge
     .lowerBadge-29hYVK {
@@ -123,7 +123,7 @@
     .wrapper-1BJsBx.selected-bZ3Lue > .childWrapper-anI2G9 { opacity: 1 }
     
     // SVG 2
-    .homeIcon-FuNwkv { 
+    .homeIcon-AaowEC { 
       @include shadow_effect("drop_1") ;
       
       // Icon path
@@ -138,7 +138,7 @@
     display: flex ;
     width: 54px ;
     
-    .pill-2IYbPt { display: none }
+    .pill-61ft1C { display: none }
     
     // SVG 1 container, SVG 1
     .wrapper-25eVIn, .svg-1X37T1 {
@@ -147,13 +147,13 @@
     }
     
     // SVG 2 container
-    .circleIconButton-1XqULR {
+    .circleIconButton-hZmpE8 {
       transform: rotate(90deg) ;
       background: none ;
       color: var(--text-normal) ;
       opacity: .75 ;
       
-      &.selected-2jcQaY { opacity: 1 }
+      &.selected-3mFF3I { opacity: 1 }
       
       @include shadow_effect("drop_1");
       
@@ -181,13 +181,13 @@
     margin: 0 ;
     margin: 3px 0 10px 0;
     
-    .circleIconButton-1XqULR > svg {
+    .circleIconButton-hZmpE8 > svg {
       height: 90% ;
       width: 90% ;
     }
   }
   
-  //  GuildsError
+  //  GuildsError (i think, probably outdated)
   @mixin GuildsError_Icon () {
     grid-area: unset ;
     position: absolute ;
@@ -207,28 +207,28 @@
   }
   
   // Home
-  > .tutorialContainer-2sGCg9 { @include Home_Icon() }
+  > .tutorialContainer-11ICd5 { @include Home_Icon() }
   
   // GuildsAdd
-  > .tutorialContainer-32VdNI { @include GuildsAdd_Icon() }
+  > .tutorialContainer-3alCZm { @include GuildsAdd_Icon() }
   
   // In case there are is no Servers.
-  > .tutorialContainer-32VdNI + .listItem-1hlISG { @include Discovery_Icon() }
-  > .listItem-1hlISG:nth-last-child(2) { @include Discovery_Icon() }
-  > .listItem-1hlISG:nth-last-child(3) { @include GuildsAdd_Icon() }
+  > .tutorialContainer-3alCZm + .listItem-2Ig28I { @include Discovery_Icon() }
+  > .listItem-2Ig28I:nth-last-child(2) { @include Discovery_Icon() }
+  > .listItem-2Ig28I:nth-last-child(3) { @include GuildsAdd_Icon() }
   
   // In case there are Servers.
   > div[aria-label]:not([class]) {
     
     // Discovery
-    ~ .listItem-1hlISG { @include Discovery_Icon() }
+    ~ .listItem-2Ig28I { @include Discovery_Icon() }
     
     // GuildsAdd in Discovery preview 
-    + .listItem-1hlISG { @include GuildsAdd_Icon() }
+    + .listItem-2Ig28I { @include GuildsAdd_Icon() }
     
     // GuildsError (i think)
-    + .tutorialContainer-32VdNI + .listItem-1hlISG + .listItem-1hlISG { @include GuildsError_Icon() }
-    + .listItem-1hlISG + .listItem-1hlISG + .listItem-1hlISG { @include GuildsError_Icon() }
+    + .tutorialContainer-3alCZm + .listItem-2Ig28I + .listItem-2Ig28I { @include GuildsError_Icon() }
+    + .listItem-2Ig28I + .listItem-2Ig28I + .listItem-2Ig28I { @include GuildsError_Icon() }
   }
 }
 
@@ -293,6 +293,11 @@
   height: 48px !important ;
   margin: 12px 0 ;
 
+  // on drag and drop (maybe)
+  > .pill-ZqtR4i ~ div {
+//    transform: rotate(90deg) ;
+  }
+  
   .wrapper-25eVIn {
     transform: rotate(90deg) ;
 
@@ -360,7 +365,7 @@
 }
 
 // - DMs
-.guilds-1SWlCJ .scroller-1Bvpku > div[style="opacity: 1; height: 56px; transform: scale(1);"] {
+.guilds-1SWlCJ .scroller-1Bvpku > [style="opacity: 1; height: 56px; transform: scale(1);"] {
   @include ServerIcon();
 
   &::before {
@@ -374,7 +379,7 @@
   }
 
   // Subsequent Dms (not first)
-  ~ div[style="opacity: 1; height: 56px; transform: scale(1);"] {
+  ~ [style="opacity: 1; height: 56px; transform: scale(1);"] {
     margin: 0 0 12px 0 ;
 
     &::before { content: none }
@@ -393,24 +398,24 @@
   &::-webkit-scrollbar { display: none }
 
   // Server items
-  > .listItem-1hlISG { @include ServerIcon() }
+  > .listItem-2Ig28I { @include ServerIcon() }
 
-  // Server items in folders
-  ul > .listItem-1hlISG { @include ServerIcon() }
+  // Server items in open folders
+//  ul > .listItem-2Ig28I { @include ServerIcon() }
 }
 
 // - Server folder
-.guilds-1SWlCJ .wrapper-3Njo_c {
+.guilds-1SWlCJ .wrapper-shyHJt {
   width: 54px ;
   margin: 6px 0 ;
 
   // Background when open
-  .expandedFolderBackground-1cujaW { display: none }
+  .expandedFolderBackground-3ZDF05 { display: none }
 
   // Folder Icon / preview 
-  > .listItem-1hlISG {
+  > .listItem-2Ig28I {
     
-    .pill-1z4sAY { display: none }
+    .pill-ZqtR4i { display: none }
 
     // Icon container
     .wrapper-25eVIn { transform: rotate(90deg) }
@@ -431,18 +436,18 @@
       mask, g { display: none }
     }
 
-    .folder-1hbNCn { background: none }
+    .folder-2w6LX1 { background: none }
 
     // Icon container 2
-    .folderIconWrapper-1_bOZe {
+    .folderIconWrapper-1Ml_1q {
       position: absolute ;
       height: 40px ; 
       width: 40px ;
       margin: 4px ;
 
       // Icon container open and closed
-      .closedFolderIconWrapper-2sTcE6,
-      .expandedFolderIconWrapper-Huv7rA {
+      .closedFolderIconWrapper-1I9YfS,
+      .expandedFolderIconWrapper-3fmTfW {
         height: 40px ; 
         width: 40px ;
         padding: 0 ;
@@ -460,6 +465,9 @@
   > ul {
     height: auto !important;
     margin-bottom: 24px ;
+    
+    // Server items in open folders
+    .listItem-2Ig28I { @include ServerIcon() }
     
     &::after {
       content: "" ;
@@ -511,7 +519,7 @@
   }
   
   // Server icon (partnerd,..)
-  .guildIconContainer-2FW_iA { display: none }
+  .guildIconContainer-2hr-Lk { display: none }
   
   // Chevron icon
   .button-1w5pas { display: none }
@@ -566,7 +574,8 @@
 }
 
 // - Tooltips container
-.tooltip-2QfLtc.listItemTooltip-zWFTMS {
+//.tooltip-2QfLtc.listItemTooltip-zWFTMS {
+.tooltip-2QfLtc.tooltipPrimary-1d1ph4.tooltipDisablePointerEvents-3eaBGN {
   max-width: 240px ;
   
   .tooltipContent-bqVLWK {
