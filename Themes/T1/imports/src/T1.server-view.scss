@@ -1,16 +1,87 @@
-// - T1.server-view v0.1.121
+// * T1.server-view v0.1.13
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
-.sidebar-2K8pFh > .container-3w7J-x {
+.sidebar-2K8pFh .container-3w7J-x {
   top: 48px ;
   margin-bottom: 48px;
   
   // unread msg indicator
-  .unread-15xhX5.container-35XQWE { display: none }
+  .unread-15xhX5 { display: none }
 
-  // scrollbar on scroller
-  .scroller-RmtA4e.scrollerBase-289Jih::-webkit-scrollbar { display: none }
+  // Sidebar info thing
+  .container-3O_wAf {
+    
+    .icon-1SdhiF {
+      background: none ;
+    }
+    
+    .button-38aScr {
+      @include Btn("background");
+    }
+    
+    .close-20Ww5T .size12-3cLvbJ {
+      color: var(--interactive-normal);
+      
+      &:hover {
+        color: var(--interactive-hover);
+      }
+    }
+  }
+  
+  // Scrollbar
+  .scroller-RmtA4e::-webkit-scrollbar { display: none }
+  
+  // - Scroller content
+  // Server boost lvl bar
+  .container-3fNISf {
+    position: relative ;
+    margin: -8px 0 0 0 ;
+    height: calc(32px * var(--show-serverboost-stats, 1));
+    overflow: hidden ;
+    
+    // Text container
+    .textArea-2LMFQQ {
+      margin: 0 12px ;
+      
+      // Nitro flower icon thing
+      .flowerStarContainer-3zDVtj {
+        display: none ;
+      }
+      
+      // Text "Goal:LVL"
+      .colorInteractiveActive-3Ip9Eu {
+        color: var(--header-secondary);
+      }
+    }
+    
+    // Container progress bar
+    .progressBarContainer-DLPbha {
+      position: absolute ;
+      top: 0 ;
+      width: 100% ;
+      background: none ;
+      visibility: hidden ;
+      
+      // Progress bar
+      .progressBar-UDQ4AC {
+        height: 24px ;
+        opacity: .15 ;
+        border-top-right-radius: 5px ;
+        border-bottom-right-radius: 5px ;
+      }
+      
+      // End of bar icon 
+      .tadaIcon-2mxSDl { display: none }
+    }
+    
+    &:hover .progressBarContainer-DLPbha {
+      visibility: visible ;
+    }
+    
+    // Bottom spacer
+    .divider-3C88Um { display: none }
+  }
   
   // Text and Voice Channels
   .iconVisibility-sTNpHs {
@@ -84,33 +155,13 @@
     }
   }
   
-  // - User in Voice channel
+  // User in Voice channel
   .voiceUser-1K6Xox {
 
     // "live" indicator
     .live-vBWnV6 { 
       background: none !important ;
       color: var(--red) ;
-    }
-  }
-  
-  // sidebar info thing
-  > .container-3O_wAf {
-    
-    .icon-1SdhiF {
-      background: none ;
-    }
-    
-    .button-38aScr {
-      @include Btn("background");
-    }
-    
-    .close-20Ww5T .size12-3cLvbJ {
-      color: var(--interactive-normal);
-      
-      &:hover {
-        color: var(--interactive-hover);
-      }
     }
   }
 }
@@ -260,6 +311,76 @@
 }
 
 
+// -- Channel info sidebar (ptb)
+#app-mount .container-2PDP7D {
+  position: relative ;
+  min-width: 240px ;
+  flex-direction: column-reverse ;
+  
+  // Header nav bar
+  .tabs-3L9Rgq {
+    padding: 12px 0 ;
+    border: none ;
+//    border-top: 1px solid var(--background-modifier-accent);
+    background: none ;
+    justify-content: space-evenly ;
+    z-index: 1 ;
+  }
+  
+  // Tab btn
+  .tab-XC_yrg {
+    padding: 0 ;
+    margin: 0 ;
+    background: none ;
+  }
+  
+  // Members container
+  .container-2wlB3z {
+    height: calc(100% - 44px);
+  }
+  
+  // Members inner container
+  .members-2upGyL {
+    height: auto ;
+  }
+  
+  // Channel info container
+  .container-1CU5bi {
+    color: var(--channels-default);
+    
+    // Header text
+    .sectionHeader-3P67IO {
+      color: var(--text-normal);
+    }
+    
+    // Subheader text
+    .header-P3PHw3 {
+      color: var(--header-secondary);
+    }
+    
+    // Text
+    .colorStandard-2KCXvj {
+      color: var(--channels-default);
+    }
+    
+    // Settings options
+    .section-3uZwkF {
+      
+      // Dropdwonmenu
+      .lookFilled-22uAsw {
+        border: none ;
+        background: none ;
+        background: var(--background-modifier-accent) ;
+        
+        &.open-kZ53_U {
+          background: var(--background-modifier-selected) ;
+        }
+      }
+    }
+  }
+}
+
+
 // -- Members list 
 .members-1998pB {
   &::-webkit-scrollbar { display: none }
@@ -272,7 +393,7 @@
     margin: 0 0 0 11px ;
     
     // Inner container 
-    > .layout-2DM8Md {
+    .layout-2DM8Md {
       border-radius: 0 ;
       background: none ;
       border-right: 3px solid transparent ;
@@ -284,11 +405,11 @@
     }
     
     // User popout open
-    &.selected-aXhQR6 > .layout-2DM8Md {
+    &.selected-aXhQR6 .layout-2DM8Md {
        border-right: 3px solid var(--interactive-hover);
     }
     
-    // Offline Member
+    // Offline member
     &.offline-3nJYBR:not(:hover) img.avatar-VxgULZ {
       filter: grayscale(100%);
       border-radius: 50% ;
@@ -298,7 +419,7 @@
     .name-uJV0GL + div { pointer-events: none }
   }
 
-  // Preload Dummys
+  // Preload dummys
   .placeholder-3KRNN9, .memberGroupsPlaceholder-3mwPub {
     animation: none ;
   }
@@ -310,25 +431,25 @@
 
 
 // -- Discovery Sidebar
-.discoverHeader-Ijkm_M {
+.discoverHeader-3th5O9 {
   
-  ~ .categoryItem-1QIroW > .itemInner-gPkiWb {
+  ~ .categoryItem-ONe8JV .itemInner-1XfZdz {
     border-radius: 0 ;
     padding: 0 4px ;
     margin: 5px 4px ;
   }
   
-  ~ .categoryItem-1QIroW {
+  ~ .categoryItem-ONe8JV {
     
-    > .itemInner-gPkiWb {
+    .itemInner-1XfZdz {
       border-radius: 0 ;
       padding: 0 4px ;
       margin: 5px 4px ;
     }
     
-    &:hover .itemInner-gPkiWb { border-left: 3px solid var(--interactive-hover) }
+    &:hover .itemInner-1XfZdz { border-left: 3px solid var(--interactive-hover) }
     
-    &.selected-aXhQR6 > .itemInner-gPkiWb {
+    &.selected-aXhQR6 .itemInner-1XfZdz {
       background-color: transparent ;
       border-left: 3px solid var(--interactive-hover) ;
     }

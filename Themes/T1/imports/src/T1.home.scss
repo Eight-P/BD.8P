@@ -1,4 +1,4 @@
-// * T1.home v0.1.12
+// * T1.home v0.1.121
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages (used to be a thing)
@@ -127,9 +127,6 @@
     @include shadow_effect("box_2");
     
     &:hover {
-      border-radius: 5px ;
-      border-top-left-radius: 2px ;
-      border-top-right-radius: 2px ;
       
       @include shadow_effect("box_1");
       

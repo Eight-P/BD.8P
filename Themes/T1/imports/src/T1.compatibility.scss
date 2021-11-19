@@ -1,17 +1,17 @@
-// - T1.compatibility v0.1.043
+// * T1.compatibility v0.1.05
 // Compatibility with plugins
 
 
-// - Hide Channels by Farcrada (v1.1.0)
-// - FriendNotifications by DevilBro (v1.7.5)
-// - ReadAllNotificationsButton by DevilBro (v1.6.8)
-// - SpotifyControls by DevilBro (v1.1.7)
+// - Hide Channels by Farcrada (v2.0.8)
+// - FriendNotifications by DevilBro (v1.8.1)
+// - ReadAllNotificationsButton by DevilBro (v1.7.0)
+// - SpotifyControls by DevilBro (v1.2.4)
 // - CollapsibleUI by programmer2514 (v1.1.0)
-// - ChannelTabs by l0c4lh057 (v2.5.1)
+// - ChannelTabs by l0c4lh057 (v2.5.5)
 
 
 
-// -- Hide Channels by Farcrada (v1.2.1)
+// -- Hide Channels by Farcrada (v2.0.8)
 // - Show/Hide btn
 #toggleChannels {
   filter: brightness(.6) ;
@@ -26,26 +26,26 @@
 .sidebar-2K8pFh {
   transition: none !important ;
   
-  // Server channel titlebar when sidebar is hidden
-  &.hideChannelElement + .chat-3bRxxu .title-3qD0b- {
-    margin-left: 240px ;
-    width: auto ;
+  // Sidebar hidden
+  &.hideChannelElement + div {
     
-    // Channel name
-    .title-29uC1r { 
-      display: flex ;
-    } 
-  }
-  
-  &.hideChannelElement + .chat-3bRxxu .newMessagesBar-265mhP {
-    left: 240px ;
+    // Headerbar: chat, friendslist
+    .title-3qD0b-, .container-1r6BKw {
+      margin-left: 240px ;
+      width: auto ;
+
+      // Channel name
+      .title-29uC1r { 
+        display: flex ;
+      } 
+    }
   }
 }
 
 
-// -- FriendNotifications by DevilBro (v1.7.5)
+// -- FriendNotifications by DevilBro (v1.8.1)
 // - Online friend counter
-.guilds-1SWlCJ .scroller-1Bvpku > .listItem-GuPuDH.friendsOnlineWrap-0gZ63m {
+.guilds-1SWlCJ .friendsOnlineWrap-0gZ63m {
   display: flex !important ;
   position: absolute ;
   transform: rotate(90deg) translateX(-50%) ;
@@ -60,13 +60,13 @@
 }
 
 
-// -- ReadAllNotificationsButton by DevilBro (v1.6.8)
+// -- ReadAllNotificationsButton by DevilBro (v1.7.0)
 // - "Read all" btn
-.guilds-1SWlCJ .scroller-1Bvpku > .listItem-GuPuDH.frame-oXWS21 {
+.guilds-1SWlCJ .frame-oXWS21 {
   display: flex !important ;
   position: absolute ;
   top: 0 ;
-  left: 0 ;
+  left: -15px ;
   z-index: 1 ;
 
   &, * { height: 20px ; width: 20px  }
@@ -114,9 +114,9 @@
 }
 
 
-// -- SpotifyControls by DevilBro (v1.1.7)
+// -- SpotifyControls by DevilBro (v1.2.4)
 // - Sidebar control panel
-.panels-j1Uci_ > .container-6sXIoE { 
+.panels-j1Uci_ .container-6sXIoE { 
   margin: 0px ;
   min-height: 44px ;
 
@@ -139,10 +139,6 @@
     .title-29uC1r { 
       display: flex ;
     } 
-  }
-  
-  + .chat-3bRxxu .newMessagesBar-265mhP {
-    left: 240px ;
   }
 }
 

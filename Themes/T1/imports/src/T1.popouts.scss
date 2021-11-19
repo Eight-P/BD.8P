@@ -1,4 +1,4 @@
-// - T1.popouts v0.1.233
+// * T1.popouts v0.1.24
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -717,4 +717,81 @@
   filter: var(--BGM_Blur) var(--BGM_Brightness) ;
   
   @include scrollbar();
+}
+
+// Events modal and some other (needs some more testing)
+.root-1gCeng.medium-2RE1hE {
+  background: var(--background-tertiary);
+  
+  // Header
+  .header-1TKi98 {
+    background: var(--background-secondary-alt);
+    
+    .fontDisplay-1dagSA {
+      color: var(--interactive-hover);
+    }
+  }
+  
+  // Content body
+  .content-1SXGsJ {
+    padding: 0 !important ;
+    
+    &::-webkit-scrollbar { display: none } 
+  }
+  
+  // Events (item card)
+  .card-2X8BSG {
+    background: var(--background-tertiary);
+    border-width: 0 ;
+    margin-top: 0px ;
+    border-radius: 0 ;
+    
+    &:not(:first-child) {
+      border-top-width: 1px ;
+    }
+    
+    &:hover {
+      background: var(--background-modifier-active);
+    }
+    
+    // Event name
+    .eventName-2Zb-UG {
+      color: var(--interactive-hover);
+    }
+    
+    // In card- content footer divider
+    .divider-12kAYT {
+      background: none ;
+    }
+  }
+  
+  // "Share", "Interested" footer btns
+  .button-38aScr {
+    @include Btn();
+  }
+  
+  // Footer
+  .footer-2gL1pp {
+    background: var(--background-secondary-alt);
+  }
+  
+  // Event info modal (maybe more)
+  &.root-3KobW4 {
+    
+    // Header
+    .container-1dt-Qg {
+      background: var(--background-secondary-alt);
+      border: none ;
+      
+      // Nav bar item
+      .tabBarItem-1nATS- {
+        border: none ;  
+      }
+    }
+    
+    // Content
+    .contentContainer-1f7Gvv {
+      background: var(--background-tertiary);
+    }
+  }
 }

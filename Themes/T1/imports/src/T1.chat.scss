@@ -1,4 +1,4 @@
-// * T1.chat v0.1.26
+// * T1.chat v0.1.261
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -386,14 +386,19 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     border: none ;
   }
   
+  // Code Syntax
+  code {
+    
+    // Comments
+    .hljs-comment {
+      color: var(--interactive-normal);
+    }
+  }
+  
   // Code block
   code:not(.codeView-1JPDeA, .inline) {
     background: $BG_Embed ;
     border: none ;
-    
-    .hljs-comment {
-      color: var(--interactive-normal);
-    }
   }
   
   // File embed
@@ -424,6 +429,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
         color: var(--interactive-hover);
       }
     }
+  }
+  
+  // Full embed
+  .embedFull-2tM8-- {
+    background: $BG_Embed ;
   }
   
   // Inline Code, Text Spoilers
