@@ -1,4 +1,4 @@
-// * T1.chat v0.1.261
+// * T1.chat v0.1.262
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -165,7 +165,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Reply popout
-    > .attachedBars-tZDmyV {
+    .attachedBars-tZDmyV {
       background: none ;
       
       .replyBar-1YLQ2F {
@@ -173,6 +173,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
         margin-right: 10px ;
       }
     }
+  }
+  
+  // Inner container
+  .inner-MADQqc {
+    overflow: hidden ; // for btns
   }
 
   // "Attach file" Button 
@@ -198,8 +203,8 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 
-  // typing indicator
-  >  .typing-2GQL18 {
+  // Typing indicator
+  .typing-2GQL18 {
     background: transparent ;
     position: absolute ;
     top: -14px ;
@@ -211,7 +216,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     line-height: 15px ;
   }
 
-  //  Slowmode icon
+  // Slowmode icon
   .cooldownWrapper-3joyFc {
     position: absolute ;
     right: -20px ;
@@ -230,7 +235,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
     }
   }
-
+  
   // Buttons conatiner
   .buttons-3JBrkn { 
     
@@ -341,6 +346,30 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       margin-right: 10px ;
     }
   }
+  
+  // file/upload attachment
+  .channelAttachmentArea-3ziOpb {
+    
+    &:before {
+      content: "";
+      position: absolute ;
+      top: 0 ;
+      left: 0 ;
+      right: 0 ;
+      height: 100% ;
+      background: var(--background-modifier-hover) ;
+    }
+    
+    // Attachment item
+    .upload-3Dkqd6 {
+      background: none ;
+      
+      .wrapper-2aW0bm {
+        background: none ;
+        box-shadow: none ;
+      }
+    }
+  }
 }
 
 
@@ -392,6 +421,16 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     // Comments
     .hljs-comment {
       color: var(--interactive-normal);
+    }
+  }
+  
+  // Discord embeds (Server invite, Server Event, ...)
+  .wrapper-35wsBm {
+    background: $BG_Embed ;
+    
+    .button-3To2tQ, .button-26pYmv {
+
+      @include Btn(var(--background-modifier-accent), white);
     }
   }
   

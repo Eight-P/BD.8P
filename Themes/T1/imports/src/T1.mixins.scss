@@ -1,4 +1,4 @@
-// * T1.mixins v0.1.08
+// * T1.mixins v0.1.09
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -177,6 +177,8 @@
   border-bottom: 2px solid var(--red) ;
   border-radius: 0 ;
   color: var(--text-normal) ;
+  
+  box-shadow: none ;
 }
 
 

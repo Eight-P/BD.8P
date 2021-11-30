@@ -1,5 +1,5 @@
-// - T1.user v0.1.132
-// User popout / Modal
+// * T1.user v0.1.133
+// User popout (needs rework) / Modal
 
 // -- User popout container
 .layer-v9HyYc > .translate-2dAEQ6 { 
@@ -44,7 +44,7 @@
     height: 100% ;
     
     // Background for right side 
-    > .popoutBanner-19WKGg:not(.bannerPremium-2hSAwz) {
+    .popoutBanner-19WKGg:not(.bannerPremium-2hSAwz) {
       width: 200px ;
       height: 100% ;
       background-color: var(--background-secondary) !important ;
@@ -53,13 +53,13 @@
     }
     
     // Custom image banner
-    > .popoutBannerPremium-1n96gg {
+    .popoutBannerPremium-1n96gg {
       width: 512px ;
       height: 100% ;
       filter: brightness(0.5) ;
       border-radius: 5px ;
       
-      > .bannerOverlay-1uIerX { display: none }
+      .bannerOverlay-1uIerX { display: none }
     }
   }
   
@@ -76,7 +76,7 @@
       overflow: visible ;
     }
     
-    > .wrapper-3t9DeA {
+    .wrapper-3t9DeA {
       border: none ;
       background: none ;
 
@@ -89,7 +89,7 @@
       }
     }
     
-    > .avatarHint-2A3RNb {
+    .avatarHint-2A3RNb {
       top: 0 ;
       left: 0 ;
       border-radius: 7.5% ;
@@ -97,7 +97,7 @@
   }
   
   // Username, Badges
-  > .headerTop-3vNv-a {
+  .headerTop-3vNv-a {
     position: absolute ;
     padding: 0 ;
     left: 120px ;
@@ -203,8 +203,11 @@
     }
   }
   
+  // Add bot to server btn
+  .applicationInstallButton-1M2YjM { display: none }
+  
   // Main user info container (About Me, Status, Activity, Roles, Note)
-  > .body-3HBlXn {
+  .body-3HBlXn {
     padding: 0 ;
     box-shadow: none ;
     overflow: hidden !important ;
@@ -213,7 +216,7 @@
     
     > .divider-ewBQKj { display: none }
     
-    > .customStatus-oN4ZZY, > .aboutMeSection-1Fw5Ia {
+    .customStatus-oN4ZZY, .aboutMeSection-1Fw5Ia {
       position: absolute ;
       top: 120px ;
       left: 20px ;
@@ -232,11 +235,11 @@
       ~ .bodyInnerWrapper-26fQXj {
          min-height: 160px ;
         
-        > .activity-2INFPu { margin-top: 160px }
+        .activity-2INFPu { margin-top: 160px }
       }
     }
     
-    > .aboutMeSection-1Fw5Ia {
+    .aboutMeSection-1Fw5Ia {
       
       .aboutMeTitle-1IYtPE { display: none }
       
@@ -248,18 +251,18 @@
       ~ .bodyInnerWrapper-26fQXj {
          min-height: 170px ;
         
-        > .activity-2INFPu { margin-top: 170px }
+        .activity-2INFPu { margin-top: 170px }
       }
     }
     
     
-    > .customStatus-oN4ZZY ~ .aboutMeSection-1Fw5Ia {
+    .customStatus-oN4ZZY ~ .aboutMeSection-1Fw5Ia {
       top: 150px ;
       
       ~ .bodyInnerWrapper-26fQXj {
          min-height: 200px ;
         
-        > .activity-2INFPu { margin-top: 200px  }
+        .activity-2INFPu { margin-top: 200px  }
       }
     }
   }
@@ -274,13 +277,13 @@
     min-height: 120px ;
 
     // Activity container
-    > .activity-2INFPu {
+    .activity-2INFPu {
       margin-top: 120px ;
       padding: 4px 16px 10px 16px;
       grid-row: span 4 ;
       grid-column: 1 ;
       
-      > .buttonsWrapper-2spIeK { flex-direction: row }
+      .buttonsWrapper-2spIeK { flex-direction: row }
       
       button {
         margin: 0 ;
@@ -299,7 +302,7 @@
     }
 
     // Roles header
-    > .bodyTitle-1ySSKn {
+    .bodyTitle-1ySSKn {
       grid-row: 1 ;
       grid-column: 2 ;
       margin: 0 ;
@@ -308,7 +311,7 @@
     }
 
     // Roles container
-    > .rolesList-1geHY1 {
+    .rolesList-1geHY1 {
       padding: 12px 8px 12px 12px ;
       margin: 0 ;
       grid-row: 2 ;
@@ -352,7 +355,7 @@
       }
       
       // Add role button
-      > .addButton-pcyyf6 {
+      .addButton-pcyyf6 {
         position: relative ;
         color: var(--interactive-normal) ;
         border: 1px solid var(--interactive-muted) ;
@@ -394,38 +397,38 @@
     }
 
     // Note header
-    > .rolesList-1geHY1 + .bodyTitle-1ySSKn { 
+    .rolesList-1geHY1 + .bodyTitle-1ySSKn { 
       grid-row: 3 ;
       grid-column: 2 ;
       padding: 8px 8px 0 10px;
     }
 
     // Note container
-    > .note-1oo11U { 
+    .note-1oo11U { 
       grid-row: 2 / 4 ;
       grid-column: 2 ;
       margin: 0 ;
       padding: 0 0 8px 12px ;
 
       // Inner textarea
-      > .textarea-2r0oV8 {
+      .textarea-2r0oV8 {
         padding: 8px 8px 0 0 !important ;
         background: none ;
       }
     }
     
-    > .rolesList-1geHY1 ~ .note-1oo11U { grid-row: 4 }
+    .rolesList-1geHY1 ~ .note-1oo11U { grid-row: 4 }
   }
   
   // - Quick DM
-  > .footer-3UKYOU {
+  .footer-3UKYOU {
     position: relative !important ;
     width: 512px !important ;
     padding: 0 ;
     background-color: var(--background-secondary-alt);
     
     // Container
-    > .quickMessage-3jDbBs { margin: 0 }
+    .quickMessage-3jDbBs { margin: 0 }
     
     // Text input 
     .inputDefault-_djjkz {
@@ -435,7 +438,7 @@
     }
     
     // "New user" info
-    > .wumpusWrapper-2H_Ezt { display: none }
+    .wumpusWrapper-2H_Ezt { display: none }
   }
   
   // "pro tip" (idk if that's still a thing or not)

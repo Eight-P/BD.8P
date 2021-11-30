@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.24
+// * T1.popouts v0.1.25
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -7,7 +7,7 @@
 }
 
 
-// - Autocomplete popout
+// Autocomplete popout
 .chatContent-a9vAAp .form-2fGMdU .autocomplete-1vrmpx {
   background-color: var(--background-tertiary) !important ;
       
@@ -25,7 +25,7 @@
 }
 
 
-// - Gif, Sticker, Emoji, BD emotes Picker
+// Gif, Sticker, Emoji, BD emotes Picker
 .layerContainer-yqaFcK {
   
   // Main container
@@ -76,7 +76,7 @@
 }
 
 
-// - Context menus
+// Context menus
 .layer-v9HyYc .menu-3sdvDG {
   background: var(--background-tertiary) ;
   
@@ -136,7 +136,7 @@
 }
 
 
-// - Searchbar options popout
+// Searchbar options popout
 .layer-v9HyYc > #search-results {
   background: var(--background-secondary-alt) ;
   
@@ -156,7 +156,7 @@
   }
 }
 
-// - Searchbar results popout
+// Searchbar results popout
 .searchResultsWrap-3-pOjs {
   background: var(--background-tertiary) ;
   width: -webkit-fill-available ;
@@ -250,7 +250,7 @@
 }
 
 
-// - Pins
+// Pins
 .messagesPopoutWrap-1MQ1bW:not(.recentMentionsPopout-3rCiI6) {
   width: 50vw ;
   max-width: 600px ;
@@ -311,7 +311,7 @@
 }
 
 
-// - Inbox
+// Inbox
 .recentMentionsPopout-3rCiI6 {
   width: 50vw ;
   max-width: 600px ;
@@ -473,7 +473,7 @@
 }
 
 
-// - Threads popout
+// Threads popout
 .browser-2NpbWS.container-7uh5fX {
   background: var(--background-tertiary) ;
   
@@ -499,21 +499,19 @@
   .container-2I9Hud {
     background: none ;
     border: none ;
-    padding: 15px 0 ;
-
-    &:hover .threadName-2iLyXl{
-      background: var(--background-secondary) ;
+    
+    &:hover {
+      background: var(--background-modifier-accent) ;
     }
-
-    .threadName-2iLyXl {
-      background: var(--background-secondary-alt) ;
-      color: var(--interactive-normal) ;
-      text-align: center ;
-      margin-bottom: 4px ;
+    
+    // Name/test container
+    .left-3P8WCO {
+      row-gap: 5px ;
     }
-
-    .subtext-pjj1kJ {
-      margin-left: 8px ;
+    
+    // Name 
+    .threadNameLine-3p4RWQ {
+      align-self: center ;
     }
   }
   
@@ -528,12 +526,13 @@
 }
 
 
-// - Invite to Server / Add friends to Dm / New Group Dm
+// Invite to Server / Add friends to Dm / New Group Dm
 .focusLock-Ns3yie > .root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y {
   background: var(--background-tertiary);
 
   // - Header
   .header-1TKi98 {
+    background: var(--background-tertiary);
     
     // Title
     h2 {
@@ -653,7 +652,7 @@
   }
 }
 
-// - User status shorthand popout
+// User status shorthand popout
 #status-picker {
   background: var(--background-tertiary) ;
   
@@ -674,7 +673,7 @@
 }
  
 
-// - Tooltips
+// Tooltips
 .layerContainer-yqaFcK .tooltip-2QfLtc {
   background: var(--background-tertiary) ;
   font-size: 14px ;
@@ -686,11 +685,11 @@
 }
 
 
-// - notifications popout on receiving voice call
+// Notifications popout on receiving voice call
 .bg-h5JY_x ~ .wrapper-3lJCnD { z-index: 1000 }
 
 
-// - "try new feature" Notification popout
+// "try new feature" Notification popout
 .layerContainer-yqaFcK .layer-v9HyYc[style*="left: -"][style*="top: 8px;"] {
   transform: translate( calc(50% + 25px), 25px);
   
@@ -708,7 +707,7 @@
 }
 
 // Server boost screen
-.root-3R2ngo .perksModal-fSYqOq {
+.root-3R2ngo .perksModal-1pSu7w {
   background: var(--Main_Background);
   background-position: center;
   background-size: cover;
@@ -719,8 +718,31 @@
   @include scrollbar();
 }
 
+// "All Active Threads" (from Channel list btn)
+.root-1gCeng .container-2QXVMm {
+  background: var(--background-tertiary);
+  
+  .header-2Lx45W {
+    background: var(--background-secondary);
+  }
+  
+  .activeThreadsList-3f7l7U {
+    
+    .container-2I9Hud {
+      border: none ;
+      background: none ;
+      
+      &:hover {
+        background: var(--background-modifier-accent);
+      }
+    }
+  }
+}
+
+
 // Events modal and some other (needs some more testing)
-.root-1gCeng.medium-2RE1hE {
+//.off 
+.layer-2KE1M9 .root-1gCeng {
   background: var(--background-tertiary);
   
   // Header
@@ -730,6 +752,10 @@
     .fontDisplay-1dagSA {
       color: var(--interactive-hover);
     }
+    
+    .button-38aScr {
+      @include Btn();
+    }
   }
   
   // Content body
@@ -737,6 +763,36 @@
     padding: 0 !important ;
     
     &::-webkit-scrollbar { display: none } 
+  }
+  
+  // Progressbars
+  .selectedProgressBar-1Z4WVU {
+    background: var(--interactive-active) ;
+  }
+  
+  .colorBrand-2tjs5J {
+    color: var(--text-normal) ;
+  }
+  
+  .input-cIJ7To {
+    border: none ;
+    
+    &:focus {
+      background: var(--background-modifier-selected) ;
+    }
+  }
+  
+  // Checkbox item list option
+  .item-26Dhrx {
+    background: var(--background-modifier-accent) ;
+    
+    &[aria-checked="true"] {
+      background: var(--background-modifier-selected) ;
+    }
+    
+    &[aria-checked="false"]:hover {
+      background: var(--background-modifier-hover) ;
+    }
   }
   
   // Events (item card)
@@ -763,16 +819,21 @@
     .divider-12kAYT {
       background: none ;
     }
-  }
-  
-  // "Share", "Interested" footer btns
-  .button-38aScr {
-    @include Btn();
+    
+    .button-38aScr {
+      @include Btn();
+    }
   }
   
   // Footer
   .footer-2gL1pp {
     background: var(--background-secondary-alt);
+    
+    .inline-3uJr8Q, .container-YB6rZD {
+      .button-38aScr{
+        @include Btn();
+      }
+    }
   }
   
   // Event info modal (maybe more)
@@ -794,4 +855,44 @@
       background: var(--background-tertiary);
     }
   }
+}
+
+// Quick switch navigation/search
+.quickswitcher-3JagVE {
+  background: var(--background-tertiary);
+  
+  .input-2VB9rf {
+    background: var(--background-modifier-accent);
+  }
+  
+  // Scroller 
+  .scroller-zPkAnE {
+    background: var(--background-tertiary);
+    margin: 0 ;
+    padding: 0 ;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 96%, transparent);
+    
+    &::-webkit-scrollbar { display: none }
+  }
+  
+  // Item
+  .result-oB0z-- {
+    
+    // :hover
+    &[aria-selected=true] {
+      background: var(--background-modifier-hover);
+    }
+    
+    // Unread channel
+    .contentUnread-3gTHvA {
+      color: var(--interactive-normal);
+    }
+    
+    .badge-36LyGI {
+      @include unread_indicator_inline();
+    }
+  }
+  
+  // Protip footer, Tutorial arrows idk
+  .protip-1b9XPC, .tutorial-3igfYb {  display: none }
 }

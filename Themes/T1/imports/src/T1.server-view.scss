@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.13
+// * T1.server-view v0.1.14
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -84,7 +84,7 @@
   }
   
   // Text and Voice Channels
-  .iconVisibility-sTNpHs {
+  .wrapper-2jXpOf {
     
     // Icon ("#", speaker, ..)
     .icon-1DeIlz {
@@ -153,6 +153,12 @@
       // pill
       .unread-2lAfLh { background-color: var(--interactive-hover) }
     }
+  }
+  
+  // Threads indicator spine thing
+  .spine--Wla_O {
+    color: var(--channels-default);
+    opacity: .5 ;
   }
   
   // User in Voice channel

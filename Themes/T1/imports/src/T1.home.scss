@@ -1,4 +1,4 @@
-// * T1.home v0.1.121
+// * T1.home v0.1.122
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages (used to be a thing)
@@ -317,6 +317,14 @@
       height: calc(var(--show-home-tabs, 1) * 38px);
       margin: calc(var(--show-home-tabs, 1) * 6px) 0;
       overflow: hidden ;
+    }
+    
+    &.holidayPromotionSelectedBackground-181xIv {
+      background: none ;
+      
+      .children-gzQq2t {
+        display: none ;
+      }
     }
 
     // Second container
