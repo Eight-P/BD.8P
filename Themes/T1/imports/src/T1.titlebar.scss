@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.13
+// * T1.titlebar v0.1.14
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -132,7 +132,9 @@
     }
     
     // Follow Announcement channel button
-    .followButton-L6L-Us { display: none }
+    .followButton-L6L-Us { 
+      @include Btn();
+    }
   }
   
   .toolbar-1t6TWx {
@@ -153,8 +155,7 @@
     .item-3HknzM {
       background: none !important ;
       
-      // unread indicator
-      .numberBadge-2s8kKX { @include unread_indicator_inline() }
+      @include Mentions_icon(".numberBadge-2s8kKX");
       
       // add friend Tab
       &[aria-controls="add_friend-tab"] {

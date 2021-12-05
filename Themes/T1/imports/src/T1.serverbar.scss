@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.121
+// * T1.serverbar v0.1.13
 // Horizontal serverbar + Addons
 
 // -- Base containers
@@ -187,7 +187,7 @@
     }
   }
   
-  //  GuildsError (i think, probably outdated)
+  //  GuildsError (probably outdated)
   @mixin GuildsError_Icon () {
     grid-area: unset ;
     position: absolute ;
@@ -292,14 +292,26 @@
   width: 54px ; 
   height: 48px !important ;
   margin: 12px 0 ;
-
-  // on drag and drop (maybe)
-  > .pill-ZqtR4i ~ div {
-//    transform: rotate(90deg) ;
+  
+  // bc drag and drop (server, dms)
+//  > div:not([class]), .listItemWrapper-2MsAsM {
+  .pill-ZqtR4i + div, .listItemWrapper-2MsAsM {
+    transform: rotate(90deg) ;
+  }
+  
+  // Placeholder when dragging
+  .placeholderMask-1gr-sz {
+    height: 40px;
+    width: 40px;
+    margin: 4px;
+    
+    .dragInner-2jqmg1 {
+      background: rgba(0, 0, 0, 0.5) ;
+    }
   }
   
   .wrapper-25eVIn {
-    transform: rotate(90deg) ;
+//    transform: rotate(90deg) ;
 
     @include shadow_effect("server_1");
     
@@ -399,9 +411,6 @@
 
   // Server items
   > .listItem-2Ig28I { @include ServerIcon() }
-
-  // Server items in open folders
-//  ul > .listItem-2Ig28I { @include ServerIcon() }
 }
 
 // - Server folder
@@ -415,11 +424,27 @@
   // Folder Icon / preview 
   > .listItem-2Ig28I {
     
-    .pill-ZqtR4i { display: none }
+    .pill-ZqtR4i { 
+      display: none ;
+      
+      // Icon container (for drag)
+      + div { transform: rotate(90deg) }
+    }
 
     // Icon container
-    .wrapper-25eVIn { transform: rotate(90deg) }
+//    .wrapper-25eVIn { transform: rotate(90deg) }
 
+    // Placeholder when dragging
+    .placeholderMask-1gr-sz {
+      height: 40px;
+      width: 40px;
+      margin: 4px;
+
+      .dragInner-2jqmg1 {
+        background: rgba(0, 0, 0, 0.5) ;
+      }
+    }
+    
     // Unreads badge
     .lowerBadge-29hYVK {
       left: 4px ;
@@ -484,11 +509,9 @@
 
 // -- Right side buttons
 // Channels list spacer for Server banner image
-//#channels .content-3YMskv > div[style="height: 84px;"]:not([class]) { display: none }
 .content-3YMskv > div[style="height: 84px;"]:not([class]) { display: none }
 
 // - Server options button
-//.sidebar-2K8pFh > .container-3w7J-x > .container-1taM1r {
 .sidebar-2K8pFh .container-1taM1r {
   position: fixed;
   width: 120px ;
@@ -574,7 +597,6 @@
 }
 
 // - Tooltips container
-//.tooltip-2QfLtc.listItemTooltip-zWFTMS {
 .tooltip-2QfLtc.tooltipPrimary-1d1ph4.tooltipDisablePointerEvents-3eaBGN {
   max-width: 240px ;
   

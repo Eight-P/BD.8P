@@ -1,4 +1,4 @@
-// * T1.mixins v0.1.09
+// * T1.mixins v0.1.1
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -171,14 +171,16 @@
 }
 
 
-// Inline unread indicator 
-@mixin unread_indicator_inline () {
-  background-color: transparent !important ;
-  border-bottom: 2px solid var(--red) ;
-  border-radius: 0 ;
-  color: var(--text-normal) ;
-  
-  box-shadow: none ;
+// Unread mentions badge (inline) | @include Mentions_icon();
+@mixin Mentions_icon ($class:false) {
+
+  #{if($class, $class, "&")} {
+    background-color: transparent !important ;
+    border-bottom: 2px solid var(--red) ;
+    border-radius: 0 ;
+    color: var(--text-normal) ;
+    box-shadow: none ;
+  }
 }
 
 

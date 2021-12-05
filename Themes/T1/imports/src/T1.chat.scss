@@ -1,4 +1,4 @@
-// * T1.chat v0.1.262
+// * T1.chat v0.1.263
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -133,7 +133,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   margin: 5px 0 0 0 ;
   padding: 0 ;
   border-top: 1px solid var(--background-modifier-accent);
-//  border-top: 1px solid var(--background-primary);
 
   &::before { display: none }
 
@@ -302,25 +301,26 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 
-  // Announcement channel follow option
+  // Announcement channel text input (without chat permission)
   .wrapper-39oAo3 {
-    height: 44px ;
-    border-top: 1px solid var(--background-modifier-accent);
-    padding: 0 ;
-    margin: 0 ;
-    background: none ;
-
-    // Image
-    .image-3XsqGc { display: none }
-
-    // Text
-    .title-FVgbgL {
-      color: var(--text-muted) ;
-      font-weight: 400 ;
-    }
-
-    // "Follow" button
-    .button-1YxJv4 { @include button_normal() }
+    display: none ;
+    
+//    height: 44px ;
+//    padding: 0 ;
+//    margin: 0 ;
+//    background: none ;
+//
+//    // Image
+//    .image-3XsqGc { display: none }
+//
+//    // Text
+//    .title-FVgbgL {
+//      color: var(--text-muted) ;
+//      font-weight: 400 ;
+//    }
+//
+//    // "Follow" button
+//    .button-1YxJv4 { @include button_normal() }
   }
   
   // Tips info for text input
@@ -358,12 +358,37 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       right: 0 ;
       height: 100% ;
       background: var(--background-modifier-hover) ;
+      z-index: -1 ;
     }
     
     // Attachment item
     .upload-3Dkqd6 {
       background: none ;
       
+      // Btns container
+      .actionBarContainer-3EfnhW {
+        position: static ;
+        
+        &:hover:after {
+          content: "";
+          position: absolute ;
+          top: 0 ;
+          left: 0 ;
+          right: 0 ;
+          bottom: 0 ;
+          background: var(--background-modifier-hover) ;
+          z-index: -1 ;
+        }
+      }
+      
+      // Btns container inner
+      .actionBar-3yJOtm {
+        top: 0 ;
+        right: 0 ;
+        transform: none ;
+      }
+      
+      // Buttons
       .wrapper-2aW0bm {
         background: none ;
         box-shadow: none ;

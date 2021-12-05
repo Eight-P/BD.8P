@@ -1,4 +1,4 @@
-// * T1.home v0.1.122
+// * T1.home v0.1.123
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -- Live Stages (used to be a thing)
@@ -311,6 +311,8 @@
     height: 38px ;
     margin: 6px 0 ;
     padding: 0 ;
+    
+    @include Mentions_icon(".numberBadge-2s8kKX");
     
     // Home tabs (friends, nitro-store, libary)
     &:not([aria-label]) {

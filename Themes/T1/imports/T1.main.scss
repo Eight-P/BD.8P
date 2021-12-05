@@ -1,5 +1,5 @@
 $vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ;
-$T1_version: "0.5.4" ;
+$T1_version: "0.5.41" ;
 
 @import 'src/T1.mixins.scss';       // Global Mixins and Variables
 @import 'src/T1.background.scss';   // Background image and Transparency
@@ -13,7 +13,7 @@ $T1_version: "0.5.4" ;
 @import 'src/T1.user.scss';         // User-Popout / Modal
 @import 'src/T1.compatibility.scss';// Plugin Compatibility
 
-@import 'src/T1.serverbar_old.scss';    // temp. leaving in the old serverbar version
+//@import 'src/T1.serverbar_old.scss';    // temp. leaving in the old serverbar version
 
 
 // -- Notifications

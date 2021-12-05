@@ -1,4 +1,4 @@
-// * T1.compatibility v0.1.05
+// * T1.compatibility v0.1.06
 // Compatibility with plugins
 
 
@@ -254,8 +254,9 @@
     
     // Unread mentions 
     .channelTabs-mentionBadge:not(.channelTabs-noMention) {
-      @include unread_indicator_inline() ;
       margin-bottom: -2px ;
+      
+      @include Mentions_icon();
     }
   }
 }

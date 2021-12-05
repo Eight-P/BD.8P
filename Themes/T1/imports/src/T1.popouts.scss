@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.25
+// * T1.popouts v0.1.26
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -406,6 +406,8 @@
       .channelName-_v0rI4, .guildName-GKOCI8 {
         width: fit-content ;
       }
+      
+      @include Mentions_icon(".badge-2l0o8g");
       
       // Buttons
       .button-1-5Aqk {
@@ -888,9 +890,7 @@
       color: var(--interactive-normal);
     }
     
-    .badge-36LyGI {
-      @include unread_indicator_inline();
-    }
+    @include Mentions_icon(".badge-36LyGI");
   }
   
   // Protip footer, Tutorial arrows idk
