@@ -302,26 +302,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Announcement channel text input (without chat permission)
-  .wrapper-39oAo3 {
-    display: none ;
-    
-//    height: 44px ;
-//    padding: 0 ;
-//    margin: 0 ;
-//    background: none ;
-//
-//    // Image
-//    .image-3XsqGc { display: none }
-//
-//    // Text
-//    .title-FVgbgL {
-//      color: var(--text-muted) ;
-//      font-weight: 400 ;
-//    }
-//
-//    // "Follow" button
-//    .button-1YxJv4 { @include button_normal() }
-  }
+  .wrapper-39oAo3 { display: none }
   
   // Tips info for text input
   .applicationCommandEducation-2jAJ0B {
