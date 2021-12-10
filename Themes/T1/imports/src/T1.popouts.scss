@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.26
+// * T1.popouts v0.1.27
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -29,17 +29,33 @@
 .layerContainer-yqaFcK {
   
   // Main container
-  .contentWrapper-SvZHNd { background-color: var(--background-tertiary) }
+  .contentWrapper-SvZHNd { 
+    background-color: var(--background-tertiary);
+  }
+
+  // Christmas shit
+  .contentWrapperWithSnowsgivingNotice-1AvSpB {
+    grid-template-rows: 24px auto;
+    padding-top: 16px;
+
+    .anchor-3Z-8Bb { display: none }
+  }
   
   // Navbar
-  .navButtonActive-1MkytQ { background: none }
+  .navButtonActive-1MkytQ { 
+    background: none ;
+  }
   
   // Popout content (Emoji, Sticker, GIFs)
   .wrapper-1rqM3x, .wrapper-2iFQJ9, .container-3ISnnM {
     
-    input { border-bottom: 1px solid var(--interactive-muted) }
+    input { 
+      border-bottom: 1px solid var(--interactive-muted);
+     }
 
-    > div { background-color: var(--background-tertiary) }
+    > div { 
+      background-color: var(--background-tertiary);
+     }
 
     .scroller-3gAZLs::-webkit-scrollbar { display: none } 
 
@@ -48,7 +64,9 @@
       border-right: 1px solid var(--background-modifier-accent) ;
 
       // Category Icons
-      .guildIcon-3h-1IH { background: none }
+      .guildIcon-3h-1IH { 
+        background: none ;
+       }
     }
 
     // - Right side content (Sticker/Emoji)
@@ -59,6 +77,13 @@
     }
 
     .inspector-S2gM3e { display: none }
+
+    // emojis
+    .emojiItem-14v6tW {
+
+      // Icon for addding emojis to server
+      &:not([data-name]) { display: none }
+    }
   }
 }
 
