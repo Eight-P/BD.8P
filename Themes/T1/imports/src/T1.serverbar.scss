@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.14
+// * T1.serverbar v0.1.141
 // Horizontal serverbar + Addons
 
 // -- Base containers
@@ -617,7 +617,7 @@
 }
 
 // - Tooltips container
-.tooltip-2QfLtc.tooltipPrimary-1d1ph4.tooltipDisablePointerEvents-3eaBGN {
+.tooltip-2QfLtc.tooltipPrimary-1d1ph4.tooltipDisablePointerEvents-3eaBGN:not(.reactionTooltip-3pvwwY) {
   max-width: 240px ;
   
   .tooltipContent-bqVLWK {

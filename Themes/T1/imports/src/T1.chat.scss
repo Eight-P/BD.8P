@@ -1,4 +1,4 @@
-// * T1.chat v0.1.263
+// * T1.chat v0.1.264
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -244,7 +244,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       height: 44px ;
     }
     
-    // General btn container
+    // btn content container
     .button-318s1X {
       align-items: unset ;
       box-sizing: content-box;
@@ -262,12 +262,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
 
     // Nitro btn
-    > button[aria-label] {
+    > div[aria-label] {
       width: calc(40px * var(--show-nitro-btn));
       margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
     }
     
-    // Normal btn contianer
+    // Buttons
     > .buttonContainer-28fw2U {
       
       // Gifs
@@ -873,6 +873,16 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
         margin: 8px 16px ;
       }
     }
+    
+    // Btn dropdownmenu
+    .contextMenuNub-3yOOYo {
+      color: white ;
+      background-color: var(--background-secondary) ;
+      
+      &:hover {
+        background-color: var(--background-tertiary) ;
+      }
+    }
 
 
     // small icon for popout menu
@@ -915,7 +925,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .tile-2gi3tr {
     
     // Issue with new activities
-//    @include shadow_effect("box_2");
+    @include shadow_effect("box_2");
     
     .indicators-3zIm5K {
       left: 0px ;
