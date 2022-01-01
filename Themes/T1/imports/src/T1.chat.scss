@@ -1,4 +1,4 @@
-// * T1.chat v0.1.264
+// * T1.chat v0.1.265
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -238,13 +238,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Buttons conatiner
   .buttons-3JBrkn { 
     
-    // Buttons
+    // Button
     .button-38aScr { 
       align-items: unset ;
       height: 44px ;
     }
     
-    // btn content container
+    // btn content
     .button-318s1X {
       align-items: unset ;
       box-sizing: content-box;
@@ -262,7 +262,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
 
     // Nitro btn
-    > div[aria-label] {
+    > [aria-label][type] {
       width: calc(40px * var(--show-nitro-btn));
       margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
     }

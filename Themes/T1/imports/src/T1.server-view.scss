@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.16
+// * T1.server-view v0.1.161
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -477,4 +477,29 @@
 
 
 // -- Discovery Content
-.sidebar-2K8pFh ~ .pageWrapper-1PgVDX > .scroller-1d5FgU { @include scrollbar() } 
+.sidebar-2K8pFh ~ .pageWrapper-1PgVDX > .scroller-1d5FgU { @include scrollbar() }
+
+
+// Server boost screen (community server)
+.wrapper-3qSb0d {
+  background: none ;
+  
+  // "back to server"
+  .navigationBar-2JJXBp {
+    background: none ;
+  }
+  
+  // Head banner
+  .hero-209Qgc {
+    background: none ;
+  }
+  
+  // "compare plans" table
+  .perksTable-7Z6tK2 {
+    pointer-events: none ;
+    
+    .perksTableRowHeading-2Kp5Vy .perksTableRowLabel-3Q5QcL {
+      visibility: hidden ;
+    }
+  }
+}

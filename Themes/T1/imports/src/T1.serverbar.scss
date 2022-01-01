@@ -1,7 +1,8 @@
 // * T1.serverbar v0.1.141
-// Horizontal serverbar + Addons
+// Horizontal serverbar + Additions
 
-// -- Base containers
+// Serverbar -->
+// - Base container -->
 // App layer adjustments 
 .layer-3QrUeG.baseLayer-35bLyl > .container-2lgZY8 { flex-direction: column-reverse }
 
@@ -80,8 +81,9 @@
   margin: 0 ;
 }
 
+// Base container <--
 
-// -- Left side options
+// - Static options -->
 // - Home / GuildsAd / Discovery / GuildsError
 .guilds-1SWlCJ .scroller-1Bvpku {
   
@@ -305,8 +307,9 @@
   }
 }
 
+// Static options <--
 
-// -- Servers / DMs
+// - Servers / DMs -->
 // Icon Mixin
 @mixin ServerIcon() {
   width: 54px ; 
@@ -396,7 +399,7 @@
   }
 }
 
-// - DMs
+// DMs
 .guilds-1SWlCJ .scroller-1Bvpku > [style="opacity: 1; height: 56px; transform: scale(1);"] {
   @include ServerIcon();
 
@@ -420,7 +423,7 @@
   .pill-1Z5PKm { display: none }
 }
 
-// - Server container
+// Server container
 .scroller-1Bvpku > [aria-label]:not([class]) {
   grid-area: Servers ;
   width: 54px ;
@@ -433,7 +436,7 @@
   > .listItem-2Ig28I { @include ServerIcon() }
 }
 
-// - Server folder
+// Server folder
 .guilds-1SWlCJ .wrapper-shyHJt {
   width: 54px ;
   margin: 6px 0 ;
@@ -525,9 +528,10 @@
     }
   }
 }
+// Servers / DMs <--
+// Serverbar <--
 
-
-// -- Right side buttons
+// Additions -->
 // Channels list spacer for Server banner image
 .content-3YMskv > div[style="height: 84px;"]:not([class]) { display: none }
 
@@ -639,3 +643,4 @@
     }
   }
 }
+// Additions <--
