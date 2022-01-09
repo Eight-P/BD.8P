@@ -1,0 +1,165 @@
+// - T1.settings v0.1.05 canary auto fix
+// Client / Guilds / Channels
+
+// - Theme version info
+.layer-86YKbF:not(.baseLayer-W6S8cY) .socialLinks-2DELRE + .info-1sUqUG:before {
+  content: "T1 - Theme: \a v#{$T1_version} by Eight_P" !important;
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: rgb(114, 118, 125) !important;
+  white-space: break-spaces !important;
+  margin-bottom: 16px !important;
+  text-transform: none !important;
+}
+
+
+// Settings menus in general
+.layer-86YKbF:not(.baseLayer-W6S8cY) {
+  
+  // Sidebar
+  .sidebarRegionScroller-FXiQOh {
+    &::-webkit-scrollbar { display: none }
+    
+    // category headers
+    .header-2Kx1US {
+      color: var(--header-primary) ;
+      opacity: .8 ;
+    }
+    
+    // Tab name
+    .item-3XjbnG {
+      color: var(--interactive-normal) ;
+      background: none !important ;
+      border-radius: 0  ;
+      padding: 0 10px ;
+      margin: 6px 0 ;
+      
+      &:hover { color: var(--interactive-hover) }
+      
+      &.selected-g-kMVV {
+        border-left: 2px solid var(--interactive-active) ;
+        color: var(--interactive-active)  ;
+      }
+      
+      // "Log Out" Tab
+      &[aria-controls="logout-tab"], &[aria-controls="DELETE-tab"] {
+        color: var(--red) !important ;
+        opacity: .8 ;
+        
+        &:hover { opacity: 1 !important }
+      }
+    }
+  }
+  
+  // Content container
+  .contentRegionScroller-2_GT_N {
+    
+    @include scrollbar() ;
+  }
+  
+  // Checkbox item list option
+  .item-2idW98 {
+    background: var(--background-modifier-accent) ;
+    
+    &[aria-checked="true"] {
+      background: var(--background-modifier-selected) ;
+    }
+    
+    &[aria-checked="false"]:hover {
+      background: var(--background-modifier-hover) ;
+    }
+  }
+}
+
+
+// - Server settings
+// Roles
+.layer-86YKbF:not(.baseLayer-W6S8cY) {
+  
+  // Default permission button
+  .container-3EtAkD { background: none }
+  
+  // - Edit Role
+  .contentColumn-1C7as6 > .page-15bX59 {
+    
+    // Sidebar container main
+    .sidebar-3K3Z4C {
+      height: fit-content;
+    }
+    
+    // Roles list Sidebar
+    .list-1AJFv_::-webkit-scrollbar { display: none }
+    
+    // Left side main content container
+    .contentContainer-3hXFtK {
+      border-right: 12px solid var(--scrollbar-auto-track) ;
+      
+      .scrollerBase-_bVAAt {
+        margin-right: -12px ;
+      }
+    }
+    
+    // Header container "Manage Members"
+    .headerContainer-7V7BBm {
+      right: 0 ;
+    }
+    
+    // Header 
+    .header-6h98Y_ {
+      padding: 0 0 24px 0 ;
+      margin: 0 ;
+      box-shadow: none ;
+      
+      &:before {
+        content: "";
+        position: absolute ;
+        height: 100% ;
+        width: 100% ;
+        background: var(--Main_Background);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        filter: var(--BGM_Blur) var(--BGM_Brightness) ;
+      }
+      
+      // Nav bar buttons
+      .tabBarItem-3nPo4Z {
+        border: none ;
+      }
+    }
+
+    // Content scroller "Permissions"
+    .permissionsWrapper-34gbP6 {
+      margin-top: 16px ;
+    }
+    
+    // Info on Bot roles
+    .warning-RBGtx2 {
+      position: absolute ;
+      top: 49px ;
+      left: 0px ;
+      width: auto ;
+      background: none ;
+      border: none ;
+      padding: 0 ;
+      z-index: 100 ;
+
+      .text-2iTkaw {
+        display: none ;
+      }
+
+      &:hover .text-2iTkaw {
+        display: block ;
+        background: var(--background-tertiary) ;
+        border: 1px solid var(--info-warning-foreground) ;
+        padding: 10px ;
+      }
+
+      ~ .tabBar-3DfKkN {
+        margin-left: 40px ;
+      }
+    }
+  }
+}

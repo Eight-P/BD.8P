@@ -1,0 +1,52 @@
+$vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ;
+$T1_version: "0.5.414" ;
+
+@import 'src/canary_auto_fix/T1.mixins.scss';       // Global Mixins and Variables
+@import 'src/canary_auto_fix/T1.background.scss';   // Background image and Transparency
+@import 'src/canary_auto_fix/T1.chat.scss';         // Text and voice chat
+@import 'src/canary_auto_fix/T1.home.scss';         // Home Tabs / DMs-Sidebar
+@import 'src/canary_auto_fix/T1.popouts.scss';      // Popouts / Tooltips
+@import 'src/canary_auto_fix/T1.server-view.scss';  // Channels / Member / Discovery
+@import 'src/canary_auto_fix/T1.serverbar.scss';    // Serverbar + Addons
+@import 'src/canary_auto_fix/T1.settings.scss';     // Settings menus
+@import 'src/canary_auto_fix/T1.titlebar.scss';     // Header-, Titlebar / Notifications
+@import 'src/canary_auto_fix/T1.user.scss';         // User-Popout / Modal
+@import 'src/canary_auto_fix/T1.compatibility.scss';// Plugin Compatibility
+
+
+// -- Notifications
+// - Oudated Theme file
+@include note_settings ('T1 version #{$vid} available! \a Please update your "T1.theme.css" file with the newest version from "https://betterdiscord.app/theme/T1"', var(#{$vv}, block)) ;
+
+// - Minimal Mode
+body.bd-minimal { @include note_critical ('Turn off "Minimal Mode" for the Theme to work properly | ["ctrl" + ","] => opens settings if needed') }
+
+
+// Layer transitions
+.layers-OrUESM > .layer-86YKbF { 
+  transform: none !important ;
+}
+
+
+.base-2jDfDU { 
+  height: 100% !important ;
+}
+
+
+// "Bot"/"server" Tag Indicator
+.botTag-7aX5WZ { 
+  color: var(--text-normal) ;
+  background-color: var(--background-secondary) ;
+}
+
+
+// Default scrollbar design (needs some rework)
+.app-3xd6d0 .scrollerBase-_bVAAt { @include scrollbar() }
+
+
+// Tab focus thing
+.ring-370dIp {
+  box-shadow: none ;
+  border-bottom: 2px solid var(--interactive-active);
+  border-radius: 0;
+}
