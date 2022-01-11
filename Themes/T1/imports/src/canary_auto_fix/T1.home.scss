@@ -1,84 +1,5 @@
-// * T1.home v0.1.123 canary auto fix
+// * T1.home v0.1.13 canary auto fix
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
-
-// -- Live Stages (used to be a thing)
-//#stage-discovery-tab {
-//  
-//  // no Stages / end of Stages container
-//  .container-3u4ndt, .container-1WCE6w {
-//    
-//    // Wumpus
-//    > img {
-//      filter: grayscale(100%);
-//      opacity: .8 ;
-//    }
-//    
-//    // Text h1
-//    > .header-3YnDzJ, .title-2TmeU7 {
-//      color: var(--text-normal) ;
-//      margin: 20px 0 5px 0 ;
-//      font-weight: 600 ;
-//    }
-//    
-//    // Text h2
-//    > .subheader-2RpfyZ, .colorHeaderSecondary-g5teka { 
-//      color: var(--text-muted) ;
-//      font-weight: 400 ;
-//    }
-//    
-//    // Refresh button
-//    > .button-38aScr { @include button_normal() }
-//  }
-//  
-//  // Friends activity list
-//  ~ .nowPlayingSidebar-2OFn0o {
-//    
-//    .scroller-hE2gWq { border: none }
-//    
-//    .itemCard-3Etziu {
-//      background: none ;
-//      border: none ;
-//      padding: 4px 16px 4px 4px ;
-//      margin-top: 20px ; 
-//      
-//      &:hover {
-//        background: var(--background-modifier-hover) ;
-//      }
-//      
-//      // Activity (like games,..)
-//      .headerFull-34WFWN {
-//        grid-template-columns: 36px minmax(20px,auto) 24px;
-//        
-//        .headerAvatar-GgCKcl {
-//          height: 36px !important ;
-//        }
-//      }
-//      
-//      // Additional info on activity (like gamemode,..)
-//      .body-16rSsp {
-//        background: none ;
-//        margin: 18px 0 0 12px ;
-//        
-//        // Sections within body
-//        > .section-3G9aLW {
-//          background: none ;
-//          border-radius: 0 ;
-//          border-left: 1px solid var(--text-normal) ;
-//          padding: 6px 12px ;
-//        }
-//        
-//        // Section seperator line
-//        > .separator-2OaeRP { display: none }
-//        
-//        // "live" icon
-//        .live-1V2D-f { 
-//          background: none !important ;
-//          color: var(--red) ;
-//        }
-//      }
-//    }
-//  }
-//}
 
 
 // -- Friendslist
@@ -87,14 +8,63 @@
   // Seperator line top
   &::before { display: none }
   
-  // Main container / Scroller
+  // Friendslist searchbar
+  .searchBar-2aylmZ {
+    background: var(--background-modifier-accent);
+//    border-radius: 5px ;
+  }
+  
+//  .searchBar-2aylmZ {
+//    background: none ;
+//    
+//    // Input/ Icon flex container
+//    .inner-2pOSmK {
+////      width: 100% ;
+//      padding: 0 ;
+//      direction: rtl ;
+//      display: inline ;
+//    }
+//    
+//    // Text input
+//    .input-2m5SfJ {
+//      padding: 0 12px ;
+//      width: 32px ;
+//      min-width: unset ;
+//      direction: ltr ;
+//      transition: width .1s ;
+//      border-radius: 5px ;
+//      
+//      &:not(:focus) {
+//        cursor: pointer ;
+//      }
+//      
+//      &:focus, &:active {
+//        background: var(--background-modifier-accent);
+//        width: 100% ;
+//      }
+//      
+//      &::placeholder {
+//        visibility: hidden ;
+//      }
+//    }
+//    
+//    // Search icon
+//    .iconLayout-3Bjizv {
+//      position: absolute ;
+//      top: 0 ;
+//      right: 0 ;
+//      pointer-events: none ;
+//    }
+//  }
+  
+  // Friendslist Main container / Scroller -->
   .peopleList-2VBrVI {
     margin: 0 0 0 20px ;
     padding: 0 ;
     -webkit-mask-image: linear-gradient(to top, transparent, #000 1%, #000 99%, transparent);
     
     // "Friends online" Count
-    .title-3XlmeX { display: none }
+    .title-x4dI75  { display: none }
     
     // Sub container (Grid)
     > div:first-child {
@@ -141,7 +111,7 @@
     .userInfo-2WpsYG {
       margin: 0 12.5px ;
       width: -webkit-fill-available ;
-      overflow: visible ;
+      overflow: visible !important ;
     }
     
     // Container (Name, Activity)
@@ -243,6 +213,7 @@
   
   // Friends activity sidebar (can be viewed in Stage tab)
   > .nowPlayingColumn-1eCBCN { display: none }
+  //  Friendslist <--
 }
 
 // -- Add Friend
