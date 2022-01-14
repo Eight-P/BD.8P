@@ -1,5 +1,5 @@
 $vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ;
-$T1_version: "0.5.5" ;
+$T1_version: "0.5.51" ;
 
 @import 'src/T1.mixins.scss';       // Global Mixins and Variables
 @import 'src/T1.background.scss';   // Background image and Transparency
@@ -13,19 +13,6 @@ $T1_version: "0.5.5" ;
 @import 'src/T1.user.scss';         // User-Popout / Modal
 @import 'src/T1.compatibility.scss';// Plugin Compatibility
 
-// Yes this is hell (:
-@import 'src/canary_auto_fix/T1.mixins.scss';       // Global Mixins and Variables
-@import 'src/canary_auto_fix/T1.background.scss';   // Background image and Transparency
-@import 'src/canary_auto_fix/T1.chat.scss';         // Text and voice chat
-@import 'src/canary_auto_fix/T1.home.scss';         // Home Tabs / DMs-Sidebar
-@import 'src/canary_auto_fix/T1.popouts.scss';      // Popouts / Tooltips
-@import 'src/canary_auto_fix/T1.server-view.scss';  // Channels / Member / Discovery
-@import 'src/canary_auto_fix/T1.serverbar.scss';    // Serverbar + Addons
-@import 'src/canary_auto_fix/T1.settings.scss';     // Settings menus
-@import 'src/canary_auto_fix/T1.titlebar.scss';     // Header-, Titlebar / Notifications
-@import 'src/canary_auto_fix/T1.user.scss';         // User-Popout / Modal
-@import 'src/canary_auto_fix/T1.compatibility.scss';// Plugin Compatibility
-
 
 // -- Notifications
 // - Oudated Theme file
@@ -36,27 +23,17 @@ body.bd-minimal { @include note_critical ('Turn off "Minimal Mode" for the Theme
 
 
 // Layer transitions
-.layers-3iHuyZ > .layer-3QrUeG { 
-  transform: none !important ;
-}
 .layers-OrUESM > .layer-86YKbF { 
   transform: none !important ;
 }
 
 
-.base-3dtUhz { 
-  height: 100% !important ;
-}
 .base-2jDfDU { 
   height: 100% !important ;
 }
 
 
 // "Bot"/"server" Tag Indicator
-.botTag-2WPJ74 { 
-  color: var(--text-normal) ;
-  background-color: var(--background-secondary) ;
-}
 .botTag-7aX5WZ { 
   color: var(--text-normal) ;
   background-color: var(--background-secondary) ;
@@ -64,16 +41,10 @@ body.bd-minimal { @include note_critical ('Turn off "Minimal Mode" for the Theme
 
 
 // Default scrollbar design (needs some rework)
-.app-1q1i1E .scrollerBase-289Jih { @include scrollbar() }
 .app-3xd6d0 .scrollerBase-_bVAAt { @include scrollbar() }
 
 
 // Tab focus thing
-.ring-13rgEW {
-  box-shadow: none ;
-  border-bottom: 2px solid var(--interactive-active);
-  border-radius: 0;
-}
 .ring-370dIp {
   box-shadow: none ;
   border-bottom: 2px solid var(--interactive-active);

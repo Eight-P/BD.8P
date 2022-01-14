@@ -1,8 +1,8 @@
-// - T1.settings v0.1.05
+// * T1.settings v0.1.1
 // Client / Guilds / Channels
 
 // - Theme version info
-.layer-3QrUeG:not(.baseLayer-35bLyl) .socialLinks-3jqNFy + .info-1VyQPT:before {
+.layer-86YKbF:not(.baseLayer-W6S8cY) .socialLinks-2DELRE + .info-1sUqUG:before {
   content: "T1 - Theme: \a v#{$T1_version} by Eight_P" !important;
   display: block !important;
   font-size: 12px !important;
@@ -15,20 +15,20 @@
 
 
 // Settings menus in general
-.layer-3QrUeG:not(.baseLayer-35bLyl) {
+.layer-86YKbF:not(.baseLayer-W6S8cY) {
   
   // Sidebar
-  .sidebarRegionScroller-3MXcoP {
+  .sidebarRegionScroller-FXiQOh {
     &::-webkit-scrollbar { display: none }
     
     // category headers
-    .header-2RyJ0Y {
+    .header-2Kx1US {
       color: var(--header-primary) ;
       opacity: .8 ;
     }
     
     // Tab name
-    .item-PXvHYJ {
+    .item-3XjbnG {
       color: var(--interactive-normal) ;
       background: none !important ;
       border-radius: 0  ;
@@ -37,7 +37,7 @@
       
       &:hover { color: var(--interactive-hover) }
       
-      &.selected-3s45Ha {
+      &.selected-g-kMVV {
         border-left: 2px solid var(--interactive-active) ;
         color: var(--interactive-active)  ;
       }
@@ -53,13 +53,13 @@
   }
   
   // Content container
-  .contentRegionScroller-26nc1e {
+  .contentRegionScroller-2_GT_N {
     
     @include scrollbar() ;
   }
   
   // Checkbox item list option
-  .item-26Dhrx {
+  .item-2idW98 {
     background: var(--background-modifier-accent) ;
     
     &[aria-checked="true"] {
@@ -75,38 +75,38 @@
 
 // - Server settings
 // Roles
-.layer-3QrUeG:not(.baseLayer-35bLyl) {
+.layer-86YKbF:not(.baseLayer-W6S8cY) {
   
   // Default permission button
-  .container-_phMUq { background: none }
+  .container-3EtAkD { background: none }
   
   // - Edit Role
-  .contentColumn-2hrIYH > .page-3njELR {
+  .contentColumn-1C7as6 > .page-15bX59 {
     
     // Sidebar container main
-    .sidebar-dLM-kh {
+    .sidebar-3K3Z4C {
       height: fit-content;
     }
     
     // Roles list Sidebar
-    .list-I3aHXn::-webkit-scrollbar { display: none }
+    .list-1AJFv_::-webkit-scrollbar { display: none }
     
     // Left side main content container
-    .contentContainer-14yMzC {
+    .contentContainer-3hXFtK {
       border-right: 12px solid var(--scrollbar-auto-track) ;
       
-      .scrollerBase-289Jih {
+      .scrollerBase-_bVAAt {
         margin-right: -12px ;
       }
     }
     
     // Header container "Manage Members"
-    .headerContainer-1X2CD8 {
+    .headerContainer-7V7BBm {
       right: 0 ;
     }
     
     // Header 
-    .header-2mZ9Ov {
+    .header-6h98Y_ {
       padding: 0 0 24px 0 ;
       margin: 0 ;
       box-shadow: none ;
@@ -125,18 +125,18 @@
       }
       
       // Nav bar buttons
-      .tabBarItem-2QyJ0U {
+      .tabBarItem-3nPo4Z {
         border: none ;
       }
     }
 
     // Content scroller "Permissions"
-    .permissionsWrapper-1amySy {
+    .permissionsWrapper-34gbP6 {
       margin-top: 16px ;
     }
     
     // Info on Bot roles
-    .warning-3C2pOH {
+    .warning-RBGtx2 {
       position: absolute ;
       top: 49px ;
       left: 0px ;
@@ -146,18 +146,18 @@
       padding: 0 ;
       z-index: 100 ;
 
-      .text-2J5crT {
+      .text-2iTkaw {
         display: none ;
       }
 
-      &:hover .text-2J5crT {
+      &:hover .text-2iTkaw {
         display: block ;
         background: var(--background-tertiary) ;
         border: 1px solid var(--info-warning-foreground) ;
         padding: 10px ;
       }
 
-      ~ .tabBar-11f3uI {
+      ~ .tabBar-3DfKkN {
         margin-left: 40px ;
       }
     }

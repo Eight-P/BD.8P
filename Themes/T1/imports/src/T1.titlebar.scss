@@ -1,14 +1,14 @@
-// * T1.titlebar v0.1.14
+// * T1.titlebar v0.1.2
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
 // - Toolbar search
 @mixin TB_Search () {
   // Searchbar
-  .search-2oPWTC {
+  .search-1FM8Qc {
     
     // container
-    .searchBar-3dMhjb {
+    .searchBar-zdmu7v {
       width: 20px ;
       background: none ;
       border-radius: 0 ;
@@ -16,16 +16,16 @@
     }
     
     // Buttons container
-    .iconLayout-1WxHy4 {
+    .iconLayout-SqV3nb {
       width: 16px ;
     }
     
     // Icon
-    .icon-3cZ1F_ {
+    .icon-18rqoe {
       color: var(--interactive-normal) ;
       cursor: pointer ;
 
-      &:not(.visible-3V0mGj) {
+      &:not(.visible-2yTnyW) {
         pointer-events: none ;
       }
 
@@ -35,14 +35,14 @@
     }
     
     // Searchbar open
-    &.open-6_Y_aH {
+    &.open-3y3yI_ {
       
-      .searchBar-3dMhjb {
+      .searchBar-zdmu7v {
         width: 240px ;
         border-bottom: 1px solid var(--header-secondary) ;
       }
       
-      .icon-3cZ1F_:first-child {
+      .icon-18rqoe:first-child {
         pointer-events: none ;
       }
     }
@@ -50,27 +50,27 @@
 }
 
 // - General Header
-.container-1r6BKw {
+.container-ZMc96U {
   box-shadow: none ;
   
   // - Main content
-  .children-19S4PO {
+  .children-3xh0VB {
     
     // "#", friends, "@", speaker - icon
-    .iconWrapper-2OrFZ1 { display: none }
+    .iconWrapper-2awDjA { display: none }
     
     // random line (left)
-    .divider-3FBTu8 { display: none }
+    .divider-q3P9HC { display: none }
     
     // "AKA" icon if chatpartner has a nickname in a server
-    .akaBadge-1M-1Gw { display: none }
+    .akaBadge-3i7V3p { display: none }
     
     // Dm Partner / Channel name
-    .title-29uC1r {
+    .title-17SveM {
       color: var(--interactive-hover) ;
       
       // Channel name by default
-      &:not(.cursorPointer-1j7DL8) { display: none }
+      &:not(.cursorPointer-3JF56F) { display: none }
     }
     
     // ugly random line (right)
@@ -78,7 +78,7 @@
   }
   
   // - rightside iconbar
-  .toolbar-1t6TWx {
+  .toolbar-3_r2xA {
     @mixin TB_icons () {
       margin: 0 9px ;
 
@@ -94,27 +94,27 @@
     }
     
     // Icons
-    .iconWrapper-2OrFZ1 { @include TB_icons() }
+    .iconWrapper-2awDjA { @include TB_icons() }
     
     // Searchbar
     @include TB_Search() ;
     
     // Voicecall view buttons
-    .button-38aScr { @include TB_icons() }
+    .button-f2h6uQ { @include TB_icons() }
     
     // Discord "Help" (web-link) icon
-    .anchor-3Z-8Bb { display: none }
+    .anchor-1MIwyf { display: none }
   }
 }
 
 // - Chat (Server / DMs )
-.chat-3bRxxu > .container-1r6BKw {
+.chat-2ZfjoI > .container-ZMc96U {
   
   // - Channel name / topic
-  .children-19S4PO {
+  .children-3xh0VB {
     
     // Channel description
-    .topic-TCb_qw {
+    .topic-11NuQZ {
       margin: 0 8px ;
       text-align: center ;
       
@@ -132,30 +132,30 @@
     }
     
     // Follow Announcement channel button
-    .followButton-L6L-Us { 
+    .followButton-1N-GGp { 
       @include Btn();
     }
   }
   
-  .toolbar-1t6TWx {
+  .toolbar-3_r2xA {
     min-width: 226px ;
     justify-content: space-between ;
   }
 }
 
 // - Home/Friends
-.container-1D34oG .container-1r6BKw {
+.container-2cd8Mz .container-ZMc96U {
   
   // - Nav bar / Friends tabs 
-  .tabBar-ZmDY9v {
+  .tabBar-ra-EuL {
     margin: 0 auto ;
     padding-right: 40px ;
     
     // Tabs
-    .item-3HknzM {
+    .item-3mHhwr {
       background: none !important ;
       
-      @include Mentions_icon(".numberBadge-2s8kKX");
+      @include Mentions_icon(".numberBadge-37OJ3S");
       
       // add friend Tab
       &[aria-controls="add_friend-tab"] {
@@ -191,34 +191,34 @@
   }
   
   // Toolbar 
-  .toolbar-1t6TWx {
+  .toolbar-3_r2xA {
     
     // Create group dm icon (otherwise gets hidden when window width is below 940px)
-    .inviteToolbar-3F-l2g {
+    .inviteToolbar-2k2nqz {
       display: flex ;
     }
   }
 }
 
 // - DM Voice call
-//section.title-3qD0b-.container-1r6BKw.transparent-2ZlE3R[aria-label="Channel header"] {}
+//section.title-31SJ6t.container-ZMc96U.transparent-1lUmft[aria-label="Channel header"] {}
 
 // - Server Voice call
-//section.theme-dark.container-1r6BKw.transparent-2ZlE3R {}
+//section.theme-dark.container-ZMc96U.transparent-1lUmft {}
 
 // - Live Stages 
-//section.headerBarContainer-31FKNA.container-1r6BKw.themed-ANHk51 {}
+//section.headerBarContainer-31FKNA.container-ZMc96U.themed-Hp1KC_ {}
 
 
 // -- OS specific stuff
 html {
   // - Windows
-  &.platform-win .titleBar-AC4pGV {
+  &.platform-win .titleBar-1it3bQ {
     box-shadow: 0 .5px 0 var(--header-secondary) ;
     z-index: 500 ;
 
     // Watermark
-    .wordmarkWindows-1v0lYD {
+    .wordmarkWindows-2dq6rw {
 
       path:not(:first-child) { display: none }
 
@@ -229,19 +229,36 @@ html {
       }
     }
   }
+  // canary 
+  &.platform-win .titleBar-1it3bQ {
+      box-shadow: 0 .5px 0 var(--header-secondary) ;
+      z-index: 500 ;
+
+      // Watermark
+      .wordmarkWindows-2dq6rw  {
+
+        path:not(:first-child) { display: none }
+
+        path:first-child {
+          transform: scale(.58) translate(-6.5px, -2.5px);
+
+          d: path("M 12.8 7.8 H 6.7 v 6.8 l 4.1 3.6 V 11.6 H 13 c 1.4 0 2.1 0.7 2.1 1.7 v 5 c 0 1 -0.6 1.8 -2.1 1.8 H 6.7 v 3.8 h 6.1 c 3.3 0 6.4 -1.6 6.4 -5.3 V 13.2 C 19.2 9.4 16.1 7.8 12.8 7.8 Z M 45 18.6 V 13 c 0 -2 3.7 -2.5 4.8 -0.5 l 3.4 -1.3 a 6.069 6.069 0 0 0 -5.8 -3.7 c -3.3 0 -6.5 1.9 -6.5 5.5 v 5.6 c 0 3.7 3.2 5.5 6.5 5.5 a 6.611 6.611 0 0 0 5.9 -3.6 l -3.7 -1.6 C 48.7 21.1 45 20.6 45 18.6 Z M 33.8 13.8 c -1.3 -0.3 -2.1 -0.7 -2.2 -1.5 c 0.1 -1.9 3 -1.9 4.7 -0.1 l 2.7 -2 a 6.884 6.884 0 0 0 -5.6 -2.6 c -3 0 -5.9 1.7 -5.9 4.8 s 2.4 4.7 5.1 5.1 c 1.3 0.2 2.8 0.7 2.8 1.6 c -0.1 1.7 -3.7 1.6 -5.4 -0.3 l -2.6 2.4 A 7.258 7.258 0 0 0 33 24.1 c 3 0 6.3 -1.7 6.5 -4.8 C 39.6 15.3 36.7 14.3 33.8 13.8 Z M 21.4 23.9 h 4.2 V 7.8 H 21.5 V 23.9 Z M 91.2 7.8 H 85.1 v 6.8 l 4.1 3.6 V 11.6 h 2.2 c 1.4 0 2.1 0.7 2.1 1.7 v 5 c 0 1 -0.6 1.8 -2.1 1.8 H 85.1 v 3.8 h 6.1 c 3.3 0 6.4 -1.6 6.4 -5.3 V 13.2 C 97.6 9.4 94.5 7.8 91.2 7.8 Z M 61.1 7.6 c -3.4 0 -6.8 1.8 -6.8 5.5 v 5.5 c 0 3.7 3.4 5.5 6.8 5.5 s 6.8 -1.8 6.8 -5.5 V 13.1 C 67.9 9.4 64.5 7.6 61.1 7.6 Z m 2.7 11 c 0 1.2 -1.3 1.8 -2.6 1.8 s -2.7 -0.6 -2.7 -1.8 V 13.1 c 0 -1.2 1.3 -1.8 2.6 -1.8 s 2.7 0.6 2.7 1.8 Z m 19 -5.5 c -0.1 -3.8 -2.7 -5.3 -6.1 -5.3 H 70.1 V 23.9 h 4.2 V 18.8 H 75 l 3.8 5.1 H 84 l -4.5 -5.5 C 81.6 17.8 82.8 16.1 82.8 13.1 Z m -6 2.2 H 74.4 V 11.6 h 2.4 A 1.853 1.853 0 1 1 76.8 15.3 Z");
+        }
+      }
+    }
 
   // - Mac (hopefully)
   &.platform-osx {
     
     // AppOS btns
-    .titleBar-AC4pGV {
+    .titleBar-1it3bQ {
       width: 48px ;
       transform: rotate(90deg);
       transform-origin: 13px 13px ;
       -webkit-app-region: none;
 
       // Btn container
-      .macButtons-2MuSAC {
+      .macButtons-eIdy0e {
         padding: 0 ;
         justify-content: space-evenly ;
         width: 48px ;
@@ -249,7 +266,7 @@ html {
         cursor: pointer ;
         
         // Buttons, Btn icon
-        .macButton-c_Adir, svg {
+        .macButton-2M5W_9, svg {
           width: 10px ;
           height: 10px ;
         }
@@ -257,35 +274,35 @@ html {
       
       &:hover {
         
-        .macButton-c_Adir svg {
+        .macButton-2M5W_9 svg {
           visibility: visible ;
         }
         
-        .macButtonClose-MwZ2nf {
+        .macButtonClose-3IXwAm {
           background-color: #fc615d ;
         }
         
-        .macButtonMinimize-3EJ6wo {
+        .macButtonMinimize-Q8clSI {
           background-color: #fdbc40 ;
         }
         
-        .macButtonMaximize-2FMHAO {
+        .macButtonMaximize-1vTCwt {
           background-color: #34c749 ;
         }
       }
     }
 
     // move Profile panel for AppOS btns
-    .panels-j1Uci_ > .container-3baos1 {
+    .panels-3wFtMD > .container-YkUktl {
       margin-left: 26px ;
       width: 214px ;
       padding: 0 8px 0 0 ;
     }
     
-    .container-1r6BKw > .children-19S4PO {
+    .container-ZMc96U > .children-3xh0VB {
       -webkit-app-region: none;
       
-      + .toolbar-1t6TWx {
+      + .toolbar-3_r2xA {
         -webkit-app-region: none;
       }
     }
@@ -295,15 +312,15 @@ html {
 
 // -- Notification bars
 // - Default Discord notice
-.notice-3bPHh- {
+.notice-2HEN-u {
   border-radius: 0 0 8px 8px ;
   background: var(--background-primary) ;
   color: var(--text-normal) ;
   
-  .button-2DhvE9 { @include btn_1() }
+  .button-1iHNQ2 { @include btn_1() }
   
   // Sidebar position for Profile panel positioning
-  ~ .content-98HsJk > .sidebar-2K8pFh { position: relative }
+  ~ .content-1SgpWY > .sidebar-1tnWFu { position: relative }
 }
 
 

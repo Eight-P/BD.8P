@@ -1,14 +1,14 @@
-// * T1.chat v0.1.265
+// * T1.chat v0.1.27
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
 $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
 
 // Header/Chat sperator line
-.content-yTz4x3::before { display: none }
+.content-1jQy2l::before { display: none }
 
 // Inline Mentions
-.mention.wrapper-3WhCwL {
+.mention.wrapper-1ZcZW- {
   color: var(--Blurple) !important;
   background-color: transparent !important;
   text-decoration: none !important;
@@ -19,7 +19,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     text-decoration: underline ;
   }
   
-  .channelIcon-1MN1lz {
+  .channelIcon-3I2O7O {
     height: 100% ;
     box-sizing: border-box ;
     padding: .15em 0 ;
@@ -27,17 +27,17 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 }
 
 // - Chat container
-.chatContent-a9vAAp {
+.chatContent-3KubbW {
   z-index: 101 ; // for "Mark As Read" 
   width: -webkit-fill-available ; // for search results 
   
   // "#" Icon at the channels very top
-  .container-3RCQyg {
-     .emptyChannelIcon-cc932w, .iconWrapper-L3hQuc { display: none }
+  .container-1yy5xN {
+     .emptyChannelIcon-1YdEz2, .iconWrapper-3plkqh { display: none }
   }
   
   // "Mark As Read" and "Jump To Present" 
-  .barBase-1c2Rfb {
+  .barBase-3xxDXu {
     right: 5px ;
     left: 5px ;
     background: var(--background-secondary);
@@ -52,7 +52,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       padding: 0 15px ;
       color: var(--text-normal) ;
       
-      &.barButtonMain-3K-jeJ {
+      &.barButtonMain-2GIx4o {
         flex: 0 1 auto ;
         margin-right: auto ;
       }
@@ -64,29 +64,29 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // "Mark As Read"
-    &.newMessagesBar-265mhP {
+    &.newMessagesBar-1hF-9G {
       top: -4px ;
         
-      + .scroller-2LSbBU {
+      + .scroller-kQBbkU {
         margin-top: 24px ;
       }
     }
   }
 
   // Messages scroller
-  .scroller-2LSbBU {
+  .scroller-kQBbkU {
     // fading out at top and bottom, not sure if like that tho
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 96%, transparent);
   }
   
   // Messages seperator
-  .divider-3_HH5L {
+  .divider-IqmEqJ {
     align-items: unset ;
     border: none ;
     margin: 20px 0 !important;
     
     // date 
-    .content-1o0f9g { 
+    .content-3spvdd { 
       height: fit-content ;
       transform: translateY(-50%);
       background: none ;
@@ -101,13 +101,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // new messages seperator
-    &.isUnread-3Ef-o9 {
+    &.isUnread-3Lojb- {
       &::before, &::after {
         background: var(--red);
         opacity: .7 ;
       }
       
-      .unreadPill-2HyYtt {
+      .unreadPill-3nEWYM {
         top: 0 ;
         padding: 0 4px ;
         border-radius: 0 0 4px 4px ;
@@ -119,17 +119,17 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
    
   // - preload dummys
   // container
-  .wrapper-3vR61M {
+  .wrapper-3HVHpV {
     background: none !important ;
     
     // messages
-    > .wrapper-1F5TKx { background: none !important }
+    > .wrapper-15CKyy { background: none !important }
   }
 }
 
 
 // - Text input
-.form-2fGMdU {
+.form-3gdLxP {
   margin: 5px 0 0 0 ;
   padding: 0 ;
   border-top: 1px solid var(--background-modifier-accent);
@@ -137,21 +137,21 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   &::before { display: none }
 
   // Text input container
-  .channelTextArea-rNsIhG {
+  .channelTextArea-1FufC0 {
     background: none ;
     margin: 0 ;
     padding: 0 ;
     
     // container 2
-    > .scrollableContainer-2NUZem { background: none }
+    > .scrollableContainer-15eg7h { background: none }
 
     // Text input
-    .textArea-12jD-V { 
+    .textArea-2CLwUE { 
       margin-left: 10px ;
     }
 
     // Input on denied writing permission
-    &.channelTextAreaDisabled-8rmlrp .innerDisabled-1YTFPN::after {
+    &.channelTextAreaDisabled-1p2fQv .innerDisabled-2dbG11::after {
       content: " " ;
       background: url("https://i.imgur.com/za6Yq9g.png") ;
       position: absolute;
@@ -164,10 +164,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Reply popout
-    .attachedBars-tZDmyV {
+    .attachedBars-2BCP3l {
       background: none ;
       
-      .replyBar-1YLQ2F {
+      .replyBar-1oi75v {
         background: none ;
         margin-right: 10px ;
       }
@@ -175,12 +175,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Inner container
-  .inner-MADQqc {
+  .inner-NQg18Y {
     overflow: hidden ; // for btns
   }
 
   // "Attach file" Button 
-  .attachWrapper-2TRKBi {
+  .attachWrapper-3slhXI {
     width: 40px ;
 
     // Seperator line between button and text input
@@ -195,7 +195,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
 
     // Button
-    .attachButton-2WznTc {
+    .attachButton-_ACFSu {
       position: absolute;
       top: 50% ;
       transform: translateY(-50%) ;
@@ -203,7 +203,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Typing indicator
-  .typing-2GQL18 {
+  .typing-2J1mQU {
     background: transparent ;
     position: absolute ;
     top: -14px ;
@@ -216,7 +216,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Slowmode icon
-  .cooldownWrapper-3joyFc {
+  .cooldownWrapper-2k1jHK {
     position: absolute ;
     right: -20px ;
     bottom: -14px ;
@@ -225,7 +225,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     color: transparent !important;
     pointer-events: auto ;
 
-    .slowModeIcon-1BPDC_ {
+    .slowModeIcon-35Psjn {
       position: absolute ;
       margin: 0 ;
 
@@ -236,16 +236,16 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Buttons conatiner
-  .buttons-3JBrkn { 
+  .buttons-uaqb-5 { 
     
     // Button
-    .button-38aScr { 
+    .button-f2h6uQ { 
       align-items: unset ;
       height: 44px ;
     }
     
     // btn content
-    .button-318s1X {
+    .button-3BaQ4X {
       align-items: unset ;
       box-sizing: content-box;
       height: 24px ;
@@ -268,7 +268,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Buttons
-    > .buttonContainer-28fw2U {
+    > .buttonContainer-2lnNiN {
       
       // Gifs
       &:nth-last-child(3) {
@@ -281,7 +281,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
         width: calc(36px * var(--show-sticker-btn));
         margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
 
-        .stickerIcon-3TP7EM { height: 24px !important }
+        .stickerIcon-3Jx5SE { height: 24px !important }
       }
       
       // Emojis
@@ -293,19 +293,19 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Emoji button
-  .emojiButton-pET4wH {
+  .emojiButton-1fMsf3 {
     opacity: .6 ;
 
-    &.emojiButtonHovered-1rWNal { 
+    &.emojiButtonHovered-s44uQ8 { 
       opacity: 1 ;
     }
   }
 
   // Announcement channel text input (without chat permission)
-  .wrapper-39oAo3 { display: none }
+  .wrapper-2SplAX { display: none }
   
   // Tips info for text input
-  .applicationCommandEducation-2jAJ0B {
+  .applicationCommandEducation-1stoia {
     bottom: unset ;
     top: -20px ;
     left: 5px ;
@@ -313,23 +313,23 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     &::-webkit-scrollbar { display: none }
     
     // Arrow icon
-    .applicationCommandEducationArrow-1DVDdr { display: none }
+    .applicationCommandEducationArrow-2xKDmq { display: none }
     
     // Text container
-    .applicationCommandEducationPrompt-1IxFoc {
+    .applicationCommandEducationPrompt-23S3d- {
       display: flex ;
       flex-direction: row-reverse ;
       overflow: visible ;
     }
     
     // Dismiss btn
-    .anchor-3Z-8Bb {
+    .anchor-1MIwyf {
       margin-right: 10px ;
     }
   }
   
   // file/upload attachment
-  .channelAttachmentArea-3ziOpb {
+  .channelAttachmentArea-1wlgJV {
     
     &:before {
       content: "";
@@ -343,11 +343,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Attachment item
-    .upload-3Dkqd6 {
+    .upload-3GTSF9 {
       background: none ;
       
       // Btns container
-      .actionBarContainer-3EfnhW {
+      .actionBarContainer-3l5PQn {
         position: static ;
         
         &:hover:after {
@@ -363,14 +363,14 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
       
       // Btns container inner
-      .actionBar-3yJOtm {
+      .actionBar-3pDeKY {
         top: 0 ;
         right: 0 ;
         transform: none ;
       }
       
       // Buttons
-      .wrapper-2aW0bm {
+      .wrapper-2vIMkT {
         background: none ;
         box-shadow: none ;
       }
@@ -380,7 +380,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 
 // - Messages (cozy only for now)
-.chatContent-a9vAAp .message-2qnXI6.cozy-3raOZG {
+.chatContent-3KubbW .message-2CShn3.cozy-VmLDNB {
   background: none ;
   padding: 2px 32px 0px 4.125rem !important ;
   
@@ -392,16 +392,16 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   &:before { display: none }
   
   // Preview of replied msg
-  .repliedMessage-VokQwo { 
+  .repliedMessage-3Z6XBG { 
     height: 20px ;
   }
   
   // Message container
-  .contents-2mQqc9 { 
+  .contents-2MsGLg { 
     padding: 0 0 2px 6px ;
     
     // Profile image
-    .avatar-1BDn8e { 
+    .avatar-2e8lTP { 
       width: 2.5rem ;
       height: 2.5rem ;
       left: 0.8125rem ;
@@ -409,14 +409,14 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Msg Header (Name, Date, ..)
-    .header-23xsNx { 
+    .header-2jRmjb { 
       padding: 2px 0 ;
       margin-left: 0 ;
     }
   }
   
   // File
-  .attachment-33OFj0 {
+  .attachment-1PZZB2 {
     background: none ;
     border: none ;
   }
@@ -431,42 +431,42 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Discord embeds (Server invite, Server Event, ...)
-  .wrapper-35wsBm {
+  .wrapper-1HIH0j {
     background: $BG_Embed ;
     
-    .button-3To2tQ, .button-26pYmv {
+    .button-2b4VEQ, .button-c6KJnS {
 
       @include Btn(var(--background-modifier-accent), white);
     }
   }
   
   // Code block
-  code:not(.codeView-1JPDeA, .inline) {
+  code:not(.codeView-12LUIl, .inline) {
     background: $BG_Embed ;
     border: none ;
   }
   
   // File embed
-  .embedWrapper-lXpS3L {
+  .embedWrapper-1MtIDg {
     
     // File content, embed options
-    .textContainer-C0szpm, .footer-2yA7Ep {
+    .textContainer-36wgKK, .footer-GXWBBp {
       background: $BG_Embed ;
       border: none ;
     }
     
     // File name
-    .attachmentName-1iFwvb {
+    .attachmentName-vgRpzs {
       color: var(--header-secondary);
     }
     
     // File size
-    .formattedSize-2PXVec {
+    .formattedSize-1YbZww {
       color: var(--interactive-normal);
     }
     
     // Chnage code language btn
-    .codeIcon-3YZylx {
+    .codeIcon-Ni8XUA {
       color: var(--interactive-normal);
       cursor: pointer;
       
@@ -477,61 +477,61 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Full embed
-  .embedFull-2tM8-- {
+  .embedFull-1HGV2S {
     background: $BG_Embed ;
   }
   
   // Inline Code, Text Spoilers
-  code.inline, .spoilerText-3p6IlD {
+  code.inline, .spoilerText-27bIiA {
     background: $BG_Embed-alt ;
   }
 
   // Image Spoiler
-  .spoilerContainer-331r0R {
+  .spoilerContainer-3wsC0k {
     box-shadow: none ;
     
-    &.hidden-HHr2R9 {
+    &.hidden-3B-Rum {
       background: $BG_Embed ;
       border-radius: 4px ;
     }
     
-    .hiddenSpoilers-1ksnR6 {
+    .hiddenSpoilers-19m4Pg {
       visibility: hidden ;
     }
   }
   
   // Mention
-  &.mentioned-xhSam7 .contents-2mQqc9{
+  &.mentioned-Tre-dv .contents-2MsGLg{
     border-left: solid 2px var(--border-mentioned) ;
     background: var(--background-mentioned) ;
   }
   
   // Clyde (client-side info/error messages)
-  &.ephemeral-1PsL1r .contents-2mQqc9 {
+  &.ephemeral-2nDdnn .contents-2MsGLg {
     border-left: solid 2px var(--Blurple) ;
     background: var(--Blurple-light) ;
   }
   
   // Selected for reply
-  &.replying-1x3H0T .contents-2mQqc9 {
+  &.replying-eZ7p5z .contents-2MsGLg {
     border-right: solid 2px var(--header-secondary) ;
     background: var(--background-modifier-hover) ;
   }
   
-  // Reply | &.hasReply-34In-r { }
+  // Reply | &.hasReply-2Cr4KE { }
   // System Message (msg pinned, user joined server, ..) | 
-  &.isSystemMessage-2MkNHd {
+  &.isSystemMessage-QNv9ZH {
     
     // "Wave to say hi!" btn
-    .welcomeCTA-2orRfU .button-38aScr {
+    .welcomeCTA-3GMMRK .button-f2h6uQ {
       @include Btn("background");
     }
   }
   
   // Thread
-  &.hasThread-2k82W0 {
+  &.hasThread-3h-KJV {
     
-    .container-3hZ-gs {
+    .container-3i3IzO {
       background: none ;
     }
   }
@@ -539,7 +539,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // - Message Buttons 
   // Main container / Msg highlight hover effect
-  .buttonContainer-DHceWr {
+  .buttonContainer-1502pf {
     position: static ;
     
     &:hover:after {
@@ -554,25 +554,25 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
   
-  &.mentioned-xhSam7, &.ephemeral-1PsL1r { 
-    .buttonContainer-DHceWr:hover:after {
+  &.mentioned-Tre-dv, &.ephemeral-2nDdnn { 
+    .buttonContainer-1502pf:hover:after {
       right: 32px ;
     }
   }
   
   // Btn container
-  .buttons-cl5qTG { 
+  .buttons-3dF5Kd { 
     top: 3px ;
     padding: 0 1px 0 0 ;
     
     // Btn container grid
-    .wrapper-2aW0bm {
+    .wrapper-2vIMkT {
       height: 24px ;
       background: none ;
       box-shadow: none ;
 
       // Button
-      .button-1ZiXG9 {
+      .button-3bklZh {
         padding: 0 4px ;
         background: none ;
       }
@@ -580,19 +580,19 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Btn container on reply Msg
-  &.hasReply-34In-r .buttons-cl5qTG { 
+  &.hasReply-2Cr4KE .buttons-3dF5Kd { 
     top: 27px ;
   }
   
   // Message Buttons - Concatenating Msg / System Message
-  &:not(.groupStart-23k01U), &.isSystemMessage-2MkNHd {
+  &:not(.groupStart-3Mlgv1), &.isSystemMessage-QNv9ZH {
     
     // Buttons container
-    .wrapper-2aW0bm {
+    .wrapper-2vIMkT {
       height: 32px ;
       
       // Button
-      .button-1ZiXG9 {
+      .button-3bklZh {
         display: none ;
         padding: 4px ;
 
@@ -604,7 +604,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       &:hover {
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) ;
         
-        .button-1ZiXG9 {
+        .button-3bklZh {
           display: flex ;
           background-color: var(--background-tertiary) ;
         }
@@ -613,7 +613,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 }
 // Emotes
-.message-2qnXI6 {
+.message-2CShn3 {
   
   // BD emotes
   .emotewrapper {
@@ -680,7 +680,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 }
 // Reactions
-.message-2qnXI6 .reaction-1hd86g {
+.message-2CShn3 .reaction-2A2y9y {
   background-color: var(--background-modifier-accent);
   border: none;
   border-radius:4px;
@@ -690,7 +690,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Active reaction 
-  &.reactionMe-wv5HKu {
+  &.reactionMe-3I9gFK {
     background-color: var(--Blurple-light) ;
 
     &:hover { 
@@ -698,7 +698,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
 
     // number 
-    .reactionCount-2mvXRV { 
+    .reactionCount-1zkLcN { 
       color: var(--Blurple) ;
     }
   }
@@ -714,40 +714,40 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   z-index: 102 ;
   
   // Header section
-  .container-1r6BKw {
+  .container-ZMc96U {
     
     // Thread name
-    .children-19S4PO {
+    .children-3xh0VB {
       margin-left: 8px ;
     }
   }
   
   // Threads icon
-  .iconWrapper-L3hQuc {
+  .iconWrapper-3plkqh {
     display: none ;
   }
   
   // Create thread
-  > .container-2w6o5e {
+  > .container-2F_t9P {
     overflow: auto ;
     
     // Content options 
-    .formSection-33c8Tg {
+    .formSection-DabTa_ {
 
       // Name text input
-      .input-cIJ7To {
+      .input-2g-os5 {
         border-radius: 0 ;
         background: none  ;
         border: 1px solid var(--background-modifier-accent) !important ;
       }
 
       // Starter-Message text input
-      .channelTextArea-3O-WhA {
+      .channelTextArea-3TZH74 {
         border-radius: 0 ;
         background: none ;
         border: 1px solid var(--background-modifier-accent) !important ;
 
-        .channelTextAreaInner-1WnnRS {
+        .channelTextAreaInner-ITp5kW {
           background: none ;
           border: none ;
         }
@@ -755,16 +755,16 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
 
     // Create thread btn
-    .submitButton-10dlpk {
+    .submitButton-1TPmAa {
       @include button_normal();
     }
   }
   
   // Thread Chat
-  .chat-15Vmww {
+  .chat-3JZdy8 {
     
     // Text input
-    .cooldownWrapper-3joyFc {
+    .cooldownWrapper-2k1jHK {
       right: -16px ;
     }
   }
@@ -773,7 +773,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 @media (min-width: 1151px) {
   .threadSidebar-1o3BTy {
     
-    .chat-15Vmww:before, .chat-1cCjJ5:before{
+    .chat-3JZdy8:before, .chat-1rZYgu:before{
       display: none ;
     }
   }
@@ -803,7 +803,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 }
 
 // Threads "unarchive" bar
-.chatHeaderBar-4vZS1x {
+.chatHeaderBar-2fUORh {
   margin: 0 5px ;
   background: var(--background-secondary);
   border-radius: 5px ;
@@ -811,7 +811,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
   @include shadow_effect("box_2");
 
-  .chatHeaderBarButton-UiIh3z {
+  .chatHeaderBarButton-3q1QVr {
     background: none !important;
     color: var(--interactive-normal) !important;
     font-weight: 600 ;
@@ -824,58 +824,58 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 }
 
 // - Voicecall view (beta)
-.callContainer-36WRfH {
+.callContainer-HtHELf {
   background: none ;
   
   // Button main container
-  .videoControls-24w7Xp { 
+  .videoControls-353CsJ { 
     padding: 0 16px 0 16px ;
     
     // Top / Bottom section
-    .controlSection-2h3cS0 {
+    .controlSection-1mNixL {
       opacity: var(--always-show-voicecontrols, 0) ;
       transform: translateZ(0) ;
       
-      .streamQualityIndicator-2Te7mW {
+      .streamQualityIndicator-1QvbXd {
         display: none ;
       }
     }
   }
   
-  &:hover .controlSection-2h3cS0 { 
+  &:hover .controlSection-1mNixL { 
     opacity: 1 ;
   }
   
   // Controls (bottom) (trash)
-  .bottomControls-lIJyYL {
+  .bottomControls-31YuPK {
     
     // Group container
-    .flex-1xMQg5 {
+    .flex-2S1XBF {
       margin: 0 !important ;
     }
     
     // Icons
-    .controlIcon-35oS15 { 
+    .controlIcon-10O-4h { 
       color: var(--interactive-normal) ;
     }
     
-    .button-38aScr:hover .controlIcon-35oS15 { 
+    .button-f2h6uQ:hover .controlIcon-10O-4h { 
       color: white ;
     }
     
     // Centerd row btns
-    .centerButton-3CaNcJ {
+    .centerButton-1IShs7 {
       padding: 8px ;
       margin: 8px ;
       background: none ;
       
-      &.controlButton-2MhVEL { 
+      &.controlButton-2PMNom { 
         margin: 8px 16px ;
       }
     }
     
     // Btn dropdownmenu
-    .contextMenuNub-3yOOYo {
+    .contextMenuNub-NuTZ_U {
       color: white ;
       background-color: var(--background-secondary) ;
       
@@ -886,82 +886,82 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 
     // small icon for popout menu
-    .contextMenuNub-3yOOYo { 
+    .contextMenuNub-NuTZ_U { 
       bottom: 5px ;
     }
     
     // left / right Buttons
-    .flex-1xMQg5:first-child, .flex-1xMQg5:last-child {
+    .flex-2S1XBF:first-child, .flex-2S1XBF:last-child {
       margin-top: 10px ;
     }
   }
   
   // Gradient effect on hover
-  .gradientContainer-10lXLB { display: none }
+  .gradientContainer-phMG8d { display: none }
 
   // Title card container 
-  .scroller-3gAZLs::-webkit-scrollbar {
+  .scroller-2MALzE::-webkit-scrollbar {
     display: none ;
   }
   
   // Grid view container 
-  .listItems-1uJgMC .videoWrapper-2v09vt .video-1kutKI {
+  .listItems-6eZzQ1 .videoWrapper-3rtb_V .video-35SHWt {
     height: calc(100% - 20px) ;
   }
   
   // Focus view / Sidebar user container 
-  .participantsWrapperAnimated-3yISdv .tile-2gi3tr {
+  .participantsWrapperAnimated-2h1feR .tile-2Dr6M1 {
     margin-right: 5px ;
   }
   
   // Focus view / Focused card
-  .videoFrame-3JeHRb {
-    .tile-2gi3tr, .videoWrapper-2v09vt {
+  .videoFrame-3Kvwh- {
+    .tile-2Dr6M1, .videoWrapper-3rtb_V {
       background: none ;
     }
   }
   
   // User cards in voice
-  .tile-2gi3tr {
+  .tile-2Dr6M1 {
     
     // Issue with new activities
     @include shadow_effect("box_2");
     
-    .indicators-3zIm5K {
+    .indicators-7iWi8t {
       left: 0px ;
       
       // "live" icon
-      .liveIndicator-3FNmiB { display: none }
+      .liveIndicator-2HaEDu { display: none }
       
       // stream quality transition container
-      .streamQualityIndicator-2Te7mW > div {
+      .streamQualityIndicator-1QvbXd > div {
         transform: none !important ;
       }
       
       // stream quality
-      .liveQualityIndicator-3XCjEU {
+      .liveQualityIndicator-8fb_DX {
         background: var(--background-primary) !important ;
         border-radius: 8px ;
       }
     }
     
     // Stream preview image in user card
-    .streamPreview-3YL8OQ {
+    .streamPreview-3Fo29Y {
       
-      .cta-3gK0Pu {
+      .cta-3-AFNF {
         background: var(--background-primary) !important ;
         margin-bottom: 20px ;
       }
     }
     
-    .streamPreview-3YL8OQ .image-1npAv8 {
+    .streamPreview-3Fo29Y .image-1YnNzZ {
       padding-bottom: 20px ;
       box-sizing: border-box ;
     }
     
     // - Normal (no stream) user
     // Background
-    .background-ujHpbY {
+    .background-L8lGH6 {
       background: var(--background-tertiary) !important ;
       
       padding-bottom: 25px ;
@@ -969,7 +969,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Prfile image container
-    .avatarWrapper-29j3CC {
+    .avatarWrapper-24Rbpj {
       
       foreignObject {
         mask: none ;
@@ -981,7 +981,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
       
       // Prfile image
-      .avatar-VxgULZ {
+      .avatar-b5OQ1N {
         border-radius: 7.5% ;
         
         &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
@@ -989,7 +989,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Overlay container
-    .overlay-1YJlCn {
+    .overlay-2RIWoZ {
       position: absolute ;
       padding: 0 ;
       top: 0 ;
@@ -1000,7 +1000,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // User name container
-    .overlayTitle-8IcS01 {
+    .overlayTitle-2efoIF {
       width: 100% ;
       margin-right: 0 ;
       padding: 2px 6px ;
@@ -1008,24 +1008,24 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       border-radius: 0 ;
       
       // User name
-      .overlayTitleText-2mmQzi {
+      .overlayTitleText-3xOA3Q {
         width: 100% ;
         text-align: center ;
       }
       
-      &.idle-U-LIlZ {
+      &.idle-3MGs7O {
         opacity: 1 ;
       }
     }
     
     // User status container
-    .statusContainer-1gtabC {
+    .statusContainer-2yJ1oM {
       position: absolute ;
       top: 5px ;
       right: 5px ;
       
       // User status
-      .status-254fhp {
+      .status-15kcmy {
         background: none ;
       }
     }

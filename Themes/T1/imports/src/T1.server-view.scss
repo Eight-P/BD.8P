@@ -1,13 +1,13 @@
-// * T1.server-view v0.1.161
+// * T1.server-view v0.1.2
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
-.sidebar-2K8pFh .container-3w7J-x {
+.sidebar-1tnWFu .container-1NXEtd {
   top: 48px ;
   margin-bottom: 48px;
   
   // unread msg indicator
-  .unread-15xhX5 { display: none }
+  .unread-XRkyaQ { display: none }
 
   // Sidebar info thing
   .container-3O_wAf {
@@ -16,11 +16,11 @@
       background: none ;
     }
     
-    .button-38aScr {
+    .button-f2h6uQ {
       @include Btn("background");
     }
     
-    .close-20Ww5T .size12-3cLvbJ {
+    .close-20Ww5T .size12-oc4dx4 {
       color: var(--interactive-normal);
       
       &:hover {
@@ -30,45 +30,45 @@
   }
   
   // current server event
-  .channelNotice-3I83Cr {
+  .channelNotice-K4UfZY {
     
     // Event name
-    .colorHeaderPrimary-26Jzh- {
+    .colorHeaderPrimary-jN_yGr {
       color: var(--header-secondary);
     }
     
-    .joinButton-4zfTSE {
+    .joinButton-1HdI2a {
       @include Btn("background");
     }
   }
   
   // Scrollbar
-  .scroller-RmtA4e::-webkit-scrollbar { display: none }
+  .scroller-1ox3I2::-webkit-scrollbar { display: none }
   
   // Server boost progress bar
-  .container-3qpZp9 {
+  .container-1eD8xH {
     position: relative ;
     margin: -8px 0 0 0 ;
     height: calc(32px * var(--show-serverboost-stats, 1));
     overflow: hidden ;
     
     // Text container
-    .textArea-2Z3RtC {
+    .textArea-1sjhGG {
       margin: 0 12px ;
       
       // Nitro flower icon thing
-      .flowerStarContainer-3zDVtj {
+      .flowerStarContainer-1QeD-L {
         display: none ;
       }
       
       // Text "Goal:LVL"
-      .colorInteractiveActive-3Ip9Eu {
+      .colorInteractiveActive-30E9n8 {
         color: var(--header-secondary);
       }
     }
     
     // Container progress bar
-    .progressBarContainer-cCu8a2 {
+    .progressBarContainer-2E4oR- {
       position: absolute ;
       top: 0 ;
       width: 100% ;
@@ -76,7 +76,7 @@
       visibility: hidden ;
       
       // Progress bar
-      .progressBar-1oVG_J {
+      .progressBar-1Tzim4 {
         height: 24px ;
         opacity: .15 ;
         border-top-right-radius: 5px ;
@@ -84,38 +84,38 @@
       }
       
       // End of bar icon 
-      .tadaIcon-Eobray { display: none }
+      .tadaIcon-33fE1D { display: none }
     }
     
-    &:hover .progressBarContainer-cCu8a2 {
+    &:hover .progressBarContainer-2E4oR- {
       visibility: visible ;
     }
     
     // Bottom spacer
-    .divider-3HbLTj { display: none }
+    .divider-1Y1mB0 { display: none }
   }
   
   // Text and Voice Channels
-  .wrapper-2jXpOf {
+  .wrapper-NhbLHG {
     
     // Icon ("#", speaker, ..)
-    .icon-1DeIlz {
+    .icon-2W8DHg {
       width: 15px ;
       color: var(--channels-default);
       opacity: .8 ;
     }
     
     // Channel name
-    .name-23GUGE { color: var(--channels-default) }
+    .name-28HaxV { color: var(--channels-default) }
     
     // Channel options and infos
-    .children-3rEycc {
+    .children-1MGS9G {
       
       // Settings and invite buttons
-      .iconItem-F7GRxr { display: none }
+      .iconItem-1EjiK0 { display: none }
       
       // Mentions indicator
-      .numberBadge-2s8kKX {
+      .numberBadge-37OJ3S {
         background-color: transparent !important ;
         border-bottom: 2px solid var(--red) ;
         border-radius: 0 ;
@@ -123,11 +123,11 @@
       }
       
       // Connection limit (voice)
-      .userLimit-3aerPX {
+      .userLimit-VbEkeM {
         
         span { background: transparent }
         
-        .total-i6us2n::after {
+        .total-1c5KCN::after {
           border: none ;
           content: "|" ;
           left: -5px ;
@@ -137,47 +137,47 @@
     }
     
     // container for hover
-    > .content-1x5b-n {
+    > .content-1gYQeQ {
       background: transparent;
       
       &:hover {
-        .name-23GUGE { color: var(--interactive-hover) }
-        .iconItem-F7GRxr { display: block }
+        .name-28HaxV { color: var(--interactive-hover) }
+        .iconItem-1EjiK0 { display: block }
       }
     }
     
     // Channel selected / connected
-    &.modeSelected-346R90, &.modeConnected-3IsKId {
+    &.modeSelected-3DmyhH, &.modeConnected-NrO4cP {
       // Channel name
-      .name-23GUGE { color: var(--interactive-active) }
+      .name-28HaxV { color: var(--interactive-active) }
       // Channel icon (left)
-      .icon-1DeIlz { color: var(--interactive-active) }
+      .icon-2W8DHg { color: var(--interactive-active) }
     }
     
     // Channel muted
-    &.modeMuted-onO3r- {
+    &.modeMuted-2T4MDZ {
       // Channel icon (left)
-      .icon-1DeIlz { color: var(--interactive-muted) }
+      .icon-2W8DHg { color: var(--interactive-muted) }
     }
     
     // Channel unread
-    &.modeUnread-1qO3K1 {
+    &.modeUnread-3Cxepe {
       // pill
-      .unread-2lAfLh { background-color: var(--interactive-hover) }
+      .unread-36eUEm { background-color: var(--interactive-hover) }
     }
   }
   
   // Threads indicator spine thing
-  .spine--Wla_O {
+  .spine-29OFwR {
     color: var(--channels-default);
     opacity: .5 ;
   }
   
   // User in Voice channel
-  .voiceUser-1K6Xox {
+  .voiceUser-3nRK-K {
 
     // "live" indicator
-    .live-vBWnV6 { 
+    .live-1V2D-f { 
       background: none !important ;
       color: var(--red) ;
     }
@@ -186,10 +186,10 @@
 
 
 // -- Sidebar Panels (Profile, Activity,..)
-.sidebar-2K8pFh > .panels-j1Uci_ {
+.sidebar-1tnWFu > .panels-3wFtMD {
   
   // Profile Container
-  > .container-3baos1 {
+  > .container-YkUktl {
     position: absolute ;
     height: 48px ;
     width: 240px ;
@@ -197,66 +197,66 @@
     box-sizing: border-box ;
     align-items: unset ;
     
-    > .avatarWrapper-2yR4wp {
+    > .avatarWrapper-1B9FTW {
       height: 32px ;
       margin-top: 8px ;
     }
     
-    > .nameTag-3uD-yy {
+    > .nameTag-sc-gpq {
       height: 30px ;
       margin-top: 9px ;
     }
     
-    .usernameContainer-1fp4nu { align-items: unset }
+    .usernameContainer-3PPkWq { align-items: unset }
     
     // moving profile buttons for better tooltip position
-    > .flex-1xMQg5 {
+    > .flex-2S1XBF {
       height: 32px ;
       margin-top: 18px ;
       
       > button {
         background-color: transparent ;
 
-        > .contents-18-Yxp { margin-top: -20px }
+        > .contents-3ca1mk { margin-top: -20px }
       }
     }
   }
   
   // Activity Container
-  > .activityPanel-28dQGo {
+  > .activityPanel-9icbyU {
     height: 32px ;
     padding: 6px 10px ;
     
     // Image
-    .gameIconWrapper-1YByCI { height: 32px }
+    .gameIconWrapper-zXQ03M { height: 32px }
     
     // Text
-    .title-eS5yk3 { line-height: 32px }
+    .title-3XlmeX { line-height: 32px }
     
     button { background: none }
   }
   
   // Voice Connection
-  .container-1giJp5 {
+  .container-1zzFcN {
     display: grid ;
     padding: 0 ;
     border: none ;
     grid-template-columns: 100% ;
     
     // Voice channel info container
-    .connection-3KRENF {
+    .connection-3k9QeF {
       order: 2 ;
       margin-left: 32px ;
       padding: 6px 0 ;
       align-items: unset ;
       
       // Ping / "Connected"
-      .rtcConnectionStatus-2-jIsi {
+      .rtcConnectionStatus-c5A6Av {
         padding: 1px 0 2px 0 ;
       }
       
       // Buttons container
-      .button-14-BFJ {
+      .button-12Fmur {
         background: none ;
         
         // Noise Suppression Btn
@@ -265,7 +265,7 @@
     }
     
     // Connected users container
-    .voiceUsers-YsH5Db {
+    .voiceUsers-3gPcwY {
       height: 30px ;
       padding: 3px 8px ;
       margin: 0 ;
@@ -274,13 +274,13 @@
       
       &::-webkit-scrollbar { display: none }
       
-      ~ .actionButtons-14eAc_:after {
+      ~ .actionButtons-2vEOUh:after {
         bottom: 42px ;
       }
     }
     
     // Voice channel button container
-    .actionButtons-14eAc_ {
+    .actionButtons-2vEOUh {
       height: 0 ;
       padding: 0 ;
       overflow: hidden ;
@@ -314,13 +314,13 @@
       }
       
       // Buttons container
-      .button-1YfofB {
+      .button-1EGGcP {
         padding: 0 ;
         margin: 8px 16px ;
         background: none ;
         color: var(--interactive-normal);
         
-        &:not(.fauxDisabled-2ik0Vw):hover {
+        &:not(.fauxDisabled-8w0hCZ):hover {
           color: var(--interactive-hover);
         }
       }
@@ -330,13 +330,13 @@
 
 
 // -- Members list / Channel info sidebar (ptb)
-#app-mount .container-2PDP7D {
+#app-mount .container-2Oqvgx {
   position: relative ;
   min-width: 240px ;
   flex-direction: column-reverse ;
   
   // Header nav bar
-  .tabs-3L9Rgq {
+  .tabs-1RhQha {
     padding: 12px 0 ;
     border: none ;
 //    border-top: 1px solid var(--background-modifier-accent);
@@ -346,51 +346,51 @@
   }
   
   // Tab btn
-  .tab-XC_yrg {
+  .tab-FftSDB {
     padding: 0 ;
     margin: 0 ;
     background: none ;
   }
   
   // Members container
-  .container-2wlB3z {
+  .container-2o3qEW {
     height: calc(100% - 44px);
   }
   
   // Members inner container
-  .members-2upGyL {
+  .members-3l0kz9 {
     height: auto ;
   }
   
   // Channel info container
-  .container-1CU5bi {
+  .container-NkLXgf {
     color: var(--channels-default);
     
     // Header text
-    .sectionHeader-3P67IO {
+    .sectionHeader-37ixY1 {
       color: var(--text-normal);
     }
     
     // Subheader text
-    .header-P3PHw3 {
+    .header-2tOrk6 {
       color: var(--header-secondary);
     }
     
     // Text
-    .colorStandard-2KCXvj {
+    .colorStandard-21JIj7 {
       color: var(--channels-default);
     }
     
     // Settings options
-    .section-3uZwkF {
+    .section-2PUwqg {
       
       // Dropdwonmenu
-      .lookFilled-22uAsw {
+      .lookFilled-1GseHa {
         border: none ;
         background: none ;
         background: var(--background-modifier-accent) ;
         
-        &.open-kZ53_U {
+        &.open-1FRZsK {
           background: var(--background-modifier-selected) ;
         }
       }
@@ -400,19 +400,19 @@
 
 
 // -- Members list 
-.members-1998pB {
+.members-3WRCEx {
   &::-webkit-scrollbar { display: none }
   
   // Role header
-  .membersGroup-v9BXpm { margin-bottom: 4px }
+  .membersGroup-2eiWxl { margin-bottom: 4px }
   
   // Member
-  .member-3-YXUe {
+  .member-2gU6Ar {
     margin: 0 0 0 11px ;
     background: none ;
     
     // Inner container 
-    .layout-2DM8Md {
+    .layout-1qmrhw {
       border-radius: 0 ;
       background: none ;
       border-right: 3px solid transparent ;
@@ -424,25 +424,25 @@
     }
     
     // User popout open
-    &.selected-aXhQR6 .layout-2DM8Md {
+    &.selected-1-Z6gm .layout-1qmrhw {
        border-right: 3px solid var(--interactive-hover);
     }
     
     // Offline member
-    &.offline-3nJYBR:not(:hover) img.avatar-VxgULZ {
+    &.offline-22aM7E:not(:hover) img.avatar-b5OQ1N {
       filter: grayscale(100%);
       border-radius: 50% ;
     }
     
     // Nitro icon 
-    .name-uJV0GL + div { pointer-events: none }
+    .name-3Vmqxm + div { pointer-events: none }
   }
 
   // Preload dummys
-  .placeholder-3KRNN9, .memberGroupsPlaceholder-3mwPub {
+  .placeholder-38d3Iv, .memberGroupsPlaceholder-9tqX9V {
     animation: none ;
   }
-  .placeholderAvatar-damqh6, .placeholderUsername-2B_OA9, .memberGroupsPlaceholder-3mwPub {
+  .placeholderAvatar-1qAcRZ, .placeholderUsername-3iQi_D, .memberGroupsPlaceholder-9tqX9V {
     background: var(--text-normal);
     opacity: 0.1;
   }
@@ -450,25 +450,25 @@
 
 
 // -- Discovery Sidebar
-.discoverHeader-3th5O9 {
+.discoverHeader-1vsvZ0 {
   
-  ~ .categoryItem-ONe8JV .itemInner-1XfZdz {
+  ~ .categoryItem-Kc_HK_ .itemInner-3e_4G4 {
     border-radius: 0 ;
     padding: 0 4px ;
     margin: 5px 4px ;
   }
   
-  ~ .categoryItem-ONe8JV {
+  ~ .categoryItem-Kc_HK_ {
     
-    .itemInner-1XfZdz {
+    .itemInner-3e_4G4 {
       border-radius: 0 ;
       padding: 0 4px ;
       margin: 5px 4px ;
     }
     
-    &:hover .itemInner-1XfZdz { border-left: 3px solid var(--interactive-hover) }
+    &:hover .itemInner-3e_4G4 { border-left: 3px solid var(--interactive-hover) }
     
-    &.selected-aXhQR6 .itemInner-1XfZdz {
+    &.selected-1-Z6gm .itemInner-3e_4G4 {
       background-color: transparent ;
       border-left: 3px solid var(--interactive-hover) ;
     }
@@ -477,28 +477,28 @@
 
 
 // -- Discovery Content
-.sidebar-2K8pFh ~ .pageWrapper-1PgVDX > .scroller-1d5FgU { @include scrollbar() }
+.sidebar-1tnWFu ~ .pageWrapper-2PwDoS > .scroller-3j5xK2 { @include scrollbar() }
 
 
 // Server boost screen (community server)
-.wrapper-3qSb0d {
+.wrapper-WLdlSO {
   background: none ;
   
   // "back to server"
-  .navigationBar-2JJXBp {
+  .navigationBar-2Z_P4D {
     background: none ;
   }
   
   // Head banner
-  .hero-209Qgc {
+  .hero-3xEZXe {
     background: none ;
   }
   
   // "compare plans" table
-  .perksTable-7Z6tK2 {
+  .perksTable-H9sPBm {
     pointer-events: none ;
     
-    .perksTableRowHeading-2Kp5Vy .perksTableRowLabel-3Q5QcL {
+    .perksTableRowHeading-jY6XJu .perksTableRowLabel-wyBuZr {
       visibility: hidden ;
     }
   }

@@ -1,17 +1,17 @@
-// * T1.popouts v0.1.271
+// * T1.popouts v0.1.3
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
-.layerContainer-yqaFcK {
+.layerContainer-2v_Sit {
   overflow: hidden ;
 }
 
 
 // Autocomplete popout
-.chatContent-a9vAAp .form-2fGMdU .autocomplete-1vrmpx {
+.chatContent-3KubbW .form-3gdLxP .autocomplete-3NRXG8 {
   background-color: var(--background-tertiary) !important ;
       
-  .selectable-3dP3y- {
+  .selectable-1MM9tu {
     border-radius: 0 ;
     background: none ;
 
@@ -19,35 +19,35 @@
       background: var(--background-modifier-selected) ;
       border-left: 3px solid var(--interactive-hover) ;
 
-      .colorInteractiveNormal-PB7JN3 { color: var(--interactive-hover) }
+      .colorInteractiveNormal-36ZhyZ { color: var(--interactive-hover) }
     }
   }
 }
 
 
 // Gif, Sticker, Emoji, BD emotes Picker
-.layerContainer-yqaFcK {
+.layerContainer-2v_Sit {
   
   // Main container
-  .contentWrapper-SvZHNd { 
+  .contentWrapper-3vHNP2 { 
     background-color: var(--background-tertiary);
   }
 
   // Christmas shit
-  .contentWrapperWithSnowsgivingNotice-1AvSpB {
+  .contentWrapperWithSnowsgivingNotice-tHP4vx {
     grid-template-rows: 24px auto;
     padding-top: 16px;
 
-    .anchor-3Z-8Bb { display: none }
+    .anchor-1MIwyf { display: none }
   }
   
   // Navbar
-  .navButtonActive-1MkytQ { 
+  .navButtonActive-1EqC5l { 
     background: none ;
   }
   
   // Popout content (Emoji, Sticker, GIFs)
-  .wrapper-1rqM3x, .wrapper-2iFQJ9, .container-3ISnnM {
+  .wrapper-3u51GQ, .wrapper-1NB3WY, .container-23gRWx {
     
     input { 
       border-bottom: 1px solid var(--interactive-muted);
@@ -57,29 +57,29 @@
       background-color: var(--background-tertiary);
      }
 
-    .scroller-3gAZLs::-webkit-scrollbar { display: none } 
+    .scroller-2MALzE::-webkit-scrollbar { display: none } 
 
     // - Sidebar left (Sticker/Emoji)
-    .wrapper-2Gsate {
+    .wrapper-22rqw6 {
       border-right: 1px solid var(--background-modifier-accent) ;
 
       // Category Icons
-      .guildIcon-3h-1IH { 
+      .guildIcon-2SUGiq { 
         background: none ;
        }
     }
 
     // - Right side content (Sticker/Emoji)
     // Category header
-    .wrapper-1-Fsb8 { 
+    .wrapper-1NNaWG { 
       position: relative ;
       background: none ;
     }
 
-    .inspector-S2gM3e { display: none }
+    .inspector-DFKXwB { display: none }
 
     // emojis
-    .emojiItem-14v6tW {
+    .emojiItem-277VFM {
 
       // Icon for addding emojis to server
       &:not([data-name]) { display: none }
@@ -102,57 +102,57 @@
 
 
 // Context menus
-.layer-v9HyYc .menu-3sdvDG {
+.layer-2aCOJ3 .menu-1QACrS {
   background: var(--background-tertiary) ;
   
-  .scroller-3BxosC {
+  .scroller-1bVxF5 {
     padding: 6px !important;
     
     &::-webkit-scrollbar { display: none }
   }
   
   // Options
-  .item-1tOPte {
+  .item-1OdjEX {
     background: none ;
     
     // Critical option (like: bann, kick, ..)
-    &.colorDanger-2qLCe1.focused-3afm-j { background: var(--red) }
+    &.colorDanger-3n-KnP.focused-3qFvc8 { background: var(--red) }
     
     // Options with checkbox
     &[role="menuitemcheckbox"] {
       
       // Checkbox icon
-      .checkbox-3s5GYZ { color: transparent }
+      .checkbox-hADx5o { color: transparent }
 
       // Checkbox checked ("x" icon for "uncheck")
-      &.focused-3afm-j[aria-checked="true"] path {
+      &.focused-3qFvc8[aria-checked="true"] path {
         color: var(--red) ;
         d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
       }
     }
     
     // Sliderbar (like: User Volume, ..)
-    .slider-1PF9SW {
+    .slider-1NC-Gf {
       top: 0 ;
 
-      > .bar-2Qqk5Z {
+      > .bar-1Bhnl9 {
         background: var(--background-primary) ;
         top: 7px ;
         
-        > .barFill-23-gu- { background: var(--interactive-normal) }
+        > .barFill-2Bh7CX { background: var(--interactive-normal) }
       }
       
-      > .track-11EASc > .grabber-3mFHz2 { top: 0 }
+      > .track-1BI4CA > .grabber-2GQyvM { top: 0 }
       
-      &:hover .barFill-23-gu- { background: var(--header-secondary) }
+      &:hover .barFill-2Bh7CX { background: var(--header-secondary) }
     }
   }
   
   // Secondary popout
-  .submenu-2-ysNh {
+  .submenu-1apzyU {
     background: var(--background-tertiary) ;
     
-    .scroller-3BxosC {
+    .scroller-1bVxF5 {
       padding: 6px ;
 
       &::-webkit-scrollbar { display: none }
@@ -162,13 +162,13 @@
 
 
 // Searchbar options popout
-.layer-v9HyYc > #search-results {
+.layer-2aCOJ3 > #search-results {
   background: var(--background-secondary-alt) ;
   
   @include shadow_effect("box_1");
   
   // Search options
-  .option-96V44q {
+  .option-2KkUJO {
     
     // weird gradiant to the right, idk
     &::after { display: none }
@@ -177,12 +177,12 @@
     &.selected-rZcOL-  { background: var(--background-modifier-hover) }
     
     // unnecessary icon
-    .plusIcon-v0BTrL { display: none }
+    .plusIcon-2V7coV { display: none }
   }
 }
 
 // Searchbar results popout
-.searchResultsWrap-3-pOjs {
+.searchResultsWrap-5RVOkx {
   background: var(--background-tertiary) ;
   width: -webkit-fill-available ;
   min-width: 350px ;
@@ -192,11 +192,11 @@
   -webkit-box-flex: 1 ;
   
   // Header
-  > .searchHeader-2XoQg7 {
+  > .searchHeader-1r_ZSh {
     background: var(--background-secondary-alt) ;
     
     // n of search results
-    .colorHeaderPrimary-26Jzh- {
+    .colorHeaderPrimary-jN_yGr {
       color: var(--text-normal) ;
     }
     
@@ -211,13 +211,13 @@
   }
   
   // Content scroller
-  > .scroller-3GIiMh {
+  > .scroller-3iiyhZ {
     padding: 8px 0 0 0 !important ;
     
     &::-webkit-scrollbar { display: none }
       
     // Header - channel name
-    .channelName-1JRO3C {
+    .channelName-3w2Y3c {
       background: var(--background-secondary-alt) ;
       color: var(--interactive-normal) ;
       justify-content: center ;
@@ -230,30 +230,30 @@
     }
     
     // Message container
-    .container-2j2llN:hover {
+    .container-rZM65Y:hover {
       background: var(--background-modifier-hover);
     }
 
     // Message content container
-    .searchResult-9tQ1uo {
+    .searchResult-O9NDji {
       background: none ;
 
       // Message
-      .wrapper-2a6GCs.cozy-3raOZG {
+      .wrapper-30-Nkg.cozy-VmLDNB {
         padding-left: 60px ;
       }
       
       // pfp
-      .avatar-1BDn8e {
+      .avatar-2e8lTP {
         left: 8px ;
       }
     }
   }
   
   // switch pages btns
-  .container-NdaZbY {
+  .container-36u7Lw {
     
-    .pageButton-2ruNwd {
+    .pageButton-1GMGeJ {
       color: var(--interactive-normal) ;
       
       &:hover {
@@ -265,7 +265,7 @@
         pointer-events: none ;
       }
       
-      &.activeButton-rvKcqq {
+      &.activeButton-LRWFC_ {
         background: none ;
         color: var(--interactive-active) ;
         cursor: default ;
@@ -276,7 +276,7 @@
 
 
 // Pins
-.messagesPopoutWrap-1MQ1bW:not(.recentMentionsPopout-3rCiI6) {
+.messagesPopoutWrap-3zryHW:not(.recentMentionsPopout-2bI1ZN) {
   width: 50vw ;
   max-width: 600px ;
   min-width: 480px ;
@@ -286,43 +286,43 @@
   @include shadow_effect("box_2");
   
   // Header
-  .header-ykumBX {
+  .header-1w9Q93 {
     background: var(--background-secondary-alt) ;
     box-shadow: none ;
     
     // "Pinned Messages"
-    .base-1x0h_U {
+    .base-21yXnu {
       color: var(--interactive-hover) ;
     }
   }
   
   // Messages container
-  .messagesPopout-24nkyi {
+  .messagesPopout-eVzQcI {
     padding-left: 0 ;
     
     &::-webkit-scrollbar { display: none }
     
     // Messages Placeholder
-    .emptyPlaceholder-1zh-Eu {
+    .emptyPlaceholder-1-a1LK {
       margin: 8px 0 30px 0 ;
       
       // Text
-      .body-bvcIjN{
+      .body-GBnhET{
         color: var(--text-muted) ;
       }
     }
     
     // Pinned message
-    .messageGroupWrapper-o-Zw7G {
+    .messageGroupWrapper-1jf_7C {
       border: none ;
       background: none ;
       
       // Inner container
-      .messageGroupCozy-2iY6cT {
+      .messageGroupCozy-3v_RqN {
         margin: 0 ;
       }
       
-      .jumpButton-3DTcS_ {
+      .jumpButton-1ZwI_j {
         background: none ;
         font-size: 12px;
         line-height: 16px;
@@ -332,12 +332,12 @@
   }
   
   // Footer "Protip"
-  .footer-1kmXd4 { display: none }
+  .footer-5ji8u1 { display: none }
 }
 
 
 // Inbox
-.recentMentionsPopout-3rCiI6 {
+.recentMentionsPopout-2bI1ZN {
   width: 50vw ;
   max-width: 600px ;
   min-width: 480px ;
@@ -346,19 +346,19 @@
   
   @include shadow_effect("box_2");
   
-  .header-2-Imhb {
+  .header-145e10 {
     background: var(--background-secondary-alt) ;
     
-    .tab-ck0077, .button-1-5Aqk {
+    .tab-TRrPC8, .button-1_oXub {
       background: none !important ;
     }
   }
   
   // Mentions
-  &.messagesPopoutWrap-1MQ1bW {
+  &.messagesPopoutWrap-3zryHW {
     
     // Scroller
-    .scrollerBase-289Jih {
+    .scrollerBase-_bVAAt {
       
       @include scrollbar();
       
@@ -372,45 +372,45 @@
       }
       
       // Messages container
-      .container-3iAQ-0 {
+      .container-iA3Qrz {
         padding: 0 ;
         margin-bottom: 24px ;
         
         // Channel name header
-        .channelHeader-3Gd2xq {
+        .channelHeader-DFRX8q {
           position: relative ;
           padding: 12px 12px 12px 8px ;
           background: var(--background-secondary-alt) ;
           
           // Channel name, Server name
-          .channelName-_v0rI4, .subtext-qy79y1 {
+          .channelName-3APnhp, .subtext-2-lYzF {
             width: fit-content ;
           }
           
           // Close btn
-          .closeButton-1152MI {
+          .closeButton-3CiW2j {
             background: none ;
           }
         }
         
         // Message
-        .messageContainer-gbhlwo {
+        .messageContainer-3VTXBC {
           background: none ;
         }
       }
       
       // Footer
-      .scrollingFooterWrap-3FDlMn {
+      .scrollingFooterWrap-grqTU8 {
         display: none ;
       }
     }
   }
   
   // Unreads
-  &.container-enaOkj {
+  &.container-2ebMPP {
     
     // Scroller
-    .scrollerBase-289Jih {
+    .scrollerBase-_bVAAt {
       margin: 3px 0 0 0 ;
       padding: 0 !important ;
 
@@ -418,29 +418,29 @@
     }
     
     // Channel container
-    .channel-3pEHab {
+    .channel-3NJZ1V {
       padding: 0 0 3px 0 ;
     }
     
     // Channel header container
-    .channelHeader-3Gd2xq {
+    .channelHeader-DFRX8q {
       padding: 12px 12px 12px 8px ;
       background: var(--background-secondary-alt) ;
       
       // Channel name, Server name
-      .channelName-_v0rI4, .guildName-GKOCI8 {
+      .channelName-3APnhp, .guildName-y1svcU {
         width: fit-content ;
       }
       
-      @include Mentions_icon(".badge-2l0o8g");
+      @include Mentions_icon(".badge-1ImhlC");
       
       // Buttons
-      .button-1-5Aqk {
+      .button-1_oXub {
         background: none ;
       }
       
       // Collapse btn
-      .collapseButton-2ZsEjz {
+      .collapseButton-39-IRc {
         position: static ;
         display: flex ;
         align-items: center ;
@@ -459,16 +459,16 @@
     }
     
     // Messages container
-    .messages-3G3erD {
+    .messages-23can0 {
       background: none ;
       padding: 16px 6px 16px 0 ;
       
       // Msg seperator with date
-      > .divider-JfaTT5 {
+      > .divider-2rZFJK {
         border: none ;
 
         // Date 
-        .content-1o0f9g { background: none }
+        .content-3spvdd { background: none }
 
         // Seperator lines
         &::before, &::after {
@@ -480,13 +480,13 @@
       }
       
       // Messages item
-      > .messageContainer-1ei2zM {
+      > .messageContainer-8dSNjf {
         
         // "jump" to msg btn
-        > .jumpButton-2dvRSC {
+        > .jumpButton-1V_1FA {
           right: 16px ;
           
-          > .text-3KVtey {
+          > .text-2ifC_x {
             color: var(--interactive-normal) ;
 
             &:hover {
@@ -501,29 +501,29 @@
 
 
 // Threads popout
-.browser-2NpbWS.container-7uh5fX {
+.browser-mnQ1T7.container-18GwIk {
   background: var(--background-tertiary) ;
   
   // Header
-  .header-1VS4tm {
+  .header-3_zmOb {
     background: var(--background-secondary-alt) ;
     
     // "#" Icon, "Threads" title, divider
-    .threadIcon-3XJhLD, .title-wn-Ecb, .divider-mDc_D8 { display: none }
+    .threadIcon-rd1kqG, .title-10Au0i, .divider-2xk5N2 { display: none }
     
     // Active/Archived Buttons
-    .tab-PQvTH4 {
+    .tab-2Jo-cu {
       background: none !important ;
     }
     
     // Create new thread button
-    .createButton-nlV8qH {
+    .createButton-oruGBs {
       @include Btn();
     }
   }
   
   // Thread item
-  .container-2I9Hud {
+  .container-2rzKKA {
     background: none ;
     border: none ;
     
@@ -532,33 +532,33 @@
     }
     
     // Name/test container
-    .left-3P8WCO {
+    .left-1tSH9F {
       row-gap: 5px ;
     }
     
     // Name 
-    .threadNameLine-3p4RWQ {
+    .threadNameLine-1FNzAW {
       align-self: center ;
     }
   }
   
   // Public/Private Buttons
-  .tab-17bjMB {
+  .tab-1tp4jL {
     background: none !important ;
   }
   
-  .container-1KFiob .button-38aScr {
+  .container-2c4_8A .button-f2h6uQ {
     @include Btn("background");
   }
 }
 
 
 // Invite to Server / Add friends to Dm / New Group Dm
-.focusLock-Ns3yie > .root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y {
+.focusLock-2tveLW > .root-g14mjS.small-23Atuv.fullscreenOnMobile-ixj0e3 {
   background: var(--background-tertiary);
 
   // - Header
-  .header-1TKi98 {
+  .header-1zd7se {
     background: var(--background-tertiary);
     
     // Title
@@ -567,51 +567,51 @@
     }
     
     // Search container
-    .container-2XeR5Z {
+    .container-1SX9VC {
       border-radius: 0 ;
       padding-bottom: 3px ;
       border-bottom: 1px solid var(--interactive-muted) ;
       
       // Added friend tag
-      .tag-2gHSR7 {
+      .tag-15zcD_ {
         margin-right: 5px ;
       }
       
       // Text input
-      .input-1Rv96N {
+      .input-2FSSDe {
         padding: 0 ;
         margin: 0 ;      
       }
     }
     
     // Invite to Server > Close btn
-    .closeButton-31ta9E {
+    .closeButton-2RO-ed {
       top: 8px ;
       right: 8px ;
     }
     
     // Add friends to Dm > "Add" btn
-    .addButton-tsPCpZ .button-38aScr {
+    .addButton-cr4zLw .button-f2h6uQ {
       @include Btn("background");
     }
   }
   
   // - Content / Scroller
   // Add friends to Dm / New Group Dm
-  .scroller-hUf6zQ {
+  .scroller-1Kbkqa {
     max-height: 40vh ;
     padding-right: 8px !important ;
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 96%, transparent);
     
     &::-webkit-scrollbar { display: none }
     
-    .friendWrapper-2SrUFF {
+    .friendWrapper-2x5j0A {
 
       &:not(:last-child) {
         border-bottom: 1px solid var(--background-modifier-hover) ;
       }
 
-      .friendSelected-1sa4bG {
+      .friendSelected-3cwmD7 {
         background: none ;
       }
 
@@ -619,14 +619,14 @@
         background: var(--background-modifier-hover) ;
       }
 
-      .checkboxWrapper-SkhIWG {
+      .checkboxWrapper-2fDzaA {
         cursor: pointer ;
       }
     }
   }
   
   // Invite to Server
-  .scroller-2hZ97C {
+  .scroller-3nFW5p {
     max-height: 40vh ;
     padding: 16px 8px 8px 8px !important;
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 96%, transparent);
@@ -634,7 +634,7 @@
     &::-webkit-scrollbar { display: none }
 
     // User item
-    .inviteRow-2L02ae {
+    .inviteRow-3vmB7i {
       background: none ;
       padding: 7px 8px ; 
       margin-right: 0 ;
@@ -645,7 +645,7 @@
     }
 
     // Invite btn
-    .inviteRowButton-3opYo2 {
+    .inviteRowButton-3hcOhY {
       padding: 2px 0 ;
       width: auto ;
       min-width: unset ;
@@ -655,25 +655,25 @@
   }
   
   // Footer
-  .footer-2gL1pp, .footer-1eyGBa {
+  .footer-31IekZ, .footer-C9oLp9 {
     background: var(--background-tertiary);
     
-    .content-3CCvMx:before { display: none }
+    .content-3nJg0c:before { display: none }
     
     // Info txt
-    .title-3sZWYQ { display: none }
+    .title-3hptVQ { display: none }
     
     // Invite link text filed
-    .input-cIJ7To {
+    .input-2g-os5 {
       border: none ;
       background: var(--background-tertiary);
     }
     
-    .button-38aScr.lookFilled-1Gx00P {
+    .button-f2h6uQ.lookFilled-yCfaCM {
       @include Btn("background");
     }
     
-    .colorStandard-2KCXvj.size12-3cLvbJ {
+    .colorStandard-21JIj7.size12-oc4dx4 {
       text-align: center ;
     }
   }
@@ -684,43 +684,43 @@
   background: var(--background-tertiary) ;
   
   // Separator line
-  .separator-2I32lJ { display: none }
+  .separator-1So4YB { display: none }
   
-  .item-1tOPte {
-    &#status-picker-online.focused-3afm-j { background: var(--status-online) }
+  .item-1OdjEX {
+    &#status-picker-online.focused-3qFvc8 { background: var(--status-online) }
       
-    &#status-picker-idle.focused-3afm-j { background: var(--status-idle) }
+    &#status-picker-idle.focused-3qFvc8 { background: var(--status-idle) }
 
-    &#status-picker-dnd.focused-3afm-j { background: var(--status-DnD) }
+    &#status-picker-dnd.focused-3qFvc8 { background: var(--status-DnD) }
 
-    &#status-picker-invisible.focused-3afm-j { background: var(--status-invisible) }
+    &#status-picker-invisible.focused-3qFvc8 { background: var(--status-invisible) }
     
-    &#status-picker-custom-status.focused-3afm-j { background: var(--background-modifier-selected) }
+    &#status-picker-custom-status.focused-3qFvc8 { background: var(--background-modifier-selected) }
   }
 }
  
 
 // Tooltips
-.layerContainer-yqaFcK .tooltip-2QfLtc {
+.layerContainer-2v_Sit .tooltip-14MtrL {
   background: var(--background-tertiary) ;
   font-size: 14px ;
   font-weight: 600 ;
   
-  .tooltipPointer-3ZfirK {
+  .tooltipPointer-3L49xb {
     border-top-color: var(--background-tertiary) ;
   }
 }
 
 
 // Notifications popout on receiving voice call
-.bg-h5JY_x ~ .wrapper-3lJCnD { z-index: 1000 }
+.bg-1QIAus ~ .wrapper-3X0c60 { z-index: 1000 }
 
 
 // "try new feature" Notification popout
-.layerContainer-yqaFcK .layer-v9HyYc[style*="left: -"][style*="top: 8px;"] {
+.layerContainer-2v_Sit .layer-2aCOJ3[style*="left: -"][style*="top: 8px;"] {
   transform: translate( calc(50% + 25px), 25px);
   
-  .subscribeTooltipWrapper-1JoUuw {
+  .subscribeTooltipWrapper-3ipXtC {
     background-color: var(--background-tertiary);
     
     &:after {
@@ -728,13 +728,13 @@
     }
   }
   
-  .button-38aScr {
+  .button-f2h6uQ {
     @include Btn("background");
   }
 }
 
 // Server boost screen (normal server)
-.root-3R2ngo .perksModal-12XaFK {
+.root-2zfUH6 .perksModal-CLcR1c {
   background: var(--Main_Background);
   background-position: center;
   background-size: cover;
@@ -746,16 +746,16 @@
 }
 
 // "All Active Threads" (from Channel list btn)
-.root-1gCeng .container-2QXVMm {
+.root-g14mjS .container-3GP6AV {
   background: var(--background-tertiary);
   
-  .header-2Lx45W {
+  .header-3cSJjT {
     background: var(--background-secondary);
   }
   
-  .activeThreadsList-3f7l7U {
+  .activeThreadsList-c8qlqZ {
     
-    .container-2I9Hud {
+    .container-2rzKKA {
       border: none ;
       background: none ;
       
@@ -769,39 +769,39 @@
 
 // Events modal and some other (needs some more testing)
 //.off 
-.layer-2KE1M9 .root-1gCeng {
+.layer-1Ixpg3 .root-g14mjS {
   background: var(--background-tertiary);
   
   // Header
-  .header-1TKi98 {
+  .header-1zd7se {
     background: var(--background-secondary-alt);
     
-    .fontDisplay-1dagSA {
+    .fontDisplay-3Gtuks {
       color: var(--interactive-hover);
     }
     
-    .button-38aScr {
+    .button-f2h6uQ {
       @include Btn();
     }
   }
   
   // Content body
-  .content-1SXGsJ {
+  .content-GYGe57 {
     padding: 0 !important ;
     
     &::-webkit-scrollbar { display: none } 
   }
   
   // Progressbars
-  .selectedProgressBar-1Z4WVU {
+  .selectedProgressBar-11z5d9 {
     background: var(--interactive-active) ;
   }
   
-  .colorBrand-2tjs5J {
+  .colorBrand-21Le_q {
     color: var(--text-normal) ;
   }
   
-  .input-cIJ7To {
+  .input-2g-os5 {
     border: none ;
     
     &:focus {
@@ -810,7 +810,7 @@
   }
   
   // Checkbox item list option
-  .item-26Dhrx {
+  .item-2idW98 {
     background: var(--background-modifier-accent) ;
     
     &[aria-checked="true"] {
@@ -823,7 +823,7 @@
   }
   
   // Events (item card)
-  .card-2X8BSG {
+  .card-8UsK4b {
     background: var(--background-tertiary);
     border-width: 0 ;
     margin-top: 0px ;
@@ -838,62 +838,62 @@
     }
     
     // Event name
-    .eventName-2Zb-UG {
+    .eventName-3XaUP0 {
       color: var(--interactive-hover);
     }
     
     // In card- content footer divider
-    .divider-12kAYT {
+    .divider-2zyEHJ {
       background: none ;
     }
     
-    .button-38aScr {
+    .button-f2h6uQ {
       @include Btn();
     }
   }
   
   // Footer
-  .footer-2gL1pp {
+  .footer-31IekZ {
     background: var(--background-secondary-alt);
     
-    .inline-3uJr8Q, .container-YB6rZD {
-      .button-38aScr{
+    .inline-3eaUwP, .container-vujOuw {
+      .button-f2h6uQ{
         @include Btn();
       }
     }
   }
   
   // Event info modal (maybe more)
-  &.root-3KobW4 {
+  &.root-wwggTZ {
     
     // Header
-    .container-1dt-Qg {
+    .container-3EBHNg {
       background: var(--background-secondary-alt);
       border: none ;
       
       // Nav bar item
-      .tabBarItem-1nATS- {
+      .tabBarItem-2aZfB8 {
         border: none ;  
       }
     }
     
     // Content
-    .contentContainer-1f7Gvv {
+    .contentContainer-BWAau5 {
       background: var(--background-tertiary);
     }
   }
 }
 
 // Quick switch navigation/search
-.quickswitcher-3JagVE {
+.quickswitcher-pKcM9U {
   background: var(--background-tertiary);
   
-  .input-2VB9rf {
+  .input-3r5zZY {
     background: var(--background-modifier-accent);
   }
   
   // Scroller 
-  .scroller-zPkAnE {
+  .scroller-2qwVWY {
     background: var(--background-tertiary);
     margin: 0 ;
     padding: 0 ;
@@ -903,7 +903,7 @@
   }
   
   // Item
-  .result-oB0z-- {
+  .result-u66Ywh {
     
     // :hover
     &[aria-selected=true] {
@@ -911,13 +911,13 @@
     }
     
     // Unread channel
-    .contentUnread-3gTHvA {
+    .contentUnread-1_MVDK {
       color: var(--interactive-normal);
     }
     
-    @include Mentions_icon(".badge-36LyGI");
+    @include Mentions_icon(".badge-3k1jbq");
   }
   
   // Protip footer, Tutorial arrows idk
-  .protip-1b9XPC, .tutorial-3igfYb {  display: none }
+  .protip-1jXzAl, .tutorial-1iwync {  display: none }
 }

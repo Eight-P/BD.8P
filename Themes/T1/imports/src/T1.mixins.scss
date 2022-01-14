@@ -1,4 +1,4 @@
-// * T1.mixins v0.1.1
+// * T1.mixins v0.1.2
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -29,7 +29,7 @@
 // Notification (user settings only)
 @mixin note_settings ($text, $display:block) {
   
-  .layer-3QrUeG:not(.baseLayer-35bLyl) .socialLinks-3jqNFy::before {
+  .layer-86YKbF:not(.baseLayer-W6S8cY) .socialLinks-2DELRE::before {
     content: $text ;
     display: $display ;
     
@@ -51,7 +51,7 @@
     @include shadow_effect("box_2");
   }
   
-  .platform-win .layer-3QrUeG .socialLinks-3jqNFy::before {
+  .platform-win .layer-86YKbF .socialLinks-2DELRE::before {
     top: 22px ;
   }
 }

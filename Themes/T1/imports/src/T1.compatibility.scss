@@ -1,4 +1,4 @@
-// * T1.compatibility v0.1.06
+// * T1.compatibility v0.1.1
 // Compatibility with plugins
 
 
@@ -23,19 +23,19 @@
 }
 
 // - Server channel sidebar
-.sidebar-2K8pFh {
+.sidebar-1tnWFu {
   transition: none !important ;
   
   // Sidebar hidden
   &.hideChannelElement + div {
     
     // Headerbar: chat, friendslist
-    .title-3qD0b-, .container-1r6BKw {
+    .title-31SJ6t, .container-ZMc96U {
       margin-left: 240px ;
       width: auto ;
 
       // Channel name
-      .title-29uC1r { 
+      .title-17SveM { 
         display: flex ;
       } 
     }
@@ -45,7 +45,7 @@
 
 // -- FriendNotifications by DevilBro (v1.8.1)
 // - Online friend counter
-.guilds-1SWlCJ .friendsOnlineWrap-0gZ63m {
+.guilds-2JjMmN .friendsOnlineWrap-0gZ63m {
   display: flex !important ;
   position: absolute ;
   transform: rotate(90deg) translateX(-50%) ;
@@ -62,7 +62,7 @@
 
 // -- ReadAllNotificationsButton by DevilBro (v1.7.0)
 // - "Read all" btn
-.guilds-1SWlCJ .frame-oXWS21 {
+.guilds-2JjMmN .frame-oXWS21 {
   display: flex !important ;
   position: absolute ;
   top: 0 ;
@@ -71,7 +71,7 @@
 
   &, * { height: 20px ; width: 20px  }
 
-  .childWrapper-anI2G9 {
+  .childWrapper-1j_1ub {
     color: transparent ;
     background: none ;
     transform: rotate(90deg);
@@ -116,37 +116,37 @@
 
 // -- SpotifyControls by DevilBro (v1.2.4)
 // - Sidebar control panel
-.panels-j1Uci_ .container-6sXIoE { 
+.panels-3wFtMD .container-6sXIoE { 
   margin: 0px ;
   min-height: 44px ;
 
-  .button-14-BFJ { background: none }
+  .button-12Fmur { background: none }
 }
 
 
 // -- CollapsibleUI by programmer2514 (v1.1.0)
 // - Server channel sidebar
-.sidebar-2K8pFh[style="display: none;"] {
+.sidebar-1tnWFu[style="display: none;"] {
   display: flex !important ;
   width: 0 ;
   
   // Titlebar adjustments
-  + .chat-3bRxxu .container-1r6BKw {
+  + .chat-2ZfjoI .container-ZMc96U {
     margin-left: 240px ;
     width: auto ;
     
     // Channel name
-    .title-29uC1r { 
+    .title-17SveM { 
       display: flex ;
     } 
   }
 }
 
 // - Serverbar
-.guilds-1SWlCJ[style="display: none;"] + .base-3dtUhz {
+.guilds-2JjMmN[style="display: none;"] + .base-2jDfDU {
     
   // Home search, Server settings
-  .searchBar-6Kv8R2, .container-1taM1r {
+  .searchBar-3TnChZ, .container-1-ERn5 {
     display: none ;
   }
 }
@@ -325,7 +325,7 @@
   }
   
   // User profile panel
-  #channelTabs-container ~ .layers-3iHuyZ .panels-j1Uci_ > .container-3baos1 {
+  #channelTabs-container ~ .layers-OrUESM .panels-3wFtMD > .container-YkUktl {
     margin-left: 0 ;
     width: 240px ;
     padding: 0 8px ;

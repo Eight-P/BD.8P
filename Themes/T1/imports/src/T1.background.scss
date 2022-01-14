@@ -1,8 +1,8 @@
-// * T1.background v0.2.14
+// * T1.background v0.2.2
 // Background image + Transparency
 
 // Main background image
-.bg-h5JY_x {
+.bg-1QIAus {
   background: var(--Main_Background) ;
   background-size: cover !important ;
   background-attachment: fixed !important ;
@@ -10,55 +10,61 @@
   filter: var(--BGM_Blur) var(--BGM_Brightness) ;
 }
 
+
 $Classes: (
   // #app-mount
   "",
   // App containers
-  ".app-2rEoOp", ".layer-3QrUeG",
+  ".app-2CXKsg", ".layer-86YKbF",
+  // App containers canary
+  ".app-2CXKsg", ".layer-86YKbF",
   // Voice-chat view
   ".stageSection-3mAD8V",
   // Text chat
-  ".chat-3bRxxu",
+  ".chat-2ZfjoI",
+  // Text chat canary
+  ".chat-2ZfjoI",
   // Sidebar
-  ".sidebar-2K8pFh",
+  ".sidebar-1tnWFu",
   // Sidebar container for Discord info stuff
   ".container-3O_wAf",
   // Server channels container
-  ".sidebar-2K8pFh > .container-3w7J-x",
+  ".sidebar-1tnWFu > .container-1NXEtd",
   // Members list
-  ".container-2wlB3z",
+  ".container-2o3qEW",
   // Sidebar Panels 
-  ".sidebar-2K8pFh > .panels-j1Uci_",
+  ".sidebar-1tnWFu > .panels-3wFtMD",
   // DMs Sidebar
-  ".sidebar-2K8pFh > .privateChannels-1nO12o",
+  ".sidebar-1tnWFu > .privateChannels-oVe7HL",
   // Home Friends list
-  ".sidebar-2K8pFh ~ .container-1D34oG",
+  ".sidebar-1tnWFu ~ .container-2cd8Mz",
   // Nitro store
-  ".applicationStore-1pNvnv",
+  ".applicationStore-2nk7Lo",
   // Discovery
-  ".pageWrapper-1PgVDX",
+  ".pageWrapper-2PwDoS",
   // Friends Activity Sidebar
-  ".nowPlayingColumn-2sl4cE", ".nowPlayingColumn-2sl4cE > .container-lRFx4q", ".nowPlayingColumn-2sl4cE > .emptyCard-1RJw8n",
-  ".nowPlayingSidebar-2OFn0o", ".nowPlayingSidebar-2OFn0o > .container-lRFx4q", ".nowPlayingSidebar-2OFn0o > .emptyCard-1RJw8n",
+  ".nowPlayingColumn-1eCBCN", ".nowPlayingColumn-1eCBCN > .container-1oAagU", ".nowPlayingColumn-1eCBCN > .emptyCard-KDifrB",
+  ".nowPlayingSidebar-2OFn0o", ".nowPlayingSidebar-2OFn0o > .container-1oAagU", ".nowPlayingSidebar-2OFn0o > .emptyCard-KDifrB",
   // Pretty much every scroller
-  ".app-1q1i1E .scrollerBase-289Jih",
+  ".app-3xd6d0 .scrollerBase-_bVAAt",
   // Members list
-  ".container-2PDP7D", ".members-1998pB", ".members-1998pB .content-3YMskv",
+  ".container-2Oqvgx", ".members-3WRCEx", ".members-3WRCEx .content-2a4AW9",
   // Serverbar
-//  ".guilds-1SWlCJ",
+//  ".guilds-2JjMmN",
   // Settings
-  ".layer-3QrUeG .standardSidebarView-3F1I7i", ".layer-3QrUeG .standardSidebarView-3F1I7i > .contentRegion-3nDuYy",
+  ".layer-86YKbF .standardSidebarView-E9Pc3j", ".layer-86YKbF .standardSidebarView-E9Pc3j > .contentRegion-3HkfJJ",
   // Roles Settings
-  ".page-3njELR .titleContainer-2CXtJo",
+  ".page-15bX59 .titleContainer-3fPic2",
   // Channel Settings (Permissions)
-  ".card-4s8auQ", ".settingCard-3w2mVL", ".cardFolder-28dwxo",
+  ".card-2EUiNF", ".settingCard-xZSDjS", ".cardFolder-3H4uH4",
   // Voice-chat view
-  ".wrapper-2qzCYF",
+  ".wrapper-1gVUIN",
   // Title bar
-  ".container-1r6BKw",
+  ".container-ZMc96U",
   // GM store
   "#gm-settings-inject",
 );
+
 
 @each $class in $Classes { #app-mount #{$class} { background: none } }
 

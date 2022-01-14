@@ -1,13 +1,13 @@
-// * T1.serverbar v0.1.141
+// * T1.serverbar v0.1.2
 // Horizontal serverbar + Additions
 
 // Serverbar -->
 // - Base container -->
 // App layer adjustments 
-.layer-3QrUeG.baseLayer-35bLyl > .container-2lgZY8 { flex-direction: column-reverse }
+.layer-86YKbF.baseLayer-W6S8cY > .container-1eFtFS { flex-direction: column-reverse }
 
 // - Serverbar container / scroller
-.guilds-1SWlCJ {
+.guilds-2JjMmN {
   height: 54px ;
   width: 100vw ;
   margin: 0 ;
@@ -24,12 +24,12 @@
   filter: var(--blur) var(--brightness) ;
   
   // when in voice call view
-  &.hidden-3dXt4k {
+  &.hidden-10MsGQ {
     height: 0 ;
   }
   
   // Child container (ul)
-  .tree-2wKJdG {
+  .tree-3agP2X {
     display: grid ;
     height: 100vw ;
     width: 54px ;
@@ -39,7 +39,7 @@
   }
   
   // Scroller ( 10-48-6-20-6-20-10 )
-  .scroller-1Bvpku {
+  .scroller-3X7KbA {
     display: grid ;
     grid-template-columns: 54px ;
     grid-template-rows: 48px 29px 35px auto ;
@@ -72,12 +72,12 @@
   }
   
   // Unread mentions indicators
-  .unreadMentionsIndicatorTop-2-tcdU,
-  .unreadMentionsIndicatorBottom-2mDYbI { display: none }
+  .unreadMentionsIndicatorTop-2bTgUU,
+  .unreadMentionsIndicatorBottom-3RJMnQ { display: none }
 }
 
 // Margin on Mac
-.platform-osx .wrapper-3NnKdC {
+.platform-osx .wrapper-1_HaEi {
   margin: 0 ;
 }
 
@@ -85,13 +85,13 @@
 
 // - Static options -->
 // - Home / GuildsAd / Discovery / GuildsError
-.guilds-1SWlCJ .scroller-1Bvpku {
+.guilds-2JjMmN .scroller-3X7KbA {
   
   // GuildSeparator / Discovery preview listItem 
-  > .listItem-2Ig28I { display: none }
+  > .listItem-3SmSlK { display: none }
   
   // general item container
-  .listItem-2Ig28I { 
+  .listItem-3SmSlK { 
     width: 54px ; 
     margin: 0 ; 
   }
@@ -101,31 +101,31 @@
     grid-area: Home ;
     
     // Pill
-    .pill-gcH-8B { display: none }
+    .pill-L_aLMQ { display: none }
     
     // Notification badge
-    .lowerBadge-29hYVK {
+    .lowerBadge-3WTshO {
       left: 4px ;
       bottom: 4px ;
     }
     
     // SVG 1 conatiner
-    .wrapper-25eVIn { 
+    .wrapper-28eC3z { 
       transform: rotate(90deg);
     }
     
     // SVG 2 conatiner
-    .childWrapper-anI2G9 {
+    .childWrapper-1j_1ub {
       background: none ;
       color: var(--text-normal) ;
       opacity: .75 ;
     }
     
     // Hover
-    .wrapper-1BJsBx.selected-bZ3Lue > .childWrapper-anI2G9 { opacity: 1 }
+    .wrapper-3kah-n.selected-1Drb7Z > .childWrapper-1j_1ub { opacity: 1 }
     
     // SVG 2
-//    .homeIcon-AaowEC { 
+//    .homeIcon-r0w4ny { 
 //      @include shadow_effect("drop_1") ;
 //      
 //      // Icon path
@@ -135,7 +135,7 @@
 //    }
     
     // SVG 2 (chrsitmas version)
-    .childWrapper-anI2G9 > svg {
+    .childWrapper-1j_1ub > svg {
       @include shadow_effect("drop_1") ;
       
       g { display: none }
@@ -160,22 +160,22 @@
     display: flex ;
     width: 54px ;
     
-    .pill-61ft1C { display: none }
+    .pill-1NRFie { display: none }
     
     // SVG 1 container, SVG 1
-    .wrapper-25eVIn, .svg-1X37T1 {
+    .wrapper-28eC3z, .svg-2zuE5p {
       height: 20px ; 
       width: 20px ;
     }
     
     // SVG 2 container
-    .circleIconButton-hZmpE8 {
+    .circleIconButton-1VxDrg {
       transform: rotate(90deg) ;
       background: none ;
       color: var(--text-normal) ;
       opacity: .75 ;
       
-      &.selected-3mFF3I { opacity: 1 }
+      &.selected-2r1Hvo { opacity: 1 }
       
       @include shadow_effect("drop_1");
       
@@ -203,7 +203,7 @@
     margin: 0 ;
     margin: 3px 0 10px 0;
     
-    .circleIconButton-hZmpE8 > svg {
+    .circleIconButton-1VxDrg > svg {
       height: 90% ;
       width: 90% ;
     }
@@ -218,7 +218,7 @@
     height: 20px ;
     width: 20px ;
     
-    a.anchor-3Z-8Bb {
+    a.anchor-1MIwyf {
       transform: rotate(90deg) ;
       background: none ;
       border: none ;
@@ -229,28 +229,28 @@
   }
   
   // Home
-  > .tutorialContainer-11ICd5 { @include Home_Icon() }
+  > .tutorialContainer-1pL9QS { @include Home_Icon() }
   
   // GuildsAdd
-  > .tutorialContainer-3alCZm { @include GuildsAdd_Icon() }
+  > .tutorialContainer-2jwoiB { @include GuildsAdd_Icon() }
   
   // In case there are is no Servers.
-  > .tutorialContainer-3alCZm + .listItem-2Ig28I { @include Discovery_Icon() }
-  > .listItem-2Ig28I:nth-last-child(2) { @include Discovery_Icon() }
-  > .listItem-2Ig28I:nth-last-child(3) { @include GuildsAdd_Icon() }
+  > .tutorialContainer-2jwoiB + .listItem-3SmSlK { @include Discovery_Icon() }
+  > .listItem-3SmSlK:nth-last-child(2) { @include Discovery_Icon() }
+  > .listItem-3SmSlK:nth-last-child(3) { @include GuildsAdd_Icon() }
   
   // In case there are Servers.
   > div[aria-label]:not([class]) {
     
     // Discovery
-    ~ .listItem-2Ig28I { @include Discovery_Icon() }
+    ~ .listItem-3SmSlK { @include Discovery_Icon() }
     
     // GuildsAdd in Discovery preview 
-    + .listItem-2Ig28I { @include GuildsAdd_Icon() }
+    + .listItem-3SmSlK { @include GuildsAdd_Icon() }
     
     // GuildsError (i think)
-    + .tutorialContainer-3alCZm + .listItem-2Ig28I + .listItem-2Ig28I { @include GuildsError_Icon() }
-    + .listItem-2Ig28I + .listItem-2Ig28I + .listItem-2Ig28I { @include GuildsError_Icon() }
+    + .tutorialContainer-2jwoiB + .listItem-3SmSlK + .listItem-3SmSlK { @include GuildsError_Icon() }
+    + .listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK { @include GuildsError_Icon() }
   }
 }
 
@@ -317,67 +317,67 @@
   margin: 12px 0 ;
   
   // bc drag and drop (server, dms)
-//  > div:not([class]), .listItemWrapper-2MsAsM {
-  .pill-ZqtR4i + div, .listItemWrapper-2MsAsM {
+//  > div:not([class]), .listItemWrapper-3d87LP {
+  .pill-2RsI5Q + div, .listItemWrapper-3d87LP {
     transform: rotate(90deg) ;
   }
   
   // Placeholder when dragging
-  .placeholderMask-1gr-sz {
+  .placeholderMask-2FHNZU {
     height: 40px;
     width: 40px;
     margin: 4px;
     
-    .dragInner-2jqmg1 {
+    .dragInner-1CUBf_ {
       background: rgba(0, 0, 0, 0.5) ;
     }
   }
   
-  .wrapper-25eVIn {
+  .wrapper-28eC3z {
 //    transform: rotate(90deg) ;
 
     @include shadow_effect("server_1");
     
     // Streaming badge (maybe more)
-    .upperBadge-2XnnGB { display: none }
+    .upperBadge-1V6Iyi { display: none }
   }
   
   // Unreads badge
-  .lowerBadge-29hYVK {
+  .lowerBadge-3WTshO {
     left: 4px ;
     bottom: 4px ;
 
-    > .numberBadge-2s8kKX { 
+    > .numberBadge-37OJ3S { 
       background-color: var(--red) !important ;
     }
   }
 
   // SVG 2 container
-  .svg-1X37T1 {
+  .svg-2zuE5p {
     height: 40px ; 
     width: 40px ;
     margin: 4px ;
 
     > mask, > g { display: none }
 
-    &:hover .icon-27yU2q { border-radius: 25% }
+    &:hover .icon-3AqZ2e { border-radius: 25% }
   }
 
   // Image
-  .icon-27yU2q {
+  .icon-3AqZ2e {
     border-radius: 50% ;
     transition: .2s ;
   }
   
   // Text
-  .acronym-2mOFsV {
+  .acronym-2zrAHN {
     background: none ;
     
     @include shadow_effect("server_1");
   }
   
   // Pill
-  .item-2hkk8m {
+  .item-2LIpTv {
     display: none ;
     margin-left: -5px ;
     
@@ -393,14 +393,14 @@
   }
   
   // Pill with bd classes as an optional improvment
-  &.bd-unread:not(.bd-selected) .item-2hkk8m {
+  &.bd-unread:not(.bd-selected) .item-2LIpTv {
     display: block ;
     height: 8px !important ;
   }
 }
 
 // DMs
-.guilds-1SWlCJ .scroller-1Bvpku > [style="opacity: 1; height: 56px; transform: scale(1);"] {
+.guilds-2JjMmN .scroller-3X7KbA > [style="opacity: 1; height: 56px; transform: scale(1);"] {
   @include ServerIcon();
 
   &::before {
@@ -420,11 +420,11 @@
     &::before { content: none }
   }
 
-  .pill-1Z5PKm { display: none }
+  .pill-22lZHo { display: none }
 }
 
 // Server container
-.scroller-1Bvpku > [aria-label]:not([class]) {
+.scroller-3X7KbA > [aria-label]:not([class]) {
   grid-area: Servers ;
   width: 54px ;
   max-height: 100% ;
@@ -433,21 +433,21 @@
   &::-webkit-scrollbar { display: none }
 
   // Server items
-  > .listItem-2Ig28I { @include ServerIcon() }
+  > .listItem-3SmSlK { @include ServerIcon() }
 }
 
 // Server folder
-.guilds-1SWlCJ .wrapper-shyHJt {
+.guilds-2JjMmN .wrapper-38slSD {
   width: 54px ;
   margin: 6px 0 ;
 
   // Background when open
-  .expandedFolderBackground-3ZDF05 { display: none }
+  .expandedFolderBackground-1kSAf6 { display: none }
 
   // Folder Icon / preview 
-  > .listItem-2Ig28I {
+  > .listItem-3SmSlK {
     
-    .pill-ZqtR4i { 
+    .pill-2RsI5Q { 
       display: none ;
       
       // Icon container (for drag)
@@ -455,47 +455,47 @@
     }
 
     // Icon container
-//    .wrapper-25eVIn { transform: rotate(90deg) }
+//    .wrapper-28eC3z { transform: rotate(90deg) }
 
     // Placeholder when dragging
-    .placeholderMask-1gr-sz {
+    .placeholderMask-2FHNZU {
       height: 40px;
       width: 40px;
       margin: 4px;
 
-      .dragInner-2jqmg1 {
+      .dragInner-1CUBf_ {
         background: rgba(0, 0, 0, 0.5) ;
       }
     }
     
     // Unreads badge
-    .lowerBadge-29hYVK {
+    .lowerBadge-3WTshO {
       left: 4px ;
       bottom: 4px ;
 
-      .numberBadge-2s8kKX { background-color: var(--red) !important }
+      .numberBadge-37OJ3S { background-color: var(--red) !important }
     }
 
     // SVG 1
-    .svg-1X37T1 {
+    .svg-2zuE5p {
 
       @include shadow_effect("drop_1");
 
       mask, g { display: none }
     }
 
-    .folder-2w6LX1 { background: none }
+    .folder-241Joy { background: none }
 
     // Icon container 2
-    .folderIconWrapper-1Ml_1q {
+    .folderIconWrapper-1oRIZr {
       position: absolute ;
       height: 40px ; 
       width: 40px ;
       margin: 4px ;
 
       // Icon container open and closed
-      .closedFolderIconWrapper-1I9YfS,
-      .expandedFolderIconWrapper-3fmTfW {
+      .closedFolderIconWrapper-3tRb2d,
+      .expandedFolderIconWrapper-3RwQpD {
         height: 40px ; 
         width: 40px ;
         padding: 0 ;
@@ -515,7 +515,7 @@
     margin-bottom: 24px ;
     
     // Server items in open folders
-    .listItem-2Ig28I { @include ServerIcon() }
+    .listItem-3SmSlK { @include ServerIcon() }
     
     &::after {
       content: "" ;
@@ -533,10 +533,10 @@
 
 // Additions -->
 // Channels list spacer for Server banner image
-.content-3YMskv > div[style="height: 84px;"]:not([class]) { display: none }
+.content-2a4AW9 > div[style="height: 84px;"]:not([class]) { display: none }
 
 // - Server options button
-.sidebar-2K8pFh .container-1taM1r {
+.sidebar-1tnWFu .container-1-ERn5 {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -546,16 +546,16 @@
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
   // Options popout open
-  &.selected-31Nl7x { background-color: rgba(0, 0, 0, 0.2) }
+  &.selected-1GtAC5 { background-color: rgba(0, 0, 0, 0.2) }
   
   // container
-  .header-2V-4Sw {
+  .header-3OsQeK {
     padding: 0 5px ;
     height: 54px ;
   }
   
   // Server name
-  .name-1jkAdW {
+  .name-3Uvkvr {
     text-align: center ;
     line-height: 1 ;
     white-space: normal ;
@@ -566,17 +566,17 @@
   }
   
   // Server icon (partnerd,..)
-  .guildIconContainer-2hr-Lk { display: none }
+  .guildIconContainer-3QvE6w { display: none }
   
   // Chevron icon
-  .button-1w5pas { display: none }
+  .button-2BMPJJ { display: none }
   
   // Server banner image
-  .animatedContainer-1NSq4T { display: none }
+  .animatedContainer-2laTjx { display: none }
 }
 
 // - Search button (home)
-.privateChannels-1nO12o .searchBar-6Kv8R2 {
+.privateChannels-oVe7HL .searchBar-3TnChZ {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -586,7 +586,7 @@
   
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
-  .searchBarComponent-32dTOx {
+  .searchBarComponent-3N7dCG {
     height: 54px ;
     background: transparent ;
     color: var(--text-normal);
@@ -599,7 +599,7 @@
 }
 
 // - Discovery Text (button)
-.sidebar-2K8pFh .discoverHeader-3th5O9 {
+.sidebar-1tnWFu .discoverHeader-1vsvZ0 {
   position: fixed ;
   width: 120px ;
   height: 54px ;
@@ -615,29 +615,29 @@
   text-overflow: ellipsis ;
   white-space: nowrap ;
   
-  & + .categoryItem-ONe8JV {
+  & + .categoryItem-Kc_HK_ {
      margin-top: 64px ;
   }
 }
 
 // - Tooltips container
-.tooltip-2QfLtc.tooltipPrimary-1d1ph4.tooltipDisablePointerEvents-3eaBGN:not(.reactionTooltip-3pvwwY) {
+.tooltip-14MtrL.tooltipPrimary-3qLMbS.tooltipDisablePointerEvents-1huO19:not(.reactionTooltip-34qbn9) {
   max-width: 240px ;
   
-  .tooltipContent-bqVLWK {
+  .tooltipContent-Nejnvh {
     white-space: nowrap;
     text-overflow: ellipsis ;
     overflow: hidden ;
     padding: 6px 10px ;
 
-    .rowGuildName-2wU3B_ {
+    .rowGuildName-21wur6 {
 
-     .guildNameText-3Zwx4p {
+     .guildNameText-jBFbNC {
        display: block ;
        text-overflow: ellipsis ;
       }
 
-      > .flowerStarContainer-3zDVtj { display: none }
+      > .flowerStarContainer-1QeD-L { display: none }
 
       ~ * { display: none }
     }
