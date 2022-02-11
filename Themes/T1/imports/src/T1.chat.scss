@@ -1,4 +1,4 @@
-// * T1.chat v0.1.27
+// * T1.chat v0.1.3
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -705,83 +705,50 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 }
 
 
-// - Threads Split-view (beta)
-.threadSidebar-1o3BTy {
+// Threads / Chat spilt view
+.container-3XgAHv {
   background: none ;
-  filter: none ;
-  border: none ;
-  border-radius: 0 ;
-  z-index: 102 ;
   
-  // Header section
-  .container-ZMc96U {
-    
-    // Thread name
-    .children-3xh0VB {
-      margin-left: 8px ;
-    }
-  }
+  // Header content seperator line
+  .chat-1-OBC7:before, .chat-1rZYgu:before { display: none }
   
   // Threads icon
-  .iconWrapper-3plkqh {
-    display: none ;
+  .iconWrapper-3plkqh { display: none }
+  
+  // Chat
+  .chat-1-OBC7 {
+    
+    // Text input - slowmode icon
+    .cooldownWrapper-2k1jHK {
+      right: -16px ;
+    }
   }
   
   // Create thread
-  > .container-2F_t9P {
-    overflow: auto ;
+  .container-1RZJZM {
     
-    // Content options 
-    .formSection-DabTa_ {
-
-      // Name text input
-      .input-2g-os5 {
-        border-radius: 0 ;
-        background: none  ;
-        border: 1px solid var(--background-modifier-accent) !important ;
-      }
-
-      // Starter-Message text input
-      .channelTextArea-3TZH74 {
-        border-radius: 0 ;
-        background: none ;
-        border: 1px solid var(--background-modifier-accent) !important ;
-
-        .channelTextAreaInner-ITp5kW {
-          background: none ;
-          border: none ;
-        }
-      }
+    // Text inputs
+    .channelTextArea-3TZH74, .input-2g-os5 {
+      border-radius: 0 ;
+      background: none ;
+      border: 1px solid var(--background-modifier-accent) !important ;
     }
-
+    
+    .channelTextAreaInner-ITp5kW {
+      background: none ;
+      border: none ;
+    }
+    
     // Create thread btn
     .submitButton-1TPmAa {
       @include button_normal();
     }
   }
   
-  // Thread Chat
-  .chat-3JZdy8 {
-    
-    // Text input
-    .cooldownWrapper-2k1jHK {
-      right: -16px ;
-    }
-  }
-}
-// Fullscreen / Spilt view
-@media (min-width: 1151px) {
-  .threadSidebar-1o3BTy {
-    
-    .chat-3JZdy8:before, .chat-1rZYgu:before{
-      display: none ;
-    }
-  }
-}
-// Overlap
-@media (max-width: 1150px) {
-  .threadSidebar-1o3BTy {
-//    top: 48px ;
+  // Floating / overlapping chat
+  &.floating-3M3WeH {
+    z-index: 102 ;
+    border: none ;
     
     // Background image
     &:before {
@@ -801,6 +768,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     @include shadow_effect("box_1");
   }
 }
+
 
 // Threads "unarchive" bar
 .chatHeaderBar-2fUORh {

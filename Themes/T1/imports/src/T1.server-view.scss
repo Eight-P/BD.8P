@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.2
+// * T1.server-view v0.1.21
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -180,6 +180,15 @@
     .live-1V2D-f { 
       background: none !important ;
       color: var(--red) ;
+    }
+  }
+  
+  // New in-server feature notification
+  .wrapper-Hd8H2G .container-JMJRDf {
+    background: none ;
+    
+    .button-f2h6uQ {
+      @include Btn("background");
     }
   }
 }

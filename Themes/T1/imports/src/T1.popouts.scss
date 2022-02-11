@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.3
+// * T1.popouts v0.1.31
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -522,6 +522,9 @@
     }
   }
   
+  // Threads icon in content
+  .iconContainer-3XSL3J { display: none }
+  
   // Thread item
   .container-2rzKKA {
     background: none ;
@@ -716,22 +719,34 @@
 .bg-1QIAus ~ .wrapper-3X0c60 { z-index: 1000 }
 
 
-// "try new feature" Notification popout
-.layerContainer-2v_Sit .layer-2aCOJ3[style*="left: -"][style*="top: 8px;"] {
-  transform: translate( calc(50% + 25px), 25px);
+// "try new feature" Notification popout old
+//.layerContainer-2v_Sit .layer-2aCOJ3[style*="left: -"][style*="top: 8px;"] {
+//  transform: translate( calc(50% + 25px), 25px);
+//  
+//  .subscribeTooltipWrapper-3ipXtC {
+//    background-color: var(--background-tertiary);
+//    
+//    &:after {
+//      visibility: hidden ;
+//    }
+//  }
+//  
+//  .button-f2h6uQ {
+//    @include Btn("background");
+//  }
+//}
+// "try new feature" Notification popouts
+.layer-2aCOJ3 {
   
-  .subscribeTooltipWrapper-3ipXtC {
+  .container-xB0xPf, .content-1rmYE- {
     background-color: var(--background-tertiary);
     
-    &:after {
-      visibility: hidden ;
-    }
-  }
-  
-  .button-f2h6uQ {
-    @include Btn("background");
+    .button-f2h6uQ { @include Btn() }
+    
+    .image-CRV_VX, .pointer-1j6vDv, .pointer-1iS5lL { display: none }
   }
 }
+
 
 // Server boost screen (normal server)
 .root-2zfUH6 .perksModal-CLcR1c {

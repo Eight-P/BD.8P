@@ -1,4 +1,4 @@
-// * T1.home v0.1.2
+// * T1.home v0.1.21
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 
@@ -272,7 +272,7 @@
   }
   
   // "Direct Messages" text
-  .headerText-1qIDDT { color: var(--channels-default) }
+  // .headerText-1qIDDT { color: var(--channels-default) }
   
   // Create Group DM Button (not necessary, there is one at the top right)
   .privateChannelRecipientsInviteButtonIcon-1ObKXK { display: none }
@@ -282,6 +282,7 @@
     height: 38px ;
     margin: 6px 0 ;
     padding: 0 ;
+    border-radius: 0 ;
     
     @include Mentions_icon(".numberBadge-37OJ3S");
     
@@ -292,31 +293,27 @@
       overflow: hidden ;
     }
     
-    &.holidayPromotionSelectedBackground-irywjz {
+    // Second container
+    .interactive-1vLZ_I {
       background: none ;
+      height: 38px ;
+      margin-left: 5px ;
       
-      .children-283-lq {
-        display: none ;
+      // Third container
+      .layout-1LjVue {
+        margin-left: 5px ;
+      }
+      
+      &.selected-3veCBZ {
+        border-left: 3px solid var(--interactive-hover);
+      }
+      
+      &:hover {
+        border-left: 3px solid var(--interactive-hover);
+        background: var(--background-modifier-hover) ;
       }
     }
 
-    // Second container
-    .layout-1qmrhw {
-      height: 38px ;
-      margin-left: 10px ;
-      border-radius: 0 ;
-    }
-
     .closeButton-mupH76 { background-size: 22px 22px }
-
-    &.selected-1-Z6gm > .layout-1qmrhw {
-      border-left: 3px solid var(--interactive-hover) ;
-      background: transparent ;
-    }
-
-    &:hover > .layout-1qmrhw { 
-      border-left: 3px solid var(--interactive-hover);
-      background: var(--background-modifier-hover) ;
-    }
   }
 }
