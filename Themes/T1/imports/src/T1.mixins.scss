@@ -1,4 +1,4 @@
-// * T1.mixins v0.1.2
+// * T1.mixins v0.1.21
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -207,6 +207,14 @@
   
   @else if $type == "server_1" {
     filter: drop-shadow( 2px 2px 3px black );
+  }
+  
+  @else if $type == "text_1" {
+    text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.75);
+  }
+  
+  @else if $type == "text_2" {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 }
 

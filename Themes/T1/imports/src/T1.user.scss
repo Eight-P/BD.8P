@@ -1,4 +1,4 @@
-// * T1.user v0.1.21
+// * T1.user v0.1.22
 // User popout (needs rework) / Modal
 
 // User popout -->
@@ -16,21 +16,6 @@
   }
 }
 
-// Old popouts container (can happen e.g. with popouts from system msgs)
-//.popouts-2bnG9Z > .popout-2iWAc-{
-//  transform: translate3d(0,0,0) !important;
-//  
-//  // Popouts not from memberslist
-//  &.popoutRight-1veHKi {
-//    pointer-events: none ;
-//    
-//    > * { pointer-events: auto }
-//    
-//    > .userPopout-2j1gM4 { transform: translateX(-240px) !important }
-//  }
-//}
-
-
 // User popout
 .userPopout-2j1gM4 {
   width: 512px !important ;
@@ -40,7 +25,7 @@
   @include shadow_effect("box_1");
   
   // Banner image / right side background
-  > .headerNormal-3Zn_yu { 
+  .headerNormal-3Zn_yu { 
     position: absolute ;
     height: 100% ;
     
@@ -66,7 +51,7 @@
   }
   
   // Profile img container
-  > .avatarWrapper-eenWra {
+  .avatarWrapper-eenWra {
     position: absolute ;
     top: 20px ;
     left: 20px ;
@@ -95,6 +80,21 @@
       top: 0 ;
       left: 0 ;
       border-radius: 7.5% ;
+    }
+  }
+  
+  // Text shadow when there is a bg image 
+  .avatarPositionPremium-1zPBq9 {
+    
+    ~ .headerTop-3GPUSF {
+      @include shadow_effect("text_1");
+    }
+    
+    ~ .body-2wLx-E {
+      
+      .aboutMeSection-PUghFQ, .customStatus-3XAoF9 {
+        @include shadow_effect("text_2");
+      }
     }
   }
   
@@ -216,7 +216,7 @@
     
     &::-webkit-scrollbar { display: none }
     
-    > .divider-1wtgZ3 { display: none }
+    .divider-1wtgZ3 { display: none }
     
     .customStatus-3XAoF9, .aboutMeSection-PUghFQ {
       position: absolute ;
@@ -480,7 +480,7 @@
 .root-8LYsGj {
   
   // - header
-  > .topSection-13QKHs {
+  .topSection-13QKHs {
     background-color: var(--background-tertiary) ;
     border-bottom: 1px solid var(--background-modifier-accent);
     
@@ -491,15 +491,18 @@
     .profileBannerPremium-KD60EB {
       position: absolute ;
       height: 208px ;
-//      height: 240px ;
       filter: brightness(0.5) ;
       pointer-events: none ;
       
       .betaBadge-1Ve-yb { display: none }
       
       // shadows for better readability
-      ~ .nameTag-2Nlmsy, 
-      ~ .customStatusActivity-WKWGD- { @include shadow_effect("drop_1") }
+      ~ .nameTag-2Nlmsy { 
+        @include shadow_effect("text_1");
+      }
+      ~ .customStatusActivity-WKWGD- { 
+        @include shadow_effect("text_2"); 
+      }
     }
     
     // Top conatiner (avatar, badges, options, ..)
@@ -515,7 +518,7 @@
           &:hover { background-color: rgb(59, 165, 93) }
         }
         
-        &:hover { @include shadow_effect("box_2"); }
+        &:hover { @include shadow_effect("box_2") }
       }
       
       
@@ -526,13 +529,6 @@
         
         &:hover { color: var(--interactive-active) }
       }
-      
-      .relationshipButtons-3ByBpj {
-        
-        > .button-f2h6uQ ~ div {
-//          @include shadow_effect("drop_1");
-        }
-      }
     }
 
     // Avatar container
@@ -541,11 +537,11 @@
       background: none ;
       border: none ;
       
-      > .svg-2azL_l { 
+      .svg-2azL_l { 
         overflow: visible ;
         
         // Status (works 95% of the time)
-        > rect {
+        rect {
           x: 0px ;
           y: 154px ;
           height: 20px ;
@@ -559,7 +555,7 @@
         }
         
         // The weird status (when status changes while modal is open)
-        > .cursorDefault--wfhy5 { display: none }
+        .cursorDefault--wfhy5 { display: none }
       }
       
       // Profile img container
@@ -578,7 +574,6 @@
     }
 
     // Username container
-//    .nameTag-2Nlmsy { margin: 16px 24px }
     .nameTag-2Nlmsy { margin: 16px 48px }
 
     // Username
@@ -618,7 +613,7 @@
   }
   
   // - body
-  > .body-1Ukv50 {
+  .body-1Ukv50 {
     background-color: var(--background-tertiary) ;
     
     // Body sections
@@ -649,7 +644,7 @@
     }
     
     // Mutual Servers / Mutual Friends container
-    > .listScroller-entkMk {
+    .listScroller-entkMk {
       display: grid ;
       grid-template-columns: 50% 50% ;
       grid-auto-rows: max-content ;
@@ -657,14 +652,14 @@
       padding: 10px 0 ;
       
       // No items in scroller
-      > .empty-2zcusz {
+      .empty-2zcusz {
         position: absolute ;
         left: 50% ;
         transform: translateX(-50%);
       }
       
       // Activities
-      > .activityProfile-1712BN {
+      .activityProfile-1712BN {
         grid-column: span 2 ;
       }
     }

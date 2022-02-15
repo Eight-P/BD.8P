@@ -1,14 +1,14 @@
-// * T1.titlebar v0.1.2
+// * T1.titlebar v0.1.21
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
 // - Toolbar search
 @mixin TB_Search () {
   // Searchbar
-  .search-1FM8Qc {
+  .search-2Mwzzq {
     
     // container
-    .searchBar-zdmu7v {
+    .searchBar-jGtisZ {
       width: 20px ;
       background: none ;
       border-radius: 0 ;
@@ -24,6 +24,8 @@
     .icon-18rqoe {
       color: var(--interactive-normal) ;
       cursor: pointer ;
+      
+      transform: none ;
 
       &:not(.visible-2yTnyW) {
         pointer-events: none ;
@@ -35,9 +37,9 @@
     }
     
     // Searchbar open
-    &.open-3y3yI_ {
+    &.open-1F8u2c {
       
-      .searchBar-zdmu7v {
+      .searchBar-jGtisZ {
         width: 240px ;
         border-bottom: 1px solid var(--header-secondary) ;
       }

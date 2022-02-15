@@ -1,4 +1,4 @@
-// * T1.chat v0.1.3
+// * T1.chat v0.1.31
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -329,7 +329,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // file/upload attachment
-  .channelAttachmentArea-1wlgJV {
+  .channelAttachmentArea-HwpkuQ {
     
     &:before {
       content: "";
@@ -343,11 +343,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Attachment item
-    .upload-3GTSF9 {
+    .upload-vLbqu- {
       background: none ;
       
       // Btns container
-      .actionBarContainer-3l5PQn {
+      .actionBarContainer-2BJ5hs {
         position: static ;
         
         &:hover:after {
@@ -363,7 +363,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
       
       // Btns container inner
-      .actionBar-3pDeKY {
+      .actionBar-1ozugS {
         top: 0 ;
         right: 0 ;
         transform: none ;
