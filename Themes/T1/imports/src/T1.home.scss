@@ -1,4 +1,4 @@
-// * T1.home v0.1.21
+// * T1.home v0.1.22
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 
@@ -11,51 +11,7 @@
   // Friendslist searchbar
   .searchBar-2aylmZ {
     background: var(--background-modifier-accent);
-//    border-radius: 5px ;
   }
-  
-//  .searchBar-2aylmZ {
-//    background: none ;
-//    
-//    // Input/ Icon flex container
-//    .inner-2pOSmK {
-////      width: 100% ;
-//      padding: 0 ;
-//      direction: rtl ;
-//      display: inline ;
-//    }
-//    
-//    // Text input
-//    .input-2m5SfJ {
-//      padding: 0 12px ;
-//      width: 32px ;
-//      min-width: unset ;
-//      direction: ltr ;
-//      transition: width .1s ;
-//      border-radius: 5px ;
-//      
-//      &:not(:focus) {
-//        cursor: pointer ;
-//      }
-//      
-//      &:focus, &:active {
-//        background: var(--background-modifier-accent);
-//        width: 100% ;
-//      }
-//      
-//      &::placeholder {
-//        visibility: hidden ;
-//      }
-//    }
-//    
-//    // Search icon
-//    .iconLayout-3Bjizv {
-//      position: absolute ;
-//      top: 0 ;
-//      right: 0 ;
-//      pointer-events: none ;
-//    }
-//  }
   
   // Friendslist Main container / Scroller -->
   .peopleList-2VBrVI {
@@ -176,35 +132,35 @@
       }
     }
     
-    // Profile action btns
+    // User actions normal
     .actions-YHvpIT {
       display: none ;
     }
     
-    // User - Blocked, Pending
-    .listItemContents-f4Uz5J, .listItemContents-2n2Uy9 {
+    // User item container Blocked/Pending
+    .listItemContents-f4Uz5J, .listItemContents-2NFd61 {
       width: -webkit-fill-available ;
-      
+    
       // Container (Avatar, Name, Activity)
       .userInfo-2WpsYG {
         overflow: hidden ;
         flex: 1 1 auto ;
       }
-      
+    
       // Unblock btn
       .actionButton-3-B2x- {
         display: none ;
         margin: 0 10px 0 0 ;
         background: none ;
       }
-      
+    
       // "Blocked" text
       .subtext-xfubwR {
         overflow: hidden ;
         white-space: nowrap ;
         text-overflow: ellipsis ;
       }
-      
+    
       &:hover .actionButton-3-B2x- {
         display: flex ;
       }
@@ -235,7 +191,6 @@
     .addFriendHint-1EVQJY {
       padding: 8px 10px ;
     }
-    
     
     &:focus-within .addFriendInput-1Ta-rO {
       border-color: var(--interactive-normal) ;
