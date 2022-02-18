@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.21
+// * T1.serverbar v0.1.22
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -541,7 +541,7 @@
     max-height: 32px ;
     font-weight: 400 ;
     
-    @include shadow_effect("drop_2");
+    @include shadow_effect("text_1");
   }
   
   // Server icon (partnerd,..)
@@ -565,6 +565,7 @@
   
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
+  // Text
   .searchBarComponent-3N7dCG {
     height: 54px ;
     background: transparent ;
@@ -574,6 +575,8 @@
     overflow: hidden ;
     text-overflow: ellipsis ;
     white-space: normal ;
+    
+    @include shadow_effect("text_1");
   }
 }
 

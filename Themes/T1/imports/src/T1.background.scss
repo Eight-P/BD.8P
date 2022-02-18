@@ -1,4 +1,4 @@
-// * T1.background v0.2.2
+// * T1.background v0.2.21
 // Background image + Transparency
 
 // Main background image
@@ -29,13 +29,16 @@ $Classes: (
   // Sidebar container for Discord info stuff
   ".container-3O_wAf",
   // Server channels container
-  ".sidebar-1tnWFu > .container-1NXEtd",
+  // ".sidebar-1tnWFu > .container-1NXEtd",
+  ".container-1NXEtd",
   // Members list
   ".container-2o3qEW",
   // Sidebar Panels 
-  ".sidebar-1tnWFu > .panels-3wFtMD",
+  // ".sidebar-1tnWFu > .panels-3wFtMD",
+  ".panels-3wFtMD",
   // DMs Sidebar
-  ".sidebar-1tnWFu > .privateChannels-oVe7HL",
+  // ".sidebar-1tnWFu > .privateChannels-oVe7HL",
+  ".privateChannels-oVe7HL",
   // Home Friends list
   ".sidebar-1tnWFu ~ .container-2cd8Mz",
   // Nitro store

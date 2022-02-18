@@ -1,17 +1,17 @@
-// * T1.compatibility v0.1.1
+// * T1.compatibility v0.1.2
 // Compatibility with plugins
 
 
-// - Hide Channels by Farcrada (v2.0.8)
+// - Hide Channels by Farcrada (v2.1.0)
 // - FriendNotifications by DevilBro (v1.8.1)
 // - ReadAllNotificationsButton by DevilBro (v1.7.0)
 // - SpotifyControls by DevilBro (v1.2.4)
-// - CollapsibleUI by programmer2514 (v1.1.0)
+// - CollapsibleUI by programmer2514 (v4.2.0)
 // - ChannelTabs by l0c4lh057 (v2.5.5)
+// - ChannelDms by Strencher (v1.2.0)
 
 
-
-// -- Hide Channels by Farcrada (v2.0.8)
+// -- Hide Channels by Farcrada (v2.1.0)
 // - Show/Hide btn
 #toggleChannels {
   filter: brightness(.6) ;
@@ -124,30 +124,23 @@
 }
 
 
-// -- CollapsibleUI by programmer2514 (v1.1.0)
-// - Server channel sidebar
-.sidebar-1tnWFu[style="display: none;"] {
-  display: flex !important ;
-  width: 0 ;
+// -- CollapsibleUI by programmer2514 (v4.2.0)
+// - Serverbar when hidden
+.guilds-2JjMmN {
   
-  // Titlebar adjustments
-  + .chat-2ZfjoI .container-ZMc96U {
-    margin-left: 240px ;
-    width: auto ;
-    
-    // Channel name
-    .title-17SveM { 
-      display: flex ;
-    } 
+  &[style*="transition: width"] {
+    transition: width 0s !important ;
   }
-}
-
-// - Serverbar
-.guilds-2JjMmN[style="display: none;"] + .base-2jDfDU {
+  
+  &[style*="width: 0px;"] {
+    height: 0px ;
     
-  // Home search, Server settings
-  .searchBar-3TnChZ, .container-1-ERn5 {
-    display: none ;
+    // Home search, Server settings
+    + .base-2jDfDU {
+      .searchBar-3TnChZ, .container-1-ERn5 {
+        display: none ;
+      }
+    }
   }
 }
 
@@ -329,5 +322,74 @@
     margin-left: 0 ;
     width: 240px ;
     padding: 0 8px ;
+  }
+}
+
+
+// -- ChannelDms by Strencher (v1.2.0)
+// - Server members/dms sidebar
+#app-mount .ChannelDms-channelmembers-wrap {
+  
+  // Nav header
+  .ChannelDms-channelmembers-header {
+    background: none ;
+    border: none ;
+    
+    .item-3XjbnG {
+      background: none ;
+    }
+  }
+  
+  .privateChannels-oVe7HL {
+    top: unset ;
+    margin-bottom: unset ;
+  }
+  
+  // Home search (reverse)
+  .searchBar-3TnChZ {
+    // reverse T1
+    position: relative;
+    width: unset;
+    right: unset;
+    bottom: unset;
+    padding: unset;
+    
+    // additional
+    height: 32px;
+    box-shadow: none ;
+    margin: 5px ;
+    
+    &:hover {
+      background: var(--background-modifier-hover) ;
+    }
+  }
+}
+
+// - Dm popouts
+#app-mount .ChannelDms-channelpopout-popout {
+  background: var(--background-secondary-alt);
+  
+  // Header
+  .ChannelDms-channelpopout-header {
+    background: var(--background-secondary-alt);
+  }
+  
+  // Collapse btn
+  .ChannelDms-channelpopout-collapseButton {
+    background: var(--background-secondary);
+  }
+  
+  // Messages scroller
+  .scrollerBase-_bVAAt {
+    @include scrollbar();
+    
+    -webkit-mask-image: none ;
+    background: var(--background-tertiary);
+  }
+  
+  // Text input
+  .form-3gdLxP {
+    margin-top: 0 ;
+    background: var(--background-secondary-alt);
   }
 }
