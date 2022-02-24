@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.22
+// * T1.server-view v0.1.23
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -9,35 +9,16 @@
   // unread msg indicator
   .unread-XRkyaQ { display: none }
 
-  // Sidebar info thing
-  .container-3O_wAf {
-    
-    .icon-1SdhiF {
-      background: none ;
-    }
-    
-    .button-f2h6uQ {
-      @include Btn("background");
-    }
-    
-    .close-20Ww5T .size12-oc4dx4 {
-      color: var(--interactive-normal);
-      
-      &:hover {
-        color: var(--interactive-hover);
-      }
-    }
-  }
-  
-  // current server event
-  .channelNotice-K4UfZY {
+  // Current server event, Feature promotion
+  .channelNotice-K4UfZY, .channelNotice-7cg_jN {
     
     // Event name
     .colorHeaderPrimary-jN_yGr {
       color: var(--header-secondary);
     }
     
-    .joinButton-1HdI2a {
+    // .joinButton-1HdI2a {
+    .button-f2h6uQ {
       @include Btn("background");
     }
   }
@@ -46,20 +27,18 @@
   .scroller-1ox3I2::-webkit-scrollbar { display: none }
   
   // Server boost progress bar
-  .container-1eD8xH {
+  .container-2giAcK {
     position: relative ;
-    margin: -8px 0 0 0 ;
-    height: calc(32px * var(--show-serverboost-stats, 1));
+    height: calc(24px * var(--show-serverboost-stats, 1));
+    margin: -8px 0 8px 0 ;
     overflow: hidden ;
     
     // Text container
-    .textArea-1sjhGG {
+    .textArea-7J7xQx {
       margin: 0 12px ;
       
       // Nitro flower icon thing
-      .flowerStarContainer-1QeD-L {
-        display: none ;
-      }
+      .flowerStarContainer-1QeD-L { display: none }
       
       // Text "Goal:LVL"
       .colorInteractiveActive-30E9n8 {
@@ -68,31 +47,37 @@
     }
     
     // Container progress bar
-    .progressBarContainer-2E4oR- {
+    .progressBarContainer-1efroK {
       position: absolute ;
       top: 0 ;
       width: 100% ;
+      margin: 0 ;
       background: none ;
       visibility: hidden ;
-      
+    
       // Progress bar
-      .progressBar-1Tzim4 {
+      .progressBar-2yl2pi {
         height: 24px ;
         opacity: .15 ;
         border-top-right-radius: 5px ;
         border-bottom-right-radius: 5px ;
       }
-      
+    
       // End of bar icon 
-      .tadaIcon-33fE1D { display: none }
+      .tadaIcon-313rPm { display: none }
     }
     
-    &:hover .progressBarContainer-2E4oR- {
+    &:hover .progressBarContainer-1efroK {
       visibility: visible ;
     }
     
     // Bottom spacer
-    .divider-1Y1mB0 { display: none }
+    .divider-3qUeLQ { display: none }
+    
+    // Channel category header if adjacent
+    + .containerDefault-3TQ5YN {
+      padding-top: 8px ;
+    }
   }
   
   // Text and Voice Channels
@@ -185,7 +170,7 @@
   
   // New in-server feature notification
   .wrapper-Hd8H2G .container-JMJRDf {
-    background: none ;
+    background: var(--background-tertiary) ;
     
     .button-f2h6uQ {
       @include Btn("background");
@@ -198,7 +183,7 @@
 .sidebar-1tnWFu > .panels-3wFtMD {
   
   // Profile Container
-  > .container-YkUktl {
+  .container-YkUktl {
     position: absolute ;
     height: 48px ;
     width: 240px ;
@@ -232,7 +217,7 @@
   }
   
   // Activity Container
-  > .activityPanel-9icbyU {
+  .activityPanel-9icbyU {
     height: 32px ;
     padding: 6px 10px ;
     
@@ -348,7 +333,7 @@
   .tabs-1RhQha {
     padding: 12px 0 ;
     border: none ;
-//    border-top: 1px solid var(--background-modifier-accent);
+    //    border-top: 1px solid var(--background-modifier-accent);
     background: none ;
     justify-content: space-evenly ;
     z-index: 1 ;
@@ -445,6 +430,10 @@
     
     // Nitro icon 
     .name-3Vmqxm + div { pointer-events: none }
+    
+    .ownerIcon-255uKo {
+      color: var(--header-secondary);
+    }
   }
 
   // Preload dummys

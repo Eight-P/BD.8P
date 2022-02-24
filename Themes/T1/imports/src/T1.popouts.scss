@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.31
+// * T1.popouts v0.1.32
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -9,18 +9,26 @@
 
 // Autocomplete popout
 .chatContent-3KubbW .form-3gdLxP .autocomplete-3NRXG8 {
-  background-color: var(--background-tertiary) !important ;
-      
-  .selectable-1MM9tu {
-    border-radius: 0 ;
-    background: none ;
-
-    &:hover {
-      background: var(--background-modifier-selected) ;
-      border-left: 3px solid var(--interactive-hover) ;
-
-      .colorInteractiveNormal-36ZhyZ { color: var(--interactive-hover) }
-    }
+  background: var(--background-tertiary) ;
+  
+  // left sidebar
+  .rail-1BiMhk .wrapper-22rqw6{
+    background: var(--background-secondary-alt) ;
+  }
+  
+  // Group header
+  .categoryHeader-OpJ1Ly {
+    background: var(--background-tertiary) ;
+  }
+  
+  // selected item  
+  .selected-3H3-RC {
+    background: var(--background-modifier-hover) ;
+  }
+  
+  // selected item cmd options
+  .option-Tt7anD {
+    background: var(--background-tertiary) ;
   }
 }
 
@@ -719,31 +727,22 @@
 .bg-1QIAus ~ .wrapper-3X0c60 { z-index: 1000 }
 
 
-// "try new feature" Notification popout old
-//.layerContainer-2v_Sit .layer-2aCOJ3[style*="left: -"][style*="top: 8px;"] {
-//  transform: translate( calc(50% + 25px), 25px);
-//  
-//  .subscribeTooltipWrapper-3ipXtC {
-//    background-color: var(--background-tertiary);
-//    
-//    &:after {
-//      visibility: hidden ;
-//    }
-//  }
-//  
-//  .button-f2h6uQ {
-//    @include Btn("background");
-//  }
-//}
-// "try new feature" Notification popouts
+// "try new feature" upsell Notification popouts
 .layer-2aCOJ3 {
   
-  .container-xB0xPf, .content-1rmYE- {
+  .container-xB0xPf, .content-1rmYE-, .subscribeTooltipWrapper-3ipXtC, .upsellTooltipWrapper-1wqikQ {
     background-color: var(--background-tertiary);
     
     .button-f2h6uQ { @include Btn() }
     
     .image-CRV_VX, .pointer-1j6vDv, .pointer-1iS5lL { display: none }
+    
+    // Pointer in Tooltipversion
+    &:after { display: none }
+  }
+  
+  &[style*="left: -"][style*="top: 8px;"] {
+    transform: translate( calc(50% + 25px), 25px);
   }
 }
 
