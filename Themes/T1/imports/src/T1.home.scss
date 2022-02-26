@@ -1,4 +1,4 @@
-// * T1.home v0.1.22
+// * T1.home v0.1.23
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 
@@ -22,149 +22,165 @@
     // "Friends online" Count
     .title-x4dI75  { display: none }
     
+    // --without lazy loading
     // Sub container (Grid)
-    > div:first-child {
+    > div:not([class]):first-child {
+      height: fit-content !important ;
       margin: 4% 5px ;
       display: grid ;
       grid-template-columns: repeat(auto-fill, 300px);
       justify-content: space-evenly ;
       row-gap: 35px ;
       grid-column-gap: 10px ;
+      
+      // Friend item
+      .peopleListItem-u6dGxF {
+        height: 62px !important ;
+        width: 300px ;
+        margin: 0 ; 
+        padding: 0 ;
+        opacity: 1 !important ;
+        border: none ;
+        background: var(--background-floating) ;
+        border-radius: 10px ;
+        border-top-left-radius: 2px ;
+        border-top-right-radius: 2px ;
+        transition: .1s ;
+        
+        @include shadow_effect("box_2");
+        
+        &:hover {
+          
+          @include shadow_effect("box_1");
+          
+          // # Identifier
+          .discriminator-WV5K5s {
+            visibility: visible ;
+            width: auto ;
+          }
+        }
+        
+        // Container (Avatar, Name, Activity)
+        .userInfo-2WpsYG {
+          margin: 0 12.5px ;
+          width: -webkit-fill-available ;
+          overflow: visible !important ;
+        }
+        
+        // Container (Name, Activity)
+        .text-3j8t_e {
+          width: 100% ;
+        }
+        
+        // Username
+        .username-Qpc78p {
+          margin-right: 5px ;
+        }
+        
+        // # Identifier
+        .discriminator-WV5K5s {
+          width: 0 ;
+        }
+        
+        // Activity (hiding the "playing" behind background) 
+        .activity-1KqKY2 .text-MPIeXO {
+          width: 100% ;
+          position: relative ;
+    
+          strong {
+            position: absolute ;
+            left: 0 ;
+            width: 100% ;
+            background: var(--background-floating) ;
+          }
+        }
+        
+        // Idk
+        .textRuler-1DsANg { display: none }
+        
+        // Activity icon
+        .icon-Lupfh- { display: none }
+        
+        // Avatar pfp
+        .avatar-2MSPKk {
+          margin-top: 2.5px ;
+          
+          // SVG Mask container
+          foreignObject, svg {
+            mask: none ;
+            overflow: visible ;
+          }
+          
+          // Image
+          .avatar-b5OQ1N {
+            border-radius: 5px ;
+            
+            @include shadow_effect("box_2");
+          }
+          
+          // Status icon
+          rect {
+            x: -12.5px ;
+            y: -15px ;
+            mask: none ;
+            width: 300px ;
+            height: 2px ;
+            opacity: .8 ;
+          }
+        }
+        
+        // User actions normal
+        .actions-YHvpIT {
+          display: none ;
+        }
+        
+        // User item container Blocked/Pending
+        .listItemContents-f4Uz5J, .listItemContents-2NFd61 {
+          width: -webkit-fill-available ;
+        
+          // Container (Avatar, Name, Activity)
+          .userInfo-2WpsYG {
+            overflow: hidden ;
+            flex: 1 1 auto ;
+          }
+        
+          // Unblock btn
+          .actionButton-3-B2x- {
+            display: none ;
+            margin: 0 10px 0 0 ;
+            background: none ;
+          }
+        
+          // "Blocked" text
+          .subtext-xfubwR {
+            overflow: hidden ;
+            white-space: nowrap ;
+            text-overflow: ellipsis ;
+          }
+        
+          &:hover .actionButton-3-B2x- {
+            display: flex ;
+          }
+        }
+      }
+    }
+    
+    
+    // -- with lazy loading :C (will do more in the future)
+    .content-2a4AW9 {
+      
+      // Friend item
+      .peopleListItem-u6dGxF {
+        
+        // User interaction btns
+        .actionButton-3-B2x- {
+          background: none ;
+        }
+      }
     }
     
     // idk, this weird tab selection indicator ring thing
     > .ring-370dIp { display: none }
-  }
-  
-  // Friend cards
-  .peopleListItem-u6dGxF {
-    height: 62px !important ;
-    width: 300px ;
-    margin: 0 ; 
-    padding: 0 ;
-    opacity: 1 !important ;
-    border: none ;
-    background: var(--background-floating) ;
-    border-radius: 10px ;
-    border-top-left-radius: 2px ;
-    border-top-right-radius: 2px ;
-    transition: .1s ;
-    
-    @include shadow_effect("box_2");
-    
-    &:hover {
-      
-      @include shadow_effect("box_1");
-      
-      // # Identifier
-      .discriminator-WV5K5s {
-        visibility: visible ;
-        width: auto ;
-      }
-    }
-    
-    // Container (Avatar, Name, Activity)
-    .userInfo-2WpsYG {
-      margin: 0 12.5px ;
-      width: -webkit-fill-available ;
-      overflow: visible !important ;
-    }
-    
-    // Container (Name, Activity)
-    .text-3j8t_e {
-      width: 100% ;
-    }
-    
-    // Username
-    .username-Qpc78p {
-      margin-right: 5px ;
-    }
-    
-    // # Identifier
-    .discriminator-WV5K5s {
-      width: 0 ;
-    }
-    
-    // Activity (hiding the "playing" behind background) 
-    .activity-1KqKY2 .text-MPIeXO {
-      width: 100% ;
-      position: relative ;
-
-      strong {
-        position: absolute ;
-        left: 0 ;
-        width: 100% ;
-        background: var(--background-floating) ;
-      }
-    }
-    
-    // Idk
-    .textRuler-1DsANg { display: none }
-    
-    // Activity icon
-    .icon-Lupfh- { display: none }
-    
-    // Avatar pfp
-    .avatar-2MSPKk {
-      margin-top: 2.5px ;
-      
-      // SVG Mask container
-      foreignObject, svg {
-        mask: none ;
-        overflow: visible ;
-      }
-      
-      // Image
-      .avatar-b5OQ1N {
-        border-radius: 5px ;
-        
-        @include shadow_effect("box_2");
-      }
-      
-      // Status icon
-      rect {
-        x: -12.5px ;
-        y: -15px ;
-        mask: none ;
-        width: 300px ;
-        height: 2px ;
-        opacity: .8 ;
-      }
-    }
-    
-    // User actions normal
-    .actions-YHvpIT {
-      display: none ;
-    }
-    
-    // User item container Blocked/Pending
-    .listItemContents-f4Uz5J, .listItemContents-2NFd61 {
-      width: -webkit-fill-available ;
-    
-      // Container (Avatar, Name, Activity)
-      .userInfo-2WpsYG {
-        overflow: hidden ;
-        flex: 1 1 auto ;
-      }
-    
-      // Unblock btn
-      .actionButton-3-B2x- {
-        display: none ;
-        margin: 0 10px 0 0 ;
-        background: none ;
-      }
-    
-      // "Blocked" text
-      .subtext-xfubwR {
-        overflow: hidden ;
-        white-space: nowrap ;
-        text-overflow: ellipsis ;
-      }
-    
-      &:hover .actionButton-3-B2x- {
-        display: flex ;
-      }
-    }
   }
   
   // Friends activity sidebar (can be viewed in Stage tab)
