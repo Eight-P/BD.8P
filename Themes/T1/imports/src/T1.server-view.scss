@@ -1,8 +1,8 @@
-// * T1.server-view v0.1.23
+// * T1.server-view v0.1.24
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
-.sidebar-1tnWFu .container-1NXEtd {
+.container-1NXEtd {
   top: 48px ;
   margin-bottom: 48px;
   
@@ -94,35 +94,32 @@
     .name-28HaxV { color: var(--channels-default) }
     
     // Channel options and infos
-    .children-1MGS9G {
+    // Settings and invite buttons
+    .iconItem-1EjiK0 { display: none }
+    
+    // Mentions indicator
+    .numberBadge-37OJ3S {
+      background-color: transparent !important ;
+      border-bottom: 2px solid var(--red) ;
+      border-radius: 0 ;
+      color: var(--text-normal) ;
+    }
+    
+    // Connection limit (voice)
+    .wrapper-2fEmwW {
       
-      // Settings and invite buttons
-      .iconItem-1EjiK0 { display: none }
+      span { background: transparent }
       
-      // Mentions indicator
-      .numberBadge-37OJ3S {
-        background-color: transparent !important ;
-        border-bottom: 2px solid var(--red) ;
-        border-radius: 0 ;
-        color: var(--text-normal) ;
-      }
-      
-      // Connection limit (voice)
-      .userLimit-VbEkeM {
-        
-        span { background: transparent }
-        
-        .total-1c5KCN::after {
-          border: none ;
-          content: "|" ;
-          left: -5px ;
-          top: -1px ;
-        }
+      .total-1c5KCN::after {
+        border: none ;
+        content: "|" ;
+        left: -5px ;
+        top: -1px ;
       }
     }
     
     // container for hover
-    > .content-1gYQeQ {
+    .content-1gYQeQ {
       background: transparent;
       
       &:hover {
@@ -180,7 +177,7 @@
 
 
 // -- Sidebar Panels (Profile, Activity,..)
-.sidebar-1tnWFu > .panels-3wFtMD {
+.sidebar-1tnWFu .panels-3wFtMD {
   
   // Profile Container
   .container-YkUktl {
@@ -236,6 +233,7 @@
     padding: 0 ;
     border: none ;
     grid-template-columns: 100% ;
+    contain: paint ;
     
     // Voice channel info container
     .connection-3k9QeF {
@@ -285,7 +283,7 @@
         content: "<" ;
         position: absolute ;
         display: flex ;
-        width: 44px ;
+        width: 200px;
         height: 32px ;
         left: 0 ;
         bottom: 12px ;
@@ -294,8 +292,7 @@
         color: var(--interactive-normal);
         font-size: 18px ;
         font-weight: 700 ;
-        transform: rotate(90deg) translate(6px, 6px);
-        transform-origin: center ;
+        transform: rotate(90deg) translate(6px, 100px - 16px);
       }
       
       &:hover {
@@ -314,6 +311,8 @@
         background: none ;
         color: var(--interactive-normal);
         
+        z-index: 1 ;
+        
         &:not(.fauxDisabled-8w0hCZ):hover {
           color: var(--interactive-hover);
         }
@@ -323,74 +322,74 @@
 }
 
 
-// -- Members list / Channel info sidebar (ptb)
-#app-mount .container-2Oqvgx {
-  position: relative ;
-  min-width: 240px ;
-  flex-direction: column-reverse ;
-  
-  // Header nav bar
-  .tabs-1RhQha {
-    padding: 12px 0 ;
-    border: none ;
-    //    border-top: 1px solid var(--background-modifier-accent);
-    background: none ;
-    justify-content: space-evenly ;
-    z-index: 1 ;
-  }
-  
-  // Tab btn
-  .tab-FftSDB {
-    padding: 0 ;
-    margin: 0 ;
-    background: none ;
-  }
-  
-  // Members container
-  .container-2o3qEW {
-    height: calc(100% - 44px);
-  }
-  
-  // Members inner container
-  .members-3l0kz9 {
-    height: auto ;
-  }
-  
-  // Channel info container
-  .container-NkLXgf {
-    color: var(--channels-default);
-    
-    // Header text
-    .sectionHeader-37ixY1 {
-      color: var(--text-normal);
-    }
-    
-    // Subheader text
-    .header-2tOrk6 {
-      color: var(--header-secondary);
-    }
-    
-    // Text
-    .colorStandard-21JIj7 {
-      color: var(--channels-default);
-    }
-    
-    // Settings options
-    .section-2PUwqg {
-      
-      // Dropdwonmenu
-      .lookFilled-1GseHa {
-        border: none ;
-        background: none ;
-        background: var(--background-modifier-accent) ;
-        
-        &.open-1FRZsK {
-          background: var(--background-modifier-selected) ;
-        }
-      }
-    }
-  }
-}
+// -- Members list / Channel info sidebar (ptb) ()
+// #app-mount .container-2Oqvgx {
+//   position: relative ;
+//   min-width: 240px ;
+//   flex-direction: column-reverse ;
+// 
+//   // Header nav bar
+//   .tabs-1RhQha {
+//     padding: 12px 0 ;
+//     border: none ;
+//     //    border-top: 1px solid var(--background-modifier-accent);
+//     background: none ;
+//     justify-content: space-evenly ;
+//     z-index: 1 ;
+//   }
+// 
+//   // Tab btn
+//   .tab-FftSDB {
+//     padding: 0 ;
+//     margin: 0 ;
+//     background: none ;
+//   }
+// 
+//   // Members container
+//   .container-2o3qEW {
+//     height: calc(100% - 44px);
+//   }
+// 
+//   // Members inner container
+//   .members-3l0kz9 {
+//     height: auto ;
+//   }
+// 
+//   // Channel info container
+//   .container-NkLXgf {
+//     color: var(--channels-default);
+// 
+//     // Header text
+//     .sectionHeader-37ixY1 {
+//       color: var(--text-normal);
+//     }
+// 
+//     // Subheader text
+//     .header-2tOrk6 {
+//       color: var(--header-secondary);
+//     }
+// 
+//     // Text
+//     .colorStandard-21JIj7 {
+//       color: var(--channels-default);
+//     }
+// 
+//     // Settings options
+//     .section-2PUwqg {
+// 
+//       // Dropdwonmenu
+//       .lookFilled-1GseHa {
+//         border: none ;
+//         background: none ;
+//         background: var(--background-modifier-accent) ;
+// 
+//         &.open-1FRZsK {
+//           background: var(--background-modifier-selected) ;
+//         }
+//       }
+//     }
+//   }
+// }
 
 
 // -- Members list 
