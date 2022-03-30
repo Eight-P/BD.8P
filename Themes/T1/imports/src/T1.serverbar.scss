@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.23
+// * T1.serverbar v0.1.24
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -533,6 +533,11 @@
     height: 54px ;
   }
   
+  // Server name container
+  .headerContent-2SNbie {
+    height: -webkit-fill-available;
+  }
+  
   // Server name
   .name-3Uvkvr {
     text-align: center ;
@@ -540,7 +545,7 @@
     white-space: normal ;
     max-height: 32px ;
     font-weight: 400 ;
-    
+  
     @include shadow_effect("text_1");
   }
   

@@ -1,4 +1,4 @@
-// * T1.chat v0.1.31
+// * T1.chat v0.1.32
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -268,7 +268,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Buttons
-    > .buttonContainer-2lnNiN {
+    .buttonContainer-2lnNiN {
       
       // Gifs
       &:nth-last-child(3) {
@@ -288,6 +288,20 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       &:nth-last-child(1) {
         width: calc(38px * var(--show-emoji-btn));
         margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
+      }
+    }
+    
+    // Send btn
+    .separator-3ng7S5 .buttonChild-33lB5F {
+      color: var(--interactive-normal);
+      transition: none ;
+      
+      &.activeButtonChild-2hgLAO {
+        color: var(--interactive-hover);
+        
+        &:hover {
+          color: var(--interactive-active);
+        }
       }
     }
   }
