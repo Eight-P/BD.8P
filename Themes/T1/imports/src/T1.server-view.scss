@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.24
+// * T1.server-view v0.1.25
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -397,7 +397,10 @@
   &::-webkit-scrollbar { display: none }
   
   // Role header
-  .membersGroup-2eiWxl { margin-bottom: 4px }
+  .membersGroup-2eiWxl { 
+    margin-bottom: 4px;
+    font-weight: 600 ;
+   }
   
   // Member
   .member-2gU6Ar {
@@ -442,6 +445,11 @@
   .placeholderAvatar-1qAcRZ, .placeholderUsername-3iQi_D, .memberGroupsPlaceholder-9tqX9V {
     background: var(--text-normal);
     opacity: 0.1;
+  }
+  
+  // Empty members list (Threads)
+  > div {
+    background: none ;
   }
 }
 

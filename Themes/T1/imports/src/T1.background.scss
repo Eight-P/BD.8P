@@ -1,4 +1,4 @@
-// * T1.background v0.2.21
+// * T1.background v0.2.22
 // Background image + Transparency
 
 // Main background image
@@ -22,22 +22,22 @@ $Classes: (
   ".stageSection-3mAD8V",
   // Text chat
   ".chat-2ZfjoI",
-  // Text chat canary
-  ".chat-2ZfjoI",
+  // Voicecall view
+  ".callContainer-HtHELf",
+  // Stage view
+  ".container-cH6QoY", ".callContainer-BGIngG",
+  ".scroller-35tvpe", ".container-3r7mfc", ".rowContainer-jDvyA4",
   // Sidebar
   ".sidebar-1tnWFu",
   // Sidebar container for Discord info stuff
   ".container-3O_wAf",
   // Server channels container
-  // ".sidebar-1tnWFu > .container-1NXEtd",
   ".container-1NXEtd",
   // Members list
   ".container-2o3qEW",
   // Sidebar Panels 
-  // ".sidebar-1tnWFu > .panels-3wFtMD",
   ".panels-3wFtMD",
   // DMs Sidebar
-  // ".sidebar-1tnWFu > .privateChannels-oVe7HL",
   ".privateChannels-oVe7HL",
   // Home Friends list
   ".sidebar-1tnWFu ~ .container-2cd8Mz",
@@ -46,16 +46,19 @@ $Classes: (
   // Discovery
   ".pageWrapper-2PwDoS",
   // Friends Activity Sidebar
-  ".nowPlayingColumn-1eCBCN", ".nowPlayingColumn-1eCBCN > .container-1oAagU", ".nowPlayingColumn-1eCBCN > .emptyCard-KDifrB",
-  ".nowPlayingSidebar-2OFn0o", ".nowPlayingSidebar-2OFn0o > .container-1oAagU", ".nowPlayingSidebar-2OFn0o > .emptyCard-KDifrB",
+  ".nowPlayingColumn-1eCBCN",
+  ".nowPlayingColumn-1eCBCN > .container-1oAagU",
+  ".nowPlayingColumn-1eCBCN > .emptyCard-KDifrB",
+  ".nowPlayingSidebar-2OFn0o",
+  ".nowPlayingSidebar-2OFn0o > .container-1oAagU",
+  ".nowPlayingSidebar-2OFn0o > .emptyCard-KDifrB",
   // Pretty much every scroller
   ".app-3xd6d0 .scrollerBase-_bVAAt",
   // Members list
   ".container-2Oqvgx", ".members-3WRCEx", ".members-3WRCEx .content-2a4AW9",
-  // Serverbar
-//  ".guilds-2JjMmN",
   // Settings
-  ".layer-86YKbF .standardSidebarView-E9Pc3j", ".layer-86YKbF .standardSidebarView-E9Pc3j > .contentRegion-3HkfJJ",
+  ".layer-86YKbF .standardSidebarView-E9Pc3j",
+  ".layer-86YKbF .standardSidebarView-E9Pc3j > .contentRegion-3HkfJJ",
   // Roles Settings
   ".page-15bX59 .titleContainer-3fPic2",
   // Channel Settings (Permissions)

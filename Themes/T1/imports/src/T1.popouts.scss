@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.321
+// * T1.popouts v0.1.33
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -535,8 +535,9 @@
   
   // Thread item
   .container-2rzKKA {
-    background: none ;
     border: none ;
+    background: var(--background-secondary-alt) ;
+    
     
     &:hover {
       background: var(--background-modifier-accent) ;
@@ -549,7 +550,7 @@
     
     // Name 
     .threadNameLine-1FNzAW {
-      align-self: center ;
+      // align-self: center ;
     }
   }
   

@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.24
+// * T1.serverbar v0.1.25
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -189,7 +189,7 @@
     }
   }
   
-  //  GuildsError (probably outdated)
+  //  GuildsError
   @mixin GuildsError_Icon () {
     grid-area: unset ;
     position: absolute ;
@@ -297,7 +297,7 @@
   margin: 12px 0 ;
   
   // bc drag and drop (server, dms)
-//  > div:not([class]), .listItemWrapper-3d87LP {
+  //  > div:not([class]), .listItemWrapper-3d87LP {
   .pill-2RsI5Q + div, .listItemWrapper-3d87LP {
     transform: rotate(90deg) ;
   }
@@ -314,7 +314,7 @@
   }
   
   .wrapper-28eC3z {
-//    transform: rotate(90deg) ;
+  //  transform: rotate(90deg) ;
 
     @include shadow_effect("server_1");
     
@@ -610,7 +610,7 @@
 }
 
 // - Tooltips container
-.tooltip-14MtrL.tooltipPrimary-3qLMbS.tooltipDisablePointerEvents-1huO19:not(.reactionTooltip-34qbn9) {
+.tooltip-14MtrL.tooltipPrimary-3qLMbS.tooltipDisablePointerEvents-1huO19:not(.reactionTooltip-34qbn9, .tooltipTop-1wv5UJ) {
   max-width: 240px ;
   
   .tooltipContent-Nejnvh {

@@ -1,4 +1,4 @@
-// * T1.chat v0.1.32
+// * T1.chat v0.1.33
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -807,7 +807,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // - Voicecall view (beta)
 .callContainer-HtHELf {
-  background: none ;
+  // background: none ;
   
   // Button main container
   .videoControls-353CsJ { 
@@ -1011,5 +1011,53 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
         background: none ;
       }
     }
+  }
+}
+
+// - Stage view
+.callContainer-BGIngG {
+  
+  // black gradiant effect
+  .gradientContainer-phMG8d {
+    background: none ;
+  }
+  
+  .auto-1QyTTa {
+    @include scrollbar();
+  }
+  
+  // Speaker
+  .rowContainer-jDvyA4 {
+    
+    .background-L8lGH6 {
+      background: none !important ;
+    }
+  }
+  
+  // Audience
+  .participants-3hk3ND {
+    background: none ;
+    
+    // User
+    .tileContainer-Os085F {
+      background: none ;
+      
+      &:hover {
+        background: var(--background-modifier-hover) ;
+      }
+      
+      .avatar-rC0Atp {
+        background: none ;
+      }
+    }
+  }
+}
+
+// Stage view talk requests sidebar
+.container-lqPArA {
+  background: none ;
+  
+  .headerContainer-21E-jZ {
+    box-shadow: none ;
   }
 }
