@@ -1,4 +1,4 @@
-// * T1.user v0.1.22
+// * T1.user v0.1.23
 // User popout (needs rework) / Modal
 
 // User popout -->
@@ -92,7 +92,7 @@
     
     ~ .body-2wLx-E {
       
-      .aboutMeSection-PUghFQ, .customStatus-3XAoF9 {
+      .userInfoSection-3her-v, .customStatus-3XAoF9 {
         @include shadow_effect("text_2");
       }
     }
@@ -218,12 +218,22 @@
     
     .divider-1wtgZ3 { display: none }
     
-    .customStatus-3XAoF9, .aboutMeSection-PUghFQ {
+    // Line height: 18 + 1 for spacing
+    $header-height: 120px ;
+    $about-me-rows: 2 ;
+    $about-me-height: $about-me-rows * 19px ;
+    $custom-status-rows: 1 ;
+    $custom-status-height: $custom-status-rows * 19px ;
+    $info-padding: 15px ;
+    
+    // Custom status, About me (.aboutMeSection-PUghFQ)
+    .customStatus-3XAoF9, .userInfoSection-3her-v {
       position: absolute ;
-      top: 120px ;
+      top: $header-height ;
       left: 20px ;
       width: 272px ;
-      padding: 0 ; 
+      padding: 0 ;
+      margin: 0 ;
       text-align: center ;
       white-space: nowrap ;
       overflow: hidden ;
@@ -234,37 +244,48 @@
         height: 20px ;
       }
       
+      // Main body grid height
       ~ .bodyInnerWrapper-2bQs1k {
-         min-height: 160px ;
+        $info-section: if($about-me-height > $custom-status-height, $about-me-height, $custom-status-height);
+        $this-height: $header-height + $info-section + $info-padding;
+         // min-height: 160px ;
+         min-height: $this-height;
         
-        .activity-1gTu-L { margin-top: 160px }
+        .activity-1gTu-L { 
+          margin-top: $this-height ;
+        }
       }
     }
     
-    .aboutMeSection-PUghFQ {
+    // About me
+    .userInfoSection-3her-v {
+      display: flex;
+      height: $about-me-height ;
+      align-items: center;
+      justify-content: center;
       
-      .aboutMeTitle-3pjiS7 { display: none }
+      // "about me" Title
+      .userInfoTitle-39qq0Y { display: none }
       
-      .aboutMeBody-1J8rhz {
+      // Text
+      .userInfoBody-1zgAd0 {
         overflow: hidden ;
-        height: 40px ;
-      }
-      
-      ~ .bodyInnerWrapper-2bQs1k {
-         min-height: 170px ;
-        
-        .activity-1gTu-L { margin-top: 170px }
+        max-height: $about-me-height ;
       }
     }
     
-    
-    .customStatus-3XAoF9 ~ .aboutMeSection-PUghFQ {
-      top: 150px ;
+    // When about me and custom status is present
+    .customStatus-3XAoF9 ~ .userInfoSection-3her-v {
+      top: $header-height + $custom-status-height + $info-padding ;
       
       ~ .bodyInnerWrapper-2bQs1k {
-         min-height: 200px ;
+         $this-height: $header-height + $about-me-height + $custom-status-height + 2 * $info-padding ;
+         
+         min-height: $this-height ;
         
-        .activity-1gTu-L { margin-top: 200px  }
+        .activity-1gTu-L { 
+          margin-top: $this-height ;
+        }
       }
     }
   }
@@ -285,7 +306,9 @@
       grid-row: span 4 ;
       grid-column: 1 ;
       
-      .buttonsWrapper-2ARRp1 { flex-direction: row }
+      .buttonsWrapper-2ARRp1 { 
+        flex-direction: row ;
+      }
       
       button {
         margin: 0 ;
@@ -345,84 +368,6 @@
           stroke: var(--interactive-active) ;
         }
       }
-
-      // - Roles Old
-      // Role item
-      // .role-2TIOKu:not(.addButton-1_dZYu) {
-      //   position: relative ;
-      //   border: 1px solid ;
-      //   border-radius: 10px ;
-      //   background: none ;
-        
-      //   // Background
-      //   &:before {
-      //     content: "" ;
-      //     position: absolute ;
-      //     left: 0 ;
-      //     right: 0 ;
-      //     height: 100% ;
-      //     border-radius: 9px ;
-      //     background: var(--background-secondary) ;
-      //     opacity: .5 ;
-      //     z-index: 1 ;
-      //   }
-      // }
-      
-      // // Colored circle
-      // .roleCircle-1EgnFN {
-      //   margin: 0 4px 0 0 ;
-      //   z-index: 2;
-      // }
-      
-      // // Remove role button
-      // .roleRemoveIcon-387wKV { cursor: pointer }
-      
-      // Roles Name
-      // .roleName-2ZJJYR {
-      //   max-width: 150px ;
-      //   z-index: 2 ;
-      // }
-      
-      // Add role button
-      // .addButton-1_dZYu {
-      //   position: relative ;
-      //   color: var(--interactive-normal) ;
-      //   border: 1px solid var(--interactive-muted) ;
-      //   border-radius: 10px ;
-      //   background: none ;
-      //   transition: border-radius .1s ;
-        
-      //   path {
-      //     stroke: var(--interactive-normal) ;
-      //     stroke-width: 2px ;
-      //   }
-        
-      //   &:before {
-      //     content: "" ;
-      //     position: absolute ;
-      //     left: 0 ;
-      //     right: 0 ;
-      //     height: 100% ;
-      //     border-radius: 9px ;
-      //     background: var(--background-secondary) ;
-      //     opacity: .5 ;
-      //     z-index: 1 ;
-      //   }
-        
-      //   &:hover {
-      //     color: var(--interactive-active) ;
-      //     border-radius: 7px ;
-      //     border-color: var(--interactive-normal) ;
-          
-      //     &:before {
-      //       border-radius: 6px ;
-      //     }
-          
-      //     path {
-      //       stroke: var(--interactive-active) ;
-      //     }
-      //   }
-      // }
     }
 
     // Note header
@@ -443,6 +388,7 @@
       .textarea-_59yqs {
         padding: 8px 8px 0 0 !important ;
         background: none ;
+        max-height: unset ;
       }
     }
     
