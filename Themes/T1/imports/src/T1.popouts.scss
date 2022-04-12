@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.33
+// * T1.popouts v0.1.34
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -168,24 +168,21 @@
   }
 }
 
-
 // Searchbar options popout
-.layer-2aCOJ3 > #search-results {
+.container-2McqkF {
   background: var(--background-secondary-alt) ;
   
   @include shadow_effect("box_1");
   
   // Search options
-  .option-2KkUJO {
+  .resultsGroup-cfY57t .option-ayUoaq {
     
     // weird gradiant to the right, idk
-    &::after { display: none }
+    &::after, &::before { display: none }
     
-    // hover
-    &.selected-rZcOL-  { background: var(--background-modifier-hover) }
     
     // unnecessary icon
-    .plusIcon-2V7coV { display: none }
+    // .plusIcon-2V7coV { display: none }
   }
 }
 
@@ -200,7 +197,7 @@
   -webkit-box-flex: 1 ;
   
   // Header
-  > .searchHeader-1r_ZSh {
+  .searchHeader-1r_ZSh {
     background: var(--background-secondary-alt) ;
     
     // n of search results
@@ -218,11 +215,28 @@
     }
   }
   
+  // Switch pages btns
+  .searchHeaderTabList-3CZMQB {
+    
+    .item-3XjbnG {
+      background: none !important ;
+      
+      // what did that do ?
+      &:disabled {
+        color: var(--interactive-muted) ;
+        pointer-events: none ;
+      }
+    }
+  }
+  
   // Content scroller
-  > .scroller-3iiyhZ {
+  .scroller-3iiyhZ {
     padding: 8px 0 0 0 !important ;
     
-    &::-webkit-scrollbar { display: none }
+    // &::-webkit-scrollbar { display: none }
+    &::-webkit-scrollbar-track {
+      background-color: var(--background-secondary-alt) !important ;
+    }
       
     // Header - channel name
     .channelName-3w2Y3c {
@@ -254,29 +268,6 @@
       // pfp
       .avatar-2e8lTP {
         left: 8px ;
-      }
-    }
-  }
-  
-  // switch pages btns
-  .container-36u7Lw {
-    
-    .pageButton-1GMGeJ {
-      color: var(--interactive-normal) ;
-      
-      &:hover {
-        color: var(--interactive-hover) ;
-      }
-      
-      &:disabled {
-        color: var(--interactive-muted) ;
-        pointer-events: none ;
-      }
-      
-      &.activeButton-LRWFC_ {
-        background: none ;
-        color: var(--interactive-active) ;
-        cursor: default ;
       }
     }
   }

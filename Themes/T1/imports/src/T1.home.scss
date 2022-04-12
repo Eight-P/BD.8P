@@ -1,4 +1,4 @@
-// * T1.home v0.1.23
+// * T1.home v0.1.24
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 
@@ -28,7 +28,7 @@
       height: fit-content !important ;
       margin: 4% 5px ;
       display: grid ;
-      grid-template-columns: repeat(auto-fill, 300px);
+      grid-template-columns: repeat(auto-fit, 300px);
       justify-content: space-evenly ;
       row-gap: 35px ;
       grid-column-gap: 10px ;

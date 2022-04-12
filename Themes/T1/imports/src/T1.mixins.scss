@@ -1,4 +1,4 @@
-// * T1.mixins v0.1.21
+// * T1.mixins v0.1.22
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -69,12 +69,14 @@
   }
 
   &::-webkit-scrollbar-track { 
-    background-color: transparent !important ;
+    // background-color: transparent !important ; 0.5.62 testing
+    background-color: transparent ;
     border-color: transparent ;
   }
   
   &::-webkit-scrollbar-track-piece {
-    background-color: transparent !important ;
+    // background-color: transparent !important ; 0.5.62 testing
+    background-color: transparent ;
     border: none ;
   }
 
