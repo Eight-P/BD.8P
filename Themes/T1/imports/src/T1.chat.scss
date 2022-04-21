@@ -1,4 +1,4 @@
-// * T1.chat v0.1.33
+// * T1.chat v0.1.34
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -719,9 +719,38 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 }
 
 
-// Threads / Chat spilt view
+// - Threads / Voice channel chat (experimental) (spilt view / overlay)
+.chatLayerWrapper-2mgEK- {
+  
+  // shadow gradient effect thing idk
+  .chatTarget-3H6mpC { display: none }
+}
+
+// Voice chat container
+.layerContainer-2v_Sit {
+  margin-top: 1px ;
+  
+  // second wrapper
+  .chatLayerWrapper-2mgEK- {
+    width: 100% ;
+  }
+  
+  // main container
+  .container-3XgAHv {
+    max-width: 100% ;
+    resize: horizontal ;
+    direction: rtl;
+  
+    > * {
+      direction: ltr;
+    }
+  }
+}
+
+// main wrapper (both)
 .container-3XgAHv {
   background: none ;
+  border-radius: 0 ;
   
   // Header content seperator line
   .chat-1-OBC7:before, .chat-1rZYgu:before { display: none }
@@ -729,8 +758,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Threads icon
   .iconWrapper-3plkqh { display: none }
   
-  // Chat
+  // Chat 
   .chat-1-OBC7 {
+    
+    // messages scroller
+    .scroller-kQBbkU {
+      -webkit-mask-image: linear-gradient(to bottom, transparent, #000 2%, #000 98%, transparent);
+    }
     
     // Text input - slowmode icon
     .cooldownWrapper-2k1jHK {
@@ -807,7 +841,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // - Voicecall view (beta)
 .callContainer-HtHELf {
-  // background: none ;
+  
+  // always show controls/btns 
+  .idle-39sGPO {
+    .controlSection-1mNixL, .chatButton-10jXXp {
+      opacity: var(--always-show-voicecontrols, 0) !important ;
+    }
+  }
   
   // Button main container
   .videoControls-353CsJ { 
@@ -815,7 +855,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     
     // Top / Bottom section
     .controlSection-1mNixL {
-      opacity: var(--always-show-voicecontrols, 0) ;
       transform: translateZ(0) ;
       
       .streamQualityIndicator-1QvbXd {
@@ -824,8 +863,17 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
   
-  &:hover .controlSection-1mNixL { 
-    opacity: 1 ;
+  // Open voice chat btn 
+  .chatButton-10jXXp {
+    transform: translateZ(0) !important ;
+    
+    .controlIcon-10O-4h {
+      color: var(--interactive-normal) ;
+      
+      &:hover {
+        color: var(--interactive-hover) ;
+      }
+    }
   }
   
   // Controls (bottom) (trash)

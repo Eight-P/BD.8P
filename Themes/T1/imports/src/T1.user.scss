@@ -1,4 +1,4 @@
-// * T1.user v0.1.23
+// * T1.user v0.1.231
 // User popout (needs rework) / Modal
 
 // User popout -->
@@ -248,7 +248,6 @@
       ~ .bodyInnerWrapper-2bQs1k {
         $info-section: if($about-me-height > $custom-status-height, $about-me-height, $custom-status-height);
         $this-height: $header-height + $info-section + $info-padding;
-         // min-height: 160px ;
          min-height: $this-height;
         
         .activity-1gTu-L { 
@@ -417,7 +416,12 @@
   }
   
   // "pro tip" (idk if that's still a thing or not)
-  [class|="protip"] { display: none }
+  // [class|="protip"] { display: none }
+  
+  // Clyde
+  &[aria-label="Clyde"] {
+    min-height: 120px ;
+  }
 }
 // User popout <--
 
