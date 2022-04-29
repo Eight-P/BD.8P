@@ -3,7 +3,6 @@ on:
   push:
     branches:
     - master
-    - dev
     - test
     paths:
     - "**/T1.main.scss"
