@@ -22,10 +22,7 @@ jobs:
     - run: npm ci
     - run: npm run build -w Themes/T1
 
-    - name: commit and push changes
-      run: |
-          git config user.name "GitHub Actions"
-          git config user.email "<>"
-          git add -A
-          git commit -m "GH Actions /n ${{ github.event_name }}"
-          git push
+    - name: Commit and push changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "GH Actions /n ${{ github.event_name }}"
