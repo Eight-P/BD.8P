@@ -22,7 +22,10 @@ jobs:
     - run: npm ci
     - run: npm run build -w Themes/T1
 
+    - run: echo "$(cat Themes\T1\imports\T1.main.css)"
+
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: "GH Actions /n ${{ github.event_name }}"
+        commit_message: "GH Actions"
+        add_options: "-A"
