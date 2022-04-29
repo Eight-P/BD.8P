@@ -22,7 +22,7 @@ jobs:
     - run: npm ci
     - run: npm run build -w Themes/T1
 
-    - run: echo "$(cat Themes\T1\imports\T1.main.css)"
+    - run: echo "$(cat Themes/T1/imports/T1.main.css)"
 
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@v4
