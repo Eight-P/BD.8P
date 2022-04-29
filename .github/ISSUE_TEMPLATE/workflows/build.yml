@@ -1,0 +1,24 @@
+name: build T1 css
+on:
+  push:
+    branches:
+    - master
+    - dev
+    paths:
+    - "**/T1.main.scss"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+
+    - run: npm ci
+    - run: npm run build -w Themes/T1
+    
