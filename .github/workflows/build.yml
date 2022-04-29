@@ -28,5 +28,3 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: "GH Actions"
-        file_pattern: "Themes/T1/imports/T1.main.scss"
-        add_options: "-f"
