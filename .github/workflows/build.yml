@@ -4,7 +4,7 @@ on:
   push:
     branches:
     - master
-    - test
+    - dev
     paths:
     - "**.main.scss"
 jobs:
