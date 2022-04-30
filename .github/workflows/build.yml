@@ -1,11 +1,12 @@
-name: build T1 css
+# v1 test 10
+name: build css
 on:
   push:
     branches:
     - master
     - test
     paths:
-    - "**/T1.main.scss"
+    - "**.main.scss"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,7 +25,11 @@ jobs:
 
     - run: echo "$(cat Themes/T1/imports/T1.main.css)"
 
+    - run: echo ${{ github.event }}
+
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: "GH Actions"
+        commit_message: "build ${{ github.event.head_commit.message }}"
+        file_pattern: "**.main.css"
+        add_options: "--force"
