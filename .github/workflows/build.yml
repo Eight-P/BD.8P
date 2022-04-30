@@ -1,4 +1,4 @@
-# v1 test 10
+# v1.1
 name: build css
 on:
   push:
@@ -23,13 +23,9 @@ jobs:
     - run: npm ci
     - run: npm run build -w Themes/T1
 
-    - run: echo "$(cat Themes/T1/imports/T1.main.css)"
-
-    - run: echo ${{ github.event }}
-
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: "build ${{ github.event.head_commit.message }}"
+        commit_message: "build: ${{ github.event.head_commit.message }}"
         file_pattern: "**.main.css"
         add_options: "--force"
