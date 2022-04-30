@@ -1,0 +1,12 @@
+{
+  "name": "t1-theme",
+  "version": "0.1.0",
+  "description": "BetterDiscord Theme with a simple design, focus on improvements and horizontal server bar.",
+  "author": "Eight_P",
+  "repository": "github:Eight-P/BD.8P",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "sass imports/T1.main.scss:imports/T1.main.css --style=compressed --no-source-map"
+  }
+}

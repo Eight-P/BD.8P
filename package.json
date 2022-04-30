@@ -1,0 +1,15 @@
+{
+  "name": "bd.8p",
+  "version": "1.0.0",
+  "description": "collective repository for my BetterDiscord stuff",
+  "author": "Eight_P",
+  "repository": "github:Eight-P/BD.8P",
+  "license": "MIT",
+  "private": false,
+  "workspaces": [
+    "Themes/T1"
+  ],
+  "dependencies": {
+    "sass": "^1.51.0"
+  }
+}

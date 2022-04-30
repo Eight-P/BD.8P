@@ -1,1 +1,4 @@
-/Themes/T1/imports/dev/
+.vs
+node_modules
+Themes/T1/dev/
+Themes/T1/imports/T1.main.css

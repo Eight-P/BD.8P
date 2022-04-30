@@ -1,0 +1,31 @@
+# v1.1
+name: build css
+on:
+  push:
+    branches:
+    - master
+    - test
+    paths:
+    - "**.main.scss"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+
+    - run: npm ci
+    - run: npm run build -w Themes/T1
+
+    - name: Commit and push changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "build: ${{ github.event.head_commit.message }}"
+        file_pattern: "**.main.css"
+        add_options: "--force"
