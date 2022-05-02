@@ -1,4 +1,4 @@
-// * T1.user v0.1.231
+// * T1.user v0.1.24
 // User popout (needs rework) / Modal
 
 // User popout -->
@@ -41,6 +41,7 @@
     // Custom image banner
     .popoutBannerPremium-3i5EEI {
       width: 512px ;
+      max-width: 512px ;
       height: 100% ;
       filter: brightness(0.5) ;
       border-radius: 5px ;
@@ -107,10 +108,9 @@
     height: 80px ;
     width: 172px ;
     display: flex ;
-    flex-direction: column-reverse ;
-    justify-content: space-evenly ;
+    flex-direction: column ;
+    justify-content: center ;
     z-index: 1 ;
-    
     
     // "set Nickname" option with own profile card
     .setIdentityLink-hOFsMl { display: none }
@@ -119,12 +119,12 @@
     .profileBadges-2pItdR {
       display: inline-flex ;
       position: relative ;
+      margin: 4px 0 0 0 ;
       top: unset ; left: unset ; right: unset ; bottom: unset ;
       max-width: 172px ;
       justify-content: flex-start ;
       flex-wrap: nowrap ;
-      overflow: hidden ;
-      margin: 0 ;
+      overflow: hidden ;      
       
       // Badges
       > div { margin: 0 5px 0 0 }
@@ -141,8 +141,8 @@
       color: var(--header-primary);
       font-size: 17px ;
       font-weight: 500 ;
-      line-height: 22px ;
-      max-height: 44px ;
+      line-height: 19px ;
+      max-height: 36px ;
       overflow: hidden ;
     }
     
@@ -171,6 +171,7 @@
     .headerTagWithNickname-1U8zZH {
       display: flex ;
       height: 18px ;
+      margin-top: 4px ;
       
       // Name
       .username-3JLfHz {

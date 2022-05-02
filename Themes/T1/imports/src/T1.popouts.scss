@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.34
+// * T1.popouts v0.1.341
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -733,7 +733,7 @@
     &:after { display: none }
   }
   
-  &[style*="left: -"][style*="top: 8px;"] {
+  &[style*="left: -"][style*="top: "] {
     transform: translate( calc(50% + 25px), 25px);
   }
 }
