@@ -1,4 +1,4 @@
-.vs
+.vscode
 node_modules
 Themes/T1/dev/
 Themes/T1/imports/T1.main.css
