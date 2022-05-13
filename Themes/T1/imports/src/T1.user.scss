@@ -1,4 +1,4 @@
-// * T1.user v0.1.24
+// * T1.user v0.1.25
 // User popout (needs rework) / Modal
 
 // User popout -->
@@ -430,6 +430,10 @@
 // -- User modal
 .root-8LYsGj {
   
+  header { 
+    height: 240px ;
+  }
+
   // - header
   .topSection-13QKHs {
     background-color: var(--background-tertiary) ;
@@ -441,11 +445,9 @@
     // Profile banner custom image
     .profileBannerPremium-KD60EB {
       position: absolute ;
-      height: 208px ;
+      // height: 208px ;
+      width: 100% ;
       filter: brightness(0.5) ;
-      pointer-events: none ;
-      
-      .betaBadge-1Ve-yb { display: none }
       
       // shadows for better readability
       ~ .nameTag-2Nlmsy { 
@@ -456,20 +458,19 @@
       }
     }
     
+    .premiumIconWrapper-32h0Ri, .pencilContainer-18TrEJ { display: none }
+
     // Top conatiner (avatar, badges, options, ..)
     .header-S26rhB { 
       height: 152px ;
       
       .actionButton-iarQTd {
-        transition: none ;
         
         &.colorGreen-3y-Z79 {
           background-color: rgb(59, 165, 93, .7) ;
           
           &:hover { background-color: rgb(59, 165, 93) }
         }
-        
-        &:hover { @include shadow_effect("box_2") }
       }
       
       
@@ -525,7 +526,9 @@
     }
 
     // Username container
-    .nameTag-2Nlmsy { margin: 16px 48px }
+    .nameTag-2Nlmsy { 
+      margin: 16px 48px ;
+    }
 
     // Username
     .username-3JLfHz {
@@ -566,10 +569,17 @@
   // - body
   .body-1Ukv50 {
     background-color: var(--background-tertiary) ;
+
+    .scrollerBase-_bVAAt {
+      @include scrollbar();
+    }
     
     // Body sections
     .userInfoSection-2u2hir { 
-      padding: 16px 0 0 0 ;
+
+      &:nth-last-child(2) {
+        margin-bottom: 50px ;
+      }
     }
     
     // About Me / Note section

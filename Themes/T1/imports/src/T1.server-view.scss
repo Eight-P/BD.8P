@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.26
+// * T1.server-view v0.1.27
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -511,5 +511,39 @@
     .perksTableRowHeading-jY6XJu .perksTableRowLabel-wyBuZr {
       visibility: hidden ;
     }
+  }
+}
+
+
+// Home channel content
+.homeContainer-r4Hvv1 {
+ 
+  // Info container
+  .widgets-37sQdc {
+
+    // inner container
+    .container-2Hi7Km {
+      background: none ;
+    }
+
+    // Channels container (min-width: 1300px)
+    .container-xwOzwi {
+      background: none ;
+    }
+
+    // Channels
+    .container-3HMTms {
+      background: var(--background-modifier-hover) ;
+      border: none ;
+
+      &:hover {
+        background: var(--background-modifier-selected) ;
+      }
+    }
+  }
+
+  // Top message container
+  .container-4HqGB3 {
+    background: none ;
   }
 }

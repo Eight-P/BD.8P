@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.21
+// * T1.titlebar v0.1.22
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -52,7 +52,7 @@
 }
 
 // - General Header
-.container-ZMc96U {
+.container-ZMc96U { // also effects split view chat title bar
   box-shadow: none ;
   
   // - Main content
@@ -141,7 +141,7 @@
   
   .toolbar-3_r2xA {
     min-width: 226px ;
-    justify-content: space-between ;
+    justify-content: space-around ;
   }
 }
 

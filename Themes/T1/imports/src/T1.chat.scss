@@ -1,4 +1,4 @@
-// * T1.chat v0.1.34
+// * T1.chat v0.1.35
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -6,6 +6,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // Header/Chat sperator line
 .content-1jQy2l::before { display: none }
+
 
 // Inline Mentions
 .mention.wrapper-1ZcZW- {
@@ -25,6 +26,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     padding: .15em 0 ;
   }
 }
+
 
 // - Chat container
 .chatContent-3KubbW {
@@ -719,15 +721,41 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 }
 
 
-// - Threads / Voice channel chat (experimental) (spilt view / overlay)
+// Forum channel
+.container-3wLKDe {
+
+  // Item card
+  .row-uezxzk {
+
+    .mainCard-3KBsBI {
+      background: var(--background-modifier-hover) ;
+      border: none ;
+
+      &:hover {
+        background: var(--background-modifier-active) ;
+      }
+    }
+  }
+}
+// Forum chat
+.chatContent-3KubbW {
+
+  .container-3YcgdM {
+    background: none ;
+  }
+
+  .divider-AZrXIA { display: none }
+}
+
+
+// - Threads / Voice chat / Forum chat (spilt view / overlay)
 .chatLayerWrapper-2mgEK- {
   
   // shadow gradient effect thing idk
   .chatTarget-3H6mpC { display: none }
 }
-
 // Voice chat container
-.layerContainer-2v_Sit {
+.layerContainer-2v_Sit { // bad class 
   margin-top: 1px ;
   
   // second wrapper
@@ -746,8 +774,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
-
-// main wrapper (both)
+// Main wrapper
 .container-3XgAHv {
   background: none ;
   border-radius: 0 ;
@@ -765,7 +792,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     .scroller-kQBbkU {
       -webkit-mask-image: linear-gradient(to bottom, transparent, #000 2%, #000 98%, transparent);
     }
-    
+
     // Text input - slowmode icon
     .cooldownWrapper-2k1jHK {
       right: -16px ;
@@ -816,8 +843,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     @include shadow_effect("box_1");
   }
 }
-
-
 // Threads "unarchive" bar
 .chatHeaderBar-2fUORh {
   margin: 0 5px ;
@@ -839,7 +864,8 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 }
 
-// - Voicecall view (beta)
+
+// - Voicecall view
 .callContainer-HtHELf {
   
   // always show controls/btns 
@@ -1062,6 +1088,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 }
 
+
 // - Stage view
 .callContainer-BGIngG {
   
@@ -1100,6 +1127,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
+
 
 // Stage view talk requests sidebar
 .container-lqPArA {
