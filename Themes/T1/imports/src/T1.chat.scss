@@ -1,4 +1,4 @@
-// * T1.chat v0.1.36
+// * T1.chat v0.1.37
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -750,30 +750,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // - Threads / Voice chat / Forum chat (spilt view / overlay)
 .chatLayerWrapper-2mgEK- {
-  
+  width: 100% ;
+
   // shadow gradient effect thing idk
   .chatTarget-3H6mpC { display: none }
 }
-// Voice chat container
-.layerContainer-2v_Sit { // bad class 
-  margin-top: 1px ;
-  
-  // second wrapper
-  .chatLayerWrapper-2mgEK- {
-    width: 100% ;
-  }
-  
-  // main container
-  .container-3XgAHv {
-    max-width: 100% ;
-    resize: horizontal ;
-    direction: rtl;
-  
-    > * {
-      direction: ltr;
-    }
-  }
-}
+
 // Main wrapper
 .container-3XgAHv {
   background: none ;
@@ -820,10 +802,22 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
   
-  // Floating / overlapping chat
+  // Chat in split view with overlapping (Threads + Voice text)
   &.floating-3M3WeH {
-    z-index: 102 ;
+    margin-top: 1px ;
+    z-index: 1002 ;
     border: none ;
+    min-width: 400px ;
+    // max-width: 100% ;
+    max-width: calc(100vw - 240px) ; // not ideal
+    resize: horizontal ;
+    direction: rtl;
+
+    @include shadow_effect("box_1");
+  
+    > * {
+      direction: ltr;
+    }
     
     // Background image
     &:before {
@@ -839,10 +833,9 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       background-repeat: no-repeat;
       filter: var(--BGM_Blur) var(--BGM_Brightness) ;
     }
-    
-    @include shadow_effect("box_1");
   }
 }
+
 // Threads "unarchive" bar
 .chatHeaderBar-2fUORh {
   margin: 0 5px ;
@@ -863,7 +856,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
-
 
 // - Voicecall view
 .callContainer-HtHELf {
@@ -1088,6 +1080,22 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 }
 
+// Resizer for voice text and threads in side by side mode
+.chatTarget-3H6mpC.notFloating-cIl-vp + .resizeHandle-PBRzPC {
+  position: relative ;
+  width: 7px ;
+
+  &::after {
+    content: "";
+    display: block ;
+    position: absolute ;
+    top: 0 ;
+    left: 3px ;
+    width: 1px ;
+    height: 100% ;
+    background-color: var(--background-modifier-accent);
+  }
+}
 
 // - Stage view
 .callContainer-BGIngG {

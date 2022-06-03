@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.27
+// * T1.server-view v0.1.28
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -151,6 +151,18 @@
     &.modeUnread-3Cxepe {
       // pill
       .unread-36eUEm { background-color: var(--interactive-hover) }
+    }
+
+    // Channel no permission
+    &.modeLocked-3sToxd {
+
+      .mainContent-20q_Hp {
+        cursor: not-allowed ;
+      }
+
+      .name-28HaxV {
+        color: var(--interactive-muted);
+      }
     }
   }
   
