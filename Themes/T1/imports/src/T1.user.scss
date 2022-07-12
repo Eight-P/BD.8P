@@ -1,4 +1,4 @@
-// * T1.user v0.1.3
+// * T1.user v0.1.31
 // User popout (needs rework) / Modal
 
 // User popout -->
@@ -23,12 +23,17 @@
   border-radius: 5px ;
   
   @include shadow_effect("box_1");
-  
-  // Banner image / right side background
-  .headerNormal-3Zn_yu { 
+
+  // Banner/Avatar img Container
+  .headerWrapper-3iTlIT { 
     position: absolute ;
     height: 100% ;
-    
+
+    // Banner inner container
+    .headerNormal-3Zn_yu { 
+      height: 100% ;
+    }
+
     // Background for right side 
     .popoutBanner-3cqRD9:not(.bannerPremium-kkSkPv) {
       width: 200px ;
@@ -41,13 +46,13 @@
     // Custom image banner
     .popoutBannerPremium-3i5EEI {
       width: 512px ;
-      max-width: 512px ;
-      height: 100% ;
+      max-width: unset ;
+      height: calc(100% - 40px) ;
       filter: brightness(0.5) ;
       border-radius: 5px ;
     }
     
-    // Edit profile from popout btn
+    // remove Edit profile btn
     .pencilContainer-18TrEJ { display: none }
   }
   
@@ -408,7 +413,7 @@
     .quickMessage-3jDbBs { margin: 0 }
     
     // Text input 
-    .inputDefault-3FGxgL {
+    .input-2g-os5 {
       border-color: transparent ;
       border-radius: 0 ;
       color: var(--text-normal) ;

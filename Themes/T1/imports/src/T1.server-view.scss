@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.28
+// * T1.server-view v0.1.29
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -78,6 +78,13 @@
     + .containerDefault-3TQ5YN {
       padding-top: 8px ;
     }
+  }
+
+  // Special channel btns to channels seperator(s)
+  .sectionDivider-189lqb {
+    display: none ;
+
+    + :not([class])[style*="height:"] { display: none }
   }
   
   // Category header name
