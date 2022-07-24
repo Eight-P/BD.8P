@@ -1,4 +1,4 @@
-// * T1.home v0.1.25
+// * T1.home v0.1.26
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 
@@ -289,5 +289,8 @@
     }
 
     .closeButton-mupH76 { background-size: 22px 22px }
+
+    // Nitro upsell "offer", "free month"
+    .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF { display: none }
   }
 }

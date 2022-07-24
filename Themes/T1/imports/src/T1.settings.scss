@@ -1,4 +1,4 @@
-// * T1.settings v0.1.11
+// * T1.settings v0.1.12
 // Client / Guilds / Channels
 
 // - Theme version info
@@ -19,6 +19,7 @@
   
   // Sidebar
   .sidebarRegionScroller-FXiQOh {
+
     &::-webkit-scrollbar { display: none }
     
     // category headers
@@ -50,6 +51,9 @@
         &:hover { opacity: 1 !important }
       }
     }
+
+    // Nitro upsell "offer", "free month"
+    .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF { display: none }
   }
   
   // Content container
