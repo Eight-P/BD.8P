@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.341
+// * T1.popouts v0.1.342
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -931,4 +931,9 @@
   
   // Protip footer, Tutorial arrows idk
   .protip-1jXzAl, .tutorial-1iwync {  display: none }
+}
+
+// Image gallery popout (y, that selector suxs)
+.layer-1Ixpg3 .carouselModal-1eUFoq.zoomedCarouselModalRoot-1tAxiu.root-g14mjS.fullscreenOnMobile-ixj0e3 {
+  background: none ;
 }
