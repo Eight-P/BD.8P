@@ -1,4 +1,4 @@
-// * T1.mixins v0.1.22
+// * T1.mixins v0.1.23
 // Notifications / Scrollbar / Button / Default Variables
 
 // -- Theme notifications
@@ -105,15 +105,22 @@
 
 
 // Button as one element | @include btn_1();
-@mixin btn_1 () {
-  border: 1px solid var(--text-muted) !important ;
+@mixin btn_1 ($border:true, $bg:true) {
+
+  $bS: 1px solid var(--text-muted) !important ;
+  $bgS: var(--background-modifier-selected) !important ;
+
+  border: if( $border, $bS, none );
+  background: if($bg, $bgS, none);
   color: var(--text-normal) ;
-  background: var(--background-modifier-selected) !important ;
     
   &:hover {
-    color: black ;
-    background-color: var(--header-secondary) !important ;
-    border-color: transparent !important ;
+
+    $bgSH: var(--header-secondary) !important ;
+
+    color: if($bg, black, var(--interactive-active));
+    background: if($bg, $bgSH, none);
+    border-color: if($bg, transparent, var(--text-normal) !important );
   }
 }
 

@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.342
+// * T1.popouts v0.1.343
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -682,7 +682,7 @@
   }
 }
 
-// User status shorthand popout
+// User status shorthand popout (old)
 #status-picker {
   background: var(--background-tertiary) ;
   
@@ -699,6 +699,35 @@
     &#status-picker-invisible.focused-3qFvc8 { background: var(--status-invisible) }
     
     &#status-picker-custom-status.focused-3qFvc8 { background: var(--background-modifier-selected) }
+  }
+}
+
+
+// Profile context self (new)
+.menu-1QACrS {
+
+  // Header info section
+  .profileGroup-1yKk23 {
+
+    // About me
+    .bodyInnerWrapper-2bQs1k {
+      background: none ;
+    }
+  }
+
+  .submenu-1apzyU {
+
+    .separator-1So4YB { display: none }
+  
+    .item-1OdjEX {
+      &#account-status-picker--online.focused-3qFvc8 { background: var(--status-online) }
+        
+      &#account-status-picker--idle.focused-3qFvc8 { background: var(--status-idle) }
+
+      &#account-status-picker--dnd.focused-3qFvc8 { background: var(--status-DnD) }
+
+      &#account-status-picker--invisible.focused-3qFvc8 { background: var(--status-invisible) }
+    }
   }
 }
  
@@ -719,26 +748,6 @@
 .bg-1QIAus ~ .wrapper-3X0c60 { z-index: 1000 }
 
 
-// "try new feature" upsell Notification popouts
-.layer-2aCOJ3 {
-  
-  .container-xB0xPf, .content-1rmYE-, .subscribeTooltipWrapper-3ipXtC, .upsellTooltipWrapper-1wqikQ {
-    background-color: var(--background-tertiary);
-    
-    .button-f2h6uQ { @include Btn() }
-    
-    .image-CRV_VX, .pointer-1j6vDv, .pointer-1iS5lL { display: none }
-    
-    // Pointer in Tooltipversion
-    &:after { display: none }
-  }
-  
-  &[style*="left: -"][style*="top: "] {
-    transform: translate( calc(50% + 25px), 25px);
-  }
-}
-
-
 // Server boost screen (normal server)
 .root-2zfUH6 .perksModal-CLcR1c {
   background: var(--Main_Background);
@@ -750,6 +759,7 @@
   
   @include scrollbar();
 }
+
 
 // "All Active Threads" (from Channel list btn)
 .root-g14mjS .container-3GP6AV {
@@ -770,11 +780,6 @@
       }
     }
   }
-}
-
-// Tos update
-.layer-1Ixpg3 .root-g14mjS.theme-light {
-  background: #202225;
 }
 
 
@@ -895,6 +900,7 @@
   }
 }
 
+
 // Quick switch navigation/search
 .quickswitcher-pKcM9U {
   background: var(--background-tertiary);
@@ -933,7 +939,37 @@
   .protip-1jXzAl, .tutorial-1iwync {  display: none }
 }
 
+
+// Dismissables might just remove all
+.layer-2aCOJ3 {
+
+  &[style*="left: -"][style*="top: "] {
+    transform: translate( calc(50% + 10px), 25px);
+  }
+
+  .container-xB0xPf, .content-1rmYE-, .subscribeTooltipWrapper-3ipXtC, .upsellTooltipWrapper-1wqikQ
+
+  // BG container (* not sure if still used)
+  .container-xB0xPf, // *
+  .content-1rmYE-, // *
+  .subscribeTooltipWrapper-3ipXtC, // *
+  .root-g14mjS, // *
+  .upsellTooltipWrapper-1wqikQ,
+  .container-5N5x2A {
+    background-color: var(--background-tertiary);
+    
+    // Pointer in Tooltipversion
+    &:after { display: none }
+  }
+
+  .button-f2h6uQ { @include Btn() }
+    
+  .image-CRV_VX, .pointer-1j6vDv, .pointer-1iS5lL, .pointer-1bsD64 { display: none }
+}
+
+
+
 // Image gallery popout (y, that selector suxs)
-.layer-1Ixpg3 .carouselModal-1eUFoq.zoomedCarouselModalRoot-1tAxiu.root-g14mjS.fullscreenOnMobile-ixj0e3 {
+.layer-1Ixpg3 .carouselModal-1eUFoq.zoomedCarouselModalRoot-beLNhM.root-g14mjS.fullscreenOnMobile-ixj0e3 {
   background: none ;
 }

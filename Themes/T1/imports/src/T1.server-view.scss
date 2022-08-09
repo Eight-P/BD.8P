@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.29
+// * T1.server-view v0.1.3
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -210,30 +210,16 @@
     width: 240px ;
     top: 0 ;
     box-sizing: border-box ;
-    align-items: unset ;
-    
-    .avatarWrapper-1B9FTW {
-      height: 32px ;
-      margin-top: 8px ;
-    }
-    
-    .nameTag-sc-gpq {
-      height: 30px ;
-      margin-top: 9px ;
-    }
-    
-    .usernameContainer-3PPkWq { align-items: unset }
-    
-    // moving profile buttons for better tooltip position
-    .flex-2S1XBF {
-      height: 32px ;
-      margin-top: 18px ;
-      
-      button {
-        background-color: transparent ;
 
-        .contents-3ca1mk { margin-top: -20px }
-      }
+    // Pfp, name container
+    .avatarWrapper-1B9FTW {
+      margin: 6px 8px 6px 0 ;
+      background: none ;
+    }
+
+    // Buttons
+    .button-12Fmur {
+      background: none ;
     }
   }
   

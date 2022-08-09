@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.22
+// * T1.titlebar v0.1.23
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -315,39 +315,62 @@ html {
 // -- Notification bars
 // - Default Discord notice
 .notice-2HEN-u {
-  border-radius: 0 0 8px 8px ;
   background: var(--background-primary) ;
   color: var(--text-normal) ;
   
-  .button-1iHNQ2 { @include btn_1() }
+  .button-1iHNQ2 { 
+    @include btn_1($border:false, $bg:true);
+  }
+
+  .closeIcon-3eoP1e {
+
+    path {
+      fill: var(--interactive-normal) ;
+    }
+
+    &:hover path {
+      fill: var(--interactive-hover) ;
+    }
+  }
   
   // Sidebar position for Profile panel positioning
-  ~ .content-1SgpWY > .sidebar-1tnWFu { position: relative }
+  // ~ .content-1SgpWY > .sidebar-1tnWFu { position: relative }
 }
 
 
-// - BD plugin notice
-#pluginNotice {
-  position: absolute ;
-  width: calc(100vw - 480px);
-  margin: 0 240px ;
-  top: 6px ;
-  box-sizing: border-box ;
-  max-height: 30px ;
-  border-radius: 6px !important ;
-  background-color: var(--background-primary) ;
-  text-align: center ;
-  z-index: 2000 ;
+// - BD plugin notice (old)
+// #pluginNotice {
+//   position: absolute ;
+//   width: calc(100vw - 480px);
+//   margin: 0 240px ;
+//   top: 6px ;
+//   box-sizing: border-box ;
+//   max-height: 30px ;
+//   border-radius: 6px !important ;
+//   background-color: var(--background-primary) ;
+//   text-align: center ;
+//   z-index: 2000 ;
   
-  @include shadow_effect("box_2");
+//   @include shadow_effect("box_2");
 
-  // Close button
-  #pluginNoticeDismiss { max-height: 30px }
+//   // Close button
+//   #pluginNoticeDismiss { max-height: 30px }
 
-  // Text (all)
-  span {
-    line-height: 30px ;
-    vertical-align: top ;
-    color: var(--text-normal) ;
+//   // Text (all)
+//   span {
+//     line-height: 30px ;
+//     vertical-align: top ;
+//     color: var(--text-normal) ;
+//   }
+// }
+
+#bd-notices {
+
+  .bd-notice {
+    background-color: var(--background-primary) ;
+  }
+
+  .bd-notice-button {
+    @include btn_1($border:false, $bg:true);
   }
 }
