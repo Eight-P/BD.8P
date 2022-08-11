@@ -1,4 +1,4 @@
-// * T1.user v0.1.31
+// * T1.user v0.1.311
 // User popout (needs rework) / Modal
 
 // User popout -->
@@ -47,7 +47,8 @@
     .popoutBannerPremium-3i5EEI {
       width: 512px ;
       max-width: unset ;
-      height: calc(100% - 40px) ;
+      // height: calc(100% - 40px) ;
+      height: 100% ;
       filter: brightness(0.5) ;
       border-radius: 5px ;
     }

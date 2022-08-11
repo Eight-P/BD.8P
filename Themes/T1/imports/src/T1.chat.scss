@@ -1,4 +1,4 @@
-// * T1.chat v0.1.37
+// * T1.chat v0.1.371
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -724,6 +724,15 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 // Forum channel
 .container-3wLKDe {
 
+  // Search/Create Post header
+  .header-1Uy0p6 {
+
+    // Create new post
+    .submitButton-3B-dZd {
+      @include button_normal();
+    }
+  }
+
   // Item card
   .row-uezxzk {
 
@@ -733,6 +742,37 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
       &:hover {
         background: var(--background-modifier-active) ;
+      }
+    }
+  }
+
+  // Sidebar
+  .sidebarContainer-1kWKqZ {
+
+    .sidebarCard-1Gn1ch, .container-2IhveL {
+      background: var(--background-modifier-hover) ;
+      border: none ;
+    }
+
+    // Search tags
+    .tags-3s41VI {
+
+      // main container
+      .pill-3pRQlO {
+        background: var(--background-modifier-hover) ;
+
+        // Name/text
+        .lineClamp1-1iDPU7 {
+          color: var(--interactive-normal);
+        }
+
+        &:hover {
+          background: var(--background-modifier-accent) ;
+
+          .lineClamp1-1iDPU7 {
+            color: var(--interactive-hover);
+          }
+        }
       }
     }
   }

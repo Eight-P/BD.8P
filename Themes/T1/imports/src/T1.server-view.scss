@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.3
+// * T1.server-view v0.1.31
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -283,10 +283,13 @@
     
     // Voice channel button container
     .actionButtons-2vEOUh {
+      display: inline-flex ;
       height: 0 ;
       padding: 0 ;
+      justify-content: space-evenly ;
       overflow: hidden ;
       transition: .1s linear;
+      align-items: center ;
       
       // Caret icon
       &:after {
@@ -316,11 +319,10 @@
       
       // Buttons container
       .button-1EGGcP {
-        padding: 0 ;
-        margin: 8px 16px ;
+        width: max-content ;
+        padding: 0 12px ;
         background: none ;
         color: var(--interactive-normal);
-        
         z-index: 1 ;
         
         &:not(.fauxDisabled-8w0hCZ):hover {
@@ -453,7 +455,7 @@
 // Home channel content
 .homeContainer-r4Hvv1 {
  
-  // Info container
+  // Info Top
   .widgets-37sQdc {
 
     // inner container
@@ -461,8 +463,8 @@
       background: none ;
     }
 
-    // Channels container (min-width: 1300px)
-    .container-xwOzwi {
+    // Widgets
+    .container-xwOzwi, .emptyStateContainer-xWOMPJ {
       background: none ;
     }
 
@@ -480,5 +482,19 @@
   // Top message container
   .container-4HqGB3 {
     background: none ;
+  }
+
+  .card-3x20HF {
+    background: var(--background-modifier-hover) ;
+    border: none ;
+
+    &:hover {
+      background: var(--background-modifier-selected) ;
+    }
+
+    // load Dummys 
+    .wrapper-15CKyy {
+      background: none ;
+    }
   }
 }
