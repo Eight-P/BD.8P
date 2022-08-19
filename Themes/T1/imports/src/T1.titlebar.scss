@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.24
+// * T1.titlebar v0.1.241
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -160,7 +160,7 @@
       @include Mentions_icon(".numberBadge-37OJ3S");
       
       // add friend Tab
-      &[aria-controls="add_friend-tab"] {
+      &.addFriend-emTWY1 {
         position: absolute ;
         right: 0 ;
         width: 24px ;

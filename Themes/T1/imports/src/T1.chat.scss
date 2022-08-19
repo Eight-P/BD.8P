@@ -1,4 +1,4 @@
-// * T1.chat v0.1.371
+// * T1.chat v0.1.38
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -78,7 +78,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Messages scroller
   .scroller-kQBbkU {
     // fading out at top and bottom, not sure if like that tho
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 96%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 96%, transparent);
   }
   
   // Messages seperator
@@ -736,12 +736,49 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Item card
   .row-uezxzk {
 
+    // inner container
     .mainCard-3KBsBI {
-      background: var(--background-modifier-hover) ;
       border: none ;
+      transform: none ;
+      box-shadow: none ;
+      background: var(--background-modifier-hover) ;
 
       &:hover {
-        background: var(--background-modifier-active) ;
+        background: var(--background-modifier-selected) ;
+      }
+
+      // Badge that says "new" 
+      .newBadge-1LcB6t {
+        background: none !important ;
+      }
+
+      // Caard footer (reactions, timestamp, msg count, ..)
+      .footer-3dzxcR {
+
+        // Reactions
+        .reaction-102jx9 {
+          border: none ;
+          background-color: var(--background-modifier-accent);
+          border-radius:4px ;
+
+          &:hover { 
+            background-color: var(--background-accent) ;
+          }
+
+          // Active reaction 
+          &.reactionMe-2zhiyZ{
+            background-color: var(--Blurple-light) ;
+        
+            &:hover { 
+              background-color: var(--Blurple-light-hover) ;
+            }
+        
+            // number 
+            .reactionCount-SWXh9W { 
+              color: var(--Blurple) ;
+            }
+          }
+        }
       }
     }
   }
@@ -785,6 +822,16 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   .divider-AZrXIA { display: none }
+
+  // Follow / copy link to forum post btns
+  .container-3YcgdM {
+    top: 10px ;
+
+    .buttonInner-3aRbcx{
+      border: none ;
+      background: var(--background-floating);
+    }
+  }
 }
 
 
