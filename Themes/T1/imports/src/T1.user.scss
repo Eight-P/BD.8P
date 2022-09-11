@@ -1,4 +1,4 @@
-// * T1.user v0.2.0-b
+// * T1.user v0.2.01-b
 // User popout / (Modal)
 
 
@@ -73,9 +73,7 @@
     border-radius: 0 ;
     height: 120px ;
 
-    filter: brightness(0.75);
-
-    background-color: white !important ;
+    filter: brightness(0.85);
 
     // Edit own profile btn
     .pencilContainer-11Kuga {
@@ -87,7 +85,7 @@
 
   // Custom image banner
   .bannerPremium-86naOf {
-    // filter: brightness(0.75);
+    filter: brightness(0.75);
   }
   // <- Banner
 
@@ -96,10 +94,15 @@
     position: absolute ;
     top: 14px ;
     right: 14px ;
-    padding: 2px ;
     background: rgba(0, 0, 0, 0.2);
     z-index: 1 ;
 
+    // not empty
+    &.containerWithContent-2_V0PM {
+      padding: 2px ;
+    }
+
+    // bd dev badge
     .bd-profile-badge {
       width: 22px ;
       text-align: center ;
