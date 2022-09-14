@@ -1,20 +1,19 @@
-// * T1.compatibility v0.1.3
+// * T1.compatibility v0.1.4
 // Compatibility with plugins
 
 
-// - Hide Channels by Farcrada (v2.1.0)
-// - FriendNotifications by DevilBro (v1.8.1)
-// - ReadAllNotificationsButton by DevilBro (v1.7.0)
-// - SpotifyControls by DevilBro (v1.2.4)
-// - CollapsibleUI by programmer2514 (v4.2.0)
-// - ChannelTabs by l0c4lh057 (v2.5.5)
-// - ChannelDms by Strencher (v1.2.0)
+// - Hide Channels by Farcrada (v2.2.2)
+// - FriendNotifications by DevilBro (v1.8.3)
+// - ReadAllNotificationsButton by DevilBro (v1.7.1)
+// - SpotifyControls by DevilBro (v1.2.7)
+// - CollapsibleUI by programmer2514 (v5.7.0)
+// - ChannelDms by Strencher (v1.2.3)
 // - MemberCount by Arashiryuu (v2.2.17)
-// - CreationDate, JoinedAtDate by DevilBro (v1.4.6, v1.3.3)
+// - GuildProfile by Marmota (Jaime Filho) (v1.6.6)
 
 
-// -- Hide Channels by Farcrada (v2.1.0)
-// - Show/Hide btn
+// -> Hide Channels by Farcrada
+// Show/Hide btn
 #toggleChannels {
   filter: brightness(.6) ;
   margin-right: 6px ;
@@ -24,7 +23,7 @@
   &:hover { filter: brightness(1) }
 }
 
-// - Server channel sidebar
+// Server channel sidebar
 .sidebar-1tnWFu {
   transition: none !important ;
   
@@ -43,10 +42,11 @@
     }
   }
 }
+// <- Hide Channels by Farcrada
 
 
-// -- FriendNotifications by DevilBro (v1.8.1)
-// - Online friend counter
+// -> FriendNotifications by DevilBro
+// Online friend counter
 .guilds-2JjMmN .friendsOnlineWrap-0gZ63m {
   display: flex !important ;
   position: absolute ;
@@ -60,10 +60,11 @@
     @include shadow_effect("server_1");
   }
 }
+// <- FriendNotifications by DevilBro
 
 
-// -- ReadAllNotificationsButton by DevilBro (v1.7.0)
-// - "Read all" btn
+// -> ReadAllNotificationsButton by DevilBro
+// "Read all" btn
 .guilds-2JjMmN .frame-oXWS21 {
   display: flex !important ;
   position: absolute ;
@@ -114,20 +115,22 @@
     }
   }
 }
+// <- ReadAllNotificationsButton by DevilBro
 
 
-// -- SpotifyControls by DevilBro (v1.2.4)
-// - Sidebar control panel
+// -> SpotifyControls by DevilBro
+// Sidebar control panel
 .panels-3wFtMD .container-6sXIoE { 
   margin: 0px ;
   min-height: 44px ;
 
   .button-12Fmur { background: none }
 }
+// <- SpotifyControls by DevilBro
 
 
-// -- CollapsibleUI by programmer2514 (v4.2.0)
-// - Serverbar when hidden
+// -> CollapsibleUI by programmer2514
+// Serverbar when hidden
 .guilds-2JjMmN {
   
   &[style*="transition: width"] {
@@ -146,190 +149,24 @@
   }
 }
 
+// Channel list sidebar when hidden
+.sidebar-1tnWFu[style*="width: 0px;"] {
 
-// -- ChannelTabs by l0c4lh057 (v2.5.5)
-// - Main container
-#channelTabs-container {
-  
-  // - Tabbar
-  .channelTabs-tabContainer {
-    background: none ;
-    
-    + .channelTabs-favContainer {
-      box-shadow: 0 .5px 0 var(--header-secondary) ;
-      margin-bottom: 1px ;
-    }
-  }
-  
-  // - Tab item
-  .channelTabs-tab {
-    background: var(--background-modifier-hover) ;
-    color: var(--channels-default) ;
-    border-radius: 0 ;
-    
-    &:hover {
-      background:  var(--background-modifier-active) ;
-    }
-    
-    // Name - hover
-    &:not(.channelTabs-selected):hover .channelTabs-tabName {
-      color: var(--interactive-hover) ;
-    }
-    
-    // Name - tab active
-    &.channelTabs-selected .channelTabs-tabName{
-      color: var(--interactive-hover) ;
-    }
-    
-    // Unread messages
-    .channelTabs-unreadBadge {
-      background: var(--background-secondary) ;
-      color: var(--text-normal) ;
-    }
-    
-    // Close btn
-    .channelTabs-closeTab {
-      margin: 2px ;
-      background: var(--background-primary);
-      color: var(--interactive-hover) ;
-      border-radius: 5px ;
-      visibility: hidden ;
-      
-      &:hover {
-        color: black ;
-        background-color: var(--header-secondary) ;
-      }
-    }
-    
-    // Close btn - hover
-    &:hover .channelTabs-closeTab{
-      visibility: visible ;
-    }
-  }
-  
-  // - New tab btn
-  .channelTabs-newTab {
-    bottom: unset ;
-    padding: 6px ;
-    margin: 2px 0 ;
-    height: var(--channelTabs-tabHeight) ;
-    width: var(--channelTabs-tabHeight) ;
-    line-height: var(--channelTabs-tabHeight) ;
-    font-size: min(var(--channelTabs-tabHeight), 25px);
-    background: none ;
-    color: var(--interactive-normal) ;
-    
-    &:hover {
-      color: var(--interactive-hover) ;
-    }
-  }
-  
-  // - Bookmark item
-  .channelTabs-fav {
-    cursor: pointer ;
-    
-    &:hover {
-      background: var(--background-modifier-hover) ;
-      
-      .channelTabs-favName {
-        color: var(--interactive-hover) ;
-      }
-    }
-    
-    // Unread indicators
-    .channelTabs-mentionBadge, .channelTabs-unreadBadge {
-      background: none ;
-      color: var(--text-normal) ;
-    }
-    
-    // Normal state
-    .channelTabs-mentionBadge.channelTabs-noMention, .channelTabs-unreadBadge.channelTabs-noUnread {
-      color: var(--text-muted) ;
-    }
-    
-    // Unread mentions 
-    .channelTabs-mentionBadge:not(.channelTabs-noMention) {
-      margin-bottom: -2px ;
-      
-      @include Mentions_icon();
-    }
+  ~ .container-2cd8Mz .container-ZMc96U, ~ .chat-2ZfjoI .title-31SJ6t {
+    margin-left: 240px ;
+    width: auto ;
+
+    // Channel name
+    .title-17SveM { 
+      display: flex ;
+    } 
   }
 }
-
-// - Settings btn
-#channelTabs-settingsMenu {
-  background: none !important ;
-  cursor: pointer ;
-  
-  height: 30px !important ;
-  
-  &:nth-last-child(3) {
-    height: 40px !important ;
-  }
-  rect {
-    fill: var(--interactive-normal) ;
-  }
-  
-  &:hover rect {
-    fill: var(--interactive-hover) ;
-  }
-}
-
-// - Mac
-.platform-osx {
-  
-  // Main container
-  #channelTabs-container {
-    min-height: 48px ;
-    
-    display: flex ;
-    flex-direction: column ;
-    justify-content: center ;
-
-    .channelTabs-tabContainer, .channelTabs-favContainer {
-      -webkit-app-region: drag ;
-      margin-right: 73px ;
-      margin-left: 26px ;
-      
-      width: -webkit-fill-available ;
-
-      > div {
-        -webkit-app-region: none ;
-      }
-    }
-    
-    .channelTabs-tabContainer + .channelTabs-favContainer {
-      -webkit-app-region: none ;
-      margin: 0 ;
-      padding-left: 26px ;
-    }
-  }
-  
-  // Settings btn
-  #channelTabs-settingsMenu {
-    -webkit-app-region: none !important;
-    
-    position: absolute ;
-    top: 0 ;
-    right: 0 ;
-    
-    // Settings btn icon
-    .channelTabs-settingsIcon {
-      margin-left: 0 !important;
-    }
-  }
-  
-  // User profile panel
-  #channelTabs-container ~ .layers-OrUESM .panels-3wFtMD > .container-YkUktl {
-    margin-left: 0 ;
-    width: 240px ;
-    padding: 0 8px ;
-  }
-}
+// <- CollapsibleUI by programmer2514
 
 
-// -- ChannelDms by Strencher (v1.2.0)
-// - Server members/dms sidebar
+// -> ChannelDms by Strencher
+// Server members/dms sidebar
 #app-mount .ChannelDms-channelmembers-wrap {
   
   // Nav header
@@ -367,7 +204,7 @@
   }
 }
 
-// - Dm popouts
+// Dm popouts
 #app-mount .ChannelDms-channelpopout-popout {
   background: var(--background-secondary-alt);
   
@@ -395,10 +232,11 @@
     background: var(--background-secondary-alt);
   }
 }
+// <- ChannelDms by Strencher
 
 
-// -- MemberCount by Arashiryuu (v2.2.17)
-// - Members count
+// -> MemberCount by Arashiryuu
+// Members count
 #app-mount #MemberCount {
   background: none ;
 
@@ -406,73 +244,20 @@
     margin-top: 41px ;
   }
 }
+// <- MemberCount by Arashiryuu
 
 
-// -- CreationDate, JoinedAtDate by DevilBro (v1.4.6, v1.3.3)
-// - User popout main info container (name, bdages, ...)
-#app-mount .userPopout-2j1gM4 .headerTop-3GPUSF {
-  overflow: visible ;
+// -> GuildProfile by Marmota (Jaime Filho)
+// Modal
+.guild-profile {
 
-  // creationDate, joinedAtDate main div
-  .textScroller-dc9_kz  {
-    position: absolute !important ;
-    top: -20px ;
-    left: -100px ;
-    height: 20px ;
-    width: 20px ;
-    margin: 0 ;
-    cursor: pointer ;
+  // Server img when no image is available
+  .avatar-3QF_VA img:not([src]) { display: none }
 
-    // Icon
-    &:before {
-      position: absolute ;
-      top: 0 ;
-      left: 0 ;
-      height: 20px ;
-      width: 20px ;
-      line-height: 20px ;
-      color: var(--header-secondary);
-      font-size: 14px ;
-      font-weight: 700 ;
-      text-align: center ;
-      
-      @include shadow_effect("text_2");
-    }
-
-    // CreationDate, JoinedAtDate inner text
-    div {
-      position: fixed !important ;
-      top: 35px ;
-      padding: 3px ;
-      border-radius: 5px ;
-      background: var(--background-floating);
-      pointer-events: none ;
-      visibility: hidden ;
-    }
-
-    &:hover {
-
-      &:before {
-        color: var(--header-primary);
-      }
-
-      div {
-        visibility: visible ;
-      }
-    }
-
-    // JoinedAtDate
-    &.joinedAtDate-IawR02:before {
-      content: "J" ;
-    }
-
-    // CreationDate
-    &.creationDate-CJwdKT {
-      left: -80px ;
-
-      &:before {
-        content: "C" ;
-      }
-    }
+  // Restoring default name position 
+  .guild-tag {
+    margin-left: 16px !important ;
   }
 }
+// <- GuildProfile by Marmota (Jaime Filho)
+
