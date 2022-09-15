@@ -1,4 +1,4 @@
-// * T1.user v0.1.311
+// * T1.user v0.1.32
 // User popout (needs rework) / Modal
 
 // User popout -->
@@ -436,201 +436,201 @@
 
 
 // -- User modal
-.root-8LYsGj {
+// .root-8LYsGj {
   
-  header { 
-    height: 240px ;
-  }
+//   header { 
+//     height: 240px ;
+//   }
 
-  // - header
-  .topSection-13QKHs {
-    background-color: var(--background-tertiary) ;
-    border-bottom: 1px solid var(--background-modifier-accent);
+//   // - header
+//   .topSection-13QKHs {
+//     background-color: var(--background-tertiary) ;
+//     border-bottom: 1px solid var(--background-modifier-accent);
     
-    // Profile banner normal
-    .profileBanner-1owKI5 { display: none }
+//     // Profile banner normal
+//     .profileBanner-1owKI5 { display: none }
     
-    // Profile banner custom image
-    .profileBannerPremium-KD60EB {
-      position: absolute ;
-      // height: 208px ;
-      width: 100% ;
-      filter: brightness(0.5) ;
+//     // Profile banner custom image
+//     .profileBannerPremium-KD60EB {
+//       position: absolute ;
+//       // height: 208px ;
+//       width: 100% ;
+//       filter: brightness(0.5) ;
       
-      // shadows for better readability
-      ~ .nameTag-2Nlmsy { 
-        @include shadow_effect("text_1");
-      }
-      ~ .customStatusActivity-WKWGD- { 
-        @include shadow_effect("text_2"); 
-      }
-    }
+//       // shadows for better readability
+//       ~ .nameTag-2Nlmsy { 
+//         @include shadow_effect("text_1");
+//       }
+//       ~ .customStatusActivity-WKWGD- { 
+//         @include shadow_effect("text_2"); 
+//       }
+//     }
     
-    .premiumIconWrapper-32h0Ri, .pencilContainer-18TrEJ { display: none }
+//     .premiumIconWrapper-32h0Ri, .pencilContainer-18TrEJ { display: none }
 
-    // Top conatiner (avatar, badges, options, ..)
-    .header-S26rhB { 
-      height: 152px ;
+//     // Top conatiner (avatar, badges, options, ..)
+//     .header-S26rhB { 
+//       height: 152px ;
       
-      .actionButton-iarQTd {
+//       .actionButton-iarQTd {
         
-        &.colorGreen-3y-Z79 {
-          background-color: rgb(59, 165, 93, .7) ;
+//         &.colorGreen-3y-Z79 {
+//           background-color: rgb(59, 165, 93, .7) ;
           
-          &:hover { background-color: rgb(59, 165, 93) }
-        }
-      }
+//           &:hover { background-color: rgb(59, 165, 93) }
+//         }
+//       }
       
       
-      .additionalActionsIcon-3Cy8UU {
-        color: var(--interactive-hover) ;
+//       .additionalActionsIcon-3Cy8UU {
+//         color: var(--interactive-hover) ;
         
-        @include shadow_effect("drop_2");
+//         @include shadow_effect("drop_2");
         
-        &:hover { color: var(--interactive-active) }
-      }
-    }
+//         &:hover { color: var(--interactive-active) }
+//       }
+//     }
 
-    // Avatar container
-    .avatar-3QF_VA {
-      top: 16px ;
-      background: none ;
-      border: none ;
+//     // Avatar container
+//     .avatar-3QF_VA {
+//       top: 16px ;
+//       background: none ;
+//       border: none ;
       
-      .svg-2azL_l { 
-        overflow: visible ;
+//       .svg-2azL_l { 
+//         overflow: visible ;
         
-        // Status (works 95% of the time)
-        rect {
-          x: 0px ;
-          y: 154px ;
-          height: 20px ;
-          width: 20px ;
+//         // Status (works 95% of the time)
+//         rect {
+//           x: 0px ;
+//           y: 154px ;
+//           height: 20px ;
+//           width: 20px ;
           
-          &[mask="url(#svg-mask-status-online-mobile)"] {
-            x: 6px ;
-            height: 20px ;
-            width: 14px ;
-          }
-        }
+//           &[mask="url(#svg-mask-status-online-mobile)"] {
+//             x: 6px ;
+//             height: 20px ;
+//             width: 14px ;
+//           }
+//         }
         
-        // The weird status (when status changes while modal is open)
-        .cursorDefault--wfhy5 { display: none }
-      }
+//         // The weird status (when status changes while modal is open)
+//         .cursorDefault--wfhy5 { display: none }
+//       }
       
-      // Profile img container
-      foreignObject { 
-        overflow: visible ;
-        mask: none ;
-      }
+//       // Profile img container
+//       foreignObject { 
+//         overflow: visible ;
+//         mask: none ;
+//       }
 
-      // Profile img
-      .avatar-b5OQ1N { 
-        border-radius: 7.5% ;
+//       // Profile img
+//       .avatar-b5OQ1N { 
+//         border-radius: 7.5% ;
         
-        // Shadow effect but not on gifs
-        &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
-      }
-    }
+//         // Shadow effect but not on gifs
+//         &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+//       }
+//     }
 
-    // Username container
-    .nameTag-2Nlmsy { 
-      margin: 16px 48px ;
-    }
+//     // Username container
+//     .nameTag-2Nlmsy { 
+//       margin: 16px 48px ;
+//     }
 
-    // Username
-    .username-3JLfHz {
-      color: var(--header-primary);
-      font-weight: 500 ;
-      z-index: 1 ;
-    }
+//     // Username
+//     .username-3JLfHz {
+//       color: var(--header-primary);
+//       font-weight: 500 ;
+//       z-index: 1 ;
+//     }
 
-    // Discriminator
-    .discriminator-1bqsd3 {
-      margin-left: 2px ;
-      color: var(--header-secondary);
-      font-size: 17px ;
-      font-weight: 500 ;
-      z-index: 1 ;
-    }
+//     // Discriminator
+//     .discriminator-1bqsd3 {
+//       margin-left: 2px ;
+//       color: var(--header-secondary);
+//       font-size: 17px ;
+//       font-weight: 500 ;
+//       z-index: 1 ;
+//     }
 
-    // Custom status
-    .customStatusActivity-WKWGD- {
-      position: absolute ;
-      top: 92px ;
-      left: 180px ;
-    }
+//     // Custom status
+//     .customStatusActivity-WKWGD- {
+//       position: absolute ;
+//       top: 92px ;
+//       left: 180px ;
+//     }
     
-    // nav bar
-    .tabBar-2hXqzU {
+//     // nav bar
+//     .tabBar-2hXqzU {
       
-      // nav bar tab
-      .tabBarItem-30Te4- {
+//       // nav bar tab
+//       .tabBarItem-30Te4- {
         
-        &:not(.selected-g-kMVV):hover {
-          border-color: transparent ;
-        }
-      }
-    }
-  }
+//         &:not(.selected-g-kMVV):hover {
+//           border-color: transparent ;
+//         }
+//       }
+//     }
+//   }
   
-  // - body
-  .body-1Ukv50 {
-    background-color: var(--background-tertiary) ;
+//   // - body
+//   .body-1Ukv50 {
+//     background-color: var(--background-tertiary) ;
 
-    .scrollerBase-_bVAAt {
-      @include scrollbar();
-    }
+//     .scrollerBase-_bVAAt {
+//       @include scrollbar();
+//     }
     
-    // Body sections
-    .userInfoSection-2u2hir { 
+//     // Body sections
+//     .userInfoSection-2u2hir { 
 
-      &:nth-last-child(2) {
-        margin-bottom: 50px ;
-      }
-    }
+//       &:nth-last-child(2) {
+//         margin-bottom: 50px ;
+//       }
+//     }
     
-    // About Me / Note section
-    .userInfoSection-2u2hir:first-child { 
-      display: grid ;
-      grid-template-columns: 50% 50% ;
-      grid-template-areas:
-        "Header_1 Header_2"
-        "Body_1 Body_2";
+//     // About Me / Note section
+//     .userInfoSection-2u2hir:first-child { 
+//       display: grid ;
+//       grid-template-columns: 50% 50% ;
+//       grid-template-areas:
+//         "Header_1 Header_2"
+//         "Body_1 Body_2";
       
-      > * {
-        &:nth-child(1) { grid-area: Header_1 }
-        &:nth-child(2) { grid-area: Body_1 }
-        &:nth-child(3) { grid-area: Header_2 }
-        &:nth-child(4) { grid-area: Body_2 }
-      }
-    }
+//       > * {
+//         &:nth-child(1) { grid-area: Header_1 }
+//         &:nth-child(2) { grid-area: Body_1 }
+//         &:nth-child(3) { grid-area: Header_2 }
+//         &:nth-child(4) { grid-area: Body_2 }
+//       }
+//     }
     
-    // Connected account
-    .connectedAccount-1xKpli { 
-      color:  var(--channels-default) ;
-      border: none ;
-    }
+//     // Connected account
+//     .connectedAccount-1xKpli { 
+//       color:  var(--channels-default) ;
+//       border: none ;
+//     }
     
-    // Mutual Servers / Mutual Friends container
-    .listScroller-entkMk {
-      display: grid ;
-      grid-template-columns: 50% 50% ;
-      grid-auto-rows: max-content ;
-      grid-gap: 5px ;
-      padding: 10px 0 ;
+//     // Mutual Servers / Mutual Friends container
+//     .listScroller-entkMk {
+//       display: grid ;
+//       grid-template-columns: 50% 50% ;
+//       grid-auto-rows: max-content ;
+//       grid-gap: 5px ;
+//       padding: 10px 0 ;
       
-      // No items in scroller
-      .empty-2zcusz {
-        position: absolute ;
-        left: 50% ;
-        transform: translateX(-50%);
-      }
+//       // No items in scroller
+//       .empty-2zcusz {
+//         position: absolute ;
+//         left: 50% ;
+//         transform: translateX(-50%);
+//       }
       
-      // Activities
-      .activityProfile-1712BN {
-        grid-column: span 2 ;
-      }
-    }
-  }
-}
+//       // Activities
+//       .activityProfile-1712BN {
+//         grid-column: span 2 ;
+//       }
+//     }
+//   }
+// }
