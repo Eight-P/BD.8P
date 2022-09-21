@@ -1,8 +1,15 @@
-// * T1.background v0.2.23
+// * T1.background v0.2.3
 // Background image + Transparency
 
 // Main background image
-.bg-1QIAus {
+#app-mount::before {
+  content: " " ;
+  position: absolute ;
+  top: 0 ;
+  left: 0 ;
+  display: block ;
+  height: 100vh ;
+  width: 100vw ;
   background: var(--Main_Background) ;
   background-size: cover !important ;
   background-attachment: fixed !important ;
@@ -10,10 +17,11 @@
   filter: var(--BGM_Blur) var(--BGM_Brightness) ;
 }
 
-
 $Classes: (
   // #app-mount
   "",
+  // BG elm
+  ".bg-1QIAus",
   // App containers
   ".app-2CXKsg", ".layer-86YKbF",
   // App containers canary

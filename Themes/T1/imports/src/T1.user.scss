@@ -1,4 +1,4 @@
-// * T1.user v0.2.1
+// * T1.user v0.2.2
 // User popout / (Modal)
 
 
@@ -82,6 +82,32 @@
   // Custom image banner
   .bannerPremium-86naOf {
     filter: brightness(0.75);
+  }
+
+  // something, something, Discord .-.
+  .bannerSVGWrapper-qc0szY {
+    height: 120px ;
+
+    foreignObject {
+      mask: none ;
+    }
+
+    ~ .avatarWrapper-3y0KZ1 {
+      top: 20px ;
+      left: 20px ;
+    }
+
+    &[viewBox="0 0 340 60"] foreignObject {
+      transform: translateY(-30px);
+    }
+
+    &[viewBox="0 0 340 90"] foreignObject {
+      transform: translateY(-15px);
+    }
+
+    ~ .avatarWrapper-3y0KZ1 {
+      circle { display: none }
+    }
   }
   // <- Banner
 
