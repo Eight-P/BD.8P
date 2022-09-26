@@ -1,5 +1,5 @@
 $vv: "--TFV_V0_7_3" ; $vid: "0.7.3" ;
-$T1_version: "0.5.83" ;
+$T1_version: "0.5.84" ;
 
 @import 'src/T1.mixins.scss';       // Global Mixins and Variables
 @import 'src/T1.background.scss';   // Background image and Transparency
@@ -11,7 +11,7 @@ $T1_version: "0.5.83" ;
 @import 'src/T1.settings.scss';     // Settings menus
 @import 'src/T1.titlebar.scss';     // Header-, Titlebar / Notifications
 @import 'src/T1.user.scss';         // User-Popout / Modal
-// @import 'src/T1.user_old.scss';     // User-Popout / Modal (old design)
+@import 'src/T1.user_old.scss';     // User-Popout / Modal (old design)
 @import 'src/T1.compatibility.scss';// Plugin Compatibility
 
 
