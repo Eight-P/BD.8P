@@ -1,67 +1,21 @@
-// * T1.user v0.2.2
+// * T1.user v0.2.3
 // User popout / (Modal)
 
 
 // -> User Popout
-.userPopout-3fydSP {
+.userPopout-29jUdN {
   border-radius: 12px ;
 
   @include shadow_effect("box_2");
 
   // Secondary container
-  .userPopoutInner-PA9zkU { 
+  .userPopoutInner-1v4xcM { 
     position: relative ;
 
     &::before { display: none }
   }
 
   .betaTag-2bWvGF { display: none }
-
-  // -> Profile picture/Avatar
-  .avatarWrapper-3y0KZ1 {
-    top: 14px ;
-    left: 14px ;
-
-    // Outer wrapper
-    .avatar-2OC07D {
-      border-color: transparent ;
-      background: none ;
-    }
-    
-    .svg-2azL_l { overflow: visible }
-
-    foreignObject { 
-      mask: none ;
-      overflow: visible ;
-    }
-
-    // Img
-    .avatar-b5OQ1N {
-      border-radius: 7.5% ;
-
-      &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
-    }
-
-    // Hover overlay
-    .avatarHint-2g3Mcd {
-      border-radius: 7.5% ;
-    }
-
-    // Status icon
-    rect {
-      position: absolute ;
-      x: -8px ;
-      y: 116px ;
-      pointer-events: none ;
-
-      &[mask="url(#svg-mask-status-online-mobile)"] {
-        y: 114px ;
-        height: 18px ;
-        width: 14px ;
-      }
-    }
-  }
-  // <- Profile picture/Avatar
 
   // -> Banner
   .banner-2boKnS {
@@ -111,6 +65,49 @@
   }
   // <- Banner
 
+  // -> Profile picture/Avatar
+  .avatarWrapper-3y0KZ1 {
+    top: 14px ;
+    left: 14px ;
+    
+    .svg-2azL_l { overflow: visible }
+
+    foreignObject { 
+      mask: none ;
+      overflow: visible ;
+    }
+
+    // Img
+    .avatar-b5OQ1N {
+      border-radius: 7.5% ;
+
+      &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+    }
+
+    // Hover overlay
+    .avatarHint-2g3Mcd {
+      border-radius: 7.5% ;
+    }
+
+    // Status icon
+    .pointerEvents-9SZWKj {
+      position: absolute ;
+      x: -8px ;
+      y: 116px ;
+      pointer-events: none ;
+
+      &[mask="url(#svg-mask-status-online-mobile)"] {
+        y: 115px ;
+        height: 18px ;
+        width: 14px ;
+      }
+    }
+
+    // Shadow background thing
+    rect[rx] { display: none }
+  }
+  // <- Profile picture/Avatar
+
   // -> Badges
   .profileBadges-31rDHI {
     position: absolute ;
@@ -133,7 +130,7 @@
   // <- Badges
 
   // -> Main user info 
-  .overlayBackground-arbZMT {
+  .overlayBackground-2Zjm9f {
     margin: 0 ;
     border-radius: 0 ;
 
@@ -179,22 +176,37 @@
     // <- Without Nickname
     // <- Username/Nickname
 
+    // -> Body
     .scroller-1jBQYo::-webkit-scrollbar { display: none }
 
-    // Quick Dm
+    // -> Roles
+    // Role item
+    .role-2TIOKu {
+      border: none ;
+    }
+
+    // remove role btn
+    .roleRemoveButton-17oXnT {
+      cursor: pointer ;
+    }
+    // <- Roles
+
+    // -> Quick Dm
     .messageInputContainer-2rGDH8 {
       padding: 4px 12px 6px 12px ;
       margin: 0 -12px 0 -12px ;
       border: none ;
       border-radius: 0 ;
     }
+    // <- Quick Dm
+    // <- Body
   }
   // <- Main user info
 
   // -> Popout no custom colors
-  .userPopoutInnerWithoutTheme-23vLID {
+  .userPopoutInnerWithoutTheme-53VYav {
     
-    .overlayBackground-arbZMT {
+    .overlayBackground-2Zjm9f {
       background: var(--background-tertiary);
     }
 
@@ -210,16 +222,16 @@
   // <- Popout no custom colors
 
   // -> Popout with custom colors
-  &.userPopoutThemed-3BZ4by {
+  &.userPopoutThemed-wGuRN3 {
     padding: 0 ;
     background: linear-gradient(transparent 120px,var(--profile-gradient-primary-color) 0,var(--profile-gradient-secondary-color));
 
-    .userPopoutInner-PA9zkU {
+    .userPopoutInner-1v4xcM {
       background: var(--profile-gradient-overlay-color);
     }
   }
 
-  .userPopoutInnerWithTheme-71l1ON {
+  .userPopoutInnerWithTheme-2lKyJh {
 
     // Quick Dm
     .messageInputContainer-2rGDH8 {
@@ -243,23 +255,24 @@
     background: var(--background-tertiary);
   }
 
-  // Badges, User action btn, .. container
-  .headerTop-1PNKck {
-    left: 170px ;
-  }
-
   // -> Banner
-  .banner-2boKnS {
-    // Nitro icon
+  .bannerSVGWrapper-qc0szY {
+
+    foreignObject {
+      mask: none ;
+    }
+
     .premiumIconWrapper-yyGDql { display: none }
   }
-  // <-
+  // <- Banner
 
   // -> Avatar
   .avatar-3QF_VA {
-    top: -80px ;
+    top: -75px ;
+    left: 14px ;
     border-radius: 7.5% ;
-    border-color: var(--background-tertiary);
+    border: 7px solid var(--background-tertiary);
+    // border: 6px solid red;
     background: var(--background-tertiary);
 
     .svg-2azL_l { overflow: visible }
@@ -272,36 +285,42 @@
     // Img
     .avatar-b5OQ1N {
       border-radius: 7.5% ;
-
-      // &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
     }
     
     // Status icon
-    rect {
+    .pointerEvents-9SZWKj {
       position: absolute ;
-      x: -8px ;
-      y: 148px ;
+      x: 0px ;
+      y: 144px ;
       pointer-events: none ;
 
       &[mask="url(#svg-mask-status-online-mobile)"] {
         x: 0px ;
-        y: 148px ;
+        y: 144px ;
         height: 24px ;
         width: 16px ;
       }
     }
   }
   // <- Avatar
-  
-  // -> Username
-  .nameTag-2Nlmsy {
-    margin-left: 56px ;
+
+  // Badges, User action btn, .. container
+  .headerTop-1PNKck {
+    left: 170px ;
   }
-  // <- Username
+  
+  // Username
+  .nameTag-2Nlmsy {
+    margin-left: 55px ;
+  }
 
   // -> Navbar
   .tabBarContainer-sCZC4w {
     border-color: rgba(0, 0, 0, 0.4);
+
+    .tabBarItem-30Te4- {
+      font-size: 14px ;
+    }
   }
   // <- Tabbar
   // <- Header
