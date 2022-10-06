@@ -1,15 +1,15 @@
-// * T1.user v0.2.3
+// * T1.user v0.2.31
 // User popout / (Modal)
 
 
 // -> User Popout
-.userPopout-29jUdN {
+.layerContainer-2v_Sit .userPopoutOuter-3AVBmJ {
   border-radius: 12px ;
 
   @include shadow_effect("box_2");
 
   // Secondary container
-  .userPopoutInner-1v4xcM { 
+  .userProfileInner-3F03PX { 
     position: relative ;
 
     &::before { display: none }
@@ -18,37 +18,12 @@
   .betaTag-2bWvGF { display: none }
 
   // -> Banner
-  .banner-2boKnS {
-    border-radius: 0 ;
-    height: 120px ;
-
-    filter: brightness(0.85);
-
-    // Edit own profile btn
-    .pencilContainer-11Kuga {
-      top: 78px ;
-      right: 14px ;
-    }
-
-    .premiumIconWrapper-yyGDql { display: none }
-  }
-
-  // Custom image banner
-  .bannerPremium-86naOf {
-    filter: brightness(0.75);
-  }
-
-  // something, something, Discord .-.
+  // main wrapper
   .bannerSVGWrapper-qc0szY {
     height: 120px ;
 
     foreignObject {
       mask: none ;
-    }
-
-    ~ .avatarWrapper-3y0KZ1 {
-      top: 20px ;
-      left: 20px ;
     }
 
     &[viewBox="0 0 340 60"] foreignObject {
@@ -59,16 +34,30 @@
       transform: translateY(-15px);
     }
 
-    ~ .avatarWrapper-3y0KZ1 {
-      circle { display: none }
+    .banner-2boKnS {
+      height: 120px ;
+      filter: brightness(0.85);
+
+      // Custom image banner
+      &.bannerPremium-86naOf {
+        filter: brightness(0.75);
+      }
+  
+      // Edit own profile btn
+      .pencilContainer-11Kuga {
+        top: 78px ;
+        right: 14px ;
+      }
+  
+      .premiumIconWrapper-yyGDql { display: none }
     }
   }
   // <- Banner
 
   // -> Profile picture/Avatar
   .avatarWrapper-3y0KZ1 {
-    top: 14px ;
-    left: 14px ;
+    top: 20px ;
+    left: 20px ;
     
     .svg-2azL_l { overflow: visible }
 
@@ -76,6 +65,9 @@
       mask: none ;
       overflow: visible ;
     }
+
+    // Shadow for status icon
+    circle { display: none }
 
     // Img
     .avatar-b5OQ1N {
@@ -130,7 +122,7 @@
   // <- Badges
 
   // -> Main user info 
-  .overlayBackground-2Zjm9f {
+  .overlayBackground-1KgwVi {
     margin: 0 ;
     border-radius: 0 ;
 
@@ -176,13 +168,20 @@
     // <- Without Nickname
     // <- Username/Nickname
 
+    // -> Custom status emoji
+    .customStatusSoloEmoji-3jUFFX {
+      height: 30px ;
+      width: 30px ;
+    }
+    // <- Custom status
+
     // -> Body
     .scroller-1jBQYo::-webkit-scrollbar { display: none }
 
     // -> Roles
     // Role item
     .role-2TIOKu {
-      border: none ;
+      border: none ; // old
     }
 
     // remove role btn
@@ -204,14 +203,11 @@
   // <- Main user info
 
   // -> Popout no custom colors
-  .userPopoutInnerWithoutTheme-53VYav {
+  .userProfileInnerUnthemed-1XxIZu {
     
-    .overlayBackground-2Zjm9f {
+    // body
+    .overlayBackground-1KgwVi {
       background: var(--background-tertiary);
-    }
-
-    .scroller-1jBQYo {
-      padding-top: 6px ;
     }
 
     // Quick Dm
@@ -222,16 +218,13 @@
   // <- Popout no custom colors
 
   // -> Popout with custom colors
-  &.userPopoutThemed-wGuRN3 {
+  &.userProfileOuterThemed-3EfHmv {
     padding: 0 ;
     background: linear-gradient(transparent 120px,var(--profile-gradient-primary-color) 0,var(--profile-gradient-secondary-color));
 
-    .userPopoutInner-1v4xcM {
+    .userProfileInner-3F03PX {
       background: var(--profile-gradient-overlay-color);
     }
-  }
-
-  .userPopoutInnerWithTheme-2lKyJh {
 
     // Quick Dm
     .messageInputContainer-2rGDH8 {

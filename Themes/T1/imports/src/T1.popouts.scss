@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.343
+// * T1.popouts v0.1.344
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -682,51 +682,35 @@
   }
 }
 
-// User status shorthand popout (old)
-#status-picker {
-  background: var(--background-tertiary) ;
-  
-  // Separator line
-  .separator-1So4YB { display: none }
-  
-  .item-1OdjEX {
-    &#status-picker-online.focused-3qFvc8 { background: var(--status-online) }
-      
-    &#status-picker-idle.focused-3qFvc8 { background: var(--status-idle) }
 
-    &#status-picker-dnd.focused-3qFvc8 { background: var(--status-DnD) }
+// Account profile popout
+.accountProfilePopoutWrapper-3GskID {
+  left: 0 ;
 
-    &#status-picker-invisible.focused-3qFvc8 { background: var(--status-invisible) }
+  .menu-1QACrS {
     
-    &#status-picker-custom-status.focused-3qFvc8 { background: var(--background-modifier-selected) }
-  }
-}
-
-
-// Profile context self (new)
-.menu-1QACrS {
-
-  // Header info section
-  .profileGroup-1yKk23 {
-
-    // About me
-    .bodyInnerWrapper-2bQs1k {
-      background: none ;
+    // Header info section
+    .profileGroup-1yKk23 {
+      
+      // About me
+      .bodyInnerWrapper-2bQs1k {
+        background: none ;
+      }
     }
-  }
-
-  .submenu-1apzyU {
-
-    .separator-1So4YB { display: none }
-  
-    .item-1OdjEX {
-      &#account-status-picker--online.focused-3qFvc8 { background: var(--status-online) }
+    
+    .submenu-1apzyU {
+      
+      .separator-1So4YB { display: none }
+      
+      .item-1OdjEX {
+        &#account-status-picker--online.focused-3qFvc8 { background: var(--status-online) }
         
-      &#account-status-picker--idle.focused-3qFvc8 { background: var(--status-idle) }
+        &#account-status-picker--idle.focused-3qFvc8 { background: var(--status-idle) }
 
-      &#account-status-picker--dnd.focused-3qFvc8 { background: var(--status-DnD) }
-
-      &#account-status-picker--invisible.focused-3qFvc8 { background: var(--status-invisible) }
+        &#account-status-picker--dnd.focused-3qFvc8 { background: var(--status-DnD) }
+        
+        &#account-status-picker--invisible.focused-3qFvc8 { background: var(--status-invisible) }
+      }
     }
   }
 }
