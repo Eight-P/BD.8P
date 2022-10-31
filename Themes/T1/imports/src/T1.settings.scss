@@ -1,7 +1,7 @@
-// * T1.settings v0.1.12
+// * T1.settings v0.1.2
 // Client / Guilds / Channels
 
-// - Theme version info
+// -> Theme version info
 .layer-86YKbF:not(.baseLayer-W6S8cY) .socialLinks-3ywLUf + .info-3pQQBb:before {
   content: "T1 - Theme: \a v#{$T1_version} by Eight_P" !important;
   display: block !important;
@@ -12,9 +12,11 @@
   margin-bottom: 16px !important;
   text-transform: none !important;
 }
+// <- Theme version info
 
 
-// Settings menus in general
+// -> General Settings
+General Settings
 .layer-86YKbF:not(.baseLayer-W6S8cY) {
   
   // Sidebar
@@ -75,9 +77,10 @@
     }
   }
 }
+// <- General Settings
 
 
-// - Server settings
+// -> Server settings
 // Roles
 .layer-86YKbF:not(.baseLayer-W6S8cY) {
   
@@ -167,3 +170,70 @@
     }
   }
 }
+// <- Server settings
+
+// -> App Directory
+.layerContainer-2v_Sit .directoryModal-YJsOMv {
+  background: var(--Main_Background) ;
+  background-size: cover !important ;
+  background-attachment: fixed !important ;
+  background-position: center !important ;
+  filter: var(--BGM_Blur) var(--BGM_Brightness) ;
+
+  // -> Home main items
+  .card-2xymMp, .container-SidGiM {
+    background: var(--background-modifier-selected) ;
+  }
+
+  // clickable
+  .category-2OvQ93,  .container-2NdZr9 {
+    background: var(--background-modifier-accent) ;
+
+    &:hover {
+      background: var(--background-modifier-selected) ;
+    }
+  }
+  // <- Home main categories
+
+  // -> Search
+  .search-2RHhW6 {
+    background: var(--background-modifier-selected) !important;
+    box-shadow: none ;
+    border: none ;
+    border-bottom: 1px solid transparent ;
+    
+    &:focus, &:focus-within {
+      background: var(--background-modifier-hover) !important ;
+      border-bottom-color: var(--header-secondary) ;
+      border-radius: 0 ;
+    }
+  }
+  // <- Search
+
+  // -> App view
+  // Commands
+  .commandList-35zQ3p {
+    background: none ;
+
+    .commandName-SDgdgz {
+      background: var(--background-modifier-selected) ;
+      border: none ;
+    }
+  }
+
+  // App category
+  .category-3LanTP {
+    @include Btn("background");
+  }
+
+  // App support server
+  .card-sX105p {
+    background: var(--background-modifier-accent) ;
+
+    &:hover {
+      background: var(--background-modifier-selected) ;
+    }
+  }
+  // <- App view
+}
+// <- App Directory

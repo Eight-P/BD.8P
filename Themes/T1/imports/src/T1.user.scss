@@ -1,8 +1,8 @@
-// * T1.user v0.2.31
+// * T1.user v0.2.32
 // User popout / (Modal)
 
 
-// -> User Popout
+// -> User Popout / User Acount Popout
 .layerContainer-2v_Sit .userPopoutOuter-3AVBmJ {
   border-radius: 12px ;
 
@@ -16,6 +16,11 @@
   }
 
   .betaTag-2bWvGF { display: none }
+
+  // Nitro upsell (dismissible)
+  .wrapper-400BN2 {
+    width: 100% ;
+  }
 
   // -> Banner
   // main wrapper
@@ -185,8 +190,12 @@
     }
 
     // remove role btn
-    .roleRemoveButton-17oXnT {
+    .roleRemoveButton-17oXnT > :nth-last-child(2) {
       cursor: pointer ;
+    }
+
+    .roleRemoveIcon-387wKV {
+      pointer-events: none ;
     }
     // <- Roles
 
@@ -203,7 +212,8 @@
   // <- Main user info
 
   // -> Popout no custom colors
-  .userProfileInnerUnthemed-1XxIZu {
+  .userProfileInnerUnthemed-1XxIZu, // old ?
+  .userProfileInnerThemedNonPremium-1gT-zY {
     
     // body
     .overlayBackground-1KgwVi {
@@ -238,6 +248,34 @@
 .loadingPopout-1feYe_ { display: none }
 
 // <- User Popout
+
+
+// -> Account Popout
+.accountProfilePopoutWrapper-3GskID {
+  left: 0 ;
+
+  .menu-1QACrS { 
+    max-width: unset ;
+    
+    .submenu-1apzyU {
+      
+      .separator-1So4YB { display: none }
+      
+      .item-1OdjEX {
+        border-radius: 4px ;
+
+        &#account-status-picker--online.focused-3qFvc8 { background: var(--status-online) }
+        
+        &#account-status-picker--idle.focused-3qFvc8 { background: var(--status-idle) }
+
+        &#account-status-picker--dnd.focused-3qFvc8 { background: var(--status-DnD) }
+        
+        &#account-status-picker--invisible.focused-3qFvc8 { background: var(--status-invisible) }
+      }
+    }
+  }
+}
+// <- Account Popout
 
 
 // -> User Modal

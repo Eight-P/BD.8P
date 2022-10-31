@@ -1,6 +1,7 @@
-// * T1.mixins v0.1.23
+// * T1.mixins v0.1.3
 // Notifications / Scrollbar / Button / Default Variables
 
+// -> Mixins
 // -- Theme notifications
 // Important notification
 @mixin note_critical ($text, $display:inline) {
@@ -81,26 +82,6 @@
   }
 
   &:hover::-webkit-scrollbar-thumb { background-color: var(--interactive-hover) }
-}
-
-
-// Buttons (beta aka absolute mess)
-// normal Button Design | @include button_normal();
-@mixin button_normal () {
-  background-color: var(--background-modifier-selected) !important ;
-  color: var(--channels-default) !important ;
-  border: none !important ;
-  font-weight: 600 ;
-  
-  // Text inside
-  * { font-weight: inherit }
-
-  &:hover {
-    background-color: var(--header-secondary) !important ;
-    color: black !important ;
-
-//    @include shadow_effect("box_2");
-  }
 }
 
 
@@ -262,8 +243,9 @@
   
 //  --font-code: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace !important;
 }
+// <- Mixins
 
-
+// -> Variables
 // - theme colors (dark)
 .theme-dark {
   --header-primary: #fff;
@@ -379,3 +361,4 @@
   --status-DnD: #ed4245 ; /* #f04747 */
   --status-invisible: #747f8d ;
 }
+// <- Variables

@@ -1,4 +1,4 @@
-// * T1.chat v0.1.38
+// * T1.chat v0.1.39
 // Text chat, Voice chat
 
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
@@ -729,7 +729,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
     // Create new post
     .submitButton-3B-dZd {
-      @include button_normal();
+      @include Btn(var(--background-modifier-accent), white);
     }
   }
 
@@ -884,9 +884,9 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Create thread btn
-    .submitButton-1TPmAa {
-      @include button_normal();
-    }
+    // .submitButton-1TPmAa {
+      // gone ?
+    // }
   }
   
   // Chat in split view with overlapping (Threads + Voice text)

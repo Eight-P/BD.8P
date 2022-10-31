@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.344
+// * T1.popouts v0.1.35
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -678,39 +678,6 @@
     
     .colorStandard-21JIj7.size12-oc4dx4 {
       text-align: center ;
-    }
-  }
-}
-
-
-// Account profile popout
-.accountProfilePopoutWrapper-3GskID {
-  left: 0 ;
-
-  .menu-1QACrS {
-    
-    // Header info section
-    .profileGroup-1yKk23 {
-      
-      // About me
-      .bodyInnerWrapper-2bQs1k {
-        background: none ;
-      }
-    }
-    
-    .submenu-1apzyU {
-      
-      .separator-1So4YB { display: none }
-      
-      .item-1OdjEX {
-        &#account-status-picker--online.focused-3qFvc8 { background: var(--status-online) }
-        
-        &#account-status-picker--idle.focused-3qFvc8 { background: var(--status-idle) }
-
-        &#account-status-picker--dnd.focused-3qFvc8 { background: var(--status-DnD) }
-        
-        &#account-status-picker--invisible.focused-3qFvc8 { background: var(--status-invisible) }
-      }
     }
   }
 }
