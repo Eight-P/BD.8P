@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.31
+// * T1.server-view v0.1.32
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -498,3 +498,38 @@
     }
   }
 }
+
+// -> Server welcome screen thing
+.content-1SgpWY .main-243VC2 {
+  // Background image
+  .artwork-3uFrhF { display: none }
+
+  // -> Intro
+  .coverContainer-1sBM6d {
+    background: none ;
+  }
+
+  .centerContent-2Awr7N {
+    background: var(--background-tertiary);
+
+    .button-f2h6uQ {
+      @include Btn("background");
+    }
+  }
+  // <- Intro
+
+  // -> Main content
+  .promptContent-1KG8jv {
+
+    .optionButton-1W9f7G {
+      border: none ;
+      background: var(--background-modifier-accent);
+
+      &:hover {
+        background: var(--background-modifier-selected) ;
+      }
+    }
+  }
+  // <- Main content
+}
+// <- Server welcome screen thing

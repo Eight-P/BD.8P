@@ -1,8 +1,8 @@
-// * T1.mixins v0.1.3
+// * T1.mixins v0.1.31
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
-// -- Theme notifications
+
 // Important notification
 @mixin note_critical ($text, $display:inline) {
   &::before {
@@ -207,10 +207,9 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 }
+// <- Mixins
 
-
-
-// -- Default Variables 
+// -> Variables
 // - User settings
 :root {
   
@@ -240,13 +239,9 @@
   
   --font-primary: var(--Font) !important;
   --font-display: var(--Font) !important;
-  
-//  --font-code: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace !important;
 }
-// <- Mixins
 
-// -> Variables
-// - theme colors (dark)
+// Theme colors (dark)
 .theme-dark {
   --header-primary: #fff;
   --header-secondary: #b9bbbe;
@@ -326,7 +321,7 @@
   --deprecated-text-input-prefix: #dcddde;
 }
 
-// - theme colors (dark/light)
+// Theme colors (dark/light)
 .theme-dark, .theme-light {
   
   // Defaults

@@ -1,4 +1,4 @@
-// * T1.settings v0.1.2
+// * T1.settings v0.1.21
 // Client / Guilds / Channels
 
 // -> Theme version info
@@ -174,11 +174,20 @@ General Settings
 
 // -> App Directory
 .layerContainer-2v_Sit .directoryModal-YJsOMv {
-  background: var(--Main_Background) ;
-  background-size: cover !important ;
-  background-attachment: fixed !important ;
-  background-position: center !important ;
-  filter: var(--BGM_Blur) var(--BGM_Brightness) ;
+  &::before {
+    content: "";
+    display: block ;
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    height: 100% ;
+    width: 100% ;
+    background: var(--Main_Background) ;
+    background-size: cover !important ;
+    background-attachment: fixed !important ;
+    background-position: center !important ;
+    filter: var(--BGM_Blur) var(--BGM_Brightness) ;
+  }
 
   // -> Home main items
   .card-2xymMp, .container-SidGiM {

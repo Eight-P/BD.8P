@@ -1,4 +1,4 @@
-// * T1.user v0.2.32
+// * T1.user v0.2.33
 // User popout / (Modal)
 
 
@@ -181,7 +181,11 @@
     // <- Custom status
 
     // -> Body
-    .scroller-1jBQYo::-webkit-scrollbar { display: none }
+    .scroller-1jBQYo {
+      padding: 0 !important;
+
+      &::-webkit-scrollbar { display: none }
+    }
 
     // -> Roles
     // Role item
@@ -198,6 +202,13 @@
       pointer-events: none ;
     }
     // <- Roles
+
+
+    // -> Note
+    .note-6O4w9y textarea:focus {
+      background: none ;
+    }
+    // <- Note
 
     // -> Quick Dm
     .messageInputContainer-2rGDH8 {
@@ -256,6 +267,7 @@
 
   .menu-1QACrS { 
     max-width: unset ;
+    background: none ;
     
     .submenu-1apzyU {
       
@@ -279,114 +291,114 @@
 
 
 // -> User Modal
-.root-8LYsGj.root-g14mjS {
+// .root-8LYsGj.root-g14mjS {
   
-  // -> Header
-  .topSection-13QKHs {
-    background: var(--background-tertiary);
-  }
+//   // -> Header
+//   .topSection-13QKHs {
+//     background: var(--background-tertiary);
+//   }
 
-  // -> Banner
-  .bannerSVGWrapper-qc0szY {
+//   // -> Banner
+//   .bannerSVGWrapper-qc0szY {
 
-    foreignObject {
-      mask: none ;
-    }
+//     foreignObject {
+//       mask: none ;
+//     }
 
-    .premiumIconWrapper-yyGDql { display: none }
-  }
-  // <- Banner
+//     .premiumIconWrapper-yyGDql { display: none }
+//   }
+//   // <- Banner
 
-  // -> Avatar
-  .avatar-3QF_VA {
-    top: -75px ;
-    left: 14px ;
-    border-radius: 7.5% ;
-    border: 7px solid var(--background-tertiary);
-    // border: 6px solid red;
-    background: var(--background-tertiary);
+//   // -> Avatar
+//   .avatar-3QF_VA {
+//     top: -75px ;
+//     left: 14px ;
+//     border-radius: 7.5% ;
+//     border: 7px solid var(--background-tertiary);
+//     // border: 6px solid red;
+//     background: var(--background-tertiary);
 
-    .svg-2azL_l { overflow: visible }
+//     .svg-2azL_l { overflow: visible }
 
-    foreignObject { 
-      mask: none ;
-      overflow: visible ;
-    }
+//     foreignObject { 
+//       mask: none ;
+//       overflow: visible ;
+//     }
 
-    // Img
-    .avatar-b5OQ1N {
-      border-radius: 7.5% ;
-    }
+//     // Img
+//     .avatar-b5OQ1N {
+//       border-radius: 7.5% ;
+//     }
     
-    // Status icon
-    .pointerEvents-9SZWKj {
-      position: absolute ;
-      x: 0px ;
-      y: 144px ;
-      pointer-events: none ;
+//     // Status icon
+//     .pointerEvents-9SZWKj {
+//       position: absolute ;
+//       x: 0px ;
+//       y: 144px ;
+//       pointer-events: none ;
 
-      &[mask="url(#svg-mask-status-online-mobile)"] {
-        x: 0px ;
-        y: 144px ;
-        height: 24px ;
-        width: 16px ;
-      }
-    }
-  }
-  // <- Avatar
+//       &[mask="url(#svg-mask-status-online-mobile)"] {
+//         x: 0px ;
+//         y: 144px ;
+//         height: 24px ;
+//         width: 16px ;
+//       }
+//     }
+//   }
+//   // <- Avatar
 
-  // Badges, User action btn, .. container
-  .headerTop-1PNKck {
-    left: 170px ;
-  }
+//   // Badges, User action btn, .. container
+//   .headerTop-1PNKck {
+//     left: 170px ;
+//   }
   
-  // Username
-  .nameTag-2Nlmsy {
-    margin-left: 55px ;
-  }
+//   // Username
+//   .nameTag-2Nlmsy {
+//     margin-left: 55px ;
+//   }
 
-  // -> Navbar
-  .tabBarContainer-sCZC4w {
-    border-color: rgba(0, 0, 0, 0.4);
+//   // -> Navbar
+//   .tabBarContainer-sCZC4w {
+//     border-color: rgba(0, 0, 0, 0.4);
 
-    .tabBarItem-30Te4- {
-      font-size: 14px ;
-    }
-  }
-  // <- Tabbar
-  // <- Header
+//     .tabBarItem-30Te4- {
+//       font-size: 14px ;
+//     }
+//   }
+//   // <- Tabbar
+//   // <- Header
 
-  // -> Body
-  .body-1Ukv50 {
+//   // -> Body
+//   .body-1Ukv50 {
 
-    &.noTabBar-2Q-iE_ {
-      border-color: rgba(0, 0, 0, 0.4);
-    }
+//     &.noTabBar-2Q-iE_ {
+//       border-color: rgba(0, 0, 0, 0.4);
+//     }
 
-    .scrollerBase-_bVAAt { @include scrollbar() }
+//     .scrollerBase-_bVAAt { @include scrollbar() }
 
-    // -> Mutual Servers and Friends
-    .listScroller-entkMk {
-      display: grid ;
-      grid-template-columns: 50% 50% ;
-      grid-auto-rows: max-content ;
-      grid-gap: 5px ;
-      padding: 10px 0 ;
+//     // -> Mutual Servers and Friends
+//     .listScroller-entkMk {
+//       display: grid ;
+//       grid-template-columns: 50% 50% ;
+//       grid-auto-rows: max-content ;
+//       grid-gap: 5px ;
+//       padding: 10px 0 ;
       
-      // No items in scroller
-      .empty-2zcusz {
-        position: absolute ;
-        left: 50% ;
-        transform: translateX(-50%);
-      }
+//       // No items in scroller
+//       .empty-2zcusz {
+//         position: absolute ;
+//         left: 50% ;
+//         transform: translateX(-50%);
+//       }
       
-      // Activities
-      .activityProfile-1712BN {
-        grid-column: span 2 ;
-      }
-    }
-    // <- Mutual Servers and Friends
-  }
-  // <- Body
-}
+//       // Activities
+//       .activityProfile-1712BN {
+//         grid-column: span 2 ;
+//       }
+//     }
+//     // <- Mutual Servers and Friends
+//   }
+//   // <- Body
+// }
 // <- User Modal

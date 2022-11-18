@@ -1,8 +1,5 @@
-// * T1.chat v0.1.39
+// * T1.chat v0.1.4
 // Text chat, Voice chat
-
-$BG_Embed: var(--background-modifier-selected); // Code blocks, ..
-$BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
 
 // Header/Chat sperator line
 .content-1jQy2l::before { display: none }
@@ -395,7 +392,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 }
 
 
-// - Messages (cozy only for now)
+// -> Messages (cozy only for now)
+
+$BG_Embed: var(--background-modifier-selected); // Code blocks, ..
+$BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
+
 .chatContent-3KubbW .message-2CShn3.cozy-VmLDNB {
   background: none ;
   padding: 2px 32px 0px 4.125rem !important ;
@@ -433,7 +434,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // File
   .attachment-1PZZB2 {
-    background: none ;
+    background: $BG_Embed ;
     border: none ;
   }
   
@@ -461,6 +462,30 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     background: $BG_Embed ;
     border: none ;
   }
+
+  // Build override
+  .wrapper-3-JZ_Z {
+    background: $BG_Embed ;
+  }
+
+  // Audio file 
+  .wrapperAudio-1Bzv_Z {
+    background: $BG_Embed ;
+    border: none ;
+
+    .audioControls-3fmemK {
+      background: $BG_Embed-alt ;
+    }
+  }
+
+  // Gift code
+  .tile-2mmK5T {
+    background: $BG_Embed ;
+
+    .button-f2h6uQ {
+      @include Btn(var(--background-modifier-accent), white);
+    }
+  }
   
   // File embed
   .embedWrapper-1MtIDg {
@@ -469,6 +494,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     .textContainer-36wgKK, .footer-GXWBBp {
       background: $BG_Embed ;
       border: none ;
+    }
+
+    .footer-GXWBBp {
+      border-top: 1px solid $BG_Embed ;
     }
     
     // File name
@@ -553,7 +582,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   
-  // - Message Buttons 
+  // -> Message Buttons 
   // Main container / Msg highlight hover effect
   .buttonContainer-1502pf {
     position: static ;
@@ -575,6 +604,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       right: 32px ;
     }
   }
+  // <- Message Buttons 
   
   // Btn container
   .buttons-3dF5Kd { 
@@ -719,13 +749,19 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
+// <- Messages (cozy only for now)
 
-
-// Forum channel
+// -> Forum channel
 .container-3wLKDe {
 
-  // Search/Create Post header
+  // -> Search/Create Posts
   .header-1Uy0p6 {
+    background: var(--background-modifier-accent) ;
+
+    &.headerWithMatchingPosts-1lTrVT {
+      background: var(--background-modifier-selected) ;
+      border-radius: 0 ;
+    }
 
     // Create new post
     .submitButton-3B-dZd {
@@ -733,50 +769,80 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 
-  // Item card
-  .row-uezxzk {
+  .matchingPostsRow-2IiEQ1 {
+    background: var(--background-modifier-selected) ;
+  }
+  // <- Search/Create Posts
 
-    // inner container
-    .mainCard-3KBsBI {
-      border: none ;
-      transform: none ;
-      box-shadow: none ;
-      background: var(--background-modifier-hover) ;
+  // Post Guidelines
+  .container-3arpDl {
+    background: var(--background-modifier-hover) ;
+
+    .descriptionContainer-2ylKGk {
+      background: none ;
+    }
+  }
+
+  .tagsContainer-2bBw1x {
+
+    .sortButton-n-cIAH, .tag-19iIl1, .tagsButton-4pwOKH {
+      background: var(--background-modifier-accent) ;
 
       &:hover {
         background: var(--background-modifier-selected) ;
       }
+    }
+  }
 
-      // Badge that says "new" 
-      .newBadge-1LcB6t {
-        background: none !important ;
+  //  Item card
+  .container-2qVG6q {
+    border: none ;
+    transform: none ;
+    box-shadow: none ;
+    background: var(--background-modifier-hover) ;
+
+    &:hover {
+      background: var(--background-modifier-selected) ;
+    }
+
+    // Tags
+    .pill-3pRQlO {
+      background: var(--background-modifier-accent) ;
+
+      &:hover {
+        background: var(--background-modifier-selected) ;
       }
+    }
 
-      // Caard footer (reactions, timestamp, msg count, ..)
-      .footer-3dzxcR {
+    // Badge that says "new" 
+    .newBadge-1LcB6t {
+      background: none !important ;
+    }
 
-        // Reactions
-        .reaction-102jx9 {
-          border: none ;
-          background-color: var(--background-modifier-accent);
-          border-radius:4px ;
+    // Caard footer (reactions, timestamp, msg count, ..)
+    .footer-3dzxcR {
 
+      // Reactions
+      .reaction-102jx9 {
+        border: none ;
+        background-color: var(--background-modifier-accent);
+        border-radius:4px ;
+
+        &:hover { 
+          background-color: var(--background-accent) ;
+        }
+
+        // Active reaction 
+        &.reactionMe-2zhiyZ{
+          background-color: var(--Blurple-light) ;
+      
           &:hover { 
-            background-color: var(--background-accent) ;
+            background-color: var(--Blurple-light-hover) ;
           }
-
-          // Active reaction 
-          &.reactionMe-2zhiyZ{
-            background-color: var(--Blurple-light) ;
-        
-            &:hover { 
-              background-color: var(--Blurple-light-hover) ;
-            }
-        
-            // number 
-            .reactionCount-SWXh9W { 
-              color: var(--Blurple) ;
-            }
+      
+          // number 
+          .reactionCount-SWXh9W { 
+            color: var(--Blurple) ;
           }
         }
       }
@@ -833,7 +899,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
-
+// <- Forum channel
 
 // - Threads / Voice chat / Forum chat (spilt view / overlay)
 .chatLayerWrapper-2mgEK- {
@@ -847,13 +913,48 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 .container-3XgAHv {
   background: none ;
   border-radius: 0 ;
+
+  // Forum icon
+  .iconWrapper-3FqQ75 {
+    display: none ;
+  }
+
+  // Forum tags
+  .tags-2Siay7 {
+    .pill-3pRQlO {
+      background: var(--background-modifier-accent);
+    }
+  }
+
+  // follow btn, "copy link btn
+  .container-3YcgdM {
+    border: none ;
+    box-shadow: none ;
+
+    // not floating
+    &:not(.header-1RJoTb) {
+      .buttonInner-3aRbcx {
+        background: var(--background-modifier-hover);
+  
+        &:hover {
+          background: var(--background-modifier-selected);
+        }
+      }
+    }
+  }
+
+  // weid engagement thing
+  .box-2iMsQm {
+    display: none ;
+  }
   
   // Header content seperator line
   .chat-1-OBC7:before, .chat-1rZYgu:before { display: none }
   
-  // Threads icon
-  .iconWrapper-3plkqh { display: none }
-  
+  .threadCreatorName-1NFrTx:hover {
+    text-decoration: none ;
+  }
+
   // Chat 
   .chat-1-OBC7 {
     
@@ -882,11 +983,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       background: none ;
       border: none ;
     }
-    
-    // Create thread btn
-    // .submitButton-1TPmAa {
-      // gone ?
-    // }
   }
   
   // Chat in split view with overlapping (Threads + Voice text)
