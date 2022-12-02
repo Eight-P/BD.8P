@@ -1,4 +1,4 @@
-// * T1.mixins v0.1.31
+// * T1.mixins v0.1.32
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -237,8 +237,9 @@
   --BGM_Blur: blur(calc(var(--Main_Background_blur, 0) / 100 * 1px));
   --BGM_Brightness: brightness(calc((var(--Main_Brightness, 80) / 100)));
   
-  --font-primary: var(--Font) !important;
-  --font-display: var(--Font) !important;
+  // temporarily disabled
+  // --font-primary: var(--Font) !important;
+  // --font-display: var(--Font) !important;
 }
 
 // Theme colors (dark)
