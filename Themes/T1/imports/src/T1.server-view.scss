@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.33
+// * T1.server-view v0.1.331
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -113,7 +113,7 @@
     @include Mentions_icon(".numberBadge-37OJ3S");
     
     // New forum posts badge
-    .newPostCount-3SXe5K {
+    .newPostCount-3SXe5K, .activePostCount-3b4wM_ {
       border: none ;
     }
 
