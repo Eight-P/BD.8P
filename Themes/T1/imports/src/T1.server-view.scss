@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.32
+// * T1.server-view v0.1.33
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -108,14 +108,15 @@
     // Channel options and infos
     // Settings and invite buttons
     .iconItem-1EjiK0 { display: none }
+
+    // Mentions badge
+    @include Mentions_icon(".numberBadge-37OJ3S");
     
-    // Mentions indicator
-    .numberBadge-37OJ3S {
-      background-color: transparent !important ;
-      border-bottom: 2px solid var(--red) ;
-      border-radius: 0 ;
-      color: var(--text-normal) ;
+    // New forum posts badge
+    .newPostCount-3SXe5K {
+      border: none ;
     }
+
     
     // Connection limit (voice)
     .wrapper-2fEmwW {
@@ -498,6 +499,40 @@
     }
   }
 }
+
+// -> Channel & Roles
+.container-2IKOsH {
+
+  // infos & questions
+  .prompt-1sE27N {
+    background: none ;
+
+    .optionButton-1W9f7G {
+      background: var(--background-modifier-hover) ;
+      border: none ;
+
+      &:hover {
+        background: var(--background-modifier-selected) ;
+      }
+    }
+  }
+
+  // Channel list 
+  .channelRow-4X_3fi {
+    background: var(--background-modifier-hover) ;
+
+    &:not(.disabled-3cfocy):hover {
+      background: var(--background-modifier-selected) ;
+    }
+
+    .viewChannelButton-59XD70 {
+      // display: block ;
+
+      @include Btn();
+    }
+  }
+}
+// <- Channel & Roles
 
 // -> Server welcome screen thing
 .content-1SgpWY .main-243VC2 {

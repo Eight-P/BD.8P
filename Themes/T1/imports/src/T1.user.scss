@@ -1,9 +1,10 @@
-// * T1.user v0.2.33
+// * T1.user v0.2.4
 // User popout / (Modal)
 
 
-// -> User Popout / User Acount Popout
-.layerContainer-2v_Sit .userPopoutOuter-3AVBmJ {
+// -> User Popout
+// .layerContainer-2v_Sit .userPopoutOuter-3AVBmJ, .profilePanel-2PWEok .userPanelOuter-xc-WYi {
+.userPopoutOuter-3AVBmJ {
   border-radius: 12px ;
 
   @include shadow_effect("box_2");
@@ -105,7 +106,7 @@
   }
   // <- Profile picture/Avatar
 
-  // -> Badges
+  // -> Badges / Panel badges
   .profileBadges-31rDHI {
     position: absolute ;
     top: 14px ;
@@ -289,6 +290,85 @@
 }
 // <- Account Popout
 
+
+// -> Profile panel in chat
+.profilePanel-2PWEok {
+
+  .userPanelOuter-xc-WYi, .userPanelInner-1UAR7g {
+    background: none ;
+  }
+
+  // Background layer when themed
+  .userPanelInner-1UAR7g::before { display: none }
+
+  // Scrollbar
+  .scrollerBase-_bVAAt::-webkit-scrollbar { display: none }
+
+  // -> Banner
+  .bannerSVGWrapper-qc0szY {
+    border-radius: 8px ;
+    transform: scale(.92);
+
+    foreignObject {
+      mask: none ;
+    }
+  }
+  // <- Banner
+
+  // -> Badges
+  .badgelistGroup-2XjSQi {
+    min-height: unset ;
+    margin: 0 16px 0 0 ;
+  }
+
+  .badgeList-1EecKl {
+    background: var(--background-modifier-accent);
+
+    // empty badge list
+    &:not(.containerWithContent-2_V0PM) { display: none }
+  }
+  // <- Badges
+
+  // -> Profile picture/Avatar
+  .avatarPositionPanel-3P4Ted {
+    position: relative ;
+    top: 0 ;
+    left: 0 ;
+    margin-top: 16px ;
+    margin-bottom: 10px ;
+    
+    .wrapper-1VLyxH {
+      margin: 0 auto ;
+    }
+
+    .svg-2azL_l { overflow: visible }
+
+    foreignObject { 
+      mask: none ;
+      overflow: visible ;
+    }
+
+    // Img
+    .avatar-b5OQ1N {
+      border-radius: 8px ;
+
+      &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+    }
+
+    .svg-2azL_l {
+      [style*="opacity"] {  display: none }
+    }
+    rect[rx] { display: none }
+  }
+  // <- Profile picture/Avatar
+
+  // -> Content body
+  .overlayBackground-1KgwVi {
+    background: var(--background-modifier-accent);
+  }
+  // <- Content body
+}
+// <- Profile panel in chat
 
 // -> User Modal
 // .root-8LYsGj.root-g14mjS {

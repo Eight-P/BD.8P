@@ -1,4 +1,4 @@
-// * T1.chat v0.1.4
+// * T1.chat v0.1.41
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -69,6 +69,20 @@
       + .scroller-kQBbkU {
         margin-top: 24px ;
       }
+    }
+  }
+
+  // "This channel is not on your channel list" bar
+  .chatHeaderBar-31g1mU {
+    padding: 4px 8px ;
+    margin: 0 4px ;
+    background: var(--background-secondary);
+    border-radius: 5px ;
+
+    @include shadow_effect("box_2");
+
+    .button-f2h6uQ {
+      @include Btn();
     }
   }
 
@@ -901,7 +915,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 }
 // <- Forum channel
 
-// - Threads / Voice chat / Forum chat (spilt view / overlay)
+// -> Threads / Voice chat / Forum chat (spilt view / overlay)
 .chatLayerWrapper-2mgEK- {
   width: 100% ;
 
@@ -1039,6 +1053,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
+// <- Threads / Voice chat / Forum chat (spilt view / overlay)
 
 // - Voicecall view
 .callContainer-HtHELf {
