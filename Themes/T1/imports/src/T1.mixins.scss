@@ -1,61 +1,61 @@
-// * T1.mixins v0.1.33
+// * T1.mixins v0.1.4
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
 
 // Important notification
-@mixin note_critical ($text, $display:inline) {
-  &::before {
-    content: $text ;
-    display: $display ;
-    position: absolute;
-    height: 22px ;
-    width: calc(100vw - 160px) ;
-    background: var(--activity-card-background) ;
-    color: var(--text-normal) ;
-    padding: 0 100px 0 60px ;
-    text-align: center ;
-    line-height: 22px ;
-    font-size: 12px ;
-    font-weight: 600 ;
-    letter-spacing: .5px ;
-    z-index: 2 ;
-    overflow: hidden ;
-    text-overflow: ellipsis ;
-    white-space: nowrap ;
-  }
-}
+// @mixin note_critical ($text, $display:inline) {
+//   &::before {
+//     content: $text ;
+//     display: $display ;
+//     position: absolute;
+//     height: 22px ;
+//     width: calc(100vw - 160px) ;
+//     background: var(--activity-card-background) ;
+//     color: var(--text-normal) ;
+//     padding: 0 100px 0 60px ;
+//     text-align: center ;
+//     line-height: 22px ;
+//     font-size: 12px ;
+//     font-weight: 600 ;
+//     letter-spacing: .5px ;
+//     z-index: 2 ;
+//     overflow: hidden ;
+//     text-overflow: ellipsis ;
+//     white-space: nowrap ;
+//   }
+// }
 
 
-// Notification (user settings only)
-@mixin note_settings ($text, $display:block) {
+// // Notification (user settings only)
+// @mixin note_settings ($text, $display:block) {
   
-  .layer-86YKbF:not(.baseLayer-W6S8cY) .socialLinks-2DELRE::before {
-    content: $text ;
-    display: $display ;
+//   .layer-86YKbF:not(.baseLayer-W6S8cY) .socialLinks-2DELRE::before {
+//     content: $text ;
+//     display: $display ;
     
-    position: fixed ;
-    top: 0 ;
-    left: 0 ;
-    right: 0 ;
-    padding: 4px 8px;
-    background: var(--background-primary) ;
-    color: var(--text-normal) ;
-    text-align: center ;
-    font-size: 14px ;
-    font-weight: 600 ;
-    line-height: 20px ;
-    letter-spacing: .5px ;
-    z-index: 2000 ;
-    white-space: break-spaces ;
+//     position: fixed ;
+//     top: 0 ;
+//     left: 0 ;
+//     right: 0 ;
+//     padding: 4px 8px;
+//     background: var(--background-primary) ;
+//     color: var(--text-normal) ;
+//     text-align: center ;
+//     font-size: 14px ;
+//     font-weight: 600 ;
+//     line-height: 20px ;
+//     letter-spacing: .5px ;
+//     z-index: 2000 ;
+//     white-space: break-spaces ;
     
-    @include shadow_effect("box_2");
-  }
+//     @include shadow_effect("box_2");
+//   }
   
-  .platform-win .layer-86YKbF .socialLinks-2DELRE::before {
-    top: 22px ;
-  }
-}
+//   .platform-win .layer-86YKbF .socialLinks-2DELRE::before {
+//     top: 22px ;
+//   }
+// }
 
 
 // global Scrollbar | @include scrollbar();
@@ -210,75 +210,75 @@
 // <- Mixins
 
 // -> Fonts
-@font-face {
-  font-family: Whitney;
-  font-style: normal;
-  font-weight: 300;
-  src: url(https://discord.com/assets/46933da896ba96126074286056614542.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: normal;
+//   font-weight: 300;
+//   src: url(https://discord.com/assets/46933da896ba96126074286056614542.woff2) format("woff2")
+// }
 
-@font-face {
-  font-family: Whitney;
-  font-style: italic;
-  font-weight: 300;
-  src: url(https://discord.com/assets/1651ce6325c0da043476ace0bec3971b.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: italic;
+//   font-weight: 300;
+//   src: url(https://discord.com/assets/1651ce6325c0da043476ace0bec3971b.woff2) format("woff2")
+// }
 
-@font-face {
-  font-family: Whitney;
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://discord.com/assets/24bda95d153a319704c33329f3ab84bb.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url(https://discord.com/assets/24bda95d153a319704c33329f3ab84bb.woff2) format("woff2")
+// }
 
-@font-face {
-  font-family: Whitney;
-  font-style: italic;
-  font-weight: 400;
-  src: url(https://discord.com/assets/7f18f1d5ab6ded7cf71bbc1f907ee3d4.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: italic;
+//   font-weight: 400;
+//   src: url(https://discord.com/assets/7f18f1d5ab6ded7cf71bbc1f907ee3d4.woff2) format("woff2")
+// }
 
-@font-face {
-  font-family: Whitney;
-  font-style: normal;
-  font-weight: 500;
-  src: url(https://discord.com/assets/cf4a8a10bbdf9b775fad41e0b9921c84.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: normal;
+//   font-weight: 500;
+//   src: url(https://discord.com/assets/cf4a8a10bbdf9b775fad41e0b9921c84.woff2) format("woff2")
+// }
 
-@font-face {
-  font-family: Whitney;
-  font-style: italic;
-  font-weight: 500;
-  src: url(https://discord.com/assets/9cfa747e897c772d25efd8e4a42a005e.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: italic;
+//   font-weight: 500;
+//   src: url(https://discord.com/assets/9cfa747e897c772d25efd8e4a42a005e.woff2) format("woff2")
+// }
 
-@font-face {
-  font-family: Whitney;
-  font-style: normal;
-  font-weight: 600;
-  src: url(https://discord.com/assets/f9e7047f6447547781512ec4b977b2ab.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: normal;
+//   font-weight: 600;
+//   src: url(https://discord.com/assets/f9e7047f6447547781512ec4b977b2ab.woff2) format("woff2")
+// }
 
-@font-face {
-  font-family: Whitney;
-  font-style: italic;
-  font-weight: 600;
-  src: url(https://discord.com/assets/21070f52a8a6a61edef9785eaf303fb8.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: italic;
+//   font-weight: 600;
+//   src: url(https://discord.com/assets/21070f52a8a6a61edef9785eaf303fb8.woff2) format("woff2")
+// }
 
-@font-face {
-  font-family: Whitney;
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://discord.com/assets/f9c8fcfa7dcc5d6a291a6ebbe3bb847e.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: normal;
+//   font-weight: 700;
+//   src: url(https://discord.com/assets/f9c8fcfa7dcc5d6a291a6ebbe3bb847e.woff2) format("woff2")
+// }
 
-@font-face {
-  font-family: Whitney;
-  font-style: italic;
-  font-weight: 700;
-  src: url(https://discord.com/assets/5e1649183589023fb24667a369af585d.woff2) format("woff2")
-}
+// @font-face {
+//   font-family: Whitney;
+//   font-style: italic;
+//   font-weight: 700;
+//   src: url(https://discord.com/assets/5e1649183589023fb24667a369af585d.woff2) format("woff2")
+// }
 // <- Fonts
 
 // -> Variables
@@ -303,7 +303,7 @@
 
   --always-show-voicecontrols: 0 ;
 
-  --Font: Whitney, "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+  --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
   
   // Intern
   --BGM_Blur: blur(calc(var(--Main_Background_blur, 0) / 100 * 1px));
