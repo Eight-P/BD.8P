@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.241
+// * T1.titlebar v0.1.25
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -191,7 +191,7 @@
       }
     }
   }
-  
+
   // Toolbar 
   .toolbar-3_r2xA {
     
@@ -199,6 +199,14 @@
     .inviteToolbar-2k2nqz {
       display: flex ;
     }
+  }
+}
+
+// - Message requests
+#app-mount .container-2YMsb4 .container-ZMc96U {
+  // Navbar
+  .item-3XjbnG {
+    background: none ;
   }
 }
 

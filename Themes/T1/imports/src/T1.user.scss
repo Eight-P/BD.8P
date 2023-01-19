@@ -1,9 +1,8 @@
-// * T1.user v0.2.4
+// * T1.user v0.2.41
 // User popout / (Modal)
 
 
 // -> User Popout
-// .layerContainer-2v_Sit .userPopoutOuter-3AVBmJ, .profilePanel-2PWEok .userPanelOuter-xc-WYi {
 .userPopoutOuter-3AVBmJ {
   border-radius: 12px ;
 
@@ -64,6 +63,7 @@
   .avatarWrapper-3y0KZ1 {
     top: 20px ;
     left: 20px ;
+    z-index: 1;
     
     .svg-2azL_l { overflow: visible }
 
@@ -258,7 +258,6 @@
 
 // Indicator while UserPopout is loading
 .loadingPopout-1feYe_ { display: none }
-
 // <- User Popout
 
 

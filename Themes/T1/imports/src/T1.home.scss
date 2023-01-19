@@ -1,4 +1,4 @@
-// * T1.home v0.1.261
+// * T1.home v0.1.262
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 
@@ -227,6 +227,14 @@
   .headerBar-1dSpQr { display: none }
   
   .scroller-29cQFV { @include scrollbar() }
+
+  // Header card background
+  svg.root-1F1IKT { display: none }
+
+  // INfo cards
+  .bigPerkCard-1uwmWV, .smallPerkCard-2sX_-- {
+    background: none ;
+  }
 }
 
 
@@ -241,9 +249,6 @@
     
     &::-webkit-scrollbar { display: none }
   }
-  
-  // "Direct Messages" text
-  // .headerText-1qIDDT { color: var(--channels-default) }
   
   // Create Group DM Button (not necessary, there is one at the top right)
   .privateChannelRecipientsInviteButtonIcon-1ObKXK { display: none }
@@ -268,7 +273,8 @@
     @include Mentions_icon(".numberBadge-37OJ3S");
     
     // Second container
-    .interactive-1vLZ_I {
+    // .interactive-1vLZ_I {
+    .interactive-iyXY_x {
       background: none ;
       height: 38px ;
       margin-left: 5px ;
@@ -278,7 +284,7 @@
         margin-left: 5px ;
       }
       
-      &.selected-3veCBZ {
+      &.selected-26oxtA {
         border-left: 3px solid var(--interactive-hover);
       }
       
@@ -288,7 +294,9 @@
       }
     }
 
-    .closeButton-mupH76 { background-size: 22px 22px }
+    .closeButton-mupH76 { 
+      // background-size: 22px 22px; 
+    }
 
     // Nitro Ads
     .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF, .badgeIconPrivateMessages-2hN0QU { display: none }

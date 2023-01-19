@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.351
+// * T1.popouts v0.1.352
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -410,7 +410,7 @@
     
     // Scroller
     .scrollerBase-_bVAAt {
-      margin: 3px 0 0 0 ;
+      margin: 0 ;
       padding: 0 !important ;
 
       &::-webkit-scrollbar { display: none }
@@ -418,7 +418,7 @@
     
     // Channel container
     .channel-3NJZ1V {
-      padding: 0 0 3px 0 ;
+      padding: 3px 0 0 0 ;
     }
     
     // Channel header container
@@ -492,6 +492,22 @@
               color: var(--interactive-hover) ;
             }
           }
+        }
+      }
+    }
+
+    // Forum channel 
+    .container-3uGwcl {
+
+      // Posts
+      .forumPost-3i1mpe {
+        background: none ;
+        margin: 0 ;
+        border-radius: 0 ;
+        padding: 16px 6px 12px 12px ;
+
+        &:not(:first-child) {
+          border-top: 1px solid var(--background-primary) ;
         }
       }
     }
