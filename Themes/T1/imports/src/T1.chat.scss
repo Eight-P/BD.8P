@@ -1,4 +1,4 @@
-// * T1.chat v0.1.41
+// * T1.chat v0.1.5
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -253,16 +253,16 @@
     
     // Button
     .button-f2h6uQ { 
-      align-items: unset ;
-      height: 44px ;
+      // align-items: unset ;
+      // height: 44px ;
     }
     
     // btn content
     .button-3BaQ4X {
-      align-items: unset ;
-      box-sizing: content-box;
-      height: 24px ;
-      padding: 10px 4px 10px 4px ;
+      // align-items: unset ;
+      // box-sizing: content-box;
+      // height: 24px ;
+      // padding: 10px 4px 10px 4px ;
       
       svg {
         opacity: .6 ;
@@ -278,31 +278,51 @@
     > [aria-label][type] {
       width: calc(40px * var(--show-nitro-btn));
       margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
+
+      // Gifs picker
+      + .buttonContainer-2lnNiN {
+        width: calc(40px * var(--show-gif-btn));
+        margin-top: calc(-100px * (1 - var(--show-gif-btn)));
+
+        // Stickers picker
+        + .buttonContainer-2lnNiN {
+          width: calc(36px * var(--show-sticker-btn));
+        margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
+
+          .stickerIcon-3Jx5SE { height: 24px !important }
+
+          // Emoji picker
+          + .buttonContainer-2lnNiN {
+            width: calc(38px * var(--show-emoji-btn));
+        margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
+          }
+        }
+      }
     }
     
     // Buttons
-    .buttonContainer-2lnNiN {
+    // .buttonContainer-2lnNiN {
       
-      // Gifs
-      &:nth-last-child(3) {
-        width: calc(40px * var(--show-gif-btn));
-        margin-top: calc(-100px * (1 - var(--show-gif-btn)));
-      }
+    //   // Gifs
+    //   &:nth-last-child(3) {
+    //     width: calc(40px * var(--show-gif-btn));
+    //     margin-top: calc(-100px * (1 - var(--show-gif-btn)));
+    //   }
       
-      // Sticker
-      &:nth-last-child(2) {
-        width: calc(36px * var(--show-sticker-btn));
-        margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
+    //   // Sticker
+    //   &:nth-last-child(2) {
+    //     width: calc(36px * var(--show-sticker-btn));
+    //     margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
 
-        .stickerIcon-3Jx5SE { height: 24px !important }
-      }
+    //     .stickerIcon-3Jx5SE { height: 24px !important }
+    //   }
       
-      // Emojis
-      &:nth-last-child(1) {
-        width: calc(38px * var(--show-emoji-btn));
-        margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
-      }
-    }
+    //   // Emojis
+    //   &:nth-last-child(1) {
+    //     width: calc(38px * var(--show-emoji-btn));
+    //     margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
+    //   }
+    // }
     
     // Send btn
     .separator-3ng7S5 .buttonChild-33lB5F {
@@ -508,6 +528,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     .textContainer-36wgKK, .footer-GXWBBp {
       background: $BG_Embed ;
       border: none ;
+    }
+
+    .textContainer-36wgKK code {
+      background: none ;
     }
 
     .footer-GXWBBp {
@@ -788,7 +812,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   // <- Search/Create Posts
 
-  // Post Guidelines
+  // -> Post Guidelines
   .container-3arpDl {
     background: var(--background-modifier-hover) ;
 
@@ -796,20 +820,29 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       background: none ;
     }
   }
+  // <- Post Guidelines
 
+  // -> Tags filter
   .tagsContainer-2bBw1x {
 
-    .sortButton-n-cIAH, .tag-19iIl1, .tagsButton-4pwOKH {
+    // Button, Tags
+    .button-f2h6uQ, .tag-19iIl1 {
       background: var(--background-modifier-accent) ;
 
       &:hover {
         background: var(--background-modifier-selected) ;
       }
     }
-  }
 
-  //  Item card
-  .container-2qVG6q {
+    // Button Text
+    .contents-3ca1mk, .sortDropdownText-3smleu {
+      color: var(--text-normal) !important ;
+    }
+  }
+  // <- Tags filter
+
+  // -> Post item card (list, grid)
+  .container-2qVG6q, .container-1PloNW {
     border: none ;
     transform: none ;
     box-shadow: none ;
@@ -822,10 +855,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     // Tags
     .pill-3pRQlO {
       background: var(--background-modifier-accent) ;
-
-      &:hover {
-        background: var(--background-modifier-selected) ;
-      }
     }
 
     // Badge that says "new" 
@@ -863,36 +892,56 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 
-  // Sidebar
-  .sidebarContainer-1kWKqZ {
+  // Grid 
+  .container-1PloNW {
 
-    .sidebarCard-1Gn1ch, .container-2IhveL {
-      background: var(--background-modifier-hover) ;
-      border: none ;
+    // weird gradient
+    .textContentFooter-2JnNv8 {
+      background: none ;
     }
 
-    // Search tags
-    .tags-3s41VI {
+    .tagPill-1kSbgP {
+      background: var(--background-tertiary);
+    }
 
-      // main container
-      .pill-3pRQlO {
-        background: var(--background-modifier-hover) ;
-
-        // Name/text
-        .lineClamp1-1iDPU7 {
-          color: var(--interactive-normal);
-        }
-
-        &:hover {
-          background: var(--background-modifier-accent) ;
-
-          .lineClamp1-1iDPU7 {
-            color: var(--interactive-hover);
-          }
-        }
-      }
+    .contentPreview-3fWiuC {
+      border: none ;
+      margin: 0 ;
     }
   }
+  // <- Post item card
+
+  // -> Sidebar
+  // .sidebarContainer-1kWKqZ {
+
+  //   .sidebarCard-1Gn1ch, .container-2IhveL {
+  //     background: var(--background-modifier-hover) ;
+  //     border: none ;
+  //   }
+
+  //   // Search tags
+  //   .tags-3s41VI {
+
+  //     // main container
+  //     .pill-3pRQlO {
+  //       background: var(--background-modifier-hover) ;
+
+  //       // Name/text
+  //       .lineClamp1-1iDPU7 {
+  //         color: var(--interactive-normal);
+  //       }
+
+  //       &:hover {
+  //         background: var(--background-modifier-accent) ;
+
+  //         .lineClamp1-1iDPU7 {
+  //           color: var(--interactive-hover);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  // <- Sidebar
 }
 // Forum chat
 .chatContent-3KubbW {
