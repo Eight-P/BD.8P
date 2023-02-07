@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.331
+// * T1.server-view v0.1.34
 // Channels, Panels / Members / Server discovery
 
 // -- Servers Text and Voice channels
@@ -172,6 +172,15 @@
         color: var(--interactive-muted);
       }
     }
+  }
+
+  // "new unreads" msgs bar in channel list
+  .container-24rGVp .bar-wDIGjg {
+    background: var(--background-secondary-alt);
+    opacity: 1 ;
+    box-shadow: none ;
+
+    @include shadow_effect("box_2");
   }
   
   // Threads indicator spine thing

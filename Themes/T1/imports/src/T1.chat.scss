@@ -1,4 +1,4 @@
-// * T1.chat v0.1.5
+// * T1.chat v0.1.6
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -1106,37 +1106,50 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // - Voicecall view
 .callContainer-HtHELf {
+  --aswc: var(--always-show-voicecontrols, 0);
+
+  .root-22AK9z {
+    margin: calc(var(--aswc) * 48px) 0 calc(var(--aswc) * 56px) 0 ;
+    height: calc(100% - (var(--aswc) * (48px + 56px)));
+  }
+
+  // player popped out
+  .root-1Emen5 {
+    background: none ;
+  }
   
+  // -> Buttons
   // always show controls/btns 
   .idle-39sGPO {
     .controlSection-1mNixL, .chatButton-10jXXp {
-      opacity: var(--always-show-voicecontrols, 0) !important ;
+      opacity: var(--aswc) !important ;
     }
   }
   
-  // Button main container
+  // Buttons container
   .videoControls-353CsJ { 
+    inset: calc(var(--aswc) * -48px) 0 calc(var(--aswc) * -56px) 0 ;
     padding: 0 16px 0 16px ;
     
-    // Top / Bottom section
+    // Top and bottom section
     .controlSection-1mNixL {
       transform: translateZ(0) ;
       
-      .streamQualityIndicator-1QvbXd {
-        display: none ;
-      }
+      .streamQualityIndicator-n62BFt { display: none }
     }
   }
   
   // Open voice chat btn 
   .chatButton-10jXXp {
     transform: translateZ(0) !important ;
+    // top: calc(var(--aswc) * -36px);
+    top: calc(12px + var(--aswc) * -48px);
     
     .controlIcon-10O-4h {
-      color: var(--interactive-normal) ;
+      color: var(--interactive-normal);
       
       &:hover {
-        color: var(--interactive-hover) ;
+        color: var(--interactive-hover);
       }
     }
   }
@@ -1146,7 +1159,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     
     // Group container
     .flex-2S1XBF {
-      margin: 0 !important ;
+      margin: 0 ;
     }
     
     // Icons
@@ -1154,14 +1167,19 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       color: var(--interactive-normal) ;
     }
     
+    // Icons hover
     .button-f2h6uQ:hover .controlIcon-10O-4h { 
       color: white ;
+    }
+
+    .colorable-3rVGna.red-3T8maV .controlIcon-10O-4h { 
+      color: var(--status-red-500);
     }
     
     // Centerd row btns
     .centerButton-1IShs7 {
-      padding: 8px ;
-      margin: 8px ;
+      padding: 8px 5px ;
+      margin: 8px 5px ;
       background: none ;
       
       &.controlButton-2PMNom { 
@@ -1180,90 +1198,51 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
 
 
-    // small icon for popout menu
+    // btn for context menu
     .contextMenuNub-NuTZ_U { 
       bottom: 5px ;
-    }
-    
-    // left / right Buttons
-    .flex-2S1XBF:first-child, .flex-2S1XBF:last-child {
-      margin-top: 10px ;
     }
   }
   
   // Gradient effect on hover
   .gradientContainer-phMG8d { display: none }
+  // <- Buttons
 
-  // Title card container 
-  .scroller-2MALzE::-webkit-scrollbar {
-    display: none ;
-  }
-  
-  // Grid view container 
-  .listItems-6eZzQ1 .videoWrapper-3rtb_V .video-35SHWt {
-    height: calc(100% - 20px) ;
-  }
-  
-  // Focus view / Sidebar user container 
-  .participantsWrapperAnimated-2h1feR .tile-2Dr6M1 {
-    margin-right: 5px ;
-  }
-  
-  // Focus view / Focused card
-  .videoFrame-3Kvwh- {
-    .tile-2Dr6M1, .videoWrapper-3rtb_V {
-      background: none ;
+  @mixin TileOverlay() {
+    // Non video tile card
+    .overlayContainer-1suEh7:not(.videoWrapper-3rtb_V ~ .overlayContainer-1suEh7) {
+
+      .overlayTitle-2efoIF, .status-15kcmy {
+        opacity: 1 ;
+        background: none ;
+      }
+    }
+
+    // video
+    .videoWrapper-3rtb_V ~ .overlayContainer-1suEh7 {
+      opacity: 0 ;
+
+      &:hover {
+        opacity: 1 ;
+      }
     }
   }
-  
-  // User cards in voice
+
+  // -> Itemcard / Tile
   .tile-2Dr6M1 {
-    
-    // Issue with new activities
+    background: none ;
+
     @include shadow_effect("box_2");
-    
-    .indicators-7iWi8t {
-      left: 0px ;
-      
-      // "live" icon
-      .liveIndicator-2HaEDu { display: none }
-      
-      // stream quality transition container
-      .streamQualityIndicator-1QvbXd > div {
-        transform: none !important ;
-      }
-      
-      // stream quality
-      .liveQualityIndicator-8fb_DX {
-        background: var(--background-primary) !important ;
-        border-radius: 8px ;
-      }
-    }
-    
-    // Stream preview image in user card
-    .streamPreview-3Fo29Y {
-      
-      .cta-3-AFNF {
-        background: var(--background-primary) !important ;
-        margin-bottom: 20px ;
-      }
-    }
-    
-    .streamPreview-3Fo29Y .image-1YnNzZ {
-      padding-bottom: 20px ;
-      box-sizing: border-box ;
-    }
-    
-    // - Normal (no stream) user
-    // Background
+
+    // stream quality / live indicator
+    .indicators-7iWi8t { display: none }
+
+    // Background color
     .background-L8lGH6 {
       background: var(--background-tertiary) !important ;
-      
-      padding-bottom: 25px ;
-      box-sizing: border-box ;
     }
-    
-    // Prfile image container
+
+    // Avatar
     .avatarWrapper-24Rbpj {
       
       foreignObject {
@@ -1275,56 +1254,179 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
         overflow: visible ;
       }
       
-      // Prfile image
+      // Profile image
       .avatar-b5OQ1N {
         border-radius: 7.5% ;
         
         &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
       }
     }
-    
-    // Overlay container
-    .overlay-2RIWoZ {
-      position: absolute ;
-      padding: 0 ;
-      top: 0 ;
-      left: 0 ;
-      right: 0 ;
-      bottom: 0 ;
-      align-items: flex-end ;
-    }
-    
-    // User name container
-    .overlayTitle-2efoIF {
-      width: 100% ;
-      margin-right: 0 ;
-      padding: 2px 6px ;
-      background: var(--background-secondary-alt) ;
-      border-radius: 0 ;
-      
-      // User name
-      .overlayTitleText-3xOA3Q {
-        width: 100% ;
-        text-align: center ;
-      }
-      
-      &.idle-3MGs7O {
-        opacity: 1 ;
+  }
+  // <- Itemcard / Tile
+
+  // "invite people" empty card
+  .tile-2TcwiO {
+    background: none ;
+  }
+
+  // -> Focus view
+  .root-2f-lk1 {
+    padding: 0 8px ;
+    box-sizing: border-box ;
+
+    // Main frame top
+    .videoFrame-11rde6 {
+      @include TileOverlay();
+
+      // hide members btn
+      .participantsButton-1WBdFP {
+        background: var(--background-accent);
+        // background: var(--background-floating);
       }
     }
-    
-    // User status container
-    .statusContainer-2yJ1oM {
-      position: absolute ;
-      top: 5px ;
-      right: 5px ;
-      
-      // User status
-      .status-15kcmy {
-        background: none ;
+
+    // Secondary Tiles
+    .participantsWrapperAnimated-2Wdxe1 {
+      overflow: visible ;
+
+      .overlayContainer-1suEh7 {
+        opacity: 0 ;
+
+        &:hover {
+          opacity: 1 ;
+        }
       }
     }
   }
+  // <- Focus view
+
+  // -> Grid view
+  .videoGridWrapper-2WpXPj {
+
+    .videoGrid-1tZm-F::-webkit-scrollbar { display: none }
+
+    // Cards main container
+    .tile-3GyaDQ {
+      padding: 4px ;
+      box-sizing: border-box ;
+    }
+
+    .tile-2Dr6M1 {
+      @include TileOverlay();
+    }
+  }
+  // <- Grid view
+  
+  // OLD
+  // User cards in voice
+  // .tile-2Dr6M1  {
+    
+  //   // Issue with new activities
+  //   @include shadow_effect("box_2");
+    
+  //   .indicators-7iWi8t {
+  //     left: 0px ;
+      
+  //     // "live" icon
+  //     .liveIndicator-2HaEDu { display: none }
+      
+  //     // stream quality transition container
+  //     .streamQualityIndicator-1QvbXd > div {
+  //       transform: none !important ;
+  //     }
+      
+  //     // stream quality
+  //     .liveQualityIndicator-8fb_DX {
+  //       background: var(--background-primary) !important ;
+  //       border-radius: 8px ;
+  //     }
+  //   }
+    
+  //   // Stream preview image in user card
+  //   .streamPreview-3Fo29Y {
+      
+  //     .cta-3-AFNF {
+  //       background: var(--background-primary) !important ;
+  //       margin-bottom: 20px ;
+  //     }
+  //   }
+    
+  //   .streamPreview-3Fo29Y .image-1YnNzZ {
+  //     padding-bottom: 20px ;
+  //     box-sizing: border-box ;
+  //   }
+    
+  //   // - Normal (no stream) user
+  //   // Background
+  //   .background-L8lGH6 {
+  //     background: var(--background-tertiary) !important ;
+      
+  //     padding-bottom: 25px ;
+  //     box-sizing: border-box ;
+  //   }
+    
+  //   // Prfile image container
+  //   .avatarWrapper-24Rbpj {
+      
+  //     foreignObject {
+  //       mask: none ;
+  //       overflow: visible ;
+  //     }
+      
+  //     svg {
+  //       overflow: visible ;
+  //     }
+      
+  //     // Prfile image
+  //     .avatar-b5OQ1N {
+  //       border-radius: 7.5% ;
+        
+  //       &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+  //     }
+  //   }
+    
+  //   // Overlay container
+  //   .overlay-2RIWoZ {
+  //     position: absolute ;
+  //     padding: 0 ;
+  //     top: 0 ;
+  //     left: 0 ;
+  //     right: 0 ;
+  //     bottom: 0 ;
+  //     align-items: flex-end ;
+  //   }
+    
+  //   // User name container
+  //   .overlayTitle-2efoIF {
+  //     width: 100% ;
+  //     margin-right: 0 ;
+  //     padding: 2px 6px ;
+  //     background: var(--background-secondary-alt) ;
+  //     border-radius: 0 ;
+      
+  //     // User name
+  //     .overlayTitleText-3xOA3Q {
+  //       width: 100% ;
+  //       text-align: center ;
+  //     }
+      
+  //     &.idle-3MGs7O {
+  //       opacity: 1 ;
+  //     }
+  //   }
+    
+  //   // User status container
+  //   .statusContainer-2yJ1oM {
+  //     position: absolute ;
+  //     top: 5px ;
+  //     right: 5px ;
+      
+  //     // User status
+  //     .status-15kcmy {
+  //       background: none ;
+  //     }
+  //   }
+  // }
 }
 
 // Resizer for voice text and threads in side by side mode
