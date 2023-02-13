@@ -1,7 +1,7 @@
-// * T1.server-view v0.1.34
+// * T1.server-view v0.1.4
 // Channels, Panels / Members / Server discovery
 
-// -- Servers Text and Voice channels
+// -> Text/Voice channels
 .container-1NXEtd {
   top: 48px ;
   margin-bottom: 48px;
@@ -208,6 +208,7 @@
     }
   }
 }
+// <- Text/Voice channels
 
 
 // -- Sidebar Panels (Profile, Activity,..)
@@ -239,10 +240,14 @@
     padding: 6px 10px ;
     
     // Image
-    .gameIconWrapper-zXQ03M { height: 32px }
+    .gameIconWrapper-zXQ03M { 
+      height: 32px;
+    }
     
     // Text
-    .title-3XlmeX { line-height: 32px }
+    .title-3XlmeX { 
+      line-height: 32px;
+    }
     
     button { background: none }
   }
@@ -510,13 +515,52 @@
 }
 
 // -> Channel & Roles
+// Header
+.header-3xB4vB {
+  // return to last channel btn
+  .returnButton-1xn3Ii {
+    border: none;
+    background: none;
+
+    // BTn text
+    .defaultColor-1EVLSt {
+      color: var(--interactive-normal);
+    }
+
+    // Icon within text
+    .iconContainer-21RCa3 { display: none }
+
+    // Text after icon
+    .overflow-1wOqNV {
+      margin-left: 2px ;
+    }
+
+    &:hover {
+      background: none var(--background-modifier-selected);
+
+      .defaultColor-1EVLSt{
+        color: var(--interactive-active);
+      }
+    }
+  }
+}
+
+// Main content
 .container-2IKOsH {
+
+  // Navbar
+  .tabBar-1_P75h {
+
+    .tabBarItem-onx_ng {
+      border: none !important;
+    }
+  }
 
   // infos & questions
   .prompt-1sE27N {
     background: none ;
 
-    .optionButton-1W9f7G {
+    .optionButtonWrapper-2lbogO {
       background: var(--background-modifier-hover) ;
       border: none ;
 
@@ -526,20 +570,51 @@
     }
   }
 
-  // Channel list 
+  // -> Browse channels
+  // Searchbar
+  .search-kg4MrS {
+    background: var(--background-modifier-selected);
+    border-radius: 2px ;
+  }
+
+  // create channel btn
+  .createButton-2BBU0x {
+    border-radius: 2px ;
+
+    @include Btn(var(--background-modifier-selected));
+  }
+  
+  // Channel category
+  .categoryRow-2VIZ6m {
+    .categoryText-35ACGA {
+      color: var(--header-secondary) !important;
+    }
+  }
+
+  // channel item
   .channelRow-4X_3fi {
     background: var(--background-modifier-hover) ;
 
+    background: none ;
+
     &:not(.disabled-3cfocy):hover {
-      background: var(--background-modifier-selected) ;
+      // background: var(--background-modifier-selected) ;
+      background: var(--background-modifier-hover) ;
     }
 
     .viewChannelButton-59XD70 {
-      // display: block ;
+      display: block;
 
       @include Btn();
     }
   }
+
+  // Checkboxes
+  .checkbox-1LuCGM {
+    background: none !important;
+    border-color: var(--interactive-normal) !important;
+  }
+  // <- Browse channels
 }
 // <- Channel & Roles
 
