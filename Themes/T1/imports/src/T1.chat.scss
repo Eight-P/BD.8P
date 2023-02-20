@@ -1,4 +1,4 @@
-// * T1.chat v0.1.6
+// * T1.chat v0.1.61
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -1142,7 +1142,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Open voice chat btn 
   .chatButton-10jXXp {
     transform: translateZ(0) !important ;
-    // top: calc(var(--aswc) * -36px);
     top: calc(12px + var(--aswc) * -48px);
     
     .controlIcon-10O-4h {
@@ -1230,7 +1229,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
   // -> Itemcard / Tile
   .tile-2Dr6M1 {
-    background: none ;
 
     @include shadow_effect("box_2");
 
@@ -1239,7 +1237,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
     // Background color
     .background-L8lGH6 {
-      background: var(--background-tertiary) !important ;
+      // background: var(--background-tertiary) !important ;
     }
 
     // Avatar
@@ -1276,7 +1274,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
     // Main frame top
     .videoFrame-11rde6 {
-      @include TileOverlay();
+      // @include TileOverlay();
 
       // hide members btn
       .participantsButton-1WBdFP {
@@ -1290,10 +1288,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       overflow: visible ;
 
       .overlayContainer-1suEh7 {
-        opacity: 0 ;
+        // opacity: 0 ;
 
         &:hover {
-          opacity: 1 ;
+          // opacity: 1 ;
         }
       }
     }
@@ -1312,7 +1310,8 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
 
     .tile-2Dr6M1 {
-      @include TileOverlay();
+
+      // @include TileOverlay();
     }
   }
   // <- Grid view

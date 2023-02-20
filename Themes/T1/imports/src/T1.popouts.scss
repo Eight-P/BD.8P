@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.352
+// * T1.popouts v0.1.353
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -29,6 +29,11 @@
   // selected item cmd options
   .option-Tt7anD {
     background: var(--background-tertiary) ;
+  }
+
+  // Command list sidebar
+  .rail-1BiMhk .list-obNEuP::-webkit-scrollbar {
+    display: none ;
   }
 }
 
