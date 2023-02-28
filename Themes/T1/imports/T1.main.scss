@@ -1,4 +1,4 @@
-$T1_version: "0.6.15" ; // Theme file v0.8
+$T1_version: "0.6.16" ; // Theme file v0.8
 
 @import 'src/T1.mixins.scss';       // Global Mixins and Variables
 @import 'src/T1.background.scss';   // Background image and Transparency
@@ -31,7 +31,7 @@ $T1_version: "0.6.15" ; // Theme file v0.8
 
 
 // Default scrollbar design (needs some rework)
-.app-3xd6d0 .scrollerBase-_bVAAt { @include scrollbar() }
+.app-3xd6d0 .scrollerBase-1Pkza4 { @include scrollbar() }
 
 
 // Tab focus thing

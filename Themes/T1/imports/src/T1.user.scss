@@ -1,4 +1,4 @@
-// * T1.user v0.2.41
+// * T1.user v0.2.42
 // User popout / (Modal)
 
 
@@ -265,24 +265,24 @@
 .accountProfilePopoutWrapper-3GskID {
   left: 0 ;
 
-  .menu-1QACrS { 
+  .menu-KSaHL1 { 
     max-width: unset ;
     background: none ;
     
-    .submenu-1apzyU {
+    .submenu-3ycVEH {
       
-      .separator-1So4YB { display: none }
+      .separator-12G2Op { display: none }
       
-      .item-1OdjEX {
+      .item-5ApiZt {
         border-radius: 4px ;
 
-        &#account-status-picker--online.focused-3qFvc8 { background: var(--status-online) }
+        &#account-status-picker--online.focused-3LIdPu { background: var(--status-online) }
         
-        &#account-status-picker--idle.focused-3qFvc8 { background: var(--status-idle) }
+        &#account-status-picker--idle.focused-3LIdPu { background: var(--status-idle) }
 
-        &#account-status-picker--dnd.focused-3qFvc8 { background: var(--status-DnD) }
+        &#account-status-picker--dnd.focused-3LIdPu { background: var(--status-DnD) }
         
-        &#account-status-picker--invisible.focused-3qFvc8 { background: var(--status-invisible) }
+        &#account-status-picker--invisible.focused-3LIdPu { background: var(--status-invisible) }
       }
     }
   }
@@ -301,7 +301,7 @@
   .userPanelInner-1UAR7g::before { display: none }
 
   // Scrollbar
-  .scrollerBase-_bVAAt::-webkit-scrollbar { display: none }
+  .scrollerBase-1Pkza4::-webkit-scrollbar { display: none }
 
   // -> Banner
   .bannerSVGWrapper-qc0szY {
