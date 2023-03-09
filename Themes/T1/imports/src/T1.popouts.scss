@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.354
+// * T1.popouts v0.1.36
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -115,62 +115,62 @@
 
 
 // Context menus
-.layer-2aCOJ3 .menu-1QACrS {
-  background: var(--background-tertiary) ;
+.layer-2BGhQ8 .menu-2TXYjN {
+  // background: var(--background-tertiary) ;
   
-  .scroller-1bVxF5 {
+  .scroller-nxCRu_ {
     padding: 6px !important;
     
     &::-webkit-scrollbar { display: none }
   }
   
   // Options
-  .item-1OdjEX {
+  .item-5ApiZt {
     background: none ;
     
     // Critical option (like: bann, kick, ..)
-    &.colorDanger-3n-KnP.focused-3qFvc8 { background: var(--red) }
+    &.colorDanger-3umuSx.focused-3LIdPu { background:rgba(240, 71, 71, 0.5) }
     
     // Options with checkbox
     &[role="menuitemcheckbox"] {
       
       // Checkbox icon
-      .checkbox-hADx5o { color: transparent }
+      .checkbox-397WsK { color: transparent }
 
       // Checkbox checked ("x" icon for "uncheck")
-      &.focused-3qFvc8[aria-checked="true"] path {
+      &.focused-3LIdPu[aria-checked="true"] path {
         color: var(--red) ;
         d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
       }
     }
     
     // Sliderbar (like: User Volume, ..)
-    .slider-1NC-Gf {
+    .slider-cXPmnn {
       top: 0 ;
 
-      > .bar-1Bhnl9 {
+      .bar-2H7Q9u {
         background: var(--background-primary) ;
         top: 7px ;
         
-        > .barFill-2Bh7CX { background: var(--interactive-normal) }
+        .barFill-3RgCsY { background: var(--interactive-normal) }
       }
       
-      > .track-1BI4CA > .grabber-2GQyvM { top: 0 }
+      .grabber-3R-Rx9 { top: 0 }
       
-      &:hover .barFill-2Bh7CX { background: var(--header-secondary) }
+      &:hover .barFill-3RgCsY { background: var(--header-secondary) }
     }
   }
   
   // Secondary popout
-  .submenu-1apzyU {
-    background: var(--background-tertiary) ;
+  // .submenu-1apzyU {
+  //   background: var(--background-tertiary) ;
     
-    .scroller-1bVxF5 {
-      padding: 6px ;
+  //   .scroller-1bVxF5 {
+  //     padding: 6px ;
 
-      &::-webkit-scrollbar { display: none }
-    }
-  }
+  //     &::-webkit-scrollbar { display: none }
+  //   }
+  // }
 }
 
 // Searchbar options popout
@@ -355,6 +355,14 @@
     
     .tab-TRrPC8, .button-1_oXub {
       background: none !important ;
+    }
+  }
+
+  // For You
+  &.container-_dQaft {
+
+    .container-1A0qQO {
+      background: none ;
     }
   }
   

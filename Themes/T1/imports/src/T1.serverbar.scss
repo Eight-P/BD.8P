@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.36
+// * T1.serverbar v0.1.37
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -100,7 +100,7 @@
     .pill-L_aLMQ { display: none }
     
     // Notification badge
-    .lowerBadge-3WTshO {
+    .lowerBadge-3j0ZAg {
       left: 4px ;
       bottom: 4px ;
       @include shadow_effect("drop_2") ;
@@ -243,59 +243,6 @@
   }
 }
 
-// - BD public server list
-// #bd-pub-li {
-//   position: absolute ;
-//   top: -10px ;
-//   right: 3px ;
-//   height: 20px ;
-//   width: 20px ;
-//   overflow: visible ;
-//   z-index: 1 ;
-//   transform: rotate(90deg);
-  
-//   #bd-pub-button {
-//     height: 20px ;
-//     width: 20px ;
-//     color: transparent ;
-//     background: none ;
-    
-//     // "P" icon
-//     &:before {
-//       content: "P" ;
-//       position: absolute ;
-//       top: 0 ;
-//       left: 0 ;
-//       height: 20px ;
-//       width: 20px ;
-//       line-height: 20px ;
-//       color: var(--BD-Blue) ;
-//       font-size: 18px ;
-//       font-weight: 700 ;
-      
-//       @include shadow_effect("text_2");
-//     }
-    
-//     // Tooltip on hover
-//     &:hover::after {
-//       content: "Public Servers" ;
-//       position: absolute ;
-//       top: 0 ;
-//       left: 25px ;
-//       padding: 8px 12px ;
-//       font-size: 16px ;
-//       font-weight: 600 ;
-//       line-height: 10px ;
-//       background: var(--background-tertiary) ;
-//       color: var(--text-normal) ;
-//       border-radius: 5px ;
-//       white-space: nowrap ;
-      
-//       @include shadow_effect("box_2");
-//     }
-//   }
-// }
-
 // Static options <--
 
 // - Servers / DMs -->
@@ -330,7 +277,7 @@
   }
   
   // Unreads badge
-  .lowerBadge-3WTshO {
+  .lowerBadge-3j0ZAg {
     left: 4px ;
     bottom: 4px ;
 
@@ -455,7 +402,7 @@
     }
     
     // Unreads badge
-    .lowerBadge-3WTshO {
+    .lowerBadge-3j0ZAg {
       left: 4px ;
       bottom: 4px ;
 

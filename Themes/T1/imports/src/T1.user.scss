@@ -1,4 +1,4 @@
-// * T1.user v0.2.42
+// * T1.user v0.2.43
 // User popout / (Modal)
 
 
@@ -65,18 +65,15 @@
     left: 20px ;
     z-index: 1;
     
-    .svg-2azL_l { overflow: visible }
+    .svg-1G_H_8 { overflow: visible }
 
     foreignObject { 
       mask: none ;
       overflow: visible ;
     }
 
-    // Shadow for status icon
-    circle { display: none }
-
     // Img
-    .avatar-b5OQ1N {
+    .avatar-31d8He {
       border-radius: 7.5% ;
 
       &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
@@ -88,7 +85,7 @@
     }
 
     // Status icon
-    .pointerEvents-9SZWKj {
+    .pointerEvents-2KjWnj {
       position: absolute ;
       x: -8px ;
       y: 116px ;
@@ -101,8 +98,8 @@
       }
     }
 
-    // Shadow background thing
-    rect[rx] { display: none }
+    // Shadow for status icon
+    [style="opacity: 0.45;"][fill="black"] { display: none }
   }
   // <- Profile picture/Avatar
 
@@ -133,7 +130,16 @@
     border-radius: 0 ;
 
     // Info sections
-    .section-3FmfOT {
+    .section-3FmfOT:not(.section--1D3ev) {
+      padding: 0 12px 0 12px ;
+
+      > :first-child {
+        padding-top: 12px ;
+      }
+    }
+
+    // Chat/DM section
+    .section--1D3ev {
       padding: 12px 12px 0 12px ;
     }
 
@@ -188,6 +194,9 @@
       &::-webkit-scrollbar { display: none }
     }
 
+    // Add Bot ot server btn
+    .buttonsContainer-2_Qu-e { display: none  }
+
     // -> Roles
     // Role item
     .role-2TIOKu {
@@ -204,6 +213,19 @@
     }
     // <- Roles
 
+    // -> Connections
+    .connectionsContainer-3cWtT- {
+      border: none ;
+
+      // Connection item
+      .connectedAccountContainer-2TWiXT {
+        padding: 6px 0 ;
+      }
+
+      // view all connec. btn
+      .connections-y47q20 { display: none }
+    }
+    // <- Connections
 
     // -> Note
     .note-6O4w9y textarea:focus {

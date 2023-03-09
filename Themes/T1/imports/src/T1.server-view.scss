@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.4
+// * T1.server-view v0.1.41
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
@@ -382,7 +382,7 @@
     }
     
     // Offline member
-    &.offline-22aM7E:not(:hover) img.avatar-b5OQ1N {
+    &.offline-22aM7E:not(:hover) .avatar-31d8He{
       filter: grayscale(100%);
       border-radius: 50% ;
     }
