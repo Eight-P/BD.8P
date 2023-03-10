@@ -1,4 +1,4 @@
-// * T1.chat v0.1.61
+// * T1.chat v0.1.611
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -1432,6 +1432,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 .chatTarget-3H6mpC.notFloating-cIl-vp + .resizeHandle-PBRzPC {
   position: relative ;
   width: 7px ;
+  background: none ;
 
   &::after {
     content: "";

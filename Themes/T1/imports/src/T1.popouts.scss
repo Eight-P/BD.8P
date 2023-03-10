@@ -1,8 +1,8 @@
-// * T1.popouts v0.1.36
+// * T1.popouts v0.1.37
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
-.layerContainer-2v_Sit {
+.layerContainer-2lfOPe {
   overflow: hidden ;
 }
 
@@ -39,7 +39,7 @@
 
 
 // Gif, Sticker, Emoji, BD emotes Picker
-.layerContainer-2v_Sit {
+.layerContainer-2lfOPe{
   
   // Main container
   .contentWrapper-3vHNP2 { 
@@ -47,12 +47,12 @@
   }
 
   // Christmas shit
-  .contentWrapperWithSnowsgivingNotice-tHP4vx {
-    grid-template-rows: 24px auto;
-    padding-top: 16px;
+  // .contentWrapperWithSnowsgivingNotice-tHP4vx {
+  //   grid-template-rows: 24px auto;
+  //   padding-top: 16px;
 
-    .anchor-1MIwyf { display: none }
-  }
+  //   .anchor-1MIwyf { display: none }
+  // }
   
   // Navbar
   .navButtonActive-1EqC5l { 
@@ -101,17 +101,17 @@
 }
 
 // BD Emotes menu popout
-.bd-emote-menu {
+// .bd-emote-menu {
   
-  // Emotes category header
-  .bd-emote-header { 
-    position: relative ;
-    background: none ;
-  }
+//   // Emotes category header
+//   .bd-emote-header { 
+//     position: relative ;
+//     background: none ;
+//   }
   
-  // Emote
-  .bd-emote-item { cursor: pointer }
-}
+//   // Emote
+//   .bd-emote-item { cursor: pointer }
+// }
 
 
 // Context menus
@@ -223,7 +223,7 @@
   // Switch pages btns
   .searchHeaderTabList-3CZMQB {
     
-    .item-3XjbnG {
+    .item-2GWPIy {
       background: none !important ;
       
       // what did that do ?
@@ -236,7 +236,7 @@
   
   // Content scroller
   .scroller-3iiyhZ {
-    padding: 8px 0 0 0 !important ;
+    padding: 3px 0 0 0 !important ;
     
     // &::-webkit-scrollbar { display: none }
     &::-webkit-scrollbar-track {
@@ -244,15 +244,23 @@
     }
       
     // Header - channel name
-    .channelName-3w2Y3c {
+    .channelNameContainer-4pFmC- {
       background: var(--background-secondary-alt) ;
-      color: var(--interactive-normal) ;
       justify-content: center ;
       margin-bottom: 4px ;
+      padding: 3px 0 ;
+
+      .channelNameText-2q3Lge, .channelNameIcon-2d0YcP {
+        color: var(--interactive-hover) ;
+        text-decoration: none ;
+      }
 
       &:hover {
-        text-decoration: none ;
         background: var(--background-secondary) ;
+
+        .channelNameText-2q3Lge, .channelNameIcon-2d0YcP {
+          color: var(--interactive-active) ;
+        }
       }
     }
     
@@ -363,6 +371,9 @@
 
     .container-1A0qQO {
       background: none ;
+
+      // unread pill
+      .unread-O4ZgUu { display: none }
     }
   }
   
@@ -579,30 +590,31 @@
     background: none !important ;
   }
   
-  .container-2c4_8A .button-f2h6uQ {
+  .container-2c4_8A .button-ejjZWC {
     @include Btn("background");
   }
 }
 
 
 // Invite to Server / Add friends to Dm / New Group Dm
-.focusLock-2tveLW > .root-g14mjS.small-23Atuv.fullscreenOnMobile-ixj0e3 {
+.focusLock-bHVOlV > .root-1CAIjD.small-2xUY-3.fullscreenOnMobile-2971EC {
   background: var(--background-tertiary);
 
   // - Header
-  .header-1zd7se {
-    background: var(--background-tertiary);
+  .header-1ffhsl {
+    background: var(--background-secondary-alt);
     
     // Title
     h2 {
       color: var(--text-normal);
     }
     
-    // Search container
-    .container-1SX9VC {
+    // Invite to server, create group Searchbar
+    .container-2oNtJn, .container-1SX9VC {
       border-radius: 0 ;
       padding-bottom: 3px ;
       border-bottom: 1px solid var(--interactive-muted) ;
+      background: var(--background-secondary-alt);
       
       // Added friend tag
       .tag-15zcD_ {
@@ -623,7 +635,7 @@
     }
     
     // Add friends to Dm > "Add" btn
-    .addButton-cr4zLw .button-f2h6uQ {
+    .addButton-cr4zLw .button-ejjZWC {
       @include Btn("background");
     }
   }
@@ -687,8 +699,8 @@
   }
   
   // Footer
-  .footer-31IekZ, .footer-C9oLp9 {
-    background: var(--background-tertiary);
+  .footer-IubaaS, .footer-C9oLp9 {
+    background: var(--background-secondary-alt);
     
     .content-3nJg0c:before { display: none }
     
@@ -701,27 +713,29 @@
       background: var(--background-tertiary);
     }
     
-    .button-f2h6uQ.lookFilled-yCfaCM {
+    .button-ejjZWC.lookFilled-1H2Jvj{
       @include Btn("background");
     }
     
     .colorStandard-21JIj7.size12-oc4dx4 {
       text-align: center ;
     }
+
+    .inviteBannerUpsell-1t_LYM { display: none }
   }
 }
  
 
 // Tooltips
-.layerContainer-2v_Sit .tooltip-14MtrL {
-  background: var(--background-tertiary) ;
-  font-size: 14px ;
-  font-weight: 600 ;
+// .layerContainer-2lfOPe .tooltip-33Jwqe {
+//   background: var(--background-tertiary) ;
+//   font-size: 14px ;
+//   font-weight: 600 ;
   
-  .tooltipPointer-3L49xb {
-    border-top-color: var(--background-tertiary) ;
-  }
-}
+//   .tooltipPointer-sMBQqe {
+//     border-top-color: var(--background-tertiary) ;
+//   }
+// }
 
 
 // Notifications popout on receiving voice call
@@ -742,41 +756,41 @@
 
 
 // "All Active Threads" (from Channel list btn)
-.root-g14mjS .container-3GP6AV {
-  background: var(--background-tertiary);
+// .root-1CAIjD .container-3GP6AV {
+//   background: var(--background-tertiary);
   
-  .header-3cSJjT {
-    background: var(--background-secondary);
-  }
+//   .header-3cSJjT {
+//     background: var(--background-secondary);
+//   }
   
-  .activeThreadsList-c8qlqZ {
+//   .activeThreadsList-c8qlqZ {
     
-    .container-2rzKKA {
-      border: none ;
-      background: none ;
+//     .container-2rzKKA {
+//       border: none ;
+//       background: none ;
       
-      &:hover {
-        background: var(--background-modifier-accent);
-      }
-    }
-  }
-}
+//       &:hover {
+//         background: var(--background-modifier-accent);
+//       }
+//     }
+//   }
+// }
 
 
 // Events modal and some other (needs some more testing)
 //.off 
-.layer-1Ixpg3 .root-g14mjS {
+.layer-fP3xEz .root-1CAIjD {
   background: var(--background-tertiary);
   
   // Header
-  .header-1zd7se {
+  .header-1sd0RU {
     background: var(--background-secondary-alt);
     
     .fontDisplay-3Gtuks {
       color: var(--interactive-hover);
     }
     
-    .button-f2h6uQ {
+    .button-ejjZWC {
       @include Btn();
     }
   }
@@ -788,25 +802,27 @@
     &::-webkit-scrollbar { display: none } 
   }
   
+  // Create new event setup
   // Progressbars
   .selectedProgressBar-11z5d9 {
     background: var(--interactive-active) ;
   }
   
-  .colorBrand-21Le_q {
+  // Progress tracker names
+  .colorBrand-3Xb6JG {
     color: var(--text-normal) ;
   }
   
-  .input-2g-os5 {
-    border: none ;
+  // .input-2g-os5 {
+  //   border: none ;
     
-    &:focus {
-      background: var(--background-modifier-selected) ;
-    }
-  }
+  //   &:focus {
+  //     background: var(--background-modifier-selected) ;
+  //   }
+  // }
   
   // Checkbox item list option
-  .item-2idW98 {
+  .item-1TA5qI {
     background: var(--background-modifier-accent) ;
     
     &[aria-checked="true"] {
@@ -843,17 +859,17 @@
       background: none ;
     }
     
-    .button-f2h6uQ {
+    .button-ejjZWC {
       @include Btn();
     }
   }
   
   // Footer
-  .footer-31IekZ {
+  .footer-IubaaS {
     background: var(--background-secondary-alt);
     
     .inline-3eaUwP, .container-vujOuw {
-      .button-f2h6uQ{
+      .button-ejjZWC{
         @include Btn();
       }
     }
@@ -933,7 +949,7 @@
   .container-xB0xPf, // *
   .content-1rmYE-, // *
   .subscribeTooltipWrapper-3ipXtC, // *
-  .root-g14mjS, // *
+  .root-1CAIjD, // *
   .upsellTooltipWrapper-1wqikQ,
   .container-5N5x2A {
     background-color: var(--background-tertiary);
@@ -942,7 +958,7 @@
     &:after { display: none }
   }
 
-  .button-f2h6uQ { @include Btn() }
+  .button-ejjZWC { @include Btn() }
     
   .image-CRV_VX, .pointer-1j6vDv, .pointer-1iS5lL, .pointer-1bsD64 { display: none }
 }
@@ -950,7 +966,7 @@
 
 
 // Image gallery popout (yes, that selector suxs)
-.layer-1Ixpg3 .carouselModal-1eUFoq.root-g14mjS.fullscreenOnMobile-ixj0e3 {
+.layer-fP3xEz .carouselModal-1eUFoq.root-1CAIjD.fullscreenOnMobile-2971EC {
   background: none ;
   box-shadow: none ;
 }
