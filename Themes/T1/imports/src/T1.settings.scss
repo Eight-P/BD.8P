@@ -1,4 +1,4 @@
-// * T1.settings v0.1.22
+// * T1.settings v0.1.3
 // Client / Guilds / Channels
 
 // -> Theme version info
@@ -18,7 +18,7 @@
 // -> General Settings
 .layer-86YKbF:not(.baseLayer-W6S8cY) {
   
-  // Sidebar
+  // -> Sidebar
   .sidebarRegionScroller-FXiQOh {
 
     &::-webkit-scrollbar { display: none }
@@ -30,7 +30,7 @@
     }
     
     // Tab name
-    .item-3XjbnG {
+    .item-2GWPIy {
       color: var(--interactive-normal) ;
       background: none !important ;
       border-radius: 0  ;
@@ -39,32 +39,25 @@
       
       &:hover { color: var(--interactive-hover) }
       
-      &.selected-g-kMVV {
+      &.selected-1sf9UK {
         border-left: 2px solid var(--interactive-active) ;
         color: var(--interactive-active)  ;
-      }
-      
-      // "Log Out" Tab
-      &[aria-controls="logout-tab"], &[aria-controls="DELETE-tab"] {
-        color: var(--red) !important ;
-        opacity: .8 ;
-        
-        &:hover { opacity: 1 !important }
       }
     }
 
     // Nitro upsell "offer", "free month"
     .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF { display: none }
   }
+  // <- Sidebar
   
-  // Content container
+  // -> Content region
   .contentRegionScroller-2_GT_N {
     
     @include scrollbar() ;
   }
-  
+
   // Checkbox item list option
-  .item-2idW98 {
+  .item-1TA5qI {
     background: var(--background-modifier-accent) ;
     
     &[aria-checked="true"] {
@@ -75,9 +68,69 @@
       background: var(--background-modifier-hover) ;
     }
   }
+
+  // Nitro upsell in Profile settings
+  #profile-customization-tab {
+    .upsellOverlayContainer-3NMgTS, .tryItOutSection-W9qeGH {
+      display: none ;
+    }
+  }
+
+  // <- Content region
+
+
+  // .sidebar-nqHbhN .item-2GWPIy .ö{
+  //   padding: 0 ;
+
+  //   &:has(+ .item-2GWPIy.selected-1sf9UK) {
+  //     margin-bottom: 12px ;
+  //   }
+
+  //   &.selected-1sf9UK {
+  //     display: contents ;
+
+  //     &::after {
+  //       position: absolute ;
+  //       display: block ;
+  //       top: 15px ;
+  //       left: 150px ;
+  //     }
+
+  //     &[aria-controls]::after {
+  //       content: attr(aria-controls);
+  //     }
+
+  //     &[aria-label]::after {
+  //       content: attr(aria-label);
+  //     }
+  
+  //     & + .item-2GWPIy {
+  //       margin-top: 12px ;
+  //     }
+
+  //     & + .separator-2N511j {
+  //       margin-top: 14px ;
+  //     }
+
+  //     .background-Gjdjzm { display: none }
+  //   }
+  // }
+
+  // Exit settings btn
+  // .toolsContainer-25FL6V {
+  //   position: absolute ;
+  //   top: 12px ;
+  //   left: -218px + 30px ;
+  //   padding: 0 ;
+  //   margin: 0 ;
+
+  //   z-index: 2 ;
+
+  //   // "ESC" text
+  //   .keybind-13vtq8 { display: none }
+  // }
 }
 // <- General Settings
-
 
 // -> Server settings
 // Roles
@@ -134,11 +187,19 @@
       .tabBarItem-3nPo4Z {
         border: none ;
       }
+
+      // Add member btn
+      .addButton-1SxhVs { @include Btn("background") }
     }
 
     // Content scroller "Permissions"
     .permissionsWrapper-34gbP6 {
       margin-top: 16px ;
+    }
+
+    // linked roles config container
+    .container-2s0jpP {
+      background: none ;
     }
     
     // Info on Bot roles

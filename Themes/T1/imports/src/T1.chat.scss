@@ -1,4 +1,4 @@
-// * T1.chat v0.1.611
+// * T1.chat v0.1.62
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -956,7 +956,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .container-3YcgdM {
     top: 10px ;
 
-    .buttonInner-3aRbcx{
+    .buttonInner-3aRbcx {
       border: none ;
       background: var(--background-floating);
     }
@@ -989,18 +989,44 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 
-  // follow btn, "copy link btn
+  // Reactions, follow btn, "copy link btn
   .container-3YcgdM {
     border: none ;
     box-shadow: none ;
 
     // not floating
     &:not(.header-1RJoTb) {
-      .buttonInner-3aRbcx {
+      .buttonInner-3aRbcx, .addReactButton-3bSQb6, .remainingReactions-gVC95O {
         background: var(--background-modifier-hover);
+        border: none ;
   
         &:hover {
           background: var(--background-modifier-selected);
+        }
+      }
+    }
+
+    // Reactions
+    .reaction-102jx9 {
+      background-color: var(--background-modifier-accent);
+      border: none;
+      border-radius:4px;
+    
+      &:hover { 
+        background-color: var(--background-accent) ;
+      }
+    
+      // Active reaction 
+      &.reactionMe-2zhiyZ{
+        background-color: var(--Blurple-light) ;
+    
+        &:hover { 
+          background-color: var(--Blurple-light-hover) ;
+        }
+    
+        // number 
+        .reactionCount-SWXh9W { 
+          color: var(--Blurple) ;
         }
       }
     }

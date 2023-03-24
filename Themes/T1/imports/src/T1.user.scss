@@ -1,9 +1,9 @@
-// * T1.user v0.2.43
+// * T1.user v0.2.44
 // User popout / (Modal)
 
 
 // -> User Popout
-.userPopoutOuter-3AVBmJ {
+.layerContainer-2lfOPe .userPopoutOuter-3AVBmJ {
   border-radius: 12px ;
 
   @include shadow_effect("box_2");
@@ -99,7 +99,10 @@
     }
 
     // Shadow for status icon
-    [style="opacity: 0.45;"][fill="black"] { display: none }
+    // [style="opacity: 0.45;"][fill="black"] { display: none }
+    [style="opacity: 0.45;"] { display: none }
+
+    foreignObject ~ .cursorDefault-2M8ZNp { display: none }
   }
   // <- Profile picture/Avatar
 
@@ -212,6 +215,16 @@
       pointer-events: none ;
     }
     // <- Roles
+
+
+    // -> Activitys (streaming in channel, games, spotify, ..)
+    .activity-E0U09Y {
+
+      .button-TGAkj4 {
+        @include Btn();
+      }
+    }
+    // <- Activitys
 
     // -> Connections
     .connectionsContainer-3cWtT- {

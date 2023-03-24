@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.371
+// * T1.serverbar v0.1.38
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -195,7 +195,7 @@
     height: 20px ;
     width: 20px ;
     
-    a.anchor-1MIwyf {
+    .anchor-1X4H4q {
       transform: rotate(90deg) ;
       background: none ;
       border: none ;
@@ -222,22 +222,32 @@
 
     // Nitro plug 
     &.listItem-3SmSlK:nth-last-child(4) {
-      display: none ;
+      // display: none ;
     }
 
     // GuildsAdd
-    &.listItem-3SmSlK:nth-last-child(3), &.tutorialContainer-2jwoiB:nth-last-child(3) {
+    &.listItem-3SmSlK:nth-last-child(4), 
+    // &.tutorialContainer-2jwoiB:nth-last-child(3), 
+    // &.tutorialContainer-2jwoiB:nth-last-child(4), 
+    &.tutorialContainer-2jwoiB {
       @include GuildsAdd_Icon();
     }
 
-    // Discovery
-    &.listItem-3SmSlK:nth-last-child(2) {
+    // &.tutorialContainer-2jwoiB:nth-last-child(4) + .listItem-3SmSlK {
+    &.tutorialContainer-2jwoiB + .listItem-3SmSlK {
       @include Discovery_Icon();
     }
 
-    // not sure about the error
+    // Discovery
+    &.listItem-3SmSlK:nth-last-child(2),
+    &.listItem-3SmSlK + .listItem-3SmSlK {
+      @include Discovery_Icon();
+    }
+
+    // GuildError
     &.tutorialContainer-2jwoiB + .listItem-3SmSlK + .listItem-3SmSlK,
-    &.listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK {
+    // &.listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK {
+    &.listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK {
       @include GuildsError_Icon()
     }
   }
