@@ -1,8 +1,8 @@
-// * T1.home v0.1.262
+// * T1.home v0.1.263
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 
-// -- Friendslist
+// -- Friends Tab
 .tabBody-2dgbAs {
   
   // Seperator line top
@@ -13,7 +13,7 @@
     background: var(--background-modifier-accent);
   }
   
-  // Friendslist Main container / Scroller -->
+  // -> Friendslist
   .peopleList-2VBrVI {
     margin: 0 0 0 20px ;
     padding: 0 ;
@@ -110,6 +110,10 @@
             mask: none ;
             overflow: visible ;
           }
+
+          .svg-1G_H_8 {
+            contain: unset ;
+          }
           
           // Image
           .avatar-b5OQ1N {
@@ -182,10 +186,18 @@
     // idk, this weird tab selection indicator ring thing
     > .ring-370dIp { display: none }
   }
+  // <- Friendslist
   
-  // Friends activity sidebar (can be viewed in Stage tab)
-  > .nowPlayingColumn-1eCBCN { display: none }
-  //  Friendslist <--
+  // -> Friends activity sidebar
+  .nowPlayingColumn-1eCBCN { 
+    // display: block ;
+    display: none ;
+
+    .emptyCard-KDifrB {
+      background: none ;
+    }
+  }
+  // <- Friends activity sidebar
 }
 
 // -- Add Friend

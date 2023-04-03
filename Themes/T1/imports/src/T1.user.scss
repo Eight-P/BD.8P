@@ -1,4 +1,4 @@
-// * T1.user v0.2.44
+// * T1.user v0.2.45
 // User popout / (Modal)
 
 
@@ -26,6 +26,7 @@
   // main wrapper
   .bannerSVGWrapper-qc0szY {
     height: 120px ;
+    min-height: 120px !important;
 
     foreignObject {
       mask: none ;
@@ -59,7 +60,7 @@
   }
   // <- Banner
 
-  // -> Profile picture/Avatar
+  // -> Avatar/Status
   .avatarWrapper-3y0KZ1 {
     top: 20px ;
     left: 20px ;
@@ -82,6 +83,10 @@
     // Hover overlay
     .avatarHint-2g3Mcd {
       border-radius: 7.5% ;
+    }
+
+    .svg-1G_H_8 {
+      contain: unset ;
     }
 
     // Status icon
@@ -128,6 +133,7 @@
   // <- Badges
 
   // -> Main user info 
+  // -> Header
   .overlayBackground-1KgwVi {
     margin: 0 ;
     border-radius: 0 ;
@@ -190,6 +196,8 @@
     }
     // <- Custom status
 
+  // <- Header
+
     // -> Body
     .scroller-1jBQYo {
       padding: 0 !important;
@@ -197,13 +205,21 @@
       &::-webkit-scrollbar { display: none }
     }
 
+    // -> About Me
+    // personal roles beta
+    code.inline {
+      background: var(--profile-role-pill-background-color) ;
+    }
+        
+    // <- About Me
+
     // Add Bot ot server btn
     .buttonsContainer-2_Qu-e { display: none  }
 
     // -> Roles
     // Role item
     .role-2TIOKu {
-      border: none ; // old
+      border: none ;
     }
 
     // remove role btn

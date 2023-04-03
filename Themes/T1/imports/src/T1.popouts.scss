@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.37
+// * T1.popouts v0.1.38
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -12,7 +12,7 @@
   background: var(--background-tertiary) ;
   
   // left sidebar
-  .rail-1BiMhk .wrapper-22rqw6{
+  .rail-1BiMhk, .list-33W-Tv {
     background: var(--background-secondary-alt) ;
   }
   
@@ -32,9 +32,7 @@
   }
 
   // Command list sidebar
-  .rail-1BiMhk .list-obNEuP::-webkit-scrollbar {
-    display: none ;
-  }
+  .rail-1BiMhk .scrollerBase-1Pkza4::-webkit-scrollbar { display: none }
 }
 
 

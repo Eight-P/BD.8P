@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.38
+// * T1.serverbar v0.1.39
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -218,38 +218,48 @@
   }
 
   // Every div after servers
-  > [aria-label]:not([class]) ~ div {
+  > [aria-label]:not([class]) + div {
+
+    @include GuildsAdd_Icon();
+
+    + .listItem-3SmSlK {
+      @include Discovery_Icon();
+
+      + .listItem-3SmSlK {
+        @include GuildsError_Icon()
+      }
+    }
 
     // Nitro plug 
-    &.listItem-3SmSlK:nth-last-child(4) {
-      // display: none ;
-    }
+    // &.listItem-3SmSlK:nth-last-child(4) {
+    //   // display: none ;
+    // }
 
-    // GuildsAdd
-    &.listItem-3SmSlK:nth-last-child(4), 
-    // &.tutorialContainer-2jwoiB:nth-last-child(3), 
-    // &.tutorialContainer-2jwoiB:nth-last-child(4), 
-    &.tutorialContainer-2jwoiB {
-      @include GuildsAdd_Icon();
-    }
+    // // GuildsAdd
+    // &.listItem-3SmSlK:nth-last-child(4), 
+    // // &.tutorialContainer-2jwoiB:nth-last-child(3), 
+    // // &.tutorialContainer-2jwoiB:nth-last-child(4), 
+    // &.tutorialContainer-2jwoiB {
+    //   @include GuildsAdd_Icon();
+    // }
 
-    // &.tutorialContainer-2jwoiB:nth-last-child(4) + .listItem-3SmSlK {
-    &.tutorialContainer-2jwoiB + .listItem-3SmSlK {
-      @include Discovery_Icon();
-    }
+    // // &.tutorialContainer-2jwoiB:nth-last-child(4) + .listItem-3SmSlK {
+    // &.tutorialContainer-2jwoiB + .listItem-3SmSlK {
+    //   @include Discovery_Icon();
+    // }
 
-    // Discovery
-    &.listItem-3SmSlK:nth-last-child(2),
-    &.listItem-3SmSlK + .listItem-3SmSlK {
-      @include Discovery_Icon();
-    }
+    // // Discovery
+    // &.listItem-3SmSlK:nth-last-child(2),
+    // &.listItem-3SmSlK + .listItem-3SmSlK {
+    //   @include Discovery_Icon();
+    // }
 
-    // GuildError
-    &.tutorialContainer-2jwoiB + .listItem-3SmSlK + .listItem-3SmSlK,
-    // &.listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK {
-    &.listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK {
-      @include GuildsError_Icon()
-    }
+    // // GuildError
+    // &.tutorialContainer-2jwoiB + .listItem-3SmSlK + .listItem-3SmSlK,
+    // // &.listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK {
+    // &.listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK {
+    //   @include GuildsError_Icon()
+    // }
   }
 }
 

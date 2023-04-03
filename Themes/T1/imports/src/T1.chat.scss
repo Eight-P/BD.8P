@@ -1,4 +1,4 @@
-// * T1.chat v0.1.62
+// * T1.chat v0.1.63
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -348,8 +348,14 @@
     }
   }
 
-  // Announcement channel text input (without chat permission)
-  .wrapper-2SplAX { display: none }
+  // Chat input replacmnet box (follow channel, complete server setup,..)
+  .wrapper-2SplAX {
+    background: none ;
+
+    .button-cO0-d9 {
+      @include Btn("background");
+    }
+  }
   
   // Tips info for text input
   .applicationCommandEducation-1stoia {
