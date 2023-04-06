@@ -1,30 +1,30 @@
-// * T1.user v0.2.45
+// * T1.user v0.2.5
 // User popout / (Modal)
 
 
 // -> User Popout
-.layerContainer-2lfOPe .userPopoutOuter-3AVBmJ {
+.layerContainer-2lfOPe .userPopoutOuter-1OHwPL {
   border-radius: 12px ;
 
   @include shadow_effect("box_2");
 
   // Secondary container
-  .userProfileInner-3F03PX { 
+  .userPopoutInner-nv9Y92 { 
     position: relative ;
 
     &::before { display: none }
   }
 
-  .betaTag-2bWvGF { display: none }
+  // .betaTag-2bWvGF { display: none }
 
   // Nitro upsell (dismissible)
-  .wrapper-400BN2 {
-    width: 100% ;
-  }
+  // .wrapper-400BN2 {
+  //   width: 100% ;
+  // }
 
   // -> Banner
   // main wrapper
-  .bannerSVGWrapper-qc0szY {
+  .bannerSVGWrapper-2CLfzN {
     height: 120px ;
     min-height: 120px !important;
 
@@ -40,33 +40,36 @@
       transform: translateY(-15px);
     }
 
-    .banner-2boKnS {
+    .banner-1YaD3N {
       height: 120px ;
       filter: brightness(0.85);
 
       // Custom image banner
-      &.bannerPremium-86naOf {
+      &.bannerPremium-kkSkPv {
         filter: brightness(0.75);
       }
   
       // Edit own profile btn
-      .pencilContainer-11Kuga {
+      .pencilContainer-18TrEJ {
         top: 78px ;
         right: 14px ;
       }
   
-      .premiumIconWrapper-yyGDql { display: none }
+      .premiumIconWrapper-32h0Ri, .gifTag-1TvtGO { display: none }
     }
   }
   // <- Banner
 
   // -> Avatar/Status
-  .avatarWrapper-3y0KZ1 {
+  .avatarWrapper-eenWra {
     top: 20px ;
     left: 20px ;
     z-index: 1;
     
-    .svg-1G_H_8 { overflow: visible }
+    .svg-1G_H_8 { 
+      overflow: visible ;
+      contain: unset ;
+    }
 
     foreignObject { 
       mask: none ;
@@ -81,12 +84,8 @@
     }
 
     // Hover overlay
-    .avatarHint-2g3Mcd {
+    .avatarHint-k7pYop {
       border-radius: 7.5% ;
-    }
-
-    .svg-1G_H_8 {
-      contain: unset ;
     }
 
     // Status icon
@@ -103,16 +102,16 @@
       }
     }
 
-    // Shadow for status icon
-    // [style="opacity: 0.45;"][fill="black"] { display: none }
-    [style="opacity: 0.45;"] { display: none }
-
+    // weird second status after status changes
     foreignObject ~ .cursorDefault-2M8ZNp { display: none }
+
+    // Shadow for status icon
+    [style="opacity: 0.45;"] { display: none }
   }
   // <- Profile picture/Avatar
 
   // -> Badges / Panel badges
-  .profileBadges-31rDHI {
+  .profileBadges-2pItdR {
     position: absolute ;
     top: 14px ;
     right: 14px ;
@@ -120,7 +119,7 @@
     z-index: 1 ;
 
     // not empty
-    &.containerWithContent-2_V0PM {
+    &.containerWithContent-2YWS8V {
       padding: 2px ;
     }
 
@@ -133,13 +132,12 @@
   // <- Badges
 
   // -> Main user info 
-  // -> Header
-  .overlayBackground-1KgwVi {
+  .overlayBackground-2aa7wt {
     margin: 0 ;
     border-radius: 0 ;
 
-    // Info sections
-    .section-3FmfOT:not(.section--1D3ev) {
+    // Info sections except chat box
+    .section-28YDOf:not(.section-1TK4Q0) {
       padding: 0 12px 0 12px ;
 
       > :first-child {
@@ -148,21 +146,21 @@
     }
 
     // Chat/DM section
-    .section--1D3ev {
+    .section-1TK4Q0 {
       padding: 12px 12px 0 12px ;
     }
 
     // -> Username/Nickname
     // -> With Nickname
     // Nickname
-    .nickname-2rimyL {
+    .nickname-3P1RuO {
       margin-left: 24px ;
       font-size: 18px ;
       color: var(--header-primary);
     }
 
     // Discriminator
-    .userTagWithNickname-3-znkC .discrimBase-KriZSj {
+    .userTagWithNickname-13lfvd .discrimBase-V65kTs {
       margin-left: 2px ;
       font-size: 12px ;
       line-height: normal ;
@@ -172,13 +170,13 @@
 
     // -> Without Nickname
     // Username
-    .userTagUsernameNoNickname-2e_xaO {
+    .userTagUsernameNoNickname-2lKUnI {
       margin-left: 24px ;
       color: var(--header-primary);
     }
 
     // Discriminator
-    .userTagDiscriminatorNoNickname-2HLaIE {
+    .userTagDiscriminatorNoNickname-3dioAe {
       margin-left: 4px ;
       color: var(--header-secondary);
       font-size: 17px ;
@@ -190,16 +188,14 @@
     // <- Username/Nickname
 
     // -> Custom status emoji
-    .customStatusSoloEmoji-3jUFFX {
+    .customStatusSoloEmoji-a_jSVz {
       height: 30px ;
       width: 30px ;
     }
     // <- Custom status
 
-  // <- Header
-
     // -> Body
-    .scroller-1jBQYo {
+    .scroller-15bIdk{
       padding: 0 !important;
 
       &::-webkit-scrollbar { display: none }
@@ -213,8 +209,25 @@
         
     // <- About Me
 
+    // -> Bot stuff
     // Add Bot ot server btn
-    .buttonsContainer-2_Qu-e { display: none  }
+    .buttonsContainer-3iOFIV { display: none  }
+    // has imp.
+    .section-28YDOf:has(.buttonsContainer-3iOFIV) { display: none  }
+
+    // Bot commands
+    .popularApplicationCommandsList-QxQITG .sizeIcon-29J6C- {
+      background: var(--profile-role-pill-background-color);
+
+      &:hover {
+        background: var(--button-secondary-background);
+      }
+
+      .contents-3NembX {
+        font-weight: 400 ;
+      }
+    }
+    // <- Bot stuff
 
     // -> Roles
     // Role item
@@ -226,6 +239,10 @@
     .roleRemoveButton-17oXnT > :nth-last-child(2) {
       cursor: pointer ;
     }
+    // has imp.
+    .roleRemoveButton-17oXnT .roleCircle-3TFUOr:has(+ .roleRemoveIcon-387wKV) {
+      cursor: pointer ;
+    }
 
     .roleRemoveIcon-387wKV {
       pointer-events: none ;
@@ -234,7 +251,7 @@
 
 
     // -> Activitys (streaming in channel, games, spotify, ..)
-    .activity-E0U09Y {
+    .activity-3uaYny {
 
       .button-TGAkj4 {
         @include Btn();
@@ -243,27 +260,27 @@
     // <- Activitys
 
     // -> Connections
-    .connectionsContainer-3cWtT- {
+    .connectionsContainer-3MmgH3 {
       border: none ;
 
       // Connection item
-      .connectedAccountContainer-2TWiXT {
+      .connectedAccountContainer-3aLMHJ {
         padding: 6px 0 ;
       }
 
       // view all connec. btn
-      .connections-y47q20 { display: none }
+      .connections-2K6Bu6 { display: none }
     }
     // <- Connections
 
     // -> Note
-    .note-6O4w9y textarea:focus {
+    .note-1NN2aP textarea:focus {
       background: none ;
     }
     // <- Note
 
     // -> Quick Dm
-    .messageInputContainer-2rGDH8 {
+    .messageInputContainer-24qqTx {
       padding: 4px 12px 6px 12px ;
       margin: 0 -12px 0 -12px ;
       border: none ;
@@ -275,32 +292,32 @@
   // <- Main user info
 
   // -> Popout no custom colors
-  .userProfileInnerUnthemed-1XxIZu, // old ?
-  .userProfileInnerThemedNonPremium-1gT-zY {
+  // .userProfileInnerUnthemed-1XxIZu, // old ?
+  .userProfileInnerThemedNonPremium-2AJg-H {
     
     // body
-    .overlayBackground-1KgwVi {
+    .overlayBackground-2aa7wt {
       background: var(--background-tertiary);
     }
 
     // Quick Dm
-    .messageInputContainer-2rGDH8 {
+    .messageInputContainer-24qqTx {
       background: var(--background-secondary);
     }
   }
   // <- Popout no custom colors
 
   // -> Popout with custom colors
-  &.userProfileOuterThemed-3EfHmv {
+  &.userProfileOuterThemed-2BgJCM {
     padding: 0 ;
     background: linear-gradient(transparent 120px,var(--profile-gradient-primary-color) 0,var(--profile-gradient-secondary-color));
 
-    .userProfileInner-3F03PX {
+    .userPopoutInner-nv9Y92 {
       background: var(--profile-gradient-overlay-color);
     }
 
     // Quick Dm
-    .messageInputContainer-2rGDH8 {
+    .messageInputContainer-24qqTx {
       border-top: 1px solid var(--profile-message-input-border-color);
     }
   }
@@ -308,7 +325,7 @@
 }
 
 // Indicator while UserPopout is loading
-.loadingPopout-1feYe_ { display: none }
+.loadingPopout-1tyQMM { display: none }
 // <- User Popout
 
 
@@ -316,9 +333,9 @@
 .accountProfilePopoutWrapper-3GskID {
   left: 0 ;
 
-  .menu-KSaHL1 { 
+  .menu-2TXYjN { 
     max-width: unset ;
-    background: none ;
+    background: var(--background-tertiary) ;
     
     .submenu-3ycVEH {
       
@@ -341,21 +358,21 @@
 // <- Account Popout
 
 
-// -> Profile panel in chat
-.profilePanel-2PWEok {
+// -> Profile sidepanel in dms
+.profilePanel-2VBkh8 {
 
-  .userPanelOuter-xc-WYi, .userPanelInner-1UAR7g {
+  .userPanelOuter-XfFELn, .userPanelInner-3KPel3 {
     background: none ;
   }
 
   // Background layer when themed
-  .userPanelInner-1UAR7g::before { display: none }
+  .userPanelInner-3KPel3::before { display: none }
 
   // Scrollbar
   .scrollerBase-1Pkza4::-webkit-scrollbar { display: none }
 
   // -> Banner
-  .bannerSVGWrapper-qc0szY {
+  .bannerSVGWrapper-2CLfzN {
     border-radius: 8px ;
     transform: scale(.92);
 
@@ -366,32 +383,40 @@
   // <- Banner
 
   // -> Badges
-  .badgelistGroup-2XjSQi {
+  .badgelistGroup-_4Ddiq {
     min-height: unset ;
     margin: 0 16px 0 0 ;
   }
 
-  .badgeList-1EecKl {
+  .badgeList-2hF9ig {
     background: var(--background-modifier-accent);
 
     // empty badge list
-    &:not(.containerWithContent-2_V0PM) { display: none }
+    &:not(.containerWithContent-2Yws8V) { display: none }
   }
   // <- Badges
 
   // -> Profile picture/Avatar
-  .avatarPositionPanel-3P4Ted {
+  .avatarPositionPanel-3ZMJUj {
     position: relative ;
     top: 0 ;
     left: 0 ;
     margin-top: 16px ;
     margin-bottom: 10px ;
     
-    .wrapper-1VLyxH {
+    .wrapper-3Un6-K {
       margin: 0 auto ;
     }
 
-    .svg-2azL_l { overflow: visible }
+    .svg-1G_H_8 { 
+      overflow: visible ;
+
+      // status icon background
+      [style*="opacity"] {  display: none }
+    }
+
+    // status
+    .pointerEvents-2KjWnj, .cursorDefault-2M8ZNp { display: none }
 
     foreignObject { 
       mask: none ;
@@ -399,136 +424,18 @@
     }
 
     // Img
-    .avatar-b5OQ1N {
+    .avatar-31d8He {
       border-radius: 8px ;
 
       &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
     }
-
-    .svg-2azL_l {
-      [style*="opacity"] {  display: none }
-    }
-    rect[rx] { display: none }
   }
   // <- Profile picture/Avatar
 
   // -> Content body
-  .overlayBackground-1KgwVi {
+  .overlayBackground-2aa7wt {
     background: var(--background-modifier-accent);
   }
   // <- Content body
 }
-// <- Profile panel in chat
-
-// -> User Modal
-// .root-8LYsGj.root-g14mjS {
-  
-//   // -> Header
-//   .topSection-13QKHs {
-//     background: var(--background-tertiary);
-//   }
-
-//   // -> Banner
-//   .bannerSVGWrapper-qc0szY {
-
-//     foreignObject {
-//       mask: none ;
-//     }
-
-//     .premiumIconWrapper-yyGDql { display: none }
-//   }
-//   // <- Banner
-
-//   // -> Avatar
-//   .avatar-3QF_VA {
-//     top: -75px ;
-//     left: 14px ;
-//     border-radius: 7.5% ;
-//     border: 7px solid var(--background-tertiary);
-//     // border: 6px solid red;
-//     background: var(--background-tertiary);
-
-//     .svg-2azL_l { overflow: visible }
-
-//     foreignObject { 
-//       mask: none ;
-//       overflow: visible ;
-//     }
-
-//     // Img
-//     .avatar-b5OQ1N {
-//       border-radius: 7.5% ;
-//     }
-    
-//     // Status icon
-//     .pointerEvents-9SZWKj {
-//       position: absolute ;
-//       x: 0px ;
-//       y: 144px ;
-//       pointer-events: none ;
-
-//       &[mask="url(#svg-mask-status-online-mobile)"] {
-//         x: 0px ;
-//         y: 144px ;
-//         height: 24px ;
-//         width: 16px ;
-//       }
-//     }
-//   }
-//   // <- Avatar
-
-//   // Badges, User action btn, .. container
-//   .headerTop-1PNKck {
-//     left: 170px ;
-//   }
-  
-//   // Username
-//   .nameTag-2Nlmsy {
-//     margin-left: 55px ;
-//   }
-
-//   // -> Navbar
-//   .tabBarContainer-sCZC4w {
-//     border-color: rgba(0, 0, 0, 0.4);
-
-//     .tabBarItem-30Te4- {
-//       font-size: 14px ;
-//     }
-//   }
-//   // <- Tabbar
-//   // <- Header
-
-//   // -> Body
-//   .body-1Ukv50 {
-
-//     &.noTabBar-2Q-iE_ {
-//       border-color: rgba(0, 0, 0, 0.4);
-//     }
-
-//     .scrollerBase-_bVAAt { @include scrollbar() }
-
-//     // -> Mutual Servers and Friends
-//     .listScroller-entkMk {
-//       display: grid ;
-//       grid-template-columns: 50% 50% ;
-//       grid-auto-rows: max-content ;
-//       grid-gap: 5px ;
-//       padding: 10px 0 ;
-      
-//       // No items in scroller
-//       .empty-2zcusz {
-//         position: absolute ;
-//         left: 50% ;
-//         transform: translateX(-50%);
-//       }
-      
-//       // Activities
-//       .activityProfile-1712BN {
-//         grid-column: span 2 ;
-//       }
-//     }
-//     // <- Mutual Servers and Friends
-//   }
-//   // <- Body
-// }
-// <- User Modal
+// <- Profile sidepanel in dms

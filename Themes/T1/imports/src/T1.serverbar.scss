@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.39
+// * T1.serverbar v0.1.4
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -59,10 +59,19 @@
     
     // Server container seperator
     &::before { top: 120px }
-    &::after, &::before {
+    // &::after, &::before {
+    &::before {
       content: "" ;
       position: absolute ;
       bottom: 0px ;
+      width: 32px ;
+      height: 2px ;
+      margin: 0 11px ;
+      background-color: var(--interactive-normal) ;
+    }
+
+    .guildSeparator-a4uisj {
+      position: absolute ;
       width: 32px ;
       height: 2px ;
       margin: 0 11px ;
@@ -204,18 +213,61 @@
       width: 20px ;
     } 
   }
+
+  // Favorites
+  .tutorialContainer-1pL9QS + .listItem-3SmSlK {
+
+    &::before {
+      content: "" ;
+      top: 0px ;
+      position: absolute ; 
+      height: 2px ;
+      width: 32px ;
+      margin: 0 11px ;
+      background-color: var(--interactive-normal) ;
+    }
+
+    .pill-1eBbnB { display: none }
+
+    div:not([class]) {
+      .wrapper-2PSQCG {
+        transform: rotate(90deg) ;
+        @include shadow_effect("server_1");
+      }
+
+        // Unreads badge
+      .lowerBadge-3j0ZAg {
+        left: 4px ;
+        bottom: 4px ;
+
+        .numberBadge-37OJ3S { 
+          background-color: var(--red) !important ;
+        }
+      }
+
+      .childWrapper-1j_1ub {
+        background: none ;
+        color: var(--text-normal) !important ;
+        opacity: .75 ;
+
+        &:hover {
+          opacity: 1 ;
+        }
+      }
+    }
+  }
   
   // Home
   .tutorialContainer-1pL9QS { @include Home_Icon() }
   
   // Every div in front of servers
-  > .listItem-3SmSlK:not([aria-label]:not([class]) ~ div) {
+  // > .listItem-3SmSlK:not([aria-label]:not([class]) ~ div) {
 
-    // also removes the favorite dm btns
-    &.listItem-3SmSlK {
-      display: none ;
-    }
-  }
+  //   // also removes the favorite dm btns
+  //   &.listItem-3SmSlK {
+  //     // display: none ;
+  //   }
+  // }
 
   // Every div after servers
   > [aria-label]:not([class]) + div {
@@ -229,37 +281,6 @@
         @include GuildsError_Icon()
       }
     }
-
-    // Nitro plug 
-    // &.listItem-3SmSlK:nth-last-child(4) {
-    //   // display: none ;
-    // }
-
-    // // GuildsAdd
-    // &.listItem-3SmSlK:nth-last-child(4), 
-    // // &.tutorialContainer-2jwoiB:nth-last-child(3), 
-    // // &.tutorialContainer-2jwoiB:nth-last-child(4), 
-    // &.tutorialContainer-2jwoiB {
-    //   @include GuildsAdd_Icon();
-    // }
-
-    // // &.tutorialContainer-2jwoiB:nth-last-child(4) + .listItem-3SmSlK {
-    // &.tutorialContainer-2jwoiB + .listItem-3SmSlK {
-    //   @include Discovery_Icon();
-    // }
-
-    // // Discovery
-    // &.listItem-3SmSlK:nth-last-child(2),
-    // &.listItem-3SmSlK + .listItem-3SmSlK {
-    //   @include Discovery_Icon();
-    // }
-
-    // // GuildError
-    // &.tutorialContainer-2jwoiB + .listItem-3SmSlK + .listItem-3SmSlK,
-    // // &.listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK {
-    // &.listItem-3SmSlK + .listItem-3SmSlK + .listItem-3SmSlK {
-    //   @include GuildsError_Icon()
-    // }
   }
 }
 
@@ -357,6 +378,7 @@
 .guilds-2JjMmN .scroller-3X7KbA > [style="opacity: 1; height: 56px; transform: scale(1);"] {
   @include ServerIcon();
 
+  // Seperator to the left
   &::before {
     content: "" ;
     top: -12px ;
@@ -367,7 +389,7 @@
     background-color: var(--interactive-normal) ;
   }
 
-  // Subsequent Dms (not first)
+  // remove Seperator on Subsequent Dms (not first)
   ~ [style="opacity: 1; height: 56px; transform: scale(1);"] {
     margin: 0 0 12px 0 ;
 
@@ -375,6 +397,11 @@
   }
 
   .pill-22lZHo { display: none }
+}
+
+// remove Seperator when favorites is active
+.tutorialContainer-1pL9QS + .listItem-3SmSlK + [style="opacity: 1; height: 56px; transform: scale(1);"] {
+  &::before { content: none }
 }
 
 // Server container
