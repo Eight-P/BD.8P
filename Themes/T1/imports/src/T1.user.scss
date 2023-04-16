@@ -1,4 +1,4 @@
-// * T1.user v0.2.5
+// * T1.user v0.2.51
 // User popout / (Modal)
 
 
@@ -18,9 +18,9 @@
   // .betaTag-2bWvGF { display: none }
 
   // Nitro upsell (dismissible)
-  // .wrapper-400BN2 {
-  //   width: 100% ;
-  // }
+  .wrapper-C1y4Sz {
+    width: 100% ;
+  }
 
   // -> Banner
   // main wrapper
@@ -86,6 +86,18 @@
     // Hover overlay
     .avatarHint-k7pYop {
       border-radius: 7.5% ;
+    }
+
+    .avatarDecorationHint-3n-p6O {
+      border-radius: 7.5% !important ;
+      top: 0px ;
+      left: 0px ;
+      height: 80px ;
+      width: 80px ;
+
+      .avatarHintInner-2HUAWj {
+        font-size: 12px ;
+      }
     }
 
     // Status icon

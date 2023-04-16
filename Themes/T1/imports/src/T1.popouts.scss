@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.38
+// * T1.popouts v0.1.381
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -37,23 +37,15 @@
 
 
 // Gif, Sticker, Emoji, BD emotes Picker
-.layerContainer-2lfOPe{
+.layerContainer-2lfOPe {
   
-  // Main container
-  .contentWrapper-3vHNP2 { 
+  // Main container (reactions picker, emoji, gif,.. )
+  .contentWrapper-2f9yME, .contentWrapper-3vHNP2 {
     background-color: var(--background-tertiary);
   }
-
-  // Christmas shit
-  // .contentWrapperWithSnowsgivingNotice-tHP4vx {
-  //   grid-template-rows: 24px auto;
-  //   padding-top: 16px;
-
-  //   .anchor-1MIwyf { display: none }
-  // }
   
   // Navbar
-  .navButtonActive-1EqC5l { 
+  .navButtonActive-fwiUKp, .navButtonActive-1EqC5l, .navButtonSuperReactActive-1WNAEM { 
     background: none ;
   }
   
@@ -72,7 +64,7 @@
 
     // - Sidebar left (Sticker/Emoji)
     .wrapper-22rqw6 {
-      border-right: 1px solid var(--background-modifier-accent) ;
+      border-right: 1px solid var(--background-modifier-accent);
 
       // Category Icons
       .guildIcon-2SUGiq { 
@@ -97,19 +89,6 @@
     }
   }
 }
-
-// BD Emotes menu popout
-// .bd-emote-menu {
-  
-//   // Emotes category header
-//   .bd-emote-header { 
-//     position: relative ;
-//     background: none ;
-//   }
-  
-//   // Emote
-//   .bd-emote-item { cursor: pointer }
-// }
 
 
 // Context menus

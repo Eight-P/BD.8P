@@ -1,4 +1,4 @@
-// * T1.chat v0.1.63
+// * T1.chat v0.1.631
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -161,15 +161,17 @@
     // Text input
     .textArea-2CLwUE { 
       margin-left: 10px ;
+      width: -webkit-fill-available ;
     }
 
     // Input on denied writing permission
     &.channelTextAreaDisabled-1p2fQv .innerDisabled-2dbG11::after {
       content: " " ;
-      background: url("https://i.imgur.com/za6Yq9g.png") ;
+      // background: url("https://i.imgur.com/za6Yq9g.png") ;
+      background: url("https://i.imgur.com/5wEolmc.png") ;
       position: absolute;
-      right: 0 ;
-      bottom: 0 ;
+      right: 0px ;
+      bottom: 0px ;
       height: 36px ;
       width: 36px ;
       background-size: cover ;
