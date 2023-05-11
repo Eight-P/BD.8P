@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.41
+// * T1.server-view v0.1.5
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
@@ -207,11 +207,16 @@
       @include Btn("background");
     }
   }
+
+  // "Hide/Show all voice Channels
+  .voiceChannelsButton-SRmgo8:hover {
+    background-color: var(--background-modifier-hover);
+    border-color: transparent ;
+  }
 }
 // <- Text/Voice channels
 
-
-// -- Sidebar Panels (Profile, Activity,..)
+// -> Sidebar Panels (Profile, Activity,..)
 .sidebar-1tnWFu .panels-3wFtMD {
   
   // Profile Container
@@ -347,9 +352,9 @@
     }
   }
 }
+// <- Sidebar Panels (Profile, Activity,..)
 
-
-// -- Members list 
+// -> Members list 
 .members-3WRCEx {
   &::-webkit-scrollbar { display: none }
   
@@ -409,11 +414,12 @@
     background: none ;
   }
 }
+// <- Members list 
 
-
-// -- Discovery Sidebar
+// -> Discovery
 .discoverHeader-1vsvZ0 {
   
+  // Sidebar
   ~ .categoryItem-Kc_HK_ .itemInner-3e_4G4 {
     border-radius: 0 ;
     padding: 0 4px ;
@@ -437,12 +443,11 @@
   }
 }
 
-
-// -- Discovery Content
+// Content
 .sidebar-1tnWFu ~ .pageWrapper-2PwDoS > .scroller-3j5xK2 { @include scrollbar() }
+// <- Discovery
 
-
-// Server boost screen (community server)
+// -> Server boost screen
 .wrapper-WLdlSO {
   background: none ;
   
@@ -465,9 +470,9 @@
     }
   }
 }
+// <- Server boost screen
 
-
-// Home channel content
+// -> Home channel/ Server guide
 .homeContainer-r4Hvv1 {
  
   // Info Top
@@ -513,6 +518,7 @@
     }
   }
 }
+// <- Home channel/ Server guide
 
 // -> Channel & Roles
 // Header
@@ -545,7 +551,7 @@
   }
 }
 
-// Main content
+// Content container
 .container-2IKOsH {
 
   // Navbar
@@ -556,7 +562,8 @@
     }
   }
 
-  // infos & questions
+  // -> Customize
+  // Infos & Questions
   .prompt-1sE27N {
     background: none ;
 
@@ -569,6 +576,20 @@
       }
     }
   }
+
+  // "MY Profile"
+  .profileCard-2gVmvm {
+    background: var(--background-modifier-hover);
+
+    .username-YfeGz8 {
+      color: var(--header-primary) !important;
+    }
+
+    div {
+      color: var(--header-secondary) !important;
+    }
+  }
+  // <- Customize
 
   // -> Browse channels
   // Searchbar
@@ -593,13 +614,14 @@
 
   // channel item
   .channelRow-4X_3fi {
-    background: var(--background-modifier-hover) ;
-
     background: none ;
 
     &:not(.disabled-3cfocy):hover {
-      // background: var(--background-modifier-selected) ;
       background: var(--background-modifier-hover) ;
+    }
+
+    .channelText-30KI3D {
+      color: var(--text-normal) !important;
     }
 
     .viewChannelButton-59XD70 {

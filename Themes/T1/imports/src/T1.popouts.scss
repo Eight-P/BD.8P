@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.381
+// * T1.popouts v0.1.39
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -100,24 +100,69 @@
     
     &::-webkit-scrollbar { display: none }
   }
+
+  // category header text weird bug when :active
+  .groupLabel-KyZarI {
+    background: none ;
+    color: var(--interactive-normal);
+  }
   
   // Options
   .item-5ApiZt {
     background: none ;
+    color: var(--interactive-normal);
+
+    .subtext-1mqKVB {
+      color: var(--interactive-normal);
+    }
+
+    // &:active,
+    &:hover {
+      color: var(--interactive-hover); 
+
+      .subtext-1mqKVB {
+        color: var(--interactive-hover);
+      }
+    }
     
     // Critical option (like: bann, kick, ..)
-    &.colorDanger-3umuSx.focused-3LIdPu { background:rgba(240, 71, 71, 0.5) }
-    
+    &.colorDanger-3umuSx {
+      color: var(--red) ;
+
+      &:hover {
+        color: var(--interactive-hover);
+        background-color: var(--red) ;
+      }
+    }
+      
     // Options with checkbox
     &[role="menuitemcheckbox"] {
       
-      // Checkbox icon
+      // Option checked normal icon
       .checkbox-397WsK { color: transparent }
 
       // Checkbox checked ("x" icon for "uncheck")
       &.focused-3LIdPu[aria-checked="true"] path {
         color: var(--red) ;
         d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
+      }
+    }
+
+    // Radio options
+    &[role="menuitemradio"] {
+
+      // Selected option hover (no need for hover effect)
+      &[aria-checked="true"] {
+        color: var(--interactive-normal);
+
+        .subtext-1mqKVB {
+          color: var(--interactive-normal);
+        }
+      }
+
+      // Selected option normal icon
+      .radioSelection-3PDNAQ { 
+        color: var(--interactive-normal); 
       }
     }
     
@@ -137,17 +182,6 @@
       &:hover .barFill-3RgCsY { background: var(--header-secondary) }
     }
   }
-  
-  // Secondary popout
-  // .submenu-1apzyU {
-  //   background: var(--background-tertiary) ;
-    
-  //   .scroller-1bVxF5 {
-  //     padding: 6px ;
-
-  //     &::-webkit-scrollbar { display: none }
-  //   }
-  // }
 }
 
 // Searchbar options popout

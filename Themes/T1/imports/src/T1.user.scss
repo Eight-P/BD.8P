@@ -1,4 +1,4 @@
-// * T1.user v0.2.51
+// * T1.user v0.2.521
 // User popout / (Modal)
 
 
@@ -14,8 +14,6 @@
 
     &::before { display: none }
   }
-
-  // .betaTag-2bWvGF { display: none }
 
   // Nitro upsell (dismissible)
   .wrapper-C1y4Sz {
@@ -83,7 +81,7 @@
       &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
     }
 
-    // Hover overlay
+    // -> Hover overlay
     .avatarHint-k7pYop {
       border-radius: 7.5% ;
     }
@@ -99,8 +97,9 @@
         font-size: 12px ;
       }
     }
+    // <- Hover overlay
 
-    // Status icon
+    // -> Status icon
     .pointerEvents-2KjWnj {
       position: absolute ;
       x: -8px ;
@@ -118,7 +117,8 @@
     foreignObject ~ .cursorDefault-2M8ZNp { display: none }
 
     // Shadow for status icon
-    [style="opacity: 0.45;"] { display: none }
+    [style*="opacity: 0."] { display: none }
+    // <- Status icon
   }
   // <- Profile picture/Avatar
 

@@ -1,4 +1,4 @@
-// * T1.settings v0.1.31
+// * T1.settings v0.1.4
 // Client / Guilds / Channels
 
 // -> Theme version info
@@ -59,15 +59,57 @@
   // Checkbox item list option
   .item-1TA5qI {
     background: var(--background-modifier-accent) ;
+    color: var(--interactive-hover);
     
     &[aria-checked="true"] {
       background: var(--background-modifier-selected) ;
+      color: var(--interactive-active);
     }
     
     &[aria-checked="false"]:hover {
       background: var(--background-modifier-hover) ;
+      color: var(--interactive-active);
     }
   }
+
+  // Dropdown menu
+  .select-Zz0IcO {
+    border: none ;
+
+    @at-root .layerContainer-2lfOPe .popout-15UxD6 {
+      background: var(--background-tertiary) ;
+      border: none ;
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--interactive-normal) ;
+      }
+
+      .option-Uc12mm[aria-selected="true"] {
+        background: var(--background-modifier-selected) ;
+      }
+
+      .selectedIcon-122rMx {
+        circle {
+          fill: none ;
+        }
+
+        g path {
+          fill: var(--interactive-normal) ;
+        }
+      }
+    }
+  }
+
+  // Search 
+  .container-2oNtJn {
+    background: none ;
+
+    .input-2m5SfJ {
+      border-radius: 0 ;
+      border-bottom: 1px solid var(--interactive-normal);
+    }
+  }
+
 
   // Nitro upsell in Profile settings
   #profile-customization-tab {
@@ -76,59 +118,28 @@
     }
   }
 
+  // Nitro locked features
+  .premiumFeatureBorder-1i95si, .premiumBackground-34OIdE {
+    background: none ;
+    border: none ;
+  }
+
+  // Client Themes 
+  .presets-2zm9Ir:not(.basicThemeSelectors-2wNKs6) {
+    position: relative ;
+    margin-top: 40px ;
+    
+    &:after {
+      content: "Not compatible with T1 Theme.";
+      position: absolute ;
+      display: block ;
+      inset: -30px 0 0 0 ;
+      color: var(--red);
+      font-weight: 600 ;
+    }
+  }
+
   // <- Content region
-
-
-  // .sidebar-nqHbhN .item-2GWPIy .ö{
-  //   padding: 0 ;
-
-  //   &:has(+ .item-2GWPIy.selected-1sf9UK) {
-  //     margin-bottom: 12px ;
-  //   }
-
-  //   &.selected-1sf9UK {
-  //     display: contents ;
-
-  //     &::after {
-  //       position: absolute ;
-  //       display: block ;
-  //       top: 15px ;
-  //       left: 150px ;
-  //     }
-
-  //     &[aria-controls]::after {
-  //       content: attr(aria-controls);
-  //     }
-
-  //     &[aria-label]::after {
-  //       content: attr(aria-label);
-  //     }
-  
-  //     & + .item-2GWPIy {
-  //       margin-top: 12px ;
-  //     }
-
-  //     & + .separator-2N511j {
-  //       margin-top: 14px ;
-  //     }
-
-  //     .background-Gjdjzm { display: none }
-  //   }
-  // }
-
-  // Exit settings btn
-  // .toolsContainer-25FL6V {
-  //   position: absolute ;
-  //   top: 12px ;
-  //   left: -218px + 30px ;
-  //   padding: 0 ;
-  //   margin: 0 ;
-
-  //   z-index: 2 ;
-
-  //   // "ESC" text
-  //   .keybind-13vtq8 { display: none }
-  // }
 }
 // <- General Settings
 
@@ -144,7 +155,7 @@
     
     // Sidebar container main
     .sidebar-3K3Z4C {
-      height: fit-content;
+      height: fit-content ;
     }
     
     // Roles list Sidebar
@@ -190,6 +201,11 @@
 
       // Add member btn
       .addButton-1SxhVs { @include Btn("background") }
+
+      // search
+      .searchContainer-2kJ46v .input-2m5SfJ {
+        border-bottom: 1px solid var(--interactive-muted);
+      }
     }
 
     // Content scroller "Permissions"

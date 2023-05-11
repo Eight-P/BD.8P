@@ -1,11 +1,10 @@
-// * T1.chat v0.1.631
+// * T1.chat v0.1.7
 // Text chat, Voice chat
 
 // Header/Chat sperator line
 .content-1jQy2l::before { display: none }
 
-
-// Inline Mentions
+// -> Inline Mentions
 .mention.wrapper-1ZcZW- {
   color: var(--Blurple) !important;
   background-color: transparent !important;
@@ -23,9 +22,9 @@
     padding: .15em 0 ;
   }
 }
+// <- Inline Mentions
 
-
-// - Chat container
+// -> Chat container
 .chatContent-3KubbW {
   z-index: 101 ; // for "Mark As Read" 
   width: -webkit-fill-available ; // for search results 
@@ -81,7 +80,7 @@
 
     @include shadow_effect("box_2");
 
-    .button-f2h6uQ {
+    .button-ejjZWC {
       @include Btn();
     }
   }
@@ -139,9 +138,9 @@
     > .wrapper-15CKyy { background: none !important }
   }
 }
+// <- Chat container
 
-
-// - Text input
+// -> Text input
 .form-3gdLxP {
   margin: 5px 0 0 0 ;
   padding: 0 ;
@@ -156,7 +155,7 @@
     padding: 0 ;
     
     // container 2
-    > .scrollableContainer-15eg7h { background: none }
+    .scrollableContainer-15eg7h { background: none }
 
     // Text input
     .textArea-2CLwUE { 
@@ -432,7 +431,7 @@
     }
   }
 }
-
+// <- Text input
 
 // -> Messages (cozy only for now)
 
@@ -590,9 +589,17 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       visibility: hidden ;
     }
   }
+
+  // Edit message
+  .channelTextArea-1VQBuV {
+
+    .scrollableContainer-15eg7h {
+      background: $BG_Embed ;
+    }
+  }
   
   // Mention
-  &.mentioned-Tre-dv .contents-2MsGLg{
+  &.mentioned-Tre-dv .contents-2MsGLg {
     border-left: solid 2px var(--border-mentioned) ;
     background: var(--background-mentioned) ;
   }
@@ -605,8 +612,8 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // Selected for reply
   &.replying-eZ7p5z .contents-2MsGLg {
-    border-right: solid 2px var(--header-secondary) ;
-    background: var(--background-modifier-hover) ;
+    border-left: solid 2px var(--header-secondary);
+    background: var(--background-modifier-hover);
   }
   
   // Reply | &.hasReply-2Cr4KE { }
@@ -834,11 +841,15 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .tagsContainer-2bBw1x {
 
     // Button, Tags
-    .button-f2h6uQ, .tag-19iIl1 {
+    .button-ejjZWC, .tag-19iIl1 {
       background: var(--background-modifier-accent) ;
 
       &:hover {
         background: var(--background-modifier-selected) ;
+
+        .defaultColor-1EVLSt, .sortDropdownText-3smleu {
+          color: var(--interactive-active) !important ;
+        }
       }
     }
 
@@ -913,6 +924,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
 
     .contentPreview-3fWiuC {
+      background: none ;
       border: none ;
       margin: 0 ;
     }
@@ -951,7 +963,8 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // }
   // <- Sidebar
 }
-// Forum chat
+
+// -> Forum chat
 .chatContent-3KubbW {
 
   .container-3YcgdM {
@@ -970,6 +983,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
+// <- Forum chat
 // <- Forum channel
 
 // -> Threads / Voice chat / Forum chat (spilt view / overlay)
@@ -1136,9 +1150,27 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
+
+// Resizer for voice text and threads in side by side mode
+.chatTarget-3H6mpC.notFloating-cIl-vp + .resizeHandle-PBRzPC {
+  position: relative ;
+  width: 7px ;
+  background: none ;
+
+  &::after {
+    content: "";
+    display: block ;
+    position: absolute ;
+    top: 0 ;
+    left: 3px ;
+    width: 1px ;
+    height: 100% ;
+    background-color: var(--background-modifier-accent);
+  }
+}
 // <- Threads / Voice chat / Forum chat (spilt view / overlay)
 
-// - Voicecall view
+// -> Voicecall view
 .callContainer-HtHELf {
   --aswc: var(--always-show-voicecontrols, 0);
 
@@ -1269,11 +1301,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     // stream quality / live indicator
     .indicators-7iWi8t { display: none }
 
-    // Background color
-    .background-L8lGH6 {
-      // background: var(--background-tertiary) !important ;
-    }
-
     // Avatar
     .avatarWrapper-24Rbpj {
       
@@ -1308,31 +1335,21 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
     // Main frame top
     .videoFrame-11rde6 {
-      // @include TileOverlay();
 
       // hide members btn
       .participantsButton-1WBdFP {
         background: var(--background-accent);
-        // background: var(--background-floating);
       }
     }
 
     // Secondary Tiles
     .participantsWrapperAnimated-2Wdxe1 {
       overflow: visible ;
-
-      .overlayContainer-1suEh7 {
-        // opacity: 0 ;
-
-        &:hover {
-          // opacity: 1 ;
-        }
-      }
     }
   }
   // <- Focus view
 
-  // -> Grid view
+  // Grid view
   .videoGridWrapper-2WpXPj {
 
     .videoGrid-1tZm-F::-webkit-scrollbar { display: none }
@@ -1342,145 +1359,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       padding: 4px ;
       box-sizing: border-box ;
     }
-
-    .tile-2Dr6M1 {
-
-      // @include TileOverlay();
-    }
-  }
-  // <- Grid view
-  
-  // OLD
-  // User cards in voice
-  // .tile-2Dr6M1  {
-    
-  //   // Issue with new activities
-  //   @include shadow_effect("box_2");
-    
-  //   .indicators-7iWi8t {
-  //     left: 0px ;
-      
-  //     // "live" icon
-  //     .liveIndicator-2HaEDu { display: none }
-      
-  //     // stream quality transition container
-  //     .streamQualityIndicator-1QvbXd > div {
-  //       transform: none !important ;
-  //     }
-      
-  //     // stream quality
-  //     .liveQualityIndicator-8fb_DX {
-  //       background: var(--background-primary) !important ;
-  //       border-radius: 8px ;
-  //     }
-  //   }
-    
-  //   // Stream preview image in user card
-  //   .streamPreview-3Fo29Y {
-      
-  //     .cta-3-AFNF {
-  //       background: var(--background-primary) !important ;
-  //       margin-bottom: 20px ;
-  //     }
-  //   }
-    
-  //   .streamPreview-3Fo29Y .image-1YnNzZ {
-  //     padding-bottom: 20px ;
-  //     box-sizing: border-box ;
-  //   }
-    
-  //   // - Normal (no stream) user
-  //   // Background
-  //   .background-L8lGH6 {
-  //     background: var(--background-tertiary) !important ;
-      
-  //     padding-bottom: 25px ;
-  //     box-sizing: border-box ;
-  //   }
-    
-  //   // Prfile image container
-  //   .avatarWrapper-24Rbpj {
-      
-  //     foreignObject {
-  //       mask: none ;
-  //       overflow: visible ;
-  //     }
-      
-  //     svg {
-  //       overflow: visible ;
-  //     }
-      
-  //     // Prfile image
-  //     .avatar-b5OQ1N {
-  //       border-radius: 7.5% ;
-        
-  //       &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
-  //     }
-  //   }
-    
-  //   // Overlay container
-  //   .overlay-2RIWoZ {
-  //     position: absolute ;
-  //     padding: 0 ;
-  //     top: 0 ;
-  //     left: 0 ;
-  //     right: 0 ;
-  //     bottom: 0 ;
-  //     align-items: flex-end ;
-  //   }
-    
-  //   // User name container
-  //   .overlayTitle-2efoIF {
-  //     width: 100% ;
-  //     margin-right: 0 ;
-  //     padding: 2px 6px ;
-  //     background: var(--background-secondary-alt) ;
-  //     border-radius: 0 ;
-      
-  //     // User name
-  //     .overlayTitleText-3xOA3Q {
-  //       width: 100% ;
-  //       text-align: center ;
-  //     }
-      
-  //     &.idle-3MGs7O {
-  //       opacity: 1 ;
-  //     }
-  //   }
-    
-  //   // User status container
-  //   .statusContainer-2yJ1oM {
-  //     position: absolute ;
-  //     top: 5px ;
-  //     right: 5px ;
-      
-  //     // User status
-  //     .status-15kcmy {
-  //       background: none ;
-  //     }
-  //   }
-  // }
-}
-
-// Resizer for voice text and threads in side by side mode
-.chatTarget-3H6mpC.notFloating-cIl-vp + .resizeHandle-PBRzPC {
-  position: relative ;
-  width: 7px ;
-  background: none ;
-
-  &::after {
-    content: "";
-    display: block ;
-    position: absolute ;
-    top: 0 ;
-    left: 3px ;
-    width: 1px ;
-    height: 100% ;
-    background-color: var(--background-modifier-accent);
   }
 }
+// <- Voicecall view
 
-// - Stage view
+// -> Stage view
 .callContainer-BGIngG {
   
   // black gradiant effect
@@ -1519,7 +1402,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 }
 
-
 // Stage view talk requests sidebar
 .container-lqPArA {
   background: none ;
@@ -1528,3 +1410,4 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     box-shadow: none ;
   }
 }
+// <- Stage view
