@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.39
+// * T1.popouts v0.1.41
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -6,8 +6,7 @@
   overflow: hidden ;
 }
 
-
-// Autocomplete popout
+// -> Autocomplete popout
 .chatContent-3KubbW .form-3gdLxP .autocomplete-3NRXG8 {
   background: var(--background-tertiary) ;
   
@@ -34,9 +33,9 @@
   // Command list sidebar
   .rail-1BiMhk .scrollerBase-1Pkza4::-webkit-scrollbar { display: none }
 }
+// <- Autocomplete popout
 
-
-// Gif, Sticker, Emoji, BD emotes Picker
+// -> Gif, Sticker, Emoji, BD emotes Picker
 .layerContainer-2lfOPe {
   
   // Main container (reactions picker, emoji, gif,.. )
@@ -89,9 +88,9 @@
     }
   }
 }
+// <- Gif, Sticker, Emoji, BD emotes Picker
 
-
-// Context menus
+// -> Context menus
 .layer-2BGhQ8 .menu-2TXYjN {
   // background: var(--background-tertiary) ;
   
@@ -183,8 +182,9 @@
     }
   }
 }
+// <- Context menus
 
-// Searchbar options popout
+// -> Searchbar options popout
 .container-2McqkF {
   background: var(--background-secondary-alt) ;
   
@@ -201,8 +201,9 @@
     // .plusIcon-2V7coV { display: none }
   }
 }
+// <- Searchbar options popout
 
-// Searchbar results popout
+// -> Searchbar results popout
 .searchResultsWrap-5RVOkx {
   background: var(--background-tertiary) ;
   width: -webkit-fill-available ;
@@ -296,9 +297,9 @@
     }
   }
 }
+// <- Searchbar results popout
 
-
-// Pins
+// -> Pins
 .messagesPopoutWrap-3zryHW:not(.recentMentionsPopout-2bI1ZN) {
   width: 50vw ;
   max-width: 600px ;
@@ -357,9 +358,9 @@
   // Footer "Protip"
   .footer-5ji8u1 { display: none }
 }
+// <- Pins
 
-
-// Inbox
+// -> Inbox
 .recentMentionsPopout-2bI1ZN {
   width: 50vw ;
   max-width: 600px ;
@@ -548,9 +549,9 @@
     }
   }
 }
+// <- Inbox
 
-
-// Threads popout
+// -> Threads popout
 .browser-mnQ1T7.container-18GwIk {
   background: var(--background-tertiary) ;
   
@@ -605,9 +606,9 @@
     @include Btn("background");
   }
 }
+// <- Threads popout
 
-
-// Invite to Server / Add friends to Dm / New Group Dm
+// -> Invite to Server / Add friends to Dm / New Group Dm
 .focusLock-bHVOlV > .root-1CAIjD.small-2xUY-3.fullscreenOnMobile-2971EC {
   background: var(--background-tertiary);
 
@@ -735,58 +736,21 @@
     .inviteBannerUpsell-1t_LYM { display: none }
   }
 }
- 
-
-// Tooltips
-// .layerContainer-2lfOPe .tooltip-33Jwqe {
-//   background: var(--background-tertiary) ;
-//   font-size: 14px ;
-//   font-weight: 600 ;
-  
-//   .tooltipPointer-sMBQqe {
-//     border-top-color: var(--background-tertiary) ;
-//   }
-// }
-
+// <- Invite to Server / Add friends to Dm / New Group Dm
 
 // Notifications popout on receiving voice call
 .bg-1QIAus ~ .wrapper-3X0c60 { z-index: 1000 }
 
-
-// Server boost screen (normal server)
-.root-2zfUH6 .perksModal-CLcR1c {
-  background: var(--Main_Background);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  filter: var(--BGM_Blur) var(--BGM_Brightness) ;
-  
-  @include scrollbar();
+// -> Threads in channel summary popout
+.popout-TdhJ6Z {
+  .row-1qtctT:hover {
+    background: var(--background-modifier-hover);
+  }
+  .more-2c3Z-T {
+    color: var(--interactive-normal);
+  }
 }
-
-
-// "All Active Threads" (from Channel list btn)
-// .root-1CAIjD .container-3GP6AV {
-//   background: var(--background-tertiary);
-  
-//   .header-3cSJjT {
-//     background: var(--background-secondary);
-//   }
-  
-//   .activeThreadsList-c8qlqZ {
-    
-//     .container-2rzKKA {
-//       border: none ;
-//       background: none ;
-      
-//       &:hover {
-//         background: var(--background-modifier-accent);
-//       }
-//     }
-//   }
-// }
-
+// <- Threads in channel summary popout
 
 // Events modal and some other (needs some more testing)
 //.off 
@@ -907,8 +871,7 @@
   }
 }
 
-
-// Quick switch navigation/search
+// -> Quick switch navigation/search
 .quickswitcher-pKcM9U {
   background: var(--background-tertiary);
   
@@ -945,7 +908,7 @@
   // Protip footer, Tutorial arrows idk
   .protip-1jXzAl, .tutorial-1iwync {  display: none }
 }
-
+// <- Quick switch navigation/search
 
 // Dismissables might just remove all
 .layer-2aCOJ3 {
@@ -973,8 +936,6 @@
     
   .image-CRV_VX, .pointer-1j6vDv, .pointer-1iS5lL, .pointer-1bsD64 { display: none }
 }
-
-
 
 // Image gallery popout (yes, that selector suxs)
 .layer-fP3xEz .carouselModal-1eUFoq.root-1CAIjD.fullscreenOnMobile-2971EC {

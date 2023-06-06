@@ -1,4 +1,4 @@
-// * T1.chat v0.1.7
+// * T1.chat v0.1.71
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -1218,27 +1218,31 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
     }
   }
+
+  // Control buttons (top & bottom)
+  .controlSection-1mNixL {
+    // Icons
+    .controlIcon-10O-4h { 
+      color: var(--interactive-normal);
+    }
+    
+    // Icons hover
+    .button-ejjZWC:hover .controlIcon-10O-4h { 
+      color: var(--interactive-hover);
+    }
+
+    // Disconnect
+    .button-ejjZWC.red-3T8maV .controlIcon-10O-4h {
+      color: var(--red) ;
+    }
+  }
   
-  // Controls (bottom) (trash)
+  // Bottom controls
   .bottomControls-31YuPK {
     
     // Group container
     .flex-2S1XBF {
       margin: 0 ;
-    }
-    
-    // Icons
-    .controlIcon-10O-4h { 
-      color: var(--interactive-normal) ;
-    }
-    
-    // Icons hover
-    .button-f2h6uQ:hover .controlIcon-10O-4h { 
-      color: white ;
-    }
-
-    .colorable-3rVGna.red-3T8maV .controlIcon-10O-4h { 
-      color: var(--status-red-500);
     }
     
     // Centerd row btns
@@ -1256,10 +1260,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     .contextMenuNub-NuTZ_U {
       color: white ;
       background-color: var(--background-secondary) ;
-      
-      &:hover {
-        background-color: var(--background-tertiary) ;
-      }
     }
 
 

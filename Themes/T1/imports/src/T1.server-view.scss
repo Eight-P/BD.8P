@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.5
+// * T1.server-view v0.1.51
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
@@ -30,8 +30,11 @@
   .container-2giAcK {
     position: relative ;
     height: calc(24px * var(--show-serverboost-stats, 1));
-    margin: -8px 0 8px 0 ;
+    margin: -8px 4px 8px 4px ;
+    padding: 0 ;
     overflow: hidden ;
+
+    &::after { display: none }
     
     // Text container
     .textArea-7J7xQx {
@@ -49,7 +52,7 @@
     // Container progress bar
     .progressBarContainer-1efroK {
       position: absolute ;
-      top: 0 ;
+      top: 0px ;
       width: 100% ;
       margin: 0 ;
       background: none ;
@@ -448,27 +451,12 @@
 // <- Discovery
 
 // -> Server boost screen
-.wrapper-WLdlSO {
-  background: none ;
-  
-  // "back to server"
-  .navigationBar-2Z_P4D {
-    background: none ;
-  }
-  
-  // Head banner
-  .hero-3xEZXe {
-    background: none ;
-  }
-  
-  // "compare plans" table
-  .perksTable-H9sPBm {
-    pointer-events: none ;
-    
-    .perksTableRowHeading-jY6XJu .perksTableRowLabel-wyBuZr {
-      visibility: hidden ;
-    }
-  }
+.root-2zfUH6.enterDone-menWZ8 {
+
+  .scroller-3u_s5m { @include scrollbar() }
+
+  // weird wave design things
+  .bodyWave-wQyWfY, .headerWave-3sTT0Z { display: none }
 }
 // <- Server boost screen
 

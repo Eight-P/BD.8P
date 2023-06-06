@@ -1,4 +1,4 @@
-// * T1.user v0.2.521
+// * T1.user v0.2.53
 // User popout / (Modal)
 
 
@@ -113,8 +113,20 @@
       }
     }
 
+    // The weird one idk
+    .cursorDefault-2M8ZNp {
+      overflow: visible ;
+      pointer-events: none ;
+
+      rect {
+        position: static ;
+        x: -55px ;
+        y: 64px ;
+      }
+    }
+
     // weird second status after status changes
-    foreignObject ~ .cursorDefault-2M8ZNp { display: none }
+    // foreignObject ~ .cursorDefault-2M8ZNp { display: none }
 
     // Shadow for status icon
     [style*="opacity: 0."] { display: none }
@@ -163,10 +175,16 @@
     }
 
     // -> Username/Nickname
+    @at-root .userPopoutOuter-1OHwPL .avatarWrapper-eenWra:has(.pointerEvents-2KjWnj) ~ .overlayBackground-2aa7wt {
+
+      .nickname-3P1RuO, .userTagUsernameNoNickname-2lKUnI {
+        margin-left: 24px ;
+      }
+    }
+
     // -> With Nickname
     // Nickname
     .nickname-3P1RuO {
-      margin-left: 24px ;
       font-size: 18px ;
       color: var(--header-primary);
     }
@@ -183,7 +201,6 @@
     // -> Without Nickname
     // Username
     .userTagUsernameNoNickname-2lKUnI {
-      margin-left: 24px ;
       color: var(--header-primary);
     }
 
