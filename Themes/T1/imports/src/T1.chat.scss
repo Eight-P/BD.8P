@@ -1,4 +1,4 @@
-// * T1.chat v0.1.71
+// * T1.chat v0.1.72
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -34,7 +34,7 @@
      .emptyChannelIcon-1YdEz2, .iconWrapper-3plkqh { display: none }
   }
   
-  // "Mark As Read" and "Jump To Present" 
+  // "Mark As Read", "Jump To Present", "Summaries bar"
   .barBase-3xxDXu {
     right: 5px ;
     left: 5px ;
@@ -46,18 +46,30 @@
     
     @include shadow_effect("box_2");
     
-    > button {
-      padding: 0 15px ;
-      color: var(--text-normal) ;
+    // > button {
+    //   padding: 0 15px ;
+    //   color: var(--text-normal) ;
       
-      &.barButtonMain-2GIx4o {
-        flex: 0 1 auto ;
-        margin-right: auto ;
+    //   &.barButtonMain-2GIx4o {
+    //     flex: 0 1 auto ;
+    //     margin-right: auto ;
+    //   }
+
+    //   &:hover  {
+    //     color: var(--interactive-active) ;
+    //     text-decoration: underline ;
+    //   }
+    // }
+
+    // "Jump To Present"
+    &.jumpToPresentBar-1cEnH0, &.newMessagesBar-1hF-9G {
+
+      &:hover {
+        background: var(--background-secondary-alt)
       }
 
-      &:hover  {
-        color: var(--interactive-active) ;
-        text-decoration: underline ;
+      button {
+        color: var(--text-normal);
       }
     }
     
@@ -67,6 +79,22 @@
         
       + .scroller-kQBbkU {
         margin-top: 24px ;
+      }
+    }
+
+    // Summaries caret btns
+    .topicsPillCaret-2_eSsS {
+      background: none ;
+    }
+
+    .topicsDropdown-m34Uwy {
+
+      .topicsDropdownHeading-3qEbg4 {
+        background: var(--background-secondary-alt);
+      }
+
+      .topicsScroller-1t74J7 {
+        background: var(--background-tertiary) !important;
       }
     }
   }
@@ -87,7 +115,11 @@
 
   // Messages scroller
   .scroller-kQBbkU {
-    // fading out at top and bottom, not sure if like that tho
+    // -webkit-mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 96%, transparent);
+  }
+
+  // no fade out with forum bar
+  .scroller-kQBbkU:not(:has(.container-3YcgdM)) {
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 96%, transparent);
   }
   
@@ -930,56 +962,27 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
   // <- Post item card
-
-  // -> Sidebar
-  // .sidebarContainer-1kWKqZ {
-
-  //   .sidebarCard-1Gn1ch, .container-2IhveL {
-  //     background: var(--background-modifier-hover) ;
-  //     border: none ;
-  //   }
-
-  //   // Search tags
-  //   .tags-3s41VI {
-
-  //     // main container
-  //     .pill-3pRQlO {
-  //       background: var(--background-modifier-hover) ;
-
-  //       // Name/text
-  //       .lineClamp1-1iDPU7 {
-  //         color: var(--interactive-normal);
-  //       }
-
-  //       &:hover {
-  //         background: var(--background-modifier-accent) ;
-
-  //         .lineClamp1-1iDPU7 {
-  //           color: var(--interactive-hover);
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-  // <- Sidebar
 }
 
 // -> Forum chat
 .chatContent-3KubbW {
 
-  .container-3YcgdM {
-    background: none ;
-  }
-
   .divider-AZrXIA { display: none }
 
-  // Follow / copy link to forum post btns
+  // Reactions, Follow, copy link btns
   .container-3YcgdM {
-    top: 10px ;
+    margin: 4px 4px 4px 8px ;
+    padding: 0 10px ;
+    background: var(--background-secondary);
+    // background: var(--background-floating);
+    border: none ;
+    border-radius: 5px ;
 
-    .buttonInner-3aRbcx {
+    @include shadow_effect("box_2");
+
+    .reaction-102jx9, .buttonInner-3aRbcx, .addReactButton-3bSQb6 {
+      background: none ;
       border: none ;
-      background: var(--background-floating);
     }
   }
 }
@@ -1008,49 +1011,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .tags-2Siay7 {
     .pill-3pRQlO {
       background: var(--background-modifier-accent);
-    }
-  }
-
-  // Reactions, follow btn, "copy link btn
-  .container-3YcgdM {
-    border: none ;
-    box-shadow: none ;
-
-    // not floating
-    &:not(.header-1RJoTb) {
-      .buttonInner-3aRbcx, .addReactButton-3bSQb6, .remainingReactions-gVC95O {
-        background: var(--background-modifier-hover);
-        border: none ;
-  
-        &:hover {
-          background: var(--background-modifier-selected);
-        }
-      }
-    }
-
-    // Reactions
-    .reaction-102jx9 {
-      background-color: var(--background-modifier-accent);
-      border: none;
-      border-radius:4px;
-    
-      &:hover { 
-        background-color: var(--background-accent) ;
-      }
-    
-      // Active reaction 
-      &.reactionMe-2zhiyZ{
-        background-color: var(--Blurple-light) ;
-    
-        &:hover { 
-          background-color: var(--Blurple-light-hover) ;
-        }
-    
-        // number 
-        .reactionCount-SWXh9W { 
-          color: var(--Blurple) ;
-        }
-      }
     }
   }
 

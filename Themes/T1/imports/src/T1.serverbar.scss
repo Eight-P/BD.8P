@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.4
+// * T1.serverbar v0.1.41
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -533,6 +533,9 @@
     padding: 0 5px ;
     height: 54px ;
   }
+
+  // Server badge
+  .guildIconV2Container-2H8IRS { display: none }
   
   // Server name container
   .headerContent-2SNbie {
@@ -609,31 +612,4 @@
      margin-top: 64px ;
   }
 }
-
-// - Tooltips container
-// .tooltip-33Jwqe.tooltipPrimary-2466a2.tooltipDisablePointerEvents-3dgGo3.listItemTooltip-eHcnUw {
-
-//   &:not(.reactionTooltip-34qbn9, .tooltipTop-1wv5UJ) {
-//     max-width: 240px ;
-    
-//     .tooltipContent-38tm3I {
-//       white-space: nowrap;
-//       text-overflow: ellipsis ;
-//       overflow: hidden ;
-//       padding: 6px 10px ;
-
-//       .rowGuildName-21wur6 {
-
-//         .guildNameText-jBFbNC {
-//           display: block ;
-//           text-overflow: ellipsis ;
-//         }
-
-//         > .flowerStarContainer-1QeD-L { display: none }
-
-//         ~ * { display: none }
-//       }
-//     }
-//   }
-// }
 // Additions <--
