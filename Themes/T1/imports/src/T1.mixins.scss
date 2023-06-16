@@ -1,62 +1,7 @@
-// * T1.mixins v0.1.4
+// * T1.mixins v0.1.41
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
-
-// Important notification
-// @mixin note_critical ($text, $display:inline) {
-//   &::before {
-//     content: $text ;
-//     display: $display ;
-//     position: absolute;
-//     height: 22px ;
-//     width: calc(100vw - 160px) ;
-//     background: var(--activity-card-background) ;
-//     color: var(--text-normal) ;
-//     padding: 0 100px 0 60px ;
-//     text-align: center ;
-//     line-height: 22px ;
-//     font-size: 12px ;
-//     font-weight: 600 ;
-//     letter-spacing: .5px ;
-//     z-index: 2 ;
-//     overflow: hidden ;
-//     text-overflow: ellipsis ;
-//     white-space: nowrap ;
-//   }
-// }
-
-
-// // Notification (user settings only)
-// @mixin note_settings ($text, $display:block) {
-  
-//   .layer-86YKbF:not(.baseLayer-W6S8cY) .socialLinks-2DELRE::before {
-//     content: $text ;
-//     display: $display ;
-    
-//     position: fixed ;
-//     top: 0 ;
-//     left: 0 ;
-//     right: 0 ;
-//     padding: 4px 8px;
-//     background: var(--background-primary) ;
-//     color: var(--text-normal) ;
-//     text-align: center ;
-//     font-size: 14px ;
-//     font-weight: 600 ;
-//     line-height: 20px ;
-//     letter-spacing: .5px ;
-//     z-index: 2000 ;
-//     white-space: break-spaces ;
-    
-//     @include shadow_effect("box_2");
-//   }
-  
-//   .platform-win .layer-86YKbF .socialLinks-2DELRE::before {
-//     top: 22px ;
-//   }
-// }
-
 
 // global Scrollbar | @include scrollbar();
 @mixin scrollbar () {
@@ -207,6 +152,12 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 }
+
+// Scroller fade out effect | @include scrollerFadeOut();
+@mixin scrollerFadeOut ($top:5px, $bottom:5px) {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 $top, #000 calc(100% - $bottom), transparent);
+}
+
 // <- Mixins
 
 // -> Fonts

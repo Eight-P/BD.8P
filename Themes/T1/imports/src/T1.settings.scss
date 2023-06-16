@@ -1,4 +1,4 @@
-// * T1.settings v0.1.4
+// * T1.settings v0.1.41
 // Client / Guilds / Channels
 
 // -> Theme version info
@@ -115,6 +115,10 @@
   #profile-customization-tab {
     .upsellOverlayContainer-3NMgTS, .tryItOutSection-W9qeGH {
       display: none ;
+    }
+
+    .profileCustomizationSection-53kreU .userPopoutOuter-1OHwPL {
+      --background-secondary-alt: var(--primary-660);
     }
   }
 

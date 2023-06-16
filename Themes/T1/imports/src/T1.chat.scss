@@ -1,4 +1,4 @@
-// * T1.chat v0.1.72
+// * T1.chat v0.1.73
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -113,14 +113,9 @@
     }
   }
 
-  // Messages scroller
-  .scroller-kQBbkU {
-    // -webkit-mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 96%, transparent);
-  }
-
-  // no fade out with forum bar
+  // Messages scroller (no fade out with forum bar)
   .scroller-kQBbkU:not(:has(.container-3YcgdM)) {
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 96%, transparent);
+    @include scrollerFadeOut();
   }
   
   // Messages seperator
@@ -174,7 +169,8 @@
 
 // -> Text input
 .form-3gdLxP {
-  margin: 5px 0 0 0 ;
+  // margin: 1px 0 0 0 ;
+  margin: 0 ;
   padding: 0 ;
   border-top: 1px solid var(--background-modifier-accent);
 
@@ -1027,11 +1023,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Chat 
-  .chat-1-OBC7 {
+  .chat-25x62K {
     
-    // messages scroller
-    .scroller-kQBbkU {
-      -webkit-mask-image: linear-gradient(to bottom, transparent, #000 2%, #000 98%, transparent);
+    // Messages scroller
+    .scroller-kQBbkU { 
+      @include scrollerFadeOut(); 
     }
 
     // Text input - slowmode icon

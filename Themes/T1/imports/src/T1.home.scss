@@ -1,4 +1,4 @@
-// * T1.home v0.1.263
+// * T1.home v0.1.265
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -> Friends Tab
@@ -16,7 +16,8 @@
   .peopleList-2VBrVI {
     margin: 0 0 0 20px ;
     padding: 0 ;
-    -webkit-mask-image: linear-gradient(to top, transparent, #000 1%, #000 99%, transparent);
+
+    @include scrollerFadeOut();
     
     // "Friends online" Count
     .title-x4dI75  { display: none }
@@ -59,55 +60,19 @@
           }
         }
         
-        // Container (Avatar, Name, Activity)
+        // Main Container
         .userInfo-2WpsYG {
-          margin: 0 12.5px ;
+          margin: 0px 12px ;
           width: -webkit-fill-available ;
           overflow: visible !important ;
-        }
-        
-        // Container (Name, Activity)
-        .text-3j8t_e {
-          width: 100% ;
+
+          height: 100% ;
+          align-items: center ;
         }
 
-        // USername container
-        .discordTag-3HiQI9 {
-          line-height: 1.1 ;
-        }
-        
-        // Username
-        .username-Qpc78p {
-          margin-right: 5px ;
-        }
-        
-        // # Identifier
-        .discriminator-WV5K5s {
-          width: 0 ;
-        }
-        
-        // Activity (hiding the "playing" behind background) 
-        .activity-1KqKY2 .text-MPIeXO {
-          width: 100% ;
-          position: relative ;
-    
-          strong {
-            position: absolute ;
-            left: 0 ;
-            width: 100% ;
-            background: var(--background-floating);
-          }
-        }
-        
-        // Idk
-        .textRuler-1DsANg { display: none }
-        
-        // Activity icon
-        .icon-Lupfh- { display: none }
-        
+        // -> Avatar, Status icon
         // Avatar pfp
         .avatar-2MSPKk {
-          margin-top: 2.5px ;
           
           // SVG Mask container
           foreignObject, svg {
@@ -128,14 +93,48 @@
           
           // Status icon
           rect {
-            x: -14px ;
-            y: -14px ;
+            x: -15px ;
+            y: -15px ;
             mask: none ;
-            width: 305px ;
+            width: 310px ;
             height: 2px ;
             opacity: .8 ;
           }
         }
+        // <- Avatar, Status icon
+
+        // -> Username, Status text
+        .text-3j8t_e {
+          width: 100% ;
+        }
+
+        // Displayname
+        .username-Qpc78p {
+          margin-right: 5px ;
+        }
+
+        // Username/ # Identifier
+        .discriminator-WV5K5s {
+          width: 0 ;
+        }
+        
+        // Activity (hiding the "playing" behind background) 
+        .activity-1KqKY2 .text-MPIeXO {
+          width: 100% ;
+          position: relative ;
+          
+          strong {
+            position: absolute ;
+            left: 0 ;
+            width: 100% ;
+            background: var(--background-floating);
+          }
+        }
+        
+        // Activity icon, idk
+        .icon-Lupfh-, .textRuler-1DsANg { display: none }
+
+        // <- Username, Status text
         
         // User actions normal
         .actions-YHvpIT {

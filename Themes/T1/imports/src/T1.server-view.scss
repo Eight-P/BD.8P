@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.51
+// * T1.server-view v0.1.6
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
@@ -23,8 +23,13 @@
     }
   }
   
-  // Scrollbar
-  .scroller-1ox3I2::-webkit-scrollbar { display: none }
+  // Scroller container
+  .scroller-1ox3I2 {
+    // Fade out effect
+    @include scrollerFadeOut();
+
+    &::-webkit-scrollbar { display: none }
+  }
   
   // Server boost progress bar
   .container-2giAcK {
@@ -181,9 +186,14 @@
   .container-24rGVp .bar-wDIGjg {
     background: var(--background-secondary-alt);
     opacity: 1 ;
-    box-shadow: none ;
 
     @include shadow_effect("box_2");
+
+    &:hover {
+      .barText-1eIsLx, .unreadIcon-3dqgX9 {
+        color: var(--interactive-hover) !important;
+      }
+    }
   }
   
   // Threads indicator spine thing
@@ -359,6 +369,8 @@
 
 // -> Members list 
 .members-3WRCEx {
+  @include scrollerFadeOut();
+
   &::-webkit-scrollbar { display: none }
   
   // Role header
@@ -461,51 +473,102 @@
 // <- Server boost screen
 
 // -> Home channel/ Server guide
-.homeContainer-r4Hvv1 {
- 
-  // Info Top
-  .widgets-37sQdc {
+.homeContainer-1T8N7y, .emptyHomeContainer-1pW-ln {
 
-    // inner container
-    .container-2Hi7Km {
-      background: none ;
-    }
+  // -> Header
+  .header-20qCMo {
 
-    // Widgets
-    .container-xwOzwi, .emptyStateContainer-xWOMPJ {
-      background: none ;
-    }
-
-    // Channels
-    .container-3HMTms {
-      background: var(--background-modifier-hover) ;
+    .headerIcon-3Q7cOC {
       border: none ;
+      border-radius: 7.5% ;
+
+      &:not([class*=".gif"]) { @include shadow_effect("drop_1") }
+    }
+
+    // Invite Btn
+    .inviteButton-17ob8h {
+      background: var(--background-modifier-hover);
+      transition: none ;
 
       &:hover {
-        background: var(--background-modifier-selected) ;
+        background: var(--background-modifier-selected);
       }
     }
   }
+  // <- Header
 
-  // Top message container
-  .container-4HqGB3 {
-    background: none ;
-  }
+  // -> Body
+  // Greetings text
+  .welcomeMessageContainer-35bQR5 {
 
-  .card-3x20HF {
-    background: var(--background-modifier-hover) ;
-    border: none ;
-
-    &:hover {
-      background: var(--background-modifier-selected) ;
-    }
-
-    // load Dummys 
-    .wrapper-15CKyy {
+    .userCardOuter-1au0HV, .userCardInner-3c42YR {
       background: none ;
     }
   }
+
+  // "Get Started", "Resources" section items
+  .action-3oG-si, .row--LCpto {
+    background: var(--background-modifier-hover);
+    transition: none ;
+
+    &:hover {
+      background: var(--background-modifier-selected);
+    }
+  }
+
+  // Sidebar (server info)
+  .sidebarCardWrapper-34oCuK {
+    background: var(--background-modifier-hover);
+  }
+  // <- Body
 }
+
+// OLD
+// .homeContainer-r4Hvv1 {
+ 
+//   // Info Top
+//   .widgets-37sQdc {
+
+//     // inner container
+//     .container-2Hi7Km {
+//       background: none ;
+//     }
+
+//     // Widgets
+//     .container-xwOzwi, .emptyStateContainer-xWOMPJ {
+//       background: none ;
+//     }
+
+//     // Channels
+//     .container-3HMTms {
+//       background: var(--background-modifier-hover) ;
+//       border: none ;
+
+//       &:hover {
+//         background: var(--background-modifier-selected) ;
+//       }
+//     }
+//   }
+
+//   // Top message container
+//   .container-4HqGB3 {
+//     background: none ;
+//   }
+
+//   .card-3x20HF {
+//     background: var(--background-modifier-hover) ;
+//     border: none ;
+
+//     &:hover {
+//       background: var(--background-modifier-selected) ;
+//     }
+
+//     // load Dummys 
+//     .wrapper-15CKyy {
+//       background: none ;
+//     }
+//   }
+// }
 // <- Home channel/ Server guide
 
 // -> Channel & Roles
