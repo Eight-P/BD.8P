@@ -1,4 +1,4 @@
-// * T1.settings v0.1.41
+// * T1.settings v0.1.42
 // Client / Guilds / Channels
 
 // -> Theme version info
@@ -14,7 +14,6 @@
 }
 // <- Theme version info
 
-
 // -> General Settings
 .layer-86YKbF:not(.baseLayer-W6S8cY) {
   
@@ -29,7 +28,7 @@
       opacity: .8 ;
     }
     
-    // Tab name
+    // Tabs
     .item-2GWPIy {
       color: var(--interactive-normal) ;
       background: none !important ;
@@ -42,6 +41,23 @@
       &.selected-1sf9UK {
         border-left: 2px solid var(--interactive-active) ;
         color: var(--interactive-active)  ;
+      }
+
+      // Nitro
+      &.premiumTab-39eQzY svg { display: none }
+      // Nitro background
+      .background-Gjdjzm { display: none }
+
+      // Log Out/ Delete Channel
+      .tabBarItemContainer-2HdIlr {
+        color: var(--red) ;
+        padding: 4px ;
+        border-radius: 3px ;
+
+        &:hover { 
+          color: var(--interactive-hover);
+          background: var(--red) !important ;
+        }
       }
     }
 

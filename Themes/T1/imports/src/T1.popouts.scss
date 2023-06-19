@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.42
+// * T1.popouts v0.1.43
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -35,35 +35,71 @@
 }
 // <- Autocomplete popout
 
-// -> Gif, Sticker, Emoji, BD emotes Picker
+// -> Gif, Sticker, Emoji - Pickers
 .layerContainer-2lfOPe {
   
   // Main container (reactions picker, emoji, gif,.. )
   .contentWrapper-2f9yME, .contentWrapper-3vHNP2 {
-    background-color: var(--background-tertiary);
+    background: var(--background-secondary-alt);
+    background: var(--background-tertiary);
   }
   
   // Navbar
   .navButtonActive-fwiUKp, .navButtonActive-1EqC5l, .navButtonSuperReactActive-1WNAEM { 
     background: none ;
   }
+
+  // -> Popout (Gifs)
+  #gif-picker-tab-panel {
+    .container-2oNtJn {
+      background: var(--background-tertiary);
+
+      .input-2m5SfJ {
+        border-bottom: 1px solid var(--interactive-muted);
+      }
+    }
+
+    .content-A8TzKf {
+      background: var(--background-floating);
+    }
+
+    .scrollerBase-1Pkza4 {
+      @include scrollerFadeOut();
+    }
+  }
+  // <- Popout (Gifs)
   
-  // Popout content (Emoji, Sticker, GIFs)
-  .wrapper-3u51GQ, .wrapper-1NB3WY, .container-23gRWx {
-    
-    input { 
-      border-bottom: 1px solid var(--interactive-muted);
-     }
+  // -> Emojis as rections in voice channel
+  .emojiPickerHeader-2mWh2T, .slotsContainer-3Li39W {
+    background: var(--background-tertiary);
+  }
 
-    > div { 
-      background-color: var(--background-tertiary);
-     }
+  .container-1SX9VC + [aria-label].tooltipContainer-3zA7TI {
+    display: none ;
+  }
 
-    .scroller-2MALzE::-webkit-scrollbar { display: none } 
+  .dropDownContainer-2D2fq2 {
+    margin: 0 8px 0 0 ;
+  }
+  // <- Emojis as rections in voice channel
 
-    // - Sidebar left (Sticker/Emoji)
+  // -> Popout content (Emoji, Sticker)
+  #emoji-picker-tab-panel, #sticker-picker-tab-panel {
+
+    // Searchbar
+    .container-1SX9VC {
+      background: var(--background-tertiary);
+
+      .input-2FSSDe { 
+        border-bottom: 1px solid var(--interactive-muted);
+      }
+    }
+
+    // Sidebar
     .wrapper-22rqw6 {
       border-right: 1px solid var(--background-modifier-accent);
+      background: var(--background-floating);
+      border-radius: 0 ;
 
       // Category Icons
       .guildIcon-2SUGiq { 
@@ -71,7 +107,22 @@
        }
     }
 
-    // - Right side content (Sticker/Emoji)
+    // emoji inspector
+    .inspector-DFKXwB {
+      display: none ;
+    }
+  }
+  // -> Picker Content
+  #emoji-picker-grid, #sticker-picker-grid {
+    background: var(--background-floating);
+
+    .scroller-2MALzE {
+
+      @include scrollerFadeOut();
+
+      &::-webkit-scrollbar { display: none } 
+    }
+
     // Category header
     .wrapper-1NNaWG { 
       position: relative ;
@@ -83,12 +134,56 @@
     // emojis
     .emojiItem-277VFM {
 
+      &.emojiItemSelected-2Lg50V {
+        background: var(--background-modifier-selected);
+      }
+
       // Icon for addding emojis to server
       &:not([data-name]) { display: none }
     }
   }
+  // <- Picker Content
+  // <- Popout content (Emoji, Sticker)
 }
-// <- Gif, Sticker, Emoji, BD emotes Picker
+// <- Gif, Sticker, Emoji - Pickers
+
+
+// -> Soundboard
+.layerContainer-2lfOPe .picker-20lcBA {
+
+  // Header
+  .header-3YNgrp {
+    background: var(--background-tertiary);
+  }
+
+  // Searchbar
+  .container-1SX9VC .input-2FSSDe {
+    border-bottom: 1px solid var(--interactive-muted);
+  }
+
+  // Scroller (Sidebar/Main)
+  .scroller-2MALzE {
+    @include scrollerFadeOut();
+  }
+
+  // Sidebar
+  .categoryList-iuh2t0 {
+    background: var(--background-floating);
+    border-right: 1px solid var(--background-modifier-accent);
+    box-sizing: border-box ;
+  }
+
+  // Sound item
+  .soundButton-2P2Ua2 {
+    background: var(--background-modifier-hover);
+
+    &:hover {
+      background: var(--background-modifier-selected);
+    }
+  }
+}
+// <- Soundboard
+
 
 // -> Context menus
 .layer-2BGhQ8 .menu-2TXYjN {
@@ -608,7 +703,7 @@
 }
 // <- Threads popout
 
-// -> Invite to Server / Add friends to Dm / New Group Dm
+// -> Invite to Server / Add friends to Dm / New Group Dm (and more)
 .focusLock-bHVOlV > .root-1CAIjD.small-2xUY-3.fullscreenOnMobile-2971EC {
   background: var(--background-tertiary);
 
@@ -727,7 +822,7 @@
       background: var(--background-tertiary);
     }
     
-    .button-ejjZWC.lookFilled-1H2Jvj{
+    .button-ejjZWC.lookFilled-1H2Jvj:not(.colorRed-2VFhM4) {
       @include Btn("background");
     }
     
@@ -944,4 +1039,12 @@
 .layer-fP3xEz .carouselModal-1eUFoq.root-1CAIjD.fullscreenOnMobile-2971EC {
   background: none ;
   box-shadow: none ;
+}
+
+.tooltip-33Jwqe{
+  background: var(--background-floating) !important;
+
+  .tooltipPointer-sMBQqe {
+    border-top-color: var(--background-floating) !important;
+  }
 }
