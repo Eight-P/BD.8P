@@ -1,4 +1,4 @@
-// * T1.chat v0.1.73
+// * T1.chat v0.1.8
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -28,57 +28,73 @@
 .chatContent-3KubbW {
   z-index: 101 ; // for "Mark As Read" 
   width: -webkit-fill-available ; // for search results 
+
+  // Move up scroller container when user typing indicator
+  &:has(.typing-2J1mQU circle) .messagesWrapper-RpOMA3 {
+    margin-bottom: 14px ;
+  }
+
+  // Move up scroller when "Jump To Present" bar
+  .messagesWrapper-RpOMA3:has(.jumpToPresentBar-1cEnH0) .scroller-kQBbkU {
+    margin-bottom: 28px ;
+  }
   
   // "#" Icon at the channels very top
   .container-1yy5xN {
      .emptyChannelIcon-1YdEz2, .iconWrapper-3plkqh { display: none }
   }
   
-  // "Mark As Read", "Jump To Present", "Summaries bar"
+  // "Mark As Read", "Jump To Present", "View Summaries", "New Summaries"
   .barBase-3xxDXu {
     right: 5px ;
     left: 5px ;
-    background: var(--background-secondary);
+    height: 28px ;
+    padding: 0 ;
+    background: var(--background-secondary-alt);
     opacity: 1 ;
     border-radius: 5px ;
-    padding: 0 ;
     cursor: auto ;
     
-    @include shadow_effect("box_2");
+    // @include shadow_effect("box_2");
     
-    // > button {
-    //   padding: 0 15px ;
-    //   color: var(--text-normal) ;
-      
-    //   &.barButtonMain-2GIx4o {
-    //     flex: 0 1 auto ;
-    //     margin-right: auto ;
-    //   }
-
-    //   &:hover  {
-    //     color: var(--interactive-active) ;
-    //     text-decoration: underline ;
-    //   }
-    // }
-
-    // "Jump To Present"
-    &.jumpToPresentBar-1cEnH0, &.newMessagesBar-1hF-9G {
+    .barButtonBase-Sk2mdB {
+      color: var(--interactive-hover);
 
       &:hover {
-        background: var(--background-secondary-alt)
+        color: var(--interactive-active);
       }
 
-      button {
-        color: var(--text-normal);
+      &.barButtonMain-2GIx4o {
+        flex: 0 1 auto ;
+        margin-right: auto ;
       }
     }
     
     // "Mark As Read"
     &.newMessagesBar-1hF-9G {
       top: -4px ;
-        
-      + .scroller-kQBbkU {
-        margin-top: 24px ;
+
+      @include shadow_effect("box_2");
+    }
+
+    // "Jump To Present"
+    &.jumpToPresentBar-1cEnH0 {
+      bottom: 1px ;
+    }
+
+    // "New Summaries"
+    &.newTopicsBarContainer-MYPq92 {
+
+      .newTopicsBarTopicSection-QcIQlL, .barButtonBase-Sk2mdB {
+        cursor: pointer ;
+      }
+
+      .newTopicsBarText-3wNj93, .newTopicsBarIcon-2wXHrU {
+        color: var(--interactive-hover);
+
+        &:hover {
+          color: var(--interactive-active);
+        }
       }
     }
 
@@ -87,6 +103,7 @@
       background: none ;
     }
 
+    // Summaries dropdown popout menu
     .topicsDropdown-m34Uwy {
 
       .topicsDropdownHeading-3qEbg4 {
@@ -101,12 +118,18 @@
 
   // "This channel is not on your channel list" bar
   .chatHeaderBar-31g1mU {
-    padding: 4px 8px ;
+    padding: 0 8px ;
     margin: 0 4px ;
-    background: var(--background-secondary);
+    height: 28px ;
+    background: var(--background-secondary-alt);
     border-radius: 5px ;
 
     @include shadow_effect("box_2");
+
+    .chatHeaderBarText-39jd01 {
+      color: var(--header-secondary) !important;
+      font-weight: 600 ;
+    }
 
     .button-ejjZWC {
       @include Btn();
@@ -167,9 +190,9 @@
 }
 // <- Chat container
 
+
 // -> Text input
 .form-3gdLxP {
-  // margin: 1px 0 0 0 ;
   margin: 0 ;
   padding: 0 ;
   border-top: 1px solid var(--background-modifier-accent);
@@ -194,8 +217,7 @@
     // Input on denied writing permission
     &.channelTextAreaDisabled-1p2fQv .innerDisabled-2dbG11::after {
       content: " " ;
-      // background: url("https://i.imgur.com/za6Yq9g.png") ;
-      background: url("https://i.imgur.com/5wEolmc.png") ;
+      background: url("https://i.imgur.com/5wEolmc.png"); // https://i.imgur.com/za6Yq9g.png
       position: absolute;
       right: 0px ;
       bottom: 0px ;
@@ -280,18 +302,8 @@
   // Buttons conatiner
   .buttons-uaqb-5 { 
     
-    // Button
-    .button-f2h6uQ { 
-      // align-items: unset ;
-      // height: 44px ;
-    }
-    
     // btn content
     .button-3BaQ4X {
-      // align-items: unset ;
-      // box-sizing: content-box;
-      // height: 24px ;
-      // padding: 10px 4px 10px 4px ;
       
       svg {
         opacity: .6 ;
@@ -329,30 +341,6 @@
       }
     }
     
-    // Buttons
-    // .buttonContainer-2lnNiN {
-      
-    //   // Gifs
-    //   &:nth-last-child(3) {
-    //     width: calc(40px * var(--show-gif-btn));
-    //     margin-top: calc(-100px * (1 - var(--show-gif-btn)));
-    //   }
-      
-    //   // Sticker
-    //   &:nth-last-child(2) {
-    //     width: calc(36px * var(--show-sticker-btn));
-    //     margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
-
-    //     .stickerIcon-3Jx5SE { height: 24px !important }
-    //   }
-      
-    //   // Emojis
-    //   &:nth-last-child(1) {
-    //     width: calc(38px * var(--show-emoji-btn));
-    //     margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
-    //   }
-    // }
-    
     // Send btn
     .separator-3ng7S5 .buttonChild-33lB5F {
       color: var(--interactive-normal);
@@ -380,6 +368,15 @@
   // Chat input replacmnet box (follow channel, complete server setup,..)
   .wrapper-2SplAX {
     background: none ;
+    margin: 0 ;
+
+    .image-3FliiM, .animation-1GAstp {
+      display: none ;
+    }
+
+    .title-Do_30w {
+      color: var(--header-secondary);
+    }
 
     .button-cO0-d9 {
       @include Btn("background");
@@ -458,6 +455,10 @@
       }
     }
   }
+}
+
+.messagesWrapper-RpOMA3:has(.jumpToPresentBar-1cEnH0) + .form-3gdLxP .typing-2J1mQU {
+  // display: none ;
 }
 // <- Text input
 

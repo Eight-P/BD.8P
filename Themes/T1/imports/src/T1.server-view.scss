@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.6
+// * T1.server-view v0.1.61
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
@@ -92,7 +92,7 @@
   .sectionDivider-189lqb {
     display: none ;
 
-    + :not([class])[style*="height:"] { display: none }
+    // + :not([class])[style*="height:"] { display: none }
   }
   
   // Category header name
@@ -125,6 +125,11 @@
       border: none ;
     }
 
+    // Channel badges (e.g. "NEW", ..)
+    .textBadge-1fdDPJ {
+      background: none !important;
+      color: var(--interactive-hover)
+    }
     
     // Connection limit (voice)
     .wrapper-2fEmwW {
@@ -132,10 +137,10 @@
       span { background: transparent }
       
       .total-1c5KCN::after {
-        border: none ;
         content: "|" ;
+        top: 0px ;
         left: -5px ;
-        top: -1px ;
+        border: none ;
       }
     }
     
@@ -182,17 +187,19 @@
     }
   }
 
-  // "new unreads" msgs bar in channel list
-  .container-24rGVp .bar-wDIGjg {
+  // Channel indicator bar
+  .container-24rGVp .bar-wDIGjg{
     background: var(--background-secondary-alt);
-    opacity: 1 ;
 
-    @include shadow_effect("box_2");
+    @include shadow_effect("box_3");
 
     &:hover {
-      .barText-1eIsLx, .unreadIcon-3dqgX9 {
-        color: var(--interactive-hover) !important;
-      }
+      background: var(--background-tertiary);
+    }
+
+    // Unread mentions bar
+    &.mentionsBar-DpLHCy .barText-1eIsLx {
+      color: var(--red-secondary) !important;
     }
   }
   
