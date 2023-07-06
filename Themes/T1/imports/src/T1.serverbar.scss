@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.41
+// * T1.serverbar v0.1.42
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -456,11 +456,13 @@
       .numberBadge-37OJ3S { background-color: var(--red) !important }
     }
 
+    // container
+    .wrapper-2PSQCG {
+      @include shadow_effect("drop_1");
+    }
+
     // SVG 1
     .svg-2ifYOU {
-
-      @include shadow_effect("drop_1");
-
       mask, g { display: none }
     }
 

@@ -1,4 +1,4 @@
-// * T1.chat v0.1.8
+// * T1.chat v0.1.81
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -890,28 +890,29 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // <- Tags filter
 
   // -> Post item card (list, grid)
-  .container-2qVG6q, .container-1PloNW {
+  .container-q2_DnH, .container-1PloNW {
     border: none ;
     transform: none ;
     box-shadow: none ;
-    background: var(--background-modifier-hover) ;
+    transition: none ;
+    background: var(--background-modifier-hover);
 
     &:hover {
-      background: var(--background-modifier-selected) ;
+      background: var(--background-modifier-selected);
     }
 
     // Tags
     .pill-3pRQlO {
-      background: var(--background-modifier-accent) ;
+      background: var(--background-modifier-accent);
     }
 
     // Badge that says "new" 
-    .newBadge-1LcB6t {
+    .newBadge-1hE0w_ {
       background: none !important ;
     }
 
-    // Caard footer (reactions, timestamp, msg count, ..)
-    .footer-3dzxcR {
+    // Footer (list, grid) (reactions, timestamp, msg count, ..)
+    .footer-3UjAHx, .footer-16o64H {
 
       // Reactions
       .reaction-102jx9 {
@@ -920,20 +921,20 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
         border-radius:4px ;
 
         &:hover { 
-          background-color: var(--background-accent) ;
+          background-color: var(--background-accent);
         }
 
         // Active reaction 
-        &.reactionMe-2zhiyZ{
-          background-color: var(--Blurple-light) ;
+        &.reactionMe-2zhiyZ {
+          background-color: var(--Blurple-light);
       
           &:hover { 
-            background-color: var(--Blurple-light-hover) ;
+            background-color: var(--Blurple-light-hover);
           }
       
           // number 
           .reactionCount-SWXh9W { 
-            color: var(--Blurple) ;
+            color: var(--Blurple);
           }
         }
       }

@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.61
+// * T1.server-view v0.1.62
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
@@ -9,7 +9,10 @@
   // unread msg indicator
   .unread-XRkyaQ { display: none }
 
-  // Current server event, Feature promotion
+  // Special channel btns and seperators
+  .sectionDivider-189lqb { display: none }
+
+  // -> Current server event, Feature promotion
   .channelNotice-K4UfZY, .channelNotice-7cg_jN {
     
     // Event name
@@ -22,17 +25,20 @@
       @include Btn("background");
     }
   }
+  // <- Current server event, Feature promotion
   
-  // Scroller container
+  // -> Scroller container
   .scroller-1ox3I2 {
     // Fade out effect
     @include scrollerFadeOut();
 
     &::-webkit-scrollbar { display: none }
   }
+  // <- Scroller container
   
-  // Server boost progress bar
+  // -> Server boost progress bar
   .container-2giAcK {
+
     position: relative ;
     height: calc(24px * var(--show-serverboost-stats, 1));
     margin: -8px 4px 8px 4px ;
@@ -87,17 +93,13 @@
       padding-top: 8px ;
     }
   }
-
-  // Special channel btns to channels seperator(s)
-  .sectionDivider-189lqb {
-    display: none ;
-
-    // + :not([class])[style*="height:"] { display: none }
-  }
+  // <- Server boost progress bar
   
   // Category header name
-  .container-q97qHp {
-    font-weight: 600 ;
+  .containerDefault-3TQ5YN {
+    .name-3BUDLf {
+      // font-weight: 600 ;
+    }
   }
   
   // Text and Voice Channels
@@ -121,9 +123,9 @@
     @include Mentions_icon(".numberBadge-37OJ3S");
     
     // New forum posts badge
-    .newPostCount-3SXe5K, .activePostCount-3b4wM_ {
-      border: none ;
-    }
+    // .newPostCount-3SXe5K, .activePostCount-3b4wM_ {
+    //   border: none ;
+    // }
 
     // Channel badges (e.g. "NEW", ..)
     .textBadge-1fdDPJ {
@@ -145,7 +147,7 @@
     }
     
     // container for hover
-    .content-1gYQeQ {
+    .link-1_kTxV {
       background: transparent;
       
       &:hover {
@@ -177,7 +179,7 @@
     // Channel no permission
     &.modeLocked-3sToxd {
 
-      .mainContent-20q_Hp {
+      .link-1_kTxV {
         cursor: not-allowed ;
       }
 
