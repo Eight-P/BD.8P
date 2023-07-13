@@ -1,0 +1,26 @@
+// * T1.app v0.1.0
+
+// Layer transitions
+.layers-OrUESM > .layer-86YKbF { 
+  transform: none !important ;
+}
+
+.base-2jDfDU { 
+  height: 100% !important ;
+}
+
+// "Bot"/"server" Tag Indicator
+.botTag-7aX5WZ { 
+  color: var(--text-normal) ;
+  background-color: var(--background-secondary) ;
+}
+
+// Default scrollbar design (needs some rework)
+.app-3xd6d0 .scrollerBase-1Pkza4 { @include scrollbar() }
+
+// Tab focus thing
+.focus-rings-ring, .focusRing-2_fyOA {
+  box-shadow: none ;
+  border-bottom: 3px solid var(--interactive-hover);
+  border-radius: 0 ;
+}

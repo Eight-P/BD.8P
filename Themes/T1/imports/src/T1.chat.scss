@@ -1,4 +1,4 @@
-// * T1.chat v0.1.81
+// * T1.chat v0.1.811
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -179,17 +179,17 @@
     }
   }
    
-  // - preload dummys
-  // container
+  // preload dummys
   .wrapper-3HVHpV {
     background: none !important ;
     
     // messages
-    > .wrapper-15CKyy { background: none !important }
+    > .wrapper-15CKyy { 
+      background: none !important ;
+    }
   }
 }
 // <- Chat container
-
 
 // -> Text input
 .form-3gdLxP {
@@ -603,6 +603,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Inline Code, Text Spoilers
   code.inline, .spoilerText-27bIiA {
     background: $BG_Embed-alt ;
+  }
+
+  // Image
+  .mediaAttachmentsContainer-1WGRWy, .mediaAttachmentsContainer-1WGRWy * {
+    border-radius: 4px ;
   }
 
   // Image Spoiler

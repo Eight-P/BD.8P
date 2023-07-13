@@ -1,16 +1,16 @@
-// * T1.server-view v0.1.62
+// * T1.server-view v0.1.63
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
 .container-1NXEtd {
   top: 48px ;
-  margin-bottom: 48px;
+  margin-bottom: 48px ;
   
-  // unread msg indicator
-  .unread-XRkyaQ { display: none }
+  // unread msg indicator | gone ?
+  // .unread-XRkyaQ { display: none }
 
-  // Special channel btns and seperators
-  .sectionDivider-189lqb { display: none }
+  // Special channels seperator (only show last one)
+  .sectionDivider-189lqb:has(~ .sectionDivider-189lqb) { display: none }
 
   // -> Current server event, Feature promotion
   .channelNotice-K4UfZY, .channelNotice-7cg_jN {
@@ -38,7 +38,6 @@
   
   // -> Server boost progress bar
   .container-2giAcK {
-
     position: relative ;
     height: calc(24px * var(--show-serverboost-stats, 1));
     margin: -8px 4px 8px 4px ;
@@ -95,37 +94,34 @@
   }
   // <- Server boost progress bar
   
-  // Category header name
-  .containerDefault-3TQ5YN {
-    .name-3BUDLf {
-      // font-weight: 600 ;
-    }
+  // Category names
+  .containerDefault-3TQ5YN .name-3BUDLf {
+    font-weight: 700 ;
   }
   
   // Text and Voice Channels
   .wrapper-NhbLHG {
-    
+
+    // Mentions badge
+    @include Mentions_icon(".numberBadge-37OJ3S");
+
     // Icon ("#", speaker, ..)
     .icon-2W8DHg {
       width: 15px ;
+      height: 15px ;
+      margin: 2.5px 0 ;
       color: var(--channels-default);
       opacity: .8 ;
     }
     
     // Channel name
-    .name-28HaxV { color: var(--channels-default) }
+    .name-28HaxV { 
+      color: var(--channels-default);
+    }
     
-    // Channel options and infos
+    // -> Channel options and infos
     // Settings and invite buttons
     .iconItem-1EjiK0 { display: none }
-
-    // Mentions badge
-    @include Mentions_icon(".numberBadge-37OJ3S");
-    
-    // New forum posts badge
-    // .newPostCount-3SXe5K, .activePostCount-3b4wM_ {
-    //   border: none ;
-    // }
 
     // Channel badges (e.g. "NEW", ..)
     .textBadge-1fdDPJ {
@@ -155,25 +151,35 @@
         .iconItem-1EjiK0 { display: block }
       }
     }
+    // <- Channel options and infos
     
     // Channel selected / connected
     &.modeSelected-3DmyhH, &.modeConnected-NrO4cP {
+
       // Channel name
-      .name-28HaxV { color: var(--interactive-active) }
+      .name-28HaxV { 
+        color: var(--interactive-active) !important; 
+      }
       // Channel icon (left)
-      .icon-2W8DHg { color: var(--interactive-active) }
+      .icon-2W8DHg { 
+        color: var(--interactive-active) !important;
+      }
     }
     
     // Channel muted
     &.modeMuted-2T4MDZ {
       // Channel icon (left)
-      .icon-2W8DHg { color: var(--interactive-muted) }
+      .icon-2W8DHg { 
+        color: var(--interactive-muted);
+      }
     }
     
     // Channel unread
     &.modeUnread-3Cxepe {
       // pill
-      .unread-36eUEm { background-color: var(--interactive-hover) }
+      .unread-36eUEm { 
+        background-color: var(--interactive-hover);
+      }
     }
 
     // Channel no permission
@@ -189,8 +195,8 @@
     }
   }
 
-  // Channel indicator bar
-  .container-24rGVp .bar-wDIGjg{
+  // Channel indicator bar (floating)
+  .container-24rGVp .bar-wDIGjg {
     background: var(--background-secondary-alt);
 
     @include shadow_effect("box_3");
@@ -473,8 +479,12 @@
 
 // -> Server boost screen
 .root-2zfUH6.enterDone-menWZ8 {
+  margin-top: 22px ;
 
-  .scroller-3u_s5m { @include scrollbar() }
+  .scroller-3u_s5m { 
+    @include scrollbar();
+    @include scrollerFadeOut();
+  }
 
   // weird wave design things
   .bodyWave-wQyWfY, .headerWave-3sTT0Z { display: none }
