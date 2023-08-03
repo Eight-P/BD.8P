@@ -1,4 +1,4 @@
-// * T1.chat v0.1.811
+// * T1.chat v0.1.812
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -260,9 +260,9 @@
 
     // Button
     .attachButton-_ACFSu {
-      position: absolute;
-      top: 50% ;
-      transform: translateY(-50%) ;
+      // position: absolute;
+      // top: 50% ;
+      // transform: translateY(-50%) ;
     }
   }
 
@@ -455,10 +455,6 @@
       }
     }
   }
-}
-
-.messagesWrapper-RpOMA3:has(.jumpToPresentBar-1cEnH0) + .form-3gdLxP .typing-2J1mQU {
-  // display: none ;
 }
 // <- Text input
 

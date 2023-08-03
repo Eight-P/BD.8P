@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.271
+// * T1.titlebar v0.1.272
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -156,8 +156,8 @@
     // Tabs
     .item-3mHhwr {
       background: none !important ;
-      
-      @include Mentions_icon(".numberBadge-37OJ3S");
+
+      @include Mentions_icon('.numberBadge-37OJ3S');
       
       // add friend Tab
       &.addFriend-emTWY1 {

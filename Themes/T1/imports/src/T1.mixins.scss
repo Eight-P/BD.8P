@@ -1,4 +1,4 @@
-// * T1.mixins v0.1.42
+// * T1.mixins v0.1.43
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -111,10 +111,13 @@
 
   #{if($class, $class, "&")} {
     background-color: transparent !important ;
-    border-bottom: 2px solid var(--red) ;
     border-radius: 0 ;
     color: var(--text-normal) ;
     box-shadow: none ;
+
+    &[style*="background-color: var(--status-danger)"] {
+      border-bottom: 2px solid var(--red) ;
+    }
   }
 }
 

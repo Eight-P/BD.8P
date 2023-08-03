@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.42
+// * T1.serverbar v0.1.43
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -214,8 +214,8 @@
     } 
   }
 
-  // Favorites
-  .tutorialContainer-1pL9QS + .listItem-3SmSlK {
+  // Favorites (AT selector for better specificity)
+  .tutorialContainer-1pL9QS + [class="listItem-3SmSlK"] {
 
     &::before {
       content: "" ;
