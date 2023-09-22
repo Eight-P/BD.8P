@@ -1,13 +1,10 @@
-// * T1.server-view v0.1.63
+// * T1.server-view v0.1.64
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
 .container-1NXEtd {
   top: 48px ;
   margin-bottom: 48px ;
-  
-  // unread msg indicator | gone ?
-  // .unread-XRkyaQ { display: none }
 
   // Special channels seperator (only show last one)
   .sectionDivider-189lqb:has(~ .sectionDivider-189lqb) { display: none }
@@ -590,17 +587,19 @@
 // }
 // <- Home channel/ Server guide
 
-// -> Channel & Roles
+
+// -> Special Channels
 // Header
-.header-3xB4vB {
-  // return to last channel btn
-  .returnButton-1xn3Ii {
+.container-ZMc96U {
+
+  // return to last channel btn (Chan&Rols / Members)
+  .returnButton-1xn3Ii, .returnButton-1ptceW {
     border: none;
     background: none;
 
-    // BTn text
-    .defaultColor-1EVLSt {
-      color: var(--interactive-normal);
+    // Btn text
+    .returnButtonText-27U_ef {
+      color: var(--interactive-hover);
     }
 
     // Icon within text
@@ -614,12 +613,16 @@
     &:hover {
       background: none var(--background-modifier-selected);
 
-      .defaultColor-1EVLSt{
+      .returnButtonText-27U_ef {
         color: var(--interactive-active);
       }
     }
   }
 }
+// <- Special Channels
+
+
+// -> Channel & Roles
 
 // Content container
 .container-2IKOsH {
@@ -744,3 +747,146 @@
   // <- Main content
 }
 // <- Server welcome screen thing
+
+// -> Member Safety Page
+.page-2dwf_i {
+
+  // scroller inner content container
+  .content-1jQy2l {
+    padding: 0 ;
+
+    // inner container
+    .mainTableContainer-3Nxvkd {
+      box-shadow: none ;
+    }
+  }
+
+  // -> Header
+  .searchBar-3S907z {
+    background: var(--background-modifier-selected);
+    border-bottom: 1px solid transparent ;
+
+    &:focus-within {
+      background: none ;
+      border-bottom-color: var(--interactive-normal);
+      border-radius: 0 ;
+    }
+  }
+  // <- Header
+
+  // -> Table
+  .table-2Z1caJ {
+    padding: 0 ;
+    border: none ;
+  }
+
+  .tableHeaderRow-2Jri1A::after {
+    box-shadow: none ;
+    background: var(--background-modifier-accent);
+  }
+
+  // notice bar for when new member joined 
+  .newMembersNotice-35VT6e {
+    top: -4px ;
+    background: var(--background-secondary-alt);
+    cursor: auto ;
+
+    @include shadow_effect("drop_2");
+
+    td {
+      &:first-child {
+        border-top-left-radius: 8px ;
+        border-bottom-left-radius: 8px ;
+      }
+      &:last-child {
+        border-top-right-radius: 8px ;
+        border-bottom-right-radius: 8px ;
+      }
+    }
+  }
+
+  td, th {
+    width: auto ; //idk
+  }
+
+  // Member item
+  .memberRowContainer-ZDlmmA {
+    // weird effect on row when leaving modal, idk
+    background: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+
+    // Row cells (idk, thats just how DC does it.)
+    td {
+      border-radius: 0 ;
+      background: none ;
+      padding: 8px 4px ;
+
+      &::after {
+        display: none ;
+      }
+    }
+    
+    &:hover {
+
+      // all inner items (table data cell)
+      td {
+        background: var(--background-modifier-hover);
+      }
+
+      // action buttons
+      .actionCell-1tWIj3 {
+        color: var(--interactive-normal);
+      }
+    }
+
+    .memberNameContainer-IOGroW {
+      // grid-template-columns: 32px minmax(100px, 150px);
+    }
+
+    // -> Roles cell
+    // container cell
+    td:has(.roleContainer-13c6D7) {
+      // width: 10% !important ;
+    }
+
+    .roleName-2ZJJYR {
+      max-width: 140px ;
+    }
+
+    // roles btns
+    .otherRoles-LMys1u {
+      opacity: 1;
+      background: var(--background-modifier-hover);
+    }
+
+    // role add btn
+    .addRoleContainer-2tqBaM {
+
+      // icon
+      .addRoleIcon-5oV6RN {
+        color: var(--header-secondary);
+      }
+
+      &:hover {
+        background: var(--background-modifier-selected);
+
+        .addRoleIcon-5oV6RN {
+          color: var(--header-primary);
+        }
+      }
+    }
+    // <- Roles cell
+
+    // action btns
+    .button-2XiUpU {
+      background: none ;
+
+      &:hover {
+        color: var(--interactive-hover);
+      }
+    }
+  }
+  // <- Table
+}
+// <- Member Safety Page

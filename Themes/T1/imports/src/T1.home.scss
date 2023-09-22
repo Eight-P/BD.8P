@@ -1,4 +1,4 @@
-// * T1.home v0.1.265
+// * T1.home v0.1.266
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -> Friends Tab
@@ -224,6 +224,10 @@
     .addFriendHint-1EVQJY {
       padding: 8px 10px ;
     }
+
+    .input-1bmui3 {
+      height: 20px ;
+    }
     
     &:focus-within .addFriendInput-1Ta-rO {
       border-color: var(--interactive-normal) ;
@@ -232,8 +236,16 @@
       box-shadow: none ;
     }
     
-    .button-f2h6uQ {
+    .button-ejjZWC {
       @include Btn("background");
+    }
+  }
+
+  // find more things thing
+  .grid-1-I1AZ {
+    .container-3tKtM_ {
+      background: var(--background-modifier-selected) ;
+      border: none ;
     }
   }
 }

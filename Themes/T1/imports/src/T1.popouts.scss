@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.43
+// * T1.popouts v0.1.44
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -1046,5 +1046,15 @@
 
   .tooltipPointer-sMBQqe {
     border-top-color: var(--background-floating) !important;
+  }
+}
+
+
+// user roles popout from member safety page
+.tooltip-33Jwqe:has(.role-2TIOKu){
+  max-width: 500px ;
+
+  .roleName-2ZJJYR {
+    max-width: unset ;
   }
 }

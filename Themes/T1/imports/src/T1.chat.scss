@@ -1,4 +1,4 @@
-// * T1.chat v0.1.812
+// * T1.chat v0.1.813
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -186,6 +186,17 @@
     // messages
     > .wrapper-15CKyy { 
       background: none !important ;
+    }
+  }
+
+  // server guide (next steps)
+  .container-22-IpK {
+    .banner-1AB1xq {
+      background: var(--background-modifier-selected);
+    }
+
+    .iconCircle-1hscz5 {
+      background: none ;
     }
   }
 }
