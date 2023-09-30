@@ -1,3 +1,18 @@
-# BetterDiscord Stuff by Eight_P
+<div align="center"> 
 
-#### [BetterDiscord](https://betterdiscord.app/) allows the installation of user-created [Themes](Themes) and Plugins injected into Discord.
+## Repo Content:
+
+### [T1-Theme](Themes/T1/)
+#### [LICENSE](LICENSE)
+</div>
+
+
+<br/>
+
+<div align="center"> 
+
+### Usefull Links:
+
+#### [BetterDiscord.app](https://betterdiscord.app/)
+</div>
+
