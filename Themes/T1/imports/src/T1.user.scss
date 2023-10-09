@@ -1,4 +1,4 @@
-// * T1.user v0.2.54
+// * T1.user v0.2.55
 // User popout / (Modal)
 
 
@@ -18,6 +18,12 @@
   // Nitro upsell (dismissible)
   .wrapper-C1y4Sz {
     width: 100% ;
+  }
+
+  // "Unable to load profile..." badge
+  .warningCircleIcon-mFju_m {
+    top: 14px ;
+    right: 14px ;
   }
 
   // -> Banner
@@ -186,6 +192,11 @@
       }
     }
 
+    // When the profile is not loading
+    .usernameSection-3FppkT.lastSection-q3HCfo {
+      padding-bottom: 12px ;
+    }
+
     // -> With Nickname
     // Nickname
     .nickname-3P1RuO {
@@ -228,7 +239,7 @@
     // <- Custom status
 
     // -> Body
-    .scroller-15bIdk{
+    .scroller-15bIdk {
       padding: 0 !important;
 
       &::-webkit-scrollbar { display: none }
