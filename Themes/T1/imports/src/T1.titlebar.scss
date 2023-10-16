@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.272
+// * T1.titlebar v0.1.28
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -240,66 +240,66 @@ html {
     }
   }
 
-  // - Mac (hopefully)
-  &.platform-osx {
+  // - Mac (very old)
+  // &.platform-osx {
     
-    // AppOS btns
-    .titleBar-1it3bQ {
-      width: 48px ;
-      transform: rotate(90deg);
-      transform-origin: 13px 13px ;
-      -webkit-app-region: none;
+  //   // AppOS btns
+  //   .titleBar-1it3bQ {
+  //     width: 48px ;
+  //     transform: rotate(90deg);
+  //     transform-origin: 13px 13px ;
+  //     -webkit-app-region: none;
 
-      // Btn container
-      .macButtons-eIdy0e {
-        padding: 0 ;
-        justify-content: space-evenly ;
-        width: 48px ;
-        height: 26px ;
-        cursor: pointer ;
+  //     // Btn container
+  //     .macButtons-eIdy0e {
+  //       padding: 0 ;
+  //       justify-content: space-evenly ;
+  //       width: 48px ;
+  //       height: 26px ;
+  //       cursor: pointer ;
         
-        // Buttons, Btn icon
-        .macButton-2M5W_9, svg {
-          width: 10px ;
-          height: 10px ;
-        }
-      }
+  //       // Buttons, Btn icon
+  //       .macButton-2M5W_9, svg {
+  //         width: 10px ;
+  //         height: 10px ;
+  //       }
+  //     }
       
-      &:hover {
+  //     &:hover {
         
-        .macButton-2M5W_9 svg {
-          visibility: visible ;
-        }
+  //       .macButton-2M5W_9 svg {
+  //         visibility: visible ;
+  //       }
         
-        .macButtonClose-3IXwAm {
-          background-color: #fc615d ;
-        }
+  //       .macButtonClose-3IXwAm {
+  //         background-color: #fc615d ;
+  //       }
         
-        .macButtonMinimize-Q8clSI {
-          background-color: #fdbc40 ;
-        }
+  //       .macButtonMinimize-Q8clSI {
+  //         background-color: #fdbc40 ;
+  //       }
         
-        .macButtonMaximize-1vTCwt {
-          background-color: #34c749 ;
-        }
-      }
-    }
+  //       .macButtonMaximize-1vTCwt {
+  //         background-color: #34c749 ;
+  //       }
+  //     }
+  //   }
 
-    // move Profile panel for AppOS btns
-    .panels-3wFtMD > .container-YkUktl {
-      margin-left: 26px ;
-      width: 214px ;
-      padding: 0 8px 0 0 ;
-    }
+  //   // move Profile panel for AppOS btns
+  //   .panels-3wFtMD > .container-YkUktl {
+  //     margin-left: 26px ;
+  //     width: 214px ;
+  //     padding: 0 8px 0 0 ;
+  //   }
     
-    .container-ZMc96U > .children-3xh0VB {
-      -webkit-app-region: none;
+  //   .container-ZMc96U > .children-3xh0VB {
+  //     -webkit-app-region: none;
       
-      + .toolbar-3_r2xA {
-        -webkit-app-region: none;
-      }
-    }
-  }
+  //     + .toolbar-3_r2xA {
+  //       -webkit-app-region: none;
+  //     }
+  //   }
+  // }
 }
 
 

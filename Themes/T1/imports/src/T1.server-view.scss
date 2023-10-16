@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.64
+// * T1.server-view v0.1.65
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
@@ -241,152 +241,152 @@
 }
 // <- Text/Voice channels
 
-// -> Sidebar Panels (Profile, Activity,..)
-.sidebar-1tnWFu .panels-3wFtMD {
+// // -> Sidebar Panels (Profile, Activity,..)
+// .sidebar-1tnWFu .panels-3wFtMD {
   
-  // Profile Container
-  .container-YkUktl {
-    position: absolute ;
-    height: 48px ;
-    width: 240px ;
-    top: 0 ;
-    box-sizing: border-box ;
+//   // Profile Container
+//   .container-YkUktl {
+//     position: absolute ;
+//     height: 48px ;
+//     width: 240px ;
+//     top: 0 ;
+//     box-sizing: border-box ;
 
-    // Pfp, name container
-    .avatarWrapper-1B9FTW {
-      margin: 6px 8px 6px 0 ;
-      background: none ;
-    }
+//     // Pfp, name container
+//     .avatarWrapper-1B9FTW {
+//       margin: 6px 8px 6px 0 ;
+//       background: none ;
+//     }
 
-    // Buttons
-    .button-12Fmur {
-      background: none ;
-    }
-  }
+//     // Buttons
+//     .button-12Fmur {
+//       background: none ;
+//     }
+//   }
   
-  // Activity Container
-  .activityPanel-9icbyU {
-    height: 32px ;
-    padding: 6px 10px ;
+//   // Activity Container
+//   .activityPanel-9icbyU {
+//     height: 32px ;
+//     padding: 6px 10px ;
     
-    // Image
-    .gameIconWrapper-zXQ03M { 
-      height: 32px;
-    }
+//     // Image
+//     .gameIconWrapper-zXQ03M { 
+//       height: 32px;
+//     }
     
-    // Text
-    .title-3XlmeX { 
-      line-height: 32px;
-    }
+//     // Text
+//     .title-3XlmeX { 
+//       line-height: 32px;
+//     }
     
-    button { background: none }
-  }
+//     button { background: none }
+//   }
   
-  // Voice Connection
-  .container-1zzFcN {
-    display: grid ;
-    padding: 0 ;
-    border: none ;
-    grid-template-columns: 100% ;
-    contain: paint ;
+//   // Voice Connection
+//   .container-1zzFcN {
+//     display: grid ;
+//     padding: 0 ;
+//     border: none ;
+//     grid-template-columns: 100% ;
+//     contain: paint ;
     
-    // Voice channel info container
-    .connection-3k9QeF {
-      order: 2 ;
-      margin-left: 32px ;
-      padding: 6px 0 ;
-      align-items: unset ;
+//     // Voice channel info container
+//     .connection-3k9QeF {
+//       order: 2 ;
+//       margin-left: 32px ;
+//       padding: 6px 0 ;
+//       align-items: unset ;
       
-      // Ping / "Connected"
-      .rtcConnectionStatus-c5A6Av {
-        padding: 1px 0 2px 0 ;
-      }
+//       // Ping / "Connected"
+//       .rtcConnectionStatus-c5A6Av {
+//         padding: 1px 0 2px 0 ;
+//       }
       
-      // Buttons container
-      .button-12Fmur {
-        background: none ;
+//       // Buttons container
+//       .button-12Fmur {
+//         background: none ;
         
-        // Noise Suppression Btn
-        &:first-child { display: none }
-      }
-    }
+//         // Noise Suppression Btn
+//         &:first-child { display: none }
+//       }
+//     }
     
-    // Connected users container
-    .voiceUsers-3gPcwY {
-      height: 30px ;
-      padding: 3px 8px ;
-      margin: 0 ;
-      box-sizing: border-box ;
-      order: 3 ;
+//     // Connected users container
+//     .voiceUsers-3gPcwY {
+//       height: 30px ;
+//       padding: 3px 8px ;
+//       margin: 0 ;
+//       box-sizing: border-box ;
+//       order: 3 ;
       
-      &::-webkit-scrollbar { display: none }
+//       &::-webkit-scrollbar { display: none }
       
-      ~ .actionButtons-2vEOUh:after {
-        bottom: 42px ;
-      }
-    }
+//       ~ .actionButtons-2vEOUh:after {
+//         bottom: 42px ;
+//       }
+//     }
     
-    // Voice channel button container
-    .actionButtons-2vEOUh {
-      display: inline-flex ;
-      height: 0 ;
-      padding: 0 ;
-      justify-content: space-evenly ;
-      overflow: hidden ;
-      transition: .1s linear;
-      align-items: center ;
+//     // Voice channel button container
+//     .actionButtons-2vEOUh {
+//       display: inline-flex ;
+//       height: 0 ;
+//       padding: 0 ;
+//       justify-content: space-evenly ;
+//       overflow: hidden ;
+//       transition: .1s linear;
+//       align-items: center ;
       
-      // Caret icon
-      &:after {
-        content: "<" ;
-        position: absolute ;
-        display: flex ;
-        width: 200px;
-        height: 32px ;
-        left: 0 ;
-        bottom: 12px ;
-        justify-content: center ;
-        align-items: center ;
-        color: var(--interactive-normal);
-        font-size: 18px ;
-        font-weight: 700 ;
-        transform: rotate(90deg) translate(6px, 100px - 16px);
-      }
+//       // Caret icon
+//       &:after {
+//         content: "<" ;
+//         position: absolute ;
+//         display: flex ;
+//         width: 200px;
+//         height: 32px ;
+//         left: 0 ;
+//         bottom: 12px ;
+//         justify-content: center ;
+//         align-items: center ;
+//         color: var(--interactive-normal);
+//         font-size: 18px ;
+//         font-weight: 700 ;
+//         transform: rotate(90deg) translate(6px, 100px - 16px);
+//       }
       
-      &:hover {
-        height: 44px ;
+//       &:hover {
+//         height: 44px ;
         
-        &:after {
-          content: ">" ;
-          color: var(--interactive-hover);
-        }
-      }
+//         &:after {
+//           content: ">" ;
+//           color: var(--interactive-hover);
+//         }
+//       }
       
-      // Buttons container
-      .button-1EGGcP {
-        width: max-content ;
-        padding: 0 12px ;
-        background: none ;
-        color: var(--interactive-normal);
-        z-index: 1 ;
+//       // Buttons container
+//       .button-1EGGcP {
+//         width: max-content ;
+//         padding: 0 12px ;
+//         background: none ;
+//         color: var(--interactive-normal);
+//         z-index: 1 ;
         
-        &:not(.fauxDisabled-8w0hCZ):hover {
-          color: var(--interactive-hover);
-        }
-      }
-    }
-  }
-}
+//         &:not(.fauxDisabled-8w0hCZ):hover {
+//           color: var(--interactive-hover);
+//         }
+//       }
+//     }
+//   }
+// }
 // <- Sidebar Panels (Profile, Activity,..)
 
 // -> Members list 
-.members-3WRCEx {
+.members-2y1nVj {
   @include scrollerFadeOut();
 
   &::-webkit-scrollbar { display: none }
   
   // Role header
-  .membersGroup-2eiWxl { 
+  .membersGroup-2YoqY- { 
     margin-bottom: 4px;
     font-weight: 600 ;
    }
@@ -469,9 +469,6 @@
     }
   }
 }
-
-// Content
-.sidebar-1tnWFu ~ .pageWrapper-2PwDoS > .scroller-3j5xK2 { @include scrollbar() }
 // <- Discovery
 
 // -> Server boost screen

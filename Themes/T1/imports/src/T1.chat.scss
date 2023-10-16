@@ -1,8 +1,8 @@
-// * T1.chat v0.1.82
+// * T1.chat v0.1.83
 // Text chat, Voice chat
 
 // Header/Chat sperator line
-.content-1jQy2l::before { display: none }
+.content-18rAwf::before { display: none }
 
 // -> Inline Mentions
 .mention.wrapper-1ZcZW- {
@@ -25,7 +25,7 @@
 // <- Inline Mentions
 
 // -> Chat container
-.chatContent-3KubbW {
+.chatContent-2O4SXb {
   z-index: 101 ; // for "Mark As Read" 
   width: -webkit-fill-available ; // for search results 
 
@@ -83,20 +83,21 @@
     }
 
     // "New Summaries"
-    &.newTopicsBarContainer-MYPq92 {
+    // &.newTopicsBarContainer-MYPq92 {
+    // &.topicsPillContainer-1LeYIf {
 
-      .newTopicsBarTopicSection-QcIQlL, .barButtonBase-Sk2mdB {
-        cursor: pointer ;
-      }
+    //   .newTopicsBarTopicSection-QcIQlL, .barButtonBase-Sk2mdB {
+    //     cursor: pointer ;
+    //   }
 
-      .newTopicsBarText-3wNj93, .newTopicsBarIcon-2wXHrU {
-        color: var(--interactive-hover);
+    //   .newTopicsBarText-3wNj93, .newTopicsBarIcon-2wXHrU {
+    //     color: var(--interactive-hover);
 
-        &:hover {
-          color: var(--interactive-active);
-        }
-      }
-    }
+    //     &:hover {
+    //       color: var(--interactive-active);
+    //     }
+    //   }
+    // }
 
     // Summaries caret btns
     .topicsPillCaret-2_eSsS {
@@ -189,7 +190,7 @@
     }
   }
 
-  // server guide (next steps)
+  // server guide box on top of form (next steps/ "come say hi")
   .container-22-IpK {
     .banner-1AB1xq {
       background: var(--background-modifier-selected);
@@ -203,7 +204,7 @@
 // <- Chat container
 
 // -> Text input
-.form-3gdLxP {
+.form-3qe0Ni {
   margin: 0 ;
   padding: 0 ;
   border-top: 1px solid var(--background-modifier-accent);
@@ -211,7 +212,7 @@
   &::before { display: none }
 
   // Text input container
-  .channelTextArea-1FufC0 {
+  .channelTextArea-1VQBuV {
     background: none ;
     margin: 0 ;
     padding: 0 ;
@@ -241,6 +242,7 @@
     // Reply popout
     .attachedBars-2BCP3l {
       background: none ;
+      border-bottom: 1px solid var(--background-modifier-accent);
       
       .replyBar-1oi75v {
         background: none ;
@@ -267,13 +269,6 @@
       right: 0px ;
       width: 1px ;
       background-color: var(--background-modifier-accent) ;
-    }
-
-    // Button
-    .attachButton-_ACFSu {
-      // position: absolute;
-      // top: 50% ;
-      // transform: translateY(-50%) ;
     }
   }
 
@@ -377,24 +372,26 @@
   }
 
   // Chat input replacmnet box (follow channel, complete server setup,..)
-  .wrapper-2SplAX {
+  .wrapper-IjGAlW {
     background: none ;
     margin: 0 ;
 
-    .image-3FliiM, .animation-1GAstp {
+    .image-15uDsn, 
+    .animation-1GAstp // ?
+    {
       display: none ;
     }
 
-    .title-Do_30w {
+    .title-ZqmuTf {
       color: var(--header-secondary);
     }
 
-    .button-cO0-d9 {
+    .button-1F0CyK {
       @include Btn("background");
     }
   }
   
-  // Tips info for text input
+  // Tips info for text input ??
   .applicationCommandEducation-1stoia {
     bottom: unset ;
     top: -20px ;
@@ -474,7 +471,7 @@
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
 $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
 
-.chatContent-3KubbW .message-2CShn3.cozy-VmLDNB {
+.chatContent-2O4SXb .message-2CShn3.cozy-VmLDNB {
   background: none ;
   padding: 2px 32px 0px 4.125rem !important ;
   
@@ -695,7 +692,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   &.mentioned-Tre-dv, &.ephemeral-2nDdnn { 
     .buttonContainer-1502pf:hover:after {
-      right: 32px ;
+      right: 32px ; // why did i do this ?
     }
   }
   // <- Message Buttons 
@@ -752,73 +749,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
-// Emotes
-// .message-2CShn3 {
-  
-//   // BD emotes
-//   .emotewrapper {
-//     margin: 0 ;
 
-//     // - Mutli-Emotes
-//     .emotetr, .emotebr, .emotebl  {
-//       transform: none ;
-//     }
-
-//     // Top-right, Bottom-right
-//     .emotetr, .emotebr {
-//       margin-left: -0.25rem ;
-//     }
-
-//     // Fav emote btn
-//     .fav {
-//       top: 0 ;
-//       right: 0 ;
-//       width: .65rem ;
-//       height: .65rem ;
-//       z-index: 1 ;
-//       padding: .1rem ;
-//       background-repeat: no-repeat ;
-//       background-color: var(--background-secondary) ;
-//       background-size: cover ;
-//       box-sizing: content-box ;
-
-//       @mixin Icon_star ($color:"rgb(124, 125, 126)", $stroke:"rgb(0, 0, 0)", $stroke-width:"1") {
-
-//         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#{$color}" stroke="#{$stroke}" stroke-width="#{$stroke-width}"><path  d="M21.924 8.61789C21.77 8.24489 21.404 8.00089 21 8.00089H15.618L12.894 2.55389C12.555 1.87689 11.444 1.87689 11.105 2.55389L8.38199 8.00089H2.99999C2.59599 8.00089 2.22999 8.24489 2.07599 8.61789C1.92199 8.99089 2.00699 9.42289 2.29299 9.70789L6.87699 14.2919L5.03899 20.7269C4.92399 21.1299 5.07199 21.5619 5.40999 21.8089C5.74999 22.0569 6.20699 22.0659 6.55399 21.8329L12 18.2029L17.445 21.8329C17.613 21.9449 17.806 22.0009 18 22.0009C18.207 22.0009 18.414 21.9369 18.59 21.8089C18.928 21.5619 19.076 21.1299 18.961 20.7269L17.123 14.2919L21.707 9.70789C21.993 9.42289 22.078 8.99089 21.924 8.61789Z"></path></svg>');
-//       }
-
-//       @include Icon_star() ;
-
-//       &.active { 
-//         @include Icon_star("rgb(195, 173, 71)");
-
-//         &:hover { @include Icon_star("rgba(0,0,0,0") }
-//       }
-
-//       &:hover { @include Icon_star("rgb(195, 173, 71)",) }
-//     }
-//   }
-  
-//   // BD emote modifier
-//   &:hover .emote.stop-animation {
-    
-//     // :spin :spin2 :spin3 :1spin :2spin :3spin :flip :flap :pulse :shake :shake2 :shake3 
-//     // :tr :bl :br
-    
-//     &.emoteflip,.emotespinflip { transform:scaleX(-1) }
-//     &.emotespin { animation:1s emote-spin infinite linear }
-//     &.emote1spin { animation:1s emote-spin-reverse infinite linear }
-//     &.emotespin2 { animation:.5s emote-spin infinite linear }
-//     &.emote2spin { animation:.5s emote-spin-reverse infinite linear }
-//     &.emotespin3 { animation:.2s emote-spin infinite linear }
-//     &.emote3spin { animation:.2s emote-spin-reverse infinite linear }
-//     &.emotepulse { animation:1s emote-pulse infinite linear }
-//     &.emoteshake { animation:1s emote-shake infinite linear }
-//     &.emoteflap { transform:scaleY(-1) }
-//     &.emoteshake2 { animation:emote-shake2 .3s linear infinite }
-//     &.emoteshake3 { animation:emote-shake3 .1s linear infinite }
-//   }
-// }
 // Reactions
 .message-2CShn3 .reaction-3vwAF2 {
   background-color: var(--background-modifier-accent);

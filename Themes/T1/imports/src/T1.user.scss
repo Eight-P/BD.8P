@@ -1,4 +1,4 @@
-// * T1.user v0.2.55
+// * T1.user v0.2.56
 // User popout / (Modal)
 
 
@@ -378,13 +378,18 @@
 
 
 // -> Account Popout
-.accountProfilePopoutWrapper-3GskID {
+.layerContainer-2lfOPe .layer-2BGhQ8:has(.accountProfilePopoutWrapper-Ag_Fip) {
+  // top: 80px !important; // may be needed, idk yet
+}
+
+.accountProfilePopoutWrapper-Ag_Fip {
   left: 0 ;
 
   .menu-2TXYjN { 
     max-width: unset ;
     background: var(--background-tertiary) ;
     
+    // popout menu
     .submenu-3ycVEH {
       
       .separator-12G2Op { display: none }
