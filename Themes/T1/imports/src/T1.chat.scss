@@ -1,4 +1,4 @@
-// * T1.chat v0.1.83
+// * T1.chat v0.1.84
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -906,21 +906,18 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // <- Post item card
 }
 
-// -> Forum chat
-.chatContent-3KubbW {
+// -> Forum Chat (Overlay/Full view)
+// Reactions, Follow, copy link btns
+.chatContent-2O4SXb {
 
-  .divider-AZrXIA { display: none }
-
-  // Reactions, Follow, copy link btns
   .container-3YcgdM {
-    margin: 4px 4px 4px 8px ;
+    margin: 12px 4px 8px 8px ;
     padding: 0 10px ;
-    background: var(--background-secondary);
-    // background: var(--background-floating);
+    background: var(--background-modifier-accent);
     border: none ;
     border-radius: 5px ;
 
-    @include shadow_effect("box_2");
+    @include shadow_effect("box_3");
 
     .reaction-102jx9, .buttonInner-3aRbcx, .addReactButton-3bSQb6 {
       background: none ;
@@ -928,24 +925,33 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 }
-// <- Forum chat
+
+// Post to messages sperator
+.divider-AZrXIA { display: none }
+
+// <- Forum Chat
 // <- Forum channel
 
-// -> Threads / Voice chat / Forum chat (spilt view / overlay)
-.chatLayerWrapper-2mgEK- {
+// -> Spilt/Overlay view ( Threads / Voice chat / Forum chat )
+.chatLayerWrapper-1K7IFZ {
   width: 100% ;
 
-  // shadow gradient effect thing idk
-  .chatTarget-3H6mpC { display: none }
+  // shadow effect on left side of chat
+  .chatTarget-1ROClP { display: none }
 }
 
 // Main wrapper
-.container-3XgAHv {
+.container-3s2w-i {
   background: none ;
   border-radius: 0 ;
 
-  // Forum icon
-  .iconWrapper-3FqQ75 {
+  // reverse from regular chat (Line:28)
+  .chatContent-2O4SXb {
+    z-index: auto ;
+  }
+
+  // Forum, Thread Icon
+  .iconWrapper-3FqQ75, .iconWrapper-3plkqh {
     display: none ;
   }
 
@@ -962,31 +968,31 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Header content seperator line
-  .chat-1-OBC7:before, .chat-1rZYgu:before { display: none }
+  .chat-1-OBC7:before, .chat-1rZYgu:before { 
+    box-shadow: none ;
+    background: var(--background-modifier-accent);
+  }
   
+  // ?
   .threadCreatorName-1NFrTx:hover {
     text-decoration: none ;
   }
 
-  // Chat 
-  .chat-25x62K {
-    
-    // Messages scroller
-    .scroller-kQBbkU { 
-      @include scrollerFadeOut(); 
-    }
+  // Messages scroller
+  .scroller-kQBbkU { 
+    @include scrollerFadeOut();
+  }
 
-    // Text input - slowmode icon
-    .cooldownWrapper-2k1jHK {
-      right: -16px ;
-    }
+  // Text input - slowmode icon
+  .cooldownWrapper-2k1jHK {
+    right: -16px ;
   }
   
   // Create thread
   .container-1RZJZM {
     
     // Text inputs
-    .channelTextArea-3TZH74, .input-2g-os5 {
+    .channelTextArea-3TZH74, .input-3O04eu {
       border-radius: 0 ;
       background: none ;
       border: 1px solid var(--background-modifier-accent) !important ;
@@ -996,10 +1002,24 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       background: none ;
       border: none ;
     }
+    
+    // Send btn
+    .separator-3ng7S5 .buttonChild-33lB5F {
+      color: var(--interactive-normal);
+      transition: none ;
+      
+      &.activeButtonChild-2hgLAO {
+        color: var(--interactive-hover);
+        
+        &:hover {
+          color: var(--interactive-active);
+        }
+      }
+    }
   }
   
   // Chat in split view with overlapping (Threads + Voice text)
-  &.floating-3M3WeH {
+  &.floating-1T0kDs {
     margin-top: 1px ;
     z-index: 1002 ;
     border: none ;
@@ -1054,7 +1074,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 }
 
 // Resizer for voice text and threads in side by side mode
-.chatTarget-3H6mpC.notFloating-cIl-vp + .resizeHandle-PBRzPC {
+.chatTarget-1ROClP.notFloating-IbB3Ei + .resizeHandle-2F4Beb {
   position: relative ;
   width: 7px ;
   background: none ;

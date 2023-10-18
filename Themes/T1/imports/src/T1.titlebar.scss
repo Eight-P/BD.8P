@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.28
+// * T1.titlebar v0.1.29
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -110,7 +110,7 @@
 }
 
 // - Chat (Server / DMs )
-.chat-2ZfjoI > .container-ZMc96U {
+.chat-9g_3Xj > .container-ZMc96U {
   
   // - Channel name / topic
   .children-3xh0VB {
@@ -134,7 +134,7 @@
     }
     
     // Follow Announcement channel button
-    .followButton-1N-GGp { 
+    .followButton-1m2OlK { 
       @include Btn();
     }
   }
@@ -223,12 +223,12 @@
 // -- OS specific stuff
 html {
   // - Windows
-  &.platform-win .titleBar-1it3bQ {
+  &.platform-win .titleBar-3AIemB {
     box-shadow: 0 .5px 0 var(--header-secondary) ;
     z-index: 500 ;
 
     // Watermark
-    .wordmarkWindows-2dq6rw {
+    .wordmarkWindows-1rsity {
 
       path:not(:first-child) { display: none }
 
