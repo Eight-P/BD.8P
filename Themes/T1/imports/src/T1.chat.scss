@@ -1,4 +1,4 @@
-// * T1.chat v0.1.84
+// * T1.chat v0.1.841
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -752,12 +752,14 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // Reactions
 .message-2CShn3 .reaction-3vwAF2 {
-  background-color: var(--background-modifier-accent);
+  // background-color: var(--background-modifier-accent);
+  background-color: var(--background-modifier-hover);
   border: none;
   border-radius:4px;
 
   &:hover { 
-    background-color: var(--background-accent) ;
+    // background-color: var(--background-accent);
+    background-color: var(--background-modifier-selected);
   }
 
   // Active reaction 
