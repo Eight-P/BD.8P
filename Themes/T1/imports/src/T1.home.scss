@@ -1,26 +1,26 @@
-// * T1.home v0.1.266
+// * T1.home v0.1.3
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -> Friends Tab
-.tabBody-2dgbAs {
+.tabBody_b3d268 {
   
   // Seperator line top
   &::before { display: none }
   
   // Friendslist searchbar
-  .searchBar-2aylmZ {
+  .searchBar_ff8800 {
     background: var(--background-modifier-accent);
   }
   
   // -> Friendslist
-  .peopleList-2VBrVI {
+  .peopleList__2379e {
     margin: 0 0 0 20px ;
     padding: 0 ;
 
     @include scrollerFadeOut();
     
     // "Friends online" Count
-    .title-x4dI75  { display: none }
+    .title_dc625c  { display: none }
     
     // --without lazy loading
     // Sub container (Grid)
@@ -34,7 +34,7 @@
       grid-column-gap: 10px ;
       
       // -> Friend list item
-      .peopleListItem-u6dGxF {
+      .peopleListItem_d14722 {
         height: 62px !important ;
         width: 300px ;
         margin: 0 ; 
@@ -54,14 +54,14 @@
           @include shadow_effect("box_1");
           
           // # Identifier
-          .discriminator-WV5K5s {
+          .discriminator_aef524 {
             visibility: visible ;
             width: auto ;
           }
         }
         
         // Main Container
-        .userInfo-2WpsYG {
+        .userInfo__18240 {
           margin: 0px 12px ;
           width: -webkit-fill-available ;
           overflow: visible !important ;
@@ -72,7 +72,7 @@
 
         // -> Avatar, Status icon
         // Avatar pfp
-        .avatar-2MSPKk {
+        .avatar__8986c {
           
           // SVG Mask container
           foreignObject, svg {
@@ -80,12 +80,12 @@
             overflow: visible ;
           }
 
-          .svg-1G_H_8 {
+          .svg_f5b652 {
             contain: unset ;
           }
           
           // Image
-          .avatar-31d8He {
+          .avatar__991e2 {
             border-radius: 5px ;
             
             &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
@@ -104,22 +104,22 @@
         // <- Avatar, Status icon
 
         // -> Username, Status text
-        .text-3j8t_e {
+        .text__923ee {
           width: 100% ;
         }
 
         // Displayname
-        .username-Qpc78p {
+        .username__81ee6 {
           margin-right: 5px ;
         }
 
         // Username/ # Identifier
-        .discriminator-WV5K5s {
+        .discriminator_aef524 {
           width: 0 ;
         }
         
         // Activity (hiding the "playing" behind background) 
-        .activity-1KqKY2 .text-MPIeXO {
+        .activity__24558 .text__1dddb {
           width: 100% ;
           position: relative ;
           
@@ -132,40 +132,40 @@
         }
         
         // Activity icon, idk
-        .icon-Lupfh-, .textRuler-1DsANg { display: none }
+        .icon_d942d4, .textRuler__61dab { display: none }
 
         // <- Username, Status text
         
         // User actions normal
-        .actions-YHvpIT {
+        .actions_c08157 {
           display: none ;
         }
         
         // User item container Blocked/Pending
-        .listItemContents-f4Uz5J, .listItemContents-2NFd61 {
+        .listItemContents_a04d75, .listItemContents__9efb3 {
           width: -webkit-fill-available ;
         
           // Container (Avatar, Name, Activity)
-          .userInfo-2WpsYG {
+          .userInfo__18240 {
             overflow: hidden ;
             flex: 1 1 auto ;
           }
         
           // Unblock btn
-          .actionButton-3-B2x- {
+          .actionButton__23182 {
             display: none ;
             margin: 0 10px 0 0 ;
             background: none ;
           }
         
           // "Blocked" text
-          .subtext-xfubwR {
+          .subtext__1a662 {
             overflow: hidden ;
             white-space: nowrap ;
             text-overflow: ellipsis ;
           }
         
-          &:hover .actionButton-3-B2x- {
+          &:hover .actionButton__23182 {
             display: flex ;
           }
         }
@@ -178,10 +178,10 @@
     .content-2a4AW9 {
       
       // Friend item
-      .peopleListItem-u6dGxF {
+      .peopleListItem_d14722 {
         
         // User interaction btns
-        .actionButton-3-B2x- {
+        .actionButton__23182 {
           background: none ;
         }
       }
@@ -193,11 +193,11 @@
   // <- Friendslist
   
   // -> Friends activity sidebar
-  .nowPlayingColumn-1eCBCN { 
+  .nowPlayingColumn_f5023f { 
     // display: block ;
     display: none ;
 
-    .emptyCard-KDifrB {
+    .emptyCard_f82dde {
       background: none ;
     }
   }
@@ -206,44 +206,44 @@
 // <- Friends Tab
 
 // -> Add Friend
-.tabBody-2dgbAs {
+.tabBody_b3d268 {
   
-  .addFriendInputWrapper-kkoSV9 {
+  .addFriendInputWrapper__4bf8e {
     margin-top: 32px ;
     border: none ;
     background: none ;
     border-radius: 0 ;
     
-    .addFriendInput-1Ta-rO {
+    .addFriendInput__568d8 {
       padding: 8px 10px ;
       border-bottom: 1px solid transparent ;
       border-radius: 5px ;
       background: var(--background-modifier-selected) ;
     }
     
-    .addFriendHint-1EVQJY {
+    .addFriendHint__6df3d {
       padding: 8px 10px ;
     }
 
-    .input-1bmui3 {
+    .input_d5574d {
       height: 20px ;
     }
     
-    &:focus-within .addFriendInput-1Ta-rO {
+    &:focus-within .addFriendInput__568d8 {
       border-color: var(--interactive-normal) ;
       background: none ;
       border-radius: 0px ;
       box-shadow: none ;
     }
     
-    .button-ejjZWC {
+    .button_afdfd9 {
       @include Btn("background");
     }
   }
 
   // find more things thing
-  .grid-1-I1AZ {
-    .container-3tKtM_ {
+  .grid__5ef55 {
+    .container_a308ae {
       background: var(--background-modifier-selected) ;
       border: none ;
     }
@@ -252,11 +252,11 @@
 // <- Add Friend
 
 // -> Nitro store
-.applicationStore-2nk7Lo {
+.applicationStore_fc7d76 {
   
-  .headerBar-1dSpQr { display: none }
+  .headerBar_afb1ac { display: none }
   
-  .scroller-29cQFV { @include scrollbar() }
+  .scroller__244e5 { @include scrollbar() }
 
   // Header card background
   svg.root-1F1IKT { display: none }
@@ -269,29 +269,29 @@
 // <- Nitro store
 
 // -> DMs Sidebar
-.privateChannels-oVe7HL {
+.privateChannels__93473 {
   top: 48px ;
   margin-bottom: 48px ;
   
   // Scroller container
-  .scroller-WSmht3 { 
+  .scroller__4b984 { 
     padding: 0 10px 0 0 !important ;
     
     &::-webkit-scrollbar { display: none }
   }
   
   // Create Group DM Button (not necessary, there is one at the top right)
-  .privateChannelRecipientsInviteButtonIcon-1ObKXK { display: none }
+  .privateChannelRecipientsInviteButtonIcon__1e8fc { display: none }
     
   // Sidebar item container
 
   // Channel except Home tabs
-  .privateChannelsHeaderContainer-1UWASm ~ .channel-1Shao0 {
+  .privateChannelsHeaderContainer_ddcec6 ~ .channel_c21703 {
     height: 38px !important ;
     margin: 6px 0 !important ;
   }
 
-  .channel-1Shao0 {
+  .channel_c21703 {
     padding: 0 ;
     border-radius: 0 ;
 
@@ -300,21 +300,21 @@
     margin: calc(var(--show-home-tabs, 1) * 6px) 0;
     overflow: hidden ;
 
-    @include Mentions_icon(".numberBadge-37OJ3S");
+    @include Mentions_icon(".numberBadge__50328");
     
     // Second container
     // .interactive-1vLZ_I {
-    .interactive-iyXY_x {
+    .interactive_a868bc {
       background: none ;
       height: 38px ;
       margin-left: 5px ;
       
       // Third container
-      .layout-1LjVue {
+      .layout__59abc {
         margin-left: 5px ;
       }
       
-      &.selected-26oxtA {
+      &.selected_d94cf9 {
         border-left: 3px solid var(--interactive-hover);
       }
       
@@ -324,12 +324,12 @@
       }
     }
 
-    .closeButton-mupH76 { 
+    .closeButton__8f1fd { 
       // background-size: 22px 22px; 
     }
 
     // Nitro Ads
-    .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF, .badgeIconPrivateMessages-2hN0QU { display: none }
+    .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF, .badgeIconPrivateMessages__2ccd2 { display: none }
   }
 }
 // <- DMs Sidebar

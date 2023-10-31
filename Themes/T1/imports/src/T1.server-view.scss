@@ -1,31 +1,31 @@
-// * T1.server-view v0.1.651
+// * T1.server-view v0.1.7
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
-.container-1NXEtd {
+.container__590e2 {
   top: 48px ;
   margin-bottom: 48px ;
 
   // Special channels seperator (only show last one)
-  .sectionDivider-189lqb:has(~ .sectionDivider-189lqb) { display: none }
+  .sectionDivider__68d2a:has(~ .sectionDivider__68d2a) { display: none }
 
   // -> Current server event, Feature promotion
-  .channelNotice-K4UfZY, .channelNotice-7cg_jN {
+  .channelNotice__8f7b2, .channelNotice-7cg_jN {
     
     // Event name
     .colorHeaderPrimary-jN_yGr {
       color: var(--header-secondary);
     }
     
-    // .joinButton-1HdI2a {
-    .button-f2h6uQ {
+    // .joinButton_e760b6 {
+    .button_afdfd9 {
       @include Btn("background");
     }
   }
   // <- Current server event, Feature promotion
   
   // -> Scroller container
-  .scroller-1ox3I2 {
+  .scroller_f0f183 {
     // Fade out effect
     @include scrollerFadeOut();
 
@@ -34,7 +34,7 @@
   // <- Scroller container
   
   // -> Server boost progress bar
-  .container-2giAcK {
+  .container__4f639 {
     position: relative ;
     height: calc(24px * var(--show-serverboost-stats, 1));
     margin: -8px 4px 8px 4px ;
@@ -44,11 +44,11 @@
     &::after { display: none }
     
     // Text container
-    .textArea-7J7xQx {
+    .textArea_f2029c {
       margin: 0 12px ;
       
       // Nitro flower icon thing
-      .flowerStarContainer-1QeD-L { display: none }
+      .flowerStarContainer_d8d14b { display: none }
       
       // Text "Goal:LVL"
       .colorInteractiveActive-30E9n8 {
@@ -57,7 +57,7 @@
     }
     
     // Container progress bar
-    .progressBarContainer-1efroK {
+    .progressBarContainer__9b571 {
       position: absolute ;
       top: 0px ;
       width: 100% ;
@@ -66,7 +66,7 @@
       visibility: hidden ;
     
       // Progress bar
-      .progressBar-2yl2pi {
+      .progressBar_db0972 {
         height: 24px ;
         opacity: .15 ;
         border-top-right-radius: 5px ;
@@ -74,36 +74,36 @@
       }
     
       // End of bar icon 
-      .tadaIcon-313rPm { display: none }
+      .tadaIcon__3b97b { display: none }
     }
     
-    &:hover .progressBarContainer-1efroK {
+    &:hover .progressBarContainer__9b571 {
       visibility: visible ;
     }
     
     // Bottom spacer
-    .divider-3qUeLQ { display: none }
+    .divider__40683 { display: none }
     
     // Channel category header if adjacent
-    + .containerDefault-3TQ5YN {
+    + .containerDefault__23a29 {
       padding-top: 8px ;
     }
   }
   // <- Server boost progress bar
   
   // Category names
-  .containerDefault-3TQ5YN .name-3BUDLf {
+  .containerDefault__23a29 .name__590d6 {
     font-weight: 700 ;
   }
   
   // Text and Voice Channels
-  .wrapper-NhbLHG {
+  .wrapper__7bcde {
 
     // Mentions badge
-    @include Mentions_icon(".numberBadge-37OJ3S");
+    @include Mentions_icon(".numberBadge__50328");
 
     // Icon ("#", speaker, ..)
-    .icon-2W8DHg {
+    .icon_eff5d4 {
       width: 15px ;
       height: 15px ;
       margin: 2.5px 0 ;
@@ -112,26 +112,26 @@
     }
     
     // Channel name
-    .name-28HaxV { 
+    .name__8d1ec { 
       color: var(--channels-default);
     }
     
     // -> Channel options and infos
     // Settings and invite buttons
-    .iconItem-1EjiK0 { display: none }
+    .iconItem__8e3b8 { display: none }
 
     // Channel badges (e.g. "NEW", ..)
-    .textBadge-1fdDPJ {
+    .textBadge__45d79 {
       background: none !important;
       color: var(--interactive-hover)
     }
     
     // Connection limit (voice)
-    .wrapper-2fEmwW {
+    .wrapper__5848b {
       
       span { background: transparent }
       
-      .total-1c5KCN::after {
+      .total_c01838::after {
         content: "|" ;
         top: 0px ;
         left: -5px ;
@@ -140,60 +140,60 @@
     }
     
     // container for hover
-    .link-1_kTxV {
+    .link__95dc0 {
       background: transparent;
       
       &:hover {
-        .name-28HaxV { color: var(--interactive-hover) }
-        .iconItem-1EjiK0 { display: block }
+        .name__8d1ec { color: var(--interactive-hover) }
+        .iconItem__8e3b8 { display: block }
       }
     }
     // <- Channel options and infos
     
     // Channel selected / connected
-    &.modeSelected-3DmyhH, &.modeConnected-NrO4cP {
+    &.modeSelected__487d6, &.modeConnected__1c02e {
 
       // Channel name
-      .name-28HaxV { 
+      .name__8d1ec { 
         color: var(--interactive-active) !important; 
       }
       // Channel icon (left)
-      .icon-2W8DHg { 
+      .icon_eff5d4 { 
         color: var(--interactive-active) !important;
       }
     }
     
     // Channel muted
-    &.modeMuted-2T4MDZ {
+    &.modeMuted__0aeea {
       // Channel icon (left)
-      .icon-2W8DHg { 
+      .icon_eff5d4 { 
         color: var(--interactive-muted);
       }
     }
     
     // Channel unread
-    &.modeUnread-3Cxepe {
+    &.modeUnread_f74c03 {
       // pill
-      .unread-36eUEm { 
+      .unread__48cf4 { 
         background-color: var(--interactive-hover);
       }
     }
 
     // Channel no permission
-    &.modeLocked-3sToxd {
+    &.modeLocked_fcc71a {
 
-      .link-1_kTxV {
+      .link__95dc0 {
         cursor: not-allowed ;
       }
 
-      .name-28HaxV {
+      .name__8d1ec {
         color: var(--interactive-muted);
       }
     }
   }
 
   // Channel indicator bar (floating)
-  .container-24rGVp .bar-wDIGjg {
+  .container__9f9f6 .bar__004d9 {
     background: var(--background-secondary-alt);
 
     @include shadow_effect("box_3");
@@ -203,38 +203,38 @@
     }
 
     // Unread mentions bar
-    &.mentionsBar-DpLHCy .barText-1eIsLx {
+    &.mentionsBar__4b47a .barText__1a44f {
       color: var(--red-secondary) !important;
     }
   }
   
   // Threads indicator spine thing
-  .spine-29OFwR {
+  .spine__88e6d {
     color: var(--channels-default);
     opacity: .5 ;
   }
   
   // User in Voice channel
-  .voiceUser-3nRK-K {
+  .voiceUser__0470a {
 
     // "live" indicator
-    .live-1V2D-f { 
+    .live_b195a5 { 
       background: none !important ;
       color: var(--red) ;
     }
   }
   
   // New in-server feature notification
-  .wrapper-Hd8H2G .container-JMJRDf {
+  .wrapper_f49038 .container_cf0d66 {
     background: var(--background-tertiary) ;
     
-    .button-f2h6uQ {
+    .button_afdfd9 {
       @include Btn("background");
     }
   }
 
   // "Hide/Show all voice Channels
-  .voiceChannelsButton-SRmgo8:hover {
+  .voiceChannelsButton__46c37:hover {
     background-color: var(--background-modifier-hover);
     border-color: transparent ;
   }
@@ -242,10 +242,10 @@
 // <- Text/Voice channels
 
 // // -> Sidebar Panels (Profile, Activity,..)
-// .sidebar-1tnWFu .panels-3wFtMD {
+// .sidebar_ded4b5 .panels__58331 {
   
 //   // Profile Container
-//   .container-YkUktl {
+//   .container_ca50b9 {
 //     position: absolute ;
 //     height: 48px ;
 //     width: 240px ;
@@ -253,24 +253,24 @@
 //     box-sizing: border-box ;
 
 //     // Pfp, name container
-//     .avatarWrapper-1B9FTW {
+//     .avatarWrapper_ba5175 {
 //       margin: 6px 8px 6px 0 ;
 //       background: none ;
 //     }
 
 //     // Buttons
-//     .button-12Fmur {
+//     .button__4f306 {
 //       background: none ;
 //     }
 //   }
   
 //   // Activity Container
-//   .activityPanel-9icbyU {
+//   .activityPanel__22355 {
 //     height: 32px ;
 //     padding: 6px 10px ;
     
 //     // Image
-//     .gameIconWrapper-zXQ03M { 
+//     .gameIconWrapper__499e0 { 
 //       height: 32px;
 //     }
     
@@ -283,7 +283,7 @@
 //   }
   
 //   // Voice Connection
-//   .container-1zzFcN {
+//   .container_d667ff {
 //     display: grid ;
 //     padding: 0 ;
 //     border: none ;
@@ -291,19 +291,19 @@
 //     contain: paint ;
     
 //     // Voice channel info container
-//     .connection-3k9QeF {
+//     .connection__5bb32 {
 //       order: 2 ;
 //       margin-left: 32px ;
 //       padding: 6px 0 ;
 //       align-items: unset ;
       
 //       // Ping / "Connected"
-//       .rtcConnectionStatus-c5A6Av {
+//       .rtcConnectionStatus__40882 {
 //         padding: 1px 0 2px 0 ;
 //       }
       
 //       // Buttons container
-//       .button-12Fmur {
+//       .button__4f306 {
 //         background: none ;
         
 //         // Noise Suppression Btn
@@ -312,7 +312,7 @@
 //     }
     
 //     // Connected users container
-//     .voiceUsers-3gPcwY {
+//     .voiceUsers_c72ec5 {
 //       height: 30px ;
 //       padding: 3px 8px ;
 //       margin: 0 ;
@@ -321,13 +321,13 @@
       
 //       &::-webkit-scrollbar { display: none }
       
-//       ~ .actionButtons-2vEOUh:after {
+//       ~ .actionButtons_b58cbb:after {
 //         bottom: 42px ;
 //       }
 //     }
     
 //     // Voice channel button container
-//     .actionButtons-2vEOUh {
+//     .actionButtons_b58cbb {
 //       display: inline-flex ;
 //       height: 0 ;
 //       padding: 0 ;
@@ -363,14 +363,14 @@
 //       }
       
 //       // Buttons container
-//       .button-1EGGcP {
+//       .button__66e8c {
 //         width: max-content ;
 //         padding: 0 12px ;
 //         background: none ;
 //         color: var(--interactive-normal);
 //         z-index: 1 ;
         
-//         &:not(.fauxDisabled-8w0hCZ):hover {
+//         &:not(.fauxDisabled__095d8):hover {
 //           color: var(--interactive-hover);
 //         }
 //       }
@@ -380,24 +380,24 @@
 // <- Sidebar Panels (Profile, Activity,..)
 
 // -> Members list 
-.members-2y1nVj {
+.members__9f47b {
   @include scrollerFadeOut();
 
   &::-webkit-scrollbar { display: none }
   
   // Role header
-  .membersGroup-2YoqY- { 
+  .membersGroup__85843 { 
     margin-bottom: 4px;
     font-weight: 600 ;
    }
   
   // Member
-  .member-2gU6Ar {
+  .member_aa4760 {
     margin: 0 0 0 11px ;
     background: none ;
     
     // Inner container 
-    .layout-1qmrhw {
+    .layout_bb8e67 {
       border-radius: 0 ;
       background: none ;
       border-right: 3px solid transparent ;
@@ -409,29 +409,29 @@
     }
     
     // User popout open
-    &.selected-1-Z6gm .layout-1qmrhw {
+    &.selected__9800b .layout_bb8e67 {
        border-right: 3px solid var(--interactive-hover);
     }
     
     // Offline member
-    &.offline-22aM7E:not(:hover) .avatar-31d8He{
+    &.offline_c1fd80:not(:hover) .avatar__991e2{
       filter: grayscale(100%);
       border-radius: 50% ;
     }
     
     // Nitro icon 
-    .name-3Vmqxm + div { pointer-events: none }
+    .name__16feb + div { pointer-events: none }
     
-    .ownerIcon-255uKo {
+    .ownerIcon__827bd {
       color: var(--header-secondary);
     }
   }
 
   // Preload dummys
-  .placeholder-38d3Iv, .memberGroupsPlaceholder-9tqX9V {
+  .placeholder_dad2ff, .memberGroupsPlaceholder_d0ae46 {
     animation: none ;
   }
-  .placeholderAvatar-1qAcRZ, .placeholderUsername-3iQi_D, .memberGroupsPlaceholder-9tqX9V {
+  .placeholderAvatar__21e48, .placeholderUsername__7fd2c, .memberGroupsPlaceholder_d0ae46 {
     background: var(--text-normal);
     opacity: 0.1;
   }
@@ -444,26 +444,26 @@
 // <- Members list 
 
 // -> Discovery
-.discoverHeader-1vsvZ0 {
+.discoverHeader_fae7fd {
   
   // Sidebar
-  ~ .categoryItem-Kc_HK_ .itemInner-3e_4G4 {
+  ~ .categoryItem_b1be5c .itemInner__9e755 {
     border-radius: 0 ;
     padding: 0 4px ;
     margin: 5px 4px ;
   }
   
-  ~ .categoryItem-Kc_HK_ {
+  ~ .categoryItem_b1be5c {
     
-    .itemInner-3e_4G4 {
+    .itemInner__9e755 {
       border-radius: 0 ;
       padding: 0 4px ;
       margin: 5px 4px ;
     }
     
-    &:hover .itemInner-3e_4G4 { border-left: 3px solid var(--interactive-hover) }
+    &:hover .itemInner__9e755 { border-left: 3px solid var(--interactive-hover) }
     
-    &.selected-1-Z6gm .itemInner-3e_4G4 {
+    &.selected__9800b .itemInner__9e755 {
       background-color: transparent ;
       border-left: 3px solid var(--interactive-hover) ;
     }
@@ -472,26 +472,26 @@
 // <- Discovery
 
 // -> Server boost screen
-.root-2zfUH6.enterDone-menWZ8 {
+.root__6d24f.enterDone_a21e0b {
   margin-top: 22px ;
 
-  .scroller-3u_s5m { 
+  .scroller__439a2 { 
     @include scrollbar();
     @include scrollerFadeOut();
   }
 
   // weird wave design things
-  .bodyWave-wQyWfY, .headerWave-3sTT0Z { display: none }
+  .bodyWave__62812, .headerWave_e4fdee { display: none }
 }
 // <- Server boost screen
 
 // -> Home channel/ Server guide
-.homeContainer-1T8N7y, .emptyHomeContainer-1pW-ln {
+.homeContainer_a4aa0a, .emptyHomeContainer__4f9b7 {
 
   // -> Header
-  .header-20qCMo {
+  .header__35687 {
 
-    .headerIcon-3Q7cOC {
+    .headerIcon__8b099 {
       border: none ;
       border-radius: 7.5% ;
 
@@ -499,7 +499,7 @@
     }
 
     // Invite Btn
-    .inviteButton-17ob8h {
+    .inviteButton_eb675f {
       background: var(--background-modifier-hover);
       transition: none ;
 
@@ -512,15 +512,15 @@
 
   // -> Body
   // Greetings text
-  .welcomeMessageContainer-35bQR5 {
+  .welcomeMessageContainer__3d907 {
 
-    .userCardOuter-1au0HV, .userCardInner-3c42YR {
+    .userCardOuter__50b2f, .userCardInner_d6aa46 {
       background: none ;
     }
   }
 
   // "Get Started", "Resources" section items
-  .action-3oG-si, .row--LCpto {
+  .action_c957d9, .row__70f4c {
     background: var(--background-modifier-hover);
     transition: none ;
 
@@ -530,30 +530,30 @@
   }
 
   // Sidebar (server info)
-  .sidebarCardWrapper-34oCuK {
+  .sidebarCardWrapper__2c840 {
     background: var(--background-modifier-hover);
   }
   // <- Body
 }
 
 // OLD
-// .homeContainer-r4Hvv1 {
+// .homeContainer__6bec1 {
  
 //   // Info Top
-//   .widgets-37sQdc {
+//   .widgets__4a8b8 {
 
 //     // inner container
-//     .container-2Hi7Km {
+//     .container__92dc8 {
 //       background: none ;
 //     }
 
 //     // Widgets
-//     .container-xwOzwi, .emptyStateContainer-xWOMPJ {
+//     .container_acafc1, .emptyStateContainer__3c229 {
 //       background: none ;
 //     }
 
 //     // Channels
-//     .container-3HMTms {
+//     .container__16581 {
 //       background: var(--background-modifier-hover) ;
 //       border: none ;
 
@@ -564,11 +564,11 @@
 //   }
 
 //   // Top message container
-//   .container-4HqGB3 {
+//   .container__99b36 {
 //     background: none ;
 //   }
 
-//   .card-3x20HF {
+//   .card_d4f6c7 {
 //     background: var(--background-modifier-hover) ;
 //     border: none ;
 
@@ -577,7 +577,7 @@
 //     }
 
 //     // load Dummys 
-//     .wrapper-15CKyy {
+//     .wrapper__5c5cd {
 //       background: none ;
 //     }
 //   }
@@ -587,30 +587,30 @@
 
 // -> Special Channels
 // Header
-.container-ZMc96U {
+.container__11d72 {
 
   // return to last channel btn (Chan&Rols / Members)
-  .returnButton-1xn3Ii, .returnButton-1ptceW {
+  .returnButton__32059, .returnButton_c34965 {
     border: none;
     background: none;
 
     // Btn text
-    .returnButtonText-27U_ef {
+    .returnButtonText__32d61 {
       color: var(--interactive-hover);
     }
 
     // Icon within text
-    .iconContainer-21RCa3 { display: none }
+    .iconContainer__3f9b0 { display: none }
 
     // Text after icon
-    .overflow-1wOqNV {
+    .overflow__87fe8 {
       margin-left: 2px ;
     }
 
     &:hover {
       background: none var(--background-modifier-selected);
 
-      .returnButtonText-27U_ef {
+      .returnButtonText__32d61 {
         color: var(--interactive-active);
       }
     }
@@ -622,22 +622,22 @@
 // -> Channel & Roles
 
 // Content container
-.container-2IKOsH {
+.container__10dc7 {
 
   // Navbar
-  .tabBar-1_P75h {
+  .tabBar_d4764b {
 
-    .tabBarItem-onx_ng {
+    .tabBarItem_cd23b7 {
       border: none !important;
     }
   }
 
   // -> Customize
   // Infos & Questions
-  .prompt-1sE27N {
+  .prompt__1b100 {
     background: none ;
 
-    .optionButtonWrapper-2lbogO {
+    .optionButtonWrapper__4072c {
       background: var(--background-modifier-hover) ;
       border: none ;
 
@@ -648,10 +648,10 @@
   }
 
   // "MY Profile"
-  .profileCard-2gVmvm {
+  .profileCard_bd55ee {
     background: var(--background-modifier-hover);
 
-    .username-YfeGz8 {
+    .username_de9680 {
       color: var(--header-primary) !important;
     }
 
@@ -663,38 +663,38 @@
 
   // -> Browse channels
   // Searchbar
-  .search-kg4MrS {
+  .search__4a09e {
     background: var(--background-modifier-selected);
     border-radius: 2px ;
   }
 
   // create channel btn
-  .createButton-2BBU0x {
+  .createButton__5c763 {
     border-radius: 2px ;
 
     @include Btn(var(--background-modifier-selected));
   }
   
   // Channel category
-  .categoryRow-2VIZ6m {
-    .categoryText-35ACGA {
+  .categoryRow_df4323 {
+    .categoryText__3348f {
       color: var(--header-secondary) !important;
     }
   }
 
   // channel item
-  .channelRow-4X_3fi {
+  .channelRow__96673 {
     background: none ;
 
-    &:not(.disabled-3cfocy):hover {
+    &:not(.disabled__583e7):hover {
       background: var(--background-modifier-hover) ;
     }
 
-    .channelText-30KI3D {
+    .channelText_de4e73 {
       color: var(--text-normal) !important;
     }
 
-    .viewChannelButton-59XD70 {
+    .viewChannelButton_ee7ff6 {
       display: block;
 
       @include Btn();
@@ -702,7 +702,7 @@
   }
 
   // Checkboxes
-  .checkbox-1LuCGM {
+  .checkbox_c7f690 {
     background: none !important;
     border-color: var(--interactive-normal) !important;
   }
@@ -711,28 +711,28 @@
 // <- Channel & Roles
 
 // -> Server welcome screen thing
-.content-1SgpWY .main-243VC2 {
+.content__4bf10 .main__58b77 {
   // Background image
-  .artwork-3uFrhF { display: none }
+  .artwork__04b4e { display: none }
 
   // -> Intro
-  .coverContainer-1sBM6d {
+  .coverContainer_e99487 {
     background: none ;
   }
 
-  .centerContent-2Awr7N {
+  .centerContent_d55275 {
     background: var(--background-tertiary);
 
-    .button-f2h6uQ {
+    .button_afdfd9 {
       @include Btn("background");
     }
   }
   // <- Intro
 
   // -> Main content
-  .promptContent-1KG8jv {
+  .promptContent__63c03 {
 
-    .optionButton-1W9f7G {
+    .optionButton__6812e {
       border: none ;
       background: var(--background-modifier-accent);
 
@@ -746,20 +746,20 @@
 // <- Server welcome screen thing
 
 // -> Member Safety Page
-.page-2dwf_i {
+.page__0b66e {
 
   // scroller inner content container
-  .container-2qjEOK {
+  .container_df3aa0 {
     padding: 0 ;
 
     // Container
-    .mainTableContainer-3Nxvkd {
+    .mainTableContainer__5ffe0 {
       box-shadow: none ;
     }
   }
 
   // -> Header
-  .searchBar-3S907z {
+  .searchBar__63890 {
     background: var(--background-modifier-selected);
     border-bottom: 1px solid transparent ;
 
@@ -772,18 +772,18 @@
   // <- Header
 
   // -> Table
-  .table-2Z1caJ {
+  .table_a843c4 {
     padding: 0 ;
     border: none ;
   }
 
-  .tableHeaderRow-2Jri1A::after {
+  .tableHeaderRow__89a36::after {
     box-shadow: none ;
     background: var(--background-modifier-accent);
   }
 
   // notice bar for when new member joined 
-  .newMembersNotice-35VT6e {
+  .newMembersNotice__282a0 {
     top: -4px ;
     background: var(--background-secondary-alt);
     cursor: auto ;
@@ -807,7 +807,7 @@
   }
 
   // Member item
-  .memberRowContainer-ZDlmmA {
+  .memberRowContainer_f0d0e5 {
     // weird effect on row when leaving modal, idk
     background: none !important;
     transform: none !important;
@@ -832,43 +832,43 @@
       }
 
       // action buttons
-      .actionCell-1tWIj3 {
+      .actionCell__56a28 {
         color: var(--interactive-normal);
       }
     }
 
-    .memberNameContainer-IOGroW {
+    .memberNameContainer__43e33 {
       // grid-template-columns: 32px minmax(100px, 150px);
     }
 
     // -> Roles cell
     // container cell
-    td:has(.roleContainer-13c6D7) {
+    td:has(.roleContainer__7cd51) {
       // width: 10% !important ;
     }
 
-    .roleName-2ZJJYR {
+    .roleName_d19d33 {
       max-width: 140px ;
     }
 
     // roles btns
-    .otherRoles-LMys1u {
+    .otherRoles_a19529 {
       opacity: 1;
       background: var(--background-modifier-hover);
     }
 
     // role add btn
-    .addRoleContainer-2tqBaM {
+    .addRoleContainer__23777 {
 
       // icon
-      .addRoleIcon-5oV6RN {
+      .addRoleIcon__6eb16 {
         color: var(--header-secondary);
       }
 
       &:hover {
         background: var(--background-modifier-selected);
 
-        .addRoleIcon-5oV6RN {
+        .addRoleIcon__6eb16 {
           color: var(--header-primary);
         }
       }
@@ -876,7 +876,7 @@
     // <- Roles cell
 
     // action btns
-    .button-2XiUpU {
+    .button_fb10b9 {
       background: none ;
 
       &:hover {

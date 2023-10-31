@@ -1,14 +1,14 @@
-// * T1.titlebar v0.1.29
+// * T1.titlebar v0.1.3
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
 // - Toolbar search
 @mixin TB_Search () {
   // Searchbar
-  .search-2Mwzzq {
+  .search_ac353c {
     
     // container
-    .searchBar-jGtisZ {
+    .searchBar_e0c60b {
       width: 20px ;
       background: none ;
       border-radius: 0 ;
@@ -16,18 +16,18 @@
     }
     
     // Buttons container
-    .iconLayout-SqV3nb {
+    .iconLayout__9fbb1 {
       width: 16px ;
     }
     
     // Icon
-    .icon-18rqoe {
+    .icon_f50f05 {
       color: var(--interactive-normal) ;
       cursor: pointer ;
       
       transform: none ;
 
-      &:not(.visible-2yTnyW) {
+      &:not(.visible__4d9aa) {
         pointer-events: none ;
       }
 
@@ -37,14 +37,14 @@
     }
     
     // Searchbar open
-    &.open-1F8u2c {
+    &.open_d3ab4e {
       
-      .searchBar-jGtisZ {
+      .searchBar_e0c60b {
         width: 240px ;
         border-bottom: 1px solid var(--header-secondary) ;
       }
       
-      .icon-18rqoe:first-child {
+      .icon_f50f05:first-child {
         pointer-events: none ;
       }
     }
@@ -52,27 +52,27 @@
 }
 
 // - General Header
-.container-ZMc96U { // also effects split view chat title bar
+.container__11d72 { // also effects split view chat title bar
   box-shadow: none ;
   
   // - Main content
-  .children-3xh0VB {
+  .children__32014 {
     
     // "#", friends, "@", speaker - icon
-    .iconWrapper-2awDjA { display: none }
+    .iconWrapper_af9215 { display: none }
     
     // random line (left)
-    .divider-q3P9HC { display: none }
+    .divider_c09b64 { display: none }
     
     // "AKA" icon if chatpartner has a nickname in a server
-    .akaBadge-3i7V3p { display: none }
+    .akaBadge__7df41 { display: none }
     
     // Dm Partner / Channel name
-    .title-17SveM {
+    .title__9e2b0 {
       color: var(--interactive-hover) ;
       
       // Channel name by default
-      &:not(.cursorPointer-3JF56F) { display: none }
+      &:not(.cursorPointer__5116a) { display: none }
     }
     
     // ugly random line (right)
@@ -80,7 +80,7 @@
   }
   
   // - rightside iconbar
-  .toolbar-3_r2xA {
+  .toolbar__88c63 {
     @mixin TB_icons () {
       margin: 0 9px ;
 
@@ -96,27 +96,27 @@
     }
     
     // Icons
-    .iconWrapper-2awDjA { @include TB_icons() }
+    .iconWrapper_af9215 { @include TB_icons() }
     
     // Searchbar
     @include TB_Search() ;
     
     // Voicecall view buttons
-    .button-f2h6uQ { @include TB_icons() }
+    .button_afdfd9 { @include TB_icons() }
     
     // Discord "Help" (web-link) icon
-    .anchor-1X4H4q { display: none }
+    .anchor_c8ddc0 { display: none }
   }
 }
 
 // - Chat (Server / DMs )
-.chat-9g_3Xj > .container-ZMc96U {
+.chat__52833 > .container__11d72 {
   
   // - Channel name / topic
-  .children-3xh0VB {
+  .children__32014 {
     
     // Channel description
-    .topic-11NuQZ {
+    .topic__16ae3 {
       margin: 0 8px ;
       text-align: center ;
       
@@ -134,33 +134,33 @@
     }
     
     // Follow Announcement channel button
-    .followButton-1m2OlK { 
+    .followButton__2e268 { 
       @include Btn();
     }
   }
   
-  .toolbar-3_r2xA {
+  .toolbar__88c63 {
     // min-width: 226px ;
     // justify-content: space-around ;
   }
 }
 
 // - Home/Friends
-.container-2cd8Mz .container-ZMc96U {
+.container__5c7e7 .container__11d72 {
   
   // - Nav bar / Friends tabs 
-  .tabBar-ra-EuL {
+  .tabBar__73938 {
     margin: 0 auto ;
     padding-right: 40px ;
     
     // Tabs
-    .item-3mHhwr {
+    .item_e4ca95 {
       background: none !important ;
 
-      @include Mentions_icon('.numberBadge-37OJ3S');
+      @include Mentions_icon('.numberBadge__50328');
       
       // add friend Tab
-      &.addFriend-emTWY1 {
+      &.addFriend__80542 {
         position: absolute ;
         right: 0 ;
         width: 24px ;
@@ -193,17 +193,17 @@
   }
 
   // Toolbar 
-  .toolbar-3_r2xA {
+  .toolbar__88c63 {
     
     // Create group dm icon (otherwise gets hidden when window width is below 940px)
-    .inviteToolbar-2k2nqz {
+    .inviteToolbar_e74dc0 {
       display: flex ;
     }
   }
 }
 
 // - Message requests
-#app-mount .container-2YMsb4 .container-ZMc96U {
+#app-mount .container_d3a736 .container__11d72 {
   // Navbar
   .item-3XjbnG {
     background: none ;
@@ -211,24 +211,24 @@
 }
 
 // - DM Voice call
-//section.title-31SJ6t.container-ZMc96U.transparent-1lUmft[aria-label="Channel header"] {}
+//section.title_b7d661.container__11d72.transparent__7f3e0[aria-label="Channel header"] {}
 
 // - Server Voice call
-//section.theme-dark.container-ZMc96U.transparent-1lUmft {}
+//section.theme-dark.container__11d72.transparent__7f3e0 {}
 
 // - Live Stages 
-//section.headerBarContainer-31FKNA.container-ZMc96U.themed-Hp1KC_ {}
+//section.headerBarContainer-31FKNA.container__11d72.themed_b152d4 {}
 
 
 // -- OS specific stuff
 html {
   // - Windows
-  &.platform-win .titleBar-3AIemB {
+  &.platform-win .titleBar__01af6 {
     box-shadow: 0 .5px 0 var(--header-secondary) ;
     z-index: 500 ;
 
     // Watermark
-    .wordmarkWindows-1rsity {
+    .wordmarkWindows__05c46 {
 
       path:not(:first-child) { display: none }
 
@@ -244,14 +244,14 @@ html {
   // &.platform-osx {
     
   //   // AppOS btns
-  //   .titleBar-1it3bQ {
+  //   .titleBar__01af6 {
   //     width: 48px ;
   //     transform: rotate(90deg);
   //     transform-origin: 13px 13px ;
   //     -webkit-app-region: none;
 
   //     // Btn container
-  //     .macButtons-eIdy0e {
+  //     .macButtons__7b1bc {
   //       padding: 0 ;
   //       justify-content: space-evenly ;
   //       width: 48px ;
@@ -259,7 +259,7 @@ html {
   //       cursor: pointer ;
         
   //       // Buttons, Btn icon
-  //       .macButton-2M5W_9, svg {
+  //       .macButton__3b74b, svg {
   //         width: 10px ;
   //         height: 10px ;
   //       }
@@ -267,35 +267,35 @@ html {
       
   //     &:hover {
         
-  //       .macButton-2M5W_9 svg {
+  //       .macButton__3b74b svg {
   //         visibility: visible ;
   //       }
         
-  //       .macButtonClose-3IXwAm {
+  //       .macButtonClose__071f2 {
   //         background-color: #fc615d ;
   //       }
         
-  //       .macButtonMinimize-Q8clSI {
+  //       .macButtonMinimize_ff73a4 {
   //         background-color: #fdbc40 ;
   //       }
         
-  //       .macButtonMaximize-1vTCwt {
+  //       .macButtonMaximize__65e03 {
   //         background-color: #34c749 ;
   //       }
   //     }
   //   }
 
   //   // move Profile panel for AppOS btns
-  //   .panels-3wFtMD > .container-YkUktl {
+  //   .panels__58331 > .container_ca50b9 {
   //     margin-left: 26px ;
   //     width: 214px ;
   //     padding: 0 8px 0 0 ;
   //   }
     
-  //   .container-ZMc96U > .children-3xh0VB {
+  //   .container__11d72 > .children__32014 {
   //     -webkit-app-region: none;
       
-  //     + .toolbar-3_r2xA {
+  //     + .toolbar__88c63 {
   //       -webkit-app-region: none;
   //     }
   //   }
@@ -304,12 +304,12 @@ html {
 
 
 // -> Notification bars
-.bd-notice, .notice-2HEN-u  {
+.bd-notice, .notice__5fd4c  {
   background-color: var(--background-primary) ;
   color: var(--text-normal);
 }
 
-.bd-notice-button, .notice-2HEN-u .button-3_1yil, .notice-1x8lm- .button-1mXrIh {
+.bd-notice-button, .notice__5fd4c .button__671cf, .notice_a687ab .button_d41223 {
   border: none ;
   color: var(--header-secondary);
   background: var(--background-modifier-selected);
@@ -321,14 +321,14 @@ html {
 }
 
 // - Default Discord notice
-.notice-2HEN-u {
+.notice__5fd4c {
 
   // Main text
-  .header-26uvhX {
+  .header__72166 {
     color: var(--text-normal);
   }
 
-  .closeIcon-3eoP1e {
+  .closeIcon_ae6326 {
 
     path {
       fill: var(--interactive-normal) ;

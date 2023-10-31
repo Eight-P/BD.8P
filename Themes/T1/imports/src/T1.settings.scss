@@ -1,8 +1,8 @@
-// * T1.settings v0.1.43
+// * T1.settings v0.1.5
 // Client / Guilds / Channels
 
 // -> Theme version info
-.layer-86YKbF:not(.baseLayer-W6S8cY) .socialLinks-3ywLUf + .info-3pQQBb:before {
+.layer_e552e0:not(.baseLayer__13b6b) .socialLinks_c1fc99 + .info__755e1:before {
   content: "T1 - Theme: \a v#{$T1_version} by Eight_P" !important;
   display: block !important;
   font-size: 12px !important;
@@ -15,10 +15,10 @@
 // <- Theme version info
 
 // -> General Settings
-.layer-86YKbF:not(.baseLayer-W6S8cY) {
+.layer__2efaa:not(.baseLayer__13b6b) {
   
   // -> Sidebar
-  .sidebarRegionScroller-FXiQOh {
+  .sidebarRegionScroller__1fa7e {
 
     &::-webkit-scrollbar { display: none }
     
@@ -29,7 +29,7 @@
     }
     
     // Tabs
-    .item-2GWPIy {
+    .item__48dda {
       color: var(--interactive-normal) ;
       background: none !important ;
       border-radius: 0  ;
@@ -38,18 +38,18 @@
       
       &:hover { color: var(--interactive-hover) }
       
-      &.selected-1sf9UK {
+      &.selected__5711d {
         border-left: 2px solid var(--interactive-active) ;
         color: var(--interactive-active)  ;
       }
 
       // Nitro
-      &.premiumTab-39eQzY svg { display: none }
+      &.premiumTab__57bdc svg { display: none }
       // Nitro background
-      .background-Gjdjzm { display: none }
+      .background__584e7 { display: none }
 
       // Log Out/ Delete Channel
-      .tabBarItemContainer-2HdIlr:has(svg:not(.icon-3FU6Ir)) {
+      .tabBarItemContainer_d74773:has(svg:not(.icon__11372)) {
         color: var(--red) ;
         padding: 4px ;
         border-radius: 3px ;
@@ -67,13 +67,13 @@
   // <- Sidebar
   
   // -> Content region
-  .contentRegionScroller-2_GT_N {
+  .contentRegionScroller__86c79 {
     
     @include scrollbar() ;
   }
 
   // Checkbox item list option
-  .item-1TA5qI {
+  .item_b7fb7e {
     background: var(--background-modifier-accent) ;
     color: var(--interactive-hover);
     
@@ -89,10 +89,10 @@
   }
 
   // Dropdown menu
-  .select-Zz0IcO {
+  .select__0eb48 {
     border: none ;
 
-    @at-root .layerContainer-2lfOPe .popout-15UxD6 {
+    @at-root .layerContainer_d5a653 .popout_a6e77f {
       background: var(--background-tertiary) ;
       border: none ;
 
@@ -100,11 +100,11 @@
         background-color: var(--interactive-normal) ;
       }
 
-      .option-Uc12mm[aria-selected="true"] {
+      .option_be8b2e[aria-selected="true"] {
         background: var(--background-modifier-selected) ;
       }
 
-      .selectedIcon-122rMx {
+      .selectedIcon__4b0ba {
         circle {
           fill: none ;
         }
@@ -117,10 +117,10 @@
   }
 
   // Search 
-  .container-2oNtJn {
+  .container__7712a {
     background: none ;
 
-    .input-2m5SfJ {
+    .input__74754 {
       border-radius: 0 ;
       border-bottom: 1px solid var(--interactive-normal);
     }
@@ -129,23 +129,23 @@
 
   // Nitro upsell in Profile settings
   #profile-customization-tab {
-    .upsellOverlayContainer-3NMgTS, .tryItOutSection-W9qeGH {
+    .upsellOverlayContainer__08979, .tryItOutSection__0f9fb {
       display: none ;
     }
 
-    .profileCustomizationSection-53kreU .userPopoutOuter-1OHwPL {
+    .profileCustomizationSection__88eff .userPopoutOuter_d739b2 {
       --background-secondary-alt: var(--primary-660);
     }
   }
 
   // Nitro locked features
-  .premiumFeatureBorder-1i95si, .premiumBackground-34OIdE {
+  .premiumFeatureBorder__9bbb3, .premiumBackground__4ce97 {
     background: none ;
     border: none ;
   }
 
   // Client Themes 
-  .presets-2zm9Ir:not(.basicThemeSelectors-2wNKs6) {
+  .presets__14d08:not(.basicThemeSelectors_f6c054) {
     position: relative ;
     margin-top: 40px ;
     
@@ -165,38 +165,38 @@
 
 // -> Server settings
 // Roles
-.layer-86YKbF:not(.baseLayer-W6S8cY) {
+.layer_e552e0:not(.baseLayer__13b6b) {
   
   // Default permission button
-  .container-3EtAkD { background: none }
+  .container_d5f6d0 { background: none }
   
   // - Edit Role
-  .contentColumn-1C7as6 > .page-15bX59 {
+  .contentColumn_dc7d36 > .page__9db5c {
     
     // Sidebar container main
-    .sidebar-3K3Z4C {
+    .sidebar_bdf6b7 {
       height: fit-content ;
     }
     
     // Roles list Sidebar
-    .list-1AJFv_::-webkit-scrollbar { display: none }
+    .list__41249::-webkit-scrollbar { display: none }
     
     // Left side main content container
-    .contentContainer-3hXFtK {
+    .contentContainer__23092 {
       border-right: 12px solid var(--scrollbar-auto-track) ;
       
-      .scrollerBase-1Pkza4 {
+      .scrollerBase_dc3aa9 {
         margin-right: -12px ;
       }
     }
     
     // Header container "Manage Members"
-    .headerContainer-7V7BBm {
+    .headerContainer__947de {
       right: 0 ;
     }
     
     // Header 
-    .header-JUTO-g {
+    .header__63c59 {
       padding: 0 0 24px 0 ;
       margin: 0 ;
       box-shadow: none ;
@@ -215,31 +215,31 @@
       }
       
       // Nav bar buttons
-      .tabBarItem-3nPo4Z {
+      .tabBarItem__0ff10 {
         border: none ;
       }
 
       // Add member btn
-      .addButton-1SxhVs { @include Btn("background") }
+      .addButton__9d050 { @include Btn("background") }
 
       // search
-      .searchContainer-2kJ46v .input-2m5SfJ {
+      .searchContainer__519fb .input__74754 {
         border-bottom: 1px solid var(--interactive-muted);
       }
     }
 
     // Content scroller "Permissions"
-    .permissionsWrapper-34gbP6 {
+    .permissionsWrapper_bfb3d4 {
       margin-top: 16px ;
     }
 
     // linked roles config container
-    .container-2s0jpP {
+    .container_a80597 {
       background: none ;
     }
     
     // Info on Bot roles
-    .warning-RBGtx2 {
+    .warning__9db16 {
       position: absolute ;
       top: 49px ;
       left: 0px ;
@@ -249,18 +249,18 @@
       padding: 0 ;
       z-index: 100 ;
 
-      .text-2iTkaw {
+      .text__9e6e9 {
         display: none ;
       }
 
-      &:hover .text-2iTkaw {
+      &:hover .text__9e6e9 {
         display: block ;
         background: var(--background-tertiary) ;
         border: 1px solid var(--info-warning-foreground) ;
         padding: 10px ;
       }
 
-      ~ .tabBar-3DfKkN {
+      ~ .tabBar_a013ee {
         margin-left: 40px ;
       }
     }
@@ -269,7 +269,7 @@
 // <- Server settings
 
 // -> App Directory
-.layerContainer-2lfOPe .directoryModal-YJsOMv {
+.layerContainer_d5a653 .directoryModal-YJsOMv {
   &::before {
     content: "";
     display: block ;
@@ -286,12 +286,12 @@
   }
 
   // -> Home main items
-  .card-2xymMp, .container-SidGiM {
+  .card__834d4, .container_dabadb {
     background: var(--background-modifier-selected) ;
   }
 
   // clickable
-  .category-2OvQ93,  .container-2NdZr9 {
+  .category_ba5745,  .container__7b33c {
     background: var(--background-modifier-accent) ;
 
     &:hover {
@@ -301,7 +301,7 @@
   // <- Home main categories
 
   // -> Search
-  .search-2RHhW6 {
+  .search__24107 {
     background: var(--background-modifier-selected) !important;
     box-shadow: none ;
     border: none ;
@@ -317,22 +317,22 @@
 
   // -> App view
   // Commands
-  .commandList-35zQ3p {
+  .commandList__1eb85 {
     background: none ;
 
-    .commandName-SDgdgz {
+    .commandName__72789 {
       background: var(--background-modifier-selected) ;
       border: none ;
     }
   }
 
   // App category
-  .category-3LanTP {
+  .category__60494 {
     @include Btn("background");
   }
 
   // App support server
-  .card-sX105p {
+  .card__2ebbc {
     background: var(--background-modifier-accent) ;
 
     &:hover {

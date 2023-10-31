@@ -1,35 +1,35 @@
-// * T1.app v0.1.11
+// * T1.app v0.1.2
 
 // Layer transitions
-.layers-OrUESM > .layer-86YKbF { 
+.layers_a23c37 > .layer__2efaa { 
   transform: none !important ;
 }
 
-.base-2jDfDU { 
+.base__3e6af { 
   height: 100% !important ;
 }
 
 // "Bot"/"server" Tag Indicator
-.botTag-7aX5WZ { 
+.botTag__4211a { 
   color: var(--text-normal) ;
   background-color: var(--background-secondary) ;
 }
 
 // Default scrollbar design (needs some rework)
-.app-1BipOi .scrollerBase-1Pkza4 { @include scrollbar() }
+.app_b1f720 .scrollerBase_dc3aa9 { @include scrollbar() }
 
 // Tab focus thing
-.focus-rings-ring, .focusRing-2_fyOA {
+.focus-rings-ring, .focusRing_e5d39f {
   box-shadow: none ;
   border-bottom: 3px solid var(--interactive-hover);
   border-radius: 0 ;
 }
 
 // -> Sidebar Panels (Profile, Activity,..)
-.sidebar-1tnWFu .panels-3wFtMD {
+.sidebar_ded4b5 .panels__58331 {
   
   // Profile Container
-  .container-1CH86i {
+  .container_ca50b9 {
     position: absolute ;
     height: 48px ;
     width: 240px ;
@@ -37,29 +37,29 @@
     box-sizing: border-box ;
 
     // Pfp, name container
-    .avatarWrapper-12uuu4 {
+    .avatarWrapper_ba5175 {
       margin: 6px 8px 6px 0 ;
       background: none ;
     }
 
     // Buttons
-    .button-ejjZWC {
+    .button_afdfd9 {
       background: none ;
     }
   }
   
   // Activity Container
-  .activityPanel-9icbyU {
+  .activityPanel__22355 {
     height: 32px ;
     padding: 6px 10px ;
     
     // Image
-    .gameIconWrapper-3LXRx6 { 
+    .gameIconWrapper__499e0 { 
       height: 32px;
     }
     
     // Text
-    .title-338goq { 
+    .title__10613 { 
       line-height: 32px;
     }
     
@@ -67,7 +67,7 @@
   }
   
   // Voice Connection
-  .container-2NLBJg {
+  .container_d667ff {
     display: grid ;
     padding: 0 ;
     border: none ;
@@ -75,19 +75,19 @@
     contain: paint ;
     
     // Voice channel info container
-    .connection-3wznVd {
+    .connection__5bb32 {
       order: 2 ;
       margin-left: 32px ;
       padding: 6px 0 ;
       align-items: unset ;
       
       // Ping / "Connected"
-      .rtcConnectionStatus-c5A6Av {
+      .rtcConnectionStatus__40882 {
         padding: 1px 0 2px 0 ;
       }
       
       // Buttons container
-      .button-12Fmur {
+      .button__4f306 {
         background: none ;
         
         // Noise Suppression Btn
@@ -96,7 +96,7 @@
     }
     
     // Connected users container (right click channel name for context option)
-    .voiceUsers-g1MlmH {
+    .voiceUsers_c72ec5 {
       height: 30px ;
       padding: 3px 8px ;
       margin: 0 ;
@@ -105,13 +105,13 @@
       
       &::-webkit-scrollbar { display: none }
       
-      ~ .actionButtons-1DmM2g:after {
+      ~ .actionButtons_b58cbb:after {
         bottom: 42px ;
       }
     }
     
     // Voice channel button container
-    .actionButtons-1DmM2g {
+    .actionButtons_b58cbb {
       display: inline-flex ;
       height: 0 ;
       padding: 0 ;
@@ -147,14 +147,14 @@
       }
       
       // Buttons container
-      .button-2gNyE9 {
+      .button__66e8c {
         width: max-content ;
         padding: 0 12px ;
         background: none ;
         color: var(--interactive-normal);
         z-index: 1 ;
         
-        &:not(.fauxDisabled-8w0hCZ):hover {
+        &:not(.fauxDisabled__095d8):hover {
           color: var(--interactive-hover);
         }
       }

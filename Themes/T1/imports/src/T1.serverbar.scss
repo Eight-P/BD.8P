@@ -1,13 +1,13 @@
-// * T1.serverbar v0.1.44
+// * T1.serverbar v0.1.5
 // Horizontal serverbar + Additions
 
 // Serverbar -->
 // - Base container -->
 // App layer adjustments 
-.layer-86YKbF.baseLayer-W6S8cY > .container-1eFtFS { flex-direction: column-reverse }
+.baseLayer__8fda3 > .container__037ed { flex-direction: column-reverse }
 
 // - Serverbar container / scroller
-.guilds-2JjMmN {
+.guilds__2b93a {
   height: 54px ;
   width: 100vw ;
   margin: 0 ;
@@ -33,12 +33,12 @@
   }
   
   // when in voice call view
-  &.hidden-10MsGQ {
+  &.hidden__7c832 {
     height: 0 ;
   }
   
   // Child container (ul)
-  .tree-3agP2X {
+  .tree__7a511 {
     display: grid ;
     height: 100vw ;
     width: 54px ;
@@ -48,7 +48,7 @@
   }
   
   // Scroller ( 10-48-6-20-6-20-10 )
-  .scroller-3X7KbA {
+  .scroller__3d071 {
     display: grid ;
     grid-template-columns: 54px ;
     grid-template-rows: 48px 29px 35px auto ;
@@ -79,7 +79,7 @@
       background-color: var(--interactive-normal) ;
     }
 
-    .guildSeparator-a4uisj {
+    .guildSeparator_dcb3cc {
       position: absolute ;
       width: 32px ;
       height: 2px ;
@@ -89,12 +89,12 @@
   }
   
   // Unread mentions indicators
-  .unreadMentionsIndicatorTop-2bTgUU,
-  .unreadMentionsIndicatorBottom-3RJMnQ { display: none }
+  .unreadMentionsIndicatorTop_ada847,
+  .unreadMentionsIndicatorBottom_fdb943 { display: none }
 }
 
 // Margin on Mac
-.platform-osx .wrapper-1_HaEi {
+.platform-osx .wrapper_a7e7a8 {
   margin: 0 ;
 }
 
@@ -102,10 +102,10 @@
 
 // - Static options -->
 // - Home / GuildsAd / Discovery / GuildsError
-.guilds-2JjMmN .scroller-3X7KbA {
+.guilds__2b93a .scroller__3d071 {
   
   // general item container
-  .listItem-3SmSlK { 
+  .listItem_fa7b36 { 
     width: 54px ; 
     margin: 0 ; 
   }
@@ -115,32 +115,32 @@
     grid-area: Home ;
     
     // Pill
-    .pill-L_aLMQ { display: none }
+    .pill_d1140c { display: none }
     
     // Notification badge
-    .lowerBadge-3j0ZAg {
+    .lowerBadge__669e7 {
       left: 4px ;
       bottom: 4px ;
       @include shadow_effect("drop_2") ;
     }
     
     // SVG 1 conatiner
-    .wrapper-2PSQCG { 
+    .wrapper__3af0b { 
       transform: rotate(90deg);
     }
     
     // SVG 2 conatiner
-    .childWrapper-1j_1ub {
+    .childWrapper__01b9c {
       background: none ;
       color: var(--text-normal) ;
       opacity: .75 ;
     }
     
     // Hover
-    .wrapper-3kah-n.selected-1Drb7Z .childWrapper-1j_1ub { opacity: 1 }
+    .wrapper_d281dd.selected_f5ec8e .childWrapper__01b9c { opacity: 1 }
     
     // SVG 2
-    .childWrapper-1j_1ub > svg { 
+    .childWrapper__01b9c > svg { 
      @include shadow_effect("drop_1") ;
      
      // Icon
@@ -155,27 +155,27 @@
     display: flex ;
     width: 54px ;
     
-    .pill-1NRFie { display: none }
+    .pill__13f64 { display: none }
     
     // SVG 1 container, SVG 1
-    .wrapper-2PSQCG, .svg-2ifYOU {
+    .wrapper__3af0b, .svg_ad7356 {
       height: 20px ;
       width: 20px ;
     }
     
     // SVG 2 container
-    .circleIconButton-1VxDrg {
+    .circleIconButton_d8df29 {
       transform: rotate(90deg) ;
       background: none ;
       color: var(--text-normal) ;
       opacity: .75 ;
       
-      &.selected-2r1Hvo { opacity: 1 }
+      &.selected__5250e { opacity: 1 }
       
       @include shadow_effect("drop_1");
       
       // SVG 2 
-      .circleIcon-3489FI {
+      .circleIcon__428dd {
         height: 100% ;
         width: 100% ;
       }
@@ -198,7 +198,7 @@
     margin: 0 ;
     margin: 3px 0 10px 0;
     
-    .circleIconButton-1VxDrg .circleIcon-3489FI {
+    .circleIconButton_d8df29 .circleIcon__428dd {
       height: 90% ;
       width: 90% ;
     }
@@ -213,7 +213,7 @@
     height: 20px ;
     width: 20px ;
     
-    .anchor-1X4H4q {
+    .anchor_c8ddc0 {
       transform: rotate(90deg) ;
       background: none ;
       border: none ;
@@ -224,7 +224,7 @@
   }
 
   // Favorites (AT selector for better specificity)
-  .tutorialContainer-1pL9QS + [class="listItem-3SmSlK"] {
+  .tutorialContainer__890ea + [class="listItem_fa7b36"] {
 
     &::before {
       content: "" ;
@@ -236,25 +236,25 @@
       background-color: var(--interactive-normal) ;
     }
 
-    .pill-1eBbnB { display: none }
+    .pill__66ac8 { display: none }
 
     div:not([class]) {
-      .wrapper-2PSQCG {
+      .wrapper__3af0b {
         transform: rotate(90deg) ;
         @include shadow_effect("server_1");
       }
 
         // Unreads badge
-      .lowerBadge-3j0ZAg {
+      .lowerBadge__669e7 {
         left: 4px ;
         bottom: 4px ;
 
-        .numberBadge-37OJ3S { 
+        .numberBadge__50328 { 
           background-color: var(--red) !important ;
         }
       }
 
-      .childWrapper-1j_1ub {
+      .childWrapper__01b9c {
         background: none ;
         color: var(--text-normal) !important ;
         opacity: .75 ;
@@ -267,13 +267,13 @@
   }
   
   // Home
-  .tutorialContainer-1pL9QS { @include Home_Icon() }
+  .tutorialContainer__890ea { @include Home_Icon() }
   
   // Every div in front of servers
-  // > .listItem-3SmSlK:not([aria-label]:not([class]) ~ div) {
+  // > .listItem_fa7b36:not([aria-label]:not([class]) ~ div) {
 
   //   // also removes the favorite dm btns
-  //   &.listItem-3SmSlK {
+  //   &.listItem_fa7b36 {
   //     // display: none ;
   //   }
   // }
@@ -283,10 +283,10 @@
 
     @include GuildsAdd_Icon();
 
-    + .listItem-3SmSlK {
+    + .listItem_fa7b36 {
       @include Discovery_Icon();
 
-      + .listItem-3SmSlK {
+      + .listItem_fa7b36 {
         @include GuildsError_Icon()
       }
     }
@@ -303,22 +303,22 @@
   margin: 12px 0 ;
   
   // bc drag and drop (server, dms)
-  .pill-2RsI5Q + div, .listItemWrapper-3d87LP {
+  .pill__6b31b + div, .listItemWrapper__1f93b {
     transform: rotate(90deg) ;
   }
   
   // Placeholder when dragging
-  .placeholderMask-2FHNZU {
+  .placeholderMask__94802 {
     height: 40px;
     width: 40px;
     margin: 4px;
     
-    .dragInner-1CUBf_ {
+    .dragInner_a23293 {
       background: rgba(0, 0, 0, 0.5) ;
     }
   }
   
-  .wrapper-2PSQCG {
+  .wrapper__3af0b {
 
     @include shadow_effect("server_1");
     
@@ -327,41 +327,41 @@
   }
   
   // Unreads badge
-  .lowerBadge-3j0ZAg {
+  .lowerBadge__669e7 {
     left: 4px ;
     bottom: 4px ;
 
-    .numberBadge-37OJ3S { 
+    .numberBadge__50328 { 
       background-color: var(--red) !important ;
     }
   }
 
   // SVG
-  .svg-2ifYOU {
+  .svg_ad7356 {
     height: 40px ; 
     width: 40px ;
     margin: 4px ;
 
     mask, g { display: none }
 
-    &:hover .icon-3AqZ2e { border-radius: 25% }
+    &:hover .icon__0cbed { border-radius: 25% }
   }
 
   // Image
-  .icon-3AqZ2e {
+  .icon__0cbed {
     border-radius: 50% ;
     transition: .2s ;
   }
   
   // Text
-  .acronym-2zrAHN {
+  .acronym_cd4809 {
     background: none ;
     
     @include shadow_effect("server_1");
   }
   
   // Pill
-  .item-2LIpTv {
+  .item_f9d377 {
     display: none ;
     margin-left: -5px ;
     
@@ -377,14 +377,14 @@
   }
   
   // Pill with bd classes as an optional improvment
-  &.bd-unread:not(.bd-selected) .item-2LIpTv {
+  &.bd-unread:not(.bd-selected) .item_f9d377 {
     display: block ;
     height: 8px !important ;
   }
 }
 
 // DMs
-.guilds-2JjMmN .scroller-3X7KbA > [style="opacity: 1; height: 56px; transform: scale(1);"] {
+.guilds__2b93a .scroller__3d071 > [style="opacity: 1; height: 56px; transform: scale(1);"] {
   @include ServerIcon();
 
   // Seperator to the left
@@ -405,16 +405,16 @@
     &::before { content: none }
   }
 
-  .pill-22lZHo { display: none }
+  .pill__357e7 { display: none }
 }
 
 // remove Seperator when favorites is active
-.tutorialContainer-1pL9QS + .listItem-3SmSlK + [style="opacity: 1; height: 56px; transform: scale(1);"] {
+.tutorialContainer__890ea + .listItem_fa7b36 + [style="opacity: 1; height: 56px; transform: scale(1);"] {
   &::before { content: none }
 }
 
 // Server container
-.scroller-3X7KbA > [aria-label]:not([class]) {
+.scroller__3d071 > [aria-label]:not([class]) {
   grid-area: Servers ;
   width: 54px ;
   max-height: 100% ;
@@ -423,21 +423,21 @@
   &::-webkit-scrollbar { display: none }
 
   // Server items
-  > .listItem-3SmSlK { @include ServerIcon() }
+  > .listItem_fa7b36 { @include ServerIcon() }
 }
 
 // Server folder
-.guilds-2JjMmN .wrapper-38slSD {
+.guilds__2b93a .wrapper_ed1dea {
   width: 54px ;
   margin: 12px 0 ;
 
   // Background when open
-  .expandedFolderBackground-1kSAf6 { display: none }
+  .expandedFolderBackground__1bec6 { display: none }
 
   // Folder Icon / preview 
-  > .listItem-3SmSlK {
+  > .listItem_fa7b36 {
     
-    .pill-2RsI5Q { 
+    .pill__6b31b { 
       display: none ;
       
       // Icon container (for drag)
@@ -447,46 +447,46 @@
     // Icon container
 
     // Placeholder when dragging
-    .placeholderMask-2FHNZU {
+    .placeholderMask__94802 {
       height: 40px;
       width: 40px;
       margin: 4px;
 
-      .dragInner-1CUBf_ {
+      .dragInner_a23293 {
         background: rgba(0, 0, 0, 0.5) ;
       }
     }
     
     // Unreads badge
-    .lowerBadge-3j0ZAg {
+    .lowerBadge__669e7 {
       left: 4px ;
       bottom: 4px ;
 
-      .numberBadge-37OJ3S { background-color: var(--red) !important }
+      .numberBadge__50328 { background-color: var(--red) !important }
     }
 
     // container
-    .wrapper-2PSQCG {
+    .wrapper__3af0b {
       @include shadow_effect("drop_1");
     }
 
     // SVG 1
-    .svg-2ifYOU {
+    .svg_ad7356 {
       mask, g { display: none }
     }
 
-    .folder-241Joy { background: none }
+    .folder__17546 { background: none }
 
     // Icon container 2
-    .folderIconWrapper-1oRIZr {
+    .folderIconWrapper__72239 {
       position: absolute ;
       height: 40px ; 
       width: 40px ;
       margin: 4px ;
 
       // Icon container open and closed
-      .closedFolderIconWrapper-3tRb2d,
-      .expandedFolderIconWrapper-3RwQpD {
+      .closedFolderIconWrapper__7321f,
+      .expandedFolderIconWrapper__458cf {
         height: 40px ; 
         width: 40px ;
         padding: 0 ;
@@ -506,7 +506,7 @@
     margin-bottom: 24px ;
     
     // Server items in open folders
-    .listItem-3SmSlK { @include ServerIcon() }
+    .listItem_fa7b36 { @include ServerIcon() }
     
     &::after {
       content: "" ;
@@ -524,10 +524,10 @@
 
 // Additions -->
 // Channels list spacer for Server banner image
-.content-yjf30S > div[style="height: 84px;"]:not([class]) { display: none }
+.content__23cab > div[style="height: 84px;"]:not([class]) { display: none }
 
 // - Server options button
-.sidebar-1tnWFu .container-1-ERn5 {
+.sidebar_ded4b5 .container__7c79d {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -537,24 +537,24 @@
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
   // Options popout open
-  &.selected-1GtAC5 { background-color: rgba(0, 0, 0, 0.2) }
+  &.selected__0b1ad { background-color: rgba(0, 0, 0, 0.2) }
   
   // container
-  .header-3OsQeK {
+  .header__104ca {
     padding: 0 5px ;
     height: 54px ;
   }
 
   // Server badge
-  .guildIconV2Container-2H8IRS { display: none }
+  .guildIconV2Container__53cdb { display: none }
   
   // Server name container
-  .headerContent-2SNbie {
+  .headerContent_ee8727 {
     height: -webkit-fill-available;
   }
   
   // Server name
-  .name-3Uvkvr {
+  .name_c08dbc {
     text-align: center ;
     line-height: 16px ;
     white-space: normal ;
@@ -565,19 +565,19 @@
   }
   
   // Server icon (partnerd,..)
-  .guildIconContainer-3QvE6w { display: none }
+  .guildIconContainer_a995c7 { display: none }
   
   // Chevron icon
-  .button-2BMPJJ { display: none }
+  .button__07e07 { display: none }
   
   // Server banner image
-  .animatedContainer-2laTjx { display: none }
+  .animatedContainer__341f6 { display: none }
   
-  + .animatedBannerHoverLayer-129r1v { display: none }
+  + .animatedBannerHoverLayer__4274d { display: none }
 }
 
 // - Search button (home)
-.privateChannels-oVe7HL .searchBar-3TnChZ {
+.privateChannels__93473 .searchBar_e4ea2a {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -589,7 +589,7 @@
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
   // Text
-  .searchBarComponent-3N7dCG {
+  .searchBarComponent__22760 {
     height: 54px ;
     background: transparent ;
     color: var(--text-normal);
@@ -604,7 +604,7 @@
 }
 
 // - Discovery Text (button)
-.sidebar-1tnWFu .discoverHeader-1vsvZ0 {
+.sidebar_ded4b5 .discoverHeader_fae7fd {
   position: fixed ;
   width: 120px ;
   height: 54px ;
@@ -620,7 +620,7 @@
   text-overflow: ellipsis ;
   white-space: nowrap ;
   
-  & + .categoryItem-Kc_HK_ {
+  & + .categoryItem_b1be5c {
      margin-top: 64px ;
   }
 }

@@ -1,4 +1,4 @@
-// * T1.background v0.2.39
+// * T1.background v0.2.4
 // Background image + Transparency
 
 // Main background image
@@ -21,74 +21,73 @@ $Classes: (
   // #app-mount
   "",
   // BG elm
-  ".bg-1QIAus",
+  ".bg__12180",
   // App containers
-  ".app-2CXKsg", ".layer-86YKbF",
-  // App containers canary
-  ".app-2CXKsg", ".layer-86YKbF",
+  ".app_de4237",
+  ".layer__2efaa",
   // Voice-chat view
   ".stageSection-3mAD8V",
   // Text chat
-  ".chat-9g_3Xj", ".chatContent-2O4SXb",
+  ".chat__52833", ".chatContent__5dca8",
   // Voicecall view
-  ".callContainer-HtHELf",
+  ".callContainer_cbde45",
   // Forum channel
-  ".container-3wLKDe",
+  ".container_b181b6",
   // Channel & Roles
-  ".container-2IKOsH",
+  ".container__10dc7",
   // Channel & Roles inner
-  ".mainTableContainer-3Nxvkd",
+  ".mainTableContainer__5ffe0",
   // Member Safety Page
-  ".container-2qjEOK",
+  ".container_df3aa0",
   // Stage view
-  ".container-cH6QoY", ".callContainer-BGIngG",
-  ".scroller-35tvpe", ".container-3r7mfc", ".rowContainer-jDvyA4",
+  ".container__3e5cc", ".callContainer_e8faeb",
+  ".scroller_d8c41e", ".container-3r7mfc", ".rowContainer__3f2d1",
   // Sidebar
-  ".sidebar-1tnWFu",
+  ".sidebar_ded4b5",
   // Sidebar container for Discord info stuff
   ".container-3O_wAf",
   // Server channels container
-  ".container-1NXEtd",
+  ".container__590e2",
   // Members list
-  ".container-2vWgD2",
+  ".container_b2ce9c",
   // Sidebar Panels 
-  ".panels-3wFtMD",
+  ".panels__58331",
   // User profile container, Voice channel, Activity
-  ".container-1CH86i", ".container-2NLBJg", ".activityPanel-9icbyU",
+  ".container_ca50b9", ".container_d667ff", ".activityPanel__22355",
   // DMs Sidebar
-  ".privateChannels-oVe7HL",
+  ".privateChannels__93473",
   // Home Friends list
-  ".sidebar-1tnWFu ~ .container-2cd8Mz",
+  ".sidebar_ded4b5 ~ .container__5c7e7",
   // Nitro store
-  ".applicationStore-2nk7Lo",
+  ".applicationStore_fc7d76",
   // Discovery
-  ".pageWrapper-eg3-6i",
+  ".pageWrapper_fef757",
   // Friends Activity Sidebar
-  ".nowPlayingColumn-1eCBCN",
-  ".nowPlayingColumn-1eCBCN > .container-1oAagU",
-  ".nowPlayingColumn-1eCBCN > .emptyCard-KDifrB",
+  ".nowPlayingColumn_f5023f",
+  ".nowPlayingColumn_f5023f > .container__0a6a9",
+  ".nowPlayingColumn_f5023f > .emptyCard_f82dde",
   ".nowPlayingSidebar-2OFn0o",
-  ".nowPlayingSidebar-2OFn0o > .container-1oAagU",
-  ".nowPlayingSidebar-2OFn0o > .emptyCard-KDifrB",
+  ".nowPlayingSidebar-2OFn0o > .container__0a6a9",
+  ".nowPlayingSidebar-2OFn0o > .emptyCard_f82dde",
   // Pretty much every scroller
-  ".app-1BipOi .scrollerBase-1Pkza4",
+  ".app_b1f720 .scrollerBase_dc3aa9",
   // Members list
-  ".container-2Oqvgx", ".members-3WRCEx", ".members-3WRCEx .content-2a4AW9",
+  ".container-2Oqvgx", ".members__9f47b", ".members__9f47b .content-2a4AW9",
   // Server bar
-  ".guilds-2JjMmN",
+  ".guilds__2b93a",
   // Settings
-  ".layer-86YKbF .standardSidebarView-E9Pc3j",
-  ".layer-86YKbF .contentRegion-3HkfJJ",
+  ".standardSidebarView__1129a",
+  ".contentRegion__0bec1",
   // Roles Settings
-  ".page-15bX59 .titleContainer-3fPic2",
+  ".page__9db5c .titleContainer_e558ff",
   // Channel Settings (Permissions)
   ".card-2EUiNF", ".settingCard-xZSDjS", ".cardFolder-3H4uH4",
   // Voice-chat view
-  ".wrapper-1gVUIN",
+  ".wrapper_bd2abe",
   // Title bar
-  ".container-ZMc96U",
+  ".container__11d72",
   // Server Boost page
-  ".scroller-3u_s5m", ".header-1aIywd",
+  ".scroller__439a2", ".header__4f442",
   // Profile customization shop
   ".shop-3sIaH8"
 );

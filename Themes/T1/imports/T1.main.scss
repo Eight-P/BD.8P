@@ -1,7 +1,10 @@
-$T1_version: "0.6.54" ; // Theme file v0.8
+$T1_version: "0.6.6" ; // Theme file v0.8
 
 // Global Mixins and Variables
 @import 'src/T1.mixins.scss';
+
+// General App related stuff
+@import 'src/T1.app.scss';
 
 // Background image and Transparency
 @import 'src/T1.background.scss';
@@ -32,6 +35,3 @@ $T1_version: "0.6.54" ; // Theme file v0.8
 
 // Plugin Compatibility
 @import 'src/T1.compatibility.scss';
-
-// General app related stuff
-@import 'src/T1.app.scss';
