@@ -32,7 +32,7 @@
 - The Theme was made for BetterDiscord on Windows and updates to match the stable client.<br/>
   Any other Mod, Platform, or version might work, but is not guaranteed.
 
-- Choose discord's "Dark" theme (User-Settings/Appearance) for dark images and "Light" for bright ones.
+- Discord's Dark mode (User-Settings/Appearance) and a dark background image is recommended.
 
 - To report any issues, go to: https://github.com/Eight-P/BD.8P/issues
 
