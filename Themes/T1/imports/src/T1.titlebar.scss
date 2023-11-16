@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.3
+// * T1.titlebar v0.1.4
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -22,7 +22,7 @@
     
     // Icon
     .icon_f50f05 {
-      color: var(--interactive-normal) ;
+      color: var(--interactive-normal);
       cursor: pointer ;
       
       transform: none ;
@@ -41,7 +41,7 @@
       
       .searchBar_e0c60b {
         width: 240px ;
-        border-bottom: 1px solid var(--header-secondary) ;
+        border-bottom: 1px solid var(--header-secondary);
       }
       
       .icon_f50f05:first-child {
@@ -69,7 +69,7 @@
     
     // Dm Partner / Channel name
     .title__9e2b0 {
-      color: var(--interactive-hover) ;
+      color: var(--interactive-hover);
       
       // Channel name by default
       &:not(.cursorPointer__5116a) { display: none }
@@ -87,11 +87,11 @@
       svg {
         width: 20px ;
         height: 22px ;
-        color: var(--interactive-normal) ; 
+        color: var(--interactive-normal); 
       }
 
       &:hover svg { 
-        color: var(--interactive-hover) ;
+        color: var(--interactive-hover);
       }
     }
     
@@ -99,7 +99,7 @@
     .iconWrapper_af9215 { @include TB_icons() }
     
     // Searchbar
-    @include TB_Search() ;
+    @include TB_Search();
     
     // Voicecall view buttons
     .button_afdfd9 { @include TB_icons() }
@@ -127,7 +127,7 @@
       }
 
       &:hover { 
-        color: var(--interactive-hover) ;
+        color: var(--interactive-hover);
         
         > * { opacity: 1 }
       }
@@ -224,7 +224,7 @@
 html {
   // - Windows
   &.platform-win .titleBar__01af6 {
-    box-shadow: 0 .5px 0 var(--header-secondary) ;
+    box-shadow: 0 .5px 0 var(--header-secondary);
     z-index: 500 ;
 
     // Watermark
@@ -305,7 +305,7 @@ html {
 
 // -> Notification bars
 .bd-notice, .notice__5fd4c  {
-  background-color: var(--background-primary) ;
+  background-color: var(--background-primary);
   color: var(--text-normal);
 }
 
@@ -331,11 +331,11 @@ html {
   .closeIcon_ae6326 {
 
     path {
-      fill: var(--interactive-normal) ;
+      fill: var(--interactive-normal);
     }
 
     &:hover path {
-      fill: var(--interactive-hover) ;
+      fill: var(--interactive-hover);
     }
   }
 }

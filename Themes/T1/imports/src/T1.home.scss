@@ -1,4 +1,4 @@
-// * T1.home v0.1.3
+// * T1.home v0.1.4
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 
 // -> Friends Tab
@@ -218,7 +218,7 @@
       padding: 8px 10px ;
       border-bottom: 1px solid transparent ;
       border-radius: 5px ;
-      background: var(--background-modifier-selected) ;
+      background: var(--background-modifier-selected);
     }
     
     .addFriendHint__6df3d {
@@ -230,7 +230,7 @@
     }
     
     &:focus-within .addFriendInput__568d8 {
-      border-color: var(--interactive-normal) ;
+      border-color: var(--interactive-normal);
       background: none ;
       border-radius: 0px ;
       box-shadow: none ;
@@ -244,7 +244,7 @@
   // find more things thing
   .grid__5ef55 {
     .container_a308ae {
-      background: var(--background-modifier-selected) ;
+      background: var(--background-modifier-selected);
       border: none ;
     }
   }
@@ -296,9 +296,9 @@
     border-radius: 0 ;
 
     // for hidding Home tabs (friends, nitro-store, libary)
-    height: calc(var(--show-home-tabs, 1) * 38px);
-    margin: calc(var(--show-home-tabs, 1) * 6px) 0;
-    overflow: hidden ;
+    // height: calc(var(--show-home-tabs, 1) * 38px);
+    // margin: calc(var(--show-home-tabs, 1) * 6px) 0;
+    // overflow: hidden ;
 
     @include Mentions_icon(".numberBadge__50328");
     
@@ -320,7 +320,7 @@
       
       &:hover {
         border-left: 3px solid var(--interactive-hover);
-        background: var(--background-modifier-hover) ;
+        background: var(--background-modifier-hover);
       }
     }
 

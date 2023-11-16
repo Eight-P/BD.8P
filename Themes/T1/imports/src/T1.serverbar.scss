@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.5
+// * T1.serverbar v0.1.6
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -20,14 +20,14 @@
     left: 0 ;
     height: 100% ;
     width: 100% ;
-    background: var(--Server_Background) ;
+    background: var(--background_server);
     background-size: cover ;
     background-position: center ;
     background-repeat: no-repeat ;
 
     // Background filter
-    --blur: blur(calc((var(--Server_Background_blur, 0) / 100) * 1px)) ;
-    --brightness: brightness(calc((var(--Server_Brightness, 100) / 100)));
+    --blur: blur(calc((var(--backgroundBlur_server, 0) / 100) * 1px));
+    --brightness: brightness(calc((var(--backgroundBrightness_server, 100) / 100)));
 
     filter: var(--blur) var(--brightness);
   }
@@ -42,7 +42,7 @@
     display: grid ;
     height: 100vw ;
     width: 54px ;
-    transform: rotate(-90deg) translateX(-54px) ;
+    transform: rotate(-90deg) translateX(-54px);
     transform-origin: top left ;
     outline: none ;
   }
@@ -76,7 +76,7 @@
       width: 32px ;
       height: 2px ;
       margin: 0 11px ;
-      background-color: var(--interactive-normal) ;
+      background-color: var(--interactive-normal);
     }
 
     .guildSeparator_dcb3cc {
@@ -84,7 +84,7 @@
       width: 32px ;
       height: 2px ;
       margin: 0 11px ;
-      background-color: var(--interactive-normal) ;
+      background-color: var(--interactive-normal);
     }
   }
   
@@ -121,7 +121,7 @@
     .lowerBadge__669e7 {
       left: 4px ;
       bottom: 4px ;
-      @include shadow_effect("drop_2") ;
+      @include shadow_effect("drop_2");
     }
     
     // SVG 1 conatiner
@@ -132,7 +132,7 @@
     // SVG 2 conatiner
     .childWrapper__01b9c {
       background: none ;
-      color: var(--text-normal) ;
+      color: var(--text-normal);
       opacity: .75 ;
     }
     
@@ -141,7 +141,7 @@
     
     // SVG 2
     .childWrapper__01b9c > svg { 
-     @include shadow_effect("drop_1") ;
+     @include shadow_effect("drop_1");
      
      // Icon
      path {
@@ -165,9 +165,9 @@
     
     // SVG 2 container
     .circleIconButton_d8df29 {
-      transform: rotate(90deg) ;
+      transform: rotate(90deg);
       background: none ;
-      color: var(--text-normal) ;
+      color: var(--text-normal);
       opacity: .75 ;
       
       &.selected__5250e { opacity: 1 }
@@ -214,10 +214,10 @@
     width: 20px ;
     
     .anchor_c8ddc0 {
-      transform: rotate(90deg) ;
+      transform: rotate(90deg);
       background: none ;
       border: none ;
-      color: var(--red) ;
+      color: var(--red);
       height: 20px ;
       width: 20px ;
     } 
@@ -233,14 +233,14 @@
       height: 2px ;
       width: 32px ;
       margin: 0 11px ;
-      background-color: var(--interactive-normal) ;
+      background-color: var(--interactive-normal);
     }
 
     .pill__66ac8 { display: none }
 
     div:not([class]) {
       .wrapper__3af0b {
-        transform: rotate(90deg) ;
+        transform: rotate(90deg);
         @include shadow_effect("server_1");
       }
 
@@ -304,7 +304,7 @@
   
   // bc drag and drop (server, dms)
   .pill__6b31b + div, .listItemWrapper__1f93b {
-    transform: rotate(90deg) ;
+    transform: rotate(90deg);
   }
   
   // Placeholder when dragging
@@ -314,7 +314,7 @@
     margin: 4px;
     
     .dragInner_a23293 {
-      background: rgba(0, 0, 0, 0.5) ;
+      background: rgba(0, 0, 0, 0.5);
     }
   }
   
@@ -395,7 +395,7 @@
     height: 2px ;
     width: 32px ;
     margin: 0 11px ;
-    background-color: var(--interactive-normal) ;
+    background-color: var(--interactive-normal);
   }
 
   // remove Seperator on Subsequent Dms (not first)
@@ -453,7 +453,7 @@
       margin: 4px;
 
       .dragInner_a23293 {
-        background: rgba(0, 0, 0, 0.5) ;
+        background: rgba(0, 0, 0, 0.5);
       }
     }
     
@@ -515,7 +515,7 @@
       width: 32px ;
       height: 2px ;
       margin: 0 11px ;
-      background-color: var(--interactive-normal) ;
+      background-color: var(--interactive-normal);
     }
   }
 }

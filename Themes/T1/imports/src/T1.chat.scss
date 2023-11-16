@@ -1,4 +1,4 @@
-// * T1.chat v0.1.9
+// * T1.chat v0.1.10
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -160,7 +160,7 @@
       content: "" ;
       height: 1px ;
       width: 100% ;
-      background: var(--background-modifier-accent) ;
+      background: var(--background-modifier-accent);
     }
     
     // new messages seperator
@@ -268,7 +268,7 @@
       bottom: 5px ;
       right: 0px ;
       width: 1px ;
-      background-color: var(--background-modifier-accent) ;
+      background-color: var(--background-modifier-accent);
     }
   }
 
@@ -300,7 +300,7 @@
       margin: 0 ;
 
       path { 
-        fill: var(--interactive-normal) ;
+        fill: var(--interactive-normal);
       }
     }
   }
@@ -326,22 +326,30 @@
       width: calc(40px * var(--show-nitro-btn));
       margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
 
+      display: var(--chatBtn_nitro);
+
       // Gifs picker
       + .buttonContainer__8b164 {
         width: calc(40px * var(--show-gif-btn));
         margin-top: calc(-100px * (1 - var(--show-gif-btn)));
 
+        display: var(--chatBtn_gif);
+
         // Stickers picker
         + .buttonContainer__8b164 {
           width: calc(36px * var(--show-sticker-btn));
-        margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
+          margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
+
+          display: var(--chatBtn_sticker);
 
           .stickerIcon_ff97e4 { height: 24px !important }
 
           // Emoji picker
           + .buttonContainer__8b164 {
             width: calc(38px * var(--show-emoji-btn));
-        margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
+            margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
+
+            display: var(--chatBtn_emoji);
           }
         }
       }
@@ -425,7 +433,7 @@
       left: 0 ;
       right: 0 ;
       height: 100% ;
-      background: var(--background-modifier-hover) ;
+      background: var(--background-modifier-hover);
       z-index: -1 ;
     }
     
@@ -444,7 +452,7 @@
           left: 0 ;
           right: 0 ;
           bottom: 0 ;
-          background: var(--background-modifier-hover) ;
+          background: var(--background-modifier-hover);
           z-index: -1 ;
         }
       }
@@ -638,14 +646,14 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // Mention
   &.mentioned__58017 .contents_f41bb2 {
-    border-left: solid 2px var(--border-mentioned) ;
-    background: var(--background-mentioned) ;
+    border-left: solid 2px var(--border-mentioned);
+    background: var(--background-mentioned);
   }
   
   // Clyde (client-side info/error messages)
   &.ephemeral_c26b64 .contents_f41bb2 {
-    border-left: solid 2px var(--Blurple) ;
-    background: var(--Blurple-light) ;
+    border-left: solid 2px var(--Blurple);
+    background: var(--Blurple-light);
   }
   
   // Selected for reply
@@ -686,7 +694,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       bottom: 0px ;
       right: 2px ;
       pointer-events: none ;
-      background: rgba(255, 255, 255, 0.05) ; // black or white ? idk
+      background: rgba(255, 255, 255, 0.05); // black or white ? idk
     }
   }
   
@@ -739,11 +747,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
       
       &:hover {
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) ;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
         
         .button_d553e5 {
           display: flex ;
-          background-color: var(--background-tertiary) ;
+          background-color: var(--background-tertiary);
         }
       }
     }
@@ -764,15 +772,15 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
   // Active reaction 
   &.reactionMe__98f57 {
-    background-color: var(--Blurple-light) ;
+    background-color: var(--Blurple-light);
 
     &:hover { 
-      background-color: var(--Blurple-light-hover) ;
+      background-color: var(--Blurple-light-hover);
     }
 
     // number 
     .reactionCount_b49901 { 
-      color: var(--Blurple) ;
+      color: var(--Blurple);
       font-size: 0.875rem ;
     }
   }
@@ -784,10 +792,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
   // -> Search/Create Posts
   .header_c01fde {
-    background: var(--background-modifier-accent) ;
+    background: var(--background-modifier-accent);
 
     &.headerWithMatchingPosts_da85d4 {
-      background: var(--background-modifier-selected) ;
+      background: var(--background-modifier-selected);
       border-radius: 0 ;
     }
 
@@ -798,13 +806,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   .matchingPostsRow__510be {
-    background: var(--background-modifier-selected) ;
+    background: var(--background-modifier-selected);
   }
   // <- Search/Create Posts
 
   // -> Post Guidelines
   .container__1b27a {
-    background: var(--background-modifier-hover) ;
+    background: var(--background-modifier-hover);
 
     .descriptionContainer__3814d {
       background: none ;
@@ -817,10 +825,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
     // Button, Tags
     .button_afdfd9, .tag__40098 {
-      background: var(--background-modifier-accent) ;
+      background: var(--background-modifier-accent);
 
       &:hover {
-        background: var(--background-modifier-selected) ;
+        background: var(--background-modifier-selected);
 
         // Sort, Tags, All tags btn text
         .sortDropdownText_e8ca8d, .defaultColor__77578, .contents_fb6220 {
@@ -1029,7 +1037,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     border: none ;
     min-width: 400px ;
     // max-width: 100% ;
-    max-width: calc(100vw - 240px) ; // not ideal
+    max-width: calc(100vw - 240px); // not ideal
     resize: horizontal ;
     direction: rtl;
 
@@ -1045,13 +1053,17 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       position: absolute ;
       height: 100% ;
       width: 100% ;
-      background: var(--Main_Background) rgba(0, 0, 0, .1);
+      background: var(--background_app) rgba(0, 0, 0, .1);
       background-blend-mode: overlay ;
       background-position: center;
       background-size: cover;
       background-attachment: fixed;
       background-repeat: no-repeat;
-      filter: var(--BGM_Blur) var(--BGM_Brightness) ;
+      
+      --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+      --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+
+      filter: var(--blur) var(--brightness);
     }
   }
 }
@@ -1098,7 +1110,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // -> Voicecall view
 .callContainer_cbde45 {
-  --aswc: var(--always-show-voicecontrols, 0);
+  --aswc: var(--voiceControlOverlay);
 
   .root__3eef0 {
     margin: calc(var(--aswc) * 48px) 0 calc(var(--aswc) * 56px) 0 ;
@@ -1125,7 +1137,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     
     // Top and bottom section
     .controlSection_daa0d5 {
-      transform: translateZ(0) ;
+      transform: translateZ(0);
       
       .streamQualityIndicator__23259 { display: none }
     }
@@ -1159,7 +1171,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
     // Disconnect
     .button_afdfd9.red_a51ba8 .controlIcon__25700 {
-      color: var(--red) ;
+      color: var(--red);
     }
   }
   
@@ -1185,7 +1197,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     // Btn dropdownmenu
     .contextMenuNub__7c02f {
       color: white ;
-      background-color: var(--background-secondary) ;
+      background-color: var(--background-secondary);
     }
 
 
@@ -1318,7 +1330,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       background: none ;
       
       &:hover {
-        background: var(--background-modifier-hover) ;
+        background: var(--background-modifier-hover);
       }
       
       .avatar__50f54 {
