@@ -10,7 +10,7 @@
   
   # T1
   
-  Simple design with focus on improvements. Made with a small App window in mind.
+  Simple design with a focus on improvements and a horizontal server bar.
   
 </div>
 
@@ -28,6 +28,7 @@
 
 <br/>
 
+- Background images can be changed, along with some other settings.
 - The Theme might not work properly when mixed with others.
 - The Theme was made for BetterDiscord on Windows and updates to match the stable client.<br/>
   Any other Mod, Platform, or version might work, but is not guaranteed.
