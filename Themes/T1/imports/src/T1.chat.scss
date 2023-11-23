@@ -1,4 +1,4 @@
-// * T1.chat v0.1.10
+// * T1.chat v0.1.11
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -844,7 +844,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   // <- Tags filter
 
-  // -> Post item card (list, grid)
+  // -> Post item card inner container (list, grid)
   .container__99b06, .container_c24cbd {
     border: none ;
     transform: none ;
@@ -914,6 +914,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       border: none ;
       margin: 0 ;
     }
+  }
+
+  // placeholder cards while loading
+  .loadingCard_a6aa0a {
+    background: var(--background-modifier-hover);
   }
   // <- Post item card
 }

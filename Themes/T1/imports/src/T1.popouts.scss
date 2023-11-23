@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.6
+// * T1.popouts v0.1.7
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -849,16 +849,20 @@
 }
 // <- Threads in channel summary popout
 
-// Events modal and some other (needs some more testing)
-//.off 
-.layer_ad604d .root_a28985 {
-  background: var(--background-tertiary);
-  
+// Events modal (Class not unique to events modal tho)
+.layer_ad604d .root_a28985  {
+
+  // Events modal more specific
+  &:has(.content__764ce.content__41e2c) {
+    min-height: unset ;
+  }
+
   // Header
-  .header-1sd0RU {
+  .header__7133e {
     background: var(--background-secondary-alt);
     
-    .fontDisplay-3Gtuks {
+    // "Event/s text"
+    .heading-md-semibold__574c7 {
       color: var(--interactive-hover);
     }
     
@@ -868,15 +872,26 @@
   }
   
   // Content body
-  .content-GYGe57 {
+  .content__41e2c {
     padding: 0 !important ;
+    background: var(--background-tertiary);
+    gap: 0 ;
     
     &::-webkit-scrollbar { display: none } 
   }
   
-  // Create new event setup
+  // -> Create new event setup
+  .content__764ce {
+    background: var(--background-tertiary);
+    border-radius: 0 ;
+
+    .button_afdfd9 {
+      @include Btn();
+    }
+  }
+
   // Progressbars
-  .selectedProgressBar-11z5d9 {
+  .selectedProgressBar__10383 {
     background: var(--interactive-active);
   }
   
@@ -884,14 +899,6 @@
   .colorBrand_be5f58 {
     color: var(--text-normal);
   }
-  
-  // .input-2g-os5 {
-  //   border: none ;
-    
-  //   &:focus {
-  //     background: var(--background-modifier-selected);
-  //   }
-  // }
   
   // Checkbox item list option
   .item_b7fb7e {
@@ -905,12 +912,12 @@
       background: var(--background-modifier-hover);
     }
   }
+  // <- Create new event setup
   
   // Events (item card)
-  .card-8UsK4b {
+  .card__7865b {
     background: var(--background-tertiary);
     border-width: 0 ;
-    margin-top: 0px ;
     border-radius: 0 ;
     
     &:not(:first-child) {
@@ -925,14 +932,19 @@
     .eventName__0b500 {
       color: var(--interactive-hover);
     }
-    
-    // In card- content footer divider
-    .divider-2zyEHJ {
-      background: none ;
+
+    .description__87622 {
+      margin-top: 0 ;
+
+      span {
+        display: inline-block ;
+        margin-top: 8px ;
+      }
     }
     
-    .button_afdfd9 {
-      @include Btn();
+    // In card- content footer divider
+    .divider__33a9a {
+      background: none ;
     }
   }
   
@@ -940,32 +952,30 @@
   .footer__89240 {
     background: var(--background-secondary-alt);
     
-    .inline-3eaUwP, .container-vujOuw {
-      .button_afdfd9{
-        @include Btn();
-      }
+    .button_afdfd9 {
+      @include Btn();
     }
   }
   
-  // Event info modal (maybe more)
-  &.root-wwggTZ {
+  // Event info modal
+  &.root_c3965c {
     
     // Header
-    .container-3EBHNg {
+    .container_f3270f {
       background: var(--background-secondary-alt);
       border: none ;
       
       // Nav bar item
-      .tabBarItem-2aZfB8 {
+      .tabBarItem__8ac5b {
         border: none ;  
       }
     }
-    
-    // Content
-    .contentContainer-BWAau5 {
-      background: var(--background-tertiary);
-    }
   }
+}
+
+// Channel Description (and possibly more)
+.layer_ad604d .root_a28985 .content__764ce.content__96073.selectable.thin_b1c063.scrollerBase_dc3aa9 {
+  padding: 16px ;
 }
 
 // -> Quick switch navigation/search
@@ -1009,38 +1019,34 @@
 // <- Quick switch navigation/search
 
 // Dismissables might just remove all
-.layer-2aCOJ3 {
+// .layer-2aCOJ3 {
 
-  &[style*="left: -"][style*="top: "] {
-    transform: translate( calc(50% + 10px), 25px);
-  }
+//   &[style*="left: -"][style*="top: "] {
+//     transform: translate( calc(50% + 10px), 25px);
+//   }
 
-  .container-xB0xPf, .content__73f32, .subscribeTooltipWrapper-3ipXtC, .upsellTooltipWrapper_df8272
+//   .container-xB0xPf, .content__73f32, .subscribeTooltipWrapper-3ipXtC, .upsellTooltipWrapper_df8272
 
-  // BG container (* not sure if still used)
-  .container-xB0xPf, // *
-  .content__73f32, // *
-  .subscribeTooltipWrapper-3ipXtC, // *
-  .root_a28985, // *
-  .upsellTooltipWrapper_df8272,
-  .container-5N5x2A {
-    background-color: var(--background-tertiary);
+//   // BG container (* not sure if still used)
+//   .container-xB0xPf, // *
+//   .content__73f32, // *
+//   .subscribeTooltipWrapper-3ipXtC, // *
+//   .root_a28985, // *
+//   .upsellTooltipWrapper_df8272,
+//   .container-5N5x2A {
+//     background-color: var(--background-tertiary);
     
-    // Pointer in Tooltipversion
-    &:after { display: none }
-  }
+//     // Pointer in Tooltipversion
+//     &:after { display: none }
+//   }
 
-  .button_afdfd9 { @include Btn() }
+//   .button_afdfd9 { @include Btn() }
     
-  .image-CRV_VX, .pointer-1j6vDv, .pointer_cb5370, .pointer-1bsD64 { display: none }
-}
+//   .image-CRV_VX, .pointer-1j6vDv, .pointer_cb5370, .pointer-1bsD64 { display: none }
+// }
 
-// Image gallery popout (yes, that selector suxs)
-.layer_ad604d .carouselModal-1eUFoq.root_a28985.fullscreenOnMobile__96797 {
-  background: none ;
-  box-shadow: none ;
-}
 
+// Toolstips
 .tooltip__01384{
   background: var(--background-floating) !important;
 

@@ -1,8 +1,9 @@
-// * T1.settings v0.1.6
+// * T1.settings v0.1.7
 // Client / Guilds / Channels
 
 // -> Theme version info
-.layer_e552e0:not(.baseLayer__13b6b) .socialLinks_c1fc99 + .info__755e1:before {
+// Settings sidebar bottom
+.layer__2efaa:not(.baseLayer__8fda3) .socialLinks_c1fc99 + .info__755e1:before {
   content: "T1 - Theme: \a v#{$T1_version} by Eight_P" !important;
   display: block !important;
   font-size: 12px !important;
@@ -11,6 +12,22 @@
   white-space: break-spaces !important;
   margin-bottom: 16px !important;
   text-transform: none !important;
+}
+
+// BD addon card
+.bd-addon-card#T1-card {
+
+  .bd-version {
+
+    &::before {
+      content: " F";
+      display: inline ;
+    }
+
+    &::after {
+      content: " | Tv#{$T1_version} ";
+    }
+  }
 }
 // <- Theme version info
 
@@ -165,12 +182,23 @@
 
 // -> Server settings
 // Roles
-.layer_e552e0:not(.baseLayer__13b6b) {
+.layer__2efaa:not(.baseLayer__13b6b) {
   
   // Default permission button
   .container_d5f6d0 { background: none }
-  
-  // - Edit Role
+
+  // Roles list
+  .content__23cab {
+    .roleRow_c357d5 {
+
+      // role btns
+      .secondary_c96c46 {
+        background: none ;
+      }
+    }
+  }
+
+  // -> Edit Roles
   .contentColumn_dc7d36 > .page__9db5c {
     
     // Sidebar container main
@@ -269,6 +297,7 @@
       }
     }
   }
+  // <- Edit Roles
 }
 // <- Server settings
 

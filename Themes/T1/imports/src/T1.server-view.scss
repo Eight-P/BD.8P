@@ -1,4 +1,4 @@
-// * T1.server-view v0.1.8
+// * T1.server-view v0.1.9
 // Channels, Panels / Members / Server discovery
 
 // -> Text/Voice channels
@@ -243,144 +243,6 @@
 }
 // <- Text/Voice channels
 
-// // -> Sidebar Panels (Profile, Activity,..)
-// .sidebar_ded4b5 .panels__58331 {
-  
-//   // Profile Container
-//   .container_ca50b9 {
-//     position: absolute ;
-//     height: 48px ;
-//     width: 240px ;
-//     top: 0 ;
-//     box-sizing: border-box ;
-
-//     // Pfp, name container
-//     .avatarWrapper_ba5175 {
-//       margin: 6px 8px 6px 0 ;
-//       background: none ;
-//     }
-
-//     // Buttons
-//     .button__4f306 {
-//       background: none ;
-//     }
-//   }
-  
-//   // Activity Container
-//   .activityPanel__22355 {
-//     height: 32px ;
-//     padding: 6px 10px ;
-    
-//     // Image
-//     .gameIconWrapper__499e0 { 
-//       height: 32px;
-//     }
-    
-//     // Text
-//     .title-3XlmeX { 
-//       line-height: 32px;
-//     }
-    
-//     button { background: none }
-//   }
-  
-//   // Voice Connection
-//   .container_d667ff {
-//     display: grid ;
-//     padding: 0 ;
-//     border: none ;
-//     grid-template-columns: 100% ;
-//     contain: paint ;
-    
-//     // Voice channel info container
-//     .connection__5bb32 {
-//       order: 2 ;
-//       margin-left: 32px ;
-//       padding: 6px 0 ;
-//       align-items: unset ;
-      
-//       // Ping / "Connected"
-//       .rtcConnectionStatus__40882 {
-//         padding: 1px 0 2px 0 ;
-//       }
-      
-//       // Buttons container
-//       .button__4f306 {
-//         background: none ;
-        
-//         // Noise Suppression Btn
-//         &:first-child { display: none }
-//       }
-//     }
-    
-//     // Connected users container
-//     .voiceUsers_c72ec5 {
-//       height: 30px ;
-//       padding: 3px 8px ;
-//       margin: 0 ;
-//       box-sizing: border-box ;
-//       order: 3 ;
-      
-//       &::-webkit-scrollbar { display: none }
-      
-//       ~ .actionButtons_b58cbb:after {
-//         bottom: 42px ;
-//       }
-//     }
-    
-//     // Voice channel button container
-//     .actionButtons_b58cbb {
-//       display: inline-flex ;
-//       height: 0 ;
-//       padding: 0 ;
-//       justify-content: space-evenly ;
-//       overflow: hidden ;
-//       transition: .1s linear;
-//       align-items: center ;
-      
-//       // Caret icon
-//       &:after {
-//         content: "<" ;
-//         position: absolute ;
-//         display: flex ;
-//         width: 200px;
-//         height: 32px ;
-//         left: 0 ;
-//         bottom: 12px ;
-//         justify-content: center ;
-//         align-items: center ;
-//         color: var(--interactive-normal);
-//         font-size: 18px ;
-//         font-weight: 700 ;
-//         transform: rotate(90deg) translate(6px, 100px - 16px);
-//       }
-      
-//       &:hover {
-//         height: 44px ;
-        
-//         &:after {
-//           content: ">" ;
-//           color: var(--interactive-hover);
-//         }
-//       }
-      
-//       // Buttons container
-//       .button__66e8c {
-//         width: max-content ;
-//         padding: 0 12px ;
-//         background: none ;
-//         color: var(--interactive-normal);
-//         z-index: 1 ;
-        
-//         &:not(.fauxDisabled__095d8):hover {
-//           color: var(--interactive-hover);
-//         }
-//       }
-//     }
-//   }
-// }
-// <- Sidebar Panels (Profile, Activity,..)
-
 // -> Members list 
 .members__9f47b {
   @include scrollerFadeOut();
@@ -586,7 +448,6 @@
 // }
 // <- Home channel/ Server guide
 
-
 // -> Special Channels
 // Header
 .container__11d72 {
@@ -620,11 +481,15 @@
 }
 // <- Special Channels
 
-
 // -> Channel & Roles
 
 // Content container
 .container__10dc7 {
+
+  // empty page / loading placeholder
+  .emptyPage__3e15d {
+    background: none ;
+  }
 
   // Navbar
   .tabBar_d4764b {
