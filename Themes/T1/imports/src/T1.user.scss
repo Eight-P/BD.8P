@@ -1,9 +1,9 @@
-// * T1.user v0.2.7
+// * T1.user v0.2.8
 // User popout / (Modal)
 
 
-// -> User Popout
-.layerContainer_d5a653 .userPopoutOuter_d739b2 {
+// -> User Popout (not: profile settings / Shop (home))
+.userPopoutOuter_d739b2:not(.profileCustomizationPreview_ccc6a9) {
   border-radius: 12px ;
 
   @include shadow_effect("box_2");

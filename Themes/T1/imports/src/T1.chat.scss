@@ -1,4 +1,4 @@
-// * T1.chat v0.1.11
+// * T1.chat v0.1.12
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -322,7 +322,7 @@
     }
 
     // Nitro btn
-    > [aria-label][type] {
+    > div[aria-label].container__5eb17 {
       width: calc(40px * var(--show-nitro-btn));
       margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
 
@@ -760,14 +760,17 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // Reactions
 .message__80c10 .reaction_fef95b {
-  // background-color: var(--background-modifier-accent);
   background-color: var(--background-modifier-hover);
   border: none;
   border-radius:4px;
 
   &:hover { 
-    // background-color: var(--background-accent);
     background-color: var(--background-modifier-selected);
+  }
+
+  // number 
+  .reactionCount_b49901 {
+    font-size: 0.875rem ;
   }
 
   // Active reaction 
@@ -778,10 +781,8 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       background-color: var(--Blurple-light-hover);
     }
 
-    // number 
     .reactionCount_b49901 { 
       color: var(--Blurple);
-      font-size: 0.875rem ;
     }
   }
 }
@@ -880,6 +881,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
           background-color: var(--background-accent);
         }
 
+        // .reactionCount__60448 { not needed ig
+        //   font-size: 0.875rem ;
+        // }
+
         // Active reaction 
         &.reactionMe_bf6909 {
           background-color: var(--Blurple-light);
@@ -923,10 +928,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // <- Post item card
 }
 
-// -> Forum Chat (Overlay/Full view)
-// Reactions, Follow, copy link btns
+// -> Forum Chat (for both Overlay and Full view)
 .chatContent__5dca8 {
 
+  // Forum icon at top of chat
+  .iconWrapper__3e4a9 { display: none }
+
+  // Reactions, Follow, copy link btns (post meta info bar)
   .container__8ee50 {
     margin: 12px 4px 8px 8px ;
     padding: 0 10px ;
@@ -936,9 +944,39 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
     @include shadow_effect("box_3");
 
-    .reaction_fef95b, .buttonInner__2771e, .addReactButton__59750 {
+    .reaction_b90ab0 {
       background: none ;
       border: none ;
+      // border-radius: 4px ;
+    
+      &:hover { 
+        background-color: var(--background-modifier-selected);
+      }
+    
+      // Active reaction 
+      &.reactionMe_bf6909 {
+    
+        &:hover { 
+          background-color: var(--background-modifier-selected);
+        }
+    
+        // number 
+        .reactionCount__60448 { 
+          color: var(--Blurple);
+        }
+      }
+    }
+
+    // other buttons
+    .addReactButton__59750, .buttonInner__2771e {
+      background: none ;
+      border: none ;
+    }
+
+    // Info bar when pinned to top of chat
+    &.header_ca85b3 {
+      background: var(--background-secondary-alt);
+      top: 0px ;
     }
   }
 }
@@ -962,9 +1000,14 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   background: none ;
   border-radius: 0 ;
 
-  // reverse from regular chat (Line:28)
+  // reverse from regular chat
   .chatContent__5dca8 {
     z-index: auto ;
+  }
+
+  // meta info bar (reactions, "follow", ..)
+  .header_ca85b3 {
+    margin-left: 12px ;
   }
 
   // Forum, Thread Icon

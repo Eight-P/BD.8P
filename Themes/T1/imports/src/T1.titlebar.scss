@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.4
+// * T1.titlebar v0.1.5
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -145,50 +145,51 @@
   }
 }
 
-// - Home/Friends
-.container__5c7e7 .container__11d72 {
+// - Tab/Title-bar Friends(home) / msg requests 
+// .container__5c7e7 .container__11d72 {
+.container__11d72 {
   
-  // - Nav bar / Friends tabs 
-  .tabBar__73938 {
+  // - Nav bar / Friends tabs (children)
+  .topPill__0cdf1 {
     margin: 0 auto ;
     padding-right: 40px ;
     
     // Tabs
-    .item_e4ca95 {
+    .item_e4ca95, .item__48dda {
       background: none !important ;
 
       @include Mentions_icon('.numberBadge__50328');
-      
-      // add friend Tab
-      &.addFriend__80542 {
-        position: absolute ;
-        right: 0 ;
-        width: 24px ;
-        height: 24px ;
-        min-width: unset ;
-        overflow: visible ;
-        margin: 0 9px;
-        padding: 0 ;
-        
-        // Icon
-        &:before {
-          content: " " ;
-          background-image:url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(67, 181, 129)"><path d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 15.67,10 13,10 C13,10 12.83,10 12.75,10 C8,10 4,6 4,1.5 L4,0 L0.5,0 Z M13,0 C10.790861,0 9,1.790861 9,4 C9,6.209139 10.790861,8 13,8 C15.209139,8 17,6.209139 17,4 C17,1.790861 15.209139,0 13,0 Z" transform="translate(2 4)" ></path></svg>');
-          position: absolute ;
-          display: block ;
-          height: 24px ;
-          width: 24px ;
-          opacity: .5 ;
-        }
+    }
 
-        &:hover:before { opacity: 1 }
-        
-        // Selected
-        &[aria-selected="true"]:before { opacity: .8 }
-        
-        // Text
-        span { display: none }
+    // Add friend Tab
+    .item_e4ca95.addFriend__80542 {
+      position: absolute ;
+      right: 0 ;
+      width: 24px ;
+      height: 24px ;
+      min-width: unset ;
+      overflow: visible ;
+      margin: 0 9px;
+      padding: 0 ;
+      
+      // Icon
+      &:before {
+        content: " " ;
+        background-image:url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(67, 181, 129)"><path d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 15.67,10 13,10 C13,10 12.83,10 12.75,10 C8,10 4,6 4,1.5 L4,0 L0.5,0 Z M13,0 C10.790861,0 9,1.790861 9,4 C9,6.209139 10.790861,8 13,8 C15.209139,8 17,6.209139 17,4 C17,1.790861 15.209139,0 13,0 Z" transform="translate(2 4)" ></path></svg>');
+        position: absolute ;
+        display: block ;
+        height: 24px ;
+        width: 24px ;
+        opacity: .5 ;
       }
+
+      &:hover:before { opacity: 1 }
+      
+      // Selected
+      &[aria-selected="true"]:before { opacity: .8 }
+      
+      // Text
+      span { display: none }
     }
   }
 
@@ -239,67 +240,6 @@ html {
       }
     }
   }
-
-  // - Mac (very old)
-  // &.platform-osx {
-    
-  //   // AppOS btns
-  //   .titleBar__01af6 {
-  //     width: 48px ;
-  //     transform: rotate(90deg);
-  //     transform-origin: 13px 13px ;
-  //     -webkit-app-region: none;
-
-  //     // Btn container
-  //     .macButtons__7b1bc {
-  //       padding: 0 ;
-  //       justify-content: space-evenly ;
-  //       width: 48px ;
-  //       height: 26px ;
-  //       cursor: pointer ;
-        
-  //       // Buttons, Btn icon
-  //       .macButton__3b74b, svg {
-  //         width: 10px ;
-  //         height: 10px ;
-  //       }
-  //     }
-      
-  //     &:hover {
-        
-  //       .macButton__3b74b svg {
-  //         visibility: visible ;
-  //       }
-        
-  //       .macButtonClose__071f2 {
-  //         background-color: #fc615d ;
-  //       }
-        
-  //       .macButtonMinimize_ff73a4 {
-  //         background-color: #fdbc40 ;
-  //       }
-        
-  //       .macButtonMaximize__65e03 {
-  //         background-color: #34c749 ;
-  //       }
-  //     }
-  //   }
-
-  //   // move Profile panel for AppOS btns
-  //   .panels__58331 > .container_ca50b9 {
-  //     margin-left: 26px ;
-  //     width: 214px ;
-  //     padding: 0 8px 0 0 ;
-  //   }
-    
-  //   .container__11d72 > .children__32014 {
-  //     -webkit-app-region: none;
-      
-  //     + .toolbar__88c63 {
-  //       -webkit-app-region: none;
-  //     }
-  //   }
-  // }
 }
 
 
