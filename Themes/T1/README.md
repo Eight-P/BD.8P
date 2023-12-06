@@ -22,7 +22,7 @@
 
 <div align="center">
   
-  ### [Download][bd-direct-download] | [betterdiscord.app][bd-theme-page]
+  ### [Download][bd-direct-download] | [betterdiscord.app][bd-theme-page] | [License][License]
   
 </div>
 
@@ -41,6 +41,8 @@
 
 <div align="center">
   
-  ### [LICENSE][License]
+  ## Credits
+  
+  [Icon Revert 2023](https://github.com/davart154/Themes/tree/main/Icon%20Revert%202023) by davart154
   
 </div>

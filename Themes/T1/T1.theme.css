@@ -1,14 +1,19 @@
 /**
  * @name T1
  * @description Simple design with focus on improvements and horizontal server bar.
- * @version 0.8
+ * @version 0.8.1
  * @author Eight_P
  * @authorId 120202910586896385
  * @website https://betterdiscord.app/theme/T1
  * @source https://github.com/Eight-P/BD.8P/tree/master/Themes/T1
 */
 
+/* T1 */
 @import url(https://eight-p.github.io/BD.8P/Themes/T1/imports/T1.main.css);
+
+/* Icon Revert 2023 by davart154 */
+@import url(https://davart154.github.io/Themes/Icon%20Revert%202023/2023%20Icon%20Revert.css);
+
 
 :root {
 /*  ==> IMPORTANT <== 
