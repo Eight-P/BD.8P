@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.7
+// * T1.serverbar v0.1.7.1
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -142,7 +142,7 @@
     // SVG 2
     .childWrapper__01b9c > svg { 
       height: 26px ;
-      margin: 5px 4px 0 0 ;
+      margin: 4px 4px 0 0 ;
       overflow: visible ;
       
       @include shadow_effect("drop_1");

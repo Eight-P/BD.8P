@@ -1,4 +1,4 @@
-// * T1.titlebar v0.1.5
+// * T1.titlebar v0.1.6
 // Header (Chat / Home tabs) | Titlebar | Notifications
 
 // -- Header
@@ -87,7 +87,7 @@
       svg {
         width: 20px ;
         height: 22px ;
-        color: var(--interactive-normal); 
+        color: var(--interactive-normal);
       }
 
       &:hover svg { 
@@ -96,7 +96,12 @@
     }
     
     // Icons
-    .iconWrapper_af9215 { @include TB_icons() }
+    .iconWrapper_af9215 {
+      display: flex ;
+      align-items: center ;
+      
+      @include TB_icons();
+    }
     
     // Searchbar
     @include TB_Search();
