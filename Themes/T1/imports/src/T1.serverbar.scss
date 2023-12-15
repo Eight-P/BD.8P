@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.7.1
+// * T1.serverbar v0.1.7.2
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -228,7 +228,7 @@
   }
 
   // Favorites
-  .listItem_fa7b36:has(.favoriteIcon__91c06) {
+  .listItem_fa7b36:has(.favoriteIcon_adf80e) {
 
     &::before {
       content: "" ;
@@ -270,7 +270,7 @@
     }
   }
   // Remove Seperator when Dms are present
-  [style="opacity: 1; height: 56px; transform: scale(1);"] + .listItem_fa7b36:has(.favoriteIcon__91c06)::before {
+  [style="opacity: 1; height: 56px; transform: scale(1);"] + .listItem_fa7b36:has(.favoriteIcon_adf80e)::before {
     display: none ;
   }
   

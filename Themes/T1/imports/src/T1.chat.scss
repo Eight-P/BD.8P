@@ -1,4 +1,4 @@
-// * T1.chat v0.1.12
+// * T1.chat v0.1.13
 // Text chat, Voice chat
 
 // Header/Chat sperator line
@@ -311,14 +311,14 @@
     // btn content
     .button__55e53 {
       
-      svg {
-        opacity: .6 ;
-        filter: brightness(1.5);
-      }
+      // svg {
+      //   opacity: .6 ;
+      //   filter: brightness(1.5);
+      // }
       
-      &:hover svg { 
-        opacity: .8 ;
-      }
+      // &:hover svg { 
+      //   opacity: .8 ;
+      // }
     }
 
     // Nitro btn
@@ -346,7 +346,7 @@
 
           // Emoji picker
           + .buttonContainer__8b164 {
-            width: calc(38px * var(--show-emoji-btn));
+            width: calc(40px * var(--show-emoji-btn));
             margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
 
             display: var(--chatBtn_emoji);
@@ -371,11 +371,17 @@
   }
 
   // Emoji button
-  .emojiButton__30ec7 {
-    opacity: .6 ;
+  .emojiButton__8ff6a {
+    // opacity: .6 ;
+    // filter: brightness(1.5);
+
+    .spriteContainer__5b044 {
+      // transform: none !important ;
+      // filter: grayscale(1);
+    }
 
     &.emojiButtonHovered__4c6c4 { 
-      opacity: 1 ;
+      // opacity: 1 ;
     }
   }
 
