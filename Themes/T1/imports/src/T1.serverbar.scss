@@ -1,4 +1,4 @@
-// * T1.serverbar v0.1.7.2
+// * T1.serverbar v0.1.7.3
 // Horizontal serverbar + Additions
 
 // Serverbar -->
@@ -308,9 +308,9 @@
   
   // Placeholder when dragging
   .placeholderMask__94802 {
-    height: 40px;
-    width: 40px;
-    margin: 4px;
+    height: 40px ;
+    width: 40px ;
+    margin: 4px ; 
     
     .dragInner_a23293 {
       background: rgba(0, 0, 0, 0.5);
@@ -342,6 +342,10 @@
     margin: 4px ;
 
     mask, g { display: none }
+
+    foreignObject {
+      mask: none ;
+    }
 
     &:hover .icon__0cbed { border-radius: 25% }
   }
@@ -467,6 +471,10 @@
     // SVG 1
     .svg_ad7356 {
       mask, g { display: none }
+
+      foreignObject {
+        mask: none ;
+      }
     }
 
     .folder__17546 { background: none }
