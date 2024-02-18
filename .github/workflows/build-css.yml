@@ -1,10 +1,10 @@
-# v1.1
-name: build css
+# v1.2
+# Build and commit output css from main.scss
+name: build-CSS
 on:
   push:
     branches:
     - master
-    - dev
     paths:
     - "**.main.scss"
 jobs:
@@ -13,19 +13,18 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: 16.x
+        node-version: 20.x
 
     - run: npm ci
     - run: npm run build -w Themes/T1
 
     - name: Commit and push changes
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "build: ${{ github.event.head_commit.message }}"
         file_pattern: "**.main.css"
-        add_options: "--force"

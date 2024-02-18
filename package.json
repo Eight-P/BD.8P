@@ -1,14 +1,23 @@
 {
   "name": "bd.8p",
-  "version": "1.0.0",
-  "description": "collective repository for my BetterDiscord stuff",
-  "author": "Eight_P",
+  "version": "1.0.1",
+  "description": "Collective Repository, currently containing my T1 Discord theme",
+  "author": "Eight_P (https://github.com/Eight-P)",
   "repository": "github:Eight-P/BD.8P",
   "license": "MIT",
   "private": false,
+  "bugs": "https://github.com/Eight-P/BD.8P/issues",
+  "keywords": [
+    "Discord",
+    "BetterDiscord"
+  ],
   "workspaces": [
     "Themes/T1"
   ],
+  "engines": {
+    "node": ">= 20.0.0",
+    "npm": ">= 8.0.0"
+  },
   "dependencies": {
     "sass": "^1.51.0"
   }
