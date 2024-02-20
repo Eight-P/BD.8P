@@ -1,4 +1,4 @@
-// * T1.background v0.2.6
+// * T1.background v0.2.6.1
 // Background image + Transparency
 
 // Main background image
@@ -76,7 +76,8 @@ $Classes: (
   ".nowPlayingSidebar-2OFn0o > .container__0a6a9",
   ".nowPlayingSidebar-2OFn0o > .emptyCard_f82dde",
   // Pretty much every scroller
-  ".app_b1f720 .scrollerBase_dc3aa9",
+  ".app_b1f720 .scrollerBase_dc3aa9", //old
+  ".app_b1f720 .scrollerBase__2b744", // new
   // Members list
   ".container-2Oqvgx", ".members__9f47b", ".members__9f47b .content-2a4AW9",
   // Server bar

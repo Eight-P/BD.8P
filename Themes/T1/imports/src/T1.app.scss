@@ -1,4 +1,4 @@
-// * T1.app v0.1.3
+// * T1.app v0.1.3.1
 
 // Layer transitions
 .layers_a23c37 > .layer__2efaa { 
@@ -17,6 +17,7 @@
 
 // Default scrollbar design (needs some rework)
 .app_b1f720 .scrollerBase_dc3aa9 { @include scrollbar() }
+.app_b1f720 .scrollerBase__2b744 { @include scrollbar() }
 
 // Tab focus thing
 .focus-rings-ring, .focusRing_e5d39f {

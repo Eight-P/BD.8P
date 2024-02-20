@@ -1,4 +1,4 @@
-// * T1.popouts v0.1.7
+// * T1.popouts v0.1.7.1
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 
 // Popouts container
@@ -13,6 +13,11 @@
   // left sidebar
   .rail_ad1aea, .list_c7a995 {
     background: var(--background-secondary-alt);
+  }
+
+  .wrapper_cd625e .scrollerBase_dc3aa9::-webkit-scrollbar,
+  .wrapper_cd625e .scrollerBase__2b744::-webkit-scrollbar {
+    display: none ;
   }
   
   // Group header
@@ -29,9 +34,6 @@
   .option__32fd1 {
     background: var(--background-tertiary);
   }
-
-  // Command list sidebar
-  .rail_ad1aea .scrollerBase_dc3aa9::-webkit-scrollbar { display: none }
 }
 // <- Autocomplete popout
 
@@ -65,6 +67,7 @@
 
     .scrollerBase_dc3aa9 {
       @include scrollerFadeOut();
+      @include scrollbar();
     }
   }
   // <- Popout (Gifs)
@@ -117,10 +120,10 @@
     background: var(--background-floating);
 
     .scroller_e89578 {
-
+      @include scrollbar();
       @include scrollerFadeOut();
 
-      &::-webkit-scrollbar { display: none } 
+      // &::-webkit-scrollbar { display: none } 
     }
 
     // Category header
@@ -488,7 +491,8 @@
   &.messagesPopoutWrap_b3b384 {
     
     // Scroller
-    .scrollerBase_dc3aa9 {
+    .scrollerBase_dc3aa9, // old
+    .scrollerBase__2b744 {// new
       
       @include scrollbar();
       
@@ -540,7 +544,8 @@
   &.container__20de0 {
     
     // Scroller
-    .scrollerBase_dc3aa9 {
+    .scrollerBase_dc3aa9, // old
+    .scrollerBase__2b744 {// new
       margin: 0 ;
       padding: 0 !important ;
 

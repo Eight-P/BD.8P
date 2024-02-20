@@ -1,56 +1,54 @@
-// * T1.mixins v0.1.6
+// * T1.mixins v0.1.7
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
 
-// global Scrollbar | @include scrollbar();
-@mixin scrollbar () {
+// Scrollbar design | @include scrollbar();
+@mixin scrollbar ($width:15px) {
   &::-webkit-scrollbar { 
-    width: 12px ;
+    // width: 12px ;
+    width: $width ;
   }
   
   &::-webkit-scrollbar-thumb {
-    background-color: var(--interactive-normal);
     border-color: transparent ;
+    background-color: var(--background-modifier-accent) ;
+    visibility: visible ;
   }
 
-  &::-webkit-scrollbar-track { 
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-track-piece { 
     background-color: transparent ;
     border-color: transparent ;
-  }
-  
-  &::-webkit-scrollbar-track-piece {
-    background-color: transparent ;
-    border: none ;
   }
 
   &:hover::-webkit-scrollbar-thumb { 
-    background-color: var(--interactive-hover)
+    background-color: var(--interactive-normal);
   }
 }
 
 
 // Button as one element | @include btn_1();
-@mixin btn_1 ($border:true, $bg:true) {
+// @mixin btn_1 ($border:true, $bg:true) {
 
-  $bS: 1px solid var(--text-muted) !important ;
-  $bgS: var(--background-modifier-selected) !important ;
+//   $bS: 1px solid var(--text-muted) !important ;
+//   $bgS: var(--background-modifier-selected) !important ;
 
-  border: if( $border, $bS, none );
-  background: if($bg, $bgS, none);
-  color: var(--text-normal);
+//   border: if( $border, $bS, none );
+//   background: if($bg, $bgS, none);
+//   color: var(--text-normal);
     
-  &:hover {
+//   &:hover {
 
-    $bgSH: var(--header-secondary) !important ;
+//     $bgSH: var(--header-secondary) !important ;
 
-    color: if($bg, black, var(--interactive-active));
-    background: if($bg, $bgSH, none);
-    border-color: if($bg, transparent, var(--text-normal) !important );
-  }
-}
+//     color: if($bg, black, var(--interactive-active));
+//     background: if($bg, $bgSH, none);
+//     border-color: if($bg, transparent, var(--text-normal) !important );
+//   }
+// }
 
-// New Button Design ( BETA ) | @include Btn();
+// Button Design ( needs rework ) | @include Btn();
 // $BG = [false, "background", <color>( + $C for Text)]
 @mixin Btn ($BG:false, $C:false) {
   

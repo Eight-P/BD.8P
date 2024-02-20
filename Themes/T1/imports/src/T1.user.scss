@@ -1,4 +1,4 @@
-// * T1.user v0.2.8
+// * T1.user v0.2.8.1
 // User popout / (Modal)
 
 
@@ -422,7 +422,8 @@
   .userPanelInner_eddf4c::before { display: none }
 
   // Scrollbar
-  .scrollerBase_dc3aa9::-webkit-scrollbar { display: none }
+  .scrollerBase_dc3aa9::-webkit-scrollbar { display: none } // old
+  .scrollerBase__2b744::-webkit-scrollbar { display: none } // new
 
   // -> Banner
   .bannerSVGWrapper__3e7b0 {

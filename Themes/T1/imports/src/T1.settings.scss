@@ -1,4 +1,4 @@
-// * T1.settings v0.1.7
+// * T1.settings v0.1.7.1
 // Client / Guilds / Channels
 
 // -> Theme version info
@@ -209,12 +209,13 @@
     // Roles list Sidebar
     .list__41249::-webkit-scrollbar { display: none }
     
-    // Left side main content container
+    // Left side main content container (why did i do this ?)
     .contentContainer__23092 {
-      border-right: 12px solid var(--scrollbar-auto-track);
+      // border-right: 12px solid var(--scrollbar-auto-track);
       
-      .scrollerBase_dc3aa9 {
-        margin-right: -12px ;
+      .scrollerBase_dc3aa9, // old
+      .scrollerBase__2b744 {// new
+        // margin-right: -12px ;
       }
     }
     
