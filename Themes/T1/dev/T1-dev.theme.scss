@@ -1,0 +1,43 @@
+/*! /**
+  * @name T1_DEV
+  * @description T1 Dev
+  * @author Eight_P
+  * @version 0.8.D
+*/
+
+@use '../src/T1.main.scss' ;
+
+@import url(https://davart154.github.io/Themes/Icon%20Revert%202023/2023%20Icon%20Revert.css);
+
+:root {
+  --Main_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg);
+  --Main_Brightness: 80 ;
+  --Main_Background_blur: 0 ;
+  
+  --Server_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
+  --Server_Brightness: 100 ;
+  --Server_Background_blur: 0 ;
+
+  --show-nitro-btn: 0 ;
+  --show-gif-btn: 1 ;
+  --show-sticker-btn: 0 ;
+  --show-emoji-btn: 1 ;
+  
+  // --show-home-tabs: 1 ;
+  --show-serverboost-stats: 1 ;
+  --always-show-voicecontrols: 1 ;
+  --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+}
+
+// Dev build indicator
+.platform-win #app-mount::after {
+  content: "T1 Dev build";
+  position: absolute ;
+  left: 75px ;
+  line-height: 22px ;
+  font-size: 12px ;
+  font-weight: 600 ;
+  color: rgb(114, 118, 125);
+  text-transform: none ;
+  z-index: 1 ;
+}

@@ -1,12 +1,13 @@
 {
   "name": "t1",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "BetterDiscord Theme with focus on general improvements and a horizontal server bar.",
   "author": "Eight_P",
   "repository": "github:Eight-P/BD.8P",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "sass src/T1.main.scss:imports/T1.main.css --style=compressed --no-source-map"
+    "build": "sass src/T1.main.scss:imports/T1.main.css --style=compressed --no-source-map",
+    "watch": "node ../scripts/compileDevTheme.js"
   }
 }
