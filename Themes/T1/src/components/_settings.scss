@@ -1,10 +1,13 @@
-// * T1.settings v0.1.7.1
+// * settings v0.1.7.2
 // Client / Guilds / Channels
+@use 'mixins' as * ;
+
+$T1_v: null !default ;
 
 // -> Theme version info
 // Settings sidebar bottom
 .layer__2efaa:not(.baseLayer__8fda3) .socialLinks_c1fc99 + .info__755e1:before {
-  content: "T1 - Theme: \a v#{$T1_version} by Eight_P" !important;
+  content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
   display: block !important;
   font-size: 12px !important;
   font-weight: 600 !important;
@@ -25,7 +28,7 @@
     }
 
     &::after {
-      content: " | Tv#{$T1_version} ";
+      content: " | Tv#{$T1_v} ";
     }
   }
 }

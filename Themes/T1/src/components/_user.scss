@@ -1,6 +1,6 @@
-// * T1.user v0.2.8.1
+// * user v0.2.8.2
 // User popout / (Modal)
-
+@use 'mixins' as * ;
 
 // -> User Popout (not: profile settings / Shop (home))
 .userPopoutOuter_d739b2:not(.profileCustomizationPreview_ccc6a9) {

@@ -1,37 +1,37 @@
-$T1_version: "0.6.15a" ; // Theme file Fv8
+$T1_version: "0.6.15b" ; // Theme file Fv8
 
 // Global Mixins and Variables
-@import 'components/T1.mixins.scss';
+@use 'components/_mixins';
 
 // General App related stuff
-@import 'components/T1.app.scss';
+@use 'components/_app';
 
 // Background image and Transparency
-@import 'components/T1.background.scss';
+@use 'components/_background';
 
 // Text and voice chat
-@import 'components/T1.chat.scss';
+@use 'components/_chat';
 
 // Home Tabs / DMs-Sidebar
-@import 'components/T1.home.scss';
+@use 'components/_home';
 
 // Popouts / Tooltips
-@import 'components/T1.popouts.scss';
+@use 'components/_popouts';
 
 // Channels / Member / Discovery
-@import 'components/T1.server-view.scss';
+@use 'components/_server';
 
 // Serverbar + Addons
-@import 'components/T1.serverbar.scss';
+@use 'components/_serverbar';
 
 // Settings menus
-@import 'components/T1.settings.scss';
+@use 'components/_settings' with ( $T1_v: $T1_version );
 
 // Header-, Titlebar / Notifications
-@import 'components/T1.titlebar.scss';
+@use 'components/_titlebar';
 
 // User Popout, Modal
-@import 'components/T1.user.scss';
+@use 'components/_user';
 
-// Plugin Compatibility
-@import 'components/T1.compatibility.scss';
+// Addon Compatibility
+@use 'components/_compatibility';
