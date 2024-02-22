@@ -1,4 +1,4 @@
-# v1.2
+# v1.3
 # Build and commit output css from main.scss
 name: build-CSS
 on:
@@ -7,6 +7,9 @@ on:
     - master
     paths:
     - "**.main.scss"
+
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
