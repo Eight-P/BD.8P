@@ -1,6 +1,6 @@
 {
   "name": "bd.8p",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Collective Repository, currently containing my T1 Discord theme",
   "author": "Eight_P (https://github.com/Eight-P)",
   "repository": "github:Eight-P/BD.8P",
@@ -16,7 +16,7 @@
   ],
   "engines": {
     "node": ">= 20.0.0",
-    "npm": ">= 8.0.0"
+    "npm": ">= 10.0.0"
   },
   "dependencies": {
     "sass": "^1.51.0"
