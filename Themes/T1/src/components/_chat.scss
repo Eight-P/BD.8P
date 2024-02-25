@@ -1,4 +1,4 @@
-// * chat v0.1.14.1
+// * chat v0.1.14.2
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -480,12 +480,8 @@ $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
 $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
 
 .chatContent__5dca8 .message__80c10.cozy_f5c119 {
-  background: none ;
+  background: none !important ;
   padding: 2px 32px 0px 4.125rem !important ;
-  
-  &:hover { 
-    background: none ;
-  }
   
   // Highlight border-left (Mention, Clyde, ..)
   &:before { display: none }
@@ -683,8 +679,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // -> Message Buttons 
   // Main container / Msg highlight hover effect
+  // &:has(.buttonContainer_dd4b62:hover) (would work too)
   .buttonContainer_dd4b62 {
     position: static ;
+
+    .buttons__3766a {
+      opacity: 1 !important ;
+    }
     
     &:hover:after {
       content: "";
@@ -694,19 +695,19 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       bottom: 0px ;
       right: 2px ;
       pointer-events: none ;
-      background: rgba(255, 255, 255, 0.05); // black or white ? idk
+      background: rgba(255, 255, 255, 0.05);
     }
   }
   
-  &.mentioned__58017, &.ephemeral_c26b64 { 
-    .buttonContainer_dd4b62:hover:after {
-      right: 32px ; // why did i do this ?
-    }
-  }
+  // &.mentioned__58017, &.ephemeral_c26b64 { 
+  //   .buttonContainer_dd4b62:hover:after {
+      // right: 32px ; // why did i do this ?
+  //   }
+  // }
   // <- Message Buttons 
   
   // Btn container
-  .buttons__3766a { 
+  .buttons__3766a {
     top: 3px ;
     padding: 0 1px 0 0 ;
     
@@ -715,6 +716,17 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       height: 24px ;
       background: none ;
       box-shadow: none ;
+
+      &:has([d="M16.3 14.7a1 1 0 0 1 0-1.4l2.5-2.5a3.95 3.95 0 1 0-5.6-5.6l-2.5 2.5a1 1 0 1 1-1.4-1.4l2.5-2.5a5.95 5.95 0 1 1 8.4 8.4l-2.5 2.5a1 1 0 0 1-1.4 0ZM7.7 9.3a1 1 0 0 1 0 1.4l-2.5 2.5a3.95 3.95 0 0 0 5.6 5.6l2.5-2.5a1 1 0 1 1 1.4 1.4l-2.5 2.5a5.95 5.95 0 0 1-8.4-8.4l2.5-2.5a1 1 0 0 1 1.4 0Z"]) {
+        top: -4px ;
+        height: 32px ;
+        background-color: var(--background-tertiary);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+
+        .button_d553e5 {
+          padding: 4px ;
+        }
+      }
 
       // Button
       .button_d553e5 {
@@ -735,6 +747,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     // Buttons container
     .wrapper_c727b6 {
       height: 32px ;
+      top: unset !important ;
       
       // Button
       .button_d553e5 {
@@ -748,6 +761,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       
       &:hover {
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+        // box-shadow: 0 0 0 1px red;
         
         .button_d553e5 {
           display: flex ;
