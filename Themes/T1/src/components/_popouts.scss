@@ -1,4 +1,4 @@
-// * popouts v0.1.7.2
+// * popouts v0.1.7.3
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -8,7 +8,7 @@
 }
 
 // -> Autocomplete popout
-.chatContent__5dca8 .form__13a2c .autocomplete_df266d {
+.chatContent_f087cb .form_d8a4a1 .autocomplete_df266d {
   background: var(--background-tertiary);
   
   // left sidebar
@@ -16,8 +16,8 @@
     background: var(--background-secondary-alt);
   }
 
-  .wrapper_cd625e .scrollerBase_dc3aa9::-webkit-scrollbar,
-  .wrapper_cd625e .scrollerBase__2b744::-webkit-scrollbar {
+  .wrapper_cd625e .scrollerBase_f742b2::-webkit-scrollbar,
+  .wrapper_cd625e .scrollerBase__65223::-webkit-scrollbar {
     display: none ;
   }
   
@@ -66,7 +66,7 @@
       background: var(--background-floating);
     }
 
-    .scrollerBase_dc3aa9 {
+    .scrollerBase_f742b2 {
       @include scrollerFadeOut();
       @include scrollbar();
     }
@@ -492,8 +492,8 @@
   &.messagesPopoutWrap_b3b384 {
     
     // Scroller
-    .scrollerBase_dc3aa9, // old
-    .scrollerBase__2b744 {// new
+    .scrollerBase_f742b2, // old
+    .scrollerBase__65223 {// new
       
       @include scrollbar();
       
@@ -545,8 +545,8 @@
   &.container__20de0 {
     
     // Scroller
-    .scrollerBase_dc3aa9, // old
-    .scrollerBase__2b744 {// new
+    .scrollerBase_f742b2, // old
+    .scrollerBase__65223 {// new
       margin: 0 ;
       padding: 0 !important ;
 
@@ -703,7 +703,7 @@
     background: none !important ;
   }
   
-  .container__50947 .button_afdfd9 {
+  .container__50947 .button__581d0 {
     @include Btn("background");
   }
 }
@@ -748,7 +748,7 @@
     }
     
     // Add friends to Dm > "Add" btn
-    .addButton__0756f .button_afdfd9 {
+    .addButton__0756f .button__581d0 {
       @include Btn("background");
     }
   }
@@ -828,7 +828,7 @@
       background: var(--background-tertiary);
     }
     
-    .button_afdfd9.lookFilled__19298:not(.colorRed_d6b062) {
+    .button__581d0.lookFilled__19298:not(.colorRed_d6b062) {
       @include Btn("background");
     }
     
@@ -872,7 +872,7 @@
       color: var(--interactive-hover);
     }
     
-    .button_afdfd9 {
+    .button__581d0 {
       @include Btn();
     }
   }
@@ -891,7 +891,7 @@
     background: var(--background-tertiary);
     border-radius: 0 ;
 
-    .button_afdfd9 {
+    .button__581d0 {
       @include Btn();
     }
   }
@@ -958,7 +958,7 @@
   .footer__89240 {
     background: var(--background-secondary-alt);
     
-    .button_afdfd9 {
+    .button__581d0 {
       @include Btn();
     }
   }
@@ -980,7 +980,7 @@
 }
 
 // Channel Description (and possibly more)
-.layer_ad604d .root_a28985 .content__764ce.content__96073.selectable.thin_b1c063.scrollerBase_dc3aa9 {
+.layer_ad604d .root_a28985 .content__764ce.content__96073.selectable.thin_b1c063.scrollerBase_f742b2 {
   padding: 16px ;
 }
 
@@ -1046,7 +1046,7 @@
 //     &:after { display: none }
 //   }
 
-//   .button_afdfd9 { @include Btn() }
+//   .button__581d0 { @include Btn() }
     
 //   .image-CRV_VX, .pointer-1j6vDv, .pointer_cb5370, .pointer-1bsD64 { display: none }
 // }

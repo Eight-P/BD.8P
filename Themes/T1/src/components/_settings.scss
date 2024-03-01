@@ -1,4 +1,4 @@
-// * settings v0.1.7.2
+// * settings v0.1.7.3
 // Client / Guilds / Channels
 @use 'mixins' as * ;
 
@@ -6,7 +6,7 @@ $T1_v: null !default ;
 
 // -> Theme version info
 // Settings sidebar bottom
-.layer__2efaa:not(.baseLayer__8fda3) .socialLinks_c1fc99 + .info__755e1:before {
+.layer_f7d46a:not(.baseLayer__2b890) .socialLinks_c1fc99 + .info__755e1:before {
   content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
   display: block !important;
   font-size: 12px !important;
@@ -35,7 +35,7 @@ $T1_v: null !default ;
 // <- Theme version info
 
 // -> General Settings
-.layer__2efaa:not(.baseLayer__13b6b) {
+.layer_f7d46a:not(.baseLayer__13b6b) {
   
   // -> Sidebar
   .sidebarRegionScroller__1fa7e {
@@ -185,13 +185,13 @@ $T1_v: null !default ;
 
 // -> Server settings
 // Roles
-.layer__2efaa:not(.baseLayer__13b6b) {
+.layer_f7d46a:not(.baseLayer__13b6b) {
   
   // Default permission button
   .container_d5f6d0 { background: none }
 
   // Roles list
-  .content__23cab {
+  .content__690c5 {
     .roleRow_c357d5 {
 
       // role btns
@@ -202,7 +202,7 @@ $T1_v: null !default ;
   }
 
   // -> Edit Roles
-  .contentColumn_dc7d36 > .page__9db5c {
+  .contentColumn_dc7d36 > .page_c3ed26 {
     
     // Sidebar container main
     .sidebar_bdf6b7 {
@@ -216,8 +216,8 @@ $T1_v: null !default ;
     .contentContainer__23092 {
       // border-right: 12px solid var(--scrollbar-auto-track);
       
-      .scrollerBase_dc3aa9, // old
-      .scrollerBase__2b744 {// new
+      .scrollerBase_f742b2, // old
+      .scrollerBase__65223 {// new
         // margin-right: -12px ;
       }
     }

@@ -1,4 +1,4 @@
-// * user v0.2.8.2
+// * user v0.2.8.3
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -70,7 +70,7 @@
     left: 20px ;
     z-index: 1;
     
-    .svg_f5b652 { 
+    .svg_a6bf1c { 
       overflow: visible ;
       contain: unset ;
     }
@@ -267,7 +267,7 @@
         background: var(--button-secondary-background);
       }
 
-      .contents_fb6220 {
+      .contents__322f4 {
         font-weight: 400 ;
       }
     }
@@ -422,8 +422,8 @@
   .userPanelInner_eddf4c::before { display: none }
 
   // Scrollbar
-  .scrollerBase_dc3aa9::-webkit-scrollbar { display: none } // old
-  .scrollerBase__2b744::-webkit-scrollbar { display: none } // new
+  .scrollerBase_f742b2::-webkit-scrollbar { display: none } // old
+  .scrollerBase__65223::-webkit-scrollbar { display: none } // new
 
   // -> Banner
   .bannerSVGWrapper__3e7b0 {
@@ -462,7 +462,7 @@
       margin: 0 auto ;
     }
 
-    .svg_f5b652 { 
+    .svg_a6bf1c { 
       overflow: visible ;
 
       // status icon background
