@@ -1,11 +1,11 @@
-// * titlebar v0.1.6.1
+// * titlebar v0.1.6.2
 // Header (Chat / Home tabs) | Titlebar | Notifications
 @use 'mixins' as * ;
 
 // -- Header
 // - Toolbar search
 @mixin TB_Search () {
-  // Searchbar
+  // Searchbar inner
   .search_ac353c {
     
     // container
@@ -72,8 +72,8 @@
     .title__9e2b0 {
       color: var(--interactive-hover);
       
-      // Channel name by default
-      &:not(.cursorPointer__5116a) { display: none }
+      // Channel name by default (make in to settings option)
+      // &:not(.cursorPointer__5116a) { display: none }
     }
     
     // ugly random line (right)
@@ -144,11 +144,6 @@
       @include Btn();
     }
   }
-  
-  .toolbar__88c63 {
-    // min-width: 226px ;
-    // justify-content: space-around ;
-  }
 }
 
 // - Tab/Title-bar Friends(home) / msg requests 
@@ -216,16 +211,6 @@
     background: none ;
   }
 }
-
-// - DM Voice call
-//section.title_b7d661.container__11d72.transparent__7f3e0[aria-label="Channel header"] {}
-
-// - Server Voice call
-//section.theme-dark.container__11d72.transparent__7f3e0 {}
-
-// - Live Stages 
-//section.headerBarContainer-31FKNA.container__11d72.themed_b152d4 {}
-
 
 // -- OS specific stuff
 html {

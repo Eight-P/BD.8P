@@ -1,4 +1,4 @@
-// * home v0.1.4.1
+// * home v0.1.4.2
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -175,21 +175,18 @@
     }
     
     
-    // -- with lazy loading :C (will do more in the future)
-    .content-2a4AW9 {
+    // -- with lazy loading (this is a problem!)
+    // .content-2a4AW9 {
       
-      // Friend item
-      .peopleListItem_d14722 {
+    //   // Friend item
+    //   .peopleListItem_d14722 {
         
-        // User interaction btns
-        .actionButton__23182 {
-          background: none ;
-        }
-      }
-    }
-    
-    // idk, this weird tab selection indicator ring thing
-    > .ring-370dIp { display: none }
+    //     // User interaction btns
+    //     .actionButton__23182 {
+    //       background: none ;
+    //     }
+    //   }
+    // }
   }
   // <- Friendslist
   
@@ -258,14 +255,6 @@
   .headerBar_afb1ac { display: none }
   
   .scroller__244e5 { @include scrollbar() }
-
-  // Header card background
-  svg.root-1F1IKT { display: none }
-
-  // INfo cards
-  .bigPerkCard-1uwmWV, .smallPerkCard-2sX_-- {
-    background: none ;
-  }
 }
 // <- Nitro store
 
@@ -296,15 +285,9 @@
     padding: 0 ;
     border-radius: 0 ;
 
-    // for hidding Home tabs (friends, nitro-store, libary)
-    // height: calc(var(--show-home-tabs, 1) * 38px);
-    // margin: calc(var(--show-home-tabs, 1) * 6px) 0;
-    // overflow: hidden ;
-
     @include Mentions_icon(".numberBadge__50328");
     
     // Second container
-    // .interactive-1vLZ_I {
     .interactive_a868bc {
       background: none ;
       height: 38px ;
@@ -325,12 +308,9 @@
       }
     }
 
-    .closeButton__8f1fd { 
-      // background-size: 22px 22px; 
-    }
-
     // Nitro Ads
-    .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF, .badgeIconPrivateMessages__2ccd2 { display: none }
+    // .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF, 
+    .badgeIconPrivateMessages__2ccd2 { display: none }
   }
 }
 // <- DMs Sidebar

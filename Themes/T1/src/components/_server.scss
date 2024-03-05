@@ -1,4 +1,4 @@
-// * server v0.1.9.1
+// * server v0.1.9.2
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -85,7 +85,7 @@
     }
     
     // Bottom spacer
-    .divider__40683 { display: none }
+    // .divider__40683 { display: none }
     
     // Channel category header if adjacent
     + .containerDefault__23a29 {
@@ -175,7 +175,7 @@
     }
     
     // Channel unread
-    &.modeUnread_f74c03 {
+    &.modeUnreadImportant_efb53e {
       // pill
       .unread__48cf4 { 
         background-color: var(--interactive-hover);
@@ -237,9 +237,13 @@
   }
 
   // "Hide/Show all voice Channels
-  .voiceChannelsButton__46c37:hover {
+  .voiceChannelsButton__46c37 {
     background-color: var(--background-modifier-hover);
-    border-color: transparent ;
+    border: none ;
+
+    &:hover {
+      background-color: var(--background-modifier-accent);
+    }
   }
 }
 // <- Text/Voice channels
@@ -401,55 +405,7 @@
   // <- Body
 }
 
-// OLD
-// .homeContainer__6bec1 {
- 
-//   // Info Top
-//   .widgets__4a8b8 {
-
-//     // inner container
-//     .container__92dc8 {
-//       background: none ;
-//     }
-
-//     // Widgets
-//     .container_acafc1, .emptyStateContainer__3c229 {
-//       background: none ;
-//     }
-
-//     // Channels
-//     .container__16581 {
-//       background: var(--background-modifier-hover);
-//       border: none ;
-
-//       &:hover {
-//         background: var(--background-modifier-selected);
-//       }
-//     }
-//   }
-
-//   // Top message container
-//   .container__99b36 {
-//     background: none ;
-//   }
-
-//   .card_d4f6c7 {
-//     background: var(--background-modifier-hover);
-//     border: none ;
-
-//     &:hover {
-//       background: var(--background-modifier-selected);
-//     }
-
-//     // load Dummys 
-//     .wrapper__5c5cd {
-//       background: none ;
-//     }
-//   }
-// }
-// <- Home channel/ Server guide
-
-// -> Special Channels
+// -> Special Channels (Chan&Rols / Members)
 // Header
 .container__11d72 {
 
@@ -459,7 +415,7 @@
     background: none;
 
     // Btn text
-    .returnButtonText__32d61 {
+    .returnButtonText__32d61, .returnButtonText__032d6 {
       color: var(--interactive-hover);
     }
 
@@ -473,17 +429,11 @@
 
     &:hover {
       background: none var(--background-modifier-selected);
-
-      .returnButtonText__32d61 {
-        color: var(--interactive-active);
-      }
     }
   }
 }
-// <- Special Channels
 
 // -> Channel & Roles
-
 // Content container
 .container__10dc7 {
 
@@ -578,43 +528,9 @@
 }
 // <- Channel & Roles
 
-// -> Server welcome screen thing
-.content__4bf10 .main__58b77 {
-  // Background image
-  .artwork__04b4e { display: none }
-
-  // -> Intro
-  .coverContainer_e99487 {
-    background: none ;
-  }
-
-  .centerContent_d55275 {
-    background: var(--background-tertiary);
-
-    .button_afdfd9 {
-      @include Btn("background");
-    }
-  }
-  // <- Intro
-
-  // -> Main content
-  .promptContent__63c03 {
-
-    .optionButton__6812e {
-      border: none ;
-      background: var(--background-modifier-accent);
-
-      &:hover {
-        background: var(--background-modifier-selected);
-      }
-    }
-  }
-  // <- Main content
-}
-// <- Server welcome screen thing
-
 // -> Member Safety Page
 .page__0b66e {
+  background: none !important;
 
   // scroller inner content container
   .container_df3aa0 {
@@ -755,3 +671,39 @@
   // <- Table
 }
 // <- Member Safety Page
+// <- Special Channels (Chan&Rols / Members)
+
+// -> Server welcome screen thing
+.content__4bf10 .main__58b77 {
+  // Background image
+  .artwork__04b4e { display: none }
+
+  // -> Intro
+  .coverContainer_e99487 {
+    background: none ;
+  }
+
+  .centerContent_d55275 {
+    background: var(--background-tertiary);
+
+    .button_afdfd9 {
+      @include Btn("background");
+    }
+  }
+  // <- Intro
+
+  // -> Main content
+  .promptContent__63c03 {
+
+    .optionButton__6812e {
+      border: none ;
+      background: var(--background-modifier-accent);
+
+      &:hover {
+        background: var(--background-modifier-selected);
+      }
+    }
+  }
+  // <- Main content
+}
+// <- Server welcome screen thing

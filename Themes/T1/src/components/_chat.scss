@@ -1,4 +1,4 @@
-// * chat v0.1.14.2
+// * chat v0.1.14.3
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -289,8 +289,8 @@
   // Slowmode icon
   .cooldownWrapper_de448f {
     position: absolute ;
-    right: -20px ;
-    bottom: -14px ;
+    right: -17px ;
+    bottom: -15px ;
     height: 16px ;
     width: 16px ;
     color: transparent !important;
@@ -310,7 +310,8 @@
   .buttons_ce5b56 {
 
     // Nitro btn
-    > button:has([d="M4 6a4 4 0 0 1 4-4h.09c1.8 0 3.39 1.18 3.91 2.9A4.09 4.09 0 0 1 15.91 2H16a4 4 0 0 1 3.46 6H20a2 2 0 0 1 2 2v1.5a.5.5 0 0 1-.5.5h-19a.5.5 0 0 1-.5-.5V10c0-1.1.9-2 2-2h.54A3.98 3.98 0 0 1 4 6Zm12 2a2 2 0 1 0 0-4h-.09c-.96 0-1.8.65-2.02 1.58L13.29 8H16Zm-5.89-2.42.6 2.42H8a2 2 0 1 1 0-4h.09c.96 0 1.8.65 2.02 1.58Z"]) {
+    button:has([d="M4 6a4 4 0 0 1 4-4h.09c1.8 0 3.39 1.18 3.91 2.9A4.09 4.09 0 0 1 15.91 2H16a4 4 0 0 1 3.46 6H20a2 2 0 0 1 2 2v1.5a.5.5 0 0 1-.5.5h-19a.5.5 0 0 1-.5-.5V10c0-1.1.9-2 2-2h.54A3.98 3.98 0 0 1 4 6Zm12 2a2 2 0 1 0 0-4h-.09c-.96 0-1.8.65-2.02 1.58L13.29 8H16Zm-5.89-2.42.6 2.42H8a2 2 0 1 1 0-4h.09c.96 0 1.8.65 2.02 1.58Z"]),
+    button:has([d=" M-7,10 C-8.104999542236328,10 -9,9.104999542236328 -9,8 C-9,8 -9,2.5 -9,2.5 C-9,2.2239999771118164 -8.776000022888184,2 -8.5,2 C-8.5,2 -1.5,2 -1.5,2 C-1.2239999771118164,2 -1,2.2239999771118164 -1,2.5 C-1,2.5 -1,9.5 -1,9.5 C-1,9.776000022888184 -1.2239999771118164,10 -1.5,10 C-1.5,10 -7,10 -7,10z M1,9.5 C1,9.776000022888184 1.2239999771118164,10 1.5,10 C1.5,10 7,10 7,10 C8.104999542236328,10 9,9.104999542236328 9,8 C9,8 9,2.5 9,2.5 C9,2.2239999771118164 8.776000022888184,2 8.5,2 C8.5,2 1.5,2 1.5,2 C1.2239999771118164,2 1,2.2239999771118164 1,2.5 C1,2.5 1,9.5 1,9.5z"]) {
       width: calc(40px * var(--show-nitro-btn));
       margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
 
@@ -319,7 +320,8 @@
 
 
     // Gifs picker
-    .buttonContainer__8b164:has([d="M5 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3H5Zm2.18 13.87a2.9 2.9 0 0 1-1.66-.49 3.18 3.18 0 0 1-1.12-1.35A4.88 4.88 0 0 1 4 12c0-.75.14-1.42.42-2 .29-.59.7-1.04 1.24-1.37a3.7 3.7 0 0 1 1.95-.5c.64 0 1.21.14 1.72.4.5.28.89.67 1.15 1.16l-1.22.88a1.76 1.76 0 0 0-1.64-1.02c-.66 0-1.17.22-1.52.65a2.74 2.74 0 0 0-.53 1.8c0 .78.18 1.39.53 1.81.35.42.86.64 1.52.64.3 0 .57-.06.81-.16.25-.12.45-.27.58-.47v-.93H7.3v-1.4h3.24v4.23H9.27l-.2-.71c-.43.57-1.06.86-1.89.86Zm6.34-.15h-1.57V8.28h1.57v7.44Zm1.51 0h1.57v-2.83h2.76v-1.42H16.6V9.7H20V8.28h-4.97v7.44Z"]) {
+    .buttonContainer__8b164:has([d="M5 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3H5Zm2.18 13.87a2.9 2.9 0 0 1-1.66-.49 3.18 3.18 0 0 1-1.12-1.35A4.88 4.88 0 0 1 4 12c0-.75.14-1.42.42-2 .29-.59.7-1.04 1.24-1.37a3.7 3.7 0 0 1 1.95-.5c.64 0 1.21.14 1.72.4.5.28.89.67 1.15 1.16l-1.22.88a1.76 1.76 0 0 0-1.64-1.02c-.66 0-1.17.22-1.52.65a2.74 2.74 0 0 0-.53 1.8c0 .78.18 1.39.53 1.81.35.42.86.64 1.52.64.3 0 .57-.06.81-.16.25-.12.45-.27.58-.47v-.93H7.3v-1.4h3.24v4.23H9.27l-.2-.71c-.43.57-1.06.86-1.89.86Zm6.34-.15h-1.57V8.28h1.57v7.44Zm1.51 0h1.57v-2.83h2.76v-1.42H16.6V9.7H20V8.28h-4.97v7.44Z"]),
+    .buttonContainer__8b164:has([d=" M-7,-10 C-8.656999588012695,-10 -10,-8.656999588012695 -10,-7 C-10,-7 -10,7 -10,7 C-10,8.656999588012695 -8.656999588012695,10 -7,10 C-7,10 7,10 7,10 C8.656999588012695,10 10,8.656999588012695 10,7 C10,7 10,-7 10,-7 C10,-8.656999588012695 8.656999588012695,-10 7,-10 C7,-10 -7,-10 -7,-10z"]) {
       width: calc(40px * var(--show-gif-btn));
       margin-top: calc(-100px * (1 - var(--show-gif-btn)));
 
@@ -327,7 +329,8 @@
     }
 
     // Stickers picker
-    .buttonContainer__8b164:has([d="M6 2h12a4 4 0 0 1 4 4v7.5a.5.5 0 0 1-.5.5H19a5 5 0 0 0-5 5v2.5a.5.5 0 0 1-.5.5H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Zm.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM19 8.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm-9.91 2.94a1 1 0 0 0-1.66 1.12 5.5 5.5 0 0 0 9.14 0 1 1 0 0 0-1.66-1.12 3.5 3.5 0 0 1-5.82 0Z"]) {
+    .buttonContainer__8b164:has([d="M6 2h12a4 4 0 0 1 4 4v7.5a.5.5 0 0 1-.5.5H19a5 5 0 0 0-5 5v2.5a.5.5 0 0 1-.5.5H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Zm.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM19 8.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm-9.91 2.94a1 1 0 0 0-1.66 1.12 5.5 5.5 0 0 0 9.14 0 1 1 0 0 0-1.66-1.12 3.5 3.5 0 0 1-5.82 0Z"]),
+    .buttonContainer__8b164:has([d=" M-6,-10 C-6,-10 6,-10 6,-10 C8.208999633789062,-10 10,-8.208999633789062 10,-6 C10,-6 10,1.5 10,1.5 C10,1.7760000228881836 9.776000022888184,2 9.5,2 C9.5,2 7,2 7,2 C4.238999843597412,2 2,4.238999843597412 2,7 C2,7 2,9.5 2,9.5 C2,9.776000022888184 1.7760000228881836,10 1.5,10 C1.5,10 -6,10 -6,10 C-8.208999633789062,10 -10,8.208999633789062 -10,6 C-10,6 -10,-6 -10,-6 C-10,-8.208999633789062 -8.208999633789062,-10 -6,-10z M9.659000396728516,4 C9.692000389099121,4 9.71399974822998,4.033999919891357 9.699999809265137,4.064000129699707 C9.555000305175781,4.36299991607666 9.359999656677246,4.639999866485596 9.121000289916992,4.879000186920166 C9.121000289916992,4.879000186920166 4.879000186920166,9.121000289916992 4.879000186920166,9.121000289916992 C4.639999866485596,9.359999656677246 4.36299991607666,9.555000305175781 4.064000129699707,9.699999809265137 C4.033999919891357,9.71399974822998 4,9.692000389099121 4,9.659000396728516 C4,9.659000396728516 4,9.17199993133545 4,9.17199993133545 C4,9.17199993133545 4,7 4,7 C4,5.3429999351501465 5.3429999351501465,4 7,4 C7,4 9.17199993133545,4 9.17199993133545,4 C9.17199993133545,4 9.659000396728516,4 9.659000396728516,4z"]) {
       width: calc(36px * var(--show-sticker-btn));
       margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
 
@@ -400,28 +403,28 @@
   }
   
   // Tips info for text input ??
-  .applicationCommandEducation-1stoia {
-    bottom: unset ;
-    top: -20px ;
-    left: 5px ;
+  // .applicationCommandEducation-1stoia {
+  //   bottom: unset ;
+  //   top: -20px ;
+  //   left: 5px ;
     
-    &::-webkit-scrollbar { display: none }
+  //   &::-webkit-scrollbar { display: none }
     
-    // Arrow icon
-    .applicationCommandEducationArrow-2xKDmq { display: none }
+  //   // Arrow icon
+  //   .applicationCommandEducationArrow-2xKDmq { display: none }
     
-    // Text container
-    .applicationCommandEducationPrompt-23S3d- {
-      display: flex ;
-      flex-direction: row-reverse ;
-      overflow: visible ;
-    }
+  //   // Text container
+  //   .applicationCommandEducationPrompt-23S3d- {
+  //     display: flex ;
+  //     flex-direction: row-reverse ;
+  //     overflow: visible ;
+  //   }
     
-    // Dismiss btn
-    .anchor-1MIwyf {
-      margin-right: 10px ;
-    }
-  }
+  //   // Dismiss btn
+  //   .anchor-1MIwyf {
+  //     margin-right: 10px ;
+  //   }
+  // }
   
   // file/upload attachment
   .channelAttachmentArea__740bf {
@@ -486,11 +489,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Highlight border-left (Mention, Clyde, ..)
   &:before { display: none }
   
-  // Preview of replied msg
-  .repliedMessage_e2bf4a { 
-    height: 20px ;
-  }
-  
   // Message container
   .contents_f41bb2 { 
     padding: 0 0 2px 6px ;
@@ -509,7 +507,18 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       margin-left: 0 ;
     }
   }
+
+  // Edit message
+  .channelTextArea__56a36 .scrollableContainer__33e06 {
+      background: $BG_Embed ;
+  }
   
+  // -> Misc
+  // Preview of replied msg
+  .repliedMessage_e2bf4a { 
+    height: 20px ;
+  }
+
   // File
   .attachment_f3cf2c {
     background: $BG_Embed ;
@@ -608,38 +617,24 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     background: $BG_Embed ;
   }
   
-  // Inline Code, Text Spoilers
-  code.inline, .spoilerText-27bIiA {
+  // Inline Code
+  code.inline {
     background: $BG_Embed-alt ;
   }
 
-  // Image
-  .mediaAttachmentsContainer_edba75, .mediaAttachmentsContainer_edba75 * {
+  // Image container and inner containers
+  .mediaAttachmentsContainer_edba75, .mediaAttachmentsContainer_edba75, .oneByOneGridSingle__01756 {
     border-radius: 4px ;
   }
 
-  // Image Spoiler
-  .spoilerContainer-3wsC0k {
+  // Spoiler Embed
+  .spoilerContainer_b653f1 {
     box-shadow: none ;
-    
-    &.hidden-3B-Rum {
-      background: $BG_Embed ;
-      border-radius: 4px ;
-    }
-    
-    .hiddenSpoilers-19m4Pg {
-      visibility: hidden ;
-    }
+    background: $BG_Embed ;
   }
-
-  // Edit message
-  .channelTextArea__56a36 {
-
-    .scrollableContainer__33e06 {
-      background: $BG_Embed ;
-    }
-  }
+  // <- Misc
   
+  // -> MSg Types
   // Mention
   &.mentioned__58017 .contents_f41bb2 {
     border-left: solid 2px var(--border-mentioned);
@@ -675,6 +670,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       background: none ;
     }
   }
+  // <-
   
   
   // -> Message Buttons 
@@ -682,10 +678,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // &:has(.buttonContainer_dd4b62:hover) (would work too)
   .buttonContainer_dd4b62 {
     position: static ;
-
-    .buttons__3766a {
-      opacity: 1 !important ;
-    }
     
     &:hover:after {
       content: "";
@@ -698,13 +690,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       background: rgba(255, 255, 255, 0.05);
     }
   }
-  
-  // &.mentioned__58017, &.ephemeral_c26b64 { 
-  //   .buttonContainer_dd4b62:hover:after {
-      // right: 32px ; // why did i do this ?
-  //   }
-  // }
-  // <- Message Buttons 
   
   // Btn container
   .buttons__3766a {
@@ -770,6 +755,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
     }
   }
+  // <- Message Buttons
 }
 
 // Reactions
@@ -919,6 +905,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Grid 
   .container_c24cbd {
 
+    .contentPreview_b317ee {
+      background: none ;
+      border: none ;
+      margin: 0 ;
+    }
+
     // weird gradient
     .textContentFooter__5a630 {
       background: none ;
@@ -927,11 +919,18 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     .tagPill_d9a5cc {
       background: var(--background-tertiary);
     }
+  }
 
-    .contentPreview_b317ee {
+  // Empty forum ("Be the first to start the conversation!" card)
+  .container_a4e239 {
+    background: var(--background-modifier-hover);
+
+    .stepContainer__2f6a9 {
       background: none ;
-      border: none ;
-      margin: 0 ;
+
+      &:hover {
+        background: var(--background-modifier-accent);
+      }
     }
   }
 
@@ -1064,6 +1063,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // Create thread
   .container__116d0 {
+
+    .scroller__3965c {
+      @include scrollerFadeOut();
+    }
     
     // Text inputs
     .channelTextArea_c27a51, .input_d266e7 {
@@ -1310,11 +1313,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
       
       svg {
+        contain: unset ;
         overflow: visible ;
       }
       
       // Profile image
-      .avatar-b5OQ1N {
+      .avatar__991e2 {
         border-radius: 7.5% ;
         
         &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
@@ -1365,7 +1369,16 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // -> Stage view
 .callContainer_e8faeb {
-  
+
+  // Empty/no stage
+  .container__515b3  {
+    background: var(--background-modifier-hover);
+
+    &:hover {
+      background: var(--background-modifier-selected);
+    }
+  }
+
   // black gradiant effect
   .gradientContainer__9a5a6 {
     background: none ;
@@ -1398,6 +1411,26 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       .avatar__50f54 {
         background: none ;
       }
+    }
+  }
+
+  .controlSection_daa0d5 {
+    .button_afdfd9, .controlIcon__25700, .raisedHandButtonIcon_b47956 {
+      background: none ;
+      color: var(--interactive-normal);
+
+      &:hover {
+        color: var(--interactive-hover);
+      }
+    }
+
+    .button_afdfd9.red_a51ba8 {
+      color: var(--red) !important ;
+    }
+
+    .contextMenuNub__7c02f {
+      color: white ;
+      background-color: var(--background-secondary);
     }
   }
 }

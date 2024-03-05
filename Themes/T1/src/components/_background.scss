@@ -1,4 +1,4 @@
-// * background v0.2.6.1
+// * background v0.2.6.2
 // Background image + Transparency
 
 // Main background image
@@ -30,7 +30,7 @@ $Classes: (
   ".app_de4237",
   ".layer__2efaa",
   // Voice-chat view
-  ".stageSection-3mAD8V",
+  // ".stageSection-3mAD8V",
   // Text chat
   ".chat__52833", ".chatContent__5dca8",
   // Voicecall view
@@ -49,7 +49,7 @@ $Classes: (
   // Sidebar
   ".sidebar_ded4b5",
   // Sidebar container for Discord info stuff
-  ".container-3O_wAf",
+  // ".container-3O_wAf",
   // Server channels container
   ".container__590e2",
   // Members list
@@ -79,7 +79,9 @@ $Classes: (
   ".app_b1f720 .scrollerBase_dc3aa9", //old
   ".app_b1f720 .scrollerBase__2b744", // new
   // Members list
-  ".container-2Oqvgx", ".members__9f47b", ".members__9f47b .content-2a4AW9",
+  // ".container-2Oqvgx", 
+  ".members__9f47b",
+  // ".members__9f47b .content-2a4AW9",
   // Server bar
   ".guilds__2b93a",
   // Settings
@@ -88,7 +90,7 @@ $Classes: (
   // Roles Settings
   ".page__9db5c .titleContainer_e558ff",
   // Channel Settings (Permissions)
-  ".card-2EUiNF", ".settingCard-xZSDjS", ".cardFolder-3H4uH4",
+  // ".card-2EUiNF", ".settingCard-xZSDjS", ".cardFolder-3H4uH4",
   // Voice-chat view
   ".wrapper_bd2abe",
   // Title bar
@@ -96,7 +98,7 @@ $Classes: (
   // Server Boost page
   ".scroller__439a2", ".header__4f442",
   // Profile customization shop
-  ".shop-3sIaH8"
+  // ".shop-3sIaH8"
 );
 
 

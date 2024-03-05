@@ -1,4 +1,4 @@
-// * serverbar v0.1.7.4
+// * serverbar v0.1.7.5
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -379,12 +379,6 @@
     // Unread indicator
     &[style="opacity: 1; height: 8px; transform: none;"] { display: block }
   }
-  
-  // Pill with bd classes as an optional improvment
-  &.bd-unread:not(.bd-selected) .item_f9d377 {
-    display: block ;
-    height: 8px !important ;
-  }
 }
 
 // DMs
@@ -447,9 +441,9 @@
 
     // Placeholder when dragging
     .placeholderMask__94802 {
-      height: 40px;
-      width: 40px;
-      margin: 4px;
+      height: 40px ;
+      width: 40px ;
+      margin: 4px ;
 
       .dragInner_a23293 {
         background: rgba(0, 0, 0, 0.5);
@@ -503,7 +497,7 @@
     }
   }
   
-  // Server container
+  // Server container in folder
   ul {
     height: auto !important;
     margin-bottom: 24px ;
@@ -544,8 +538,11 @@
   
   // container
   .header__104ca {
+    display: flex ;
     padding: 0 5px ;
     height: 54px ;
+    align-items: center ;
+    justify-content: center ;
   }
 
   // Server badge
@@ -553,7 +550,7 @@
   
   // Server name container
   .headerContent_ee8727 {
-    height: -webkit-fill-available ;
+    display: contents ;
   }
   
   // Server name
@@ -623,6 +620,8 @@
   overflow: hidden ;
   text-overflow: ellipsis ;
   white-space: nowrap ;
+
+  @include shadow_effect("text_1");
   
   & + .categoryItem_b1be5c {
      margin-top: 64px ;

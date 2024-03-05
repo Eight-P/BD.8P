@@ -1,8 +1,8 @@
 /*! /**
   * @name T1_DEV
-  * @description T1 Dev
+  * @description T1 Dev BD
   * @author Eight_P
-  * @version 0.8.D
+  * @version 0.8.1_D
 */
 
 @use '../src/T1.main.scss' ;
@@ -23,7 +23,6 @@
   --show-sticker-btn: 0 ;
   --show-emoji-btn: 1 ;
   
-  // --show-home-tabs: 1 ;
   --show-serverboost-stats: 1 ;
   --always-show-voicecontrols: 1 ;
   --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
@@ -33,6 +32,7 @@
 .platform-win #app-mount::after {
   content: "T1 Dev build";
   position: absolute ;
+  display: block !important ;
   left: 75px ;
   line-height: 22px ;
   font-size: 12px ;
