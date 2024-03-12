@@ -1,4 +1,4 @@
-// * serverbar v0.1.7.5
+// * serverbar v0.1.7.4
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -556,6 +556,7 @@
   // Server name
   .name_c08dbc {
     display: block ;
+    margin: 0 ;
     text-align: center ;
     line-height: 16px ;
     white-space: normal ;

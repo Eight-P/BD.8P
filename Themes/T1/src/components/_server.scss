@@ -1,4 +1,4 @@
-// * server v0.1.9.2
+// * server v0.1.9.3
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -123,10 +123,15 @@
     // Settings and invite buttons
     .iconItem__8e3b8 { display: none }
 
-    // Channel badges (e.g. "NEW", ..)
+    // Channel badges (e.g. "NEW", ..) (old?)
     .textBadge__45d79 {
       background: none !important;
       color: var(--interactive-hover)
+    }
+
+    // "new" badge on forum channel
+    .channelInfo_b7ab2e .text-xs-semibold_a3a2b4 {
+      color: var(--interactive-hover) !important;
     }
     
     // Connection limit (voice)

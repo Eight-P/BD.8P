@@ -1,4 +1,4 @@
-// * chat v0.1.14.3
+// * chat v0.1.14.4
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -490,7 +490,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   &:before { display: none }
   
   // Message container
-  .contents_f41bb2 { 
+  .contents_f41bb2 {
     padding: 0 0 2px 6px ;
     
     // Profile image
@@ -657,20 +657,17 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // System Message (msg pinned, user joined server, ..) | 
   &.isSystemMessage__2ef37 {
     
-    // "Wave to say hi!" btn
-    .welcomeCTA__927ef .button_afdfd9 {
+    // "Wave to say hi!" btn (when someone new joins a server)
+    .welcomeCTAButtonOuter_a7da64 {
       @include Btn("background");
     }
   }
   
   // Thread
-  &.hasThread__58ee2 {
-    
-    .container__767d1 {
-      background: none ;
-    }
+  &.hasThread__58ee2 .container__767d1 {
+    background: none ;
   }
-  // <-
+  // <- MSg Types
   
   
   // -> Message Buttons 

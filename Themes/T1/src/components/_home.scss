@@ -1,4 +1,4 @@
-// * home v0.1.4.2
+// * home v0.1.4.3
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -312,5 +312,8 @@
     // .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF, 
     .badgeIconPrivateMessages__2ccd2 { display: none }
   }
+
+  // "new" badge on shop
+  .linkButton_ebd2ba .textBadge__45d79 { display: none }
 }
 // <- DMs Sidebar
