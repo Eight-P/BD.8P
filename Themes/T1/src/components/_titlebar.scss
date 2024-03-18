@@ -1,4 +1,4 @@
-// * titlebar v0.1.6.2
+// * titlebar v0.1.6.3
 // Header (Chat / Home tabs) | Titlebar | Notifications
 @use 'mixins' as * ;
 
@@ -67,13 +67,26 @@
     
     // "AKA" icon if chatpartner has a nickname in a server
     .akaBadge__7df41 { display: none }
-    
-    // Dm Partner / Channel name
-    .title__9e2b0 {
-      color: var(--interactive-hover);
+
+    // Dm Partner / Channel name container
+    .titleWrapper__482dc {
+      margin: 0 ;
+      max-width: 100% ;
+      padding-right: 5px ;
+      line-height: 0 ;
       
-      // Channel name by default (make in to settings option)
-      // &:not(.cursorPointer__5116a) { display: none }
+      // Name
+      .title__9e2b0 {
+        display: inline-block ;
+        max-width: 100% ;
+        color: var(--interactive-hover);
+        text-overflow: ellipsis ;
+      }
+      
+      &:has(~ .topic__16ae3) {
+        max-width: 50% ;
+        padding: 0 ;
+      }
     }
     
     // ugly random line (right)
@@ -116,7 +129,7 @@
 }
 
 // - Chat (Server / DMs )
-.chat__52833 > .container__11d72 {
+.container__11d72 {
   
   // - Channel name / topic
   .children__32014 {
@@ -126,8 +139,8 @@
       margin: 0 8px ;
       text-align: center ;
       
-      // Links / Mentions
-      > * { 
+      // Mentions/Channels, Weblinks
+      .interactive, .anchor_c8ddc0 { 
         pointer-events: none ;
         opacity: .8 ;
       }
@@ -135,13 +148,17 @@
       &:hover { 
         color: var(--interactive-hover);
         
-        > * { opacity: 1 }
+        .interactive, .anchor_c8ddc0 { 
+          opacity: 1 ;
+        }
       }
     }
     
     // Follow Announcement channel button
-    .followButton__2e268 { 
-      @include Btn();
+    .followButton__2e268 {
+      margin: 0 0 0 8px ;
+
+      @include Btn("background");
     }
   }
 }
