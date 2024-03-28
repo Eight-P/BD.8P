@@ -1,0 +1,109 @@
+// * background v0.2.6.2
+// Background image + Transparency
+
+// Main background image
+#app-mount::before {
+  content: " " ;
+  position: absolute ;
+  top: 0 ;
+  left: 0 ;
+  display: block ;
+  height: 100vh ;
+  width: 100vw ;
+  background: var(--background_app);
+  background-size: cover !important ;
+  background-attachment: fixed !important ;
+  background-position: center !important ;
+
+  --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+  --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+
+  filter: var(--blur) var(--brightness);
+}
+
+$Classes: (
+  // #app-mount
+  "",
+  // BG elm
+  ".bg__12180",
+  // App containers
+  ".app_de4237",
+  ".layer_f7d46a",
+  // Voice-chat view
+  // ".stageSection-3mAD8V",
+  // Text chat
+  ".chat__52833", ".chatContent_f087cb",
+  // Voicecall view
+  ".callContainer__1477d",
+  // Forum channel
+  ".container_b92032",
+  // Channel & Roles
+  ".container__03ec9",
+  // Channel & Roles inner
+  ".mainTableContainer__37b54",
+  // Member Safety Page
+  ".container__3a30a",
+  // Stage view
+  ".container_ffbc98", ".callContainer__486b0",
+  ".scroller__3c95c", ".container-3r7mfc", ".rowContainer__05af6",
+  // Sidebar
+  ".sidebar_e031be",
+  // Sidebar container for Discord info stuff
+  // ".container-3O_wAf",
+  // Server channels container
+  ".container__7e23c",
+  // Members list
+  ".container_f79ab4",
+  // Sidebar Panels 
+  ".panels__58331",
+  // User profile container, Voice channel, Activity
+  ".container_debb33", ".container_e1958d", ".activityPanel_b73e7a",
+  // DMs Sidebar
+  ".privateChannels__9b518",
+  // Home Friends list
+  ".sidebar_e031be ~ .container_bd15da",
+  // Nitro store
+  ".applicationStore__444b9",
+  // Shop (Home)
+  ".shop_b31ed2",
+  // Discovery
+  ".pageWrapper_c182d3",
+  // Friends Activity Sidebar
+  ".nowPlayingColumn_b025fe",
+  ".nowPlayingColumn_b025fe > .container__3673d",
+  ".nowPlayingColumn_b025fe > .emptyCard__204d9",
+  ".nowPlayingSidebar-2OFn0o",
+  ".nowPlayingSidebar-2OFn0o > .container__3673d",
+  ".nowPlayingSidebar-2OFn0o > .emptyCard__204d9",
+  // Pretty much every scroller
+  ".app_b1f720 .scrollerBase_f742b2", //old
+  ".app_b1f720 .scrollerBase__65223", // new
+  // Members list
+  // ".container-2Oqvgx", 
+  ".members__573eb",
+  // ".members__573eb .content-2a4AW9",
+  // Server bar
+  ".guilds__2b93a",
+  // Settings
+  ".standardSidebarView__12528",
+  ".contentRegion__08eba",
+  // Roles Settings
+  ".page_c3ed26 .titleContainer_d09261",
+  // Channel Settings (Permissions)
+  // ".card-2EUiNF", ".settingCard-xZSDjS", ".cardFolder-3H4uH4",
+  // Voice-chat view
+  ".wrapper__6bf2d",
+  // Title bar
+  ".container__26baa",
+  // Server Boost page
+  ".scroller__7d61e", ".header_b9d0dd",
+  // Profile customization shop
+  // ".shop-3sIaH8"
+);
+
+
+@each $class in $Classes { #app-mount #{$class} { background: none } }
+
+body { background: none }
+
+
