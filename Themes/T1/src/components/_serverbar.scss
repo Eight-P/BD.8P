@@ -1,11 +1,11 @@
-// * serverbar v0.1.7.4
+// * serverbar v0.1.8
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
 // Serverbar -->
 // - Base container -->
 // App layer adjustments 
-.baseLayer__8fda3 > .container__037ed { flex-direction: column-reverse }
+.baseLayer__2b890 > .container_d1f8f5 { flex-direction: column-reverse }
 
 // - Serverbar container / scroller
 .guilds__2b93a {
@@ -49,7 +49,7 @@
   }
   
   // Scroller ( 10-48-6-20-6-20-10 )
-  .scroller__3d071 {
+  .scroller_de945b {
     display: grid ;
     grid-template-columns: 54px ;
     grid-template-rows: 48px 29px 35px auto ;
@@ -80,7 +80,7 @@
       background-color: var(--interactive-normal);
     }
 
-    .guildSeparator_dcb3cc {
+    .guildSeparator__75928 {
       position: absolute ;
       width: 32px ;
       height: 2px ;
@@ -90,12 +90,12 @@
   }
   
   // Unread mentions indicators
-  .unreadMentionsIndicatorTop_ada847,
-  .unreadMentionsIndicatorBottom_fdb943 { display: none }
+  .unreadMentionsIndicatorTop__153ad,
+  .unreadMentionsIndicatorBottom__9351c { display: none }
 }
 
 // Margin on Mac
-.platform-osx .wrapper_a7e7a8 {
+.platform-osx .wrapper__216eb {
   margin: 0 ;
 }
 
@@ -103,10 +103,10 @@
 
 // - Static options -->
 // - Home / GuildsAd / Discovery / GuildsError
-.guilds__2b93a .scroller__3d071 {
+.guilds__2b93a .scroller_de945b {
   
   // general item container
-  .listItem_fa7b36 { 
+  .listItem__48528 { 
     width: 54px ; 
     margin: 0 ; 
   }
@@ -119,34 +119,39 @@
     .pill_d1140c { display: none }
     
     // Notification badge
-    .lowerBadge__669e7 {
+    .lowerBadge_e89e22 {
       left: 4px ;
       bottom: 4px ;
       @include shadow_effect("drop_2");
     }
     
     // SVG 1 conatiner
-    .wrapper__3af0b { 
+    .wrapper__9916c { 
       transform: rotate(90deg);
     }
     
+    // Cut out for number badge
+    foreignObject { mask: none }
+
     // SVG 2 conatiner
-    .childWrapper__01b9c {
+    .childWrapper_a6ce15 {
       background: none ;
       color: var(--text-normal);
       opacity: .75 ;
     }
     
     // Hover
-    .wrapper_d281dd.selected_f5ec8e .childWrapper__01b9c { opacity: 1 }
+    .wrapper__8436d.selected_ae80f7 .childWrapper_a6ce15 { opacity: 1 }
     
     // SVG 2
-    .childWrapper__01b9c > svg { 
+    .childWrapper_a6ce15 > svg { 
       height: 26px ;
       margin: 4px 4px 0 0 ;
       overflow: visible ;
       
       @include shadow_effect("drop_1");
+
+
 
      // Icon
      path {
@@ -163,24 +168,24 @@
     .pill__13f64 { display: none }
     
     // SVG 1 container, SVG 1
-    .wrapper__3af0b, .svg_ad7356 {
+    .wrapper__9916c, .svg__34dd4 {
       height: 20px ;
       width: 20px ;
     }
     
     // SVG 2 container
-    .circleIconButton_d8df29 {
+    .circleIconButton__05cf2 {
       transform: rotate(90deg);
       background: none ;
       color: var(--text-normal);
       opacity: .75 ;
       
-      &.selected__5250e { opacity: 1 }
+      &.selected_aded59 { opacity: 1 }
       
       @include shadow_effect("drop_1");
       
       // SVG 2 
-      .circleIcon__428dd {
+      .circleIcon_b62ef0 {
         height: 100% ;
         width: 100% ;
       }
@@ -203,7 +208,7 @@
     margin: 0 ;
     margin: 3px 0 10px 0;
     
-    .circleIconButton_d8df29 .circleIcon__428dd {
+    .circleIconButton__05cf2 .circleIcon_b62ef0 {
       height: 90% ;
       width: 90% ;
     }
@@ -229,7 +234,7 @@
   }
 
   // Favorites
-  .listItem_fa7b36:has(.favoriteIcon_adf80e) {
+  .listItem__48528:has(.favoriteIcon__901fa) {
 
     &::before {
       content: "" ;
@@ -244,22 +249,22 @@
     .pill__66ac8 { display: none }
 
     div:not([class]) {
-      .wrapper__3af0b {
+      .wrapper__9916c {
         transform: rotate(90deg);
         @include shadow_effect("server_1");
       }
 
         // Unreads badge
-      .lowerBadge__669e7 {
+      .lowerBadge_e89e22 {
         left: 4px ;
         bottom: 4px ;
 
-        .numberBadge__50328 { 
+        .numberBadge__40d6f { 
           background-color: var(--red) !important ;
         }
       }
 
-      .childWrapper__01b9c {
+      .childWrapper_a6ce15 {
         background: none ;
         color: var(--text-normal) !important ;
         opacity: .75 ;
@@ -271,22 +276,22 @@
     }
   }
   // Remove Seperator when Dms are present
-  [style="opacity: 1; height: 56px; transform: scale(1);"] + .listItem_fa7b36:has(.favoriteIcon_adf80e)::before {
+  [style="opacity: 1; height: 56px; transform: scale(1);"] + .listItem__48528:has(.favoriteIcon__901fa)::before {
     display: none ;
   }
   
   // Home
-  .tutorialContainer__890ea { @include Home_Icon() }
+  .tutorialContainer_b06ae6 { @include Home_Icon() }
 
   // Every div after servers
   > [aria-label]:not([class]) + div {
 
     @include GuildsAdd_Icon();
 
-    + .listItem_fa7b36 {
+    + .listItem__48528 {
       @include Discovery_Icon();
 
-      + .listItem_fa7b36 {
+      + .listItem__48528 {
         @include GuildsError_Icon()
       }
     }
@@ -303,22 +308,22 @@
   margin: 12px 0 ;
   
   // bc drag and drop (server, dms)
-  .pill__6b31b + div, .listItemWrapper__1f93b {
+  .pill__6b31b + div, .listItemWrapper__3d465 {
     transform: rotate(90deg);
   }
   
   // Placeholder when dragging
-  .placeholderMask__94802 {
+  .placeholderMask_ca6625 {
     height: 40px ;
     width: 40px ;
     margin: 4px ; 
     
-    .dragInner_a23293 {
+    .dragInner_d5b34c {
       background: rgba(0, 0, 0, 0.5);
     }
   }
   
-  .wrapper__3af0b {
+  .wrapper__9916c {
 
     @include shadow_effect("server_1");
     
@@ -327,17 +332,17 @@
   }
   
   // Unreads badge
-  .lowerBadge__669e7 {
+  .lowerBadge_e89e22 {
     left: 4px ;
     bottom: 4px ;
 
-    .numberBadge__50328 { 
+    .numberBadge__40d6f { 
       background-color: var(--red) !important ;
     }
   }
 
   // SVG
-  .svg_ad7356 {
+  .svg__34dd4 {
     height: 40px ; 
     width: 40px ;
     margin: 4px ;
@@ -348,17 +353,17 @@
       mask: none ;
     }
 
-    &:hover .icon__0cbed { border-radius: 25% }
+    &:hover .icon__11cf1 { border-radius: 25% }
   }
 
   // Image
-  .icon__0cbed {
+  .icon__11cf1 {
     border-radius: 50% ;
     transition: .2s ;
   }
   
   // Text
-  .acronym_cd4809 {
+  .acronym_fb7739 {
     background: none ;
     
     @include shadow_effect("server_1");
@@ -382,7 +387,7 @@
 }
 
 // DMs
-.guilds__2b93a .scroller__3d071 > [style="opacity: 1; height: 56px; transform: scale(1);"] {
+.guilds__2b93a .scroller_de945b > [style="opacity: 1; height: 56px; transform: scale(1);"] {
   @include ServerIcon();
 
   // Seperator to the left
@@ -407,7 +412,7 @@
 }
 
 // Server container
-.scroller__3d071 > [aria-label]:not([class]) {
+.scroller_de945b > [aria-label]:not([class]) {
   grid-area: Servers ;
   width: 54px ;
   max-height: 100% ;
@@ -416,19 +421,19 @@
   &::-webkit-scrollbar { display: none }
 
   // Server items
-  > .listItem_fa7b36 { @include ServerIcon() }
+  > .listItem__48528 { @include ServerIcon() }
 }
 
 // Server folder
-.guilds__2b93a .wrapper_ed1dea {
+.guilds__2b93a .wrapper__832f2 {
   width: 54px ;
   margin: 12px 0 ;
 
   // Background when open
-  .expandedFolderBackground__1bec6 { display: none }
+  .expandedFolderBackground_b1385f { display: none }
 
   // Folder Icon / preview 
-  > .listItem_fa7b36 {
+  > .listItem__48528 {
     
     .pill__6b31b { 
       display: none ;
@@ -440,31 +445,31 @@
     // Icon container
 
     // Placeholder when dragging
-    .placeholderMask__94802 {
+    .placeholderMask_ca6625 {
       height: 40px ;
       width: 40px ;
       margin: 4px ;
 
-      .dragInner_a23293 {
+      .dragInner_d5b34c {
         background: rgba(0, 0, 0, 0.5);
       }
     }
     
     // Unreads badge
-    .lowerBadge__669e7 {
+    .lowerBadge_e89e22 {
       left: 4px ;
       bottom: 4px ;
 
-      .numberBadge__50328 { background-color: var(--red) !important }
+      .numberBadge__40d6f { background-color: var(--red) !important }
     }
 
     // container
-    .wrapper__3af0b {
+    .wrapper__9916c {
       @include shadow_effect("drop_1");
     }
 
     // SVG 1
-    .svg_ad7356 {
+    .svg__34dd4 {
       mask, g { display: none }
 
       foreignObject {
@@ -475,15 +480,15 @@
     .folder__17546 { background: none }
 
     // Icon container 2
-    .folderIconWrapper__72239 {
+    .folderIconWrapper__11165 {
       position: absolute ;
       height: 40px ; 
       width: 40px ;
       margin: 4px ;
 
       // Icon container open and closed
-      .closedFolderIconWrapper__7321f,
-      .expandedFolderIconWrapper__458cf {
+      .closedFolderIconWrapper__722d5,
+      .expandedFolderIconWrapper__324c1 {
         height: 40px ; 
         width: 40px ;
         padding: 0 ;
@@ -503,7 +508,7 @@
     margin-bottom: 24px ;
     
     // Server items in open folders
-    .listItem_fa7b36 { @include ServerIcon() }
+    .listItem__48528 { @include ServerIcon() }
     
     &::after {
       content: "" ;
@@ -521,10 +526,10 @@
 
 // Additions -->
 // Channels list spacer for Server banner image
-.content__23cab > div[style="height: 84px;"]:not([class]) { display: none }
+.content__690c5 > div[style="height: 84px;"]:not([class]) { display: none }
 
 // - Server options button
-.sidebar_ded4b5 .container__7c79d {
+.sidebar_e031be .container_f41675 {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -534,10 +539,10 @@
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
   // Options popout open
-  &.selected__0b1ad { background-color: rgba(0, 0, 0, 0.2) }
+  &.selected__987e6 { background-color: rgba(0, 0, 0, 0.2) }
   
   // container
-  .header__104ca {
+  .header__77c95 {
     display: flex ;
     padding: 0 5px ;
     height: 54px ;
@@ -546,15 +551,15 @@
   }
 
   // Server badge
-  .guildIconV2Container__53cdb { display: none }
+  .guildIconV2Container_ddc448 { display: none }
   
   // Server name container
-  .headerContent_ee8727 {
+  .headerContent__6fcc7 {
     display: contents ;
   }
   
   // Server name
-  .name_c08dbc {
+  .name_e8e549 {
     display: block ;
     margin: 0 ;
     text-align: center ;
@@ -567,19 +572,19 @@
   }
   
   // Server icon (partnerd,..)
-  .guildIconContainer_a995c7 { display: none }
+  .guildIconContainer__3c180 { display: none }
   
   // Chevron icon
-  .button__07e07 { display: none }
+  .button__84b6b { display: none }
   
   // Server banner image
-  .animatedContainer__341f6 { display: none }
+  .animatedContainer__0e828 { display: none }
   
-  + .animatedBannerHoverLayer__4274d { display: none }
+  + .animatedBannerHoverLayer__3cef6 { display: none }
 }
 
 // - Search button (home)
-.privateChannels__93473 .searchBar_e4ea2a {
+.privateChannels__9b518 .searchBar__621ec {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -591,7 +596,7 @@
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
   // Text
-  .searchBarComponent__22760 {
+  .searchBarComponent__8f95f {
     height: 54px ;
     background: transparent ;
     color: var(--text-normal);
@@ -606,7 +611,7 @@
 }
 
 // - Discovery Text (button)
-.sidebar_ded4b5 .discoverHeader_fae7fd {
+.sidebar_e031be .discoverHeader__9d76e {
   position: fixed ;
   width: 120px ;
   height: 54px ;
@@ -624,7 +629,7 @@
 
   @include shadow_effect("text_1");
   
-  & + .categoryItem_b1be5c {
+  & + .categoryItem__0608f {
      margin-top: 64px ;
   }
 }

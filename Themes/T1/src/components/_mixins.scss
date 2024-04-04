@@ -1,4 +1,4 @@
-// * mixins v0.1.7.1
+// * mixins v0.1.7.2
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -12,7 +12,7 @@
   
   &::-webkit-scrollbar-thumb {
     border-color: transparent ;
-    background-color: var(--background-modifier-accent) ;
+    background-color: var(--background-modifier-accent);
     visibility: visible ;
   }
 
@@ -165,8 +165,7 @@
 
 // <- Mixins
 
-// -> Variables
-// - User settings
+// -> User settings
 :root {
   
   --Main_Background: url("https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg");
@@ -216,8 +215,9 @@
   --font-primary: var(--font) !important ;
   --font-display: var(--font) !important ;
 }
+// <- User settings
 
-// Theme colors (dark)
+// -> Theme colors
 .theme-dark {
   --header-primary: #fff;
   --header-secondary: #b9bbbe;
@@ -332,4 +332,4 @@
   --status-DnD: #ed4245 ; /* #f04747 */
   --status-invisible: #747f8d ;
 }
-// <- Variables
+// <- Theme colors
