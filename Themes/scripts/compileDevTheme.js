@@ -1,19 +1,18 @@
-// v1.3
-// compile dev to bd folder
+// v2
+// watch and compile dev file to mod folder
 
-const { cwd } = require('process');
-const fs = require('fs');
-const path = require('path');
-const chokidar = require('chokidar');
-const sass = require('sass');
+const Fs = require('fs');
+const Path = require('path');
+const Chokidar = require('chokidar');
+const Sass = require('sass');
 
-const ThemeFolder = cwd();
-const ThemeName = path.basename(ThemeFolder);
-const DevFile = CheckPath(path.join(ThemeFolder, "dev", ThemeName + "-dev.theme.scss"));
-const DevFileOut = path.join(BDFolder(), ThemeName + "-dev.theme.css");
+const ThemeFolder = process.cwd();
+const ThemeName = Path.basename(ThemeFolder);
+const DevFile = CheckPath(Path.join(ThemeFolder, "dev", ThemeName + "-dev.theme.scss"));
+const DevFileOut = Path.join(ModFolder(), ThemeName + "-dev.theme.css");
 
 // for debug
-// console.log(ThemePaths = {
+// console.log(Paths = {
 //   name: ThemeName,
 //   folder: ThemeFolder,
 //   dev: DevFile,
@@ -21,30 +20,30 @@ const DevFileOut = path.join(BDFolder(), ThemeName + "-dev.theme.css");
 // });
 
 const SassOptions = {
-  style: "expanded",
+  style: 'expanded',
   sourceMap: false,
   sourceMapIncludeSources: false
 };
 
-chokidar.watch(ThemeFolder)
+Chokidar.watch(ThemeFolder)
   .on('ready', () => {
     console.log(`Listening for changes in: ${ThemeFolder}`);
     console.log(`Compiling dev file to: ${DevFileOut}`);
     Compile();
   })
-  .on('change', (file) => {
-    Compile(file);
+  .on('change', (trigger) => {
+    Compile(trigger);
 });
 
-function Compile(file) {
+function Compile(trigger) {
   
   try {
-    let output = sass.compile(DevFile, SassOptions);
-    fs.writeFileSync(DevFileOut, output.css);
+    let output = Sass.compile(DevFile, SassOptions);
+    Fs.writeFileSync(DevFileOut, output.css);
 
-    if (file) {
-      let cFile = file.split(path.sep);
-      console.log(`${Timestamp()} Compiled changes ${path.join(cFile.at(-2),cFile.at(-1))}`);
+    if (trigger) {
+      let file = trigger.split(Path.sep);
+      console.log(`${Timestamp()} compiled changes: ${Path.join(file.at(-2),file.at(-1))}`);
     }
   } 
   catch (error) {
@@ -52,21 +51,34 @@ function Compile(file) {
   }
 }
 
-function BDFolder() {
+function ModFolder() {
 
-  const paths = {
-    win32: `${process.env.APPDATA}\\betterdiscord\\themes`,
-    darwin: `${process.env.HOME}/Library/Application Support/betterdiscord/themes`,
-    linux: `${process.env.HOME}/.config/BetterDiscord/themes`
+  const arg = process.argv[2] ? process.argv[2].toLowerCase() : "bd" ;
+
+  const modNames = {
+    bd: 'betterdiscord',
+    betterdiscord: 'betterdiscord',
+    ven: 'vencord',
+    vencord: 'vencord'
   }
 
-  let path = CheckPath(paths[process.platform]);
+  const mod = modNames[arg];
 
-  return path
+  if (!mod) QuitProcess(`"${arg}" is not a valid mod name`);
+
+  const modFolders = { // I think these are correct, but not sure
+    win32: `${process.env.APPDATA}\\${mod}\\themes`,
+    darwin: `${process.env.HOME}/Library/Application Support/${mod}/themes`,
+    linux: `${process.env.HOME}/.config/${mod}/themes`
+  }
+
+  const folder = CheckPath(modFolders[process.platform]);
+  
+  return folder
 }
 
 function CheckPath(path) {
-  if (fs.existsSync(path)) {
+  if (Fs.existsSync(path)) {
     return path
   } else {
     QuitProcess(`Can not find: ${path}`);
