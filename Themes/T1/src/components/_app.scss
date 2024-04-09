@@ -1,4 +1,4 @@
-// * app v0.1.4
+// * app v0.1.5
 @use 'mixins' as * ;
 
 // Layer transitions
@@ -27,7 +27,7 @@
   border-radius: 0 ;
 }
 
-// -> Sidebar Panels (Profile, Activity,..)
+// Sidebar Panels (Profile, Activity,..)
 .sidebar_e031be .panels__58331 {
   
   // Profile Container
@@ -68,7 +68,7 @@
     button { background: none }
   }
   
-  // -> Voice Connection
+  // Voice Connection
   .container_e1958d {
     border: none ;
     padding: 0 0 0 8px ;
@@ -165,5 +165,4 @@
     }
     // <- With action buttons
   }
-  // <- Voice Connection
 }

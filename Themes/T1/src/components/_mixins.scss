@@ -1,8 +1,7 @@
-// * mixins v0.1.7.2
+// * mixins v0.1.8
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
-
 // Scrollbar design | @include scrollbar();
 @mixin scrollbar ($width:15px) {
   &::-webkit-scrollbar { 
@@ -26,27 +25,6 @@
     background-color: var(--interactive-normal);
   }
 }
-
-
-// Button as one element | @include btn_1();
-// @mixin btn_1 ($border:true, $bg:true) {
-
-//   $bS: 1px solid var(--text-muted) !important ;
-//   $bgS: var(--background-modifier-selected) !important ;
-
-//   border: if( $border, $bS, none );
-//   background: if($bg, $bgS, none);
-//   color: var(--text-normal);
-    
-//   &:hover {
-
-//     $bgSH: var(--header-secondary) !important ;
-
-//     color: if($bg, black, var(--interactive-active));
-//     background: if($bg, $bgSH, none);
-//     border-color: if($bg, transparent, var(--text-normal) !important );
-//   }
-// }
 
 // Button Design ( needs rework ) | @include Btn();
 // $BG = [false, "background", <color>( + $C for Text)]
@@ -103,7 +81,6 @@
   }
 }
 
-
 // Unread mentions badge (inline) | @include Mentions_icon();
 @mixin Mentions_icon ($class:false) {
 
@@ -118,7 +95,6 @@
     }
   }
 }
-
 
 // Shadow effects | @include shadow_effect("drop_1");
 @mixin shadow_effect ($type:"drop_1") {
@@ -162,7 +138,6 @@
 @mixin scrollerFadeOut ($top:5px, $bottom:5px) {
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 $top, #000 calc(100% - $bottom), transparent);
 }
-
 // <- Mixins
 
 // -> User settings

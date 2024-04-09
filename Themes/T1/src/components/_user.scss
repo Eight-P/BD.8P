@@ -1,4 +1,4 @@
-// * user v0.2.9
+// * user v0.2.10
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -13,11 +13,6 @@
     position: relative ;
 
     &::before { display: none }
-  }
-
-  // Nitro upsell (dismissible)
-  .wrapper-C1y4Sz {
-    width: 100% ;
   }
 
   // "Unable to load profile..." badge
@@ -149,14 +144,8 @@
     z-index: 1 ;
 
     // not empty
-    &.containerWithContent-2YWS8V {
+    &.containerWithContent_a67357 {
       padding: 2px ;
-    }
-
-    // bd dev badge
-    .bd-profile-badge {
-      width: 22px ;
-      text-align: center ;
     }
   }
   // <- Badges
@@ -166,8 +155,8 @@
     margin: 0 ;
     border-radius: 0 ;
 
-    // Info sections except chat box
-    .section__62b44:not(.section__8633a) {
+    // Info sections except chat box, "Mutuals" section
+    .section__62b44:not(.section__8633a), .profileMutuals__95dc2 {
       padding: 0 12px 0 12px ;
 
       > :first-child {
@@ -254,18 +243,15 @@
     // <- About Me
 
     // -> Bot stuff
-    // Add Bot ot server btn
-    .buttonsContainer__241b0 { display: none  }
-    // has imp.
-    .section__62b44:has(.buttonsContainer__241b0) { display: none  }
+    // "Add App"/"Upgrade" btns
+    .buttonsContainer__83ada .button__581d0 {
+      @include Btn();
+    }
 
     // Bot commands
     .popularApplicationCommandsList__0eb68 .sizeIcon_aff037 {
-      background: var(--profile-role-pill-background-color);
 
-      &:hover {
-        background: var(--button-secondary-background);
-      }
+      @include Btn("background", white);
 
       .contents__322f4 {
         font-weight: 400 ;
@@ -340,7 +326,6 @@
   // <- Main user info
 
   // -> Popout no custom colors
-  // .userProfileInnerUnthemed-1XxIZu, // old ?
   .userProfileInnerThemedNonPremium_ed9022 {
     
     // body
