@@ -1,4 +1,4 @@
-// v2
+// * compileDevTheme.js v2.1
 // watch and compile dev file to mod folder
 
 const Fs = require('fs');
@@ -8,8 +8,8 @@ const Sass = require('sass');
 
 const ThemeFolder = process.cwd();
 const ThemeName = Path.basename(ThemeFolder);
-const DevFile = CheckPath(Path.join(ThemeFolder, "dev", ThemeName + "-dev.theme.scss"));
-const DevFileOut = Path.join(ModFolder(), ThemeName + "-dev.theme.css");
+const DevFile = checkPath(Path.join(ThemeFolder, "dev", ThemeName + "-dev.theme.scss"));
+const DevFileOut = Path.join(getModFolder(), ThemeName + "-dev.theme.css");
 
 // for debug
 // console.log(Paths = {
@@ -27,33 +27,33 @@ const SassOptions = {
 
 Chokidar.watch(ThemeFolder)
   .on('ready', () => {
-    console.log(`Listening for changes in: ${ThemeFolder}`);
-    console.log(`Compiling dev file to: ${DevFileOut}`);
-    Compile();
+    console.log(`Listening for changes in: \u001b[36m${ThemeFolder}\u001b[0m`);
+    console.log(`Compiling dev file to: \u001b[36m${DevFileOut}\u001b[0m \n`);
+    compileToCss()
   })
   .on('change', (trigger) => {
-    Compile(trigger);
+    compileToCss(trigger)
 });
 
-function Compile(trigger) {
-  
+function compileToCss(trigger) {
   try {
     let output = Sass.compile(DevFile, SassOptions);
     Fs.writeFileSync(DevFileOut, output.css);
 
     if (trigger) {
-      let file = trigger.split(Path.sep);
-      console.log(`${Timestamp()} compiled changes: ${Path.join(file.at(-2),file.at(-1))}`);
+      let fileName = trigger.split(Path.sep).at(-1);
+      console.log(`${getTimestamp()} recompiled for: \u001b[34m${fileName}\u001b[0m`);
     }
   } 
-  catch (error) {
-    console.error(error);
+  catch (err) {
+    console.error(err)
   }
 }
 
-function ModFolder() {
+function getModFolder() {
 
-  const arg = process.argv[2] ? process.argv[2].toLowerCase() : "bd" ;
+  const arg = process.argv[2]
+  const modArg = arg ? arg.toLowerCase() : "bd" ;
 
   const modNames = {
     bd: 'betterdiscord',
@@ -62,9 +62,9 @@ function ModFolder() {
     vencord: 'vencord'
   }
 
-  const mod = modNames[arg];
+  const mod = modNames[modArg];
 
-  if (!mod) QuitProcess(`"${arg}" is not a valid mod name`);
+  if (!mod) quitWithError(new Error(), "Invalid mod", arg);
 
   const modFolders = { // I think these are correct, but not sure
     win32: `${process.env.APPDATA}\\${mod}\\themes`,
@@ -72,20 +72,20 @@ function ModFolder() {
     linux: `${process.env.HOME}/.config/${mod}/themes`
   }
 
-  const folder = CheckPath(modFolders[process.platform]);
+  const folder = checkPath(modFolders[process.platform]);
   
   return folder
 }
 
-function CheckPath(path) {
+function checkPath(path) {
   if (Fs.existsSync(path)) {
     return path
   } else {
-    QuitProcess(`Can not find: ${path}`);
+    quitWithError(new Error(), "Can not find path", path)
   }
 }
 
-function Timestamp() {
+function getTimestamp() {
   let date = new Date();
 
   let hh = date.getHours();
@@ -95,10 +95,13 @@ function Timestamp() {
   let ss = date.getSeconds();
   let seconds = ((ss < 10) ? '0' + ss : ss);
 
-  return `[${hour}:${minutes}:${seconds}]`
+  return `[\u001b[32m${hour}:${minutes}:${seconds}\u001b[0m]`
 }
 
-function QuitProcess(msg) {
-  console.error(msg);
-  process.exit(1);
+function quitWithError(err, msg, details) {
+
+  err.message = `\n\u001b[31m${msg}:\u001b[0m \u001b[4m${details}\u001b[0m \n` ;
+  console.error(err);
+  console.error("\n");
+  process.exit(1)
 }
