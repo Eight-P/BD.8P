@@ -1,4 +1,4 @@
-// * popouts v0.1.8
+// * popouts v0.1.9
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -151,7 +151,6 @@
 }
 // <- Gif, Sticker, Emoji - Pickers
 
-
 // -> Soundboard
 .layerContainer_a2fcaa .picker__6dca7 {
 
@@ -187,7 +186,6 @@
   }
 }
 // <- Soundboard
-
 
 // -> Context menus
 .layer__6b5c3 .menu__088f7 {
@@ -312,39 +310,31 @@
   flex: 1 1 auto ;
   -webkit-box-flex: 1 ;
   
-  // Header
+  // -> Header
   .searchHeader__4d70e {
     background: var(--background-secondary-alt);
     
     // n of search results
-    .colorHeaderPrimary-jN_yGr {
-      color: var(--text-normal);
+    .totalResults__8eee9 .text-md-normal__6e567 {
+      color: var(--text-normal) !important ;
     }
     
-    // Options btn
-    .tab-2j5AEF {
-      background: none ;
-      
-      &:hover {
-        color: var(--interactive-hover);
+    // Nav bar
+    .searchHeaderTabList__75f6b {
+
+      // Tab item ("New", "Old", ..)
+      .item__48dda {
+        background: none !important ;
+
+        &:hover, &.selected_a523ff {
+          color: var(--interactive-hover);
+        }
       }
     }
   }
+  // <- Header
   
-  // Switch pages btns
-  .searchHeaderTabList__75f6b {
-    
-    .item__48dda {
-      background: none !important ;
-      
-      // what did that do ?
-      &:disabled {
-        color: var(--interactive-muted);
-        pointer-events: none ;
-      }
-    }
-  }
-  
+  // -> Body
   // Content scroller
   .scroller__5f036 {
     padding: 3px 0 0 0 !important ;
@@ -395,6 +385,21 @@
       }
     }
   }
+
+  // Switch page btns
+  .pageControlContainer__86479 .pageButton_bf9853{
+    background: none ;
+    color: var(--interactive-normal);
+
+    &:hover {
+      color: var(--interactive-hover);
+    }
+
+    &.activeButton__70b70 {
+      color: var(--interactive-active);
+    }
+  }
+  // <- Body
 }
 // <- Searchbar results popout
 
@@ -980,7 +985,7 @@
 }
 
 // Channel Description (and possibly more)
-.layer_c14d31 .root_a28985 .content_b28aab.content__71cd4.selectable.thin_b1c063.scrollerBase_f742b2 {
+.layer_c14d31 .modal__6a96b.root_a28985 .content_b28aab.content__71cd4 {
   padding: 16px ;
 }
 
@@ -1051,7 +1056,6 @@
 //   .image-CRV_VX, .pointer-1j6vDv, .pointer_c1f6ac, .pointer-1bsD64 { display: none }
 // }
 
-
 // Toolstips
 .tooltip__7b090{
   background: var(--background-floating) !important;
@@ -1061,7 +1065,6 @@
   }
 }
 
-
 // user roles popout from member safety page
 .tooltip__7b090:has(.role_d81130){
   max-width: 500px ;
@@ -1069,4 +1072,9 @@
   .roleName__851c9 {
     max-width: unset ;
   }
+}
+
+// Modal poll voters list
+.layerContainer_a2fcaa .root_a28985 .votersListContainer__27803 .voters_ddbfbc {
+  background: none ;
 }

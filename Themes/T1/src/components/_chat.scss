@@ -1,38 +1,25 @@
-// * chat v0.1.15
+// * chat v0.1.14
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
 // Header/Chat sperator line
 .content__01e65::before { display: none }
 
-// -> Mentions
-
-// Channel
-.channelMention {
+// -> Mentions (Channel, User, Role, Discord cdn File)
+.wrapper__53064 {
   color: var(--Blurple);
   background: none ;
-  
-  &:hover {
-    background-color: var(--Blurple-light);
-    color: var(--Blurple);
-  }
-}
 
-// Role
-.roleMention_d441cd {
-  background: none !important ;
-  color: var(--Blurple);
-}
-
-// User 
-.mention {
-  color: var(--Blurple);
-
-  &:not(:hover) {
+  // Role, User
+  &.roleMention_d441cd, &.mention:not(:hover) {
     background: none !important ;
   }
 
-  // for default color
+  // File link
+  &.attachmentLink .icon_d41d41 path {
+    fill: var(--Blurple);
+  }
+  
   &:hover {
     background-color: var(--Blurple-light);
     color: var(--Blurple);
@@ -225,7 +212,8 @@
   padding: 0 ;
   border-top: 1px solid var(--background-modifier-accent);
 
-  &::before { display: none }
+  // Weird gradient effect things
+  &::before, &::after { display: none }
 
   // Text input container
   .channelTextArea__648e5 {
@@ -511,10 +499,12 @@
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
 $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
 
-.chatContent_f087cb .message_ccca67.cozy_f5c119 {
+// .chatContent_f087cb .message_ccca67.cozy_f5c119 {
+.cozy_f5c119 {
   background: none !important ;
   padding: 2px 32px 0px 4.125rem !important ;
   
+  // -> general Message components
   // Highlight border-left (Mention, Clyde, ..)
   &:before { display: none }
   
@@ -536,13 +526,14 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       margin-left: 0 ;
     }
   }
-
+  // <- general Message components
+  
+  // -> Message contents
   // Edit message
   .channelTextArea__648e5 .scrollableContainer_ff917f {
-      background: $BG_Embed ;
+    background: $BG_Embed ;
   }
-  
-  // -> Misc
+
   // Preview of replied msg
   .repliedMessage__636d2 { 
     height: 20px ;
@@ -562,7 +553,79 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       color: var(--interactive-normal);
     }
   }
+
+  // Publish Announcement msg
+  .bumpBox_b41ccc {
+    background: $BG_Embed ;
+  }
+
+  // Discord Quest embed
+  .questsCard__20ba2 .outerContainer_a76fe9 {
+    background: $BG_Embed ;
+
+    .button__581d0  {
+      @include Btn(var(--background-modifier-accent), white);
+    }
+  }
   
+  // Poll
+  .container__0bd59 {
+    background: $BG_Embed ;
+
+    // Answer options bnts
+    .answerInner_b97752 {
+      background: var(--background-modifier-hover);
+      outline: none !important ;
+
+      &:hover {
+        background: var(--background-modifier-accent);
+      }
+    }
+
+    // Circle icon
+    .answerSelectionIcon__262f4 {
+      color: var(--interactive-muted) ;
+
+      // selected: outer circle
+      .radioBackground__2d774 {
+        color: var(--interactive-muted) ;
+      }
+
+      // selected: inner dot
+      .radioForeground_e46974 {
+        color: var(--interactive-normal) ;
+      }
+    }
+
+    // -> Footer
+    // btn: "Show results", number of votes
+    .tertiaryAction__1d2ee, .detailsTextButton__26fd0 {
+      background: none ;
+      text-decoration: none ;
+
+      // inner container
+      .contents__322f4 {
+        text-decoration: none ;
+      }
+
+      // text
+      .fontScaling__56c42 {
+        color: var(--interactive-normal) !important;
+        text-decoration: none ;
+      }
+
+      &:hover .fontScaling__56c42 {
+        color: var(--interactive-hover) !important;
+      }
+    }
+
+    // btn: "Vote", "Go back to vote"
+    .buttonPresentation_adf90c {
+      @include Btn(var(--background-modifier-accent), white);
+    }
+    // <- Footer
+  }
+
   // Discord embeds (Server invite, Server Event, ...)
   .wrapper__8a5dd {
     background: $BG_Embed ;
@@ -661,7 +724,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     box-shadow: none ;
     background: $BG_Embed ;
   }
-  // <- Misc
+  // <- Message contents
   
   // -> MSg Types
   // Mention
@@ -697,7 +760,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     background: none ;
   }
   // <- MSg Types
-  
   
   // -> Message Buttons 
   // Main container / Msg highlight hover effect
