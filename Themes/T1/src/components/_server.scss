@@ -1,4 +1,4 @@
-// * server v0.1.10
+// * server v0.1.11
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -50,12 +50,12 @@
     .textArea__81b51 {
       margin: 0 12px ;
       
-      // Nitro flower icon thing
-      .flowerStarContainer__00f61 { display: none }
+      // Nitro flower icon thing ??
+      // .flowerStarContainer__00f61 { display: none }
       
       // Text "Goal:LVL"
-      .colorInteractiveActive-30E9n8 {
-        color: var(--header-secondary);
+      .goalText__38c12 {
+        color: var(--header-secondary) !important;
       }
     }
     
@@ -69,23 +69,20 @@
       visibility: hidden ;
     
       // Progress bar
-      .progressBar_db0972 {
+      .progressBar_d41287 {
         height: 24px ;
         opacity: .15 ;
         border-top-right-radius: 5px ;
         border-bottom-right-radius: 5px ;
       }
     
-      // End of bar icon 
-      .tadaIcon__5e3cc { display: none }
+      // End of bar icon ??
+      // .tadaIcon__5e3cc { display: none }
     }
     
     &:hover .progressBarContainer_e11b41 {
       visibility: visible ;
     }
-    
-    // Bottom spacer
-    // .divider__0c76f { display: none }
     
     // Channel category header if adjacent
     + .containerDefault_e3b32b {

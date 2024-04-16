@@ -1,15 +1,15 @@
-// * user v0.2.10
+// * user v0.2.11
 // User popout / (Modal)
 @use 'mixins' as * ;
 
 // -> User Popout (not: profile settings / Shop (home))
-.userPopoutOuter__3884e:not(.profileCustomizationPreview_a1502f) {
+.userPopoutOuter_d67f56:not(.profileCustomizationPreview_a1502f) {
   border-radius: 12px ;
 
   @include shadow_effect("box_2");
 
   // Secondary container
-  .userPopoutInner_e90432 { 
+  .userPopoutInner_ac0960 { 
     position: relative ;
 
     &::before { display: none }
@@ -151,7 +151,7 @@
   // <- Badges
 
   // -> Main user info 
-  .overlayBackground__2666e {
+  .overlayBackground__345c9 {
     margin: 0 ;
     border-radius: 0 ;
 
@@ -168,13 +168,13 @@
     .section__8633a {
       padding: 12px 12px 0 12px ;
 
-      &:has(.messageClydeButton_adb260) {
-        padding: 0 ;
-      }
+      // &:has(.messageClydeButton_adb260) {
+      //   padding: 0 ;
+      // }
     }
 
     // -> Username/Nickname
-    @at-root .userPopoutOuter__3884e .avatarWrapper__0cd44:has(.pointerEvents__585e6) ~ .overlayBackground__2666e {
+    @at-root .userPopoutOuter_d67f56 .avatarWrapper__0cd44:has(.pointerEvents__585e6) ~ .overlayBackground__345c9 {
 
       .nickname_db3773, .userTagUsernameNoNickname__0513b {
         margin-left: 24px ;
@@ -194,7 +194,7 @@
     }
 
     // Discriminator
-    .userTagWithNickname__0a777 .discrimBase-V65kTs {
+    .userTagWithNickname__0a777 .discrimBase__5555e {
       margin-left: 2px ;
       font-size: 12px ;
       line-height: normal ;
@@ -221,7 +221,7 @@
     // <- Username/Nickname
 
     // -> Custom status emoji
-    .customStatusSoloEmoji__24b58 {
+    .customStatusSoloEmoji_aab12e {
       height: 30px ;
       width: 30px ;
     }
@@ -281,7 +281,7 @@
 
 
     // -> Activitys (streaming in channel, games, spotify, ..)
-    .activity__20c1e {
+    .activity__88a5f {
 
       .button__88ad4 {
         @include Btn();
@@ -290,7 +290,7 @@
     // <- Activitys
 
     // -> Connections
-    .connectionsContainer__67854 {
+    .connectionsContainer_ad3ca0 {
       border: none ;
 
       // Connection item
@@ -299,7 +299,7 @@
       }
 
       // view all connec. btn
-      .connections_ed453f { display: none }
+      .connections_f0b7d8 { display: none }
     }
     // <- Connections
 
@@ -317,19 +317,19 @@
       border-radius: 0 ;
     }
     // Clyde
-    .messageClydeButton_adb260 {
-      border-radius: 0 ;
-    }
+    // .messageClydeButton_adb260 {
+    //   border-radius: 0 ;
+    // }
     // <- Quick Dm
     // <- Body
   }
   // <- Main user info
 
   // -> Popout no custom colors
-  .userProfileInnerThemedNonPremium_ed9022 {
+  .userProfileInnerThemedNonPremium_b64fb4 {
     
     // body
-    .overlayBackground__2666e {
+    .overlayBackground__345c9 {
       background: var(--background-tertiary);
     }
 
@@ -341,11 +341,11 @@
   // <- Popout no custom colors
 
   // -> Popout with custom colors
-  &.userProfileOuterThemed__1fbd7 {
+  &.userProfileOuterThemed_a425f3 {
     padding: 0 ;
     background: linear-gradient(transparent 120px,var(--profile-gradient-primary-color) 0,var(--profile-gradient-secondary-color));
 
-    .userPopoutInner_e90432 {
+    .userPopoutInner_ac0960 {
       background: var(--profile-gradient-overlay-color);
     }
 
@@ -399,12 +399,12 @@
 // -> Profile sidepanel in dms
 .profilePanel_e2cafe {
 
-  .userPanelOuter_eb00b1, .userPanelInner_f9edb8 {
+  .userPanelOuter_df01a5, .userPanelInner__3184c {
     background: none ;
   }
 
   // Background layer when themed
-  .userPanelInner_f9edb8::before { display: none }
+  .userPanelInner__3184c::before { display: none }
 
   // Scrollbar
   .scrollerBase_f742b2::-webkit-scrollbar { display: none } // old
@@ -472,7 +472,7 @@
   // <- Profile picture/Avatar
 
   // -> Content body
-  .overlayBackground__2666e {
+  .overlayBackground__345c9 {
     background: var(--background-modifier-accent);
   }
   // <- Content body

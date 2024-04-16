@@ -1,4 +1,4 @@
-// * chat v0.1.14
+// * chat v0.1.15
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -567,6 +567,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       @include Btn(var(--background-modifier-accent), white);
     }
   }
+
+  // Make masked markdown links visible (stolen from: Vencord#-css-snippets @s.unnie & @frugbug)
+  .messageContent_abea64 > .anchor_c8ddc0[title$=")"]::after {
+    font-size: 0.7rem;
+    content: " (" attr(href) ")";
+    filter: grayscale(1.0) brightness(1.15);
+  }
   
   // Poll
   .container__0bd59 {
@@ -584,16 +591,20 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
     // Circle icon
     .answerSelectionIcon__262f4 {
-      color: var(--interactive-muted) ;
+      color: var(--interactive-muted);
 
-      // selected: outer circle
+      // Voted answer: icon background
+      circle { display: none }
+
+      // selected: icon outer circle
       .radioBackground__2d774 {
-        color: var(--interactive-muted) ;
+        color: var(--interactive-muted);
       }
 
-      // selected: inner dot
+      // selected: icon inner dot
       .radioForeground_e46974 {
-        color: var(--interactive-normal) ;
+        color: var(--interactive-normal);
+        display: flex ;
       }
     }
 

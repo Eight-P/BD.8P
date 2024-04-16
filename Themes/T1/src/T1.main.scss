@@ -1,4 +1,4 @@
-$T1_version: "0.6.25" ; // Theme file Fv8
+$T1_version: "0.6.26" ; // Theme file Fv8
 
 // Global Mixins and Variables
 @use 'components/_mixins';
@@ -32,7 +32,6 @@ $T1_version: "0.6.25" ; // Theme file Fv8
 
 // User Popout, Modal
 @use 'components/_user';
-@use 'components/_user_c';
 
 // Addon Compatibility
 @use 'components/_compatibility';

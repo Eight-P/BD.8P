@@ -1,5 +1,9 @@
-// * app v0.1.5
+// * app v0.1.6
 @use 'mixins' as * ;
+
+body {
+  color: transparent ;
+}
 
 // Layer transitions
 .layers_a23c37 > .layer_f7d46a { 
