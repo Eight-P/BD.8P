@@ -1,4 +1,4 @@
-// * home v0.1.6
+// * home v0.1.6b
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -56,7 +56,7 @@
 
     // -> Without lazy loading
     // container for grid
-    > div:not([class]):first-child .j{
+    > div:not([class]):first-child {
       height: fit-content !important;
       margin: 4% 5px;
       display: grid;
