@@ -1,14 +1,12 @@
-// * home v0.1.5
+// * home v0.1.6
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
-@use 'mixins' as *;
+@use 'mixins' as * ;
 
 // -> Friends Tab
 .tabBody_a90ea8 {
 
   // Seperator line top
-  &::before {
-    display: none
-  }
+  &::before { display: none }
 
   // Friendslist searchbar
   .searchBar__310d8 {
@@ -23,13 +21,42 @@
     @include scrollerFadeOut();
 
     // "Friends online" Count
-    .title_c42cad {
-      display: none
-    }
+    .title_c42cad { display: none }
 
-    // --without lazy loading
-    // Sub container (Grid)
-    > div:not([class]):first-child {
+    // -> User item
+    // -> General
+    .peopleListItem_dab480 {
+      // border: none; // maybe, idk ??
+
+      // -> Username
+      .userInfo__83819 {
+
+        // Username, Status text container
+        .text__88bbd {
+          width: 100% ;
+        }
+
+        // Username/ # Identifier
+        .discriminator__463fe {
+          width: 0 ;
+        }
+      }
+
+      &:hover .discriminator__463fe {
+        width: auto ;
+        visibility: visible ;
+      }
+      // <- Username
+
+      .actionButton__2b4bb {
+        background: none ;
+      }
+    }
+    // <- General
+
+    // -> Without lazy loading
+    // container for grid
+    > div:not([class]):first-child .j{
       height: fit-content !important;
       margin: 4% 5px;
       display: grid;
@@ -38,7 +65,6 @@
       row-gap: 35px;
       grid-column-gap: 10px;
 
-      // -> Friend list item
       .peopleListItem_dab480 {
         height: 62px !important;
         width: 300px;
@@ -54,23 +80,13 @@
 
         @include shadow_effect("box_2");
 
-        &:hover {
-
-          @include shadow_effect("box_1");
-
-          // # Identifier
-          .discriminator__463fe {
-            visibility: visible;
-            width: auto;
-          }
-        }
+        &:hover { @include shadow_effect("box_1") }
 
         // Main Container
         .userInfo__83819 {
           margin: 0px 12px;
           width: -webkit-fill-available;
           overflow: visible !important;
-
           height: 100%;
           align-items: center;
         }
@@ -112,21 +128,7 @@
 
         // <- Avatar, Status icon
 
-        // -> Username, Status text
-        .text__88bbd {
-          width: 100%;
-        }
-
-        // Displayname
-        .username__267df {
-          margin-right: 5px;
-        }
-
-        // Username/ # Identifier
-        .discriminator__463fe {
-          width: 0;
-        }
-
+        // -> Status text
         // Activity (hiding the "playing" behind background) 
         .activity_f466d8 .text_bd79a3 {
           width: 100%;
@@ -145,13 +147,11 @@
         .textRuler__66fea {
           display: none
         }
-
         // <- Username, Status text
 
-        // User actions normal
-        .actions_bd37ed {
-          display: none;
-        }
+        // -> User actions
+        // Normal
+        .actions_bd37ed { display: none }
 
         // User item container Blocked/Pending
         .listItemContents_b18e9d,
@@ -168,7 +168,6 @@
           .actionButton__2b4bb {
             display: none;
             margin: 0 10px 0 0;
-            background: none;
           }
 
           // "Blocked" text
@@ -182,24 +181,11 @@
             display: flex;
           }
         }
+        // <- User actions
       }
-
-      // <- Friend list item
     }
-
-
-    // -- with lazy loading (this is a problem!)
-    // .content-2a4AW9 {
-
-    //   // Friend item
-    //   .peopleListItem_dab480 {
-
-    //     // User interaction btns
-    //     .actionButton__2b4bb {
-    //       background: none ;
-    //     }
-    //   }
-    // }
+    // <- Without lazy loading
+    // <- User item
   }
 
   // <- Friendslist

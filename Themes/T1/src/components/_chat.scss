@@ -1,4 +1,4 @@
-// * chat v0.1.15
+// * chat v0.1.15b
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -569,10 +569,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Make masked markdown links visible (stolen from: Vencord#-css-snippets @s.unnie & @frugbug)
+  // not sure about 
   .messageContent_abea64 > .anchor_c8ddc0[title$=")"]::after {
-    font-size: 0.7rem;
-    content: " (" attr(href) ")";
-    filter: grayscale(1.0) brightness(1.15);
+    // font-size: 0.7rem;
+    // content: " (" attr(href) ")";
+    // filter: grayscale(1.0) brightness(1.15);
   }
   
   // Poll
