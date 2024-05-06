@@ -1,4 +1,4 @@
-// * popouts v0.1.9
+// * popouts v0.1.10
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -189,7 +189,13 @@
 
 // -> Context menus
 .layer__6b5c3 .menu__088f7 {
-  // background: var(--background-tertiary);
+  background: var(--background-floating);
+
+  @include shadow_effect("box_2");
+
+  .menu__088f7 .menu__088f7 {
+    background: var(--background-tertiary);
+  }
   
   .scroller__8f066 {
     padding: 6px !important;
@@ -208,16 +214,21 @@
     background: none ;
     color: var(--interactive-normal);
 
-    .subtext__694e2 {
-      color: var(--interactive-normal);
+    // When not hoverd, but discord still thinks it is ...
+    &.focused_dcafb9 path {
+      fill: var(--interactive-normal); 
     }
 
-    // &:active,
     &:hover {
       color: var(--interactive-hover); 
 
-      .subtext__694e2 {
+      // Item name, item info
+      .label__563c3, .subtext__694e2 {
         color: var(--interactive-hover);
+      }
+
+      path {
+        fill: var(--interactive-hover); 
       }
     }
     
@@ -235,11 +246,11 @@
     &[role="menuitemcheckbox"] {
       
       // Option checked normal icon
-      .checkbox__378d3 { color: transparent }
+      .checkbox__378d3 { display: none }
 
       // Checkbox checked ("x" icon for "uncheck")
-      &.focused_dcafb9[aria-checked="true"] path {
-        color: var(--red);
+      &.focused_dcafb9[aria-checked="true"] .check__8d1bd {
+        fill: var(--red);
         d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
       }
     }
