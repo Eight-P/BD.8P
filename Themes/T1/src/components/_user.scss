@@ -1,4 +1,4 @@
-// * user v0.2.11
+// * user v0.2.12
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -360,12 +360,6 @@
 // Indicator while UserPopout is loading
 .loadingPopout__5e2fa { display: none }
 // <- User Popout
-
-
-// -> Account Popout
-.layerContainer_a2fcaa .layer__6b5c3:has(.accountProfilePopoutWrapper_d4887f) {
-  // top: 80px !important; // may be needed, idk yet
-}
 
 .accountProfilePopoutWrapper_d4887f {
   left: 0 ;

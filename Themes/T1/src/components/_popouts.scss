@@ -1,4 +1,4 @@
-// * popouts v0.1.10
+// * popouts v0.1.11
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -384,21 +384,11 @@
     // Message content container
     .searchResult__00093 {
       background: none ;
-
-      // Message
-      .wrapper_a62503.cozy_f5c119 {
-        padding-left: 60px ;
-      }
-      
-      // pfp
-      .avatar__08316 {
-        left: 8px ;
-      }
     }
   }
 
   // Switch page btns
-  .pageControlContainer__86479 .pageButton_bf9853{
+  .pageControlContainer__86479 .pageButton_bf9853 {
     background: none ;
     color: var(--interactive-normal);
 
@@ -610,35 +600,39 @@
       }
     }
     
+    .divider__855e3 {
+      border: none ;
+
+      // muted unread channels
+      &.divider__97d5f {
+        margin: 30px 0 20px 0 ;
+      }
+
+      // Date 
+      .content__7191e { background: none }
+
+      // Seperator lines
+      &::before, &::after {
+        content: "" ;
+        height: 1px ;
+        width: 100% ;
+        background: var(--background-modifier-accent);
+      }
+    }
+
     // Messages container
     .messages__1aaa1 {
       background: none ;
       padding: 16px 6px 16px 0 ;
       
-      // Msg seperator with date
-      > .divider__855e3 {
-        border: none ;
-
-        // Date 
-        .content__7191e { background: none }
-
-        // Seperator lines
-        &::before, &::after {
-          content: "" ;
-          height: 1px ;
-          width: 100% ;
-          background: var(--background-modifier-accent);
-        }
-      }
-      
       // Messages item
-      > .messageContainer__3e208 {
+      .messageContainer__3e208 {
         
         // "jump" to msg btn
-        > .jumpButton__6c38c {
+        .jumpButton__6c38c {
           right: 16px ;
           
-          > .text__76b99 {
+          .text__76b99 {
             color: var(--interactive-normal);
 
             &:hover {
@@ -1040,34 +1034,7 @@
 }
 // <- Quick switch navigation/search
 
-// Dismissables might just remove all
-// .layer-2aCOJ3 {
-
-//   &[style*="left: -"][style*="top: "] {
-//     transform: translate( calc(50% + 10px), 25px);
-//   }
-
-//   .container-xB0xPf, .content_fa040e, .subscribeTooltipWrapper-3ipXtC, .upsellTooltipWrapper__11dad
-
-//   // BG container (* not sure if still used)
-//   .container-xB0xPf, // *
-//   .content_fa040e, // *
-//   .subscribeTooltipWrapper-3ipXtC, // *
-//   .root_a28985, // *
-//   .upsellTooltipWrapper__11dad,
-//   .container-5N5x2A {
-//     background-color: var(--background-tertiary);
-    
-//     // Pointer in Tooltipversion
-//     &:after { display: none }
-//   }
-
-//   .button__581d0 { @include Btn() }
-    
-//   .image-CRV_VX, .pointer-1j6vDv, .pointer_c1f6ac, .pointer-1bsD64 { display: none }
-// }
-
-// Toolstips
+// Tooltips
 .tooltip__7b090{
   background: var(--background-floating) !important;
 

@@ -1,4 +1,4 @@
-// * mixins v0.1.8
+// * mixins v0.1.9
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -118,7 +118,7 @@
   }
 
   @else if $type == "box_3" {
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   }
   
   @else if $type == "server_1" {

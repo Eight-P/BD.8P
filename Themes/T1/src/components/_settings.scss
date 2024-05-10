@@ -1,4 +1,4 @@
-// * settings v0.1.9
+// * settings v0.1.10
 // Client / Guilds / Channels
 @use 'mixins' as * ;
 
@@ -307,80 +307,32 @@ $T1_v: null !default ;
 // <- Server settings
 
 // -> App Directory
-.layerContainer_a2fcaa .directoryModal-YJsOMv {
-  &::before {
-    content: "";
-    display: block ;
-    position: fixed ;
-    top: 0 ;
-    left: 0 ;
-    height: 100% ;
-    width: 100% ;
-    background: var(--background_app);
-    background-size: cover !important ;
-    background-attachment: fixed !important ;
-    background-position: center !important ;
-    
-    --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
-    --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+.directoryContainer__36395 {
+  padding-right: 46px !important ;
 
-    filter: var(--blur) var(--brightness);
+  .closeWrapper__06665 {
+    position: absolute ;
+    inset: 0px -46px auto auto ;
+
+    .closeButton__8177f {
+      width: 30px ;
+      height: 30px ;
+      flex-basis: auto ;
+    }
   }
 
-  // -> Home main items
-  .card__834d4, .container__9c6ed {
-    background: var(--background-modifier-selected);
-  }
-
-  // clickable
-  .category_c3da1d,  .container_bdd168 {
+  // Interactables
+  .anchor_c8ddc0 > :is(div, article) {
     background: var(--background-modifier-accent);
 
     &:hover {
       background: var(--background-modifier-selected);
     }
   }
-  // <- Home main categories
 
-  // -> Search
-  .search__24107 {
-    background: var(--background-modifier-selected) !important;
-    box-shadow: none ;
-    border: none ;
-    border-bottom: 1px solid transparent ;
-    
-    &:focus, &:focus-within {
-      background: var(--background-modifier-hover) !important ;
-      border-bottom-color: var(--header-secondary);
-      border-radius: 0 ;
-    }
+  // info
+  .container__11a0b {
+    background: var(--background-modifier-hover);
   }
-  // <- Search
-
-  // -> App view
-  // Commands
-  .commandList__7be7e {
-    background: none ;
-
-    .commandName__7c054 {
-      background: var(--background-modifier-selected);
-      border: none ;
-    }
-  }
-
-  // App category
-  .category__1ebd5 {
-    @include Btn("background");
-  }
-
-  // App support server
-  .card__2ebbc {
-    background: var(--background-modifier-accent);
-
-    &:hover {
-      background: var(--background-modifier-selected);
-    }
-  }
-  // <- App view
 }
 // <- App Directory

@@ -1,4 +1,4 @@
-// * server v0.1.11
+// * server v0.1.12
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -315,6 +315,8 @@
 // <- Members list 
 
 // -> Discovery
+.viewWrapper_a91a78 > .searchHeader__2707c .headerImage_bc3304 { display: none }
+
 .discoverHeader__9d76e {
   
   // Sidebar
@@ -337,6 +339,16 @@
     &.selected__7f4cb .itemInner_eedb2b {
       background-color: transparent ;
       border-left: 3px solid var(--interactive-hover);
+    }
+  }
+}
+
+.guildListSection_e27022 {
+  .card__86773 {
+    background: var(--background-modifier-accent);
+
+    &:hover {
+      background: var(--background-modifier-selected);
     }
   }
 }

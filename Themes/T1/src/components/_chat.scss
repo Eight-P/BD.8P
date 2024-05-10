@@ -1,4 +1,4 @@
-// * chat v0.1.15b
+// * chat v0.1.16
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -511,14 +511,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Message container
   .contents_d3ae0d {
     padding: 0 0 2px 6px ;
-    
-    // Profile image
-    .avatar__08316 { 
-      width: 2.5rem ;
-      height: 2.5rem ;
-      left: 0.8125rem ;
-      margin-top: .125rem ;
-    }
     
     // Msg Header (Name, Date, ..)
     .header__6a14d { 
