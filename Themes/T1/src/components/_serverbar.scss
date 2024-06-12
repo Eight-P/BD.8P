@@ -1,4 +1,4 @@
-// * serverbar v0.1.8
+// * serverbar v0.1.9
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -134,17 +134,17 @@
     foreignObject { mask: none }
 
     // SVG 2 conatiner
-    .childWrapper_a6ce15 {
+    .childWrapper__760c6 {
       background: none ;
       color: var(--text-normal);
       opacity: .75 ;
     }
     
     // Hover
-    .wrapper__8436d.selected_ae80f7 .childWrapper_a6ce15 { opacity: 1 }
+    .wrapper_a6f950.selected_ae80f7 .childWrapper__760c6 { opacity: 1 }
     
     // SVG 2
-    .childWrapper_a6ce15 > svg { 
+    .childWrapper__760c6 > svg { 
       height: 26px ;
       margin: 4px 4px 0 0 ;
       overflow: visible ;
@@ -258,13 +258,9 @@
       .lowerBadge_e89e22 {
         left: 4px ;
         bottom: 4px ;
-
-        .numberBadge__40d6f { 
-          background-color: var(--red) !important ;
-        }
       }
 
-      .childWrapper_a6ce15 {
+      .childWrapper__760c6 {
         background: none ;
         color: var(--text-normal) !important ;
         opacity: .75 ;
@@ -335,10 +331,6 @@
   .lowerBadge_e89e22 {
     left: 4px ;
     bottom: 4px ;
-
-    .numberBadge__40d6f { 
-      background-color: var(--red) !important ;
-    }
   }
 
   // SVG
@@ -353,17 +345,17 @@
       mask: none ;
     }
 
-    &:hover .icon__11cf1 { border-radius: 25% }
+    &:hover .icon_e2a8c1 { border-radius: 25% }
   }
 
   // Image
-  .icon__11cf1 {
+  .icon_e2a8c1 {
     border-radius: 50% ;
     transition: .2s ;
   }
   
   // Text
-  .acronym_fb7739 {
+  .acronym__88ca6 {
     background: none ;
     
     @include shadow_effect("server_1");
@@ -459,8 +451,6 @@
     .lowerBadge_e89e22 {
       left: 4px ;
       bottom: 4px ;
-
-      .numberBadge__40d6f { background-color: var(--red) !important }
     }
 
     // container
@@ -632,5 +622,25 @@
   & + .categoryItem__0608f {
      margin-top: 64px ;
   }
+}
+
+// - Server icon tooltip
+.layerContainer_a2fcaa {
+
+  // Activitie cards in popout
+  .container_a88e31 .cards__3f65d {
+    display: none ;
+  }
+
+  // fix pointer stuck when cards are present.
+  > .layer__6b5c3:has(.cards__3f65d, .streamPreview__38008) {
+    margin-top: 3px ; // to make them same hight as regular tooltips
+    pointer-events: none !important ;
+  }
+}
+
+.tooltipContent_adb6d5 .guildNameText__2c549 {
+  // word-wrap: normal ; ?
+  white-space: nowrap ;
 }
 // Additions <--

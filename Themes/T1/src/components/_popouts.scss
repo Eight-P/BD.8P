@@ -1,4 +1,4 @@
-// * popouts v0.1.11
+// * popouts v0.1.12
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -478,7 +478,7 @@
   .header__58a85 {
     background: var(--background-secondary-alt);
     
-    .tab_a8a066, .button__292b6 {
+    .tab_a8a066, .button_d6e73a {
       background: none !important ;
     }
   }
@@ -577,7 +577,7 @@
       @include Mentions_icon(".badge_e08f91");
       
       // Buttons
-      .button__292b6 {
+      .button_d6e73a {
         background: none ;
       }
       

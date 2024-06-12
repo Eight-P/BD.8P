@@ -1,4 +1,4 @@
-// * server v0.1.12
+// * server v0.1.13
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -100,7 +100,7 @@
   .wrapper__612a5 {
 
     // Mentions badge
-    @include Mentions_icon(".numberBadge__40d6f");
+    @include Mentions_icon(".numberBadge_c1210c");
 
     // Icon ("#", speaker, ..)
     .icon__67ab4 {
