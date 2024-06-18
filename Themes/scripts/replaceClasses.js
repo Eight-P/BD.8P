@@ -1,6 +1,7 @@
-// * replaceClasses.js v1
-// Replace classes using diff mappings from Nyx/Hijiri/nightflower
+// * replaceClasses.js v1.1
+// Replace classes using diff mappings from Nyx/Hijiri/nightflower 
 // https://github.com/NyxIsBad/discordscripts/tree/master
+// (! remove empty lines )
 
 const OverwriteFiles = false ;
 
@@ -15,12 +16,12 @@ const MappingsFilePath = checkPath(Path.join(ThemesPath, "scripts", "classes_map
 const MappingsContent = Fs.readFileSync(MappingsFilePath, {encoding: 'utf8'});
 const ClassMappings = MappingsContent.split(/\r\n|\r|\n/);
 
-const FilePrefix = OverwriteFiles ? "" : "new" ;
+const FilePrefix = OverwriteFiles ? "" : "_new" ;
 
 console.log(
 `Overwriting existing files: ${OverwriteFiles ? "\u001b[31mtrue" : "\u001b[32mfalse"}\u001b[0m \n
 Mappings file: \u001b[34m${MappingsFilePath}\u001b[0m \n
-Replacing classes in:`
+Replacing classes:`
 );
 
 getFiles(ThemeFilesPath);

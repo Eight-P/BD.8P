@@ -1,0 +1,338 @@
+// * settings v0.1.10
+// Client / Guilds / Channels
+@use 'mixins' as * ;
+
+$T1_v: null !default ;
+
+// -> Theme version info
+// Settings sidebar bottom
+.layer_d4b6c5:not(.baseLayer_d4b6c5) .sidebarRegion_c25c6d .clickTarget_e3203d .info_c5a741:before {
+  content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: rgb(114, 118, 125) !important;
+  white-space: break-spaces !important;
+  margin-bottom: 8px !important;
+  text-transform: none !important;
+}
+
+// BD addon card
+// .bd-addon-card#T1-card {
+
+//   .bd-version {
+//     pointer-events: none ;
+
+//     &::before {
+//       content: " F";
+//       display: inline ;
+//     }
+
+//     &::after {
+//       content: " | Tv#{$T1_v} ";
+//     }
+//   }
+// }
+// <- Theme version info
+
+// -> General Settings
+.layer_d4b6c5:not(.baseLayer__13b6b) {
+  
+  // -> Sidebar
+  .sidebarRegionScroller_c25c6d {
+
+    &::-webkit-scrollbar { display: none }
+    
+    // category headers
+    .header-2Kx1US {
+      color: var(--header-primary);
+      opacity: .8 ;
+    }
+    
+    // Tabs
+    .item_a0 {
+      color: var(--interactive-normal);
+      background: none !important ;
+      border-radius: 0  ;
+      padding: 0 10px ;
+      margin: 6px 0 ;
+      
+      &:hover { color: var(--interactive-hover) }
+      
+      &.selected_a0 {
+        border-left: 2px solid var(--interactive-active);
+        color: var(--interactive-active)  ;
+      }
+
+      // Nitro
+      &.premiumTab_c10c74 svg { display: none }
+      // Nitro background
+      .background_ae3c77 { display: none }
+
+      // Log Out/ Delete Channel
+      .tabBarItemContainer_e7c031:has(svg:not(.icon_f7189e)) {
+        color: var(--red);
+        padding: 4px ;
+        border-radius: 3px ;
+
+        &:hover { 
+          color: var(--interactive-hover);
+          background: var(--red) !important ;
+        }
+      }
+    }
+
+    // Nitro upsell "offer", "free month"
+    .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF { display: none }
+  }
+  // <- Sidebar
+  
+  // -> Content region
+  .contentRegionScroller_c25c6d {
+    
+    @include scrollbar();
+  }
+
+  // Checkbox item list option
+  .item_eb92a8 {
+    background: var(--background-modifier-accent);
+    color: var(--interactive-hover);
+    
+    &[aria-checked="true"] {
+      background: var(--background-modifier-selected);
+      color: var(--interactive-active);
+    }
+    
+    &[aria-checked="false"]:hover {
+      background: var(--background-modifier-hover);
+      color: var(--interactive-active);
+    }
+  }
+
+  // Dropdown menu
+  .select_f6639d {
+    border: none ;
+
+    @at-root .layerContainer_cd0de5 .popout_f6639d {
+      background: var(--background-tertiary);
+      border: none ;
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--interactive-normal);
+      }
+
+      .option_f6639d[aria-selected="true"] {
+        background: var(--background-modifier-selected);
+      }
+
+      .selectedIcon_f6639d {
+        circle {
+          fill: none ;
+        }
+
+        g path {
+          fill: var(--interactive-normal);
+        }
+      }
+    }
+  }
+
+  // Search 
+  .container__33507 {
+    background: none ;
+
+    .input__48d49 {
+      border-radius: 0 ;
+      border-bottom: 1px solid var(--interactive-normal);
+    }
+  }
+
+
+  // Nitro upsell in Profile settings
+  #profile-customization-tab {
+    .upsellOverlayContainer_eb49af, .tryItOutSection_eb2d2c {
+      display: none ;
+    }
+
+    .profileCustomizationSection_bad983 .userPopoutOuter_d67f56 {
+      --background-secondary-alt: var(--primary-660);
+    }
+  }
+
+  // Nitro locked features
+  .premiumFeatureBorder_c6d722, .premiumBackground_c6d722 {
+    background: none ;
+    border: none ;
+  }
+
+  // Client Themes 
+  .presets_f45ea6:not(.basicThemeSelectors_) {
+    position: relative ;
+    margin-top: 40px ;
+    
+    &:after {
+      content: "Not compatible with T1 Theme.";
+      position: absolute ;
+      display: block ;
+      inset: -30px 0 0 0 ;
+      color: var(--red);
+      font-weight: 600 ;
+    }
+  }
+
+  // <- Content region
+}
+// <- General Settings
+
+// -> Server settings
+// Roles
+.layer_d4b6c5:not(.baseLayer__13b6b) {
+  
+  // Default permission button
+  .container_cc7b67 { background: none }
+
+  // Roles list
+  .content_eed6a8 {
+    .roleRow_a930f1 {
+
+      // role btns
+      .secondary__45d4f {
+        background: none ;
+      }
+    }
+  }
+
+  // -> Edit Roles
+  .contentColumn_c25c6d > .page_e8251c {
+    
+    // Sidebar container main
+    .sidebar_e87574 {
+      height: fit-content ;
+    }
+    
+    // Roles list Sidebar
+    .list_e87574::-webkit-scrollbar { display: none }
+    
+    // Left side main content container (why did i do this ?)
+    .contentContainer_e8251c {
+      // border-right: 12px solid var(--scrollbar-auto-track);
+      
+      .scrollerBase_eed6a8, // old
+      .scrollerBase_c49869 {// new
+        // margin-right: -12px ;
+      }
+    }
+    
+    // Header container "Manage Members"
+    .headerContainer_fe3229 {
+      right: 0 ;
+    }
+    
+    // Header 
+    .header_bd05f1 {
+      padding: 0 0 24px 0 ;
+      margin: 0 ;
+      box-shadow: none ;
+      
+      &:before {
+        content: "";
+        position: absolute ;
+        height: 100% ;
+        width: 100% ;
+        background: var(--background_app);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        
+        --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+        --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+
+        filter: var(--blur) var(--brightness);
+      }
+      
+      // Nav bar buttons
+      .tabBarItem_c69589 {
+        border: none ;
+      }
+
+      // Add member btn
+      .addButton_fe3229 { @include Btn("background") }
+
+      // search
+      .searchContainer_a73849 .input__48d49 {
+        border-bottom: 1px solid var(--interactive-muted);
+      }
+    }
+
+    // Content scroller "Permissions"
+    .permissionsWrapper_a73849 {
+      margin-top: 16px ;
+    }
+
+    // linked roles config container
+    .container_ae96a9 {
+      background: none ;
+    }
+    
+    // Info on Bot roles
+    .warning_f20685 {
+      position: absolute ;
+      top: 49px ;
+      left: 0px ;
+      width: auto ;
+      background: none ;
+      border: none ;
+      padding: 0 ;
+      z-index: 100 ;
+
+      .text_f20685 {
+        display: none ;
+      }
+
+      &:hover .text_f20685 {
+        display: block ;
+        background: var(--background-tertiary);
+        border: 1px solid var(--info-warning-foreground);
+        padding: 10px ;
+      }
+
+      ~ .tabBar_c69589 {
+        margin-left: 40px ;
+      }
+    }
+  }
+  // <- Edit Roles
+}
+// <- Server settings
+
+// -> App Directory
+.directoryContainer_da3f59 {
+  padding-right: 46px !important ;
+
+  .closeWrapper_da3f59 {
+    position: absolute ;
+    inset: 0px -46px auto auto ;
+
+    .closeButton_df5532 {
+      width: 30px ;
+      height: 30px ;
+      flex-basis: auto ;
+    }
+  }
+
+  // Interactables
+  .anchor_af404b > :is(div, article) {
+    background: var(--background-modifier-accent);
+
+    &:hover {
+      background: var(--background-modifier-selected);
+    }
+  }
+
+  // info
+  .container_f9d8eb {
+    background: var(--background-modifier-hover);
+  }
+}
+// <- App Directory

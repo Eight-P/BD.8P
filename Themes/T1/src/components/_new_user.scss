@@ -1,0 +1,474 @@
+// * user v0.2.12
+// User popout / (Modal)
+@use 'mixins' as * ;
+
+// -> User Popout (not: profile settings / Shop (home))
+.userPopoutOuter_c69a7b:not(.profileCustomizationPreview_ab876d) {
+  border-radius: 12px ;
+
+  @include shadow_effect("box_2");
+
+  // Secondary container
+  .userPopoutInner_c69a7b { 
+    position: relative ;
+
+    &::before { display: none }
+  }
+
+  // "Unable to load profile..." badge
+  .warningCircleIcon_f89da9 {
+    top: 14px ;
+    right: 14px ;
+  }
+
+  // -> Banner
+  // main wrapper
+  .bannerSVGWrapper_b32cc2 {
+    height: 120px ;
+    min-height: 120px !important;
+
+    foreignObject {
+      mask: none ;
+    }
+
+    &[viewBox="0 0 340 60"] foreignObject {
+      transform: translateY(-30px);
+    }
+
+    &[viewBox="0 0 340 90"] foreignObject {
+      transform: translateY(-15px);
+    }
+
+    .banner_c3e427 {
+      height: 120px ;
+      filter: brightness(0.85);
+
+      // Custom image banner
+      &.bannerPremium_c3e427 {
+        filter: brightness(0.75);
+      }
+  
+      // Edit own profile btn
+      .pencilContainer_c3e427 {
+        top: 78px ;
+        right: 14px ;
+      }
+  
+      .premiumIconWrapper_c3e427, .gifTag_b30195 { display: none }
+    }
+  }
+  // <- Banner
+
+  // -> Avatar/Status
+  .avatarWrapper_f89da9 {
+    top: 20px ;
+    left: 20px ;
+    z-index: 1;
+    
+    .svg_c51b4e { 
+      overflow: visible ;
+      contain: unset ;
+    }
+
+    foreignObject { 
+      mask: none ;
+      overflow: visible ;
+    }
+
+    // Img
+    .avatar_c51b4e {
+      border-radius: 7.5% ;
+
+      &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+    }
+
+    // -> Hover overlay
+    .avatarHint_f89da9 {
+      border-radius: 7.5% ;
+    }
+
+    .avatarDecorationHint_f89da9 {
+      border-radius: 7.5% !important ;
+      top: 0px ;
+      left: 0px ;
+      height: 80px ;
+      width: 80px ;
+
+      .avatarHintInner_f89da9 {
+        font-size: 12px ;
+      }
+    }
+    // <- Hover overlay
+
+    // -> Status icon
+    .pointerEvents_c51b4e {
+      position: absolute ;
+      x: -8px ;
+      y: 116px ;
+      pointer-events: none ;
+
+      &[mask="url(#svg-mask-status-online-mobile)"] {
+        y: 115px ;
+        height: 18px ;
+        width: 14px ;
+      }
+    }
+
+    // The weird one idk
+    .cursorDefault_c51b4e {
+      overflow: visible ;
+      pointer-events: none ;
+
+      rect {
+        position: static ;
+        x: -55px ;
+        y: 64px ;
+      }
+    }
+
+    // weird second status after status changes
+    // foreignObject ~ .cursorDefault_c51b4e { display: none }
+
+    // Shadow for status icon
+    [style*="opacity: 0."] { display: none }
+    // <- Status icon
+  }
+  // <- Profile picture/Avatar
+
+  // -> Badges / Panel badges
+  .profileBadges_f89da9 {
+    position: absolute ;
+    top: 14px ;
+    right: 14px ;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1 ;
+
+    // not empty
+    &.containerWithContent_b64375 {
+      padding: 2px ;
+    }
+  }
+  // <- Badges
+
+  // -> Main user info 
+  .overlayBackground_c69a7b {
+    margin: 0 ;
+    border-radius: 0 ;
+
+    // Info sections except chat box, "Mutuals" section
+    .section_d7a21f:not(.section_f2c0a8), .profileMutuals_d2b491 {
+      padding: 0 12px 0 12px ;
+
+      > :first-child {
+        padding-top: 12px ;
+      }
+    }
+
+    // Chat/DM section
+    .section_f2c0a8 {
+      padding: 12px 12px 0 12px ;
+
+      // &:has(.messageClydeButton_adb260) {
+      //   padding: 0 ;
+      // }
+    }
+
+    // -> Username/Nickname
+    @at-root .userPopoutOuter_c69a7b .avatarWrapper_f89da9:has(.pointerEvents_c51b4e) ~ .overlayBackground_c69a7b {
+
+      .nickname_c9ccf6, .userTagUsernameNoNickname_c9ccf6 {
+        margin-left: 24px ;
+      }
+    }
+
+    // When the profile is not loading
+    .usernameSection_d2b491.lastSection_d7a21f {
+      padding-bottom: 12px ;
+    }
+
+    // -> With Nickname
+    // Nickname
+    .nickname_c9ccf6 {
+      font-size: 18px ;
+      color: var(--header-primary);
+    }
+
+    // Discriminator
+    .userTagWithNickname_c9ccf6 .discrimBase_c9ccf6 {
+      margin-left: 2px ;
+      font-size: 12px ;
+      line-height: normal ;
+      vertical-align: baseline ;
+    }
+    // <- With Nickname
+
+    // -> Without Nickname
+    // Username
+    .userTagUsernameNoNickname_c9ccf6 {
+      color: var(--header-primary);
+    }
+
+    // Discriminator
+    .userTagDiscriminatorNoNickname_c9ccf6 {
+      margin-left: 4px ;
+      color: var(--header-secondary);
+      font-size: 17px ;
+      font-weight: 500 ;
+      line-height: normal ;
+      vertical-align: baseline ;
+    }
+    // <- Without Nickname
+    // <- Username/Nickname
+
+    // -> Custom status emoji
+    .customStatusSoloEmoji_cb55fc {
+      height: 30px ;
+      width: 30px ;
+    }
+    // <- Custom status
+
+    // -> Body
+    .scroller_d2b491 {
+      padding: 0 !important;
+
+      &::-webkit-scrollbar { display: none }
+    }
+
+    // -> About Me
+    // personal roles beta
+    code.inline {
+      background: var(--profile-role-pill-background-color);
+    }
+        
+    // <- About Me
+
+    // -> Bot stuff
+    // "Add App"/"Upgrade" btns
+    .buttonsContainer_b709ea .button_dd4f85 {
+      @include Btn();
+    }
+
+    // Bot commands
+    .popularApplicationCommandsList_d2db23 .sizeIcon_dd4f85 {
+
+      @include Btn("background", white);
+
+      .contents_dd4f85 {
+        font-weight: 400 ;
+      }
+    }
+    // <- Bot stuff
+
+    // -> Roles
+    // Role item
+    .role_e4010c {
+      border: none ;
+    }
+
+    // remove role btn
+    .roleRemoveButton_e4010c > :nth-last-child(2) {
+      cursor: pointer ;
+    }
+    // has imp.
+    .roleRemoveButton_e4010c .roleCircle_a26d7b:has(+ .roleRemoveIcon_e4010c) {
+      cursor: pointer ;
+    }
+
+    .roleRemoveIcon_e4010c {
+      pointer-events: none ;
+    }
+    // <- Roles
+
+
+    // -> Activitys (streaming in channel, games, spotify, ..)
+    .activity_e36233 {
+
+      .button_c6eb7b {
+        @include Btn();
+      }
+    }
+    // <- Activitys
+
+    // -> Connections
+    .connectionsContainer_a78c41 {
+      border: none ;
+
+      // Connection item
+      .connectedAccountContainer_f3eb60 {
+        padding: 6px 0 ;
+      }
+
+      // view all connec. btn
+      .connections_a78c41 { display: none }
+    }
+    // <- Connections
+
+    // -> Note
+    .note_c90ad7 textarea:focus {
+      background: none ;
+    }
+    // <- Note
+
+    // -> Quick Dm
+    .messageInputContainer_f2c0a8 {
+      padding: 4px 12px 6px 12px ;
+      margin: 0 -12px 0 -12px ;
+      border: none ;
+      border-radius: 0 ;
+    }
+    // Clyde
+    // .messageClydeButton_adb260 {
+    //   border-radius: 0 ;
+    // }
+    // <- Quick Dm
+    // <- Body
+  }
+  // <- Main user info
+
+  // -> Popout no custom colors
+  .userProfileInnerThemedNonPremium_c69a7b {
+    
+    // body
+    .overlayBackground_c69a7b {
+      background: var(--background-tertiary);
+    }
+
+    // Quick Dm
+    .messageInputContainer_f2c0a8 {
+      background: var(--background-secondary);
+    }
+  }
+  // <- Popout no custom colors
+
+  // -> Popout with custom colors
+  &.userProfileOuterThemed_c69a7b {
+    padding: 0 ;
+    background: linear-gradient(transparent 120px,var(--profile-gradient-primary-color) 0,var(--profile-gradient-secondary-color));
+
+    .userPopoutInner_c69a7b {
+      background: var(--profile-gradient-overlay-color);
+    }
+
+    // Quick Dm
+    .messageInputContainer_f2c0a8 {
+      border-top: 1px solid var(--profile-message-input-border-color);
+    }
+  }
+  // <- Popout with custom colors
+}
+
+// Indicator while UserPopout is loading
+.loadingPopout_a8c724 { display: none }
+// <- User Popout
+
+.accountProfilePopoutWrapper_b2ca13 {
+  left: 0 ;
+
+  .menu_d90b3d { 
+    max-width: unset ;
+    background: var(--background-tertiary);
+    
+    // popout menu
+    .submenu_d90b3d {
+      
+      .separator_d90b3d { display: none }
+      
+      .item_d90b3d {
+        border-radius: 4px ;
+
+        &#account-status-picker--online.focused_d90b3d { background: var(--status-online) }
+        
+        &#account-status-picker--idle.focused_d90b3d { background: var(--status-idle) }
+
+        &#account-status-picker--dnd.focused_d90b3d { background: var(--status-DnD) }
+        
+        &#account-status-picker--invisible.focused_d90b3d { background: var(--status-invisible) }
+      }
+    }
+  }
+}
+// <- Account Popout
+
+
+// -> Profile sidepanel in dms
+.profilePanel_b433b4 {
+
+  .userPanelOuter_c69a7b, .userPanelInner_c69a7b {
+    background: none ;
+  }
+
+  // Background layer when themed
+  .userPanelInner_c69a7b::before { display: none }
+
+  // Scrollbar
+  .scrollerBase_eed6a8::-webkit-scrollbar { display: none } // old
+  .scrollerBase_c49869::-webkit-scrollbar { display: none } // new
+
+  // -> Banner
+  .bannerSVGWrapper_b32cc2 {
+    border-radius: 8px ;
+    transform: scale(.92);
+
+    foreignObject {
+      mask: none ;
+    }
+  }
+  // <- Banner
+
+  // -> Badges
+  .badgelistGroup_ab525a {
+    min-height: unset ;
+    margin: 0 16px 0 0 ;
+  }
+
+  .badgeList_ab525a {
+    background: var(--background-modifier-accent);
+
+    // empty badge list
+    &:not(.containerWithContent_b64375) { display: none }
+  }
+  // <- Badges
+
+  // -> Profile picture/Avatar
+  .avatarPositionPanel_f89da9 {
+    position: relative ;
+    top: 0 ;
+    left: 0 ;
+    margin-top: 16px ;
+    margin-bottom: 10px ;
+    
+    .wrapper_c51b4e {
+      margin: 0 auto ;
+    }
+
+    .svg_c51b4e { 
+      overflow: visible ;
+
+      // status icon background
+      [style*="opacity"] {  display: none }
+    }
+
+    // status
+    .pointerEvents_c51b4e, .cursorDefault_c51b4e { display: none }
+
+    foreignObject { 
+      mask: none ;
+      overflow: visible ;
+    }
+
+    // Img
+    .avatar_c51b4e {
+      border-radius: 8px ;
+
+      &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+    }
+  }
+  // <- Profile picture/Avatar
+
+  // -> Content body
+  .overlayBackground_c69a7b {
+    background: var(--background-modifier-accent);
+  }
+  // <- Content body
+}
+// <- Profile sidepanel in dms
