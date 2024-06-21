@@ -1,4 +1,4 @@
-// * serverbar v0.1.9
+// * serverbar v0.1.10
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -293,11 +293,10 @@
     }
   }
 }
-
 // Static options <--
 
-// - Servers / DMs -->
-// Icon Mixin
+// -> Dynamic
+// Server/Dm icon
 @mixin ServerIcon() {
   width: 54px ; 
   height: 48px !important ;
@@ -378,31 +377,6 @@
   }
 }
 
-// DMs
-.guilds_a4d4d9 .scroller_fea3ef > [style="opacity: 1; height: 56px; transform: scale(1);"] {
-  @include ServerIcon();
-
-  // Seperator to the left
-  &::before {
-    content: "" ;
-    top: -12px ;
-    position: absolute ; 
-    height: 2px ;
-    width: 32px ;
-    margin: 0 11px ;
-    background-color: var(--interactive-normal);
-  }
-
-  // remove Seperator on Subsequent Dms (not first)
-  ~ [style="opacity: 1; height: 56px; transform: scale(1);"] {
-    margin: 0 0 12px 0 ;
-
-    &::before { content: none }
-  }
-
-  .pill_f36a5a { display: none }
-}
-
 // Server container
 .scroller_fea3ef > [aria-label]:not([class]) {
   grid-area: Servers ;
@@ -416,7 +390,7 @@
   > .listItem_c96c45 { @include ServerIcon() }
 }
 
-// Server folder
+// Server folder / Pending applications folder
 .guilds_a4d4d9 .wrapper_bc7085 {
   width: 54px ;
   margin: 12px 0 ;
@@ -511,7 +485,66 @@
     }
   }
 }
-// Servers / DMs <--
+
+// Pending applications container
+.container_aa1bff {
+  position: relative ;
+
+  // Seperator to the left
+  &::before {
+    content: "" ;
+    top: 2px ;
+    position: absolute ; 
+    height: 2px ;
+    width: 32px ;
+    margin: 0 11px ;
+    background-color: var(--interactive-normal);
+  }
+
+  // Removing seperator from server item in applications folder
+  .wrapper_bc7085 ul {
+    margin-bottom: 12px ;
+
+    &::after { display: none }
+  }
+
+  .pendingIcon_ae3d49 {
+    opacity: .75 ;
+
+    &:hover {
+      opacity: 1 ;
+    }
+  }
+}
+
+// DMs
+.guilds_a4d4d9 .scroller_fea3ef > [style="opacity: 1; height: 56px; transform: scale(1);"] {
+  @include ServerIcon();
+
+  // Seperator to the left
+  &::before {
+    content: "" ;
+    top: -12px ;
+    position: absolute ; 
+    height: 2px ;
+    width: 32px ;
+    margin: 0 11px ;
+    background-color: var(--interactive-normal);
+  }
+
+  // remove Seperator on subsequent Dms
+  ~ [style="opacity: 1; height: 56px; transform: scale(1);"] {
+    margin: 0 0 12px 0 ;
+
+    &::before { content: none }
+  }
+
+  // remove Seperator on Pending applications
+  // ~ .container_aa1bff::before { content: none } maybe keep it?
+
+  .pill_f36a5a { display: none }
+}
+// <- Dynamic
 // Serverbar <--
 
 // Additions -->
