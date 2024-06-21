@@ -1,29 +1,29 @@
-// * user v0.2.12
+// * user v0.2.13
 // User popout / (Modal)
 @use 'mixins' as * ;
 
 // -> User Popout (not: profile settings / Shop (home))
-.userPopoutOuter_d67f56:not(.profileCustomizationPreview_a1502f) {
+.userPopoutOuter_c69a7b:not(.profileCustomizationPreview_ab876d) {
   border-radius: 12px ;
 
   @include shadow_effect("box_2");
 
   // Secondary container
-  .userPopoutInner_ac0960 { 
+  .userPopoutInner_c69a7b { 
     position: relative ;
 
     &::before { display: none }
   }
 
   // "Unable to load profile..." badge
-  .warningCircleIcon_cf050f {
+  .warningCircleIcon_f89da9 {
     top: 14px ;
     right: 14px ;
   }
 
   // -> Banner
   // main wrapper
-  .bannerSVGWrapper__8a38c {
+  .bannerSVGWrapper_b32cc2 {
     height: 120px ;
     min-height: 120px !important;
 
@@ -39,33 +39,33 @@
       transform: translateY(-15px);
     }
 
-    .banner__6d414 {
+    .banner_c3e427 {
       height: 120px ;
       filter: brightness(0.85);
 
       // Custom image banner
-      &.bannerPremium__69560 {
+      &.bannerPremium_c3e427 {
         filter: brightness(0.75);
       }
   
       // Edit own profile btn
-      .pencilContainer_ae6d25 {
+      .pencilContainer_c3e427 {
         top: 78px ;
         right: 14px ;
       }
   
-      .premiumIconWrapper__7793e, .gifTag__9db5a { display: none }
+      .premiumIconWrapper_c3e427, .gifTag_b30195 { display: none }
     }
   }
   // <- Banner
 
   // -> Avatar/Status
-  .avatarWrapper__0cd44 {
+  .avatarWrapper_f89da9 {
     top: 20px ;
     left: 20px ;
     z-index: 1;
     
-    .svg_a6bf1c { 
+    .svg_c51b4e { 
       overflow: visible ;
       contain: unset ;
     }
@@ -76,32 +76,32 @@
     }
 
     // Img
-    .avatar__991e2 {
+    .avatar_c51b4e {
       border-radius: 7.5% ;
 
       &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
     }
 
     // -> Hover overlay
-    .avatarHint__15059 {
+    .avatarHint_f89da9 {
       border-radius: 7.5% ;
     }
 
-    .avatarDecorationHint__04b99 {
+    .avatarDecorationHint_f89da9 {
       border-radius: 7.5% !important ;
       top: 0px ;
       left: 0px ;
       height: 80px ;
       width: 80px ;
 
-      .avatarHintInner_c8ddb1 {
+      .avatarHintInner_f89da9 {
         font-size: 12px ;
       }
     }
     // <- Hover overlay
 
     // -> Status icon
-    .pointerEvents__585e6 {
+    .pointerEvents_c51b4e {
       position: absolute ;
       x: -8px ;
       y: 116px ;
@@ -115,7 +115,7 @@
     }
 
     // The weird one idk
-    .cursorDefault_e0f002 {
+    .cursorDefault_c51b4e {
       overflow: visible ;
       pointer-events: none ;
 
@@ -127,7 +127,7 @@
     }
 
     // weird second status after status changes
-    // foreignObject ~ .cursorDefault_e0f002 { display: none }
+    // foreignObject ~ .cursorDefault_c51b4e { display: none }
 
     // Shadow for status icon
     [style*="opacity: 0."] { display: none }
@@ -136,7 +136,7 @@
   // <- Profile picture/Avatar
 
   // -> Badges / Panel badges
-  .profileBadges__1f2ab {
+  .profileBadges_f89da9 {
     position: absolute ;
     top: 14px ;
     right: 14px ;
@@ -144,19 +144,19 @@
     z-index: 1 ;
 
     // not empty
-    &.containerWithContent_a67357 {
+    &.containerWithContent_b64375 {
       padding: 2px ;
     }
   }
   // <- Badges
 
   // -> Main user info 
-  .overlayBackground__345c9 {
+  .overlayBackground_c69a7b {
     margin: 0 ;
     border-radius: 0 ;
 
     // Info sections except chat box, "Mutuals" section
-    .section__62b44:not(.section__8633a), .profileMutuals__95dc2 {
+    .section_d7a21f:not(.section_f2c0a8), .profileMutuals_d2b491 {
       padding: 0 12px 0 12px ;
 
       > :first-child {
@@ -165,7 +165,7 @@
     }
 
     // Chat/DM section
-    .section__8633a {
+    .section_f2c0a8 {
       padding: 12px 12px 0 12px ;
 
       // &:has(.messageClydeButton_adb260) {
@@ -174,27 +174,27 @@
     }
 
     // -> Username/Nickname
-    @at-root .userPopoutOuter_d67f56 .avatarWrapper__0cd44:has(.pointerEvents__585e6) ~ .overlayBackground__345c9 {
+    @at-root .userPopoutOuter_c69a7b .avatarWrapper_f89da9:has(.pointerEvents_c51b4e) ~ .overlayBackground_c69a7b {
 
-      .nickname_db3773, .userTagUsernameNoNickname__0513b {
+      .nickname_c9ccf6, .userTagUsernameNoNickname_c9ccf6 {
         margin-left: 24px ;
       }
     }
 
     // When the profile is not loading
-    .usernameSection_dd6196.lastSection__62986 {
+    .usernameSection_d2b491.lastSection_d7a21f {
       padding-bottom: 12px ;
     }
 
     // -> With Nickname
     // Nickname
-    .nickname_db3773 {
+    .nickname_c9ccf6 {
       font-size: 18px ;
       color: var(--header-primary);
     }
 
     // Discriminator
-    .userTagWithNickname__0a777 .discrimBase__5555e {
+    .userTagWithNickname_c9ccf6 .discrimBase_c9ccf6 {
       margin-left: 2px ;
       font-size: 12px ;
       line-height: normal ;
@@ -204,12 +204,12 @@
 
     // -> Without Nickname
     // Username
-    .userTagUsernameNoNickname__0513b {
+    .userTagUsernameNoNickname_c9ccf6 {
       color: var(--header-primary);
     }
 
     // Discriminator
-    .userTagDiscriminatorNoNickname_ac71fd {
+    .userTagDiscriminatorNoNickname_c9ccf6 {
       margin-left: 4px ;
       color: var(--header-secondary);
       font-size: 17px ;
@@ -221,14 +221,14 @@
     // <- Username/Nickname
 
     // -> Custom status emoji
-    .customStatusSoloEmoji_aab12e {
+    .customStatusSoloEmoji_cb55fc {
       height: 30px ;
       width: 30px ;
     }
     // <- Custom status
 
     // -> Body
-    .scroller_f9a667 {
+    .scroller_d2b491 {
       padding: 0 !important;
 
       &::-webkit-scrollbar { display: none }
@@ -244,16 +244,16 @@
 
     // -> Bot stuff
     // "Add App"/"Upgrade" btns
-    .buttonsContainer__83ada .button__581d0 {
+    .buttonsContainer_b709ea .button_dd4f85 {
       @include Btn();
     }
 
     // Bot commands
-    .popularApplicationCommandsList__0eb68 .sizeIcon_aff037 {
+    .popularApplicationCommandsList_d2db23 .sizeIcon_dd4f85 {
 
       @include Btn("background", white);
 
-      .contents__322f4 {
+      .contents_dd4f85 {
         font-weight: 400 ;
       }
     }
@@ -261,56 +261,56 @@
 
     // -> Roles
     // Role item
-    .role_d81130 {
+    .role_e4010c {
       border: none ;
     }
 
     // remove role btn
-    .roleRemoveButton__20c70 > :nth-last-child(2) {
+    .roleRemoveButton_e4010c > :nth-last-child(2) {
       cursor: pointer ;
     }
     // has imp.
-    .roleRemoveButton__20c70 .roleCircle__61ad8:has(+ .roleRemoveIcon_c3913a) {
+    .roleRemoveButton_e4010c .roleCircle_a26d7b:has(+ .roleRemoveIcon_e4010c) {
       cursor: pointer ;
     }
 
-    .roleRemoveIcon_c3913a {
+    .roleRemoveIcon_e4010c {
       pointer-events: none ;
     }
     // <- Roles
 
 
     // -> Activitys (streaming in channel, games, spotify, ..)
-    .activity__88a5f {
+    .activity_e36233 {
 
-      .button__88ad4 {
+      .button_c6eb7b {
         @include Btn();
       }
     }
     // <- Activitys
 
     // -> Connections
-    .connectionsContainer_ad3ca0 {
+    .connectionsContainer_a78c41 {
       border: none ;
 
       // Connection item
-      .connectedAccountContainer__5972d {
+      .connectedAccountContainer_f3eb60 {
         padding: 6px 0 ;
       }
 
       // view all connec. btn
-      .connections_f0b7d8 { display: none }
+      .connections_a78c41 { display: none }
     }
     // <- Connections
 
     // -> Note
-    .note_ba0c31 textarea:focus {
+    .note_c90ad7 textarea:focus {
       background: none ;
     }
     // <- Note
 
     // -> Quick Dm
-    .messageInputContainer_a93946 {
+    .messageInputContainer_f2c0a8 {
       padding: 4px 12px 6px 12px ;
       margin: 0 -12px 0 -12px ;
       border: none ;
@@ -326,31 +326,31 @@
   // <- Main user info
 
   // -> Popout no custom colors
-  .userProfileInnerThemedNonPremium_b64fb4 {
+  .userProfileInnerThemedNonPremium_c69a7b {
     
     // body
-    .overlayBackground__345c9 {
+    .overlayBackground_c69a7b {
       background: var(--background-tertiary);
     }
 
     // Quick Dm
-    .messageInputContainer_a93946 {
+    .messageInputContainer_f2c0a8 {
       background: var(--background-secondary);
     }
   }
   // <- Popout no custom colors
 
   // -> Popout with custom colors
-  &.userProfileOuterThemed_a425f3 {
+  &.userProfileOuterThemed_c69a7b {
     padding: 0 ;
     background: linear-gradient(transparent 120px,var(--profile-gradient-primary-color) 0,var(--profile-gradient-secondary-color));
 
-    .userPopoutInner_ac0960 {
+    .userPopoutInner_c69a7b {
       background: var(--profile-gradient-overlay-color);
     }
 
     // Quick Dm
-    .messageInputContainer_a93946 {
+    .messageInputContainer_f2c0a8 {
       border-top: 1px solid var(--profile-message-input-border-color);
     }
   }
@@ -358,31 +358,31 @@
 }
 
 // Indicator while UserPopout is loading
-.loadingPopout__5e2fa { display: none }
+.loadingPopout_a8c724 { display: none }
 // <- User Popout
 
-.accountProfilePopoutWrapper_d4887f {
+.accountProfilePopoutWrapper_b2ca13 {
   left: 0 ;
 
-  .menu__088f7 { 
+  .menu_d90b3d { 
     max-width: unset ;
     background: var(--background-tertiary);
     
     // popout menu
-    .submenu_aed9ee {
+    .submenu_d90b3d {
       
-      .separator__174fc { display: none }
+      .separator_d90b3d { display: none }
       
-      .item__183e8 {
+      .item_d90b3d {
         border-radius: 4px ;
 
-        &#account-status-picker--online.focused_dcafb9 { background: var(--status-online) }
+        &#account-status-picker--online.focused_d90b3d { background: var(--status-online) }
         
-        &#account-status-picker--idle.focused_dcafb9 { background: var(--status-idle) }
+        &#account-status-picker--idle.focused_d90b3d { background: var(--status-idle) }
 
-        &#account-status-picker--dnd.focused_dcafb9 { background: var(--status-DnD) }
+        &#account-status-picker--dnd.focused_d90b3d { background: var(--status-DnD) }
         
-        &#account-status-picker--invisible.focused_dcafb9 { background: var(--status-invisible) }
+        &#account-status-picker--invisible.focused_d90b3d { background: var(--status-invisible) }
       }
     }
   }
@@ -391,21 +391,21 @@
 
 
 // -> Profile sidepanel in dms
-.profilePanel_e2cafe {
+.profilePanel_b433b4 {
 
-  .userPanelOuter_df01a5, .userPanelInner__3184c {
+  .userPanelOuter_c69a7b, .userPanelInner_c69a7b {
     background: none ;
   }
 
   // Background layer when themed
-  .userPanelInner__3184c::before { display: none }
+  .userPanelInner_c69a7b::before { display: none }
 
   // Scrollbar
-  .scrollerBase_f742b2::-webkit-scrollbar { display: none } // old
-  .scrollerBase__65223::-webkit-scrollbar { display: none } // new
+  .scrollerBase_eed6a8::-webkit-scrollbar { display: none } // old
+  .scrollerBase_c49869::-webkit-scrollbar { display: none } // new
 
   // -> Banner
-  .bannerSVGWrapper__8a38c {
+  .bannerSVGWrapper_b32cc2 {
     border-radius: 8px ;
     transform: scale(.92);
 
@@ -416,32 +416,32 @@
   // <- Banner
 
   // -> Badges
-  .badgelistGroup__8f7c7 {
+  .badgelistGroup_ab525a {
     min-height: unset ;
     margin: 0 16px 0 0 ;
   }
 
-  .badgeList__76720 {
+  .badgeList_ab525a {
     background: var(--background-modifier-accent);
 
     // empty badge list
-    &:not(.containerWithContent_a67357) { display: none }
+    &:not(.containerWithContent_b64375) { display: none }
   }
   // <- Badges
 
   // -> Profile picture/Avatar
-  .avatarPositionPanel__2d765 {
+  .avatarPositionPanel_f89da9 {
     position: relative ;
     top: 0 ;
     left: 0 ;
     margin-top: 16px ;
     margin-bottom: 10px ;
     
-    .wrapper__3ed10 {
+    .wrapper_c51b4e {
       margin: 0 auto ;
     }
 
-    .svg_a6bf1c { 
+    .svg_c51b4e { 
       overflow: visible ;
 
       // status icon background
@@ -449,7 +449,7 @@
     }
 
     // status
-    .pointerEvents__585e6, .cursorDefault_e0f002 { display: none }
+    .pointerEvents_c51b4e, .cursorDefault_c51b4e { display: none }
 
     foreignObject { 
       mask: none ;
@@ -457,7 +457,7 @@
     }
 
     // Img
-    .avatar__991e2 {
+    .avatar_c51b4e {
       border-radius: 8px ;
 
       &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
@@ -466,7 +466,7 @@
   // <- Profile picture/Avatar
 
   // -> Content body
-  .overlayBackground__345c9 {
+  .overlayBackground_c69a7b {
     background: var(--background-modifier-accent);
   }
   // <- Content body

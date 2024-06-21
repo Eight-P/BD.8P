@@ -1,4 +1,4 @@
-// * settings v0.1.10
+// * settings v0.1.11
 // Client / Guilds / Channels
 @use 'mixins' as * ;
 
@@ -6,7 +6,7 @@ $T1_v: null !default ;
 
 // -> Theme version info
 // Settings sidebar bottom
-.layer_f7d46a:not(.baseLayer__2b890) .sidebarRegion__36437 .clickTarget__90fb4 .info__755e1:before {
+.layer_d4b6c5:not(.baseLayer_d4b6c5) .sidebarRegion_c25c6d .clickTarget_e3203d .info_c5a741:before {
   content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
   display: block !important;
   font-size: 12px !important;
@@ -36,10 +36,10 @@ $T1_v: null !default ;
 // <- Theme version info
 
 // -> General Settings
-.layer_f7d46a:not(.baseLayer__13b6b) {
+.layer_d4b6c5:not(.baseLayer__13b6b) {
   
   // -> Sidebar
-  .sidebarRegionScroller__8113e {
+  .sidebarRegionScroller_c25c6d {
 
     &::-webkit-scrollbar { display: none }
     
@@ -50,7 +50,7 @@ $T1_v: null !default ;
     }
     
     // Tabs
-    .item__48dda {
+    .item_a0 {
       color: var(--interactive-normal);
       background: none !important ;
       border-radius: 0  ;
@@ -59,18 +59,18 @@ $T1_v: null !default ;
       
       &:hover { color: var(--interactive-hover) }
       
-      &.selected_a523ff {
+      &.selected_a0 {
         border-left: 2px solid var(--interactive-active);
         color: var(--interactive-active)  ;
       }
 
       // Nitro
-      &.premiumTab_ad0913 svg { display: none }
+      &.premiumTab_c10c74 svg { display: none }
       // Nitro background
-      .background__3b760 { display: none }
+      .background_ae3c77 { display: none }
 
       // Log Out/ Delete Channel
-      .tabBarItemContainer__5d798:has(svg:not(.icon_c69952)) {
+      .tabBarItemContainer_e7c031:has(svg:not(.icon_f7189e)) {
         color: var(--red);
         padding: 4px ;
         border-radius: 3px ;
@@ -88,13 +88,13 @@ $T1_v: null !default ;
   // <- Sidebar
   
   // -> Content region
-  .contentRegionScroller__9ae20 {
+  .contentRegionScroller_c25c6d {
     
     @include scrollbar();
   }
 
   // Checkbox item list option
-  .item_b7fb7e {
+  .item_eb92a8 {
     background: var(--background-modifier-accent);
     color: var(--interactive-hover);
     
@@ -110,10 +110,10 @@ $T1_v: null !default ;
   }
 
   // Dropdown menu
-  .select_fe2671 {
+  .select_f6639d {
     border: none ;
 
-    @at-root .layerContainer_a2fcaa .popout_a6e77f {
+    @at-root .layerContainer_cd0de5 .popout_f6639d {
       background: var(--background-tertiary);
       border: none ;
 
@@ -121,11 +121,11 @@ $T1_v: null !default ;
         background-color: var(--interactive-normal);
       }
 
-      .option_eb83e4[aria-selected="true"] {
+      .option_f6639d[aria-selected="true"] {
         background: var(--background-modifier-selected);
       }
 
-      .selectedIcon_e9ecc2 {
+      .selectedIcon_f6639d {
         circle {
           fill: none ;
         }
@@ -150,23 +150,23 @@ $T1_v: null !default ;
 
   // Nitro upsell in Profile settings
   #profile-customization-tab {
-    .upsellOverlayContainer__9580e, .tryItOutSection_d658ca {
+    .upsellOverlayContainer_eb49af, .tryItOutSection_eb2d2c {
       display: none ;
     }
 
-    .profileCustomizationSection_c4a87a .userPopoutOuter__3884e {
+    .profileCustomizationSection_bad983 .userPopoutOuter_c69a7b {
       --background-secondary-alt: var(--primary-660);
     }
   }
 
   // Nitro locked features
-  .premiumFeatureBorder__6ac04, .premiumBackground__4f769 {
+  .premiumFeatureBorder_c6d722, .premiumBackground_c6d722 {
     background: none ;
     border: none ;
   }
 
   // Client Themes 
-  .presets__4073b:not(.basicThemeSelectors__5ca8c) {
+  .presets_f45ea6:not(.basicThemeSelectors_) {
     position: relative ;
     margin-top: 40px ;
     
@@ -186,14 +186,14 @@ $T1_v: null !default ;
 
 // -> Server settings
 // Roles
-.layer_f7d46a:not(.baseLayer__13b6b) {
+.layer_d4b6c5:not(.baseLayer__13b6b) {
   
   // Default permission button
-  .container__9c57c { background: none }
+  .container_cc7b67 { background: none }
 
   // Roles list
-  .content__690c5 {
-    .roleRow_dc2631 {
+  .content_eed6a8 {
+    .roleRow_a930f1 {
 
       // role btns
       .secondary__45d4f {
@@ -203,33 +203,33 @@ $T1_v: null !default ;
   }
 
   // -> Edit Roles
-  .contentColumn__5f80b > .page_c3ed26 {
+  .contentColumn_c25c6d > .page_e8251c {
     
     // Sidebar container main
-    .sidebar__37984 {
+    .sidebar_e87574 {
       height: fit-content ;
     }
     
     // Roles list Sidebar
-    .list__41249::-webkit-scrollbar { display: none }
+    .list_e87574::-webkit-scrollbar { display: none }
     
     // Left side main content container (why did i do this ?)
-    .contentContainer__50662 {
+    .contentContainer_e8251c {
       // border-right: 12px solid var(--scrollbar-auto-track);
       
-      .scrollerBase_f742b2, // old
-      .scrollerBase__65223 {// new
+      .scrollerBase_eed6a8, // old
+      .scrollerBase_c49869 {// new
         // margin-right: -12px ;
       }
     }
     
     // Header container "Manage Members"
-    .headerContainer__282e2 {
+    .headerContainer_fe3229 {
       right: 0 ;
     }
     
     // Header 
-    .header_ee0bd9 {
+    .header_bd05f1 {
       padding: 0 0 24px 0 ;
       margin: 0 ;
       box-shadow: none ;
@@ -252,31 +252,31 @@ $T1_v: null !default ;
       }
       
       // Nav bar buttons
-      .tabBarItem_c97278 {
+      .tabBarItem_c69589 {
         border: none ;
       }
 
       // Add member btn
-      .addButton__3c5e3 { @include Btn("background") }
+      .addButton_fe3229 { @include Btn("background") }
 
       // search
-      .searchContainer_eee0ea .input__48d49 {
+      .searchContainer_a73849 .input__48d49 {
         border-bottom: 1px solid var(--interactive-muted);
       }
     }
 
     // Content scroller "Permissions"
-    .permissionsWrapper__7b073 {
+    .permissionsWrapper_a73849 {
       margin-top: 16px ;
     }
 
     // linked roles config container
-    .container__8579d {
+    .container_ae96a9 {
       background: none ;
     }
     
     // Info on Bot roles
-    .warning__4da7a {
+    .warning_f20685 {
       position: absolute ;
       top: 49px ;
       left: 0px ;
@@ -286,18 +286,18 @@ $T1_v: null !default ;
       padding: 0 ;
       z-index: 100 ;
 
-      .text__5191a {
+      .text_f20685 {
         display: none ;
       }
 
-      &:hover .text__5191a {
+      &:hover .text_f20685 {
         display: block ;
         background: var(--background-tertiary);
         border: 1px solid var(--info-warning-foreground);
         padding: 10px ;
       }
 
-      ~ .tabBar_a013ee {
+      ~ .tabBar_c69589 {
         margin-left: 40px ;
       }
     }
@@ -307,14 +307,14 @@ $T1_v: null !default ;
 // <- Server settings
 
 // -> App Directory
-.directoryContainer__36395 {
+.directoryContainer_da3f59 {
   padding-right: 46px !important ;
 
-  .closeWrapper__06665 {
+  .closeWrapper_da3f59 {
     position: absolute ;
     inset: 0px -46px auto auto ;
 
-    .closeButton__8177f {
+    .closeButton_df5532 {
       width: 30px ;
       height: 30px ;
       flex-basis: auto ;
@@ -322,7 +322,7 @@ $T1_v: null !default ;
   }
 
   // Interactables
-  .anchor_c8ddc0 > :is(div, article) {
+  .anchor_af404b > :is(div, article) {
     background: var(--background-modifier-accent);
 
     &:hover {
@@ -331,7 +331,7 @@ $T1_v: null !default ;
   }
 
   // info
-  .container__11a0b {
+  .container_f9d8eb {
     background: var(--background-modifier-hover);
   }
 }

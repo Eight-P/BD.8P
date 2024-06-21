@@ -1,4 +1,4 @@
-// * compatibility v0.1.9.1
+// * compatibility v0.1.10
 // Compatibility with plugins and Themes
 @use 'mixins' as * ;
 
@@ -27,14 +27,14 @@
 }
 
 // Server channel sidebar
-.sidebar_e031be {
+.sidebar_a4d4d9 {
   transition: none !important ;
   
   // Sidebar hidden 
   &.hideChannelElement {
 
     // titlebar (chat, friendslist)
-    + div .title_d4ba1a, + main .container__26baa {
+    + div .title_a7d72e, + main .container_e44302 {
       margin-left: 240px ;
       width: auto ;
     }
@@ -46,7 +46,7 @@
 #MemberCount {
   background: none ;
 
-  + .members__573eb {
+  + .members_cbd271 {
     margin-top: 57px ;
   }
 }
@@ -54,7 +54,7 @@
 
 // -> FriendNotifications by DevilBro
 // Online friend counter
-.guilds__2b93a .friendsOnlineWrap_0gZ63m {
+.guilds_a4d4d9 .friendsOnlineWrap_0gZ63m {
   display: flex !important ;
   position: absolute ;
   transform: rotate(90deg);
@@ -73,7 +73,7 @@
 
 // -> ReadAllNotificationsButton by DevilBro
 // "Read all" btn
-.guilds__2b93a .frame_oXWS21 {
+.guilds_a4d4d9 .frame_oXWS21 {
   display: flex !important ;
   position: absolute ;
   top: 0 ;
@@ -127,17 +127,17 @@
 
 // -> SpotifyControls by DevilBro
 // Sidebar control panel
-#app-mount .panels__58331 .container_6sXIoE { 
+#app-mount .panels_a4d4d9 .container_6sXIoE { 
   margin: 0px ;
   min-height: 44px ;
 
-  .button_ae40a4 { background: none }
+  .button_f67531 { background: none }
 }
 // <- SpotifyControls by DevilBro
 
 // -> CollapsibleUI by programmer2514
 // Serverbar hidden
-.guilds__2b93a {
+.guilds_a4d4d9 {
   
   &[style*="transition: width"] {
     transition: none !important ;
@@ -148,8 +148,8 @@
     display: none ;
     
     // hide Home search, Server options btn
-    + .base_c0676e {
-      .searchBar__621ec, .container_f41675 {
+    + .base_a4d4d9 {
+      .searchBar_f0963d, .container_fd6364 {
         display: none ;
       }
     }
@@ -157,7 +157,7 @@
 }
 
 // Channel list sidebar floating (on hover)
-.sidebar_e031be[style*="position: absolute"] {
+.sidebar_a4d4d9[style*="position: absolute"] {
   overflow: visible !important ;
 
   // hidden
@@ -188,12 +188,12 @@
 
 // User area hidden
 // user panel, voice panel, ...
-.panels__58331[style*="max-height: 0px"] {
+.panels_a4d4d9[style*="max-height: 0px"] {
   display: none ;
 }
 
 // DM Sidebar, Channel list
-:is(.privateChannels__9b518, .container__7e23c):has(~ .panels__58331[style*="max-height: 0px"]) {
+:is(.privateChannels_f0963d, .container_ee69e0):has(~ .panels_a4d4d9[style*="max-height: 0px"]) {
   top: 5px ;
   margin-bottom: unset ;
 }
@@ -226,12 +226,12 @@
     color: var(--channel-text-area-placeholder);
   }
 
-  .placeholder_dec8c7, .editor__66464 {
+  .placeholder_a552a6, .editor_a552a6 {
     padding: 14px 10px 8px 0 ;
   }
 
   // typing/slowmode container
-  + .typing__6fd1d {
+  + .typing_d7ebeb {
     margin: 0 !important ;
   }
 }
@@ -240,21 +240,21 @@
 
 // -> Icon Revert 2023
 // Add reactions icon (msg btn, reactions on msg btn)
-// :is(.buttonContainer__6de7e, .reactionBtn__3cb2a) [d^="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22ZM6.5 13a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 "] {
+// :is(.buttonContainer_ec86aa, .reactionBtn_ec6b19) [d^="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22ZM6.5 13a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 "] {
 //   d: path("M12.1151 2.00065C12.0768 2.00022 12.0384 2 12 2C6.477 2 2 6.477 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 11.9616 21.9998 11.9232 21.9993 11.8849C21.1882 12.1737 20.3146 12.3309 19.4043 12.3309C15.1323 12.3309 11.6691 8.86771 11.6691 4.59565C11.6691 3.68536 11.8263 2.8118 12.1151 2.00065ZM7.92105 11.8023C7.92105 12.7107 7.18468 13.4471 6.27631 13.4471C5.36795 13.4471 4.63158 12.7107 4.63158 11.8023C4.63158 10.894 5.36795 10.1576 6.27631 10.1576C7.18467 10.1576 7.92105 10.894 7.92105 11.8023ZM10.5217 14.5171C10.3859 13.9893 9.84786 13.6716 9.32005 13.8074C8.79223 13.9433 8.47448 14.4813 8.61033 15.0091C9.01196 16.5695 10.4273 17.7236 12.1147 17.7236C13.8021 17.7236 15.2174 16.5695 15.6191 15.0091C15.7549 14.4813 15.4372 13.9433 14.9093 13.8074C14.3815 13.6716 13.8435 13.9893 13.7077 14.5171C13.525 15.2267 12.8797 15.7499 12.1147 15.7499C11.3497 15.7499 10.7044 15.2267 10.5217 14.5171Z M18.5 2C17.9477 2 17.5 2.44772 17.5 3V4.5H16C15.4477 4.5 15 4.94771 15 5.5C15 6.05228 15.4477 6.5 16 6.5H17.5V8C17.5 8.55228 17.9477 9 18.5 9C19.0523 9 19.5 8.55229 19.5 8V6.5H21C21.5523 6.5 22 6.05229 22 5.5C22 4.94772 21.5523 4.5 21 4.5H19.5V3C19.5 2.44772 19.0523 2 18.5 2Z")
 // }
 
 // Channel Notification settings Bell icon
-.toolbar__62fb5 [d^="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a.47.47 0 0 0-.07-"] {
+.toolbar_e44302 [d^="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a.47.47 0 0 0-.07-"] {
   d: path("M21.178 1.70703L22.592 3.12103L4.12103 21.593L2.70703 20.178L21.178 1.70703Z M18 10.5283L10.5287 18H21V17C19.344 17 18 15.657 18 14V10.5283Z M8.957 19.5718L9.52877 19H15.4449C14.7519 20.19 13.4759 21 11.9999 21C10.7748 21 9.68752 20.442 8.957 19.5718Z M12 3C13.417 3 14.71 3.5 15.734 4.321L5.99805 14.058C5.99805 14.0479 5.99856 14.038 5.99907 14.0283C5.99956 14.0188 6.00005 14.0094 6.00005 14V9C6.00005 5.686 8.68605 3 12 3Z") !important ;
 }
 
-.toolbar__62fb5 .icon_ae0b42:has([d^="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a."]) {
+.toolbar_e44302 .icon_e44302:has([d^="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a."]) {
   background-image: none !important ;
 }
 
 // Sidebar panels btns
-.panels__58331 .button__581d0:hover path {
+.panels_a4d4d9 .button_dd4f85:hover path {
   fill: var(--interactive-hover) !important ;
 }
 // <- Icon Revert 2023

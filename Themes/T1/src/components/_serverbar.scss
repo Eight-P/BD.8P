@@ -1,14 +1,14 @@
-// * serverbar v0.1.9
+// * serverbar v0.1.10
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
 // Serverbar -->
 // - Base container -->
 // App layer adjustments 
-.baseLayer__2b890 > .container_d1f8f5 { flex-direction: column-reverse }
+.baseLayer_d4b6c5 > .container_a4d4d9 { flex-direction: column-reverse }
 
 // - Serverbar container / scroller
-.guilds__2b93a {
+.guilds_a4d4d9 {
   height: 54px ;
   width: 100vw ;
   margin: 0 ;
@@ -34,12 +34,12 @@
   }
   
   // when in voice call view
-  &.hidden__7c832 {
+  &.hidden_fea3ef {
     height: 0 ;
   }
   
   // Child container (ul)
-  .tree__7a511 {
+  .tree_fea3ef {
     display: grid ;
     height: 100vw ;
     width: 54px ;
@@ -49,7 +49,7 @@
   }
   
   // Scroller ( 10-48-6-20-6-20-10 )
-  .scroller_de945b {
+  .scroller_fea3ef {
     display: grid ;
     grid-template-columns: 54px ;
     grid-template-rows: 48px 29px 35px auto ;
@@ -80,7 +80,7 @@
       background-color: var(--interactive-normal);
     }
 
-    .guildSeparator__75928 {
+    .guildSeparator_d0c57e {
       position: absolute ;
       width: 32px ;
       height: 2px ;
@@ -90,12 +90,12 @@
   }
   
   // Unread mentions indicators
-  .unreadMentionsIndicatorTop__153ad,
-  .unreadMentionsIndicatorBottom__9351c { display: none }
+  .unreadMentionsIndicatorTop_fea3ef,
+  .unreadMentionsIndicatorBottom_fea3ef { display: none }
 }
 
 // Margin on Mac
-.platform-osx .wrapper__216eb {
+.platform-osx .wrapper_fea3ef {
   margin: 0 ;
 }
 
@@ -103,10 +103,10 @@
 
 // - Static options -->
 // - Home / GuildsAd / Discovery / GuildsError
-.guilds__2b93a .scroller_de945b {
+.guilds_a4d4d9 .scroller_fea3ef {
   
   // general item container
-  .listItem__48528 { 
+  .listItem_c96c45 { 
     width: 54px ; 
     margin: 0 ; 
   }
@@ -116,17 +116,17 @@
     grid-area: Home ;
     
     // Pill
-    .pill_d1140c { display: none }
+    .pill_f9623d { display: none }
     
     // Notification badge
-    .lowerBadge_e89e22 {
+    .lowerBadge_c5f96a {
       left: 4px ;
       bottom: 4px ;
       @include shadow_effect("drop_2");
     }
     
     // SVG 1 conatiner
-    .wrapper__9916c { 
+    .wrapper_c5f96a { 
       transform: rotate(90deg);
     }
     
@@ -134,17 +134,17 @@
     foreignObject { mask: none }
 
     // SVG 2 conatiner
-    .childWrapper__760c6 {
+    .childWrapper_f90abb {
       background: none ;
       color: var(--text-normal);
       opacity: .75 ;
     }
     
     // Hover
-    .wrapper_a6f950.selected_ae80f7 .childWrapper__760c6 { opacity: 1 }
+    .wrapper_f90abb.selected_ae80f7 .childWrapper_f90abb { opacity: 1 }
     
     // SVG 2
-    .childWrapper__760c6 > svg { 
+    .childWrapper_f90abb > svg { 
       height: 26px ;
       margin: 4px 4px 0 0 ;
       overflow: visible ;
@@ -165,27 +165,27 @@
     display: flex ;
     width: 54px ;
     
-    .pill__13f64 { display: none }
+    .pill_db6521 { display: none }
     
     // SVG 1 container, SVG 1
-    .wrapper__9916c, .svg__34dd4 {
+    .wrapper_c5f96a, .svg_c5f96a {
       height: 20px ;
       width: 20px ;
     }
     
     // SVG 2 container
-    .circleIconButton__05cf2 {
+    .circleIconButton_db6521 {
       transform: rotate(90deg);
       background: none ;
       color: var(--text-normal);
       opacity: .75 ;
       
-      &.selected_aded59 { opacity: 1 }
+      &.selected_db6521 { opacity: 1 }
       
       @include shadow_effect("drop_1");
       
       // SVG 2 
-      .circleIcon_b62ef0 {
+      .circleIcon_db6521 {
         height: 100% ;
         width: 100% ;
       }
@@ -208,7 +208,7 @@
     margin: 0 ;
     margin: 3px 0 10px 0;
     
-    .circleIconButton__05cf2 .circleIcon_b62ef0 {
+    .circleIconButton_db6521 .circleIcon_db6521 {
       height: 90% ;
       width: 90% ;
     }
@@ -223,7 +223,7 @@
     height: 20px ;
     width: 20px ;
     
-    .anchor_c8ddc0 {
+    .anchor_af404b {
       transform: rotate(90deg);
       background: none ;
       border: none ;
@@ -234,7 +234,7 @@
   }
 
   // Favorites
-  .listItem__48528:has(.favoriteIcon__901fa) {
+  .listItem_c96c45:has(.favoriteIcon_dcc7a4) {
 
     &::before {
       content: "" ;
@@ -249,18 +249,18 @@
     .pill__66ac8 { display: none }
 
     div:not([class]) {
-      .wrapper__9916c {
+      .wrapper_c5f96a {
         transform: rotate(90deg);
         @include shadow_effect("server_1");
       }
 
         // Unreads badge
-      .lowerBadge_e89e22 {
+      .lowerBadge_c5f96a {
         left: 4px ;
         bottom: 4px ;
       }
 
-      .childWrapper__760c6 {
+      .childWrapper_f90abb {
         background: none ;
         color: var(--text-normal) !important ;
         opacity: .75 ;
@@ -272,54 +272,53 @@
     }
   }
   // Remove Seperator when Dms are present
-  [style="opacity: 1; height: 56px; transform: scale(1);"] + .listItem__48528:has(.favoriteIcon__901fa)::before {
+  [style="opacity: 1; height: 56px; transform: scale(1);"] + .listItem_c96c45:has(.favoriteIcon_dcc7a4)::before {
     display: none ;
   }
   
   // Home
-  .tutorialContainer_b06ae6 { @include Home_Icon() }
+  .tutorialContainer_f9623d { @include Home_Icon() }
 
   // Every div after servers
   > [aria-label]:not([class]) + div {
 
     @include GuildsAdd_Icon();
 
-    + .listItem__48528 {
+    + .listItem_c96c45 {
       @include Discovery_Icon();
 
-      + .listItem__48528 {
+      + .listItem_c96c45 {
         @include GuildsError_Icon()
       }
     }
   }
 }
-
 // Static options <--
 
-// - Servers / DMs -->
-// Icon Mixin
+// -> Dynamic
+// Server/Dm icon
 @mixin ServerIcon() {
   width: 54px ; 
   height: 48px !important ;
   margin: 12px 0 ;
   
   // bc drag and drop (server, dms)
-  .pill__6b31b + div, .listItemWrapper__3d465 {
+  .pill_a5ad63 + div, .listItemWrapper_dfb2f8 {
     transform: rotate(90deg);
   }
   
   // Placeholder when dragging
-  .placeholderMask_ca6625 {
+  .placeholderMask_f734d8 {
     height: 40px ;
     width: 40px ;
     margin: 4px ; 
     
-    .dragInner_d5b34c {
+    .dragInner_f734d8 {
       background: rgba(0, 0, 0, 0.5);
     }
   }
   
-  .wrapper__9916c {
+  .wrapper_c5f96a {
 
     @include shadow_effect("server_1");
     
@@ -328,13 +327,13 @@
   }
   
   // Unreads badge
-  .lowerBadge_e89e22 {
+  .lowerBadge_c5f96a {
     left: 4px ;
     bottom: 4px ;
   }
 
   // SVG
-  .svg__34dd4 {
+  .svg_c5f96a {
     height: 40px ; 
     width: 40px ;
     margin: 4px ;
@@ -345,24 +344,24 @@
       mask: none ;
     }
 
-    &:hover .icon_e2a8c1 { border-radius: 25% }
+    &:hover .icon_f90abb { border-radius: 25% }
   }
 
   // Image
-  .icon_e2a8c1 {
+  .icon_f90abb {
     border-radius: 50% ;
     transition: .2s ;
   }
   
   // Text
-  .acronym__88ca6 {
+  .acronym_f90abb {
     background: none ;
     
     @include shadow_effect("server_1");
   }
   
   // Pill
-  .item_f9d377 {
+  .item_fd07a3 {
     display: none ;
     margin-left: -5px ;
     
@@ -378,33 +377,8 @@
   }
 }
 
-// DMs
-.guilds__2b93a .scroller_de945b > [style="opacity: 1; height: 56px; transform: scale(1);"] {
-  @include ServerIcon();
-
-  // Seperator to the left
-  &::before {
-    content: "" ;
-    top: -12px ;
-    position: absolute ; 
-    height: 2px ;
-    width: 32px ;
-    margin: 0 11px ;
-    background-color: var(--interactive-normal);
-  }
-
-  // remove Seperator on Subsequent Dms (not first)
-  ~ [style="opacity: 1; height: 56px; transform: scale(1);"] {
-    margin: 0 0 12px 0 ;
-
-    &::before { content: none }
-  }
-
-  .pill__357e7 { display: none }
-}
-
 // Server container
-.scroller_de945b > [aria-label]:not([class]) {
+.scroller_fea3ef > [aria-label]:not([class]) {
   grid-area: Servers ;
   width: 54px ;
   max-height: 100% ;
@@ -413,21 +387,21 @@
   &::-webkit-scrollbar { display: none }
 
   // Server items
-  > .listItem__48528 { @include ServerIcon() }
+  > .listItem_c96c45 { @include ServerIcon() }
 }
 
-// Server folder
-.guilds__2b93a .wrapper__832f2 {
+// Server folder / Pending applications folder
+.guilds_a4d4d9 .wrapper_bc7085 {
   width: 54px ;
   margin: 12px 0 ;
 
   // Background when open
-  .expandedFolderBackground_b1385f { display: none }
+  .expandedFolderBackground_bc7085 { display: none }
 
   // Folder Icon / preview 
-  > .listItem__48528 {
+  > .listItem_c96c45 {
     
-    .pill__6b31b { 
+    .pill_a5ad63 { 
       display: none ;
       
       // Icon container (for drag)
@@ -437,29 +411,29 @@
     // Icon container
 
     // Placeholder when dragging
-    .placeholderMask_ca6625 {
+    .placeholderMask_f734d8 {
       height: 40px ;
       width: 40px ;
       margin: 4px ;
 
-      .dragInner_d5b34c {
+      .dragInner_f734d8 {
         background: rgba(0, 0, 0, 0.5);
       }
     }
     
     // Unreads badge
-    .lowerBadge_e89e22 {
+    .lowerBadge_c5f96a {
       left: 4px ;
       bottom: 4px ;
     }
 
     // container
-    .wrapper__9916c {
+    .wrapper_c5f96a {
       @include shadow_effect("drop_1");
     }
 
     // SVG 1
-    .svg__34dd4 {
+    .svg_c5f96a {
       mask, g { display: none }
 
       foreignObject {
@@ -467,18 +441,18 @@
       }
     }
 
-    .folder__17546 { background: none }
+    .folder_bc7085 { background: none }
 
     // Icon container 2
-    .folderIconWrapper__11165 {
+    .folderIconWrapper_bc7085 {
       position: absolute ;
       height: 40px ; 
       width: 40px ;
       margin: 4px ;
 
       // Icon container open and closed
-      .closedFolderIconWrapper__722d5,
-      .expandedFolderIconWrapper__324c1 {
+      .closedFolderIconWrapper_bc7085,
+      .expandedFolderIconWrapper_bc7085 {
         height: 40px ; 
         width: 40px ;
         padding: 0 ;
@@ -498,7 +472,7 @@
     margin-bottom: 24px ;
     
     // Server items in open folders
-    .listItem__48528 { @include ServerIcon() }
+    .listItem_c96c45 { @include ServerIcon() }
     
     &::after {
       content: "" ;
@@ -511,15 +485,74 @@
     }
   }
 }
-// Servers / DMs <--
+
+// Pending applications container
+.container_aa1bff {
+  position: relative ;
+
+  // Seperator to the left
+  &::before {
+    content: "" ;
+    top: 2px ;
+    position: absolute ; 
+    height: 2px ;
+    width: 32px ;
+    margin: 0 11px ;
+    background-color: var(--interactive-normal);
+  }
+
+  // Removing seperator from server item in applications folder
+  .wrapper_bc7085 ul {
+    margin-bottom: 12px ;
+
+    &::after { display: none }
+  }
+
+  .pendingIcon_ae3d49 {
+    opacity: .75 ;
+
+    &:hover {
+      opacity: 1 ;
+    }
+  }
+}
+
+// DMs
+.guilds_a4d4d9 .scroller_fea3ef > [style="opacity: 1; height: 56px; transform: scale(1);"] {
+  @include ServerIcon();
+
+  // Seperator to the left
+  &::before {
+    content: "" ;
+    top: -12px ;
+    position: absolute ; 
+    height: 2px ;
+    width: 32px ;
+    margin: 0 11px ;
+    background-color: var(--interactive-normal);
+  }
+
+  // remove Seperator on subsequent Dms
+  ~ [style="opacity: 1; height: 56px; transform: scale(1);"] {
+    margin: 0 0 12px 0 ;
+
+    &::before { content: none }
+  }
+
+  // remove Seperator on Pending applications
+  // ~ .container_aa1bff::before { content: none } maybe keep it?
+
+  .pill_f36a5a { display: none }
+}
+// <- Dynamic
 // Serverbar <--
 
 // Additions -->
 // Channels list spacer for Server banner image
-.content__690c5 > div[style="height: 84px;"]:not([class]) { display: none }
+.content_eed6a8 > div[style="height: 84px;"]:not([class]) { display: none }
 
 // - Server options button
-.sidebar_e031be .container_f41675 {
+.sidebar_a4d4d9 .container_fd6364 {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -529,10 +562,10 @@
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
   // Options popout open
-  &.selected__987e6 { background-color: rgba(0, 0, 0, 0.2) }
+  &.selected_fd6364 { background-color: rgba(0, 0, 0, 0.2) }
   
   // container
-  .header__77c95 {
+  .header_fd6364 {
     display: flex ;
     padding: 0 5px ;
     height: 54px ;
@@ -541,15 +574,15 @@
   }
 
   // Server badge
-  .guildIconV2Container_ddc448 { display: none }
+  .guildIconV2Container_ed9816 { display: none }
   
   // Server name container
-  .headerContent__6fcc7 {
+  .headerContent_fd6364 {
     display: contents ;
   }
   
   // Server name
-  .name_e8e549 {
+  .name_fd6364 {
     display: block ;
     margin: 0 ;
     text-align: center ;
@@ -562,19 +595,19 @@
   }
   
   // Server icon (partnerd,..)
-  .guildIconContainer__3c180 { display: none }
+  .guildIconContainer_ed9816 { display: none }
   
   // Chevron icon
-  .button__84b6b { display: none }
+  .button_a79c58 { display: none }
   
   // Server banner image
-  .animatedContainer__0e828 { display: none }
+  .animatedContainer_fd6364 { display: none }
   
-  + .animatedBannerHoverLayer__3cef6 { display: none }
+  + .animatedBannerHoverLayer_fd6364 { display: none }
 }
 
 // - Search button (home)
-.privateChannels__9b518 .searchBar__621ec {
+.privateChannels_f0963d .searchBar_f0963d {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -586,7 +619,7 @@
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
   // Text
-  .searchBarComponent__8f95f {
+  .searchBarComponent_f0963d {
     height: 54px ;
     background: transparent ;
     color: var(--text-normal);
@@ -601,7 +634,7 @@
 }
 
 // - Discovery Text (button)
-.sidebar_e031be .discoverHeader__9d76e {
+.sidebar_a4d4d9 .discoverHeader_b992d4 {
   position: fixed ;
   width: 120px ;
   height: 54px ;
@@ -619,27 +652,27 @@
 
   @include shadow_effect("text_1");
   
-  & + .categoryItem__0608f {
+  & + .categoryItem_c72b37 {
      margin-top: 64px ;
   }
 }
 
 // - Server icon tooltip
-.layerContainer_a2fcaa {
+.layerContainer_cd0de5 {
 
   // Activitie cards in popout
-  .container_a88e31 .cards__3f65d {
+  .container_be6a5c .cards_be6a5c {
     display: none ;
   }
 
   // fix pointer stuck when cards are present.
-  > .layer__6b5c3:has(.cards__3f65d, .streamPreview__38008) {
+  > .layer_cd0de5:has(.cards_be6a5c, .streamPreview_cfbfb9) {
     margin-top: 3px ; // to make them same hight as regular tooltips
     pointer-events: none !important ;
   }
 }
 
-.tooltipContent_adb6d5 .guildNameText__2c549 {
+.tooltipContent_b6c360 .guildNameText_a6ae3c {
   // word-wrap: normal ; ?
   white-space: nowrap ;
 }

@@ -1,4 +1,4 @@
-// * app v0.1.7
+// * app v0.1.8
 @use 'mixins' as * ;
 
 body {
@@ -6,36 +6,36 @@ body {
 }
 
 // Layer transitions
-.layers_a23c37 > .layer_f7d46a { 
+.layers_a01fb1 > .layer_d4b6c5 { 
   transform: none !important ;
 }
 
-.base_c0676e { 
+.base_a4d4d9 { 
   height: 100% !important ;
 }
 
 // "Bot"/"server" Tag Indicator
-.botTag__4211a { 
+.botTag_a02df3 { 
   color: var(--text-normal);
   background-color: var(--background-secondary);
 }
 
 // General Scrollbar
-.app_b1f720 .scrollerBase_f742b2 { @include scrollbar() }
-.app_b1f720 .scrollerBase__65223 { @include scrollbar() }
+.app_bd26cc .scrollerBase_eed6a8 { @include scrollbar() }
+.app_bd26cc .scrollerBase_c49869 { @include scrollbar() }
 
 // Tab focus thing
-.focus-rings-ring, .focusRing__8e7bd {
+.focus-rings-ring, .focusRing_d0696b {
   box-shadow: none ;
   border-bottom: 3px solid var(--interactive-hover);
   border-radius: 0 ;
 }
 
 // Sidebar Panels (Profile, Activity,..)
-.sidebar_e031be .panels__58331 {
+.sidebar_a4d4d9 .panels_a4d4d9 {
   
   // Profile Container
-  .container_debb33 {
+  .container_b2ca13 {
     position: absolute ;
     height: 48px ;
     width: 240px ;
@@ -43,29 +43,29 @@ body {
     box-sizing: border-box ;
 
     // Pfp, name container
-    .avatarWrapper__500a6 {
+    .avatarWrapper_b2ca13 {
       margin: 6px 8px 6px 0 ;
       background: none ;
     }
 
     // Buttons
-    .button__581d0 {
+    .button_dd4f85 {
       background: none ;
     }
   }
   
   // Activity Container
-  .activityPanel_b73e7a {
+  .activityPanel_a4d4d9 {
     height: 32px ;
     padding: 6px 10px ;
     
     // Image
-    .gameIconWrapper__0d95a { 
+    .gameIconWrapper_bf1a22 { 
       height: 32px;
     }
     
     // Text
-    .title__4a7a9 { 
+    .title_d1da5f { 
       line-height: 32px;
     }
     
@@ -73,37 +73,37 @@ body {
   }
   
   // Voice Connection
-  .container_e1958d {
+  .container_adcaac {
     border: none ;
     padding: 0 0 0 8px ;
 
     // Voice channel info container
-    .connection__38593 {
+    .connection_adcaac {
       padding: 5px 0 ;
     }
 
     // Buttons container
-    .button_ae40a4 {
+    .button_f67531 {
       background: none ;
     }
 
 
     // -> With action buttons
-    &:has(.actionButtons__85e3c) {
+    &:has(.actionButtons_adcaac) {
       display: grid ;
       padding: 0 ;
       grid-template-columns: 100% ;
       contain: paint ;
       
       // Voice channel info container
-      .connection__38593 {
+      .connection_adcaac {
         order: 2 ;
         margin-left: 32px ;
         align-items: unset ;
       }
       
       // Connected users container (right click channel name for context option)
-      .voiceUsers__665a5 {
+      .voiceUsers_adcaac {
         height: 30px ;
         padding: 3px 8px ;
         margin: 0 ;
@@ -112,14 +112,14 @@ body {
         
         &::-webkit-scrollbar { display: none }
         
-        ~ .actionButtons__85e3c:after {
+        ~ .actionButtons_adcaac:after {
           bottom: 42px ;
         }
       }
     }
 
     // Voice channel button container
-    .actionButtons__85e3c {
+    .actionButtons_adcaac {
       display: inline-flex ;
       height: 0 ;
       padding: 0 ;
@@ -155,14 +155,14 @@ body {
       }
       
       // Buttons container
-      .button_b82d53 {
+      .button_adcaac {
         width: max-content ;
         padding: 0 12px ;
         background: none ;
         color: var(--interactive-normal);
         z-index: 1 ;
         
-        &:not(.fauxDisabled_daee54):hover {
+        &:not(.fauxDisabled_adcaac):hover {
           color: var(--interactive-hover);
         }
       }
@@ -183,7 +183,7 @@ body {
   }
 
   // Discovery
-  &.searchBox__02d0b svg {
+  &.searchBox_f69601 svg {
     color: hsl(var(--white-500-hsl)/.3) !important;
 
     &.clearIcon__21453:hover {
@@ -191,10 +191,10 @@ body {
     }
    }
 
-  .searchBoxInput__74f29 {
+  .searchBoxInput_f69601 {
     color: var(--text-normal) !important;
   }
 
   // App direcoty
-  // &.search__24107.searchBar__9a95f { }
+  // &.search_aabd24.searchBar_a0e1d7 { }
 }

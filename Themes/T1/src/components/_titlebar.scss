@@ -1,4 +1,4 @@
-// * titlebar v0.1.8
+// * titlebar v0.1.9
 // Header (Chat / Home tabs) | Titlebar | Notifications
 @use 'mixins' as * ;
 
@@ -6,10 +6,10 @@
 // - Toolbar search
 @mixin TB_Search () {
   // Searchbar inner
-  .search_ac353c {
+  .search_a46bef {
     
     // container
-    .searchBar__5a20a {
+    .searchBar_a46bef {
       width: 20px ;
       background: none ;
       border-radius: 0 ;
@@ -17,18 +17,18 @@
     }
     
     // Buttons container
-    .iconLayout__9d9a4 {
+    .iconLayout_effbe2 {
       width: 16px ;
     }
     
     // Icon
-    .icon__5c8c7 {
+    .icon_effbe2 {
       color: var(--interactive-normal);
       cursor: pointer ;
       
       transform: none ;
 
-      &:not(.visible__720ac) {
+      &:not(.visible_effbe2) {
         pointer-events: none ;
       }
 
@@ -38,14 +38,14 @@
     }
     
     // Searchbar open
-    &.open_d3ab4e {
+    &.open_a46bef {
       
-      .searchBar__5a20a {
+      .searchBar_a46bef {
         width: 240px ;
         border-bottom: 1px solid var(--header-secondary);
       }
       
-      .icon__5c8c7:first-child {
+      .icon_effbe2:first-child {
         pointer-events: none ;
       }
     }
@@ -53,37 +53,37 @@
 }
 
 // - General Header
-.container__26baa { // also effects split view chat title bar
+.container_e44302 { // also effects split view chat title bar
   box-shadow: none ;
   
   // - Main content
-  .children_cde9af {
+  .children_e44302 {
     
     // "#", friends, "@", speaker - icon
-    .iconWrapper_de6cd1 { display: none }
+    .iconWrapper_e44302 { display: none }
     
     // random line (left)
-    .divider_bdb894 { display: none }
+    .divider_e44302 { display: none }
     
     // "AKA" icon if chatpartner has a nickname in a server
     .akaBadge__27cd4 { display: none }
 
     // Dm Partner / Channel name container
-    .titleWrapper_d6133e {
+    .titleWrapper_e44302 {
       margin: 0 ;
       max-width: 100% ;
       padding-right: 5px ;
       line-height: 0 ;
       
       // Name
-      .title__84e16 {
+      .title_e44302 {
         display: inline-block ;
         max-width: 100% ;
         color: var(--interactive-hover);
         text-overflow: ellipsis ;
       }
       
-      &:has(~ .topic__16ae3) {
+      &:has(~ .topic_bf3bbb) {
         max-width: 50% ;
         padding: 0 ;
       }
@@ -94,7 +94,7 @@
   }
   
   // - rightside iconbar
-  .toolbar__62fb5 {
+  .toolbar_e44302 {
     @mixin TB_icons () {
       margin: 0 9px ;
 
@@ -110,7 +110,7 @@
     }
     
     // Icons
-    .iconWrapper_de6cd1 {
+    .iconWrapper_e44302 {
       display: flex ;
       align-items: center ;
       
@@ -121,26 +121,26 @@
     @include TB_Search();
     
     // Voicecall view buttons
-    .button__581d0 { @include TB_icons() }
+    .button_dd4f85 { @include TB_icons() }
     
     // Discord "Help" (web-link) icon
-    .anchor_c8ddc0 { display: none }
+    .anchor_af404b { display: none }
   }
 }
 
 // - Chat (Server / DMs )
-.container__26baa {
+.container_e44302 {
   
   // - Channel name / topic
-  .children_cde9af {
+  .children_e44302 {
     
     // Channel description
-    .topic__16ae3 {
+    .topic_bf3bbb {
       margin: 0 8px ;
       text-align: center ;
       
       // Mentions/Channels, Weblinks
-      .interactive, .anchor_c8ddc0 { 
+      .interactive, .anchor_af404b { 
         pointer-events: none ;
         opacity: .8 ;
       }
@@ -148,14 +148,14 @@
       &:hover { 
         color: var(--interactive-hover);
         
-        .interactive, .anchor_c8ddc0 { 
+        .interactive, .anchor_af404b { 
           opacity: 1 ;
         }
       }
     }
     
     // Follow Announcement channel button
-    .followButton_eb1ca8 {
+    .followButton_a7d72e {
       margin: 0 0 0 8px ;
 
       @include Btn("background");
@@ -164,23 +164,23 @@
 }
 
 // - Tab/Title-bar Friends(home) / msg requests 
-// .container_bd15da .container__26baa {
-.container__26baa {
+// .container_c2739c .container_e44302 {
+.container_e44302 {
   
   // - Nav bar / Friends tabs (children)
-  .topPill__63ad4 {
+  .topPill_a0 {
     margin: 0 auto ;
     padding-right: 40px ;
     
     // Tabs
-    .item_e4ca95, .item__48dda {
+    .item_c2739c, .item_a0 {
       background: none !important ;
 
-      @include Mentions_icon('.numberBadge_c1210c');
+      @include Mentions_icon('.numberBadge_df8943');
     }
 
     // Add friend Tab
-    .item_e4ca95.addFriend__4c0a2 {
+    .item_c2739c.addFriend_c2739c {
       position: absolute ;
       right: 0 ;
       width: 24px ;
@@ -212,17 +212,17 @@
   }
 
   // Toolbar 
-  .toolbar__62fb5 {
+  .toolbar_e44302 {
     
     // Create group dm icon (otherwise gets hidden when window width is below 940px)
-    .inviteToolbar__7cc96 {
+    .inviteToolbar_c2739c {
       display: flex ;
     }
   }
 }
 
 // - Message requests
-#app-mount .container_d4d35b .container__26baa {
+#app-mount .container_f3abf4 .container_e44302 {
   // Navbar
   .item-3XjbnG {
     background: none ;
@@ -232,12 +232,12 @@
 // -- OS specific stuff
 html {
   // - Windows
-  &.platform-win .titleBar__710b0 {
+  &.platform-win .titleBar_a934d8 {
     box-shadow: 0 .5px 0 var(--header-secondary);
     z-index: 500 ;
 
     // Watermark
-    .wordmarkWindows_ffbc5e {
+    .wordmarkWindows_a934d8 {
 
       path:not(:first-child) { display: none }
 
@@ -257,7 +257,7 @@ html {
   color: var(--text-normal);
 }
 
-.bd-notice-button, .notice__5fd4c .button__344e7, .notice_a687ab .button__6c73a {
+.bd-notice-button, .notice__5fd4c .button_dd5a33, .notice_a50047 .button_a50047 {
   border: none ;
   color: var(--header-secondary);
   background: var(--background-modifier-selected);
@@ -272,7 +272,7 @@ html {
 .notice__5fd4c {
 
   // Main text
-  .header__8f369 {
+  .header_dd5a33 {
     color: var(--text-normal);
   }
 

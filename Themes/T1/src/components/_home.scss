@@ -1,54 +1,54 @@
-// * home v0.1.7
+// * home v0.1.8
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
 // -> Friends Tab
-.tabBody_a90ea8 {
+.tabBody_c2739c {
 
   // Seperator line top
   &::before { display: none }
 
   // Friendslist searchbar
-  .searchBar__310d8 {
+  .searchBar_e0840f {
     background: var(--background-modifier-accent);
   }
 
   // -> Friendslist
-  .peopleList_d2f527 {
+  .peopleList_e0840f {
     margin: 0 0 0 20px;
     padding: 0;
 
     @include scrollerFadeOut();
 
     // "Friends online" Count
-    .title_c42cad { display: none }
+    .title_a1cafe { display: none }
 
     // -> User item
     // -> General
-    .peopleListItem_dab480 {
+    .peopleListItem_d51464 {
       // border: none; // maybe, idk ??
 
       // -> Username
-      .userInfo__83819 {
+      .userInfo_f3939d {
 
         // Username, Status text container
-        .text__88bbd {
+        .text_f3939d {
           width: 100% ;
         }
 
         // Username/ # Identifier
-        .discriminator__463fe {
+        .discriminator_f3939d {
           width: 0 ;
         }
       }
 
-      &:hover .discriminator__463fe {
+      &:hover .discriminator_f3939d {
         width: auto ;
         visibility: visible ;
       }
       // <- Username
 
-      .actionButton__2b4bb {
+      .actionButton_e01b91 {
         background: none ;
       }
     }
@@ -65,7 +65,7 @@
       row-gap: 35px;
       grid-column-gap: 10px;
 
-      .peopleListItem_dab480 {
+      .peopleListItem_d51464 {
         height: 62px !important;
         width: 300px;
         margin: 0;
@@ -83,7 +83,7 @@
         &:hover { @include shadow_effect("box_1") }
 
         // Main Container
-        .userInfo__83819 {
+        .userInfo_f3939d {
           margin: 0px 12px;
           width: -webkit-fill-available;
           overflow: visible !important;
@@ -93,7 +93,7 @@
 
         // -> Avatar, Status icon
         // Avatar pfp
-        .avatar__8986c {
+        .avatar_f3939d {
 
           // SVG Mask container
           foreignObject,
@@ -102,12 +102,12 @@
             overflow: visible;
           }
 
-          .svg_a6bf1c {
+          .svg_c51b4e {
             contain: unset;
           }
 
           // Image
-          .avatar__991e2 {
+          .avatar_c51b4e {
             border-radius: 5px;
 
             &:not([src*=".gif"]) {
@@ -130,7 +130,7 @@
 
         // -> Status text
         // Activity (hiding the "playing" behind background) 
-        .activity_f466d8 .text_bd79a3 {
+        .activity_f7ebfd .text_f7ebfd {
           width: 100%;
           position: relative;
 
@@ -143,41 +143,41 @@
         }
 
         // Activity icon, idk
-        .icon__1ab4f,
-        .textRuler__66fea {
+        .icon_ad923e,
+        .textRuler_ad923e {
           display: none
         }
         // <- Username, Status text
 
         // -> User actions
         // Normal
-        .actions_bd37ed { display: none }
+        .actions_e05dae { display: none }
 
         // User item container Blocked/Pending
-        .listItemContents_b18e9d,
-        .listItemContents_c8a1c1 {
+        .listItemContents_f71b83,
+        .listItemContents_ccc740 {
           width: -webkit-fill-available;
 
           // Container (Avatar, Name, Activity)
-          .userInfo__83819 {
+          .userInfo_f3939d {
             overflow: hidden;
             flex: 1 1 auto;
           }
 
           // Unblock btn
-          .actionButton__2b4bb {
+          .actionButton_e01b91 {
             display: none;
             margin: 0 10px 0 0;
           }
 
           // "Blocked" text
-          .subtext__72c72 {
+          .subtext_f3939d {
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
           }
 
-          &:hover .actionButton__2b4bb {
+          &:hover .actionButton_e01b91 {
             display: flex;
           }
         }
@@ -191,11 +191,11 @@
   // <- Friendslist
 
   // -> Friends activity sidebar
-  .nowPlayingColumn_b025fe {
+  .nowPlayingColumn_c2739c {
     // display: block ;
     display: none;
 
-    .emptyCard__204d9 {
+    .emptyCard_f02fcf {
       background: none;
     }
   }
@@ -206,44 +206,44 @@
 // <- Friends Tab
 
 // -> Add Friend
-.tabBody_a90ea8 {
+.tabBody_c2739c {
 
-  .addFriendInputWrapper__2b30b {
+  .addFriendInputWrapper_de812f {
     margin-top: 32px;
     border: none;
     background: none;
     border-radius: 0;
 
-    .addFriendInput__12af4 {
+    .addFriendInput_de812f {
       padding: 8px 10px;
       border-bottom: 1px solid transparent;
       border-radius: 5px;
       background: var(--background-modifier-selected);
     }
 
-    .addFriendHint__6eee6 {
+    .addFriendHint_de812f {
       padding: 8px 10px;
     }
 
-    .input__3006b {
+    .input_de812f {
       height: 20px;
     }
 
-    &:focus-within .addFriendInput__12af4 {
+    &:focus-within .addFriendInput_de812f {
       border-color: var(--interactive-normal);
       background: none;
       border-radius: 0px;
       box-shadow: none;
     }
 
-    .button__581d0 {
+    .button_dd4f85 {
       @include Btn("background");
     }
   }
 
   // find more things thing
-  .grid__8fc4b {
-    .container__048f4 {
+  .grid_aef5fd {
+    .container_aef5fd {
       background: var(--background-modifier-selected);
       border: none;
     }
@@ -253,9 +253,9 @@
 // <- Add Friend
 
 // -> Nitro subscription page
-.applicationStore__444b9 {
+.applicationStore_cecc86 {
 
-  .headerBar__3337a {
+  .headerBar_d175a8 {
     display: none
   }
 
@@ -267,10 +267,10 @@
 // <- Nitro subscription page
 
 // -> Profile decorations shop
-.shop_b31ed2 {
+.shop_e77fa3 {
 
   // Floating ad
-  .countDownWrapper__60b05 {
+  .countDownWrapper_cd5584 {
     left: calc(50% + 120px);
     bottom: 20px ;
   }
@@ -279,12 +279,12 @@
 
 
 // -> DMs Sidebar
-.privateChannels__9b518 {
+.privateChannels_f0963d {
   top: 48px;
   margin-bottom: 48px;
 
   // Scroller container
-  .scroller__89969 {
+  .scroller_c47fa9 {
     padding: 0 10px 0 0 !important;
 
     &::-webkit-scrollbar {
@@ -293,36 +293,36 @@
   }
 
   // Create Group DM Button (not necessary, there is one at the top right)
-  .privateChannelRecipientsInviteButtonIcon__459c2 {
+  .privateChannelRecipientsInviteButtonIcon_c47fa9 {
     display: none
   }
 
   // Sidebar item container
 
   // Channel except Home tabs
-  .privateChannelsHeaderContainer_b22dc9 ~ .channel__0aef5 {
+  .privateChannelsHeaderContainer_c47fa9 ~ .channel_c91bad {
     height: 38px !important;
     margin: 6px 0 !important;
   }
 
-  .channel__0aef5 {
+  .channel_c91bad {
     padding: 0;
     border-radius: 0;
 
-    @include Mentions_icon(".numberBadge_c1210c");
+    @include Mentions_icon(".numberBadge_df8943");
 
     // Second container
-    .interactive__3e804 {
+    .interactive_c91bad {
       background: none;
       height: 38px;
       margin-left: 5px;
 
       // Third container
-      .layout__59abc {
+      .layout_f9647d {
         margin-left: 5px;
       }
 
-      &.selected__37292 {
+      &.selected_f5eb4b {
         border-left: 3px solid var(--interactive-hover);
       }
 
@@ -334,13 +334,13 @@
 
     // Nitro Ads
     // .offerBadge-1KDtMz, .premiumTrialBadge-pEqntF, 
-    .badgeIconPrivateMessages__26127 {
+    .badgeIconPrivateMessages_d98ec4 {
       display: none
     }
   }
 
   // "new" badge on shop
-  .linkButton__9da2c .textBadge_f05120 {
+  .linkButton_c91bad .textBadge_f05120 {
     display: none
   }
 }
