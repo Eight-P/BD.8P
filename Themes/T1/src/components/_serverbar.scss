@@ -1,4 +1,4 @@
-// * serverbar v0.1.10
+// * serverbar v0.1.11
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -666,7 +666,7 @@
   }
 
   // fix pointer stuck when cards are present.
-  > .layer_cd0de5:has(.cards_be6a5c, .streamPreview_cfbfb9) {
+  > .layer_cd0de5:has(.cards_be6a5c, .streamPreview_cfbfb9, .flowerStarContainer_ff7d90) {
     margin-top: 3px ; // to make them same hight as regular tooltips
     pointer-events: none !important ;
   }

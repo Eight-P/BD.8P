@@ -1,4 +1,4 @@
-// * popouts v0.1.13
+// * popouts v0.1.14
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -600,16 +600,16 @@
       }
     }
     
-    .divider_fc5f50 {
+    .divider_c2654d {
       border: none ;
 
       // muted unread channels
-      &.divider_f12b26 {
+      &.divider_c06487 { // why ?
         margin: 30px 0 20px 0 ;
       }
 
       // Date 
-      .content_fc5f50 { background: none }
+      .content_c2654d { background: none }
 
       // Seperator lines
       &::before, &::after {
