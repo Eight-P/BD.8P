@@ -1,4 +1,4 @@
-// * chat v0.1.18
+// * chat v0.1.18b
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -152,6 +152,7 @@
     margin: 20px 0 !important;
     
     // date 
+    .content_fc5f50,
     .content_c2654d { 
       height: fit-content ;
       transform: translateY(-50%);
@@ -167,12 +168,14 @@
     }
     
     // new messages seperator
+    &.isUnread_fc5f50,
     &.isUnread_c2654d {
       &::before, &::after {
         background: var(--red);
         opacity: .7 ;
       }
       
+      .unreadPill_fc5f50,
       .unreadPill_c2654d {
         top: 0 ;
         padding: 0 4px ;
@@ -188,6 +191,7 @@
     background: none !important ;
     
     // messages
+    > .wrapper_b211c6,
     > .wrapper_b75bb9 { 
       background: none !important ;
     }
@@ -500,6 +504,7 @@ $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
 $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
 
 // .chatContent_a7d72e .message_d5deea.cozy_ec86aa {
+.cozy_ec86aa,
 .cozy_f9f2ca {
   background: none !important ;
   padding: 2px 32px 0px 4.125rem !important ;
@@ -509,10 +514,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   &:before { display: none }
   
   // Message container
+  .contents_ec86aa,
   .contents_f9f2ca {
     padding: 0 0 2px 6px ;
     
     // Msg Header (Name, Date, ..)
+    .header_ec86aa,
     .header_f9f2ca { 
       padding: 2px 0 ;
       margin-left: 0 ;
@@ -522,11 +529,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // -> Message contents
   // Edit message
+  .channelTextArea_d0696b .scrollableContainer_d0696b,
   .channelTextArea_d5deea .scrollableContainer_d0696b {
     background: $BG_Embed ;
   }
 
   // Preview of replied msg
+  .repliedMessage_ec86aa,
   .repliedMessage_f9f2ca { 
     height: 20px ;
   }
@@ -661,10 +670,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Audio file 
+  .wrapperAudio_f316dd,
   .wrapperAudio_f72aac {
     background: $BG_Embed ;
     border: none ;
 
+    .audioControls_f316dd,
     .audioControls_f72aac {
       background: $BG_Embed-alt ;
     }
@@ -744,18 +755,21 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // -> MSg Types
   // Mention
+  &.mentioned_d5deea .contents_ec86aa,
   &.mentioned_d5deea .contents_f9f2ca {
     border-left: solid 2px var(--border-mentioned);
     background: var(--background-mentioned);
   }
   
   // Clyde (client-side info/error messages)
+  &.ephemeral_d5deea .contents_ec86aa,
   &.ephemeral_d5deea .contents_f9f2ca {
     border-left: solid 2px var(--Blurple);
     background: var(--Blurple-light);
   }
   
   // Selected for reply
+  &.replying_d5deea .contents_ec86aa,
   &.replying_d5deea .contents_f9f2ca {
     border-left: solid 2px var(--header-secondary);
     background: var(--background-modifier-hover);
@@ -772,6 +786,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Thread
+  &.hasThread_ec86aa .container_c15230,
   &.hasThread_f9f2ca .container_c15230 {
     background: none ;
   }
@@ -779,6 +794,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // -> Message Buttons 
   // Main container / Msg highlight hover effect
+  .buttonContainer_ec86aa,
   .buttonContainer_f9f2ca {
     position: static ;
     
