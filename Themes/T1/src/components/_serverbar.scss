@@ -1,4 +1,4 @@
-// * serverbar v0.1.11
+// * serverbar v0.1.12
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -510,10 +510,10 @@
 
   .pendingIcon_ae3d49 {
     opacity: .75 ;
+  }
 
-    &:hover {
-      opacity: 1 ;
-    }
+  .expandedFolderIconWrapper_bc7085:hover .pendingIcon_ae3d49 {
+    opacity: 1 ;
   }
 }
 

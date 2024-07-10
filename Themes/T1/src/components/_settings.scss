@@ -1,4 +1,4 @@
-// * settings v0.1.11
+// * settings v0.1.12
 // Client / Guilds / Channels
 @use 'mixins' as * ;
 
@@ -16,23 +16,6 @@ $T1_v: null !default ;
   margin-bottom: 8px !important;
   text-transform: none !important;
 }
-
-// BD addon card
-// .bd-addon-card#T1-card {
-
-//   .bd-version {
-//     pointer-events: none ;
-
-//     &::before {
-//       content: " F";
-//       display: inline ;
-//     }
-
-//     &::after {
-//       content: " | Tv#{$T1_v} ";
-//     }
-//   }
-// }
 // <- Theme version info
 
 // -> General Settings
@@ -203,15 +186,15 @@ $T1_v: null !default ;
   }
 
   // -> Edit Roles
+  // Scrollbar from sidebar
+  .contentRegionScroller_c25c6d:has(.page_e8251c)::-webkit-scrollbar {  display: none }
+
   .contentColumn_c25c6d > .page_e8251c {
     
     // Sidebar container main
     .sidebar_e87574 {
       height: fit-content ;
     }
-    
-    // Roles list Sidebar
-    .list_e87574::-webkit-scrollbar { display: none }
     
     // Left side main content container (why did i do this ?)
     .contentContainer_e8251c {

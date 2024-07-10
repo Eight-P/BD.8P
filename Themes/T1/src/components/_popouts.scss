@@ -1,4 +1,4 @@
-// * popouts v0.1.14b
+// * popouts v0.1.15
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -54,10 +54,10 @@
 
   // -> Popout (Gifs)
   #gif-picker-tab-panel {
-    .container__33507 {
+    .header_b56bbc {
       background: var(--background-tertiary);
 
-      .input__48d49 {
+      .input_c18ec9 {
         border-bottom: 1px solid var(--interactive-muted);
       }
     }

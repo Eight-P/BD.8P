@@ -1,5 +1,6 @@
-// * background v0.2.10
+// * background v0.2.11
 // Background image + Transparency
+@use "sass:string";
 
 // Main background image
 #app-mount::before {
@@ -36,11 +37,12 @@ $Classes: (
   // Forum channel
   ".container_a6d69a",
   // Channel & Roles
-  ".container_f1fd9c",
+  "!.container_f1fd9c", ".pageBody_c2efea",
   // Channel & Roles inner
-  ".mainTableContainer_e23072",
+  ".scrollerContainer_c6b11b", 
   // Member Safety Page
   ".container_d20375",
+  ".mainTableContainer_e23072",
   // Stage view
   ".container_ed4410", ".callContainer_ed4410",
   ".scroller_bb12d2", ".rowContainer_f3a5b1",
@@ -81,7 +83,7 @@ $Classes: (
   // Voice-chat view
   ".wrapper_d880dc",
   // Title bar
-  ".container_e44302",
+  "!.container_e44302",
   // Server Boost page
   ".scroller_a50853", ".header_a50853"
   // Container for some modals (also effects some popouts)
@@ -89,7 +91,17 @@ $Classes: (
 );
 
 
-@each $class in $Classes { #app-mount #{$class} { background: none } }
+@each $class in $Classes { 
+
+  @if string.slice($class, 1, 1) == "!" {
+    #app-mount #{string.slice($class, 2, -1)} { 
+      background: none !important
+    }
+  }
+  @else {
+    #app-mount #{$class} { background: none }
+  }
+}
 
 body { background: none }
 
