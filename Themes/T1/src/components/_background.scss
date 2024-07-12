@@ -1,4 +1,4 @@
-// * background v0.2.11
+// * background v0.2.12
 // Background image + Transparency
 @use "sass:string";
 
@@ -31,21 +31,25 @@ $Classes: (
   ".app_a01fb1",
   ".layer_d4b6c5",
   // Text chat
-  ".chat_a7d72e", ".chatContent_a7d72e",
+  ".chat_a7d72e",
+  ".chatContent_a7d72e",
   // Voicecall view
   ".callContainer_d880dc",
   // Forum channel
   ".container_a6d69a",
   // Channel & Roles
-  "!.container_f1fd9c", ".pageBody_c2efea",
+  "!.container_f1fd9c",
+  ".pageBody_c2efea",
   // Channel & Roles inner
   ".scrollerContainer_c6b11b", 
   // Member Safety Page
   ".container_d20375",
   ".mainTableContainer_e23072",
   // Stage view
-  ".container_ed4410", ".callContainer_ed4410",
-  ".scroller_bb12d2", ".rowContainer_f3a5b1",
+  ".container_ed4410",
+  ".callContainer_ed4410",
+  ".scroller_bb12d2",
+  ".rowContainer_f3a5b1",
   // Sidebar
   ".sidebar_a4d4d9",
   // Server channels container
@@ -55,7 +59,9 @@ $Classes: (
   // Sidebar Panels 
   ".panels_a4d4d9",
   // User profile container, Voice channel, Activity
-  ".container_b2ca13", ".container_adcaac", ".activityPanel_a4d4d9",
+  ".container_b2ca13",
+  ".container_adcaac",
+  ".activityPanel_a4d4d9",
   // DMs Sidebar
   ".privateChannels_f0963d",
   // Home Friends list
@@ -63,7 +69,8 @@ $Classes: (
   // Nitro store
   ".applicationStore_cecc86",
   // Profile decorations shop (Home)
-  ".shop_e77fa3", ".pageWrapper_e77fa3",
+  ".shop_e77fa3",
+  ".pageWrapper_e77fa3",
   // Discovery
   ".pageWrapper_a3a4ce",
   // Friends Activity Sidebar
@@ -71,8 +78,8 @@ $Classes: (
   ".nowPlayingColumn_c2739c > .container_bf550a",
   ".nowPlayingColumn_c2739c > .emptyCard_f02fcf",
   // Pretty much every scroller
-  ".app_bd26cc .scrollerBase_eed6a8", //old
-  ".app_bd26cc .scrollerBase_c49869", // new
+  ".app_bd26cc .scrollerBase_eed6a8",
+  // ".app_bd26cc .scrollerBase_c49869", // might be gone
   // Server bar
   ".guilds_a4d4d9",
   // Settings
@@ -83,11 +90,10 @@ $Classes: (
   // Voice-chat view
   ".wrapper_d880dc",
   // Title bar
-  "!.container_e44302",
+  "!.container_fc4f04",
   // Server Boost page
-  ".scroller_a50853", ".header_a50853"
-  // Container for some modals (also effects some popouts)
-  // ".root_f9a4c9"
+  ".scroller_a50853",
+  ".header_a50853"
 );
 
 
@@ -104,5 +110,3 @@ $Classes: (
 }
 
 body { background: none }
-
-

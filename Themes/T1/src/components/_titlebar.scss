@@ -1,4 +1,4 @@
-// * titlebar v0.1.9
+// * titlebar v0.1.10
 // Header (Chat / Home tabs) | Titlebar | Notifications
 @use 'mixins' as * ;
 
@@ -53,36 +53,37 @@
 }
 
 // - General Header
-.container_e44302 { // also effects split view chat title bar
+.container_fc4f04 { // also effects split view chat title bar
   box-shadow: none ;
   
   // - Main content
-  .children_e44302 {
+  .children_fc4f04 {
     
     // "#", friends, "@", speaker - icon
-    .iconWrapper_e44302 { display: none }
+    .iconWrapper_fc4f04 { display: none }
     
     // random line (left)
-    .divider_e44302 { display: none }
+    .divider_fc4f04 { display: none }
     
     // "AKA" icon if chatpartner has a nickname in a server
-    .akaBadge__27cd4 { display: none }
+    .akaBadge_d6c26f { display: none }
 
     // Dm Partner / Channel name container
-    .titleWrapper_e44302 {
+    .titleWrapper_fc4f04 {
       margin: 0 ;
       max-width: 100% ;
       padding-right: 5px ;
       line-height: 0 ;
       
       // Name
-      .title_e44302 {
+      .title_fc4f04 {
         display: inline-block ;
         max-width: 100% ;
         color: var(--interactive-hover);
         text-overflow: ellipsis ;
       }
       
+      // with channel description
       &:has(~ .topic_bf3bbb) {
         max-width: 50% ;
         padding: 0 ;
@@ -94,7 +95,7 @@
   }
   
   // - rightside iconbar
-  .toolbar_e44302 {
+  .toolbar_fc4f04 {
     @mixin TB_icons () {
       margin: 0 9px ;
 
@@ -110,7 +111,7 @@
     }
     
     // Icons
-    .iconWrapper_e44302 {
+    .iconWrapper_fc4f04 {
       display: flex ;
       align-items: center ;
       
@@ -121,7 +122,7 @@
     @include TB_Search();
     
     // Voicecall view buttons
-    .button_dd4f85 { @include TB_icons() }
+    .button_ae6b8e { @include TB_icons() }
     
     // Discord "Help" (web-link) icon
     .anchor_af404b { display: none }
@@ -165,7 +166,7 @@
 
 // - Tab/Title-bar Friends(home) / msg requests 
 // .container_c2739c .container_e44302 {
-.container_e44302 {
+.container_c2739c {
   
   // - Nav bar / Friends tabs (children)
   .topPill_a0 {
