@@ -1,4 +1,4 @@
-// * background v0.2.12
+// * background v0.2.13
 // Background image + Transparency
 @use "sass:string";
 
@@ -72,6 +72,7 @@ $Classes: (
   ".shop_e77fa3",
   ".pageWrapper_e77fa3",
   // Discovery
+  ".sidebarContainer_a3a4ce",
   ".pageWrapper_a3a4ce",
   // Friends Activity Sidebar
   ".nowPlayingColumn_c2739c",
@@ -84,7 +85,9 @@ $Classes: (
   ".guilds_a4d4d9",
   // Settings
   ".standardSidebarView_c25c6d",
+  ".sidebarRegionScroller_c25c6d",
   ".contentRegion_c25c6d",
+  ".contentRegionScroller_c25c6d",
   // Roles Settings
   ".page_e8251c .titleContainer_e87574",
   // Voice-chat view
