@@ -1,4 +1,4 @@
-// * background v0.2.13
+// * background v0.2.14
 // Background image + Transparency
 @use "sass:string";
 
@@ -64,12 +64,15 @@ $Classes: (
   ".activityPanel_a4d4d9",
   // DMs Sidebar
   ".privateChannels_f0963d",
+  // Dms User panel
+  ".userPanelOuter_c69a7b",
   // Home Friends list
   ".sidebar_a4d4d9 ~ .container_c2739c",
   // Nitro store
   ".applicationStore_cecc86",
   // Profile decorations shop (Home)
   ".shop_e77fa3",
+  ".shopScroll_e77fa3",
   ".pageWrapper_e77fa3",
   // Discovery
   ".sidebarContainer_a3a4ce",
@@ -80,7 +83,7 @@ $Classes: (
   ".nowPlayingColumn_c2739c > .emptyCard_f02fcf",
   // Pretty much every scroller
   ".app_bd26cc .scrollerBase_eed6a8",
-  // ".app_bd26cc .scrollerBase_c49869", // might be gone
+  ".app_bd26cc .scrollerBase_c49869",
   // Server bar
   ".guilds_a4d4d9",
   // Settings

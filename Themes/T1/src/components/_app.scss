@@ -1,4 +1,4 @@
-// * app v0.1.8
+// * app v0.1.9
 @use 'mixins' as * ;
 
 body {
@@ -21,8 +21,8 @@ body {
 }
 
 // General Scrollbar
-.app_bd26cc .scrollerBase_eed6a8 { @include scrollbar() }
-.app_bd26cc .scrollerBase_c49869 { @include scrollbar() }
+.app_bd26cc .scrollerBase_eed6a8:not(.none_eed6a8) { @include scrollbar() } 
+.app_bd26cc .scrollerBase_c49869:not(.none_c49869) { @include scrollbar() }
 
 // Tab focus thing
 .focus-rings-ring, .focusRing_d0696b {
