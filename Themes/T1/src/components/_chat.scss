@@ -1,4 +1,4 @@
-// * chat v0.1.19
+// * chat v0.1.20
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -6,12 +6,12 @@
 .content_a7d72e::before { display: none }
 
 // -> Mentions (Channel, User, Role, Discord cdn File)
-.wrapper_a7c28c {
+.wrapper_bf1b19 {
   color: var(--Blurple);
   background: none ;
 
   // Role, User
-  &.roleMention_d6076c, &.mention:not(:hover) {
+  &.roleMention_f8f345, &.mention:not(:hover) {
     background: none !important ;
   }
 
@@ -503,8 +503,6 @@
 $BG_Embed: var(--background-modifier-selected); // Code blocks, ..
 $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
 
-// .chatContent_a7d72e .message_d5deea.cozy_ec86aa {
-// .cozy_ec86aa,
 .cozy_f9f2ca {
   background: none !important ;
   padding: 2px 32px 0px 4.125rem !important ;
@@ -514,12 +512,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   &:before { display: none }
   
   // Message container
-  // .contents_ec86aa,
   .contents_f9f2ca {
     padding: 0 0 2px 6px ;
     
     // Msg Header (Name, Date, ..)
-    // .header_ec86aa,
     .header_f9f2ca { 
       padding: 2px 0 ;
       margin-left: 0 ;
@@ -529,19 +525,17 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // -> Message contents
   // Edit message
-  // .channelTextArea_d0696b .scrollableContainer_d0696b,
   .channelTextArea_d5deea .scrollableContainer_d0696b {
     background: $BG_Embed ;
   }
 
   // Preview of replied msg
-  // .repliedMessage_ec86aa,
   .repliedMessage_f9f2ca { 
     height: 20px ;
   }
 
   // File
-  .attachment_a4623d {
+  .attachment_b52bef {
     background: $BG_Embed ;
     border: none ;
   }
@@ -558,15 +552,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // Publish Announcement msg
   .bumpBox_ca33de {
     background: $BG_Embed ;
-  }
-
-  // Discord Quest embed old
-  .questsCard_c366aa .outerContainer_d7df05 {
-    background: $BG_Embed ;
-
-    .button_dd4f85  {
-      @include Btn(var(--background-modifier-accent), white);
-    }
   }
 
   // Discord Quest embed
@@ -586,7 +571,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     // filter: grayscale(1.0) brightness(1.15);
   }
   
-  // Poll
+  // -> Poll
   .container_a1531c {
     background: $BG_Embed ;
 
@@ -619,7 +604,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
     }
 
-    // -> Footer
+    // -> Poll Footer
     // btn: "Show results", number of votes
     .tertiaryAction_a1531c, .detailsTextButton_a1531c {
       background: none ;
@@ -645,21 +630,22 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     .buttonPresentation_a1531c {
       @include Btn(var(--background-modifier-accent), white);
     }
-    // <- Footer
+    // <- Poll Footer
   }
+  // <- Poll
 
   // Discord embeds (Server invite, Server Event, ...)
-  .wrapper_b9fe76 {
+  .wrapper_a71a1c {
     background: $BG_Embed ;
     
-    .button_b9fe76, .button_a75489 {
+    .button_dd4f85 {
 
       @include Btn(var(--background-modifier-accent), white);
     }
   }
   
   // Code block
-  code:not(.codeView_ad9cbd, .inline) {
+  code:not(.codeView_d8e2d0, .inline) {
     background: $BG_Embed ;
     border: none ;
   }
@@ -670,12 +656,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Audio file 
-  // .wrapperAudio_f316dd,
   .wrapperAudio_f72aac {
     background: $BG_Embed ;
     border: none ;
 
-    // .audioControls_f316dd,
     .audioControls_f72aac {
       background: $BG_Embed-alt ;
     }
@@ -694,31 +678,31 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .embedWrapper_b558d0 {
     
     // File content, embed options
-    .textContainer_ad9cbd, .footer_ad9cbd {
+    .textContainer_d8e2d0, .footer_d8e2d0 {
       background: $BG_Embed ;
       border: none ;
     }
 
-    .textContainer_ad9cbd code {
+    code {
       background: none ;
     }
 
-    .footer_ad9cbd {
+    .footer_d8e2d0 {
       border-top: 1px solid $BG_Embed ;
     }
     
     // File name
-    .attachmentName_ad9cbd {
+    .attachmentName_d8e2d0 {
       color: var(--header-secondary);
     }
     
     // File size
-    .formattedSize_ad9cbd {
+    .formattedSize_d8e2d0 {
       color: var(--interactive-normal);
     }
     
-    // Chnage code language btn
-    .codeIcon_ad9cbd {
+    // Change code language btn
+    .codeIcon_d8e2d0  {
       color: var(--interactive-normal);
       cursor: pointer;
       
@@ -728,8 +712,8 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
   
-  // Full embed
-  .embedFull_ad0b71 {
+  // Embeds from links
+  .embedFull_b0068a {
     background: $BG_Embed ;
   }
   
@@ -738,10 +722,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     background: $BG_Embed-alt ;
   }
 
-  // Image container and inner containers ??
-  // .mediaAttachmentsContainer__242e2, .mediaAttachmentsContainer__242e2, .oneByOneGridSingle_df7417 {
-  //   border-radius: 4px ;
-  // }
+  // Images
   .visualMediaItemContainer_cda674 > div {
     border-radius: 4px ;
   }
@@ -755,29 +736,25 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // -> MSg Types
   // Mention
-  // &.mentioned_d5deea .contents_ec86aa,
   &.mentioned_d5deea .contents_f9f2ca {
     border-left: solid 2px var(--border-mentioned);
     background: var(--background-mentioned);
   }
   
   // Clyde (client-side info/error messages)
-  // &.ephemeral_d5deea .contents_ec86aa,
   &.ephemeral_d5deea .contents_f9f2ca {
     border-left: solid 2px var(--Blurple);
     background: var(--Blurple-light);
   }
   
   // Selected for reply
-  // &.replying_d5deea .contents_ec86aa,
   &.replying_d5deea .contents_f9f2ca {
     border-left: solid 2px var(--header-secondary);
     background: var(--background-modifier-hover);
   }
   
-  // Reply | &.hasReply_ec86aa { }
   // System Message (msg pinned, user joined server, ..) | 
-  &.isSystemMessage_ec86aa {
+  &.isSystemMessage_f9f2ca {
     
     // "Wave to say hi!" btn (when someone new joins a server)
     .welcomeCTAButtonOuter_f6dde0 {
@@ -786,7 +763,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Thread
-  // &.hasThread_ec86aa .container_c15230,
   &.hasThread_f9f2ca .container_c15230 {
     background: none ;
   }
@@ -794,7 +770,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // -> Message Buttons 
   // Main container / Msg highlight hover effect
-  // .buttonContainer_ec86aa,
   .buttonContainer_f9f2ca {
     position: static ;
     
