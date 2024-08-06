@@ -1,4 +1,4 @@
-// * chat v0.1.20
+// * chat v0.1.21
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -403,6 +403,25 @@
     }
   }
 
+  // Apps btn
+  .channelAppLauncher_df39bd {
+    margin: 0 ;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 0px;
+      width: 1px;
+      background-color: var(--background-modifier-accent);
+    }
+
+    .button_df39bd {
+      background: none ;
+    }
+  }
+
   // Chat input replacmnet box (follow channel, complete server setup,..)
   .wrapper_faf5ab {
     background: none ;
@@ -422,30 +441,6 @@
       @include Btn("background");
     }
   }
-  
-  // Tips info for text input ??
-  // .applicationCommandEducation-1stoia {
-  //   bottom: unset ;
-  //   top: -20px ;
-  //   left: 5px ;
-    
-  //   &::-webkit-scrollbar { display: none }
-    
-  //   // Arrow icon
-  //   .applicationCommandEducationArrow-2xKDmq { display: none }
-    
-  //   // Text container
-  //   .applicationCommandEducationPrompt-23S3d- {
-  //     display: flex ;
-  //     flex-direction: row-reverse ;
-  //     overflow: visible ;
-  //   }
-    
-  //   // Dismiss btn
-  //   .anchor-1MIwyf {
-  //     margin-right: 10px ;
-  //   }
-  // }
   
   // file/upload attachment
   .channelAttachmentArea_e8c527 {
