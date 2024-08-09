@@ -1,4 +1,4 @@
-// * chat v0.1.21
+// * chat v0.1.22
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -384,9 +384,9 @@
   }
 
   // Emoji button
-  .emojiButton_af14ca {
+  .emojiButton_d91a75 {
 
-    .spriteColored_af14ca {
+    .spriteColored_d91a75 {
       position: absolute;
       top: 0;
       left: 0;
@@ -533,6 +533,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .attachment_b52bef {
     background: $BG_Embed ;
     border: none ;
+  }
+
+  .hoverButtonGroup_e5c1dc {
+    background: var(--background-tertiary);
+
+    @include shadow_effect("box_3")
   }
   
   // Code Syntax
@@ -779,31 +785,43 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       background: rgba(255, 255, 255, 0.05);
     }
   }
+
+  // Highlight when advanced btns are open and msg is hovered
+  &:hover .buttonContainer_f9f2ca:has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"]):after {
+    content: "";
+    position: absolute ;
+    top: 2px ;
+    left: 5px ;
+    bottom: 0px ;
+    right: 2px ;
+    pointer-events: none ;
+    background: rgba(255, 255, 255, 0.05);
+  }
   
   // Btn container
   .buttons_d5deea {
     top: 3px ;
     padding: 0 1px 0 0 ;
+
+    // opacity: 1 ; for debug
     
     // Btn container grid
-    .wrapper_ef319f {
+    .wrapper_f7e168 {
       height: 24px ;
       background: none ;
       box-shadow: none ;
+      top: -4px ;
+      height: 32px ;
+      background-color: var(--background-tertiary);
 
-      &:has([d="M16.3 14.7a1 1 0 0 1 0-1.4l2.5-2.5a3.95 3.95 0 1 0-5.6-5.6l-2.5 2.5a1 1 0 1 1-1.4-1.4l2.5-2.5a5.95 5.95 0 1 1 8.4 8.4l-2.5 2.5a1 1 0 0 1-1.4 0ZM7.7 9.3a1 1 0 0 1 0 1.4l-2.5 2.5a3.95 3.95 0 0 0 5.6 5.6l2.5-2.5a1 1 0 1 1 1.4 1.4l-2.5 2.5a5.95 5.95 0 0 1-8.4-8.4l2.5-2.5a1 1 0 0 1 1.4 0Z"]) {
-        top: -4px ;
-        height: 32px ;
-        background-color: var(--background-tertiary);
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+      @include shadow_effect("box_3");
 
-        .button_ef319f {
-          padding: 4px ;
-        }
+      .button_f7e168 {
+        padding: 4px ;
       }
 
       // Button
-      .button_ef319f {
+      .button_f7e168 {
         padding: 0 4px ;
         background: none ;
       }
@@ -846,36 +864,47 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   // <- Message Buttons
 }
+// <- Messages (cozy only for now)
 
-// Reactions
-.message_d5deea .reaction_ec6b19 {
-  background-color: var(--background-modifier-hover);
-  border: none ;
-  border-radius:4px ;
+// -> Reactions
+.reactions_ec6b19 {
 
-  &:hover { 
-    background-color: var(--background-modifier-selected);
-  }
-
-  // number 
-  .reactionCount_ec6b19 {
-    font-size: 0.875rem ;
-  }
-
-  // Active reaction 
-  &.reactionMe_ec6b19 {
-    background-color: var(--Blurple-light);
-
+  // Reaction item
+  .reaction_ec6b19 {
+    background-color: var(--background-modifier-hover);
+    border: none ;
+    border-radius:4px ;
+  
     &:hover { 
-      background-color: var(--Blurple-light-hover);
+      background-color: var(--background-modifier-selected);
     }
+  
+    // number 
+    .reactionCount_ec6b19 {
+      font-size: 0.875rem ;
+    }
+  
+    // Active reaction 
+    &.reactionMe_ec6b19 {
+      background-color: var(--Blurple-light);
+  
+      &:hover { 
+        background-color: var(--Blurple-light-hover);
+      }
+  
+      .reactionCount_ec6b19 { 
+        color: var(--Blurple);
+      }
+    }
+  }
 
-    .reactionCount_ec6b19 { 
-      color: var(--Blurple);
-    }
+  // add reaction btn
+  .reactionBtn_ec6b19 {
+    border: none ;
+    background: none !important;
   }
 }
-// <- Messages (cozy only for now)
+// <- Reactions
 
 // -> Forum channel
 .container_a6d69a {

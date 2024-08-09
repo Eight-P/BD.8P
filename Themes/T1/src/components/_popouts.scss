@@ -1,4 +1,4 @@
-// * popouts v0.1.16
+// * popouts v0.1.17
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -38,12 +38,12 @@
 }
 // <- Autocomplete popout
 
-// -> Gif, Sticker, Emoji - Pickers
+// -> Gif, Sticker, Emoji, Apps&Cmds - Pickers
 .layerContainer_cd0de5 {
   
-  // Main container (reactions picker, emoji, gif,.. )
-  .contentWrapper_eab878, .contentWrapper_af5dbb {
-    background: var(--background-secondary-alt);
+  // Main container (reactions picker, emoji, gif, Apps&Cmds )
+  .contentWrapper_eab878, .contentWrapper_af5dbb, .contentWrapper_f7506e {
+    box-shadow: none ;
     background: var(--background-tertiary);
   }
   
@@ -147,6 +147,14 @@
     }
   }
   // <- Picker Content
+
+  // Apps&Cmds
+  .contentWrapper_f7506e {
+    .inner_c18ec9 {
+      border-bottom: 1px solid var(--interactive-muted);
+    }
+  }
+
   // <- Popout content (Emoji, Sticker)
 }
 // <- Gif, Sticker, Emoji - Pickers

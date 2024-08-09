@@ -1,4 +1,4 @@
-// * server v0.1.13
+// * server v0.1.14
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -120,10 +120,14 @@
     // Settings and invite buttons
     .iconItem_f6f816 { display: none }
 
-    // Channel badges (e.g. "NEW", ..) (old?)
-    .textBadge_f05120 {
-      background: none !important;
-      color: var(--interactive-hover)
+    // Channel badges (e.g. "NEW", "LIVE") for channels
+    .textBadge_df8943 {
+      background: none !important ;
+      color: var(--interactive-hover);
+
+      &[style*="var(--red"] {
+        color: var(--red-400);
+      }
     }
 
     // "new" badge on forum channel
@@ -220,13 +224,19 @@
   }
   
   // User in Voice channel
-  .voiceUser_cdc675 {
+  .voiceUser_d80634 {
 
-    // "live" indicator
-    .live_e17fae { 
+    // "live" indicator for user
+    .live_ec1c2d { 
       background: none !important ;
       color: var(--red);
     }
+  }
+
+  // collapsed voice user list (for hidden channels ("showw all" thing))
+  .overlap_d80634 .avatar_d80634 {
+    border: none ;
+    margin: 4px ;
   }
   
   // New in-server feature notification
@@ -268,7 +278,7 @@
     background: none ;
     
     // Inner container 
-    .layout_e9f61e {
+    .layout_d808b0 {
       border-radius: 0 ;
       background: none ;
       border-right: 3px solid transparent ;
@@ -280,18 +290,18 @@
     }
     
     // User popout open
-    &.selected_e9f61e .layout_e9f61e {
+    &.selected_d808b0 .layout_d808b0 {
        border-right: 3px solid var(--interactive-hover);
     }
     
     // Offline member
-    &.offline_a31c43:not(:hover) .avatar_c51b4e{
+    &.offline_a31c43:not(:hover) .avatar_d808b0 {
       filter: grayscale(100%);
       border-radius: 50% ;
     }
     
     // Nitro icon 
-    .name_e9f61e + div { pointer-events: none }
+    .name_d808b0 + div { pointer-events: none }
     
     .ownerIcon_a31c43 {
       color: var(--header-secondary);
