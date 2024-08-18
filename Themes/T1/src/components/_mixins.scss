@@ -1,4 +1,4 @@
-// * mixins v0.1.9
+// * mixins v0.1.10
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -137,6 +137,14 @@
 // Scroller fade out effect | @include scrollerFadeOut();
 @mixin scrollerFadeOut ($top:5px, $bottom:5px) {
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 $top, #000 calc(100% - $bottom), transparent);
+}
+
+// Set width and height restrictions | @include restrictions();
+@mixin restrictions ($width:0px, $height:false) {
+  min-width: $width ;
+  max-width: $width ;
+  min-height: if($height, $height, $width);
+  max-height: if($height, $height, $width);
 }
 // <- Mixins
 

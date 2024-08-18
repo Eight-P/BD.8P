@@ -1,391 +1,571 @@
-// * user v0.2.14
+// * user v0.3
 // User popout / (Modal)
 @use 'mixins' as * ;
 
-// // -> User Popout (not: profile settings / Shop (home))
-// .userPopoutOuter_c69a7b:not(.profileCustomizationPreview_ab876d) {
-//   border-radius: 12px ;
+// -> User Popout
+.layer_cd0de5[style^="position: absolute"] .userPopoutOuter_c69a7b {
 
-//   @include shadow_effect("box_2");
+  // -> Misc
+  padding: 0 !important;
+  border-radius: 12px ;
 
-//   // Secondary container
-//   .userPopoutInner_c69a7b { 
-//     position: relative ;
+  @include shadow_effect("box_2");
 
-//     &::before { display: none }
-//   }
-
-//   // "Unable to load profile..." badge
-//   .warningCircleIcon_f89da9 {
-//     top: 14px ;
-//     right: 14px ;
-//   }
-
-//   // -> Banner
-//   // main wrapper
-//   .bannerSVGWrapper_b32cc2 {
-//     height: 120px ;
-//     min-height: 120px !important;
-
-//     foreignObject {
-//       mask: none ;
-//     }
-
-//     &[viewBox="0 0 340 60"] foreignObject {
-//       transform: translateY(-30px);
-//     }
-
-//     &[viewBox="0 0 340 90"] foreignObject {
-//       transform: translateY(-15px);
-//     }
-
-//     .banner_c3e427 {
-//       height: 120px ;
-//       filter: brightness(0.85);
-
-//       // Custom image banner
-//       &.bannerPremium_c3e427 {
-//         filter: brightness(0.75);
-//       }
+  --custom-user-profile-width-bite-size: 340px ;
   
-//       // Edit own profile btn
-//       .pencilContainer_c3e427 {
-//         top: 78px ;
-//         right: 14px ;
-//       }
-  
-//       .premiumIconWrapper_c3e427, .gifTag_b30195 { display: none }
-//     }
-//   }
-//   // <- Banner
+  --bg_items: var(--background-modifier-hover);
+  --bg_itemsHover: var(--background-modifier-selected);
+  --bg_badgesFloating: rgb(from var(--background-tertiary) r g b / .8);
 
-//   // -> Avatar/Status
-//   .avatarWrapper_f89da9 {
-//     top: 20px ;
-//     left: 20px ;
-//     z-index: 1;
+  &.userProfileOuterThemed_c69a7b {
+    --bg_items: rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-6));
+    --bg_itemsHover: rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-5));
+    --bg_badgesFloating: rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-4));
+  }
+
+  .userPopoutInner_c69a7b  {
+    padding-bottom: 0 ;
+    border-radius: 0 ;
+  }
+  // <- Misc
+
+  // -> Animations effects
+  ~ .profileEffects_f867f9 {
+    opacity: .6 ;
+
+    &.hovered_f867f9 {
+      opacity: .25 ;
+    }
+  }
+  // <- Animations
+
+  // top row (14) + [Badges:144] + (14) + [ActBtn:(28 + ((1-n)*3)n] + (3) + [NoteBtn:(28 + ((1-n)*3)n] + (14)
+
+  // -> User actions
+  .wrapper_cb78f1 {
+    position: relative ;
+    inset: unset ;
+    width: max-content ;
+    height: 28px ;
+    margin: 2px 14px 2px auto ;
+    gap: 3px ;
+    order: 2 ;
+    z-index: 2 ; // to be in line with notes btn, when profile effect
+    cursor: pointer;
+
+    // At own profile 
+    &:empty { display: flex }
+
+    // Btns
+    .button_dd4f85 {
+      background: var(--bg_items);
+      width: 28px ;
+      height: 28px ;
+      padding: 0 ;
+    }
+
+    svg { @include shadow_effect("drop_2") }
+
+    path {
+      fill: var(--header-primary);
+    }
+  }
+
+  // With Notes btn
+  &:has(.nicknameIcons_c32acf div:nth-child(1)) .wrapper_cb78f1 {
+    margin-right: #{3+28+14}px ;
+  }
+
+  // When there is a second nickname icon e.g.: profile loading error icon
+  &:has(.nicknameIcons_c32acf div:nth-child(2)) .wrapper_cb78f1 {
+    margin-right: #{3+28+3+28+14}px ;
+  }
+  // <- User actions
+
+  // -> Header
+    .header_b07019 {
+      min-height: unset ;
+      position: relative ; 
+      height: 119px ;
+      order: 1 ;
+    }
+
+    // -> Banner (Default aspect: 20:7) (340:119)
+    .bannerSVGWrapper_b32cc2 {
+
+      .roundedBanner_c3e427 {
+        border-radius: 0 ;
+      }
+
+      // Mask for cutout / seperator line below banner / Gif indicator
+      mask, .divider_c3e427:before, .gifTag_c3e427 { display: none }
+    }
+
+    // <- Banner
+
+    // -> Profile img / Status icon
+    .avatar_f94206 {
+      top: 20px ;
+      left: 20px ;
+      z-index: 10 ; // for status icon
+
+      $ProfileTop: 4 + 24 + 19 + 8 + 32 + 8 - 4 ;
+      $ProfileLeft: -64 + 2 ;
+
+      // svg container
+      .svg_c51b4e {
+        top: $ProfileTop * 1px ;
+        left: $ProfileLeft * 1px ;
+        contain: none ;
+        overflow: visible ;
+        pointer-events: none ;
+
+        // -> Status
+        // Status icon shadow
+        [style*="opacity"] { display: none }
+
+        // online on mobile icon (regular)
+        rect[mask="url(#svg-mask-status-online-mobile)"] {
+          height: 18px ;
+          width: 12px ;
+          x: 60 + 2 ;
+          y: 52 + 7 ;
+        }
+        // <- Status
+      }
+
+      // -> Avatar
+      .svg_c51b4e foreignObject {
+        position: absolute ;
+        x: $ProfileLeft * -1 ;
+        y: $ProfileTop * -1 ;
+        mask: none ;
+        overflow: visible ;
+        pointer-events: auto ;
+      }
+
+      // -> img hover overlay
+      .avatarStack_c51b4e::after {
+        border-radius: 7.5% ;
+        opacity: 0 ;
+      }
+
+      .avatarStack_c51b4e:hover::after {
+        opacity: .4 ;
+      }
+      // <- img Hover overlay
+      
+      // Picture
+      .avatar_c51b4e {
+        border-radius: 7.5% ;
+
+        &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+      }
+      // <- Avatar
+    }
+    // <- Profile img / status icon
+
+    // -> Status text
+    .header_b07019 {
+      // container
+      > div:not([class]), .visibleContainer_d0a252 {
+        display: contents ;
+      }
+    }
+
+    // Status outer container
+    .statusBubbleOuter_d0a252 {
+      position: absolute ;
+      display: flex ;
+      inset: 62px 20px 61px 120px ;
+      border: none !important;
+      min-width: unset ;
+      max-width: unset ;
+      background: none ;
+      align-items: center ;
+      justify-content: center ;
+      box-shadow: none ;
+
+      &::after, &::before { display: none }
+    }
+
+    // Status inner container
+    .statusBubble_d0a252 {
+      padding: 5px 10px ;
+
+      $opacity: .65 ;
+      
+      background: color-mix(in oklab,
+        hsl(var(--black-hsl) / $opacity) 100%,
+        hsl(var(--theme-base-color-hsl, 0 0% 0%) / $opacity) 
+        10%
+      );
+
+      @include shadow_effect("box_2");
+
+      &.statusBubbleEmojiOnlyPadding_d0a252 {
+        padding: 8px 10px ;
+      }
+
+      .statusText_d0a252 {
+        color: var(--redesign-button-overlay-alpha-text);
+      }
+    }
     
-//     .svg_c51b4e { 
-//       overflow: visible ;
-//       contain: unset ;
-//     }
+    // Emoji as status only
+    .statusEmojiOnly_d0a252 { @include restrictions(26px) }
 
-//     foreignObject { 
-//       mask: none ;
-//       overflow: visible ;
-//     }
+    // Edit status for own profile btns
+    .popover_bba79b { display: none }
+    // <- Status text
+    
+    // -> "Beta" badge (maybe more, idk)
+    .textBadge_df8943 {
+      right: 0 ;
+      top: 119px - 16px ;
+      margin: 0 ;
+      border-radius: 4px 0 0 0 ;
+    }
+    // <- "Beta" badge (maybe more, idk)
 
-//     // Img
-//     .avatar_c51b4e {
-//       border-radius: 7.5% ;
+  // <- Header
 
-//       &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
-//     }
+  // -> Body
+    .body_b07019 {
+      padding: 0px 16px !important;
+      // padding: 0px 24px !important; added padding on body infos
+      overflow: visible !important;
+      z-index: 2 ;
+      order: 3 ;
+      gap: 16px ;
 
-//     // -> Hover overlay
-//     .avatarHint_f89da9 {
-//       border-radius: 7.5% ;
-//     }
+      &::-webkit-scrollbar { display: none }
 
-//     .avatarDecorationHint_f89da9 {
-//       border-radius: 7.5% !important ;
-//       top: 0px ;
-//       left: 0px ;
-//       height: 80px ;
-//       width: 80px ;
+      // border experiment
+      // &::after {
+      //   content: "";
+      //   position: absolute ;
+      //   display: block ;
+      //   top: -4px ;
+      //   left: 0 ;
+      //   width: 100% ;
+      //   height: 1px ;
+      //   background: var(--profile-message-input-border-color);
+      // }
+    }
 
-//       .avatarHintInner_f89da9 {
-//         font-size: 12px ;
-//       }
-//     }
-//     // <- Hover overlay
+    // -> Display / Nickname
 
-//     // -> Status icon
-//     .pointerEvents_c51b4e {
-//       position: absolute ;
-//       x: -8px ;
-//       y: 116px ;
-//       pointer-events: none ;
+    // When popout has online stauts icon
+    :has(rect.pointerEvents_c51b4e) .usernameRow_c32acf .clickableUsername_c32acf {
+      margin-left: 26px ;
+      // margin-left: 18px ; added padding on body infos
+    }
 
-//       &[mask="url(#svg-mask-status-online-mobile)"] {
-//         y: 115px ;
-//         height: 18px ;
-//         width: 14px ;
-//       }
-//     }
+    .nickname_c32acf {
+      font-size: 19px ;
+      line-height: 24px ;
+      max-width: 308px - 26px ;
+      // white-space: nowrap ;
+      text-overflow: ellipsis ;
 
-//     // The weird one idk
-//     .cursorDefault_c51b4e {
-//       overflow: visible ;
-//       pointer-events: none ;
+      margin-bottom: 8px ;
+    }
+    // <- Display / Nickname
 
-//       rect {
-//         position: static ;
-//         x: -55px ;
-//         y: 64px ;
-//       }
-//     }
+    // -> App tag
+    .botTag_a9e77f {
+      position: absolute ;
+      top: - 8 - 32 - 8 - 119 * 1px ;
+      left: 170px ;
+      padding: 3px 8px ;
+      transform: translateX(-50%);
+      border-radius: 0 0 4px 4px ;
+      background: var(--bg-surface-overlay);
 
-//     // weird second status after status changes
-//     // foreignObject ~ .cursorDefault_c51b4e { display: none }
+      @include shadow_effect("box_3");
 
-//     // Shadow for status icon
-//     [style*="opacity: 0."] { display: none }
-//     // <- Status icon
-//   }
-//   // <- Profile picture/Avatar
+      // icon
+      path {
+        fill: var(--text-normal) ;
+      }
+    }
+    // <- App tag
 
-//   // -> Badges / Panel badges
-//   .profileBadges_f89da9 {
-//     position: absolute ;
-//     top: 14px ;
-//     right: 14px ;
-//     background: rgba(0, 0, 0, 0.2);
-//     z-index: 1 ;
+    // -> Notes btn / loading error icon
+    // container
+    .nicknameIcons_c32acf {
+      position: absolute ;
+      top: -8px - 32px ;
+      right: 14px ;
+      height: 28px ;
+      margin-top: 2px ;
+      padding-top: 0 ;
+      cursor: pointer;
 
-//     // not empty
-//     &.containerWithContent_b64375 {
-//       padding: 2px ;
-//     }
-//   }
-//   // <- Badges
+      // Btns NOte, "Unable to load profile..."
+      .button_dd4f85, .container_cac583 {
+        width: 28px ;
+        height: 28px ;
+        padding: 0 ;
+        opacity: 1 ;
+        background: var(--bg_items);
+        color: var(--header-primary);
+        align-items: center ;
+        justify-content: center ;      
 
-//   // -> Main user info 
-//   .overlayBackground_c69a7b {
-//     margin: 0 ;
-//     border-radius: 0 ;
+        svg { @include shadow_effect("drop_2") }
+      }
+    }
+    // <- Notes btn / loading error icon
 
-//     // Info sections except chat box, "Mutuals" section
-//     .section_d7a21f:not(.section_f2c0a8), .profileMutuals_d2b491 {
-//       padding: 0 12px 0 12px ;
+    // -> Username / Pronouns
+    .tags_c32acf {
+      margin-top: 4px ;
+      flex-direction: column ;
+      align-items: flex-start ;
+      row-gap: 6px ;
 
-//       > :first-child {
-//         padding-top: 12px ;
-//       }
-//     }
+      .clickableUsername_c32acf {
+        pointer-events: none ;
+      }
 
-//     // Chat/DM section
-//     .section_f2c0a8 {
-//       padding: 12px 12px 0 12px ;
+      .userTagUsername_c32acf {
+        font-size: 15px ;
+      }
 
-//       // &:has(.messageClydeButton_adb260) {
-//       //   padding: 0 ;
-//       // }
-//     }
+      .dotSpacer_c32acf { display: none }
 
-//     // -> Username/Nickname
-//     @at-root .userPopoutOuter_c69a7b .avatarWrapper_f89da9:has(.pointerEvents_c51b4e) ~ .overlayBackground_c69a7b {
+      .pronounsText_c32acf  {
+        color: var(--text-normal) !important;
+      }
+    }
+    // <- Username / Pronouns
 
-//       .nickname_c9ccf6, .userTagUsernameNoNickname_c9ccf6 {
-//         margin-left: 24px ;
-//       }
-//     }
+    // -> Badges
+    .container_e5a42d {
+      // top row (14) + [Badges] + (14) + [ ActBtn: (28 + 4)n + NoteBtn: 28 ] + (14)
 
-//     // When the profile is not loading
-//     .usernameSection_d2b491.lastSection_d7a21f {
-//       padding-bottom: 12px ;
-//     }
+      position: absolute ;
+      left: 14px ;
+      margin: 0 ;
+      padding: 0px ;
+      background: none ;
+      border: none ;
+      gap: 0px ;
+      border-radius: 4px ;
+      overflow: hidden ;
 
-//     // -> With Nickname
-//     // Nickname
-//     .nickname_c9ccf6 {
-//       font-size: 18px ;
-//       color: var(--header-primary);
-//     }
+      // for center
+      // top: -24px ;
+      // transform: translateY(-50%);
 
-//     // Discriminator
-//     .userTagWithNickname_c9ccf6 .discrimBase_c9ccf6 {
-//       margin-left: 2px ;
-//       font-size: 12px ;
-//       line-height: normal ;
-//       vertical-align: baseline ;
-//     }
-//     // <- With Nickname
+      // for bottom
+      top: -13px ;
+      transform: translateY(-100%);
 
-//     // -> Without Nickname
-//     // Username
-//     .userTagUsernameNoNickname_c9ccf6 {
-//       color: var(--header-primary);
-//     }
+      max-width: 144px ; // 6 badges (12 is max per container)
 
-//     // Discriminator
-//     .userTagDiscriminatorNoNickname_c9ccf6 {
-//       margin-left: 4px ;
-//       color: var(--header-secondary);
-//       font-size: 17px ;
-//       font-weight: 500 ;
-//       line-height: normal ;
-//       vertical-align: baseline ;
-//     }
-//     // <- Without Nickname
-//     // <- Username/Nickname
+      // First badges container when there are two
+      &:nth-last-of-type(2) {
+        top: -22px ;
+      }
 
-//     // -> Custom status emoji
-//     .customStatusSoloEmoji_cb55fc {
-//       height: 30px ;
-//       width: 30px ;
-//     }
-//     // <- Custom status
+      // Second badges container for badges n. 13-24
+      + .container_e5a42d {
+        top: 0px ;
 
-//     // -> Body
-//     .scroller_d2b491 {
-//       padding: 0 !important;
+        > div {
+          background: var(--bg_badgesFloating);
+        }
 
-//       &::-webkit-scrollbar { display: none }
-//     }
+        // Badges No. 19+ (i mean come on)
+        > div:nth-child(n+7), ~ .container_e5a42d {
+          display: none ;
+        }
+      }
 
-//     // -> About Me
-//     // personal roles beta
-//     code.inline {
-//       background: var(--profile-role-pill-background-color);
-//     }
+      // badges
+      > div {
+        padding: 1px 2px ;
+        background: var(--bg_items);
         
-//     // <- About Me
+        &:last-child {
+          border-radius: 0 0 4px 0 ;
+        }
+      }
 
-//     // -> Bot stuff
-//     // "Add App"/"Upgrade" btns
-//     .buttonsContainer_b709ea .button_dd4f85 {
-//       @include Btn();
-//     }
+      // badges, when there are more than 6
+      &:has(:nth-child(7)) > div {
+        background: var(--bg_badgesFloating);
 
-//     // Bot commands
-//     .popularApplicationCommandsList_d2db23 .sizeIcon_dd4f85 {
+        // last of first row unless second is full
+        &:not(:has(:nth-child(12))):nth-child(6) {
+          border-radius: 0 0 4px 0 ;
+        }
 
-//       @include Btn("background", white);
+        // all badges in second row
+        &:nth-child(n+7) {
+          padding-top: 0px ;
+        }
+      }
 
-//       .contents_dd4f85 {
-//         font-weight: 400 ;
-//       }
-//     }
-//     // <- Bot stuff
+      // Badge icons
+      .anchor_af404b {
+        @include shadow_effect("drop_2")
+      }
+    }
 
-//     // -> Roles
-//     // Role item
-//     .role_e4010c {
-//       border: none ;
-//     }
+    // -> Dynamic (sort of) max-width for badges containers
+    // based on action btns
 
-//     // remove role btn
-//     .roleRemoveButton_e4010c > :nth-last-child(2) {
-//       cursor: pointer ;
-//     }
-//     // has imp.
-//     .roleRemoveButton_e4010c .roleCircle_a26d7b:has(+ .roleRemoveIcon_e4010c) {
-//       cursor: pointer ;
-//     }
+    // @for $actionBtns from 2 through 4 {
+    //   $badges: 10 - $actionBtns ; // for first row
 
-//     .roleRemoveIcon_e4010c {
-//       pointer-events: none ;
-//     }
-//     // <- Roles
-
-
-//     // -> Activitys (streaming in channel, games, spotify, ..)
-//     .activity_e36233 {
-
-//       .button_c6eb7b {
-//         @include Btn();
-//       }
-//     }
-//     // <- Activitys
-
-//     // -> Connections
-//     .connectionsContainer_a78c41 {
-//       border: none ;
-
-//       // Connection item
-//       .connectedAccountContainer_f3eb60 {
-//         padding: 6px 0 ;
-//       }
-
-//       // view all connec. btn
-//       .connections_a78c41 { display: none }
-//     }
-//     // <- Connections
-
-//     // -> Note
-//     .note_c90ad7 textarea:focus {
-//       background: none ;
-//     }
-//     // <- Note
-
-//     // -> Quick Dm
-//     .messageInputContainer_f2c0a8 {
-//       padding: 4px 12px 6px 12px ;
-//       margin: 0 -12px 0 -12px ;
-//       border: none ;
-//       border-radius: 0 ;
-//     }
-//     // Clyde
-//     // .messageClydeButton_adb260 {
-//     //   border-radius: 0 ;
-//     // }
-//     // <- Quick Dm
-//     // <- Body
-//   }
-//   // <- Main user info
-
-//   // -> Popout no custom colors
-//   .userProfileInnerThemedNonPremium_c69a7b {
+    //   &:has(.wrapper_cb78f1 div:nth-child(#{$actionBtns})) .container_e5a42d {
+    //     max-width: $badges * 24px ;
     
-//     // body
-//     .overlayBackground_c69a7b {
-//       background: var(--background-tertiary);
-//     }
+    //     &:has(:nth-child(#{$badges + 1})) > div {
+    //       background: rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-4));
 
-//     // Quick Dm
-//     .messageInputContainer_f2c0a8 {
-//       background: var(--background-secondary);
-//     }
-//   }
-//   // <- Popout no custom colors
+    //       &:nth-child(#{$badges}) {
+    //         border-radius: 0 0 4px 0 ;
+    //       }
+    //       &:nth-child(n+#{$badges + 1}) {
+    //         padding-top: 0px ;
+    //       }
+    //     }
+    //   }
+    // }
 
-//   // -> Popout with custom colors
-//   &.userProfileOuterThemed_c69a7b {
-//     padding: 0 ;
-//     background: linear-gradient(transparent 120px,var(--profile-gradient-primary-color) 0,var(--profile-gradient-secondary-color));
+    // <- Dynamic max-width badges
+    // <- Badges
 
-//     .userPopoutInner_c69a7b {
-//       background: var(--profile-gradient-overlay-color);
-//     }
+    // -> Bot action btns
+    .buttons_e274c3 {
+      .button_e274c3 {
+        background: var(--bg_items);
 
-//     // Quick Dm
-//     .messageInputContainer_f2c0a8 {
-//       border-top: 1px solid var(--profile-message-input-border-color);
-//     }
-//   }
-//   // <- Popout with custom colors
-// }
+        &:hover {
+          background: var(--bg_itemsHover);
+        }
+      }
+    }
+    // <- Bot action btns
 
-// // Indicator while UserPopout is loading
-// .loadingPopout_a8c724 { display: none }
-// // <- User Popout
+    // -> Activitys
+    .activity_cd74cc {
+      padding: 8px 0 ;
 
-.accountProfilePopoutWrapper_b2ca13 {
-  left: 0 ;
+      background: var(--bg_items);
+      background: none ;
 
-  .menu_d90b3d { 
-    max-width: unset ;
-    background: var(--background-tertiary);
-    
-    // popout menu
-    .submenu_d90b3d {
-      
-      .separator_d90b3d { display: none }
-      
-      .item_d90b3d {
+      .headerText_c1d9fd {
+        color: var(--header-secondary);
+      }
+
+      .medium_a9e62c {
         border-radius: 4px ;
+      }
 
-        &#account-status-picker--online.focused_d90b3d { background: var(--status-online) }
-        
-        &#account-status-picker--idle.focused_d90b3d { background: var(--status-idle) }
+      .buttonColor_cd74cc {
+        background: var(--bg_items);
+        // background: none ;
+        transition: none ;
 
-        &#account-status-picker--dnd.focused_d90b3d { background: var(--status-DnD) }
-        
-        &#account-status-picker--invisible.focused_d90b3d { background: var(--status-invisible) }
+        &:hover {
+          background: var(--bg_itemsHover);
+        }
+      }
+
+      // Activity bnts themed
+      // button_c6eb7b button_dd4f85 lookFilled_dd4f85 buttonColor_cd74cc buttonSize_c6eb7b grow_dd4f85
+    }
+    // <- Activitys
+
+    // -> Bot commands
+    .list_fa6679 {
+      .button_dd4f85 {
+        background: var(--bg_items);
+
+        &:hover {
+          background: var(--bg_itemsHover);
+        }
+      }
+    }
+    // <- Bot commands
+
+    // -> Roles 
+    .role_f9575e, // roles
+    .root_c83b44 .button_edead5, // add roles btn
+    .showMoreButton_c83b44, // view all roles btn
+    .collapseButton_c83b44 // revert "view all"
+    {
+      background: var(--bg_items);
+      border-color: transparent ;
+    }
+    // <- Roles
+  
+  // <- Body
+
+  // -> Footer
+  .footer_b07019 {
+    padding: 0 ;
+    margin-top: 8px ;
+    border-top: 1px solid var(--profile-message-input-border-color);
+    order: 4 ;
+    
+    .inner_dc0b43 {
+      background: none ;
+    }
+
+    // Edit own profile btn
+    > .button_dd4f85 {
+      background: none ;
+      height: 100% ;
+      padding: 0 ;
+      color: var(--text-normal);
+
+      &:hover {
+        color: var(--header-primary);
       }
     }
   }
+  // <- Footer
+}
+// <- User Popout
+
+// User popout loading indicator 
+.layer_cd0de5 .loadingPopout_a8c724 { display: none }
+
+
+
+// -> Account Popout
+.accountProfilePopoutWrapper_b2ca13 {
+  left: 0 ;
+
+  // .menu_d90b3d { 
+  //   max-width: unset ;
+  //   background: var(--background-tertiary);
+    
+  //   // popout menu
+  //   .submenu_d90b3d {
+      
+  //     .separator_d90b3d { display: none }
+      
+  //     .item_d90b3d {
+  //       border-radius: 4px ;
+
+  //       &#status-status-picker--online.focused_d90b3d { background: var(--status-online) }
+        
+  //       &#status-status-picker--idle.focused_d90b3d { background: var(--status-idle) }
+
+  //       &#status-status-picker--dnd.focused_d90b3d { background: var(--status-DnD) }
+        
+  //       &#status-status-picker--invisible.focused_d90b3d { background: var(--status-invisible) }
+  //     }
+  //   }
+  // }
 }
 // <- Account Popout
 
@@ -397,11 +577,7 @@
     background: none ;
   }
 
-  .overlayBackground_c69a7b {
-    background: var(--background-modifier-accent);
-  }
-
-  // Usert action btns
+  // -> Usert action btns
   .wrapper_cb78f1 {
     position: relative ;
     inset: 0px ;
@@ -412,6 +588,8 @@
       background: var(--background-modifier-accent);
     }
   }
+  // <- Usert action btns
+
   // -> Banner
   .bannerSVGWrapper_b32cc2 {
     border-radius: 8px ;
@@ -464,69 +642,33 @@
   }
   // <- Avatar
 
+  // -> Status text
+  .visibleContainer_d0a252 {
+    position: relative ;
+    inset: unset ;
+
+    .statusBubbleOuter_d0a252 {
+      background: none ;
+      border: none ;
+      margin: 0 auto ;
+
+      &::before, &::after { display: none }
+    }
+
+    .statusBubble_d0a252 {
+      background: var(--background-modifier-accent);
+    }
+  }
+  // <- Status text
+
+  // -> Body
+  .overlayBackground_c69a7b, .activity_e9e42f {
+    background: var(--background-modifier-accent);
+  }
+  // <- Body
+
   .footer_be6801 {
     border: none ;
   }
 }
-
-//old
-// .profilePanel_b433b4 {
-
-
-//   // -> Badges
-//   .badgelistGroup_ab525a {
-//     min-height: unset ;
-//     margin: 0 16px 0 0 ;
-//   }
-
-//   .badgeList_ab525a {
-//     background: var(--background-modifier-accent);
-
-//     // empty badge list
-//     &:not(.containerWithContent_b64375) { display: none }
-//   }
-//   // <- Badges
-
-  // -> Profile picture/Avatar
-  .avatarPositionPanel_f89da9 {
-    // position: relative ;
-    // top: 0 ;
-    // left: 0 ;
-    // margin-top: 16px ;
-    // margin-bottom: 10px ;
-    
-    // .wrapper_c51b4e {
-    //   margin: 0 auto ;
-    // }
-
-    .svg_c51b4e { 
-      overflow: visible ;
-
-      // status icon background
-      [style*="opacity"] {  display: none }
-    }
-
-    // status
-    .pointerEvents_c51b4e, .cursorDefault_c51b4e { display: none }
-
-    foreignObject { 
-      mask: none ;
-      overflow: visible ;
-    }
-
-    // Img
-    .avatar_c51b4e {
-      border-radius: 8px ;
-
-      &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
-    }
-  }
-  // <- Profile picture/Avatar
-
-//   // -> Content body
-//   .overlayBackground_c69a7b {
-//     background: var(--background-modifier-accent);
-//   }
-//   // <- Content body
-// }
 // <- Profile sidepanel in dms
