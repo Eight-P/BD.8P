@@ -1,4 +1,4 @@
-// * user v0.3
+// * user v0.3.1
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -232,8 +232,8 @@
 
   // -> Body
     .body_b07019 {
-      padding: 0px 16px !important;
-      // padding: 0px 24px !important; added padding on body infos
+      // padding: 0px 16px !important;
+      padding: 0px 20px !important; // added padding on body infos
       overflow: visible !important;
       z-index: 2 ;
       order: 3 ;
@@ -254,95 +254,99 @@
       // }
     }
 
-    // -> Display / Nickname
-
-    // When popout has online stauts icon
-    :has(rect.pointerEvents_c51b4e) .usernameRow_c32acf .clickableUsername_c32acf {
-      margin-left: 26px ;
-      // margin-left: 18px ; added padding on body infos
-    }
-
-    .nickname_c32acf {
-      font-size: 19px ;
-      line-height: 24px ;
-      max-width: 308px - 26px ;
-      // white-space: nowrap ;
-      text-overflow: ellipsis ;
-
-      margin-bottom: 8px ;
-    }
-    // <- Display / Nickname
-
-    // -> App tag
-    .botTag_a9e77f {
-      position: absolute ;
-      top: - 8 - 32 - 8 - 119 * 1px ;
-      left: 170px ;
-      padding: 3px 8px ;
-      transform: translateX(-50%);
-      border-radius: 0 0 4px 4px ;
-      background: var(--bg-surface-overlay);
-
-      @include shadow_effect("box_3");
-
-      // icon
-      path {
-        fill: var(--text-normal) ;
-      }
-    }
-    // <- App tag
-
-    // -> Notes btn / loading error icon
-    // container
-    .nicknameIcons_c32acf {
-      position: absolute ;
-      top: -8px - 32px ;
-      right: 14px ;
-      height: 28px ;
-      margin-top: 2px ;
-      padding-top: 0 ;
-      cursor: pointer;
-
-      // Btns NOte, "Unable to load profile..."
-      .button_dd4f85, .container_cac583 {
-        width: 28px ;
-        height: 28px ;
-        padding: 0 ;
-        opacity: 1 ;
-        background: var(--bg_items);
-        color: var(--header-primary);
-        align-items: center ;
-        justify-content: center ;      
-
-        svg { @include shadow_effect("drop_2") }
-      }
-    }
-    // <- Notes btn / loading error icon
-
-    // -> Username / Pronouns
-    .tags_c32acf {
-      margin-top: 4px ;
+    // -> User Main info (Name, pronouns, badges, ...)
+    .container_c32acf {
+      display: flex ;
       flex-direction: column ;
-      align-items: flex-start ;
-      row-gap: 6px ;
-
-      .clickableUsername_c32acf {
-        pointer-events: none ;
-      }
-
-      .userTagUsername_c32acf {
-        font-size: 15px ;
-      }
-
-      .dotSpacer_c32acf { display: none }
-
-      .pronounsText_c32acf  {
-        color: var(--text-normal) !important;
-      }
+      gap: 8px ;
     }
-    // <- Username / Pronouns
 
-    // -> Badges
+      // -> Display / Nickname
+      // When popout has online stauts icon
+      :has(rect.pointerEvents_c51b4e) .usernameRow_c32acf .clickableUsername_c32acf {
+        // margin-left: 26px ;
+        margin-left: 22px ; // added padding on body infos
+      }
+
+      .nickname_c32acf {
+        font-size: 19px ;
+        line-height: 24px ;
+        max-width: 308px - 26px ;
+        // white-space: nowrap ;
+        text-overflow: ellipsis ;
+      }
+      // <- Display / Nickname
+
+      // -> App tag
+      .botTag_a9e77f {
+        position: absolute ;
+        top: - 8 - 32 - 8 - 119 * 1px ;
+        left: 170px ;
+        padding: 3px 8px ;
+        transform: translateX(-50%);
+        border-radius: 0 0 4px 4px ;
+        background: var(--bg-surface-overlay);
+
+        @include shadow_effect("box_3");
+
+        // icon
+        path {
+          fill: var(--text-normal) ;
+        }
+      }
+      // <- App tag
+
+      // -> Notes btn / loading error icon
+      // container
+      .nicknameIcons_c32acf {
+        position: absolute ;
+        top: -8px - 32px ;
+        right: 14px ;
+        height: 28px ;
+        margin-top: 2px ;
+        padding-top: 0 ;
+        cursor: pointer;
+
+        // Btns NOte, "Unable to load profile..."
+        .button_dd4f85, .container_cac583 {
+          width: 28px ;
+          height: 28px ;
+          padding: 0 ;
+          opacity: 1 ;
+          background: var(--bg_items);
+          color: var(--header-primary);
+          align-items: center ;
+          justify-content: center ;      
+
+          svg { @include shadow_effect("drop_2") }
+        }
+      }
+      // <- Notes btn / loading error icon
+
+      // -> Username / Pronouns
+      .tags_c32acf {
+        margin-top: 4px ;
+        flex-direction: column ;
+        align-items: flex-start ;
+        row-gap: 6px ;
+
+        .clickableUsername_c32acf {
+          pointer-events: none ;
+        }
+
+        .userTagUsername_c32acf {
+          font-size: 15px ;
+        }
+
+        .dotSpacer_c32acf { display: none }
+
+        .pronounsText_c32acf  {
+          color: var(--text-normal) !important;
+        }
+      }
+      // <- Username / Pronouns
+
+      // -> Badges
     .container_e5a42d {
       // top row (14) + [Badges] + (14) + [ ActBtn: (28 + 4)n + NoteBtn: 28 ] + (14)
 
@@ -440,6 +444,8 @@
 
     // <- Dynamic max-width badges
     // <- Badges
+    
+    // <- User Main info (Name, pronouns, badges, ...)
 
     // -> Bot action btns
     .buttons_e274c3 {

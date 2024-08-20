@@ -1,4 +1,4 @@
-// * chat v0.1.22
+// * chat v0.1.23
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -1139,7 +1139,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 // -> Spilt/Overlay view ( Threads / Voice chat / Forum chat )
 .chatLayerWrapper_d1c246 {
-  width: 100% ;
 
   // shadow effect on left side of chat
   .chatTarget_d1c246 { display: none }
@@ -1238,7 +1237,6 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     z-index: 1002 ;
     border: none ;
     min-width: 400px ;
-    // max-width: 100% ;
     max-width: calc(100vw - 240px); // not ideal
     resize: horizontal ;
     direction: rtl;
@@ -1339,7 +1337,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     
     // Top and bottom section
     .controlSection_dd069c {
-      transform: translateZ(0);
+      transform: translateZ(0) !important;
       
       .streamQualityIndicator_c5881c { display: none }
     }
@@ -1347,7 +1345,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // Open voice chat btn 
   .chatButton_dd069c {
-    transform: translateZ(0) !important ;
+    transform: translateZ(0) !important;
     top: calc(12px + var(--aswc) * -48px);
     
     .controlIcon_ef18ee {
@@ -1413,25 +1411,25 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .gradientContainer_dd069c { display: none }
   // <- Buttons
 
-  @mixin TileOverlay() {
-    // Non video tile card
-    .overlayContainer_ba4b17:not(.videoWrapper_ba4b17 ~ .overlayContainer_ba4b17) {
+  // @mixin TileOverlay() {
+  //   // Non video tile card
+  //   .overlayContainer_ba4b17:not(.videoWrapper_ba4b17 ~ .overlayContainer_ba4b17) {
 
-      .overlayTitle_ba4b17, .status_ba4b17 {
-        opacity: 1 ;
-        background: none ;
-      }
-    }
+  //     .overlayTitle_ba4b17, .status_ba4b17 {
+  //       opacity: 1 ;
+  //       background: none ;
+  //     }
+  //   }
 
-    // video
-    .videoWrapper_ba4b17 ~ .overlayContainer_ba4b17 {
-      opacity: 0 ;
+  //   // video
+  //   .videoWrapper_ba4b17 ~ .overlayContainer_ba4b17 {
+  //     opacity: 0 ;
 
-      &:hover {
-        opacity: 1 ;
-      }
-    }
-  }
+  //     &:hover {
+  //       opacity: 1 ;
+  //     }
+  //   }
+  // }
 
   // -> Itemcard / Tile
   .tile_ba4b17 {
