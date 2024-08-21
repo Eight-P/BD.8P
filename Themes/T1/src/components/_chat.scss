@@ -1,4 +1,4 @@
-// * chat v0.1.23
+// * chat v0.1.24
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -500,6 +500,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 
 .cozy_f9f2ca {
   background: none !important ;
+  // background: red !important ;
   padding: 2px 32px 0px 4.125rem !important ;
   
   // -> general Message components
@@ -783,6 +784,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       right: 2px ;
       pointer-events: none ;
       background: rgba(255, 255, 255, 0.05);
+      z-index: -1 ;
     }
   }
 
@@ -803,33 +805,29 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     top: 3px ;
     padding: 0 1px 0 0 ;
 
-    // opacity: 1 ; for debug
+    // opacity: 1 ;
     
     // Btn container grid
-    .wrapper_f7e168 {
+    .buttonsInner_d5deea {
       height: 24px ;
       background: none ;
       box-shadow: none ;
       top: -4px ;
       height: 32px ;
-      background-color: var(--background-tertiary);
+      // background-color: var(--background-tertiary);
 
-      @include shadow_effect("box_3");
-
-      .button_f7e168 {
-        padding: 4px ;
-      }
+      // @include shadow_effect("box_3");
 
       // Button
       .button_f7e168 {
-        padding: 0 4px ;
+        padding: 4px ;
         background: none ;
       }
     }
   }
   
   // Btn container on reply Msg
-  &.hasReply_ec86aa .buttons_d5deea { 
+  &.hasReply_f9f2ca .buttons_d5deea { 
     top: 27px ;
   }
   
@@ -837,12 +835,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   &:not(.groupStart_d5deea), &.isSystemMessage_ec86aa {
     
     // Buttons container
-    .wrapper_ef319f {
+    .buttonsInner_d5deea {
       height: 32px ;
       top: unset !important ;
       
       // Button
-      .button_ef319f {
+      .button_f7e168 {
         display: none ;
         padding: 4px ;
 
@@ -853,9 +851,8 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       
       &:hover {
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
-        // box-shadow: 0 0 0 1px red;
         
-        .button_ef319f {
+        .button_f7e168 {
           display: flex ;
           background-color: var(--background-tertiary);
         }

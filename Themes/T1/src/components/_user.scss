@@ -1,4 +1,4 @@
-// * user v0.3.1
+// * user v0.3.2
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -91,16 +91,10 @@
     }
 
     // -> Banner (Default aspect: 20:7) (340:119)
-    .bannerSVGWrapper_b32cc2 {
-
-      .roundedBanner_c3e427 {
-        border-radius: 0 ;
-      }
-
+    .mask_c3e427 {
       // Mask for cutout / seperator line below banner / Gif indicator
-      mask, .divider_c3e427:before, .gifTag_c3e427 { display: none }
+      mask, .banner_c3e427:before, .gifTag_c3e427 { display: none }
     }
-
     // <- Banner
 
     // -> Profile img / Status icon
