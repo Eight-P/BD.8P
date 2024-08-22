@@ -1,4 +1,4 @@
-// * popouts v0.1.17
+// * popouts v0.1.18
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -1066,4 +1066,13 @@
 // Modal poll voters list
 .layerContainer_cd0de5 .root_f9a4c9 .votersListContainer_cbdbf0 .voters_cbdbf0 {
   background: none ;
+}
+
+// Apps & Commands popout
+.layerContainer_cd0de5 .positionContainer_ec62fd {
+  max-height: calc(100vh - 130px);
+
+  .drawerSizingWrapper_f7506e {
+    height: 100% !important ;
+  }
 }

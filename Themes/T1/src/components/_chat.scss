@@ -1,4 +1,4 @@
-// * chat v0.1.24
+// * chat v0.1.25
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -316,7 +316,7 @@
   .cooldownWrapper_d7ebeb {
     position: absolute ;
     right: -17px ;
-    bottom: -15px ;
+    bottom: -11px ;
     height: 16px ;
     width: 16px ;
     color: transparent !important;
@@ -361,7 +361,7 @@
     }
 
     // Emoji picker
-    .buttonContainer_d0696b:has(.spriteContainer_af14ca) {
+    .buttonContainer_d0696b:has(.emojiButton_d91a75) {
       width: calc(40px * var(--show-emoji-btn));
       margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
 
@@ -403,9 +403,14 @@
     }
   }
 
-  // Apps btn
+  // Apps & Commands btn
   .channelAppLauncher_df39bd {
     margin: 0 ;
+    overflow: hidden ;
+    width: calc(40px * var(--show-apps-btn));
+    margin-top: calc(-100px * (1 - var(--show-apps-btn)));
+
+    display: var(--chatBtn_Apps);
 
     &::after {
       content: "";
@@ -516,6 +521,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       padding: 2px 0 ;
       margin-left: 0 ;
     }
+  }
+
+  .avatarDecoration_f9f2ca {
+    width: calc(var(--custom-message-avatar-decoration-size) * var(--show-avatarDecorations));
+    height: calc(var(--custom-message-avatar-decoration-size) * var(--show-avatarDecorations));
   }
   // <- general Message components
   

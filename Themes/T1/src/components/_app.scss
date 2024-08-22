@@ -1,4 +1,4 @@
-// * app v0.1.10
+// * app v0.1.11
 @use 'mixins' as * ;
 
 body {
@@ -197,4 +197,10 @@ body {
 
   // App direcoty
   // &.search_aabd24.searchBar_a0e1d7 { }
+}
+
+// Profile image decoration effects
+.avatarDecoration_c51b4e .avatar_c51b4e {
+  height: calc(100% * var(--show-avatarDecorations));
+  width: calc(100% * var(--show-avatarDecorations));
 }

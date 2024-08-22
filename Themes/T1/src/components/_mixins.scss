@@ -1,4 +1,4 @@
-// * mixins v0.1.10
+// * mixins v0.1.11
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -183,12 +183,24 @@
   --show-emoji-btn: 1 ;
   --chatBtn_emoji: flex ;
 
+  --show-apps-btn: 1 ;
+  --chatBtn_Apps: block ;
+
+
+  --show-friends-activity-sidebar: 0 ;
+  --friendsActivitySidebar: block ;
+
+  --show-userProfile-effects: 1 ;
+  --userProfileEffects: block ;
+
+  --show-avatarDecorations: 1 ;
+  --avatarDecorations: block ;
+
   --show-serverboost-stats: 1 ;
   --serverBoostStatus: flex ;
 
   --always-show-voicecontrols: 0 ;
   --voiceControlOverlay: var(--always-show-voicecontrols);
-
 
   --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
   --font: var(--Font);

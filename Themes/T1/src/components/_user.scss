@@ -1,4 +1,4 @@
-// * user v0.3.2
+// * user v0.3.3
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -32,6 +32,10 @@
   // -> Animations effects
   ~ .profileEffects_f867f9 {
     opacity: .6 ;
+
+    height: calc(100% * var(--show-userProfile-effects));
+    width: calc(100% * var(--show-userProfile-effects));
+
 
     &.hovered_f867f9 {
       opacity: .25 ;
@@ -97,22 +101,52 @@
     }
     // <- Banner
 
-    // -> Profile img / Status icon
+    // -> Avatar / Status icon
+    $ProfileTop: 4 + 24 + 19 + 8 + 32 + 8 - 4 ;
+    $ProfileLeft: -64 + 2 ;
+
+    // Main container
     .avatar_f94206 {
       top: 20px ;
       left: 20px ;
       z-index: 10 ; // for status icon
+    }
 
-      $ProfileTop: 4 + 24 + 19 + 8 + 32 + 8 - 4 ;
-      $ProfileLeft: -64 + 2 ;
-
-      // svg container
+      // -> Image / Status icon
       .svg_c51b4e {
         top: $ProfileTop * 1px ;
         left: $ProfileLeft * 1px ;
         contain: none ;
         overflow: visible ;
         pointer-events: none ;
+
+        // -> Image
+        foreignObject {
+          position: absolute ;
+          x: $ProfileLeft * -1 ;
+          y: $ProfileTop * -1 ;
+          mask: none ;
+          overflow: visible ;
+          pointer-events: auto ;
+        }
+
+        // hover overlay
+        .avatarStack_c51b4e::after {
+          border-radius: 7.5% ;
+          opacity: 0 ;
+        }
+
+        .avatarStack_c51b4e:hover::after {
+          opacity: .4 ;
+        }
+        
+        // Picture
+        .avatar_c51b4e {
+          border-radius: 7.5% ;
+
+          &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+        }
+        // <- Image
 
         // -> Status
         // Status icon shadow
@@ -127,37 +161,19 @@
         }
         // <- Status
       }
+      // <- Image / Status icon
 
-      // -> Avatar
-      .svg_c51b4e foreignObject {
-        position: absolute ;
-        x: $ProfileLeft * -1 ;
-        y: $ProfileTop * -1 ;
-        mask: none ;
-        overflow: visible ;
-        pointer-events: auto ;
-      }
+      // -> Avatar decorations
+      .avatarDecoration_c51b4e {
 
-      // -> img hover overlay
-      .avatarStack_c51b4e::after {
-        border-radius: 7.5% ;
-        opacity: 0 ;
+        // cutout for status icon
+        foreignObject {
+          mask: none ;
+        }
       }
+      // <- Avatar decorations
 
-      .avatarStack_c51b4e:hover::after {
-        opacity: .4 ;
-      }
-      // <- img Hover overlay
-      
-      // Picture
-      .avatar_c51b4e {
-        border-radius: 7.5% ;
-
-        &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
-      }
-      // <- Avatar
-    }
-    // <- Profile img / status icon
+    // <- Avatar / status icon
 
     // -> Status text
     .header_b07019 {
