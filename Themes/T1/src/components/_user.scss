@@ -1,4 +1,4 @@
-// * user v0.3.3
+// * user v0.3.4
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -110,7 +110,6 @@
       top: 20px ;
       left: 20px ;
       z-index: 10 ; // for status icon
-    }
 
       // -> Image / Status icon
       .svg_c51b4e {
@@ -172,7 +171,7 @@
         }
       }
       // <- Avatar decorations
-
+    }
     // <- Avatar / status icon
 
     // -> Status text
