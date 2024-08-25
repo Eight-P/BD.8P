@@ -1,4 +1,4 @@
-// * home v0.1.10
+// * home v0.1.11
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -197,10 +197,20 @@
   $ActiveNowWidth: 300px ;
 
   .nowPlayingColumn_c2739c {
+
+    $activity: var(--show-friends-activity);
+    $emptyActivity: calc((1 - var(--hide-empty-friends-activity)) - (1 - $activity));
+
     display: block ;
-    flex: 0 1 calc(30% * var(--show-friends-activity-sidebar));
-    width: calc(100% * var(--show-friends-activity-sidebar));
-    min-width: calc($ActiveNowWidth * var(--show-friends-activity-sidebar));
+    flex: 0 1 calc(30% * $activity);
+    width: calc(100% * $activity);
+    min-width: calc($ActiveNowWidth * $activity);
+
+    &:has(.emptyCard_f02fcf) {
+      flex: 0 1 calc(30% * $emptyActivity );
+      width: calc(100% * $emptyActivity );
+      min-width: calc($ActiveNowWidth * $emptyActivity );
+    }
 
     // "Active now" header text
     .header_bf550a {

@@ -1,4 +1,4 @@
-// * mixins v0.1.12
+// * mixins v0.1.13
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -194,8 +194,12 @@
   --avatarDecorations: block ;
 
 
-  --show-friends-activity-sidebar: 0 ;
+  --show-friends-activity: 0 ;
   --friendsActivitySidebar: block ;
+
+  --hide-empty-friends-activity: 1 ;
+  --friendsActivitySidebar_empty: block ;
+
 
   --unmask-links: 0 ;
   --unmaskedLinks: inline-flex ;
