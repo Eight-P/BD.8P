@@ -1,7 +1,7 @@
 /**
  * @name T1
- * @description Simple design with focus on improvements and horizontal server bar.
- * @version 0.8.1
+ * @description Simple design with focus on improvements and a horizontal server bar. 🛈 Click Edit 🖊 for more information and customization.
+ * @version 0.8.2
  * @author Eight_P
  * @authorId 120202910586896385
  * @website https://betterdiscord.app/theme/T1
@@ -18,43 +18,59 @@
 :root {
 /*  ==> IMPORTANT <== 
 
-    - The Theme might not work properly when mixed with others.
+  - The Theme might not work properly when mixed with others.
 
-    - The Theme was made for BetterDiscord and updates to match the stable client.
-      Any other Mod, Platform, or version might work, but is not guaranteed.
+  - Theme updates are made to match the stable release channel on Windows.
+    Discord's stable client is therefore highly recommended to reduce potential bugs.
 
-    - To report any issues, go to: https://github.com/Eight-P/BD.8P/issues
+  - To report any issues, go to: https://github.com/Eight-P/BD.8P/issues
+  - Or ask questions at: https://github.com/Eight-P/BD.8P/discussions
 
 
-     ==> SETTINGS <== 
+    ==> SETTINGS <== 
+
+  - 1 = enabled | 0 = disabled
+
+  - Backgrounds can be links, colors or gradients (links must be HTTPS).
+  - Discord's Dark mode (User-Settings/Appearance) and a dark background image is recommended.
+
+  - Brightness: lower = darker | higher = brighter
+  - Blur effect: 0 = off | higher number = more blur
+
+  - Change the values between ":" and ";" | Do not remove the colons or semicolons.
+*/
+  --Main_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg);
+  --Main_Brightness: 80 ;
+  --Main_Background_blur: 0 ;
   
-    - Backgrounds can be links, colors or gradients (links must be HTTPS).
-    - Choose discord's "Dark" theme (User-Settings/Appearance) for dark images and "Light" for bright ones.
+  --Server_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
+  --Server_Brightness: 100 ;
+  --Server_Background_blur: 0 ;
 
-    - Brightness: normal = 100 | lower = darker, higher = brighter
-    - Blur effect: 0 = off | higher number = more blur
-    - Chat buttons: 1 = show | 0 = hidden
-    */
-  
-    --Main_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg);
-    --Main_Brightness: 80 ;
-    --Main_Background_blur: 0 ;
-    
-    --Server_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
-    --Server_Brightness: 100 ;
-    --Server_Background_blur: 0 ;
-  
-    --show-nitro-btn: 0 ;
-    --show-gif-btn: 1 ;
-    --show-sticker-btn: 0 ;
-    --show-emoji-btn: 1 ;
+  /* Chat buttons */
+  --show-nitro-btn: 0 ;
+  --show-gif-btn: 1 ;
+  --show-sticker-btn: 1 ;
+  --show-emoji-btn: 1 ;
+  --show-apps-btn: 1 ;
 
-    --show-home-tabs: 1 ; 
-    --show-serverboost-stats: 1 ; 
+  /* User profile effects and decorations */
+  --show-userProfile-effects: 1 ;
+  --show-avatarDecorations: 1 ;
 
-    /* Button overlay in call view (1 = always show | 0 = only show on hover) */
-    --always-show-voicecontrols: 0 ; 
+  /* Friends activities section in home tab */
+  --show-friends-activity: 1 ;
+  --hide-empty-friends-activity: 0 ;
 
-    /* Main font (prioritization: left to right) */
-    --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+  /* Show the URL next to a masked link */
+  --unmask-links: 0 ;
+
+  /* Server boost goal in the channel sidebar */
+  --show-serverboost-stats: 1 ; 
+
+  /* Button overlay in call view (1 = always show | 0 = only show on hover (default) ) */
+  --always-show-voicecontrols: 0 ; 
+
+  /* Main font (prioritization: left to right) */
+  --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
 }
