@@ -1,4 +1,4 @@
-// * home v0.1.9
+// * home v0.1.10
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -15,13 +15,16 @@
 
   // -> Friendslist
   .peopleList_e0840f {
-    margin: 0 0 0 20px;
-    padding: 0;
+    margin: 0 25px ;
 
     @include scrollerFadeOut();
 
     // "Friends online" Count
     .title_a1cafe { display: none }
+
+    &::-webkit-scrollbar {
+      display: none ;
+    }
 
     // -> User item
     // -> General
@@ -57,26 +60,26 @@
     // -> Without lazy loading
     // container for grid
     > div:not([class]):first-child {
-      height: fit-content !important;
-      margin: 4% 5px;
-      display: grid;
+      height: fit-content !important ;
+      margin: 4% 0px ;
+      display: grid ;
       grid-template-columns: repeat(auto-fit, 300px);
-      justify-content: space-evenly;
-      row-gap: 35px;
-      grid-column-gap: 10px;
+      justify-content: space-evenly ;
+      row-gap: 35px ;
+      grid-column-gap: 10px ;
 
       .peopleListItem_d51464 {
-        height: 62px !important;
-        width: 300px;
-        margin: 0;
-        padding: 0;
-        opacity: 1 !important;
-        border: none;
+        height: 62px !important ;
+        width: 300px ;
+        margin: 0 ;
+        padding: 0 ;
+        opacity: 1 !important ;
+        border: none ;
         background: var(--background-floating);
-        border-radius: 10px;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-        transition: .1s;
+        border-radius: 10px ;
+        border-top-left-radius: 0px ;
+        border-top-right-radius: 0px ;
+        transition: .1s ;
 
         @include shadow_effect("box_2");
 
@@ -84,11 +87,11 @@
 
         // Main Container
         .userInfo_f3939d {
-          margin: 0px 12px;
-          width: -webkit-fill-available;
-          overflow: visible !important;
-          height: 100%;
-          align-items: center;
+          margin: 0px 12px ;
+          width: -webkit-fill-available ;
+          overflow: visible !important ;
+          height: 100% ;
+          align-items: center ;
         }
 
         // -> Avatar, Status icon
@@ -98,17 +101,17 @@
           // SVG Mask container
           foreignObject,
           svg {
-            mask: none;
-            overflow: visible;
+            mask: none ;
+            overflow: visible ;
           }
 
           .svg_c51b4e {
-            contain: unset;
+            contain: unset ;
           }
 
           // Image
           .avatar_c51b4e {
-            border-radius: 5px;
+            border-radius: 5px ;
 
             &:not([src*=".gif"]) {
               @include shadow_effect("drop_1")
@@ -117,12 +120,12 @@
 
           // Status icon
           rect {
-            x: -15px;
-            y: -15px;
-            mask: none;
-            width: 310px;
-            height: 2px;
-            opacity: .8;
+            x: -15px ;
+            y: -15px ;
+            mask: none ;
+            width: 310px ;
+            height: 2px ;
+            opacity: .8 ;
           }
         }
 
@@ -131,13 +134,13 @@
         // -> Status text
         // Activity (hiding the "playing" behind background) 
         .activity_f7ebfd .text_f7ebfd {
-          width: 100%;
-          position: relative;
+          width: 100% ;
+          position: relative ;
 
           strong {
-            position: absolute;
-            left: 0;
-            width: 100%;
+            position: absolute ;
+            left: 0 ;
+            width: 100% ;
             background: var(--background-floating);
           }
         }
@@ -156,29 +159,29 @@
         // User item container Blocked/Pending
         .listItemContents_f71b83,
         .listItemContents_ccc740 {
-          width: -webkit-fill-available;
+          width: -webkit-fill-available ;
 
           // Container (Avatar, Name, Activity)
           .userInfo_f3939d {
-            overflow: hidden;
-            flex: 1 1 auto;
+            overflow: hidden ;
+            flex: 1 1 auto ;
           }
 
           // Unblock btn
           .actionButton_e01b91 {
-            display: none;
-            margin: 0 10px 0 0;
+            display: none ;
+            margin: 0 10px 0 0 ;
           }
 
           // "Blocked" text
           .subtext_f3939d {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+            overflow: hidden ;
+            white-space: nowrap ;
+            text-overflow: ellipsis ;
           }
 
           &:hover .actionButton_e01b91 {
-            display: flex;
+            display: flex ;
           }
         }
         // <- User actions
@@ -191,49 +194,99 @@
   // <- Friendslist
 
   // -> Friends activity sidebar
+  $ActiveNowWidth: 300px ;
+
   .nowPlayingColumn_c2739c {
-    // display: block ;
-    display: none;
+    display: block ;
+    flex: 0 1 calc(30% * var(--show-friends-activity-sidebar));
+    width: calc(100% * var(--show-friends-activity-sidebar));
+    min-width: calc($ActiveNowWidth * var(--show-friends-activity-sidebar));
+
+    // "Active now" header text
+    .header_bf550a {
+      margin: 16px ;
+      color: var(--header-secondary);
+    }
+
+    .scroller_bf550a {
+      margin: 0 ;
+      padding: 0px !important ;
+      border: none ;
+
+      &::-webkit-scrollbar { display: none }
+    }
 
     .emptyCard_f02fcf {
-      background: none;
+      background: none ;
     }
+
+    // -> User activity card
+    .itemCard_f02fcf {
+      margin: 0 ;
+      padding: 16px ;
+      border: none ;
+      border-radius: 0 ;
+      background: none ;
+
+      &:hover {
+        background: var(--background-modifier-hover);
+      }
+
+      // subsequent cards
+      + .itemCard_f02fcf {
+        border-top: 1px solid var(--background-modifier-accent);
+      }
+
+      // container for activity
+      .body_cd82a7 {
+        background: none ;
+      }
+
+      // inner body container
+      .section_cd82a7 {
+        background: none ;
+        padding: 6px 0 0 12px ;
+      }
+    }
+    // <- User activity card
   }
 
+  @media (width < (240px + 350px + $ActiveNowWidth + 10 )) {
+    .nowPlayingColumn_c2739c { display: none }
+  }
   // <- Friends activity sidebar
 }
-
 // <- Friends Tab
 
 // -> Add Friend
 .tabBody_c2739c {
 
   .addFriendInputWrapper_de812f {
-    margin-top: 32px;
-    border: none;
-    background: none;
-    border-radius: 0;
+    margin-top: 32px ;
+    border: none ;
+    background: none ;
+    border-radius: 0 ;
 
     .addFriendInput_de812f {
-      padding: 8px 10px;
-      border-bottom: 1px solid transparent;
-      border-radius: 5px;
+      padding: 8px 10px ;
+      border-bottom: 1px solid transparent ;
+      border-radius: 5px ;
       background: var(--background-modifier-selected);
     }
 
     .addFriendHint_de812f {
-      padding: 8px 10px;
+      padding: 8px 10px ;
     }
 
     .input_de812f {
-      height: 20px;
+      height: 20px ;
     }
 
     &:focus-within .addFriendInput_de812f {
       border-color: var(--interactive-normal);
-      background: none;
-      border-radius: 0px;
-      box-shadow: none;
+      background: none ;
+      border-radius: 0px ;
+      box-shadow: none ;
     }
 
     .button_dd4f85 {
@@ -245,7 +298,7 @@
   .grid_aef5fd {
     .container_aef5fd {
       background: var(--background-modifier-selected);
-      border: none;
+      border: none ;
     }
   }
 }
@@ -283,12 +336,12 @@
 
 // -> DMs Sidebar
 .privateChannels_f0963d {
-  top: 48px;
-  margin-bottom: 48px;
+  top: 48px ;
+  margin-bottom: 48px ;
 
   // Scroller container
   .scroller_c47fa9 {
-    padding: 0 10px 0 0 !important;
+    padding: 0 10px 0 0 !important ;
 
     &::-webkit-scrollbar {
       display: none
@@ -304,25 +357,25 @@
 
   // Channel except Home tabs
   .privateChannelsHeaderContainer_c47fa9 ~ .channel_c91bad {
-    height: 38px !important;
-    margin: 6px 0 !important;
+    height: 38px !important ;
+    margin: 6px 0 !important ;
   }
 
   .channel_c91bad {
-    padding: 0;
-    border-radius: 0;
+    padding: 0 ;
+    border-radius: 0 ;
 
     @include Mentions_icon(".numberBadge_df8943");
 
     // Second container
     .interactive_c91bad {
-      background: none;
-      height: 38px;
-      margin-left: 5px;
+      background: none ;
+      height: 38px ;
+      margin-left: 5px ;
 
       // Third container
       .layout_f9647d {
-        margin-left: 5px;
+        margin-left: 5px ;
       }
 
       &.selected_f5eb4b {

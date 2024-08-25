@@ -1,4 +1,4 @@
-// * popouts v0.1.18
+// * popouts v0.1.19
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -1075,4 +1075,9 @@
   .drawerSizingWrapper_f7506e {
     height: 100% !important ;
   }
+}
+
+// "quest available" promt from memberlist member when popout is open
+.layer_cd0de5:has(.container_ac01d6, .top_ac01d6) {
+  display: none ;
 }

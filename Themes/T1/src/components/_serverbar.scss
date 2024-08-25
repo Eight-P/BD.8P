@@ -1,4 +1,4 @@
-// * serverbar v0.1.13
+// * serverbar v0.1.14
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -141,7 +141,7 @@
     }
     
     // Hover
-    .wrapper_f90abb.selected_ae80f7 .childWrapper_f90abb { opacity: 1 }
+    .wrapper_f90abb.selected_f90abb .childWrapper_f90abb { opacity: .9 }
     
     // SVG 2
     .childWrapper_f90abb > svg { 
@@ -150,8 +150,6 @@
       overflow: visible ;
       
       @include shadow_effect("drop_1");
-
-
 
      // Icon
      path {

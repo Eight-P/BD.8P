@@ -1,4 +1,4 @@
-// * mixins v0.1.11
+// * mixins v0.1.12
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -177,7 +177,7 @@
   --show-gif-btn: 1 ;
   --chatBtn_gif: flex ;
 
-  --show-sticker-btn: 0 ;
+  --show-sticker-btn: 1 ;
   --chatBtn_sticker: flex ;
 
   --show-emoji-btn: 1 ;
@@ -185,16 +185,20 @@
 
   --show-apps-btn: 1 ;
   --chatBtn_Apps: block ;
-
-
-  --show-friends-activity-sidebar: 0 ;
-  --friendsActivitySidebar: block ;
+  
 
   --show-userProfile-effects: 1 ;
   --userProfileEffects: block ;
 
   --show-avatarDecorations: 1 ;
   --avatarDecorations: block ;
+
+
+  --show-friends-activity-sidebar: 0 ;
+  --friendsActivitySidebar: block ;
+
+  --unmask-links: 0 ;
+  --unmaskedLinks: inline-flex ;
 
   --show-serverboost-stats: 1 ;
   --serverBoostStatus: flex ;

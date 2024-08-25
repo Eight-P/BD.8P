@@ -2,7 +2,7 @@
   * @name T1_DEV
   * @description T1 Dev BD
   * @author Eight_P
-  * @version 0.8.1_D
+  * @version 0.8.2_D
 */
 
 @import '../src/T1.main.scss' ;
@@ -26,11 +26,11 @@
   --show-emoji-btn: 1 ;
   --show-apps-btn: 1 ;
 
-  --show-friends-activity-sidebar: 1 ;
-  
   --show-userProfile-effects: 1 ;
   --show-avatarDecorations: 1 ;
   
+  --show-friends-activity-sidebar: 1 ;
+  --unmask-links: 1 ;
   --show-serverboost-stats: 1 ;
   --always-show-voicecontrols: 1 ;
   --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;

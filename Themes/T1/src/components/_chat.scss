@@ -1,4 +1,4 @@
-// * chat v0.1.25
+// * chat v0.1.26
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -340,7 +340,7 @@
       width: calc(40px * var(--show-nitro-btn));
       margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
 
-      display: var(--chatBtn_nitro);
+      // display: var(--chatBtn_nitro);
     }
 
 
@@ -349,7 +349,7 @@
       width: calc(40px * var(--show-gif-btn));
       margin-top: calc(-100px * (1 - var(--show-gif-btn)));
 
-      display: var(--chatBtn_gif);
+      // display: var(--chatBtn_gif);
     }
 
     // Stickers picker
@@ -357,7 +357,7 @@
       width: calc(40px * var(--show-sticker-btn));
       margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
 
-      display: var(--chatBtn_sticker);
+      // display: var(--chatBtn_sticker);
     }
 
     // Emoji picker
@@ -365,7 +365,7 @@
       width: calc(40px * var(--show-emoji-btn));
       margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
 
-      display: var(--chatBtn_emoji);
+      // display: var(--chatBtn_emoji);
     }
     
     // Send btn
@@ -575,13 +575,39 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 
-  // Make masked markdown links visible (stolen from: Vencord#-css-snippets @s.unnie & @frugbug)
-  // not sure about 
-  .messageContent_ec86aa > .anchor_af404b[title$=")"]::after {
-    // font-size: 0.7rem;
-    // content: " (" attr(href) ")";
-    // filter: grayscale(1.0) brightness(1.15);
+  // -> Unmask links
+  .messageContent_f9f2ca .anchor_af404b[title$=")"] {
+    &::after {
+      content: " (" attr(href) ")" ;
+      position: relative ;
+      display: inline-flex ;
+      height: calc(100% * var(--unmask-links));
+      max-height: 22px ;
+      width: calc(100% * var(--unmask-links));
+      max-width: max-content ;
+      font-size: 0.7rem ;
+      font-weight: 400 ;
+      font-style: normal ;
+      filter: grayscale(1.0) brightness(1.15);
+      overflow: hidden ;
+    }
+    &:hover::after {
+      text-decoration: underline ;
+    }
   }
+
+  :is(u, s):has(.anchor_af404b[title$=")"]) {
+    text-decoration: none ;
+  }
+
+  s span {
+    text-decoration: line-through ;
+  }
+
+  u span {
+    text-decoration: underline ;
+  }
+  // <- Unmask links
   
   // -> Poll
   .container_a1531c {
@@ -744,6 +770,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     box-shadow: none ;
     background: $BG_Embed ;
   }
+
+  // buttons with background e.g. from bots
+  .lookFilled_dd4f85.colorPrimary_dd4f85 {
+    @include Btn("background");
+  }
   // <- Message contents
   
   // -> MSg Types
@@ -767,11 +798,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // System Message (msg pinned, user joined server, ..) | 
   &.isSystemMessage_f9f2ca {
-    
     // "Wave to say hi!" btn (when someone new joins a server)
-    .welcomeCTAButtonOuter_f6dde0 {
-      @include Btn("background");
-    }
   }
   
   // Thread
