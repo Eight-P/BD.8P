@@ -1,4 +1,4 @@
-// * chat v0.1.26
+// * chat v0.1.27
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -334,6 +334,9 @@
   
   // Buttons conatiner
   .buttons_d0696b {
+    > :is(button, div) {
+      overflow: hidden ;
+    }
 
     // Nitro btn
     button:has([d^=" M-7,10 C-8.104999542236328,10 -9,9.104999542236328 -9,8 C-9,8"]) {

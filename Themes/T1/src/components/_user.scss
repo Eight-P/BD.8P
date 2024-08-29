@@ -1,4 +1,4 @@
-// * user v0.3.4
+// * user v0.3.5
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -240,27 +240,16 @@
   // <- Header
 
   // -> Body
+    $Padding_body: 20px ; // 16
+
     .body_b07019 {
-      // padding: 0px 16px !important;
-      padding: 0px 20px !important; // added padding on body infos
-      overflow: visible !important;
+      padding: 0px $Padding_body !important ;
+      overflow: visible !important ;
       z-index: 2 ;
       order: 3 ;
       gap: 16px ;
 
       &::-webkit-scrollbar { display: none }
-
-      // border experiment
-      // &::after {
-      //   content: "";
-      //   position: absolute ;
-      //   display: block ;
-      //   top: -4px ;
-      //   left: 0 ;
-      //   width: 100% ;
-      //   height: 1px ;
-      //   background: var(--profile-message-input-border-color);
-      // }
     }
 
     // -> User Main info (Name, pronouns, badges, ...)
@@ -273,8 +262,7 @@
       // -> Display / Nickname
       // When popout has online stauts icon
       :has(rect.pointerEvents_c51b4e) .usernameRow_c32acf .clickableUsername_c32acf {
-        // margin-left: 26px ;
-        margin-left: 22px ; // added padding on body infos
+        margin-left: 42px - $Padding_body ;
       }
 
       .nickname_c32acf {
@@ -469,32 +457,29 @@
     // <- Bot action btns
 
     // -> Activitys
-    .activity_cd74cc {
+    .activity_b07019 {
       padding: 8px 0 ;
-
-      background: var(--bg_items);
       background: none ;
 
-      .headerText_c1d9fd {
-        color: var(--header-secondary);
+      // "playing" header
+      .headerText_ae1fa2 {
+        color: var(--header-secondary) !important ;
       }
 
-      .medium_a9e62c {
-        border-radius: 4px ;
+      // Activity container
+      .content_ae1fa2 {
+        gap: 16px ;
       }
 
-      .buttonColor_cd74cc {
+      // Activity interaction btn
+      .actions_ae1fa2 button {
         background: var(--bg_items);
-        // background: none ;
         transition: none ;
 
         &:hover {
           background: var(--bg_itemsHover);
         }
       }
-
-      // Activity bnts themed
-      // button_c6eb7b button_dd4f85 lookFilled_dd4f85 buttonColor_cd74cc buttonSize_c6eb7b grow_dd4f85
     }
     // <- Activitys
 
@@ -548,11 +533,10 @@
   }
   // <- Footer
 }
-// <- User Popout
 
 // User popout loading indicator 
 .layer_cd0de5 .loadingPopout_a8c724 { display: none }
-
+// <- User Popout
 
 
 // -> Account Popout
