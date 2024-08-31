@@ -1,4 +1,4 @@
-// * user v0.3.5
+// * user v0.3.6
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -32,10 +32,9 @@
   // -> Animations effects
   ~ .profileEffects_f867f9 {
     opacity: .6 ;
-
     height: calc(100% * var(--show-userProfile-effects));
     width: calc(100% * var(--show-userProfile-effects));
-
+    z-index: 11 ;
 
     &.hovered_f867f9 {
       opacity: .25 ;
@@ -570,9 +569,9 @@
 
 
 // -> Profile sidepanel in dms
-.userPanelOuter_c69a7b  {
+.userPanelOuter_c69a7b {
 
-  .userPanelInner_c69a7b  {
+  .userPanelInner_c69a7b {
     background: none ;
   }
 
@@ -590,9 +589,9 @@
   // <- Usert action btns
 
   // -> Banner
-  .bannerSVGWrapper_b32cc2 {
+  .mask_c3e427 {
     border-radius: 8px ;
-    transform: scale(.92);
+    transform: scale(.95);
 
     foreignObject {
       mask: none ;

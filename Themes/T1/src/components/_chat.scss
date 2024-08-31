@@ -1,4 +1,4 @@
-// * chat v0.1.27
+// * chat v0.1.28
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -509,7 +509,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
 .cozy_f9f2ca {
   background: none !important ;
   // background: red !important ;
-  padding: 2px 32px 0px 4.125rem !important ;
+  padding: 0px 28px 0px 4.125rem !important ;
   
   // -> general Message components
   // Highlight border-left (Mention, Clyde, ..)
@@ -811,90 +811,84 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // <- MSg Types
   
   // -> Message Buttons 
-  // Main container / Msg highlight hover effect
+  // Msg highlight hover effect
+  @mixin msgHighlight() {
+    content: "";
+    position: absolute ;
+    inset: 0px 0px 0px 5px ;
+    pointer-events: none ;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: -1 ;
+  }
+
+  // Main container
   .buttonContainer_f9f2ca {
     position: static ;
     
     &:hover:after {
-      content: "";
-      position: absolute ;
-      top: 2px ;
-      left: 5px ;
-      bottom: 0px ;
-      right: 2px ;
-      pointer-events: none ;
-      background: rgba(255, 255, 255, 0.05);
-      z-index: -1 ;
+      @include msgHighlight();
     }
   }
 
   // Highlight when advanced btns are open and msg is hovered
   &:hover .buttonContainer_f9f2ca:has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"]):after {
-    content: "";
-    position: absolute ;
-    top: 2px ;
-    left: 5px ;
-    bottom: 0px ;
-    right: 2px ;
-    pointer-events: none ;
-    background: rgba(255, 255, 255, 0.05);
+    @include msgHighlight();
   }
-  
-  // Btn container
-  .buttons_d5deea {
-    top: 3px ;
-    padding: 0 1px 0 0 ;
 
-    // opacity: 1 ;
-    
-    // Btn container grid
-    .buttonsInner_d5deea {
-      height: 24px ;
+  // Inner main container
+  .buttons_d5deea {
+    top: 0 ;
+    padding: 0 ;
+
+    // Inner container grid
+    .popoverReactionHoverBar_e986d9 {
+      border: 0 ;
+      padding: 0 ;
       background: none ;
       box-shadow: none ;
-      top: -4px ;
-      height: 32px ;
-      // background-color: var(--background-tertiary);
+    }
 
-      // @include shadow_effect("box_3");
+    // Button
+    .button_f7e168 {
+      background: none ;
+    }
 
-      // Button
-      .button_f7e168 {
-        padding: 4px ;
-        background: none ;
+    // Inner button icon
+    .icon_e986d9 {
+      transform: scale(1) ;
+    }
+
+    // quick reaction emoji
+    .reactionSuggestion_d1c246 {
+      .icon_e986d9 {
+        transform: scale(.9) ;
       }
     }
   }
   
   // Btn container on reply Msg
   &.hasReply_f9f2ca .buttons_d5deea { 
-    top: 27px ;
+    top: 24px ;
   }
   
   // Message Buttons - Concatenating Msg / System Message
   &:not(.groupStart_d5deea), &.isSystemMessage_ec86aa {
-    
-    // Buttons container
-    .buttonsInner_d5deea {
-      height: 32px ;
-      top: unset !important ;
-      
-      // Button
-      .button_f7e168 {
-        display: none ;
-        padding: 4px ;
 
-        &:last-child {
-          display: flex ;
-        }
-      }
-      
-      &:hover {
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
-        
-        .button_f7e168 {
-          display: flex ;
-          background-color: var(--background-tertiary);
+    // Buttons
+    .popoverReactionHoverBar_e986d9 {
+      padding: 2px 4px ;
+      border-radius: 4px ;
+      background-color: var(--background-tertiary);
+
+      &:not(:hover, :has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"])) {
+        background: none ;
+
+        > div {
+          display: none ;
+  
+          &:last-child {
+            display: flex ;
+          }
         }
       }
     }
