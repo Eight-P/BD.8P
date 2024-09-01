@@ -1,4 +1,4 @@
-// * mixins v0.1.13
+// * mixins v0.1.14
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -145,6 +145,33 @@
   max-width: $width ;
   min-height: if($height, $height, $width);
   max-height: if($height, $height, $width);
+}
+
+// Searchbar @include searchbar(".outer", ".inner");
+@mixin searchbar ($outer, $inner) {
+  // background container
+  #{$outer} {
+    // background: var(--background-modifier-active);
+    background: var(--background-modifier-accent);
+
+    // input + icon parent
+    #{$inner} {
+      border: solid transparent ;
+      border-width: 0 0 1px 0 ;
+      background: none ;
+      box-shadow: none !important ;
+    }
+
+    &:focus-within {
+      background: none ;
+      border-radius: 0 ;
+
+      #{$inner} {
+        border-color: var(--header-secondary);
+        border-radius: 0 ;
+      }
+    }
+  }
 }
 // <- Mixins
 

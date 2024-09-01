@@ -1,4 +1,4 @@
-// * server v0.1.14
+// * server v0.1.15
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -42,7 +42,7 @@
     padding: 0 ;
     overflow: hidden ;
 
-    display: var(--serverBoostStatus);
+    // display: var(--serverBoostStatus);
 
     &::after { display: none }
     
@@ -327,9 +327,11 @@
 // -> Discovery
 .viewWrapper_a3a4ce > .searchHeader_a3a4ce .headerImage_a3a4ce { display: none }
 
+@include searchbar(".search_f69601", ".searchBox_f69601");
+
 .discoverHeader_b992d4 {
   
-  // Sidebar
+  // Sidebar tabs
   ~ .categoryItem_c72b37 .itemInner_c72b37 {
     border-radius: 0 ;
     padding: 0 4px ;
@@ -346,7 +348,7 @@
     
     &:hover .itemInner_c72b37 { border-left: 3px solid var(--interactive-hover) }
     
-    &.selected_e9f61e .itemInner_c72b37 {
+    &.selected_d808b0 .itemInner_c72b37 {
       background-color: transparent ;
       border-left: 3px solid var(--interactive-hover);
     }
@@ -354,7 +356,7 @@
 }
 
 .guildListSection_ac51fa {
-  .card_eb1ca6 {
+  .card_e90879 {
     background: var(--background-modifier-accent);
 
     &:hover {

@@ -1,4 +1,4 @@
-// * chat v0.1.28
+// * chat v0.1.29
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -778,6 +778,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .lookFilled_dd4f85.colorPrimary_dd4f85 {
     @include Btn("background");
   }
+
+  // Activity 
+  .container_a3d172 {
+    background: $BG_Embed ;
+  }
   // <- Message contents
   
   // -> MSg Types
@@ -1012,6 +1017,11 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
   // <- Tags filter
+
+  // "be the first..." in empty forum
+  .container_a03b48, .icon_a03b48 {
+    background: none ;
+  }
 
   // -> Post item card inner container (list, grid)
   .container_d331f1, .container_a57509 {

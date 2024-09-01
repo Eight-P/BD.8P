@@ -1,4 +1,4 @@
-// * settings v0.1.12
+// * settings v0.1.13
 // Client / Guilds / Channels
 @use 'mixins' as * ;
 
@@ -6,7 +6,7 @@ $T1_v: null !default ;
 
 // -> Theme version info
 // Settings sidebar bottom
-.layer_d4b6c5:not(.baseLayer_d4b6c5) .sidebarRegion_c25c6d .clickTarget_e3203d .info_c5a741:before {
+.layer_d4b6c5:not(.baseLayer_d4b6c5) .sidebarRegion_c25c6d .info_c5a741:before {
   content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
   display: block !important;
   font-size: 12px !important;
@@ -20,6 +20,15 @@ $T1_v: null !default ;
 
 // -> General Settings
 .layer_d4b6c5:not(.baseLayer__13b6b) {
+
+  // -> Searchbar
+  @include searchbar(".searchBar_e7c031", ".inner_effbe2");
+
+  .searchBar_e7c031 .scrollerBase_c49869 {
+
+    &::-webkit-scrollbar { display: none }
+  }
+  // <- Searchbar
   
   // -> Sidebar
   .sidebarRegionScroller_c25c6d {
@@ -176,52 +185,31 @@ $T1_v: null !default ;
 
   // Roles list
   .content_eed6a8 {
-    .roleRow_a930f1 {
 
-      // role btns
-      .secondary__45d4f {
-        background: none ;
-      }
+    // role btns
+    .secondary_e258f5 {
+      background: none ;
     }
   }
 
   // -> Edit Roles
   // Scrollbar from sidebar
-  .contentRegionScroller_c25c6d:has(.page_e8251c)::-webkit-scrollbar {  display: none }
+  .contentRegionScroller_c25c6d:has(.page_e8251c)::-webkit-scrollbar { display: none }
 
-  .contentColumn_c25c6d > .page_e8251c {
-    
-    // Sidebar container main
-    .sidebar_e87574 {
-      height: fit-content ;
-    }
-    
-    // Left side main content container (why did i do this ?)
-    .contentContainer_e8251c {
-      // border-right: 12px solid var(--scrollbar-auto-track);
-      
-      .scrollerBase_eed6a8, // old
-      .scrollerBase_c49869 {// new
-        // margin-right: -12px ;
-      }
-    }
-    
-    // Header container "Manage Members"
-    .headerContainer_fe3229 {
-      right: 0 ;
-    }
-    
-    // Header 
+  .page_e8251c {
+    // -> Header
     .header_bd05f1 {
-      padding: 0 0 24px 0 ;
-      margin: 0 ;
-      box-shadow: none ;
-      
+      border-bottom: 1px solid grey ;
+
+      div {
+        z-index: 2 ;
+      }
+
+      // background
       &:before {
         content: "";
         position: absolute ;
-        height: 100% ;
-        width: 100% ;
+        inset: 0 ;
         background: var(--background_app);
         background-position: center;
         background-size: cover;
@@ -230,61 +218,117 @@ $T1_v: null !default ;
         
         --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
         --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
-
+  
         filter: var(--blur) var(--brightness);
       }
-      
-      // Nav bar buttons
-      .tabBarItem_c69589 {
-        border: none ;
-      }
-
-      // Add member btn
-      .addButton_fe3229 { @include Btn("background") }
-
-      // search
-      .searchContainer_a73849 .input__48d49 {
-        border-bottom: 1px solid var(--interactive-muted);
-      }
     }
 
-    // Content scroller "Permissions"
-    .permissionsWrapper_a73849 {
-      margin-top: 16px ;
-    }
-
-    // linked roles config container
-    .container_ae96a9 {
-      background: none ;
-    }
-    
-    // Info on Bot roles
-    .warning_f20685 {
-      position: absolute ;
-      top: 49px ;
-      left: 0px ;
-      width: auto ;
-      background: none ;
+    .tabBarItem_c69589 {
       border: none ;
-      padding: 0 ;
-      z-index: 100 ;
-
-      .text_f20685 {
-        display: none ;
-      }
-
-      &:hover .text_f20685 {
-        display: block ;
-        background: var(--background-tertiary);
-        border: 1px solid var(--info-warning-foreground);
-        padding: 10px ;
-      }
-
-      ~ .tabBar_c69589 {
-        margin-left: 40px ;
-      }
     }
+
+    // Add member btn
+    .addButton_fe3229 { @include Btn("background") }
+    // <- Header
   }
+
+
+  // .contentColumn_c25c6d > .page_e8251c .l{
+    
+  //   // Sidebar container main
+  //   .sidebar_e87574 {
+  //     height: fit-content ;
+  //   }
+    
+  //   // Left side main content container (why did i do this ?)
+  //   .contentContainer_e8251c {
+  //     // border-right: 12px solid var(--scrollbar-auto-track);
+      
+  //     .scrollerBase_eed6a8, // old
+  //     .scrollerBase_c49869 {// new
+  //       // margin-right: -12px ;
+  //     }
+  //   }
+    
+  //   // Header container "Manage Members"
+  //   .headerContainer_fe3229 {
+  //     right: 0 ;
+  //   }
+    
+  //   // Header 
+  //   .header_bd05f1 {
+  //     padding: 0 0 24px 0 ;
+  //     margin: 0 ;
+  //     box-shadow: none ;
+      
+  //     &:before {
+  //       content: "";
+  //       position: absolute ;
+  //       height: 100% ;
+  //       width: 100% ;
+  //       background: var(--background_app);
+  //       background-position: center;
+  //       background-size: cover;
+  //       background-attachment: fixed;
+  //       background-repeat: no-repeat;
+        
+  //       --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+  //       --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+
+  //       filter: var(--blur) var(--brightness);
+  //     }
+      
+  //     // Nav bar buttons
+  //     .tabBarItem_c69589 {
+  //       border: none ;
+  //     }
+
+  //     // Add member btn
+  //     .addButton_fe3229 { @include Btn("background") }
+
+  //     // search
+  //     .searchContainer_a73849 .input__48d49 {
+  //       border-bottom: 1px solid var(--interactive-muted);
+  //     }
+  //   }
+
+  //   // Content scroller "Permissions"
+  //   .permissionsWrapper_a73849 {
+  //     margin-top: 16px ;
+  //   }
+
+  //   // linked roles config container
+  //   .container_ae96a9 {
+  //     background: none ;
+  //   }
+    
+  //   // Info on Bot roles
+  //   .warning_f20685 {
+  //     position: absolute ;
+  //     top: 49px ;
+  //     left: 0px ;
+  //     width: auto ;
+  //     background: none ;
+  //     border: none ;
+  //     padding: 0 ;
+  //     z-index: 100 ;
+
+  //     .text_f20685 {
+  //       display: none ;
+  //     }
+
+  //     &:hover .text_f20685 {
+  //       display: block ;
+  //       background: var(--background-tertiary);
+  //       border: 1px solid var(--info-warning-foreground);
+  //       padding: 10px ;
+  //     }
+
+  //     ~ .tabBar_c69589 {
+  //       margin-left: 40px ;
+  //     }
+  //   }
+  // }
   // <- Edit Roles
 }
 // <- Server settings

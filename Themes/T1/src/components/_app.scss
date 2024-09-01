@@ -1,4 +1,4 @@
-// * app v0.1.11
+// * app v0.1.12
 @use 'mixins' as * ;
 
 body {
@@ -171,35 +171,10 @@ body {
   }
 }
 
-// Searchbar (App directory/Discovery)
-.searchBox__56feb {
-  background: var(--background-modifier-accent) !important ;
-  
-  &:focus-within, &:has(.clearIcon__21453) {
-    border-color: transparent transparent white transparent !important;
-    border-radius: 0 ;
-    background: var(--background-modifier-selected) !important;
-    box-shadow: none !important;
-  }
+// General searchbar
+@include searchbar(".container_c18ec9", ".inner_c18ec9");
 
-  // Discovery
-  &.searchBox_f69601 svg {
-    color: hsl(var(--white-500-hsl)/.3) !important;
-
-    &.clearIcon__21453:hover {
-      color: var(--text-normal) !important;
-    }
-   }
-
-  .searchBoxInput_f69601 {
-    color: var(--text-normal) !important;
-  }
-
-  // App direcoty
-  // &.search_aabd24.searchBar_a0e1d7 { }
-}
-
-// Profile image decoration effects
+// Profile image decorations user option
 .avatarDecoration_c51b4e .avatar_c51b4e {
   height: calc(100% * var(--show-avatarDecorations));
   width: calc(100% * var(--show-avatarDecorations));

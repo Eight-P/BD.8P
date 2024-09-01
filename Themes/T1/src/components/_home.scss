@@ -1,4 +1,4 @@
-// * home v0.1.11
+// * home v0.1.12
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -7,11 +7,6 @@
 
   // Seperator line top
   &::before { display: none }
-
-  // Friendslist searchbar
-  .searchBar_e0840f {
-    background: var(--background-modifier-accent);
-  }
 
   // -> Friendslist
   .peopleList_e0840f {
