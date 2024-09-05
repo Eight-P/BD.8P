@@ -1,4 +1,4 @@
-// * user v0.3.6
+// * user v0.3.7
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -12,20 +12,46 @@
   @include shadow_effect("box_2");
 
   --custom-user-profile-width-bite-size: 340px ;
-  
+
   --bg_items: var(--background-modifier-hover);
   --bg_itemsHover: var(--background-modifier-selected);
-  --bg_badgesFloating: rgb(from var(--background-tertiary) r g b / .8);
+  // mixing popout bg + item bg (modifier has .16 alpha)
+  --bg_badgesFloating: color-mix(in hsl,
+    hsl(220 calc(var(--saturation-factor, 1) * 8.1%) 7.3% / 1) 84%,
+    hsl(from var(--background-modifier-hover) h s l / 1 ) 16%
+  );
 
   &.userProfileOuterThemed_c69a7b {
-    --bg_items: rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-6));
-    --bg_itemsHover: rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-5));
-    --bg_badgesFloating: rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-4));
+    --bg_items: hsl(from var(--profile-body-background-hover) h s l / .075 );
+    // with color theme
+    // --bg_items: hsl(from var(--profile-gradient-button-color) h s l / .25 );
+
+    --bg_itemsHover: hsl(from var(--profile-body-background-hover) h s l / .15 );
+
+    // geting the base gradient 
+    --bg_badgesFloating_gradient: color-mix(in srgb,
+      rgb(from var(--profile-gradient-primary-color) r g b) 74%,
+      rgb(from var(--profile-gradient-secondary-color) r g b)
+    );
+
+    // mix with overlay at gradient
+    --bg_badgesFloating_overlay: color-mix(in srgb,
+      var(--profile-gradient-overlay-color) 74%,
+      var(--bg_badgesFloating_gradient)
+    );
+
+    // mix with items background
+    --bg_badgesFloating: color-mix(in srgb,
+      var(--bg_badgesFloating_overlay) 92.5%,
+      rgb(from var(--profile-body-background-hover) r g b / 1 )
+    )
   }
 
-  .userPopoutInner_c69a7b  {
-    padding-bottom: 0 ;
+  .userProfileInner_c69a7b {
     border-radius: 0 ;
+    overflow: hidden scroll ;
+
+    &::-webkit-scrollbar { display: none }
   }
   // <- Misc
 
@@ -86,7 +112,7 @@
   // <- User actions
 
   // -> Header
-    .header_b07019 {
+    .header_b8cc6d {
       min-height: unset ;
       position: relative ; 
       height: 119px ;
@@ -94,9 +120,9 @@
     }
 
     // -> Banner (Default aspect: 20:7) (340:119)
-    .mask_c3e427 {
+    .mask_d5fdb1 {
       // Mask for cutout / seperator line below banner / Gif indicator
-      mask, .banner_c3e427:before, .gifTag_c3e427 { display: none }
+      mask, .banner_d5fdb1:before, .gifTag_d5fdb1 { display: none }
     }
     // <- Banner
 
@@ -174,7 +200,7 @@
     // <- Avatar / status icon
 
     // -> Status text
-    .header_b07019 {
+    .header_b8cc6d {
       // container
       > div:not([class]), .visibleContainer_d0a252 {
         display: contents ;
@@ -194,25 +220,26 @@
       justify-content: center ;
       box-shadow: none ;
 
+      pointer-events: none ; // for full status with no pointer event
+
       &::after, &::before { display: none }
     }
 
     // Status inner container
     .statusBubble_d0a252 {
       padding: 5px 10px ;
-
-      $opacity: .65 ;
-      
-      background: color-mix(in oklab,
-        hsl(var(--black-hsl) / $opacity) 100%,
-        hsl(var(--theme-base-color-hsl, 0 0% 0%) / $opacity) 
-        10%
-      );
+      background: rgb(0 0 0 / .65 );
 
       @include shadow_effect("box_2");
 
       &.statusBubbleEmojiOnlyPadding_d0a252 {
         padding: 8px 10px ;
+      }
+
+      // for full status with no pointer event
+      .content_d0a252 {
+        -webkit-line-clamp: 3 ;
+        max-height: 100px !important;
       }
 
       .statusText_d0a252 {
@@ -239,14 +266,15 @@
   // <- Header
 
   // -> Body
-    $Padding_body: 20px ; // 16
+    $Padding_body: 18px ; // 16
 
-    .body_b07019 {
+    .body_b8cc6d {
       padding: 0px $Padding_body !important ;
       overflow: visible !important ;
       z-index: 2 ;
       order: 3 ;
       gap: 16px ;
+      flex: 1 0 auto ;
 
       &::-webkit-scrollbar { display: none }
     }
@@ -343,7 +371,7 @@
       // <- Username / Pronouns
 
       // -> Badges
-    .container_e5a42d {
+    .container_b64375 {
       // top row (14) + [Badges] + (14) + [ ActBtn: (28 + 4)n + NoteBtn: 28 ] + (14)
 
       position: absolute ;
@@ -372,7 +400,7 @@
       }
 
       // Second badges container for badges n. 13-24
-      + .container_e5a42d {
+      + .container_b64375 {
         top: 0px ;
 
         > div {
@@ -380,7 +408,7 @@
         }
 
         // Badges No. 19+ (i mean come on)
-        > div:nth-child(n+7), ~ .container_e5a42d {
+        > div:nth-child(n+7), ~ .container_b64375 {
           display: none ;
         }
       }
@@ -415,37 +443,13 @@
         @include shadow_effect("drop_2")
       }
     }
-
-    // -> Dynamic (sort of) max-width for badges containers
-    // based on action btns
-
-    // @for $actionBtns from 2 through 4 {
-    //   $badges: 10 - $actionBtns ; // for first row
-
-    //   &:has(.wrapper_cb78f1 div:nth-child(#{$actionBtns})) .container_e5a42d {
-    //     max-width: $badges * 24px ;
-    
-    //     &:has(:nth-child(#{$badges + 1})) > div {
-    //       background: rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-4));
-
-    //       &:nth-child(#{$badges}) {
-    //         border-radius: 0 0 4px 0 ;
-    //       }
-    //       &:nth-child(n+#{$badges + 1}) {
-    //         padding-top: 0px ;
-    //       }
-    //     }
-    //   }
-    // }
-
-    // <- Dynamic max-width badges
     // <- Badges
     
     // <- User Main info (Name, pronouns, badges, ...)
 
     // -> Bot action btns
-    .buttons_e274c3 {
-      .button_e274c3 {
+    .buttons_ce21cc {
+      .button_ce21cc {
         background: var(--bg_items);
 
         &:hover {
@@ -456,7 +460,7 @@
     // <- Bot action btns
 
     // -> Activitys
-    .activity_b07019 {
+    .activity_b8cc6d {
       padding: 8px 0 ;
       background: none ;
 
@@ -474,6 +478,7 @@
       .actions_ae1fa2 button {
         background: var(--bg_items);
         transition: none ;
+        color: var(--text-normal) ;
 
         &:hover {
           background: var(--bg_itemsHover);
@@ -483,7 +488,7 @@
     // <- Activitys
 
     // -> Bot commands
-    .list_fa6679 {
+    .list_b6fd3d {
       .button_dd4f85 {
         background: var(--bg_items);
 
@@ -496,9 +501,9 @@
 
     // -> Roles 
     .role_f9575e, // roles
-    .root_c83b44 .button_edead5, // add roles btn
-    .showMoreButton_c83b44, // view all roles btn
-    .collapseButton_c83b44 // revert "view all"
+    .root_e6f2d0 .button_edead5, // add roles btn
+    .expandButton_e6f2d0, // view all roles btn
+    .collapseButton_e6f2d0 // revert "view all"
     {
       background: var(--bg_items);
       border-color: transparent ;
@@ -508,13 +513,13 @@
   // <- Body
 
   // -> Footer
-  .footer_b07019 {
+  .footer_b8cc6d {
     padding: 0 ;
     margin-top: 8px ;
     border-top: 1px solid var(--profile-message-input-border-color);
     order: 4 ;
     
-    .inner_dc0b43 {
+    .inner_c59af2 {
       background: none ;
     }
 
@@ -541,29 +546,6 @@
 // -> Account Popout
 .accountProfilePopoutWrapper_b2ca13 {
   left: 0 ;
-
-  // .menu_d90b3d { 
-  //   max-width: unset ;
-  //   background: var(--background-tertiary);
-    
-  //   // popout menu
-  //   .submenu_d90b3d {
-      
-  //     .separator_d90b3d { display: none }
-      
-  //     .item_d90b3d {
-  //       border-radius: 4px ;
-
-  //       &#status-status-picker--online.focused_d90b3d { background: var(--status-online) }
-        
-  //       &#status-status-picker--idle.focused_d90b3d { background: var(--status-idle) }
-
-  //       &#status-status-picker--dnd.focused_d90b3d { background: var(--status-DnD) }
-        
-  //       &#status-status-picker--invisible.focused_d90b3d { background: var(--status-invisible) }
-  //     }
-  //   }
-  // }
 }
 // <- Account Popout
 
@@ -589,7 +571,7 @@
   // <- Usert action btns
 
   // -> Banner
-  .mask_c3e427 {
+  .mask_d5fdb1 {
     border-radius: 8px ;
     transform: scale(.95);
 
