@@ -1,4 +1,4 @@
-// * app v0.1.12
+// * app v0.1.13
 @use 'mixins' as * ;
 
 body {
@@ -172,7 +172,7 @@ body {
 }
 
 // General searchbar
-@include searchbar(".container_c18ec9", ".inner_c18ec9");
+.app_bd26cc { @include searchbar(".container_c18ec9", ".inner_c18ec9") }
 
 // Profile image decorations user option
 .avatarDecoration_c51b4e .avatar_c51b4e {

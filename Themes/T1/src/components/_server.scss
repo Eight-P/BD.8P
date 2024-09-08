@@ -1,4 +1,4 @@
-// * server v0.1.15
+// * server v0.1.16
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -270,7 +270,21 @@
   .membersGroup_cbd271 { 
     margin-bottom: 4px;
     font-weight: 600 ;
-   }
+  }
+
+  // Activitys
+  .container_c64476 {
+    background: none ;
+
+    .contentImage_dc67b6 {
+      width: 40px !important ;
+      height: 40px !important ;
+    }
+  }
+  // would remove popout hover
+  // .content_eed6a8 > :has(.container_c64476) {
+  //   pointer-events: none ;
+  // }
   
   // Member
   .member_a31c43 {
@@ -312,6 +326,7 @@
   .placeholder_fb03e5, .memberGroupsPlaceholder_cbd271 {
     animation: none ;
   }
+
   .placeholderAvatar_fb03e5, .placeholderUsername_a43b87, .memberGroupsPlaceholder_cbd271 {
     background: var(--text-normal);
     opacity: 0.1;
@@ -433,28 +448,25 @@
 
 // -> Special Channels (Chan&Rols / Members)
 // Header
-.container_e44302 {
+.container_fc4f04 {
 
   // return to last channel btn (Chan&Rols / Members)
-  .returnButton_f1fd9c, .returnButton_d20375 {
+  .returnButton_d20375 {
     border: none;
     background: none;
 
     // Btn text
-    .returnButtonText_f1fd9c, .returnButtonText_d20375 {
-      color: var(--interactive-hover);
-    }
-
-    // Icon within text
-    .iconContainer_d8bfb3 { display: none }
-
-    // Text after icon
-    .overflow_c74e70 {
-      margin-left: 2px ;
+    .returnButtonText_d20375 {
+      color: var(--header-secondary);
+      opacity: .9 ;
     }
 
     &:hover {
-      background: none var(--background-modifier-selected);
+      background: var(--background-modifier-hover);
+
+      .returnButtonText_d20375 {
+        opacity: 1 ;
+      }
     }
   }
 }
@@ -569,14 +581,33 @@
   }
 
   // -> Header
-  .searchBar_b0740c {
-    background: var(--background-modifier-selected);
-    border-bottom: 1px solid transparent ;
+  .searchHeaderContainer_b0740c {
 
-    &:focus-within {
-      background: none ;
-      border-bottom-color: var(--interactive-normal);
-      border-radius: 0 ;
+    // "Recent Members" header
+    .defaultColor_e9e35f {
+      color: var(--header-secondary);
+    }
+
+    // Buttons Sort, Prune
+    .button_dd4f85 {
+      background: var(--background-modifier-accent) ;
+      border: none ;
+
+      .contents_dd4f85 {
+        opacity: .9 ;
+      }
+
+      &:hover {
+        background: var(--background-modifier-hover);
+
+        .contents_dd4f85 {
+          opacity: 1 ;
+        }
+      }
+
+      &.colorRed_dd4f85 {
+        color: var(--red);
+      }
     }
   }
   // <- Header

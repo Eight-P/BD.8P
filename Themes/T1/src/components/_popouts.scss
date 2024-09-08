@@ -1,4 +1,4 @@
-// * popouts v0.1.19
+// * popouts v0.1.20
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -89,7 +89,20 @@
 
   // -> Popout content (Emoji, Sticker)
   #emoji-picker-tab-panel, #sticker-picker-tab-panel {
+    overflow: hidden ;
 
+    // -> from reactions btn
+    .header_c6ee36 {
+      background: var(--background-tertiary);
+    }
+
+    .emojiPicker_c6ee36 {
+      box-shadow: none ;
+    }
+
+
+    // <- from reactions btn
+    
     // Searchbar
     .container_effbe2 {
       background: var(--background-tertiary);
@@ -120,11 +133,9 @@
   #emoji-picker-grid, #sticker-picker-grid {
     background: var(--background-floating);
 
-    .scroller_dcade6 {
+    .scroller_d53d65 {
       @include scrollbar();
-      @include scrollerFadeOut();
-
-      // &::-webkit-scrollbar { display: none } 
+      // @include scrollerFadeOut();
     }
 
     // Category header
@@ -147,6 +158,50 @@
     }
   }
   // <- Picker Content
+
+  // emoji picker
+  #emoji-picker-tab-panel {
+
+    // .categoryList_c6ee36 .listItems_d53d65 > div:has(.categoryItemLockIconContainer_bfabc4) {
+    // .listItems_d53d65 > div:has(.categoryItemLockIconContainer_bfabc4) {
+    //   display: none ;
+
+    //   ~ div:not([class]) {
+    //     // display: none ;
+    //   }
+    // }
+
+    // .categoryList_c6ee36 {
+    //   overflow: hidden scroll ;
+
+    //   &::-webkit-scrollbar {
+    //     display: none ;
+    //   }
+    // }
+
+    // .categoryList_c6ee36 .scroller_d53d65{
+    //   height: max-content ;
+    // }
+
+    // .unicodeShortcut_dfa278 {
+    //   display: none ;
+    // }
+
+
+    // .categorySectionNitroLocked_a3bc57,
+    // .nitroTopDividerContainer_e8f337,
+    // .upsellContainerFloating_ad7baa {
+    //   display: none ;
+    // }
+
+    // .emojiPickerListWrapper_c6ee36 .listWrapper_a3bc57 {
+    //   overflow: hidden scroll ;
+    // }
+
+    // .emojiPickerListWrapper_c6ee36 .list_a3bc57 {
+    //   height: max-content ;
+    // }
+  }
 
   // Apps&Cmds
   .contentWrapper_f7506e {
@@ -1074,6 +1129,10 @@
 
   .drawerSizingWrapper_f7506e {
     height: 100% !important ;
+
+    .slideContent_f7506e {
+      max-height: calc(100vh - 130px);
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-// * chat v0.1.29
+// * chat v0.1.30
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -410,7 +410,7 @@
   .channelAppLauncher_df39bd {
     margin: 0 ;
     overflow: hidden ;
-    width: calc(40px * var(--show-apps-btn));
+    width: calc(48px * var(--show-apps-btn));
     margin-top: calc(-100px * (1 - var(--show-apps-btn)));
 
     display: var(--chatBtn_Apps);
