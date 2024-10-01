@@ -1,4 +1,4 @@
-// * user v0.3.7
+// * user v0.3.8
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -28,7 +28,7 @@
 
     --bg_itemsHover: hsl(from var(--profile-body-background-hover) h s l / .15 );
 
-    // geting the base gradient 
+    // getting the base gradient 
     --bg_badgesFloating_gradient: color-mix(in srgb,
       rgb(from var(--profile-gradient-primary-color) r g b) 74%,
       rgb(from var(--profile-gradient-secondary-color) r g b)
@@ -330,9 +330,10 @@
         margin-top: 2px ;
         padding-top: 0 ;
         cursor: pointer;
+        gap: 3px ;
 
-        // Btns NOte, "Unable to load profile..."
-        .button_dd4f85, .container_cac583 {
+        // Btns NOte, "Unable to load profile...", user in voice (wip)
+        .button_dd4f85, .container_cac583, .vc-uvs-speaker {
           width: 28px ;
           height: 28px ;
           padding: 0 ;
@@ -340,7 +341,8 @@
           background: var(--bg_items);
           color: var(--header-primary);
           align-items: center ;
-          justify-content: center ;      
+          justify-content: center ;
+          border-radius: var(--radius-round);    
 
           svg { @include shadow_effect("drop_2") }
         }

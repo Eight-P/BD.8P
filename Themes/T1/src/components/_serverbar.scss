@@ -1,4 +1,4 @@
-// * serverbar v0.1.14
+// * serverbar v0.1.15
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -52,18 +52,24 @@
   .scroller_fea3ef {
     display: grid ;
     grid-template-columns: 54px ;
-    grid-template-rows: 48px 29px 35px auto ;
+    // grid-template-rows: 48px 29px 35px auto ;
+    grid-template-rows: 48px 64px auto ;
     grid-auto-rows: min-content ;
+    // grid-template-areas: 
+    //   "Home" 
+    //   "GuildsAd"
+    //   "Discovery"
+    //   "Servers"
+    // ;
     grid-template-areas: 
-      "Home" 
+      "Home"
       "GuildsAd"
-      "Discovery"
       "Servers"
     ;
     height: calc(100vw - 120px);
     margin: 0 0 120px 0 ;
     padding: 10px 0 2px 0 ;
-    align-items: center;
+    align-items: center ;
     
     &::-webkit-scrollbar { display: none }
     
@@ -103,132 +109,132 @@
 
 // - Static options -->
 // - Home / GuildsAd / Discovery / GuildsError
+// Home / BDPSL
+@mixin Home_Icon () {
+  grid-area: Home ;
+  
+  // Pill
+  .pill_f9623d { display: none }
+  
+  // Notification badge
+  .lowerBadge_c5f96a {
+    left: 4px ;
+    bottom: 4px ;
+    @include shadow_effect("drop_2");
+  }
+  
+  // SVG 1 conatiner
+  .wrapper_c5f96a { 
+    transform: rotate(90deg);
+  }
+  
+  // Cut out for number badge
+  foreignObject { mask: none }
+
+  // SVG 2 conatiner
+  .childWrapper_f90abb {
+    background: none ;
+    color: var(--text-normal);
+    opacity: .75 ;
+  }
+  
+  // Hover
+  .wrapper_f90abb.selected_f90abb .childWrapper_f90abb { opacity: .9 }
+  
+  // SVG 2
+  .childWrapper_f90abb > svg { 
+    height: 26px ;
+    margin: 4px 4px 0 0 ;
+    overflow: visible ;
+    
+    @include shadow_effect("drop_1");
+
+   // Icon
+   path {
+     d: path("M 20.6644 20 C 20.6644 20 19.8014 18.9762 19.0822 18.0714 C 22.2226 17.1905 23.4212 15.2381 23.4212 15.2381 C 22.4384 15.881 21.5034 16.3334 20.6644 16.6429 C 19.4658 17.1429 18.3151 17.4762 17.1884 17.6667 C 14.887 18.0953 12.7774 17.9762 10.9795 17.6429 C 9.61301 17.381 8.43836 17 7.45548 16.6191 C 6.90411 16.4048 6.30479 16.1429 5.70548 15.8096 C 5.63356 15.7619 5.56164 15.7381 5.48973 15.6905 C 5.44178 15.6667 5.41781 15.6429 5.39384 15.6191 C 4.96233 15.381 4.7226 15.2143 4.7226 15.2143 C 4.7226 15.2143 5.87329 17.1191 8.91781 18.0238 C 8.19863 18.9286 7.31164 20 7.31164 20 C 2.0137 19.8333 0 16.381 0 16.381 C 0 8.7144 3.45205 2.50017 3.45205 2.50017 C 6.90411 -0.07123 10.1884 0.000197861 10.1884 0.000197861 L 10.4281 0.285909 C 6.11301 1.52399 4.12329 3.40493 4.12329 3.40493 C 4.12329 3.40493 4.65068 3.11921 5.53767 2.71446 C 8.10274 1.59542 10.1404 1.2859 10.9795 1.21447 C 11.1233 1.19066 11.2432 1.16685 11.387 1.16685 C 12.8493 0.976379 14.5034 0.92876 16.2295 1.11923 C 18.5068 1.38114 20.9521 2.0478 23.4452 3.40493 C 23.4452 3.40493 21.5514 1.61923 17.476 0.381146 L 17.8116 0.000197861 C 17.8116 0.000197861 21.0959 -0.07123 24.5479 2.50017 C 24.5479 2.50017 28 8.7144 28 16.381 C 28 16.381 25.9623 19.8333 20.6644 20 Z M 9.51712 8.88106 C 8.15068 8.88106 7.07192 10.0715 7.07192 11.5239 C 7.07192 12.9763 8.17466 14.1667 9.51712 14.1667 C 10.8836 14.1667 11.9623 12.9763 11.9623 11.5239 C 11.9863 10.0715 10.8836 8.88106 9.51712 8.88106 Z M 18.2671 8.88106 C 16.9007 8.88106 15.8219 10.0715 15.8219 11.5239 C 15.8219 12.9763 16.9247 14.1667 18.2671 14.1667 C 19.6336 14.1667 20.7123 12.9763 20.7123 11.5239 C 20.7123 10.0715 19.6336 8.88106 18.2671 8.88106 Z")
+   }
+ }
+}
+
+// GuildsAd / Discovery
+@mixin Icons () {
+  display: flex ;
+  width: 54px ;
+  
+  .pill_db6521 { display: none }
+  
+  // SVG 1 container, SVG 1
+  .wrapper_c5f96a, .svg_c5f96a {
+    height: 20px ;
+    width: 20px ;
+  }
+  
+  // SVG 2 container
+  .circleIconButton_db6521 {
+    transform: rotate(90deg);
+    background: none ;
+    color: var(--text-normal);
+    opacity: .75 ;
+    
+    &.selected_db6521 { opacity: 1 }
+    
+    @include shadow_effect("drop_1");
+    
+    // SVG 2 
+    .circleIcon_db6521 {
+      height: 100% ;
+      width: 100% ;
+    }
+  }
+}
+
+// GuildsAd
+@mixin GuildsAdd_Icon () {
+  @include Icons();
+  
+  grid-area: GuildsAd ;
+  margin-top: -38px ;
+}
+
+// Discovery
+// @mixin Discovery_Icon () {
+//   @include Icons();
+  
+//   grid-area: Discovery ;
+//   margin: 0 ;
+//   margin: 3px 0 10px 0;
+  
+//   .circleIconButton_db6521 .circleIcon_db6521 {
+//     height: 90% ;
+//     width: 90% ;
+//   }
+// }
+
+//  GuildsError
+@mixin GuildsError_Icon () {
+  grid-area: unset ;
+  position: absolute ;
+  top: 0 ;
+  left: 5px ;
+  height: 20px ;
+  width: 20px ;
+  
+  .anchor_af404b {
+    transform: rotate(90deg);
+    background: none ;
+    border: none ;
+    color: var(--red);
+    height: 20px ;
+    width: 20px ;
+  } 
+}
+
 .guilds_a4d4d9 .scroller_fea3ef {
   
   // general item container
   .listItem_c96c45 { 
     width: 54px ; 
     margin: 0 ; 
-  }
-  
-  // Home / BDPSL
-  @mixin Home_Icon () {
-    grid-area: Home ;
-    
-    // Pill
-    .pill_f9623d { display: none }
-    
-    // Notification badge
-    .lowerBadge_c5f96a {
-      left: 4px ;
-      bottom: 4px ;
-      @include shadow_effect("drop_2");
-    }
-    
-    // SVG 1 conatiner
-    .wrapper_c5f96a { 
-      transform: rotate(90deg);
-    }
-    
-    // Cut out for number badge
-    foreignObject { mask: none }
-
-    // SVG 2 conatiner
-    .childWrapper_f90abb {
-      background: none ;
-      color: var(--text-normal);
-      opacity: .75 ;
-    }
-    
-    // Hover
-    .wrapper_f90abb.selected_f90abb .childWrapper_f90abb { opacity: .9 }
-    
-    // SVG 2
-    .childWrapper_f90abb > svg { 
-      height: 26px ;
-      margin: 4px 4px 0 0 ;
-      overflow: visible ;
-      
-      @include shadow_effect("drop_1");
-
-     // Icon
-     path {
-       d: path("M 20.6644 20 C 20.6644 20 19.8014 18.9762 19.0822 18.0714 C 22.2226 17.1905 23.4212 15.2381 23.4212 15.2381 C 22.4384 15.881 21.5034 16.3334 20.6644 16.6429 C 19.4658 17.1429 18.3151 17.4762 17.1884 17.6667 C 14.887 18.0953 12.7774 17.9762 10.9795 17.6429 C 9.61301 17.381 8.43836 17 7.45548 16.6191 C 6.90411 16.4048 6.30479 16.1429 5.70548 15.8096 C 5.63356 15.7619 5.56164 15.7381 5.48973 15.6905 C 5.44178 15.6667 5.41781 15.6429 5.39384 15.6191 C 4.96233 15.381 4.7226 15.2143 4.7226 15.2143 C 4.7226 15.2143 5.87329 17.1191 8.91781 18.0238 C 8.19863 18.9286 7.31164 20 7.31164 20 C 2.0137 19.8333 0 16.381 0 16.381 C 0 8.7144 3.45205 2.50017 3.45205 2.50017 C 6.90411 -0.07123 10.1884 0.000197861 10.1884 0.000197861 L 10.4281 0.285909 C 6.11301 1.52399 4.12329 3.40493 4.12329 3.40493 C 4.12329 3.40493 4.65068 3.11921 5.53767 2.71446 C 8.10274 1.59542 10.1404 1.2859 10.9795 1.21447 C 11.1233 1.19066 11.2432 1.16685 11.387 1.16685 C 12.8493 0.976379 14.5034 0.92876 16.2295 1.11923 C 18.5068 1.38114 20.9521 2.0478 23.4452 3.40493 C 23.4452 3.40493 21.5514 1.61923 17.476 0.381146 L 17.8116 0.000197861 C 17.8116 0.000197861 21.0959 -0.07123 24.5479 2.50017 C 24.5479 2.50017 28 8.7144 28 16.381 C 28 16.381 25.9623 19.8333 20.6644 20 Z M 9.51712 8.88106 C 8.15068 8.88106 7.07192 10.0715 7.07192 11.5239 C 7.07192 12.9763 8.17466 14.1667 9.51712 14.1667 C 10.8836 14.1667 11.9623 12.9763 11.9623 11.5239 C 11.9863 10.0715 10.8836 8.88106 9.51712 8.88106 Z M 18.2671 8.88106 C 16.9007 8.88106 15.8219 10.0715 15.8219 11.5239 C 15.8219 12.9763 16.9247 14.1667 18.2671 14.1667 C 19.6336 14.1667 20.7123 12.9763 20.7123 11.5239 C 20.7123 10.0715 19.6336 8.88106 18.2671 8.88106 Z")
-     }
-   }
-  }
-  
-  // GuildsAd / Discovery
-  @mixin Icons () {
-    display: flex ;
-    width: 54px ;
-    
-    .pill_db6521 { display: none }
-    
-    // SVG 1 container, SVG 1
-    .wrapper_c5f96a, .svg_c5f96a {
-      height: 20px ;
-      width: 20px ;
-    }
-    
-    // SVG 2 container
-    .circleIconButton_db6521 {
-      transform: rotate(90deg);
-      background: none ;
-      color: var(--text-normal);
-      opacity: .75 ;
-      
-      &.selected_db6521 { opacity: 1 }
-      
-      @include shadow_effect("drop_1");
-      
-      // SVG 2 
-      .circleIcon_db6521 {
-        height: 100% ;
-        width: 100% ;
-      }
-    }
-  }
-  
-  // GuildsAd
-  @mixin GuildsAdd_Icon () {
-    @include Icons();
-    
-    grid-area: GuildsAd ;
-    margin: 6px 0 3px 0;
-  }
-  
-  // Discovery
-  @mixin Discovery_Icon () {
-    @include Icons();
-    
-    grid-area: Discovery ;
-    margin: 0 ;
-    margin: 3px 0 10px 0;
-    
-    .circleIconButton_db6521 .circleIcon_db6521 {
-      height: 90% ;
-      width: 90% ;
-    }
-  }
-  
-  //  GuildsError
-  @mixin GuildsError_Icon () {
-    grid-area: unset ;
-    position: absolute ;
-    top: 0 ;
-    left: 5px ;
-    height: 20px ;
-    width: 20px ;
-    
-    .anchor_af404b {
-      transform: rotate(90deg);
-      background: none ;
-      border: none ;
-      color: var(--red);
-      height: 20px ;
-      width: 20px ;
-    } 
   }
 
   // Favorites
@@ -283,11 +289,31 @@
     @include GuildsAdd_Icon();
 
     + .listItem_c96c45 {
-      @include Discovery_Icon();
+      // @include Discovery_Icon();
 
       + .listItem_c96c45 {
         @include GuildsError_Icon()
       }
+    }
+  }
+}
+
+// Guilds add container
+.guilds_a4d4d9 .footer_aa1bff {
+  display: contents ;
+
+  .gradient_aa1bff { display: none }
+
+  .listItem_c96c45 {
+    position: absolute ;
+    top: #{10 + 48 + 6 + 20 + 6}px ;
+    left: 0 ;
+
+    @include Icons();
+
+    .circleIconButton_db6521 .circleIcon_db6521 {
+      height: 90% ;
+      width: 90% ;
     }
   }
 }
@@ -391,7 +417,7 @@
 // Server folder / Pending applications folder
 .guilds_a4d4d9 .wrapper_bc7085 {
   width: 54px ;
-  margin: 12px 0 ;
+  margin: 6px 0 ;
 
   // Background when open
   .expandedFolderBackground_bc7085 { display: none }
@@ -491,7 +517,7 @@
   // Seperator to the left
   &::before {
     content: "" ;
-    top: 2px ;
+    top: 0px ;
     position: absolute ; 
     height: 2px ;
     width: 32px ;
@@ -518,6 +544,7 @@
 // DMs
 .guilds_a4d4d9 .scroller_fea3ef > [style="opacity: 1; height: 56px; transform: scale(1);"] {
   @include ServerIcon();
+  margin: 12px 0 10px 0 ;
 
   // Seperator to the left
   &::before {
@@ -532,7 +559,7 @@
 
   // remove Seperator on subsequent Dms
   ~ [style="opacity: 1; height: 56px; transform: scale(1);"] {
-    margin: 0 0 12px 0 ;
+    margin: 0 0 10px 0 ;
 
     &::before { content: none }
   }
