@@ -1,4 +1,4 @@
-// * compileDevTheme.js v3
+// * compileDevTheme.js v3.1
 // watch and compile dev file to mod folders
 
 const Fs = require('fs');
@@ -25,7 +25,9 @@ const SassOptions = {
   sourceMapIncludeSources: false
 };
 
-Chokidar.watch(ThemeFolder)
+Chokidar.watch(ThemeFolder, {
+  ignored: (path, stats) => stats?.isFile() && !path.endsWith('.scss')
+})
   .on('ready', () => {
     console.log(`Listening for changes in:\n\u001b[36m${ThemeFolder}\u001b[0m\nCompiling to:`);
     for (let filePath of OutputFiles) {
@@ -78,9 +80,9 @@ function getOutputPaths() {
 
   if (argList[0]) {
     for (let arg of argList) {
-      let modname = modNames[arg.toLowerCase()];
-      if (!modname) quitWithError(new Error(), "Invalid mod", arg);
-      let filePath = Path.join(getModFolder(modname), ThemeName + "-dev.theme.css");
+      let modName = modNames[arg.toLowerCase()];
+      if (!modName) quitWithError(new Error(), "Invalid mod", arg);
+      let filePath = Path.join(getModFolder(modName), ThemeName + "-dev.theme.css");
       pathsList.push(filePath);
     }
   }

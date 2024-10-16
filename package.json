@@ -1,6 +1,6 @@
 {
   "name": "bd.8p",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Collective Repository, currently containing my T1 Discord theme",
   "author": "Eight_P (https://github.com/Eight-P)",
   "repository": "github:Eight-P/BD.8P",
@@ -9,7 +9,9 @@
   "bugs": "https://github.com/Eight-P/BD.8P/issues",
   "keywords": [
     "Discord",
-    "BetterDiscord"
+    "BetterDiscord",
+    "T1",
+    "Theme"
   ],
   "workspaces": [
     "Themes/T1"
@@ -20,6 +22,6 @@
   },
   "dependencies": {
     "sass": "^1.51.0",
-    "chokidar": "^3.5.3"
+    "chokidar": "^4.0.1"
   }
 }
