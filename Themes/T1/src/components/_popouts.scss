@@ -1,4 +1,4 @@
-// * popouts v0.1.20
+// * popouts v0.1.21
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -540,14 +540,38 @@
   
   .header_f0cd33 {
     background: var(--background-secondary-alt);
+    border: none ;
+    margin-bottom: 2px ;
     
-    .tab_f0cd33, .button_e258f5 {
+    .button_e258f5 {
       background: none !important ;
+    }
+
+    // Nav bar
+    .tabBar_f0cd33 {
+      margin: 0 ;
+      height: 40px ;
+      margin-left: 4px ;
+
+      // tab item
+      .tab_f0cd33 {
+        padding: 0 4px ;
+        margin: 0 8px ;
+        border-color: transparent ;
+
+        &.selected_a0 {
+          border-color: var(--header-secondary);
+        }
+      }
+    }
+
+    .friendRequestsButton_c0c071 {
+      background: none ;
     }
   }
 
   // For You
-  &.container__23c08 {
+  &.container_f8a938 {
 
     .container_fe1358 {
       background: none ;

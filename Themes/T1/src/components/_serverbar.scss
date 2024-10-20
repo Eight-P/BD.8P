@@ -1,4 +1,4 @@
-// * serverbar v0.1.15
+// * serverbar v0.1.16
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -239,6 +239,7 @@
 
   // Favorites
   .listItem_c96c45:has(.favoriteIcon_dcc7a4) {
+    padding-top: 2px ;
 
     &::before {
       content: "" ;
@@ -250,7 +251,7 @@
       background-color: var(--interactive-normal);
     }
 
-    .pill__66ac8 { display: none }
+    .pill_dcc7a4 { display: none }
 
     div:not([class]) {
       .wrapper_c5f96a {
@@ -605,6 +606,9 @@
   .headerContent_fd6364 {
     display: contents ;
   }
+
+  // Favorites star icon 
+  .favoritesIcon_fd6364 { display: none }
   
   // Server name
   .name_fd6364 {
@@ -659,26 +663,25 @@
 }
 
 // - Discovery Text (button)
-.sidebar_a4d4d9 .discoverHeader_b992d4 {
+
+.content_a4d4d9 .container_e462a4 .header_e462a4 {
   position: fixed ;
   width: 120px ;
   height: 54px ;
   right: 0 ;
   bottom: 0 ;
   margin: 0 ;
-  text-align: center ;
-  line-height: 54px ;
-  font-weight: 400 ;
-  font-size: 16px ;
-  color: var(--text-normal);
-  overflow: hidden ;
-  text-overflow: ellipsis ;
-  white-space: nowrap ;
+  padding: 0 ;
+  justify-content: center ;
 
-  @include shadow_effect("text_1");
-  
-  & + .categoryItem_c72b37 {
-     margin-top: 64px ;
+  // text
+  .defaultColor_a595eb {
+    font-weight: 400 ;
+    font-size: 16px ;
+    color: var(--text-normal);
+    overflow: hidden ;
+
+    @include shadow_effect("text_1");
   }
 }
 

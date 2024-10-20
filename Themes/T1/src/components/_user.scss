@@ -1,4 +1,4 @@
-// * user v0.3.8
+// * user v0.3.9
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -252,6 +252,15 @@
 
     // Edit status for own profile btns
     .popover_bba79b { display: none }
+
+    .addCustomStatusButtonBubble_d0a252 {
+      display: contents ;
+
+      .statusBubbleOuter_d0a252 {
+        pointer-events: auto ;
+      }
+    }
+
     // <- Status text
     
     // -> "Beta" badge (maybe more, idk)

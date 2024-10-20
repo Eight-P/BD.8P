@@ -1,4 +1,4 @@
-// * server v0.1.16
+// * server v0.1.17
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -339,46 +339,114 @@
 }
 // <- Members list 
 
-// -> Discovery
-.viewWrapper_a3a4ce > .searchHeader_a3a4ce .headerImage_a3a4ce { display: none }
+// -> Discovery Servers / Quests
+// -> Sidebar region
+.container_e462a4 {
+  margin-top: 48px ;
 
-@include searchbar(".search_f69601", ".searchBox_f69601");
-
-.discoverHeader_b992d4 {
-  
-  // Sidebar tabs
-  ~ .categoryItem_c72b37 .itemInner_c72b37 {
-    border-radius: 0 ;
-    padding: 0 4px ;
-    margin: 5px 4px ;
+  // list
+  .nav_e462a4 {
+    gap: 8px ;
   }
+
+  // items
+  .navItem_e462a4 {
+    border-radius: 0 ;
+    border-left: 3px solid transparent;
   
-  ~ .categoryItem_c72b37 {
-    
-    .itemInner_c72b37 {
-      border-radius: 0 ;
-      padding: 0 4px ;
-      margin: 5px 4px ;
+    &:hover {
+      border-left: 3px solid var(--interactive-hover);
     }
     
-    &:hover .itemInner_c72b37 { border-left: 3px solid var(--interactive-hover) }
-    
-    &.selected_d808b0 .itemInner_c72b37 {
+    &.selected_e462a4 {
       background-color: transparent ;
       border-left: 3px solid var(--interactive-hover);
     }
   }
 }
+// <- Sidebar region
 
-.guildListSection_ac51fa {
-  .card_e90879 {
-    background: var(--background-modifier-accent);
+// -> Content region
+.container_d746e5 {
 
-    &:hover {
-      background: var(--background-modifier-selected);
+  // -> Header
+  .headerBar_accde0 {
+
+    .backdrop_accde0 { display: none }
+
+    > .icon_accde0 path {
+      fill: var(--header-secondary);
+    }
+
+    // Servers nav bar
+    .tabs_a853ca {
+      align-items: center ;
+      gap: 10px ;
+    }
+
+    .tabs_a853ca .item_a0 {
+      margin: 0 ;
+      padding: 5px;
+      border: none ;
+    }
+  }
+
+  // Quest header
+  .container_fc867b .headerBar_accde0 {
+    display: none ;
+  }
+  // <- Header
+
+  // -> Scroller
+  .scroller_b91a2d {
+
+    @include scrollerFadeOut(5px, 2px);
+
+    .container_b97772 { display: none }
+  }
+
+  // Servers scroller
+  .container_eed148 .scroller_b91a2d {
+    margin-top: 60px ;
+  }
+  // <- Scroller
+
+  // Item list
+  .contentSection_a56260 {
+
+    // Quests nav bar
+    .tabs_fc867b .tabItem_d2d101 {
+      background: none ;
+    }
+
+    // Guild item
+    .card_c73cee {
+      background: var(--background-modifier-accent);
+
+      &:hover {
+        background: var(--background-modifier-selected);
+      }
+    }
+
+    // Quest item
+    .questTile_ad4620 {
+      background: var(--background-modifier-accent);
+
+      .rewardDescriptionContainer_c2d7e2 {
+        background: none ;
+      }
+
+      .button_ebf06d {
+        background: none ;
+
+        &:not(:disabled) {
+          @include Btn(var(--background-modifier-accent), white);
+        }
+      }
     }
   }
 }
+// <- Content region
 // <- Discovery
 
 // -> Server boost screen

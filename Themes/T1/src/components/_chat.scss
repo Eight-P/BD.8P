@@ -1,4 +1,4 @@
-// * chat v0.1.30
+// * chat v0.1.31
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -500,6 +500,13 @@
   }
 }
 // <- Text input
+
+// -> Chatting restrictions box
+.spamBanner_c1da2c {
+  border-top: 1px solid var(--background-modifier-accent);
+  background: none ;
+}
+// <- Chatting restrictions box
 
 // -> Messages (cozy only for now)
 
@@ -1503,9 +1510,9 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   // <- Itemcard / Tile
 
-  // "invite people" empty card
+  // "invite people" empty card (should only effect when empty)
   .tile_dc5fc4 {
-    background: none ;
+    // background: none ;
   }
 
   // -> Focus view
