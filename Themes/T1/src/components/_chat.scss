@@ -1,4 +1,4 @@
-// * chat v0.1.31
+// * chat v0.1.32
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -220,33 +220,33 @@
   &::before, &::after { display: none }
 
   // Text input container
-  .channelTextArea_d0696b {
+  .channelTextArea_bdf0de {
     background: none ;
     margin: 0 ;
     padding: 0 ;
     
     // container 2
-    .scrollableContainer_d0696b { background: none }
+    .scrollableContainer_bdf0de { background: none }
 
     // Text input
-    .textArea_d0696b { 
+    .textArea_bdf0de { 
       margin-left: 10px ;
       width: -webkit-fill-available ;
     }
 
     // Input on denied writing permission
-    &.channelTextAreaDisabled_d0696b {
+    &.channelTextAreaDisabled_bdf0de {
 
-      .scrollableContainer_d0696b::-webkit-scrollbar { display: none }
+      .scrollableContainer_bdf0de::-webkit-scrollbar { display: none }
 
-      .innerDisabled_d0696b {
+      .innerDisabled_bdf0de {
         padding-left: 0 ;
 
-        .textAreaDisabled_d0696b {
+        .textAreaDisabled_bdf0de {
           margin-right: 36px ;
         }
 
-        .buttons_d0696b { display: none }
+        .buttons_bdf0de { display: none }
 
         .placeholder_a552a6 {
           padding-right: 0px ;
@@ -267,7 +267,7 @@
     }
     
     // Reply popout
-    .attachedBars_d0696b {
+    .attachedBars_bdf0de {
       background: none ;
       border-bottom: 1px solid var(--background-modifier-accent);
       
@@ -279,7 +279,7 @@
   }
   
   // Inner container
-  .inner_d0696b {
+  .inner_bdf0de {
     overflow: hidden ; // for btns
   }
 
@@ -333,7 +333,7 @@
   }
   
   // Buttons conatiner
-  .buttons_d0696b {
+  .buttons_bdf0de {
     > :is(button, div) {
       overflow: hidden ;
     }
@@ -348,7 +348,7 @@
 
 
     // Gifs picker
-    .buttonContainer_d0696b:has([d^=" M-7,-10 C-8.656999588012695,-10 -10,-8.656999588012695 -10"]) {
+    .buttonContainer_bdf0de:has([d^=" M-7,-10 C-8.656999588012695,-10 -10,-8.656999588012695 -10"]) {
       width: calc(40px * var(--show-gif-btn));
       margin-top: calc(-100px * (1 - var(--show-gif-btn)));
 
@@ -356,7 +356,7 @@
     }
 
     // Stickers picker
-    .buttonContainer_d0696b:has([d^=" M-6,-10 C-6,-10 6,-10 6,-10 C8.208999633789062,-10 10"]) {
+    .buttonContainer_bdf0de:has([d^=" M-6,-10 C-6,-10 6,-10 6,-10 C8.208999633789062,-10 10"]) {
       width: calc(40px * var(--show-sticker-btn));
       margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
 
@@ -364,7 +364,7 @@
     }
 
     // Emoji picker
-    .buttonContainer_d0696b:has(.emojiButton_d91a75) {
+    .buttonContainer_bdf0de:has(.emojiButton_d91a75) {
       width: calc(40px * var(--show-emoji-btn));
       margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
 
@@ -541,7 +541,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // -> Message contents
   // Edit message
-  .channelTextArea_d5deea .scrollableContainer_d0696b {
+  .channelTextArea_d5deea .scrollableContainer_bdf0de {
     background: $BG_Embed ;
   }
 
