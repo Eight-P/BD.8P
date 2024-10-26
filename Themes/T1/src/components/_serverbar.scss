@@ -1,4 +1,4 @@
-// * serverbar v0.1.16
+// * serverbar v0.1.17
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -52,15 +52,8 @@
   .scroller_fea3ef {
     display: grid ;
     grid-template-columns: 54px ;
-    // grid-template-rows: 48px 29px 35px auto ;
     grid-template-rows: 48px 64px auto ;
     grid-auto-rows: min-content ;
-    // grid-template-areas: 
-    //   "Home" 
-    //   "GuildsAd"
-    //   "Discovery"
-    //   "Servers"
-    // ;
     grid-template-areas: 
       "Home"
       "GuildsAd"
@@ -195,20 +188,6 @@
   grid-area: GuildsAd ;
   margin-top: -38px ;
 }
-
-// Discovery
-// @mixin Discovery_Icon () {
-//   @include Icons();
-  
-//   grid-area: Discovery ;
-//   margin: 0 ;
-//   margin: 3px 0 10px 0;
-  
-//   .circleIconButton_db6521 .circleIcon_db6521 {
-//     height: 90% ;
-//     width: 90% ;
-//   }
-// }
 
 //  GuildsError
 @mixin GuildsError_Icon () {
@@ -418,7 +397,7 @@
 // Server folder / Pending applications folder
 .guilds_a4d4d9 .wrapper_bc7085 {
   width: 54px ;
-  margin: 6px 0 ;
+  margin: 12px 0 ;
 
   // Background when open
   .expandedFolderBackground_bc7085 { display: none }
@@ -526,11 +505,16 @@
     background-color: var(--interactive-normal);
   }
 
-  // Removing seperator from server item in applications folder
-  .wrapper_bc7085 ul {
-    margin-bottom: 12px ;
+  // Inner container
+  .wrapper_bc7085 {
+    margin: 6px 0 ;
 
-    &::after { display: none }
+    // Applied servers container
+    ul {
+      margin-bottom: 12px ;
+  
+      &::after { display: none }
+    }
   }
 
   .pendingIcon_ae3d49 {
