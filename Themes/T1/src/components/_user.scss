@@ -1,17 +1,19 @@
-// * user v0.3.9
+// * user v0.3.10
 // User popout / (Modal)
 @use 'mixins' as * ;
 
 // -> User Popout
-.layer_cd0de5[style^="position: absolute"] .userPopoutOuter_c69a7b {
+.layer_cd0de5[style^="position: absolute"] .outer_c69a7b {
+// .outer_c69a7b.biteSize_c69a7b  { // would effect account panel
 
   // -> Misc
   padding: 0 !important;
   border-radius: 12px ;
+  width: 340px ;
 
   @include shadow_effect("box_2");
 
-  --custom-user-profile-width-bite-size: 340px ;
+  // --custom-user-profile-width-bite-size: 340px ;
 
   --bg_items: var(--background-modifier-hover);
   --bg_itemsHover: var(--background-modifier-selected);
@@ -21,7 +23,7 @@
     hsl(from var(--background-modifier-hover) h s l / 1 ) 16%
   );
 
-  &.userProfileOuterThemed_c69a7b {
+  &.custom-profile-theme {
     --bg_items: hsl(from var(--profile-body-background-hover) h s l / .075 );
     // with color theme
     // --bg_items: hsl(from var(--profile-gradient-button-color) h s l / .25 );
@@ -47,7 +49,7 @@
     )
   }
 
-  .userProfileInner_c69a7b {
+  .inner_c69a7b {
     border-radius: 0 ;
     overflow: hidden scroll ;
 
@@ -557,14 +559,31 @@
 // -> Account Popout
 .accountProfilePopoutWrapper_b2ca13 {
   left: 0 ;
+
+  // not ideal
+  // .avatar_f94206 .svg_c51b4e {
+  //   $ProfileTop: 4 + 24 + 19 + 8;
+
+  //   top: ($ProfileTop * 1px) !important ;
+
+  //   foreignObject {
+  //     y: ($ProfileTop * -1) !important ;
+  //   }
+  // }
+
+
+  // .header_b8cc6d {
+  //   order: 0 !important ;
+  // }
 }
 // <- Account Popout
 
 
 // -> Profile sidepanel in dms
-.userPanelOuter_c69a7b {
+.outer_c69a7b.panel_c69a7b {
+  background: none ;
 
-  .userPanelInner_c69a7b {
+  .inner_c69a7b {
     background: none ;
   }
 

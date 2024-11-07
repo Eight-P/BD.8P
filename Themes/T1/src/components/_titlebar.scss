@@ -1,4 +1,4 @@
-// * titlebar v0.1.11
+// * titlebar v0.1.12
 // Header (Chat / Home tabs) | Titlebar | Notifications
 @use 'mixins' as * ;
 
@@ -253,12 +253,12 @@ html {
 
 
 // -> Notification bars
-.bd-notice, .notice__5fd4c  {
+.bd-notice, .notice_a50047  {
   background-color: var(--background-primary);
   color: var(--text-normal);
 }
 
-.bd-notice-button, .notice__5fd4c .button_dd5a33, .notice_a50047 .button_a50047 {
+.bd-notice-button, .notice_a50047 .button_a50047 {
   border: none ;
   color: var(--header-secondary);
   background: var(--background-modifier-selected);
@@ -270,14 +270,14 @@ html {
 }
 
 // - Default Discord notice
-.notice__5fd4c {
+.notice_a50047 {
 
   // Main text
   .header_dd5a33 {
     color: var(--text-normal);
   }
 
-  .closeIcon__967e7 {
+  .closeIcon__967e7 { // old
 
     path {
       fill: var(--interactive-normal);

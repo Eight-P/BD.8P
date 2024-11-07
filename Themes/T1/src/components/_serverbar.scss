@@ -1,4 +1,4 @@
-// * serverbar v0.1.17
+// * serverbar v0.1.18
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -404,6 +404,7 @@
 
   // Folder Icon / preview 
   > .listItem_c96c45 {
+    pointer-events: none ;
     
     .pill_a5ad63 { 
       display: none ;
@@ -453,6 +454,7 @@
       height: 40px ; 
       width: 40px ;
       margin: 4px ;
+      pointer-events: all ;
 
       // Icon container open and closed
       .closedFolderIconWrapper_bc7085,
@@ -519,6 +521,7 @@
 
   .pendingIcon_ae3d49 {
     opacity: .75 ;
+    pointer-events: all ;
   }
 
   .expandedFolderIconWrapper_bc7085:hover .pendingIcon_ae3d49 {
