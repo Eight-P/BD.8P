@@ -1,4 +1,4 @@
-// * serverbar v0.1.18
+// * serverbar v0.1.19
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -278,11 +278,11 @@
   }
 }
 
-// Guilds add container
-.guilds_a4d4d9 .footer_aa1bff {
+// Discovery container
+.guilds_a4d4d9 .footer_f8ec41 {
   display: contents ;
 
-  .gradient_aa1bff { display: none }
+  .gradient_f8ec41 { display: none }
 
   .listItem_c96c45 {
     position: absolute ;
@@ -493,7 +493,7 @@
 }
 
 // Pending applications container
-.container_aa1bff {
+.container_ae3d49 {
   position: relative ;
 
   // Seperator to the left
@@ -553,7 +553,7 @@
   }
 
   // remove Seperator on Pending applications
-  // ~ .container_aa1bff::before { content: none } maybe keep it?
+  // ~ .container_ae3d49::before { content: none } maybe keep it?
 
   .pill_f36a5a { display: none }
 }
