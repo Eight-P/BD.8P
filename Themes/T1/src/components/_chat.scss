@@ -1,4 +1,4 @@
-// * chat v0.1.33
+// * chat v0.1.34
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -887,10 +887,9 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
 
     // quick reaction emoji
-    .reactionSuggestion_d1c246 {
-      .icon_e986d9 {
-        transform: scale(.9) ;
-      }
+    .emoji_a3b500 {
+      width: 18px ;
+      height: 18px ;
     }
   }
   
