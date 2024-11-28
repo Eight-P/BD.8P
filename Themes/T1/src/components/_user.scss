@@ -1,4 +1,4 @@
-// * user v0.3.10
+// * user v0.3.11
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -204,13 +204,13 @@
     // -> Status text
     .header_b8cc6d {
       // container
-      > div:not([class]), .visibleContainer_d0a252 {
+      > div:not([class]), .visibleContainer_af9888 {
         display: contents ;
       }
     }
 
     // Status outer container
-    .statusBubbleOuter_d0a252 {
+    .statusBubbleOuter_af9888 {
       position: absolute ;
       display: flex ;
       inset: 62px 20px 61px 120px ;
@@ -228,37 +228,37 @@
     }
 
     // Status inner container
-    .statusBubble_d0a252 {
+    .statusBubble_af9888 {
       padding: 5px 10px ;
       background: rgb(0 0 0 / .65 );
 
       @include shadow_effect("box_2");
 
-      &.statusBubbleEmojiOnlyPadding_d0a252 {
+      &.statusBubbleEmojiOnlyPadding_af9888 {
         padding: 8px 10px ;
       }
 
       // for full status with no pointer event
-      .content_d0a252 {
+      .content_af9888 {
         -webkit-line-clamp: 3 ;
         max-height: 100px !important;
       }
 
-      .statusText_d0a252 {
+      .statusText_af9888 {
         color: var(--redesign-button-overlay-alpha-text);
       }
     }
     
     // Emoji as status only
-    .statusEmojiOnly_d0a252 { @include restrictions(26px) }
+    .statusEmojiOnly_af9888 { @include restrictions(26px) }
 
     // Edit status for own profile btns
     .popover_bba79b { display: none }
 
-    .addCustomStatusButtonBubble_d0a252 {
+    .addCustomStatusButtonBubble_af9888 {
       display: contents ;
 
-      .statusBubbleOuter_d0a252 {
+      .statusBubbleOuter_af9888 {
         pointer-events: auto ;
       }
     }
@@ -653,20 +653,29 @@
   // <- Avatar
 
   // -> Status text
-  .visibleContainer_d0a252 {
+  .invisibleContainer_af9888 { display: none }
+
+  .visibleContainer_af9888 {
     position: relative ;
     inset: unset ;
+    margin: 0 16px ;
 
-    .statusBubbleOuter_d0a252 {
+    .statusBubbleOuter_af9888 {
       background: none ;
       border: none ;
       margin: 0 auto ;
+      max-width: max-content ;
 
       &::before, &::after { display: none }
     }
 
-    .statusBubble_d0a252 {
+    .statusBubble_af9888 {
       background: var(--background-modifier-accent);
+    }
+
+    .content_af9888 {
+      -webkit-line-clamp: unset ;
+      max-height: max-content !important ;
     }
   }
   // <- Status text
