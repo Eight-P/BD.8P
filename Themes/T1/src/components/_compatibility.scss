@@ -1,18 +1,18 @@
-// * compatibility v0.1.12
+// * compatibility v0.1.12b
 // Compatibility with plugins and Themes
 @use 'mixins' as * ;
 
 // - Hide Channels by Farcrada (v2.2.12)
-// - MemberCount by Arashiryuu (v2.2.22)
-// - FriendNotifications by DevilBro (v2.0.0)
-// - ReadAllNotificationsButton by DevilBro (v1.7.7)
-// - SpotifyControls by DevilBro (v1.4.0)
-// - CollapsibleUI by programmer2514 (v8.4.5)
-// - ServerDetails by DevilBro (v1.2.0)
+// - MemberCount by Arashiryuu (v2.2.24)
+// - FriendNotifications by DevilBro (v2.0.3)
+// - ReadAllNotificationsButton by DevilBro (v1.7.8)
+// - SpotifyControls by DevilBro (v1.4.1)
+// - CollapsibleUI by programmer2514 (v8.5.0)
+// - ServerDetails by DevilBro (v1.2.2)
 // - CharCounter by DevilBro (v1.6.6)
-// - Memessages by Greezor (v0.13.2)
+// - Memessages by Greezor (v0.13.3)
 
-// - Icon Revert 2023 by davart154 (e28cad5)
+// - Icon Revert 2023 by davart154 (3edfca4)
 
 
 // -> Hide Channels by Farcrada
@@ -224,7 +224,7 @@
   }
 }
 
-// typing/slowmode container
+// typing/slowmode container override
 .form_a7d72e .typing_d7ebeb {
   margin: 0 !important ;
 }

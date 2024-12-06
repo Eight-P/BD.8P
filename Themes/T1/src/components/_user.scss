@@ -1,4 +1,4 @@
-// * user v0.3.11
+// * user v0.3.12
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -10,8 +10,12 @@
   padding: 0 !important;
   border-radius: 12px ;
   width: 340px ;
+  overflow: hidden scroll ;
 
   @include shadow_effect("box_2");
+  
+
+  &::-webkit-scrollbar { display: none }
 
   // --custom-user-profile-width-bite-size: 340px ;
 
@@ -49,12 +53,12 @@
     )
   }
 
-  .inner_c69a7b {
-    border-radius: 0 ;
-    overflow: hidden scroll ;
+  // .inner_c69a7b {
+  //   border-radius: 0 ;
+  //   overflow: hidden scroll ;
 
-    &::-webkit-scrollbar { display: none }
-  }
+  //   &::-webkit-scrollbar { display: none }
+  // }
   // <- Misc
 
   // -> Animations effects

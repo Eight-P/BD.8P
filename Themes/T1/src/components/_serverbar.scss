@@ -1,4 +1,4 @@
-// * serverbar v0.1.20
+// * serverbar v0.1.21
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -476,6 +476,7 @@
   ul {
     height: auto !important;
     margin-bottom: 24px ;
+    display: block ;
     
     // Server items in open folders
     .listItem_c96c45 { @include ServerIcon() }
