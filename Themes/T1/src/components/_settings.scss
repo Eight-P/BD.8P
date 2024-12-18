@@ -1,4 +1,4 @@
-// * settings v0.1.13
+// * settings v0.1.14
 // Client / Guilds / Channels
 @use 'mixins' as * ;
 
@@ -363,3 +363,16 @@ $T1_v: null !default ;
   }
 }
 // <- App Directory
+
+// -> BD
+.bd-addon-modal {
+
+  &.bd-modal-medium {
+    max-height: 85vh ;
+  }
+
+  .bd-modal-header {
+    background-color: var(--modal-footer-background);
+  }
+}
+// <- BD
