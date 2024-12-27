@@ -1,4 +1,4 @@
-// * compatibility v0.1.12b
+// * compatibility v0.1.13
 // Compatibility with plugins and Themes
 @use 'mixins' as * ;
 
@@ -13,6 +13,10 @@
 // - Memessages by Greezor (v0.13.3)
 
 // - Icon Revert 2023 by davart154 (3edfca4)
+
+// Vencord
+// - ServerListIndicator
+// - ReadAllNotificationsButton
 
 
 // -> Hide Channels by Farcrada
@@ -106,7 +110,7 @@
 
     // Tooltip on hover
     &:hover::after {
-      content: "read all" ;
+      content: "Read All" ;
       position: absolute ;
       top: -10px ;
       left: 25px ;
@@ -252,3 +256,75 @@
   background-image: none !important ;
 }
 // <- Icon Revert 2023
+
+
+// -> ServerListIndicator
+.guilds_a4d4d9 div:has(> #vc-friendcount, > #vc-guildcount) {
+  display: flex ;
+  height: 54px ;
+  width: max-content ;
+  margin: 15px -7px !important ; // idk
+  flex-direction: column ;
+  justify-content: center ;
+  align-items: center ;
+  gap: 5px ;
+  transform: rotate(90deg);
+}
+
+#vc-friendcount, #vc-guildcount {
+  width: max-content !important ;
+  text-wrap: nowrap ;
+
+  @include shadow_effect("server_1");
+}
+// <- ServerListIndicator
+
+// -> ReadAllNotificationsButton
+.guilds_a4d4d9 .vc-ranb-button {
+  position: absolute ;
+  top: 0px ;
+  left: 0px ;
+  padding: 0 ;
+  margin: 0 ;
+  height: 20px ;
+  width: 20px ;
+  transform: rotate(90deg);
+  z-index: 10 ;
+
+  div { display: none }
+
+  // "R" Icon
+  &:before {
+    content: "R" ;
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+    height: 20px ;
+    width: 20px ;
+    line-height: 20px ;
+    color: var(--header-secondary);
+    font-size: 18px ;
+    font-weight: 700 ;
+
+    @include shadow_effect("text_2");
+  }
+
+  // Tooltip on hover
+  &:hover::after {
+    content: "Read All" ;
+    position: absolute ;
+    top: -10px ;
+    left: 25px ;
+    padding: 8px 12px ;
+    font-size: 16px ;
+    font-weight: 600 ;
+    line-height: 10px ;
+    background: var(--background-tertiary);
+    color: var(--text-normal);
+    border-radius: 5px ;
+    white-space: nowrap ;
+
+    @include shadow_effect("box_2");
+  }
+}
+// <- ReadAllNotificationsButton
