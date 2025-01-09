@@ -1,4 +1,4 @@
-// * compatibility v0.1.13
+// * compatibility v0.1.14
 // Compatibility with plugins and Themes
 @use 'mixins' as * ;
 
@@ -273,7 +273,7 @@
 
 #vc-friendcount, #vc-guildcount {
   width: max-content !important ;
-  text-wrap: nowrap ;
+  white-space: nowrap ;
 
   @include shadow_effect("server_1");
 }

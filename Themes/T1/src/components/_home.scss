@@ -1,4 +1,4 @@
-// * home v0.1.12
+// * home v0.1.13
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -351,6 +351,11 @@
     &::-webkit-scrollbar {
       display: none
     }
+  }
+
+  // Category header text
+  .headerText_c47fa9 {
+    color: var(--channels-default); // removes hover effect
   }
 
   // Create Group DM Button (not necessary, there is one at the top right)
