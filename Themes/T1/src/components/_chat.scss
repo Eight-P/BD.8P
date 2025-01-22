@@ -1,4 +1,4 @@
-// * chat v0.1.36
+// * chat v0.1.37
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -33,7 +33,7 @@
   width: -webkit-fill-available ; // for search results 
 
   // Move up scroller container when user typing indicator
-  &:has(.typing_d7ebeb circle) .messagesWrapper_e2e187 {
+  &:has(.typing_d7ebeb :is(.slowModeIcon_f85cd6, circle)) .messagesWrapper_e2e187 {
     margin-bottom: 14px ;
   }
 
@@ -834,25 +834,32 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // -> Message Buttons 
   // Msg highlight hover effect
   @mixin msgHighlight() {
-    content: "";
-    position: absolute ;
-    inset: 0px 0px 0px 5px ;
-    pointer-events: none ;
-    background: rgba(255, 255, 255, 0.05);
-    z-index: -1 ;
+
+    &::after {
+      content: "";
+      position: absolute ;
+      inset: 0px 0px 0px 5px ;
+      pointer-events: none ;
+      background: rgba(255, 255, 255, 0.05);
+      z-index: -1 ;
+    }
+
+    .popoverReactionHoverBar_e986d9:before {
+      background-blend-mode: overlay ;
+    }
   }
 
   // Main container
   .buttonContainer_f9f2ca {
     position: static ;
     
-    &:hover:after {
+    &:hover {
       @include msgHighlight();
     }
   }
 
   // Highlight when advanced btns are open and msg is hovered
-  &:hover .buttonContainer_f9f2ca:has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"]):after {
+  &:hover .buttonContainer_f9f2ca:has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"]) {
     @include msgHighlight();
   }
 
@@ -860,19 +867,41 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .buttons_d5deea {
     top: 0 ;
     padding: 0 ;
+    z-index: 99 ; // classed with some other btns, like the media actions e.g. on an image
+
+    // opacity: 1 ; // debug
 
     // Inner container grid
     .popoverReactionHoverBar_e986d9 {
-      border: 0 ;
-      // padding: 0 ;
+      padding: 2px 4px ;
       background: none ;
+      border: 0 ;
       box-shadow: none ;
 
-      padding: 2px 4px ;
-      border-radius: 4px ;
+      // not sure if this is a good idea performance wise
+      &:before {
+        content: "";
+        position: absolute ;
+        height: 100% ;
+        width: 100% ;
+        border-radius: 12px ;
+        background: var(--background_app) rgba(255, 255, 255, 0.05);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        
+        --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+        --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+  
+        filter: var(--blur) var(--brightness);
+      }
 
+      // when expanded
       &:has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"]) {
         background-color: var(--background-tertiary);
+
+        &::before { display: none }
       }
     }
 
@@ -897,24 +926,23 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   &.hasReply_f9f2ca .buttons_d5deea { 
     top: 24px ;
   }
-  
-  // Message Buttons - Concatenating Msg / System Message
+
+  // Message Buttons - Concatenating Msg / System Message 
+  // why was this here?
   &:not(.groupStart_d5deea), &.isSystemMessage_ec86aa {
 
     // Buttons
     .popoverReactionHoverBar_e986d9 {
-      background-color: var(--background-tertiary);
 
+      // when not hovered and not expanded
       &:not(:hover, :has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"])) {
-        background: none ;
 
-        > div {
-          display: none ;
-  
-          &:last-child {
-            display: flex ;
-          }
+        // menu btn when not hovered (makes it a bit more visible)
+        .button_f7e168 {
+          color: var(--interactive-hover);
         }
+
+        > div:not(:last-child) { display: none }
       }
     }
   }

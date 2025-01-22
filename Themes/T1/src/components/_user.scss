@@ -1,4 +1,4 @@
-// * user v0.3.12
+// * user v0.3.13
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -34,6 +34,7 @@
 
     --bg_itemsHover: hsl(from var(--profile-body-background-hover) h s l / .15 );
 
+    // this sucks
     // getting the base gradient 
     --bg_badgesFloating_gradient: color-mix(in srgb,
       rgb(from var(--profile-gradient-primary-color) r g b) 74%,
@@ -206,66 +207,108 @@
     // <- Avatar / status icon
 
     // -> Status text
-    .header_b8cc6d {
-      // container
-      > div:not([class]), .visibleContainer_af9888 {
-        display: contents ;
-      }
-    }
+    // the 2 other staus containers for some reason
+    .referenceContainer_af9888 { display: none }
 
-    // Status outer container
-    .statusBubbleOuter_af9888 {
+    // third status main container
+    .container_af9888 { display: contents }
+
+    // second container of third
+    .outer_af9888 {
       position: absolute ;
       display: flex ;
-      inset: 62px 20px 61px 120px ;
-      border: none !important;
+      inset: 20px 20px 20px 120px ;
       min-width: unset ;
       max-width: unset ;
+      pointer-events: none ;
       background: none ;
       align-items: center ;
       justify-content: center ;
       box-shadow: none ;
-
-      pointer-events: none ; // for full status with no pointer event
+      border-radius: 0 ;
+      border: none ;
 
       &::after, &::before { display: none }
     }
 
-    // Status inner container
-    .statusBubble_af9888 {
+    // self status
+    .editable_af9888 .inner_af9888 {
+      pointer-events: auto ;
+    }
+
+    .inner_af9888 {
       padding: 5px 10px ;
       background: rgb(0 0 0 / .65 );
+      border-radius: 8px ;
 
       @include shadow_effect("box_2");
-
-      &.statusBubbleEmojiOnlyPadding_af9888 {
-        padding: 8px 10px ;
-      }
-
-      // for full status with no pointer event
-      .content_af9888 {
-        -webkit-line-clamp: 3 ;
-        max-height: 100px !important;
-      }
-
-      .statusText_af9888 {
-        color: var(--redesign-button-overlay-alpha-text);
-      }
     }
+
+    .statusText_af9888 {
+      color: var(--redesign-button-overlay-alpha-text);
+    }
+
+    // old
+    // .header_b8cc6d {
+    //   // container
+    //   > div:not([class]), .visibleContainer_af9888 {
+    //     display: contents ;
+    //   }
+    // }
+
+    // // Status outer container
+    // .statusBubbleOuter_af9888 {
+    //   position: absolute ;
+    //   display: flex ;
+    //   inset: 62px 20px 61px 120px ;
+    //   border: none !important;
+    //   min-width: unset ;
+    //   max-width: unset ;
+    //   background: none ;
+    //   align-items: center ;
+    //   justify-content: center ;
+    //   box-shadow: none ;
+
+    //   pointer-events: none ; // for full status with no pointer event
+
+    //   &::after, &::before { display: none }
+    // }
+
+    // // Status inner container
+    // .statusBubble_af9888 {
+    //   padding: 5px 10px ;
+    //   background: rgb(0 0 0 / .65 );
+
+    //   @include shadow_effect("box_2");
+
+    //   &.statusBubbleEmojiOnlyPadding_af9888 {
+    //     padding: 8px 10px ;
+    //   }
+
+    //   // for full status with no pointer event
+    //   .content_af9888 {
+    //     -webkit-line-clamp: 3 ;
+    //     max-height: 100px !important;
+    //   }
+
+    //   .statusText_af9888 {
+    //     color: var(--redesign-button-overlay-alpha-text);
+    //   }
+    // }
     
-    // Emoji as status only
-    .statusEmojiOnly_af9888 { @include restrictions(26px) }
+    // // Emoji as status only
+    // .statusEmojiOnly_af9888 { @include restrictions(26px) }
 
     // Edit status for own profile btns
-    .popover_bba79b { display: none }
+    // .popover_bba79b { display: none }
 
-    .addCustomStatusButtonBubble_af9888 {
-      display: contents ;
+    // .addCustomStatusButtonBubble_af9888 {
+    //   display: contents ;
 
-      .statusBubbleOuter_af9888 {
-        pointer-events: auto ;
-      }
-    }
+    //   .statusBubbleOuter_af9888 {
+    //     pointer-events: auto ;
+    //   }
+    // }
 
     // <- Status text
     

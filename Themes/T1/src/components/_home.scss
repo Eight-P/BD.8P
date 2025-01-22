@@ -1,4 +1,4 @@
-// * home v0.1.13
+// * home v0.1.14
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -10,12 +10,12 @@
 
   // -> Friendslist
   .peopleList_e0840f {
-    margin: 0 25px ;
+    margin: 15px 25px 0 25px ;
 
     @include scrollerFadeOut();
 
     // "Friends online" Count
-    .title_a1cafe { display: none }
+    .sectionTitle_e0840f { display: none }
 
     &::-webkit-scrollbar {
       display: none ;
