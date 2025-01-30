@@ -1,0 +1,1670 @@
+// * chat v0.1.38
+// Text chat, Voice chat
+@use 'mixins' as * ;
+
+// Header/Chat sperator line
+.content_f75fb0::before { display: none }
+
+// -> Mentions (Channel, User, Role, Discord cdn File)
+.wrapper_f61d60 {
+  color: var(--Blurple);
+  background: none ;
+
+  // Role, User
+  &.roleMention__75297, &.mention:not(:hover) {
+    background: none !important ;
+  }
+
+  // File link
+  &.attachmentLink .icon_a9c2d1 path {
+    fill: var(--Blurple);
+  }
+  
+  &:hover {
+    background-color: var(--Blurple-light);
+    color: var(--Blurple);
+  }
+}
+// <- Mentions
+
+// -> Chat container
+.chatContent_f75fb0 {
+  z-index: 101 ; // for "Mark As Read" 
+  width: -webkit-fill-available ; // for search results 
+
+  // Move up scroller container when user typing indicator
+  &:has(.typing_d7ebeb :is(.slowModeIcon_b21699, circle)) .messagesWrapper__36d07 {
+    margin-bottom: 14px ;
+  }
+
+  // Move up scroller when "Jump To Present" bar
+  .messagesWrapper__36d07:has(.jumpToPresentBar__0f481) .scroller__36d07 {
+    margin-bottom: 28px ;
+  }
+  
+  // "#" Icon at the channels very top
+  .container__00de6 {
+     .emptyChannelIcon__00de6, .iconWrapper__54b20 { display: none }
+  }
+  
+  // "Mark As Read", "Jump To Present", "View Summaries", "New Summaries"
+  .barBase__0f481 {
+    right: 5px ;
+    left: 5px ;
+    height: 28px ;
+    padding: 0 ;
+    background: var(--background-secondary-alt);
+    opacity: 1 ;
+    border-radius: 5px ;
+    cursor: auto ;
+    
+    // @include shadow_effect("box_2");
+    
+    .barButtonBase__0f481 {
+      color: var(--interactive-hover);
+
+      &:hover {
+        color: var(--interactive-active);
+      }
+
+      &.barButtonMain__0f481 {
+        flex: 0 1 auto ;
+        margin-right: auto ;
+      }
+    }
+    
+    // "Mark As Read"
+    &.newMessagesBar__0f481 {
+      top: -4px ;
+
+      @include shadow_effect("box_2");
+    }
+
+    // "Jump To Present"
+    &.jumpToPresentBar__0f481 {
+      bottom: 1px ;
+    }
+
+    // "New Summaries"
+    // &.newTopicsBarContainer__0f481 {
+    // &.topicsPillContainer__0f481 {
+
+    //   .newTopicsBarTopicSection__0f481, .barButtonBase__0f481 {
+    //     cursor: pointer ;
+    //   }
+
+    //   .newTopicsBarText__0f481, .newTopicsBarIcon__0f481 {
+    //     color: var(--interactive-hover);
+
+    //     &:hover {
+    //       color: var(--interactive-active);
+    //     }
+    //   }
+    // }
+
+    // Summaries caret btns
+    .topicsPillCaret__0f481 {
+      background: none ;
+    }
+
+    // Summaries dropdown popout menu
+    .topicsDropdown__0f481 {
+
+      .topicsDropdownHeading__0f481 {
+        background: var(--background-secondary-alt);
+      }
+
+      .topicsScroller__0f481 {
+        background: var(--background-tertiary) !important;
+      }
+    }
+  }
+
+  // "This channel is not on your channel list" bar
+  .chatHeaderBar_dc83f5 {
+    padding: 0 8px ;
+    margin: 0 4px ;
+    height: 28px ;
+    background: var(--background-secondary-alt);
+    border-radius: 5px ;
+
+    @include shadow_effect("box_2");
+
+    .chatHeaderBarText_dc83f5 {
+      color: var(--header-secondary) !important;
+      font-weight: 600 ;
+    }
+
+    .button__201d5 {
+      @include Btn();
+    }
+  }
+
+  // Messages scroller (no fade out with forum bar)
+  .scroller__36d07:not(:has(.container__34c2c)) {
+    @include scrollerFadeOut();
+  }
+  
+  // Messages seperator
+  .divider__5126c {
+    align-items: unset ;
+    border: none ;
+    margin: 20px 0 !important;
+    
+    // date 
+    // .content_fc5f50,
+    .content__908e2 { 
+      height: fit-content ;
+      transform: translateY(-50%);
+      background: none ;
+    }
+    
+    // seperator lines
+    &::before, &::after {
+      content: "" ;
+      height: 1px ;
+      width: 100% ;
+      background: var(--background-modifier-accent);
+    }
+    
+    // new messages seperator
+    // &.isUnread_fc5f50,
+    &.isUnread__908e2 {
+      &::before, &::after {
+        background: var(--red);
+        opacity: .7 ;
+      }
+      
+      // .unreadPill_fc5f50,
+      .unreadPill__908e2 {
+        top: 0 ;
+        padding: 0 4px ;
+        border-radius: 0 0 4px 4px ;
+        background: var(--red);
+
+        path { display: none }
+      }
+    }
+  }
+   
+  // preload dummy placeholder
+  .wrapper_d852db {
+    background: none !important ;
+    
+    // messages
+    // > .wrapper_b211c6,
+    > .wrapper_fc8177 { 
+      background: none !important ;
+    }
+  }
+
+  // server guide box on top of form (next steps/ "come say hi")
+  .container__183e8 {
+    .banner__183e8 {
+      background: var(--background-modifier-selected);
+    }
+
+    .iconCircle__183e8 {
+      background: none ;
+    }
+  }
+}
+// <- Chat container
+
+// -> Text input
+.form_f75fb0 {
+  margin: 0 ;
+  padding: 0 ;
+  border-top: 1px solid var(--background-modifier-accent);
+
+  // Weird gradient effect things
+  &::before, &::after { display: none }
+
+  // Text input container
+  .channelTextArea__74017 {
+    background: none ;
+    margin: 0 ;
+    padding: 0 ;
+    
+    // container 2
+    .scrollableContainer__74017 { background: none }
+
+    // Text input
+    .textArea__74017 { 
+      margin-left: 10px ;
+      width: -webkit-fill-available ;
+    }
+
+    // Input on denied writing permission
+    &.channelTextAreaDisabled__74017 {
+
+      .scrollableContainer__74017::-webkit-scrollbar { display: none }
+
+      .innerDisabled_bdf0de {
+        padding-left: 0 ;
+
+        .textAreaDisabled_bdf0de {
+          margin-right: 36px ;
+        }
+
+        .buttons__74017 { display: none }
+
+        .placeholder__1b31f {
+          padding-right: 0px ;
+        }
+
+        &::after {
+          content: " " ;
+          background: url("https://i.imgur.com/5wEolmc.png"); // https://i.imgur.com/za6Yq9g.png
+          position: absolute;
+          right: 0px ;
+          bottom: 0px ;
+          height: 36px ;
+          width: 36px ;
+          background-size: cover ;
+          background-repeat: no-repeat ;
+        }
+      }
+    }
+    
+    // Reply popout
+    // .floatingBars__74017 { display: none }
+
+    .stackedBars__74017 {
+      background: none ;
+      border-bottom: 1px solid var(--background-modifier-accent);
+      
+      .replyBar__841c8 {
+        background: none ;
+        margin-right: 10px ;
+      }
+    }
+  }
+  
+  // Inner container
+  .inner__74017 {
+    overflow: hidden ; // for btns
+  }
+
+  // "Attach file" Button 
+  .attachWrapper__0923f {
+    width: 40px ;
+
+    // Seperator line between button and text input
+    &::after {
+      content: "" ;
+      position: absolute ; 
+      top: 5px ;
+      bottom: 5px ;
+      right: 0px ;
+      width: 1px ;
+      background-color: var(--background-modifier-accent);
+    }
+  }
+
+  // Typing indicator
+  .typing_d7ebeb {
+    background: transparent ;
+    position: absolute ;
+    top: -14px ;
+    left: -10px ;
+    height: 15px ;
+    padding: 0 5px ;
+    overflow: visible ;
+    pointer-events: none ;
+    line-height: 15px ;
+  }
+
+  // Slowmode icon
+  .cooldownWrapper_d7ebeb {
+    position: absolute ;
+    right: -17px ;
+    bottom: -11px ;
+    height: 16px ;
+    width: 16px ;
+    color: transparent !important;
+    pointer-events: auto ;
+
+    .slowModeIcon_d7ebeb {
+      position: absolute ;
+      margin: 0 ;
+
+      path { 
+        fill: var(--interactive-normal);
+      }
+    }
+  }
+  
+  // Buttons conatiner
+  .buttons__74017 {
+    > :is(button, div) {
+      overflow: hidden ;
+    }
+
+    // Nitro btn
+    button:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
+      width: calc(40px * var(--show-nitro-btn));
+      margin-top: calc(-100px * (1 - var(--show-nitro-btn)));
+
+      // display: var(--chatBtn_nitro);
+    }
+
+
+    // Gifs picker
+    .buttonContainer__74017:has([d^=" M-7,-10 C-8.656999588012695,-10 -10,-8.656999588012695 -10"]) {
+      width: calc(40px * var(--show-gif-btn));
+      margin-top: calc(-100px * (1 - var(--show-gif-btn)));
+
+      // display: var(--chatBtn_gif);
+    }
+
+    // Stickers picker
+    .buttonContainer__74017:has([d^=" M-6,-10 C-6,-10 6,-10 6,-10 C8.208999633789062,-10 10"]) {
+      width: calc(40px * var(--show-sticker-btn));
+      margin-top: calc(-100px * (1 - var(--show-sticker-btn)));
+
+      // display: var(--chatBtn_sticker);
+    }
+
+    // Emoji picker
+    .buttonContainer__74017:has(.emojiButton__04eed) {
+      width: calc(40px * var(--show-emoji-btn));
+      margin-top: calc(-100px * (1 - var(--show-emoji-btn)));
+
+      // display: var(--chatBtn_emoji);
+    }
+    
+    // Send btn
+    .separator_aa63ab .buttonChild_aa63ab {
+      color: var(--interactive-normal);
+      transition: none ;
+      
+      &.activeButtonChild_aa63ab {
+        color: var(--interactive-hover);
+        
+        &:hover {
+          color: var(--interactive-active);
+        }
+      }
+    }
+  }
+
+  // Emoji button
+  .emojiButton__04eed {
+
+    .spriteColored__04eed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--custom-emoji-sprite-size);
+      height: var(--custom-emoji-sprite-size);
+      display: block;
+      -webkit-mask-image: url("https://ptb.discord.com/assets/a2c4ffe04406bdb03384.png");
+      -webkit-mask-position: var(--custom-emoji-sprite-bg-position);
+      -webkit-mask-size: var(--custom-emoji-sprite-bg-size);
+      background-color: var(--interactive-normal);
+      background-image: unset !important ;
+      background-position: unset !important ;
+      background-size: unset !important ;
+
+      &.active__04eed {
+        background-color: var(--interactive-hover);
+      }
+    }
+  }
+
+  // Apps & Commands btn
+  .channelAppLauncher_e6e74f {
+    margin: 0 ;
+    overflow: hidden ;
+    width: calc(48px * var(--show-apps-btn));
+    margin-top: calc(-100px * (1 - var(--show-apps-btn)));
+
+    display: var(--chatBtn_Apps);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 0px;
+      width: 1px;
+      background-color: var(--background-modifier-accent);
+    }
+
+    .button_e6e74f {
+      background: none ;
+    }
+  }
+
+  // Chat input replacmnet box (follow channel, complete server setup,..)
+  .wrapper__44df5 {
+    background: none ;
+    margin: 0 ;
+
+    .image__44df5, 
+    .animation__44df5 // ?
+    {
+      display: none ;
+    }
+
+    .title__44df5 {
+      color: var(--header-secondary);
+    }
+
+    .button__44df5 {
+      @include Btn("background");
+    }
+  }
+  
+  // file/upload attachment
+  .channelAttachmentArea_b77158 {
+    
+    &:before {
+      content: "";
+      position: absolute ;
+      top: 0 ;
+      left: 0 ;
+      right: 0 ;
+      height: 100% ;
+      background: var(--background-modifier-hover);
+      z-index: -1 ;
+    }
+    
+    // Attachment item
+    .upload_aa605f {
+      background: none ;
+      
+      // Btns container
+      .actionBarContainer_aa605f {
+        position: static ;
+        
+        &:hover:after {
+          content: "";
+          position: absolute ;
+          top: 0 ;
+          left: 0 ;
+          right: 0 ;
+          bottom: 0 ;
+          background: var(--background-modifier-hover);
+          z-index: -1 ;
+        }
+      }
+      
+      // Btns container inner
+      .actionBar_aa605f {
+        top: 0 ;
+        right: 0 ;
+        transform: none ;
+      }
+      
+      // Buttons
+      .wrapper_ef319f {
+        background: none ;
+        box-shadow: none ;
+      }
+    }
+  }
+}
+// <- Text input
+
+// -> Chatting restrictions box
+.spamBanner_a2eac3 {
+  border-top: 1px solid var(--background-modifier-accent);
+  background: none ;
+}
+// <- Chatting restrictions box
+
+// -> Messages (cozy only for now)
+
+$BG_Embed: var(--background-modifier-selected); // Code blocks, ..
+$BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, ..)
+
+.cozy_c19a55 {
+  background: none !important ;
+  // background: red !important ;
+  padding: 0px 28px 0px 4.125rem !important ;
+  
+  // -> general Message components
+  // Highlight border-left (Mention, Clyde, ..)
+  &:before { display: none }
+  
+  // Message container
+  .contents_c19a55 {
+    padding: 0 0 2px 6px ;
+    
+    // Msg Header (Name, Date, ..)
+    .header_c19a55 { 
+      padding: 2px 0 ;
+      margin-left: 0 ;
+    }
+  }
+
+  .avatarDecoration_c19a55 {
+    width: calc(var(--custom-message-avatar-decoration-size) * var(--show-avatarDecorations));
+    height: calc(var(--custom-message-avatar-decoration-size) * var(--show-avatarDecorations));
+  }
+  // <- general Message components
+  
+  // -> Message contents
+  // Edit message
+  .channelTextArea__5126c .scrollableContainer__74017 {
+    background: $BG_Embed ;
+  }
+
+  // Preview of replied msg
+  .repliedMessage_c19a55 { 
+    height: 20px ;
+
+    // username in replied message
+    .username_f9f2ca { display: none }
+  }
+
+  // File
+  .attachment_b52bef {
+    background: $BG_Embed ;
+    border: none ;
+  }
+
+  .hoverButtonGroup__06ab4 {
+    background: var(--background-tertiary);
+
+    @include shadow_effect("box_3")
+  }
+  
+  // Code Syntax
+  code {
+    
+    // Comments
+    .hljs-comment {
+      color: var(--interactive-normal);
+    }
+  }
+
+  // Publish Announcement msg
+  .bumpBox_cacd02 {
+    background: $BG_Embed ;
+  }
+
+  // Discord Quest embed
+  .contentContainer_c55cae, .imgContainer_c55cae {
+    background: $BG_Embed ;
+
+    .button__201d5  {
+      @include Btn(var(--background-modifier-accent), white);
+    }
+  }
+
+  // -> Unmask links
+  .messageContent_c19a55 .anchor_edefb8[title$=")"] {
+    &::after {
+      content: " (" attr(href) ")" ;
+      position: relative ;
+      display: inline-flex ;
+      height: calc(100% * var(--unmask-links));
+      max-height: 22px ;
+      width: calc(100% * var(--unmask-links));
+      max-width: max-content ;
+      font-size: 0.7rem ;
+      font-weight: 400 ;
+      font-style: normal ;
+      filter: grayscale(1.0) brightness(1.15);
+      overflow: hidden ;
+    }
+    &:hover::after {
+      text-decoration: underline ;
+    }
+  }
+
+  :is(u, s):has(.anchor_edefb8[title$=")"]) {
+    text-decoration: none ;
+  }
+
+  s span {
+    text-decoration: line-through ;
+  }
+
+  u span {
+    text-decoration: underline ;
+  }
+  // <- Unmask links
+  
+  // -> Poll
+  .container__0be77 {
+    background: $BG_Embed ;
+
+    // Answer options bnts
+    .answerInner__4c520 {
+      background: var(--background-modifier-hover);
+      outline: none !important ;
+
+      &:hover {
+        background: var(--background-modifier-accent);
+      }
+    }
+
+    // Circle icon
+    .answerSelectionIcon__4c520 {
+      color: var(--interactive-muted);
+
+      // Voted answer: icon background
+      circle { display: none }
+
+      // selected: icon outer circle
+      .radioBackground_f4f0eb {
+        color: var(--interactive-muted);
+      }
+
+      // selected: icon inner dot
+      .radioForeground_f4f0eb {
+        color: var(--interactive-normal);
+        display: flex ;
+      }
+    }
+
+    // -> Poll Footer
+    // btn: "Show results", number of votes
+    .tertiaryAction__0be77, .detailsTextButton__0be77 {
+      background: none ;
+      text-decoration: none ;
+
+      // inner container
+      .contents__201d5 {
+        text-decoration: none ;
+      }
+
+      // text
+      .fontScaling_cf4812 {
+        color: var(--interactive-normal) !important;
+        text-decoration: none ;
+      }
+
+      &:hover .fontScaling_cf4812 {
+        color: var(--interactive-hover) !important;
+      }
+    }
+
+    // btn: "Vote", "Go back to vote"
+    .buttonPresentation__0be77 {
+      @include Btn(var(--background-modifier-accent), white);
+    }
+    // <- Poll Footer
+  }
+  // <- Poll
+
+  // Discord embeds (Server invite, Server Event, ...)
+  .wrapper_d5f3cd {
+    background: $BG_Embed ;
+    
+    .button__201d5 {
+
+      @include Btn(var(--background-modifier-accent), white);
+    }
+  }
+  
+  // Code block
+  code:not(.codeView__4d95d, .inline) {
+    background: $BG_Embed ;
+    border: none ;
+  }
+
+  // Build override
+  .wrapper__124c8 {
+    background: $BG_Embed ;
+  }
+
+  // Audio file 
+  .wrapperAudio_f72aac {
+    background: $BG_Embed ;
+    border: none ;
+
+    .audioControls_cf09d8 {
+      background: $BG_Embed-alt ;
+    }
+  }
+
+  // Gift code
+  .tile__72090 {
+    background: $BG_Embed ;
+
+    .button__201d5 {
+      @include Btn(var(--background-modifier-accent), white);
+    }
+  }
+  
+  // File embed
+  .embedWrapper_b7e1cb {
+    
+    // File content, embed options
+    .textContainer__4d95d, .footer__4d95d {
+      background: $BG_Embed ;
+      border: none ;
+    }
+
+    code {
+      background: none ;
+    }
+
+    .footer__4d95d {
+      border-top: 1px solid $BG_Embed ;
+    }
+    
+    // File name
+    .attachmentName__4d95d {
+      color: var(--header-secondary);
+    }
+    
+    // File size
+    .formattedSize__4d95d {
+      color: var(--interactive-normal);
+    }
+    
+    // Change code language btn
+    .codeIcon__4d95d  {
+      color: var(--interactive-normal);
+      cursor: pointer;
+      
+      &:hover {
+        color: var(--interactive-hover);
+      }
+    }
+  }
+  
+  // Embeds from links
+  .embedFull_b0068a {
+    background: $BG_Embed ;
+  }
+  
+  // Inline Code
+  code.inline {
+    background: $BG_Embed-alt ;
+  }
+
+  // Images
+  .visualMediaItemContainer_f4758a > div {
+    border-radius: 4px ;
+  }
+
+  // Spoiler Embed
+  .spoilerContainer_a3d0f7 {
+    box-shadow: none ;
+    background: $BG_Embed ;
+  }
+
+  // buttons with background e.g. from bots
+  .lookFilled__201d5.colorPrimary__201d5 {
+    @include Btn("background");
+  }
+
+  // Activity 
+  .container_c44293 {
+    background: $BG_Embed ;
+  }
+  // <- Message contents
+  
+  // -> MSg Types
+  // Mention
+  &.mentioned__5126c .contents_c19a55 {
+    border-left: solid 2px var(--border-mentioned);
+    background: var(--background-mentioned);
+  }
+  
+  // Clyde (client-side info/error messages)
+  &.ephemeral__5126c .contents_c19a55 {
+    border-left: solid 2px var(--Blurple);
+    background: var(--Blurple-light);
+  }
+  
+  // Selected for reply
+  &.replying__5126c .contents_c19a55 {
+    border-left: solid 2px var(--header-secondary);
+    background: var(--background-modifier-hover);
+  }
+  
+  // System Message (msg pinned, user joined server, ..) | 
+  &.isSystemMessage_c19a55 {
+    // "Wave to say hi!" btn (when someone new joins a server)
+  }
+  
+  // Thread
+  &.hasThread_c19a55 .container__9271d {
+    background: none ;
+  }
+  // <- MSg Types
+  
+  // -> Message Buttons 
+  // Msg highlight hover effect
+  @mixin msgHighlight() {
+
+    &::after {
+      content: "";
+      position: absolute ;
+      inset: 0px 0px 0px 5px ;
+      pointer-events: none ;
+      background: rgba(255, 255, 255, 0.05);
+      z-index: -1 ;
+    }
+
+    .popoverReactionHoverBar_f84418:before {
+      background-blend-mode: overlay ;
+    }
+  }
+
+  // Main container
+  .buttonContainer_c19a55 {
+    position: static ;
+    
+    &:hover {
+      @include msgHighlight();
+    }
+  }
+
+  // Highlight when advanced btns are open and msg is hovered
+  &:hover .buttonContainer_c19a55:has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"]) {
+    @include msgHighlight();
+  }
+
+  // Inner main container
+  .buttons__5126c {
+    top: 0 ;
+    padding: 0 ;
+    z-index: 99 ; // classed with some other btns, like the media actions e.g. on an image
+
+    // opacity: 1 ; // debug
+
+    // Inner container grid
+    .popoverReactionHoverBar_f84418 {
+      padding: 2px 4px ;
+      background: none ;
+      border: 0 ;
+      box-shadow: none ;
+
+      // not sure if this is a good idea performance wise
+      &:before {
+        content: "";
+        position: absolute ;
+        height: 100% ;
+        width: 100% ;
+        background: var(--background_app) rgba(255, 255, 255, 0.05);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        
+        --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+        --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+  
+        filter: var(--blur) var(--brightness);
+      }
+
+      // when expanded
+      &:has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"]) {
+        background-color: var(--background-tertiary);
+
+        &::before { display: none }
+      }
+    }
+
+    // Button
+    .button_f7ecac {
+      background: none ;
+    }
+
+    // Inner button icon
+    .icon_f84418 {
+      transform: scale(1) ;
+    }
+
+    // quick reaction emoji
+    .emoji__040f0 {
+      width: 18px ;
+      height: 18px ;
+    }
+  }
+  
+  // Btn container on reply Msg
+  &.hasReply_c19a55 .buttons__5126c { 
+    top: 24px ;
+  }
+
+  // Message Buttons - Concatenating Msg / System Message 
+  // why was this here?
+  &:not(.groupStart__5126c), &.isSystemMessage_ec86aa {
+
+    // Buttons
+    .popoverReactionHoverBar_f84418 {
+
+      // when not hovered and not expanded
+      &:not(:hover, :has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"])) {
+
+        // menu btn when not hovered (makes it a bit more visible)
+        .button_f7ecac {
+          color: var(--interactive-hover);
+        }
+
+        > div:not(:last-child) { display: none }
+      }
+    }
+  }
+  // <- Message Buttons
+}
+// <- Messages (cozy only for now)
+
+// -> Reactions
+.reactions__23977 {
+
+  // Reaction item
+  .reaction__23977 {
+    background-color: var(--background-modifier-hover);
+    border: none ;
+    border-radius:4px ;
+  
+    &:hover { 
+      background-color: var(--background-modifier-selected);
+    }
+  
+    // number 
+    .reactionCount__23977 {
+      font-size: 0.875rem ;
+    }
+  
+    // Active reaction 
+    &.reactionMe__23977 {
+      background-color: var(--Blurple-light);
+  
+      &:hover { 
+        background-color: var(--Blurple-light-hover);
+      }
+  
+      .reactionCount__23977 { 
+        color: var(--Blurple);
+      }
+    }
+  }
+
+  // add reaction btn
+  .reactionBtn__23977 {
+    border: none ;
+    background: none !important;
+  }
+}
+// <- Reactions
+
+// -> Forum channel
+.container_f369db {
+
+  // -> Search/Create Posts
+  .header_f369db {
+    background: var(--background-modifier-accent);
+
+    &.headerWithMatchingPosts_f369db {
+      background: var(--background-modifier-selected);
+      border-radius: 0 ;
+    }
+
+    // Create new post
+    .submitButton_d9be46 {
+      @include Btn(var(--background-modifier-accent), white);
+    }
+  }
+
+  .matchingPostsRow_f369db {
+    background: var(--background-modifier-selected);
+  }
+  // <- Search/Create Posts
+
+  // -> Post Guidelines
+  .container_ca49a1 {
+    background: var(--background-modifier-hover);
+
+    .descriptionContainer_ca49a1 {
+      background: none ;
+
+      // "View All" quideline
+      &:has(.showMore_ca49a1) .guidelines_ca49a1 {
+        margin-bottom: 10px ;
+
+        @include scrollerFadeOut($top:0px, $bottom:20px);
+      }
+    }
+
+    // -> "View All" quideline
+    .gradient_ca49a1 { display: none }
+
+    .linkContainer_ca49a1 {
+      background: none ;
+    }
+
+    .showMoreLink_ca49a1 {
+      padding: 4px 16px ;
+    }
+    // <- "View All" quideline
+  }
+  // <- Post Guidelines
+
+  // -> Tags filter
+  .tagsContainer_f369db {
+
+    // Button, Tags
+    .button__201d5, .tag_f369db {
+      background: var(--background-modifier-accent);
+
+      &:hover {
+        background: var(--background-modifier-selected);
+
+        // Sort, Tags, All tags btn text
+        .sortDropdownText_f369db, .defaultColor__4bd52, .contents__201d5 {
+          color: var(--interactive-active) !important ;
+        }
+      }
+    }
+
+    // Sort, Tags, All tags btn text
+    .sortDropdownText_f369db, .defaultColor__4bd52, .contents__201d5 {
+      color: var(--text-normal) !important ;
+    }
+  }
+  // <- Tags filter
+
+  // "be the first..." in empty forum
+  .container__93db4, .icon__93db4 {
+    background: none ;
+  }
+
+  // -> Post item card inner container (list, grid)
+  .container_faa96b, .container__9a337 {
+    border: none ;
+    transform: none ;
+    box-shadow: none ;
+    transition: none ;
+    background: var(--background-modifier-hover);
+
+    &:hover {
+      background: var(--background-modifier-selected);
+    }
+
+    // Tags
+    .pill_a2c9e8 {
+      background: var(--background-modifier-accent);
+    }
+
+    // Badge that says "new" (grid, list)
+    .newBadge__9a337, .newBadge_faa96b {
+      background-color: var(--Blurple-light) !important ;
+      color: var(--Blurple) !important ;
+    }
+
+    // Footer (list, grid) (reactions, timestamp, msg count, ..)
+    .footer_faa96b, .footer__9a337 {
+
+      // Reactions
+      .reaction_f8896c {
+        border: none ;
+        background-color: var(--background-modifier-accent);
+        border-radius:4px ;
+
+        &:hover { 
+          background-color: var(--background-accent);
+        }
+
+        // .reactionCount_f8896c { not needed ig
+        //   font-size: 0.875rem ;
+        // }
+
+        // Active reaction 
+        &.reactionMe_f8896c {
+          background-color: var(--Blurple-light);
+      
+          &:hover { 
+            background-color: var(--Blurple-light-hover);
+          }
+      
+          // number 
+          .reactionCount_f8896c { 
+            color: var(--Blurple);
+          }
+        }
+      }
+    }
+  }
+
+  // Grid 
+  .container__9a337 {
+
+    .contentPreview__9a337 {
+      background: none ;
+      border: none ;
+      margin: 0 ;
+    }
+
+    // weird gradient
+    .textContentFooter__9a337 {
+      background: none ;
+    }
+
+    .tagPill__9a337 {
+      background: var(--background-tertiary);
+    }
+  }
+
+  // Empty forum ("Be the first to start the conversation!" card)
+  .container_a68543 {
+    background: var(--background-modifier-hover);
+
+    .stepContainer_a68543 {
+      background: none ;
+
+      &:hover {
+        background: var(--background-modifier-accent);
+      }
+    }
+  }
+
+  // placeholder cards while loading
+  .loadingCard_f369db {
+    background: var(--background-modifier-hover);
+  }
+  // <- Post item card
+}
+
+// -> Forum Chat (for both Overlay and Full view)
+.chatContent_f75fb0 {
+
+  // Forum icon at top of chat
+  .iconWrapper__7e6bb { display: none }
+
+  // Reactions, Follow, copy link btns (post meta info bar)
+  .container__34c2c {
+    margin: 12px 4px 8px 8px ;
+    padding: 0 10px ;
+    background: var(--background-modifier-accent);
+    border: none ;
+    border-radius: 5px ;
+
+    @include shadow_effect("box_3");
+
+    .reaction_f8896c {
+      background: none ;
+      border: none ;
+      // border-radius: 4px ;
+    
+      &:hover { 
+        background-color: var(--background-modifier-selected);
+      }
+    
+      // Active reaction 
+      &.reactionMe_f8896c {
+    
+        &:hover { 
+          background-color: var(--background-modifier-selected);
+        }
+    
+        // number 
+        .reactionCount_f8896c { 
+          color: var(--Blurple);
+        }
+      }
+    }
+
+    // other buttons
+    .addReactButton__34c2c, .buttonInner__34c2c {
+      background: none ;
+      border: none ;
+    }
+
+    // Info bar when pinned to top of chat
+    &.header__34c2c {
+      background: var(--background-secondary-alt);
+      top: 0px ;
+    }
+  }
+}
+
+// Post to messages sperator
+.divider_ee23ac { display: none }
+
+// <- Forum Chat
+// <- Forum channel
+
+// -> Spilt/Overlay view ( Threads / Voice chat / Forum chat )
+.chatLayerWrapper__01ae2 {
+
+  // shadow effect on left side of chat
+  .chatTarget_d1c246 { display: none }
+}
+
+// Main wrapper
+.container__01ae2 {
+  background: none ;
+  border-radius: 0 ;
+
+  // reverse from regular chat
+  .chatContent_f75fb0 {
+    z-index: auto ;
+  }
+
+  // meta info bar (reactions, "follow", ..)
+  .header__34c2c {
+    margin-left: 12px ;
+  }
+
+  // Forum, Thread Icon
+  .iconWrapper__7e6bb, .iconWrapper__54b20 {
+    display: none ;
+  }
+
+  // Forum tags
+  .tags_e5a45e {
+    .pill_a2c9e8 {
+      background: var(--background-modifier-accent);
+    }
+  }
+
+  // weid engagement thing
+  .box_ee23ac {
+    display: none ;
+  }
+  
+  // Header content seperator line
+  .chat_f02135:before, .chat_fb64c9:before { 
+    box-shadow: none ;
+    background: var(--background-modifier-accent);
+  }
+  
+  // ?
+  .threadCreatorName__54b20:hover {
+    text-decoration: none ;
+  }
+
+  // Messages scroller
+  .scroller__36d07 { 
+    @include scrollerFadeOut();
+  }
+
+  // Text input - slowmode icon
+  .cooldownWrapper_d7ebeb {
+    right: -16px ;
+  }
+  
+  // Create thread
+  .container_fb64c9 {
+
+    .scroller_fb64c9 {
+      @include scrollerFadeOut();
+    }
+    
+    // Text inputs
+    .channelTextArea_fb64c9, .input__0f084 {
+      border-radius: 0 ;
+      background: none ;
+      border: 1px solid var(--background-modifier-accent) !important ;
+    }
+    
+    .channelTextAreaInner_fb64c9 {
+      background: none ;
+      border: none ;
+    }
+    
+    // Send btn
+    .separator_aa63ab .buttonChild_aa63ab {
+      color: var(--interactive-normal);
+      transition: none ;
+      
+      &.activeButtonChild_aa63ab {
+        color: var(--interactive-hover);
+        
+        &:hover {
+          color: var(--interactive-active);
+        }
+      }
+    }
+  }
+  
+  // Chat in split view with overlapping (Threads + Voice text)
+  &.floating__01ae2 {
+    margin-top: 1px ;
+    z-index: 1002 ;
+    border: none ;
+    min-width: 400px ;
+    max-width: calc(100vw - 240px); // not ideal
+    resize: horizontal ;
+    direction: rtl;
+
+    @include shadow_effect("box_1");
+  
+    > * {
+      direction: ltr;
+    }
+    
+    // Background image
+    &:before {
+      content: "";
+      position: absolute ;
+      height: 100% ;
+      width: 100% ;
+      background: var(--background_app) rgba(0, 0, 0, .1);
+      background-blend-mode: overlay ;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      
+      --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+      --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+
+      filter: var(--blur) var(--brightness);
+    }
+  }
+}
+
+// Threads "unarchive" bar
+.chatHeaderBar_a5700d {
+  margin: 0 5px ;
+  background: var(--background-secondary);
+  border-radius: 5px ;
+  padding: 6px 10px ;
+
+  @include shadow_effect("box_2");
+
+  .chatHeaderBarButton_a5700d {
+    background: none !important;
+    color: var(--interactive-normal) !important;
+    font-weight: 600 ;
+    font-size: 15px ;
+
+    &:hover {
+      color: var(--interactive-hover) !important;
+    }
+  }
+}
+
+// Resizer for voice text and threads in side by side mode
+.chatTarget_d1c246.notFloating__01ae2 + .resizeHandle__01ae2 {
+  position: relative ;
+  width: 7px ;
+  background: none ;
+
+  &::after {
+    content: "";
+    display: block ;
+    position: absolute ;
+    top: 0 ;
+    left: 3px ;
+    width: 1px ;
+    height: 100% ;
+    background-color: var(--background-modifier-accent);
+  }
+}
+// <- Threads / Voice chat / Forum chat (spilt view / overlay)
+
+// -> Voicecall view
+.callContainer_cb9592 {
+  --aswc: var(--voiceControlOverlay);
+
+  .root_bfe55a {
+    margin: calc(var(--aswc) * 48px) 0 calc(var(--aswc) * 56px) 0 ;
+    height: calc(100% - (var(--aswc) * (48px + 56px)));
+  }
+
+  // player popped out
+  .root_e605a1 {
+    background: none ;
+  }
+  
+  // -> Buttons
+  // always show controls/btns 
+  .idle_bfe55a {
+    .controlSection_dd069c, .chatButton_dd069c {
+      opacity: var(--aswc) !important ;
+    }
+  }
+  
+  // Buttons container
+  .videoControls_bfe55a { 
+    inset: calc(var(--aswc) * -48px) 0 calc(var(--aswc) * -56px) 0 ;
+    padding: 0 16px 0 16px ;
+    
+    // Top and bottom section
+    .controlSection_dd069c {
+      transform: translateZ(0) !important;
+      
+      .streamQualityIndicator__30845 { display: none }
+    }
+  }
+  
+  // Open voice chat btn 
+  .chatButton_dd069c {
+    transform: translateZ(0) !important;
+    top: calc(12px + var(--aswc) * -48px);
+    
+    .controlIcon_f1ceac {
+      color: var(--interactive-normal);
+      
+      &:hover {
+        color: var(--interactive-hover);
+      }
+    }
+  }
+
+  // Control buttons (top & bottom)
+  .controlSection_dd069c {
+    // Icons
+    .controlIcon_f1ceac { 
+      color: var(--interactive-normal);
+    }
+    
+    // Icons hover
+    .button__201d5:hover .controlIcon_f1ceac { 
+      color: var(--interactive-hover);
+    }
+
+    // Disconnect
+    .button__201d5.red_f1ceac .controlIcon_f1ceac {
+      color: var(--red);
+    }
+  }
+  
+  // Bottom controls
+  .bottomControls_dd069c {
+    
+    // Group container
+    .flex_bba380 {
+      margin: 0 ;
+    }
+    
+    // Centerd row btns
+    .centerButton_ef18ee {
+      padding: 8px 5px ;
+      margin: 8px 5px ;
+      background: none ;
+      
+      &.controlButton__1405b { 
+        margin: 8px 16px ;
+      }
+    }
+    
+    // Btn dropdownmenu
+    .contextMenuNub_ef18ee {
+      color: white ;
+      background-color: var(--background-secondary);
+    }
+
+
+    // btn for context menu
+    .contextMenuNub_ef18ee { 
+      bottom: 5px ;
+    }
+  }
+  
+  // Gradient effect on hover
+  .gradientContainer_dd069c { display: none }
+  // <- Buttons
+
+  // @mixin TileOverlay() {
+  //   // Non video tile card
+  //   .overlayContainer__2f4f7:not(.videoWrapper__2f4f7 ~ .overlayContainer__2f4f7) {
+
+  //     .overlayTitle__2f4f7, .status__2f4f7 {
+  //       opacity: 1 ;
+  //       background: none ;
+  //     }
+  //   }
+
+  //   // video
+  //   .videoWrapper__2f4f7 ~ .overlayContainer__2f4f7 {
+  //     opacity: 0 ;
+
+  //     &:hover {
+  //       opacity: 1 ;
+  //     }
+  //   }
+  // }
+
+  // -> Itemcard / Tile
+  .tile__2f4f7 {
+
+    @include shadow_effect("box_2");
+
+    // stream quality / live indicator
+    .indicators__2f4f7 { display: none }
+
+    // Avatar
+    .avatarWrapper_f3801e {
+      
+      foreignObject {
+        mask: none ;
+        overflow: visible ;
+      }
+      
+      svg {
+        contain: unset ;
+        overflow: visible ;
+      }
+      
+      // Profile image
+      .avatar__44b0c {
+        border-radius: 7.5% ;
+        
+        &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+      }
+    }
+  }
+  // <- Itemcard / Tile
+
+  // "invite people" empty card (should only effect when empty)
+  .tile__90dc5 {
+    // background: none ;
+  }
+
+  // -> Focus view
+  .root__6981d {
+    padding: 0 8px ;
+    box-sizing: border-box ;
+
+    // Main frame top
+    .videoFrame__6981d {
+
+      // hide members btn
+      .participantsButton__211d1 {
+        background: var(--background-accent);
+      }
+    }
+
+    // Secondary Tiles
+    .participantsWrapperAnimated__6981d {
+      overflow: visible ;
+    }
+  }
+  // <- Focus view
+
+  // Grid view
+  .videoGridWrapper_a21736 {
+
+    .videoGrid_a21736::-webkit-scrollbar { display: none }
+
+    // Cards main container
+    .tile_d8e960 {
+      padding: 4px ;
+      box-sizing: border-box ;
+    }
+  }
+}
+// <- Voicecall view
+
+// -> Stage view
+.callContainer__722ff {
+
+  // Empty/no stage
+  .container__6b38f  {
+    background: var(--background-modifier-hover);
+
+    &:hover {
+      background: var(--background-modifier-selected);
+    }
+  }
+
+  // black gradiant effect
+  .gradientContainer_dd069c {
+    background: none ;
+  }
+  
+  .auto_ad8998 {
+    @include scrollbar();
+  }
+  
+  // Speaker
+  .rowContainer__8a920 {
+    
+    .background_f3801e {
+      background: none !important ;
+    }
+  }
+  
+  // Audience
+  .participants__9c309 {
+    background: none ;
+    
+    // User
+    .tileContainer_e1522e {
+      background: none ;
+      
+      &:hover {
+        background: var(--background-modifier-hover);
+      }
+      
+      .avatar__71eb2 {
+        background: none ;
+      }
+    }
+  }
+
+  .controlSection_dd069c {
+    .button__201d5, .controlIcon_f1ceac, .raisedHandButtonIcon_e12b21 {
+      background: none ;
+      color: var(--interactive-normal);
+
+      &:hover {
+        color: var(--interactive-hover);
+      }
+    }
+
+    .button__201d5.red_f1ceac {
+      color: var(--red) !important ;
+    }
+
+    .contextMenuNub_ef18ee {
+      color: white ;
+      background-color: var(--background-secondary);
+    }
+  }
+}
+
+// Stage view talk requests sidebar
+.container__664ff {
+  background: none ;
+  
+  .headerContainer__664ff {
+    box-shadow: none ;
+  }
+}
+// <- Stage view

@@ -1,37 +1,49 @@
-$T1_version: "0.6.68" ; // Theme file Fv8
+$T1_version: "0.6.69" ; // Theme file Fv8
 
 // Global Mixins and Variables
 @use 'components/_mixins';
+@use 'components/_new_mixins';
 
 // General App related stuff
 @use 'components/_app';
+@use 'components/_new_app';
 
 // Background image and Transparency
 @use 'components/_background';
+@use 'components/_new_background';
 
 // Text and voice chat
 @use 'components/_chat';
+@use 'components/_new_chat';
 
 // Home Tabs / DMs-Sidebar
 @use 'components/_home';
+@use 'components/_new_home';
 
 // Popouts / Tooltips
 @use 'components/_popouts';
+@use 'components/_new_popouts';
 
 // Channels / Member / Discovery
 @use 'components/_server';
+@use 'components/_new_server';
 
 // Serverbar + Addons
 @use 'components/_serverbar';
+@use 'components/_new_serverbar';
 
 // Settings menus
 @use 'components/_settings' with ( $T1_v: $T1_version );
+@use 'components/_new_settings' with ( $T1_v: $T1_version );
 
 // Header-, Titlebar / Notifications
 @use 'components/_titlebar';
+@use 'components/_new_titlebar';
 
 // User Popout, Modal
 @use 'components/_user';
+@use 'components/_new_user';
 
 // Addon Compatibility
 @use 'components/_compatibility';
+@use 'components/_new_compatibility';

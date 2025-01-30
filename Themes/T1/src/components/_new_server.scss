@@ -1,0 +1,834 @@
+// * server v0.1.17
+// Channels, Panels / Members / Server discovery
+@use 'mixins' as * ;
+
+// -> Text/Voice channels
+.container__2637a {
+  top: 48px ;
+  margin-bottom: 48px ;
+
+  // Special channels seperator (only show last one)
+  .sectionDivider__629e4:has(~ .sectionDivider__629e4) { display: none }
+
+  // -> Current server event, Feature promotion
+  .channelNotice_e2d7b8, .channelNotice-7cg_jN {
+    
+    // Event name
+    .colorHeaderPrimary-jN_yGr {
+      color: var(--header-secondary);
+    }
+    
+    // .joinButton_e2d7b8 {
+    .button__201d5 {
+      @include Btn("background");
+    }
+  }
+  // <- Current server event, Feature promotion
+  
+  // -> Scroller container
+  .scroller__629e4 {
+    // Fade out effect
+    @include scrollerFadeOut();
+
+    &::-webkit-scrollbar { display: none }
+  }
+  // <- Scroller container
+  
+  // -> Server boost progress bar
+  .container_eff079 {
+    position: relative ;
+    height: calc(24px * var(--show-serverboost-stats));
+    margin: -8px 4px 8px 4px ;
+    padding: 0 ;
+    overflow: hidden ;
+
+    // display: var(--serverBoostStatus);
+
+    &::after { display: none }
+    
+    // Text container
+    .textArea_eff079 {
+      margin: 0 12px ;
+      
+      // Nitro flower icon thing ??
+      // .flowerStarContainer_ff7d90 { display: none }
+      
+      // Text "Goal:LVL"
+      .goalText_eff079 {
+        color: var(--header-secondary) !important;
+      }
+    }
+    
+    // Container progress bar
+    .progressBarContainer_c75f85 {
+      position: absolute ;
+      top: 0px ;
+      width: 100% ;
+      margin: 0 ;
+      background: none ;
+      visibility: hidden ;
+    
+      // Progress bar
+      .progressBar_c75f85 {
+        height: 24px ;
+        opacity: .15 ;
+        border-top-right-radius: 5px ;
+        border-bottom-right-radius: 5px ;
+      }
+    
+      // End of bar icon ??
+      // .tadaIcon_eff079 { display: none }
+    }
+    
+    &:hover .progressBarContainer_c75f85 {
+      visibility: visible ;
+    }
+    
+    // Channel category header if adjacent
+    + .containerDefault__29444 {
+      padding-top: 8px ;
+    }
+  }
+  // <- Server boost progress bar
+  
+  // Category names
+  .containerDefault__29444 .name__29444 {
+    font-weight: 700 ;
+  }
+  
+  // Text and Voice Channels
+  .wrapper__2ea32 {
+
+    // Mentions badge
+    @include Mentions_icon(".numberBadge_df8943");
+
+    // Icon ("#", speaker, ..)
+    .icon__2ea32 {
+      width: 15px ;
+      height: 15px ;
+      margin: 2.5px 0 ;
+      color: var(--channels-default);
+      opacity: .8 ;
+    }
+    
+    // Channel name
+    .name__2ea32 { 
+      color: var(--channels-default);
+    }
+    
+    // -> Channel options and infos
+    // Settings and invite buttons
+    .iconItem_f6f816 { display: none }
+
+    // Channel badges (e.g. "NEW", "LIVE") for channels
+    .textBadge_df8943 {
+      background: none !important ;
+      color: var(--interactive-hover);
+
+      &[style*="var(--red"] {
+        color: var(--red-400);
+      }
+    }
+
+    // "new" badge on forum channel
+    .channelInfo_c69b6d .text-xs-semibold__767f1 {
+      color: var(--interactive-hover) !important;
+    }
+    
+    // Connection limit (voice)
+    .wrapper__260e1 {
+      
+      span { background: transparent }
+      
+      .total__260e1::after {
+        content: "|" ;
+        top: 0px ;
+        left: -5px ;
+        border: none ;
+      }
+    }
+    
+    // container for hover
+    .link__2ea32 {
+      background: transparent;
+      
+      &:hover {
+        .name__2ea32 { color: var(--interactive-hover) }
+        .iconItem_f6f816 { display: block }
+      }
+    }
+    // <- Channel options and infos
+    
+    // Channel selected / connected
+    &.modeSelected__2ea32, &.modeConnected__2ea32 {
+
+      // Channel name
+      .name__2ea32 { 
+        color: var(--interactive-active) !important; 
+      }
+      // Channel icon (left)
+      .icon__2ea32 { 
+        color: var(--interactive-active) !important;
+      }
+    }
+    
+    // Channel muted
+    &.modeMuted__2ea32 {
+      // Channel icon (left)
+      .icon__2ea32 { 
+        color: var(--interactive-muted);
+      }
+    }
+    
+    // Channel unread
+    &.modeUnreadImportant__2ea32 {
+      // pill
+      .unread__2ea32 { 
+        background-color: var(--interactive-hover);
+      }
+    }
+
+    // Channel no permission
+    &.modeLocked__2ea32 {
+
+      .link__2ea32 {
+        cursor: not-allowed ;
+      }
+
+      .name__2ea32 {
+        color: var(--interactive-muted);
+      }
+    }
+  }
+
+  // Channel indicator bar (floating)
+  .container__7aaec .bar__7aaec {
+    background: var(--background-secondary-alt);
+
+    @include shadow_effect("box_3");
+
+    &:hover {
+      background: var(--background-tertiary);
+    }
+
+    // Unread mentions bar
+    &.mentionsBar__7aaec .barText__7aaec {
+      color: var(--red-secondary) !important;
+    }
+  }
+  
+  // Threads indicator spine thing
+  .spine__5b40b {
+    color: var(--channels-default);
+    opacity: .5 ;
+  }
+  
+  // User in Voice channel
+  .voiceUser__07f91 {
+
+    // "live" indicator for user
+    .live_a7acae { 
+      background: none !important ;
+      color: var(--red);
+    }
+  }
+
+  // collapsed voice user list (for hidden channels ("showw all" thing))
+  .overlap__07f91 .avatar__07f91 {
+    border: none ;
+    margin: 4px ;
+  }
+  
+  // New in-server feature notification
+  .wrapper_bd9e38 .container_bd9e38 {
+    background: var(--background-tertiary);
+    
+    .button__201d5 {
+      @include Btn("background");
+    }
+  }
+
+  // "Hide/Show all voice Channels
+  .voiceChannelsButton__29444 {
+    background-color: var(--background-modifier-hover);
+    border: none ;
+
+    &:hover {
+      background-color: var(--background-modifier-accent);
+    }
+  }
+}
+// <- Text/Voice channels
+
+// -> Members list 
+.members_c8ffbb {
+  @include scrollerFadeOut();
+
+  &::-webkit-scrollbar { display: none }
+  
+  // Role header
+  .membersGroup_c8ffbb { 
+    margin-bottom: 4px;
+    font-weight: 600 ;
+  }
+
+  // Activitys
+  .container__0f2e8 {
+    background: none ;
+
+    .contentImage__42bf5 {
+      width: 40px !important ;
+      height: 40px !important ;
+    }
+  }
+  // would remove popout hover
+  // .content__99f8c > :has(.container__0f2e8) {
+  //   pointer-events: none ;
+  // }
+  
+  // Member
+  .member__5d473 {
+    margin: 0 0 0 11px ;
+    background: none ;
+    
+    // Inner container 
+    .layout__91a9d {
+      border-radius: 0 ;
+      background: none ;
+      border-right: 3px solid transparent ;
+      
+      &:hover { 
+        border-color: var(--interactive-hover);
+        background-color: var(--background-modifier-hover);
+      }
+    }
+    
+    // User popout open
+    &.selected__91a9d .layout__91a9d {
+       border-right: 3px solid var(--interactive-hover);
+    }
+    
+    // Offline member
+    &.offline__5d473:not(:hover) .avatar__91a9d {
+      filter: grayscale(100%);
+      border-radius: 50% ;
+    }
+    
+    // Nitro icon 
+    .name__91a9d + div { pointer-events: none }
+    
+    .ownerIcon_a31c43 {
+      color: var(--header-secondary);
+    }
+  }
+
+  // Preload dummys
+  .placeholder_fb03e5, .memberGroupsPlaceholder_c8ffbb {
+    animation: none ;
+  }
+
+  .placeholderAvatar_fb03e5, .placeholderUsername__74df5, .memberGroupsPlaceholder_c8ffbb {
+    background: var(--text-normal);
+    opacity: 0.1;
+  }
+  
+  // Empty members list (Threads)
+  > div {
+    background: none ;
+  }
+}
+// <- Members list 
+
+// -> Discovery Servers / Quests
+// -> Sidebar region
+.container__551b0 {
+  margin-top: 48px ;
+
+  // list
+  .nav__551b0 {
+    gap: 8px ;
+  }
+
+  // items
+  .navItem__551b0 {
+    border-radius: 0 ;
+    border-left: 3px solid transparent;
+  
+    &:hover {
+      border-left: 3px solid var(--interactive-hover);
+    }
+    
+    &.selected__551b0 {
+      background-color: transparent ;
+      border-left: 3px solid var(--interactive-hover);
+    }
+  }
+}
+// <- Sidebar region
+
+// -> Content region
+.container_a592e1 {
+
+  // -> Header
+  .headerBar__8a7fc {
+
+    .backdrop__8a7fc { display: none }
+
+    > .icon__8a7fc path {
+      fill: var(--header-secondary);
+    }
+
+    // Servers nav bar
+    .tabs__65d41 {
+      align-items: center ;
+      gap: 10px ;
+    }
+
+    .tabs__65d41 .item_b3f026 {
+      margin: 0 ;
+      padding: 5px;
+      border: none ;
+    }
+  }
+
+  // Quest header
+  .container__955a3 .headerBar__8a7fc {
+    display: none ;
+  }
+  // <- Header
+
+  // -> Scroller
+  .scroller__23746 {
+
+    @include scrollerFadeOut(5px, 2px);
+
+    .container_e9ef78 { display: none }
+  }
+
+  // Servers scroller
+  .container_d08938 .scroller__23746 {
+    margin-top: 60px ;
+  }
+  // <- Scroller
+
+  // Item list
+  .contentSection_b6bcee {
+
+    // Quests nav bar
+    .tabs__955a3 .tabItem_c9a59b {
+      background: none ;
+    }
+
+    // Guild item
+    .card__4cb8a {
+      background: var(--background-modifier-accent);
+
+      &:hover {
+        background: var(--background-modifier-selected);
+      }
+    }
+
+    // Quest item
+    .questTile__60f82 {
+      background: var(--background-modifier-accent);
+
+      .rewardDescriptionContainer__956c6 {
+        background: none ;
+      }
+
+      .button__960ef {
+        background: none ;
+
+        &:not(:disabled) {
+          @include Btn(var(--background-modifier-accent), white);
+        }
+      }
+    }
+  }
+}
+// <- Content region
+// <- Discovery
+
+// -> Server boost screen
+.root_f906dd.enterDone_f906dd {
+  margin-top: 22px ;
+
+  .scroller__6fd0e { 
+    @include scrollbar();
+    @include scrollerFadeOut();
+  }
+
+  // weird wave design things
+  .bodyWave__1dfae, .headerWave__1dfae { display: none }
+}
+// <- Server boost screen
+
+// -> Home channel/ Server guide
+.homeContainer__7449f, .emptyHomeContainer__6b359 {
+
+  // -> Header
+  .header__553a5 {
+
+    .headerIcon__553a5 {
+      border: none ;
+      border-radius: 7.5% ;
+
+      &:not([class*=".gif"]) { @include shadow_effect("drop_1") }
+    }
+
+    // Invite Btn
+    .inviteButton__553a5 {
+      background: var(--background-modifier-hover);
+      transition: none ;
+
+      &:hover {
+        background: var(--background-modifier-selected);
+      }
+    }
+  }
+  // <- Header
+
+  // -> Body
+  // Greetings text
+  .welcomeMessageContainer__6f212 {
+
+    .userCardOuter_c69a7b, .userCardInner_c69a7b {
+      background: none ;
+    }
+  }
+
+  // "Get Started", "Resources" section items
+  .action_c66e86, .row_d13feb {
+    background: var(--background-modifier-hover);
+    transition: none ;
+
+    &:hover {
+      background: var(--background-modifier-selected);
+    }
+  }
+
+  // Sidebar (server info)
+  .sidebarCardWrapper__7449f {
+    background: var(--background-modifier-hover);
+  }
+  // <- Body
+}
+
+// -> Special Channels (Chan&Rols / Members)
+// Header
+.container__9293f {
+
+  // return to last channel btn (Chan&Rols / Members)
+  .returnButton_c791b2 {
+    border: none;
+    background: none;
+
+    // Btn text
+    .returnButtonText_c791b2 {
+      color: var(--header-secondary);
+      opacity: .9 ;
+    }
+
+    &:hover {
+      background: var(--background-modifier-hover);
+
+      .returnButtonText_c791b2 {
+        opacity: 1 ;
+      }
+    }
+  }
+}
+
+// -> Channel & Roles
+// Content container
+.container__0b563 {
+
+  // empty page / loading placeholder
+  .emptyPage__5d7c9 {
+    background: none ;
+  }
+
+  // Navbar
+  .tabBar__0b563 {
+
+    .tabBarItem__0b563 {
+      border: none !important;
+    }
+  }
+
+  // -> Customize
+  // Infos & Questions
+  .prompt__5d7c9 {
+    background: none ;
+
+    .optionButtonWrapper__270d7 {
+      background: var(--background-modifier-hover);
+      border: none ;
+
+      &:hover {
+        background: var(--background-modifier-selected);
+      }
+    }
+  }
+
+  // "MY Profile"
+  .profileCard__5d7c9 {
+    background: var(--background-modifier-hover);
+
+    .username__5d7c9 {
+      color: var(--header-primary) !important;
+    }
+
+    div {
+      color: var(--header-secondary) !important;
+    }
+  }
+  // <- Customize
+
+  // -> Browse channels
+  // Searchbar
+  .search__41ed7 {
+    background: var(--background-modifier-selected);
+    border-radius: 2px ;
+  }
+
+  // create channel btn
+  .createButton__41ed7 {
+    border-radius: 2px ;
+
+    @include Btn(var(--background-modifier-selected));
+  }
+  
+  // Channel category
+  .categoryRow_e4503a {
+    .categoryText_e4503a {
+      color: var(--header-secondary) !important;
+    }
+  }
+
+  // channel item
+  .channelRow_e4503a {
+    background: none ;
+
+    &:not(.disabled_e4503a):hover {
+      background: var(--background-modifier-hover);
+    }
+
+    .channelText_e4503a {
+      color: var(--text-normal) !important;
+    }
+
+    .viewChannelButton_e4503a {
+      display: block;
+
+      @include Btn();
+    }
+  }
+
+  // Checkboxes
+  .checkbox_f525d3 {
+    background: none !important;
+    border-color: var(--interactive-normal) !important;
+  }
+  // <- Browse channels
+}
+// <- Channel & Roles
+
+// -> Member Safety Page
+.page_c791b2 {
+  background: none !important;
+
+  // scroller inner content container
+  .container_c791b2 {
+    padding: 0 ;
+
+    // Container
+    .mainTableContainer__09a38 {
+      box-shadow: none ;
+    }
+  }
+
+  // -> Header
+  .searchHeaderContainer__98d1c {
+
+    // "Recent Members" header
+    .defaultColor_e9e35f {
+      color: var(--header-secondary);
+    }
+
+    // Buttons Sort, Prune
+    .button__201d5 {
+      background: var(--background-modifier-accent) ;
+      border: none ;
+
+      .contents__201d5 {
+        opacity: .9 ;
+      }
+
+      &:hover {
+        background: var(--background-modifier-hover);
+
+        .contents__201d5 {
+          opacity: 1 ;
+        }
+      }
+
+      &.colorRed__201d5 {
+        color: var(--red);
+      }
+    }
+  }
+  // <- Header
+
+  // -> Table
+  .table_b4ec0b {
+    padding: 0 ;
+    border: none ;
+  }
+
+  .tableHeaderRow__9dd6b::after {
+    box-shadow: none ;
+    background: var(--background-modifier-accent);
+  }
+
+  // notice bar for when new member joined 
+  .newMembersNotice_acdcc0 {
+    top: -4px ;
+    background: var(--background-secondary-alt);
+    cursor: auto ;
+
+    @include shadow_effect("drop_2");
+
+    td {
+      &:first-child {
+        border-top-left-radius: 8px ;
+        border-bottom-left-radius: 8px ;
+      }
+      &:last-child {
+        border-top-right-radius: 8px ;
+        border-bottom-right-radius: 8px ;
+      }
+    }
+  }
+
+  td, th {
+    width: auto ; //idk
+  }
+
+  // Member item
+  .memberRowContainer__71c22 {
+    // weird effect on row when leaving modal, idk
+    background: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+
+    // Row cells (idk, thats just how DC does it.)
+    td {
+      border-radius: 0 ;
+      background: none ;
+      padding: 8px 4px ;
+
+      &::after {
+        display: none ;
+      }
+    }
+    
+    &:hover {
+
+      // all inner items (table data cell)
+      td {
+        background: var(--background-modifier-hover);
+      }
+
+      // action buttons
+      .actionCell__71c22 {
+        color: var(--interactive-normal);
+      }
+    }
+
+    .memberNameContainer__71c22 {
+      // grid-template-columns: 32px minmax(100px, 150px);
+    }
+
+    // -> Roles cell
+    // container cell
+    td:has(.roleContainer__71c22) {
+      // width: 10% !important ;
+    }
+
+    .roleName__48c1c {
+      max-width: 140px ;
+    }
+
+    // roles btns
+    .otherRoles__71c22 {
+      opacity: 1;
+      background: var(--background-modifier-hover);
+    }
+
+    // role add btn
+    .addRoleContainer__71c22 {
+
+      // icon
+      .addRoleIcon__71c22 {
+        color: var(--header-secondary);
+      }
+
+      &:hover {
+        background: var(--background-modifier-selected);
+
+        .addRoleIcon__71c22 {
+          color: var(--header-primary);
+        }
+      }
+    }
+    // <- Roles cell
+
+    // action btns
+    .button__71c22 {
+      background: none ;
+
+      &:hover {
+        color: var(--interactive-hover);
+      }
+    }
+  }
+  // <- Table
+}
+// <- Member Safety Page
+// <- Special Channels (Chan&Rols / Members)
+
+// -> Server welcome screen thing
+.content_c48ade .main_c08b38 {
+  // Background image
+  .artwork_c08b38 { display: none }
+
+  // -> Intro
+  .coverContainer__2f300 {
+    background: none ;
+  }
+
+  .centerContent__2f300 {
+    background: var(--background-tertiary);
+
+    .button__201d5 {
+      @include Btn("background");
+    }
+  }
+  // <- Intro
+
+  // -> Main content
+  .promptContent_fe70ca {
+
+    .optionButton__270d7 {
+      border: none ;
+      background: var(--background-modifier-accent);
+
+      &:hover {
+        background: var(--background-modifier-selected);
+      }
+    }
+  }
+  // <- Main content
+}
+// <- Server welcome screen thing

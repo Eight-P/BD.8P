@@ -1,0 +1,364 @@
+// * mixins v0.1.14
+// Notifications / Scrollbar / Button / Default Variables
+
+// -> Mixins
+// Scrollbar design | @include scrollbar();
+@mixin scrollbar ($width:15px) {
+  &::-webkit-scrollbar { 
+    // width: 12px ;
+    width: $width ;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    border-color: transparent ;
+    background-color: var(--background-modifier-accent);
+    visibility: visible ;
+  }
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-track-piece { 
+    background-color: transparent ;
+    border-color: transparent ;
+  }
+
+  &:hover::-webkit-scrollbar-thumb { 
+    background-color: var(--interactive-normal);
+  }
+}
+
+// Button Design ( needs rework ) | @include Btn();
+// $BG = [false, "background", <color>( + $C for Text)]
+@mixin Btn ($BG:false, $C:false) {
+  
+  $Text_normal: var(--interactive-normal);
+  $Text_hover: var(--interactive-hover);
+  $BG_normal: rgba(70, 75, 83, 0.25);
+  $BG_hover: rgba(70, 75, 83, 0.6);
+  
+  &, * {
+    border: none ;
+    font-size: 14px ;
+    font-weight: 600 ;
+    text-decoration: none ;
+    background-image: none !important ;
+  }
+  
+  &:disabled {
+    opacity: .5 ;
+  }
+  
+  // with Background
+  @if ($BG) {
+    background: if($BG == "background", $BG_normal, $BG);
+    border-radius: 5px ;
+    transition: .1s ;
+    color: if($C, $C, $Text_normal);
+    
+    * {
+      opacity: if($C, .7, 1);
+    }
+    
+    &:not(:disabled):hover {
+      background: if($BG == "background", $BG_hover, $BG);
+      border-radius: 1px ;
+      color: if($C, $C, $Text_hover);
+      
+      * {
+        opacity: 1;
+      }
+    }
+  }
+  
+  // without Background
+  @else {
+    background: none !important ;
+    transition: none ;
+    color: $Text_normal;
+    
+    &:not(:disabled):hover {
+      color: $Text_hover;
+    }
+  }
+}
+
+// Unread mentions badge (inline) | @include Mentions_icon();
+@mixin Mentions_icon ($class:false) {
+
+  #{if($class, $class, "&")} {
+    background-color: transparent !important ;
+    border-radius: 0 ;
+    color: var(--text-normal);
+    box-shadow: none ;
+
+    &[style*="background-color: var(--status-danger)"] {
+      border-bottom: 2px solid var(--red);
+    }
+  }
+}
+
+// Shadow effects | @include shadow_effect("drop_1");
+@mixin shadow_effect ($type:"drop_1") {
+  
+  // - Primary  
+  @if $type == "drop_1" {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75));
+  }
+  
+  @else if $type == "box_1" {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.75);
+  }
+  
+  // - Secondary
+  @else if $type == "drop_2" {
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+  }
+  
+  @else if $type == "box_2" {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+  }
+
+  @else if $type == "box_3" {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  
+  @else if $type == "server_1" {
+    filter: drop-shadow( 2px 2px 3px black);
+  }
+  
+  @else if $type == "text_1" {
+    text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.75);
+  }
+  
+  @else if $type == "text_2" {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Scroller fade out effect | @include scrollerFadeOut();
+@mixin scrollerFadeOut ($top:5px, $bottom:5px) {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 $top, #000 calc(100% - $bottom), transparent);
+}
+
+// Set width and height restrictions | @include restrictions();
+@mixin restrictions ($width:0px, $height:false) {
+  min-width: $width ;
+  max-width: $width ;
+  min-height: if($height, $height, $width);
+  max-height: if($height, $height, $width);
+}
+
+// Searchbar @include searchbar(".outer", ".inner");
+@mixin searchbar ($outer, $inner) {
+  // background container
+  #{$outer} {
+    background: var(--background-modifier-accent);
+
+    // input + icon parent
+    #{$inner} {
+      border: solid transparent ;
+      border-width: 0 0 1px 0 ;
+      background: none ;
+      box-shadow: none !important ;
+    }
+
+    &:focus-within {
+      background: none ;
+      border-radius: 0 ;
+
+      #{$inner} {
+        border-color: var(--header-secondary);
+        border-radius: 0 ;
+      }
+    }
+  }
+}
+// <- Mixins
+
+// -> User settings
+:root {
+  
+  --Main_Background: url("https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg");
+  --background_app: var(--Main_Background);
+
+  --Main_Brightness: 80 ;
+  --backgroundBrightness_app: var(--Main_Brightness);
+
+  --Main_Background_blur: 0 ;
+  --backgroundBlur_app: var(--Main_Background_blur);
+
+  
+  --Server_Background: url("https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg");
+  --background_server: var(--Server_Background);
+
+  --Server_Brightness: 100 ;
+  --backgroundBrightness_server: var(--Server_Brightness);
+
+  --Server_Background_blur: 0 ;
+  --backgroundBlur_server: var(--Server_Background_blur);
+
+  
+  --show-nitro-btn: 0 ;
+  --chatBtn_nitro: flex ;
+
+  --show-gif-btn: 1 ;
+  --chatBtn_gif: flex ;
+
+  --show-sticker-btn: 1 ;
+  --chatBtn_sticker: flex ;
+
+  --show-emoji-btn: 1 ;
+  --chatBtn_emoji: flex ;
+
+  --show-apps-btn: 1 ;
+  --chatBtn_Apps: block ;
+  
+
+  --show-userProfile-effects: 1 ;
+  --userProfileEffects: block ;
+
+  --show-avatarDecorations: 1 ;
+  --avatarDecorations: block ;
+
+
+  --show-friends-activity: 0 ;
+  --friendsActivitySidebar: block ;
+
+  --hide-empty-friends-activity: 1 ;
+  --friendsActivitySidebar_empty: block ;
+
+
+  --unmask-links: 0 ;
+  --unmaskedLinks: inline-flex ;
+
+  --show-serverboost-stats: 1 ;
+  --serverBoostStatus: flex ;
+
+  --always-show-voicecontrols: 0 ;
+  --voiceControlOverlay: var(--always-show-voicecontrols);
+
+  --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+  --font: var(--Font);
+
+  
+  // Discord vars
+  --font-primary: var(--font) !important ;
+  --font-display: var(--font) !important ;
+}
+// <- User settings
+
+// -> Theme colors
+.theme-dark {
+  --header-primary: #fff;
+  --header-secondary: #b9bbbe;
+  
+  --text-normal: #dcddde;
+  --text-muted: #72767d;
+  --text-link: #00b0f4;
+  --text-positive: #4fdc7b;
+  --text-link-low-saturation: hsl(197,100%,52.9%);
+  --text-link-low-saturation: #0fbbff ;
+  
+  --interactive-normal: #7c7d7e ; // #b9bbbe 
+  --interactive-hover: #dcddde;
+  --interactive-active: #fff;
+  --interactive-muted: #4f545c;
+  
+  --background-primary: #36393f;
+  --background-secondary: #2f3136;
+  --background-secondary-alt: #292b2f;
+  --background-tertiary: #202225;
+  --background-accent: #4f545c;
+  --background-floating: #18191c;
+  
+  --background-mobile-primary: #36393f;
+  --background-mobile-secondary: #2f3136;
+    
+  --background-modifier-hover: rgba(79,84,92,0.16);
+  --background-modifier-active: rgba(79,84,92,0.24);
+  --background-modifier-selected: rgba(79,84,92,0.32);
+  --background-modifier-accent: hsla(0,0%,100%,0.06);
+  
+  --background-mentioned: rgba(250,166,26,0.1);
+  --background-mentioned-hover: rgba(250,166,26,0.08);
+  --background-message-hover: rgba(4,4,5,0.07);
+  
+  --info-positive-text: #fff;
+  --info-warning-text: #fff;
+  --info-danger-text: #fff;
+  --info-help-background: rgba(0,176,244,0.1);
+  --info-help-foreground: #00b0f4;
+  --info-help-text: #fff;
+  
+  --status-warning-text: #000;
+  
+  --scrollbar-thin-thumb: #202225;
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: #202225;
+  --scrollbar-auto-track: #2e3338;
+  --scrollbar-auto-scrollbar-color-thumb: #202225;
+  --scrollbar-auto-scrollbar-color-track: #2f3136;
+  
+  --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
+  --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+  --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
+  --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+  
+  --logo-primary: #fff;
+  
+  --control-brand-foreground: #a5b3e7;
+  --control-brand-foreground-new: #949cf7;
+  
+  --channels-default: #8e9297;
+  --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  --channeltextarea-background: #40444b;
+  --activity-card-background: #202225;
+  --textbox-markdown-syntax: #8e9297;
+  
+  --deprecated-card-bg: rgba(32,34,37,0.6);
+  --deprecated-card-editable-bg: rgba(32,34,37,0.3);
+  --deprecated-store-bg: #36393f;
+  --deprecated-quickswitcher-input-background: #72767d;
+  --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
+  --deprecated-text-input-bg: rgba(0,0,0,0.1);
+  --deprecated-text-input-border: rgba(0,0,0,0.3);
+  --deprecated-text-input-border-hover: #040405;
+  --deprecated-text-input-border-disabled: #202225;
+  --deprecated-text-input-prefix: #dcddde;
+}
+
+// Theme colors (dark/light)
+.theme-dark, .theme-light {
+  
+  // Defaults
+  --text-warning: #faa61a;
+  --text-danger: #ed4245;
+  --info-positive-background: rgba(59,165,92,0.1);
+  --info-positive-foreground: #3ba55c;
+  --info-warning-background: rgba(250,166,26,0.1);
+  --info-warning-foreground: #faa61a;
+  --info-danger-background: rgba(237,66,69,0.1);
+  --info-danger-foreground: #ed4245;
+  --status-positive-background: #3ba55c;
+  --status-positive-text: #fff;
+  --status-warning-background: #faa61a;
+  --status-danger-background: #ed4245;
+  --status-danger-text: #fff;
+  --focus-primary: #00b0f4;
+  
+  // T1 - Additions
+  
+  --red: #f04747;
+  --red-secondary: rgb(210, 80, 80);
+  --border-mentioned: rgba(250, 166, 26, 0.65);
+  --Blurple: rgb(114, 137, 218);
+  --Blurple-light: rgba(114, 137, 218, 0.2);
+  --Blurple-light-hover: rgba(114, 137, 218, 0.4);
+  
+  --BD-Blue: #3e82e5 ;
+  
+  --status-online: #3ba55c ;  /* #43b581 */
+  --status-idle: #faa61a ;
+  --status-DnD: #ed4245 ; /* #f04747 */
+  --status-invisible: #747f8d ;
+}
+// <- Theme colors
