@@ -1,4 +1,4 @@
-// * app v0.1.14
+// * app v0.1.15
 @use 'mixins' as * ;
 
 body {
@@ -6,23 +6,24 @@ body {
 }
 
 // Layer transitions
-.layers_a01fb1 > .layer_d4b6c5 { 
+.layers__160d8 > .layer__960e4 { 
   transform: none !important ;
 }
 
-.base_a4d4d9 { 
+.base_c48ade { 
   height: 100% !important ;
 }
 
 // "Bot"/"server" Tag Indicator
-.botTag_a9e77f { 
+.botTag__5d473 { 
   color: var(--text-normal);
   background-color: var(--background-secondary);
 }
 
 // General Scrollbar
-.app_bd26cc .scrollerBase_eed6a8:not(.none_eed6a8) { @include scrollbar() } 
-.app_bd26cc .scrollerBase_c49869:not(.none_c49869) { @include scrollbar() }
+.app_a3002d .scrollerBase_eed6a8:not(.none_eed6a8) { @include scrollbar() } 
+.app_a3002d .scrollerBase_c49869:not(.none_c49869) { @include scrollbar() }
+.app_a3002d .scrollerBase_d125d2:not(.none_c49869) { @include scrollbar() }
 
 // Tab focus thing
 .focus-rings-ring, .focusRing_d0696b {
@@ -32,10 +33,10 @@ body {
 }
 
 // Sidebar Panels (Profile, Activity,..)
-.sidebar_a4d4d9 .panels_a4d4d9 {
+.sidebar_c48ade .panels_c48ade {
   
   // Profile Container
-  .container_b2ca13 {
+  .container__37e49 {
     position: absolute ;
     height: 48px ;
     width: 240px ;
@@ -43,19 +44,19 @@ body {
     box-sizing: border-box ;
 
     // Pfp, name container
-    .avatarWrapper_b2ca13 {
+    .avatarWrapper__37e49 {
       margin: 6px 8px 6px 0 ;
       background: none ;
     }
 
     // Buttons
-    .button_dd4f85 {
+    .button__201d5 {
       background: none ;
     }
   }
   
   // Activity Container
-  .activityPanel_a4d4d9 {
+  .activityPanel_c48ade {
     height: 32px ;
     padding: 6px 10px ;
     
@@ -73,37 +74,37 @@ body {
   }
   
   // Voice Connection
-  .container_adcaac {
+  .container_e131a9 {
     border: none ;
     padding: 0 0 0 8px ;
 
     // Voice channel info container
-    .connection_adcaac {
+    .connection_e131a9 {
       padding: 5px 0 ;
     }
 
     // Buttons container
-    .button_dd4f85 {
+    .button__201d5 {
       background: none ;
     }
 
 
     // -> With action buttons
-    &:has(.actionButtons_adcaac) {
+    &:has(.actionButtons_e131a9) {
       display: grid ;
       padding: 0 ;
       grid-template-columns: 100% ;
       contain: paint ;
       
       // Voice channel info container
-      .connection_adcaac {
+      .connection_e131a9 {
         order: 2 ;
         margin-left: 32px ;
         align-items: unset ;
       }
       
       // Connected users container (right click channel name for context option)
-      .voiceUsers_adcaac {
+      .voiceUsers_e131a9 {
         height: 30px ;
         padding: 3px 8px ;
         margin: 0 ;
@@ -112,14 +113,14 @@ body {
         
         &::-webkit-scrollbar { display: none }
         
-        ~ .actionButtons_adcaac:after {
+        ~ .actionButtons_e131a9:after {
           bottom: 42px ;
         }
       }
     }
 
     // Voice channel button container
-    .actionButtons_adcaac {
+    .actionButtons_e131a9 {
       display: inline-flex ;
       height: 0 ;
       padding: 0 ;
@@ -155,14 +156,14 @@ body {
       }
       
       // Buttons container
-      .button_adcaac {
+      .button_e131a9 {
         width: max-content ;
         padding: 0 12px ;
         background: none ;
         color: var(--interactive-normal);
         z-index: 1 ;
         
-        &:not(.fauxDisabled_adcaac):hover {
+        &:not(.fauxDisabled_e131a9):hover {
           color: var(--interactive-hover);
         }
       }
@@ -172,10 +173,10 @@ body {
 }
 
 // General searchbar
-.app_bd26cc { @include searchbar(".container_c18ec9", ".inner_c18ec9") }
+.app_a3002d { @include searchbar(".container_a45028", ".inner_a45028") }
 
 // Profile image decorations user option
-.avatarDecoration_c51b4e .avatar_c51b4e {
+.avatarDecoration__44b0c .avatar__44b0c {
   height: calc(100% * var(--show-avatarDecorations));
   width: calc(100% * var(--show-avatarDecorations));
 }

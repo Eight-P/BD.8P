@@ -1,4 +1,4 @@
-// * compatibility v0.1.15
+// * compatibility v0.1.16
 // Compatibility with plugins and Themes
 @use 'mixins' as * ;
 
@@ -11,6 +11,7 @@
 // - ServerDetails by DevilBro (v1.2.2)
 // - CharCounter by DevilBro (v1.6.6)
 // - Memessages by Greezor (v0.13.3)
+// - ServerFolders by DevilBro (v7.2.8)
 
 // - Icon Revert 2023 by davart154 (3edfca4)
 
@@ -31,14 +32,14 @@
 }
 
 // Server channel sidebar
-.sidebar_a4d4d9 {
+.sidebar_c48ade {
   transition: none !important ;
   
   // Sidebar hidden 
   &.hideChannelElement {
 
     // titlebar (chat, friendslist)
-    + div .title_a7d72e, + main .container_fc4f04 {
+    + div .title_f75fb0, + main .container__9293f {
       margin-left: 240px ;
       width: auto ;
     }
@@ -50,7 +51,7 @@
 #MemberCount {
   background: none ;
 
-  + .members_cbd271 {
+  + .members_c8ffbb {
     margin-top: 40px ;
   }
 }
@@ -58,7 +59,7 @@
 
 // -> FriendNotifications by DevilBro
 // Online friend counter
-.guilds_a4d4d9 .friendsOnlineWrap_0gZ63m {
+.guilds_c48ade .friendsOnlineWrap_0gZ63m {
   display: flex !important ;
   position: absolute ;
   transform: rotate(90deg);
@@ -77,7 +78,7 @@
 
 // -> ReadAllNotificationsButton by DevilBro
 // "Read all" btn
-.guilds_a4d4d9 .frame_oXWS21 {
+.guilds_c48ade .frame_oXWS21 {
   display: flex !important ;
   position: absolute ;
   top: 0 ;
@@ -86,7 +87,7 @@
 
   &, * { height: 20px ; width: 20px  }
 
-  .childWrapper_f90abb {
+  .childWrapper__6e9f8 {
     color: transparent ;
     background: none ;
     transform: rotate(90deg);
@@ -131,7 +132,7 @@
 
 // -> SpotifyControls by DevilBro
 // Sidebar control panel
-#app-mount .panels_a4d4d9 .container_6sXIoE { 
+#app-mount .panels_c48ade .container_6sXIoE { 
   margin: 0px ;
   min-height: 44px ;
 
@@ -141,7 +142,7 @@
 
 // -> CollapsibleUI by programmer2514
 // Serverbar hidden
-.guilds_a4d4d9 {
+.guilds_c48ade {
   
   &[style*="transition: width"] {
     transition: none !important ;
@@ -152,8 +153,8 @@
     display: none ;
     
     // hide Home search, Server options btn
-    + .base_a4d4d9 {
-      .searchBar_f0963d, .container_fd6364 {
+    + .base_c48ade {
+      .searchBar__35e86, .container_f37cb1 {
         display: none ;
       }
     }
@@ -161,7 +162,7 @@
 }
 
 // Channel list sidebar floating (on hover)
-.sidebar_a4d4d9[style*="position: absolute"] {
+.sidebar_c48ade[style*="position: absolute"] {
   overflow: visible !important ;
 
   // hidden
@@ -192,12 +193,12 @@
 
 // User area hidden
 // user panel, voice panel, ...
-.panels_a4d4d9[style*="max-height: 0px"] {
+.panels_c48ade[style*="max-height: 0px"] {
   display: none ;
 }
 
 // DM Sidebar, Channel list
-:is(.privateChannels_f0963d, .container_ee69e0):has(~ .panels_a4d4d9[style*="max-height: 0px"]) {
+:is(.privateChannels__35e86, .container__2637a):has(~ .panels_c48ade[style*="max-height: 0px"]) {
   top: 5px ;
   margin-bottom: unset ;
 }
@@ -223,13 +224,13 @@
     color: var(--channel-text-area-placeholder);
   }
 
-  .placeholder_a552a6, .editor_a552a6 {
+  .placeholder__1b31f, .editor__1b31f {
     padding: 14px 10px 8px 0 ;
   }
 }
 
 // typing/slowmode container override
-.form_a7d72e .typing_d7ebeb {
+.form_f75fb0 .typing_d7ebeb {
   margin: 0 !important ;
 }
 // <- CharCounter by DevilBro
@@ -244,21 +245,25 @@
 .memessages--sidebar--pin { display: none }
 // <- Memessages by Greezor
 
+// -> ServerFolders by DevilBro
+
+
+// <- ServerFolders by DevilBro
+
 
 // -> Icon Revert 2023
-
 // Channel Notification settings Bell icon
-.toolbar_fc4f04 [d^="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a.47.47 0 0 0-.07-"] {
+.toolbar__9293f [d^="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a.47.47 0 0 0-.07-"] {
   d: path("M21.178 1.70703L22.592 3.12103L4.12103 21.593L2.70703 20.178L21.178 1.70703Z M18 10.5283L10.5287 18H21V17C19.344 17 18 15.657 18 14V10.5283Z M8.957 19.5718L9.52877 19H15.4449C14.7519 20.19 13.4759 21 11.9999 21C10.7748 21 9.68752 20.442 8.957 19.5718Z M12 3C13.417 3 14.71 3.5 15.734 4.321L5.99805 14.058C5.99805 14.0479 5.99856 14.038 5.99907 14.0283C5.99956 14.0188 6.00005 14.0094 6.00005 14V9C6.00005 5.686 8.68605 3 12 3Z") !important ;
 }
 
-.toolbar_fc4f04 .icon_fc4f04:has([d^="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a."]) {
+.toolbar__9293f .icon__9293f:has([d^="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a."]) {
   background-image: none !important ;
 }
 
 // quick fix for some btns
-.container_b2ca13, .voiceButtonsContainer_adcaac {
-  .button_adca65 {
+.container__37e49, .voiceButtonsContainer_e131a9 {
+  .button__67645 {
     svg {
       background: currentColor !important ;
     }
@@ -270,7 +275,7 @@
 }
 
 // user area btns
-.container_b2ca13 .button_adca65 {
+.container__37e49 .button__67645 {
 
   // mic
   &:nth-last-child(3) {
@@ -296,7 +301,7 @@
 }
 
 // voice conection btns
-.voiceButtonsContainer_adcaac .button_dd4f85 {
+.voiceButtonsContainer_e131a9 .button__201d5 {
 
   // crisp
   &:first-child svg {
@@ -307,7 +312,7 @@
 
 
 // -> ServerListIndicator
-.guilds_a4d4d9 div:has(> #vc-friendcount, > #vc-guildcount) {
+.guilds_c48ade div:has(> #vc-friendcount, > #vc-guildcount) {
   display: flex ;
   height: 54px ;
   width: max-content ;
@@ -328,7 +333,7 @@
 // <- ServerListIndicator
 
 // -> ReadAllNotificationsButton
-.guilds_a4d4d9 .vc-ranb-button {
+.guilds_c48ade .vc-ranb-button {
   position: absolute ;
   top: 0px ;
   left: 0px ;

@@ -1,4 +1,4 @@
-// * mixins v0.1.14
+// * mixins v0.1.15
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
@@ -151,7 +151,6 @@
 @mixin searchbar ($outer, $inner) {
   // background container
   #{$outer} {
-    // background: var(--background-modifier-active);
     background: var(--background-modifier-accent);
 
     // input + icon parent

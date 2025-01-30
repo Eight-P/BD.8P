@@ -1,4 +1,4 @@
-// * background v0.2.16
+// * background v0.2.17
 // Background image + Transparency
 @use "sass:string";
 
@@ -26,80 +26,81 @@ $Classes: (
   // #app-mount
   "",
   // BG elm
-  ".bg_d4b6c5",
+  ".bg__960e4",
   // App containers
-  ".app_a01fb1",
-  ".layer_d4b6c5",
+  ".app__160d8",
+  ".layer__960e4",
   // Text chat
-  ".chat_a7d72e",
-  ".chatContent_a7d72e",
+  ".chat_f75fb0",
+  ".chatContent_f75fb0",
   // Voicecall view
-  ".callContainer_d880dc",
+  ".callContainer_cb9592",
   // Forum channel
-  ".container_a6d69a",
+  ".container_f369db",
   // Channel & Roles
-  "!.container_f1fd9c",
-  ".pageBody_c2efea",
+  "!.container__0b563",
+  ".pageBody__41ed7",
   // Channel & Roles inner
   ".scrollerContainer_c6b11b", 
   // Member Safety Page
-  ".container_d20375",
-  ".mainTableContainer_e23072",
+  ".container_c791b2",
+  ".mainTableContainer__09a38",
   // Stage view
-  ".container_ed4410",
-  ".callContainer_ed4410",
-  ".scroller_bb12d2",
-  ".rowContainer_f3a5b1",
+  ".container__722ff",
+  ".callContainer__722ff",
+  ".scroller__56ccd",
+  ".rowContainer__8a920",
   // Sidebar
-  ".sidebar_a4d4d9",
+  ".sidebar_c48ade",
   // Server channels container
-  ".container_ee69e0",
+  ".container__2637a",
   // Members list
-  ".container_cbd271",
+  ".container_c8ffbb",
   // Sidebar Panels 
-  ".panels_a4d4d9",
+  ".panels_c48ade",
   // User profile container, Voice channel, Activity
-  ".container_b2ca13",
-  ".container_adcaac",
-  ".activityPanel_a4d4d9",
+  ".container__37e49",
+  ".container_e131a9",
+  ".activityPanel_c48ade",
   // DMs Sidebar
-  ".privateChannels_f0963d",
+  ".privateChannels__35e86",
   // Dms User panel
   ".userPanelOuter_c69a7b",
   // Home Friends list
-  ".sidebar_a4d4d9 ~ .container_c2739c",
+  ".sidebar_c48ade ~ .container__133bf",
   // Nitro store
-  ".applicationStore_cecc86",
+  ".applicationStore_f07d62",
   // Profile decorations shop (Home)
-  ".shop_e77fa3",
-  ".shop_ebba41",
-  ".shopScroll_e77fa3",
-  ".pageWrapper_e77fa3",
+  ".shop__6db1d",
+  ".shop__08415",
+  ".shopScroll__6db1d",
+  ".pageWrapper__6db1d",
   // Discovery
-  ".container_e462a4",
+  ".container__551b0",
   // Friends Activity Sidebar
-  ".nowPlayingColumn_c2739c",
-  ".nowPlayingColumn_c2739c > .container_bf550a",
-  ".nowPlayingColumn_c2739c > .emptyCard_f02fcf",
+  ".nowPlayingColumn__133bf",
+  ".nowPlayingColumn__133bf > .container__7d20c",
+  ".nowPlayingColumn__133bf > .emptyCard__7e549",
   // Pretty much every scroller
-  ".app_bd26cc .scrollerBase_eed6a8",
-  ".app_bd26cc .scrollerBase_c49869",
+  ".app_a3002d .scrollerBase_eed6a8",
+  ".app_a3002d .scrollerBase_c49869",
+  ".app_a3002d .scrollerBase__99f8c",
   // Server bar
-  ".guilds_a4d4d9",
+  ".guilds_c48ade",
   // Settings
-  ".standardSidebarView_c25c6d",
-  ".sidebarRegionScroller_c25c6d",
-  ".contentRegion_c25c6d",
-  ".contentRegionScroller_c25c6d",
+  ".standardSidebarView__23e6b",
+  ".sidebarRegionScroller__23e6b",
+  ".contentRegion__23e6b",
+  ".contentRegionScroller__23e6b",
   // Roles Settings
-  ".page_e8251c .titleContainer_e87574",
+  ".page__91dc3 .titleContainer_e29cd7",
   // Voice-chat view
-  ".wrapper_d880dc",
+  ".wrapper_cb9592",
   // Title bar
-  "!.container_fc4f04",
+  "!.container__9293f",
   // Server Boost page
-  ".scroller_a50853",
-  ".header_a50853"
+  ".scroller__6fd0e",
+  ".header__6fd0e"
 );
 
 

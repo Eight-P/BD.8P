@@ -1,4 +1,4 @@
-// * titlebar v0.1.12
+// * titlebar v0.1.13
 // Header (Chat / Home tabs) | Titlebar | Notifications
 @use 'mixins' as * ;
 
@@ -6,10 +6,10 @@
 // - Toolbar search
 @mixin TB_Search () {
   // Searchbar inner
-  .search_a46bef {
+  .search__97492 {
     
     // container
-    .searchBar_a46bef {
+    .searchBar__97492 {
       width: 20px ;
       background: none ;
       border-radius: 0 ;
@@ -17,18 +17,18 @@
     }
     
     // Buttons container
-    .iconLayout_effbe2 {
+    .iconLayout_fea832 {
       width: 16px ;
     }
     
     // Icon
-    .icon_effbe2 {
+    .icon_fea832 {
       color: var(--interactive-normal);
       cursor: pointer ;
       
       transform: none ;
 
-      &:not(.visible_effbe2) {
+      &:not(.visible_fea832) {
         pointer-events: none ;
       }
 
@@ -38,14 +38,14 @@
     }
     
     // Searchbar open
-    &.open_a46bef {
+    &.open__97492 {
       
-      .searchBar_a46bef {
+      .searchBar__97492 {
         width: 240px ;
         border-bottom: 1px solid var(--header-secondary);
       }
       
-      .icon_effbe2:first-child {
+      .icon_fea832:first-child {
         pointer-events: none ;
       }
     }
@@ -53,30 +53,30 @@
 }
 
 // - General Header
-.container_fc4f04 { // also effects split view chat title bar
+.container__9293f { // also effects split view chat title bar
   box-shadow: none ;
   
   // - Main content
-  .children_fc4f04 {
+  .children__9293f {
     
     // "#", friends, "@", speaker - icon
-    .iconWrapper_fc4f04 { display: none }
+    .iconWrapper__9293f { display: none }
     
     // random line (left)
-    .divider_fc4f04 { display: none }
+    .divider__9293f { display: none }
     
     // "AKA" icon if chatpartner has a nickname in a server
-    .akaBadge_d6c26f { display: none }
+    .akaBadge__488b1 { display: none }
 
     // Dm Partner / Channel name container
-    .titleWrapper_fc4f04 {
+    .titleWrapper__9293f {
       margin: 0 ;
       max-width: 100% ;
       padding-right: 5px ;
       line-height: 0 ;
       
       // Name
-      .title_fc4f04 {
+      .title__9293f {
         display: inline-block ;
         max-width: 100% ;
         color: var(--interactive-hover);
@@ -95,7 +95,7 @@
   }
   
   // - rightside iconbar
-  .toolbar_fc4f04 {
+  .toolbar__9293f {
     @mixin TB_icons () {
       margin: 0 9px ;
 
@@ -111,7 +111,7 @@
     }
     
     // Icons
-    .iconWrapper_fc4f04 {
+    .iconWrapper__9293f {
       display: flex ;
       align-items: center ;
       
@@ -122,18 +122,18 @@
     @include TB_Search();
     
     // Voicecall view buttons
-    .button_ae6b8e { @include TB_icons() }
+    .button__9db96 { @include TB_icons() }
     
     // Discord "Help" (web-link) icon
-    .anchor_af404b { display: none }
+    .anchor_edefb8 { display: none }
   }
 }
 
 // - Chat (Server / DMs )
-.container_fc4f04 {
+.container__9293f {
   
   // - Channel name / topic
-  .children_fc4f04 {
+  .children__9293f {
     
     // Channel description
     .topic_bf3bbb {
@@ -141,7 +141,7 @@
       text-align: center ;
       
       // Mentions/Channels, Weblinks
-      .interactive, .anchor_af404b { 
+      .interactive, .anchor_edefb8 { 
         pointer-events: none ;
         opacity: .8 ;
       }
@@ -149,14 +149,14 @@
       &:hover { 
         color: var(--interactive-hover);
         
-        .interactive, .anchor_af404b { 
+        .interactive, .anchor_edefb8 { 
           opacity: 1 ;
         }
       }
     }
     
     // Follow Announcement channel button
-    .followButton_a7d72e {
+    .followButton_f75fb0 {
       margin: 0 0 0 8px ;
 
       @include Btn("background");
@@ -165,23 +165,23 @@
 }
 
 // - Tab/Title-bar Friends(home) / msg requests 
-// .container_c2739c .container_e44302 {
-.container_c2739c {
+// .container__133bf .container_e44302 {
+.container__133bf {
   
   // - Nav bar / Friends tabs (children)
-  .topPill_a0 {
+  .topPill_b3f026 {
     margin: 0 auto ;
     padding-right: 40px ;
     
     // Tabs
-    .item_c2739c, .item_a0 {
+    .item__133bf, .item_b3f026 {
       background: none !important ;
 
       @include Mentions_icon('.numberBadge_df8943');
     }
 
     // Add friend Tab
-    .item_c2739c.addFriend_c2739c {
+    .item__133bf.addFriend__133bf {
       position: absolute ;
       right: 0 ;
       width: 24px ;
@@ -216,14 +216,14 @@
   .toolbar_e44302 {
     
     // Create group dm icon (otherwise gets hidden when window width is below 940px)
-    .inviteToolbar_c2739c {
+    .inviteToolbar__133bf {
       display: flex ;
     }
   }
 }
 
 // - Message requests
-#app-mount .container_f3abf4 .container_e44302 {
+#app-mount .container_f391e3 .container_e44302 {
   // Navbar
   .item-3XjbnG {
     background: none ;
@@ -233,12 +233,12 @@
 // -- OS specific stuff
 html {
   // - Windows
-  &.platform-win .titleBar_a934d8 {
+  &.platform-win .titleBar__421ed {
     box-shadow: 0 .5px 0 var(--header-secondary);
     z-index: 500 ;
 
     // Watermark
-    .wordmarkWindows_a934d8 {
+    .wordmarkWindows__421ed {
 
       path:not(:first-child) { display: none }
 
@@ -253,12 +253,12 @@ html {
 
 
 // -> Notification bars
-.bd-notice, .notice_a50047  {
+.bd-notice, .notice__30f28  {
   background-color: var(--background-primary);
   color: var(--text-normal);
 }
 
-.bd-notice-button, .notice_a50047 .button_a50047 {
+.bd-notice-button, .notice__30f28 .button__30f28 {
   border: none ;
   color: var(--header-secondary);
   background: var(--background-modifier-selected);
@@ -270,10 +270,10 @@ html {
 }
 
 // - Default Discord notice
-.notice_a50047 {
+.notice__30f28 {
 
   // Main text
-  .header_dd5a33 {
+  .header_c5cd6a {
     color: var(--text-normal);
   }
 

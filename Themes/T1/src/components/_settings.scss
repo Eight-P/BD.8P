@@ -1,4 +1,4 @@
-// * settings v0.1.14
+// * settings v0.1.15
 // Client / Guilds / Channels
 @use 'mixins' as * ;
 
@@ -6,7 +6,7 @@ $T1_v: null !default ;
 
 // -> Theme version info
 // Settings sidebar bottom
-.layer_d4b6c5:not(.baseLayer_d4b6c5) .sidebarRegion_c25c6d .info_c5a741:before {
+.layer__960e4:not(.baseLayer__960e4) .sidebarRegion__23e6b .info__2debe:before {
   content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
   display: block !important;
   font-size: 12px !important;
@@ -19,19 +19,19 @@ $T1_v: null !default ;
 // <- Theme version info
 
 // -> General Settings
-.layer_d4b6c5:not(.baseLayer__13b6b) {
+.layer__960e4:not(.baseLayer__13b6b) {
 
   // -> Searchbar
-  @include searchbar(".searchBar_e7c031", ".inner_effbe2");
+  @include searchbar(".searchBar_c7e907", ".inner_fea832");
 
-  .searchBar_e7c031 .scrollerBase_c49869 {
+  .searchBar_c7e907 .scrollerBase_c49869 {
 
     &::-webkit-scrollbar { display: none }
   }
   // <- Searchbar
   
   // -> Sidebar
-  .sidebarRegionScroller_c25c6d {
+  .sidebarRegionScroller__23e6b {
 
     &::-webkit-scrollbar { display: none }
     
@@ -42,7 +42,7 @@ $T1_v: null !default ;
     }
     
     // Tabs
-    .item_a0 {
+    .item_b3f026 {
       color: var(--interactive-normal);
       background: none !important ;
       border-radius: 0  ;
@@ -51,18 +51,18 @@ $T1_v: null !default ;
       
       &:hover { color: var(--interactive-hover) }
       
-      &.selected_a0 {
+      &.selected_b3f026 {
         border-left: 2px solid var(--interactive-active);
         color: var(--interactive-active)  ;
       }
 
       // Nitro
-      &.premiumTab_c10c74 svg { display: none }
+      &.premiumTab__581ea svg { display: none }
       // Nitro background
-      .background_ae3c77 { display: none }
+      .background_e681d1 { display: none }
 
       // Log Out/ Delete Channel
-      .tabBarItemContainer_e7c031:has(svg:not(.icon_f7189e)) {
+      .tabBarItemContainer_c7e907:has(svg:not(.icon_cbe0b4)) {
         color: var(--red);
         padding: 4px ;
         border-radius: 3px ;
@@ -80,13 +80,13 @@ $T1_v: null !default ;
   // <- Sidebar
   
   // -> Content region
-  .contentRegionScroller_c25c6d {
+  .contentRegionScroller__23e6b {
     
     @include scrollbar();
   }
 
   // Checkbox item list option
-  .item_eb92a8 {
+  .item__001a7 {
     background: var(--background-modifier-accent);
     color: var(--interactive-hover);
     
@@ -102,10 +102,10 @@ $T1_v: null !default ;
   }
 
   // Dropdown menu
-  .select_f6639d {
+  .select__3f413 {
     border: none ;
 
-    @at-root .layerContainer_cd0de5 .popout_f6639d {
+    @at-root .layerContainer_da8173 .popout__3f413 {
       background: var(--background-tertiary);
       border: none ;
 
@@ -113,11 +113,11 @@ $T1_v: null !default ;
         background-color: var(--interactive-normal);
       }
 
-      .option_f6639d[aria-selected="true"] {
+      .option__3f413[aria-selected="true"] {
         background: var(--background-modifier-selected);
       }
 
-      .selectedIcon_f6639d {
+      .selectedIcon__3f413 {
         circle {
           fill: none ;
         }
@@ -142,11 +142,11 @@ $T1_v: null !default ;
 
   // Nitro upsell in Profile settings
   #profile-customization-tab {
-    .upsellOverlayContainer_eb49af, .tryItOutSection_eb2d2c {
+    .upsellOverlayContainer__0f7dc, .tryItOutSection__9d295 {
       display: none ;
     }
 
-    .profileCustomizationSection_bad983 .userPopoutOuter_c69a7b {
+    .profileCustomizationSection__44061 .userPopoutOuter_c69a7b {
       --background-secondary-alt: var(--primary-660);
     }
   }
@@ -158,7 +158,7 @@ $T1_v: null !default ;
   }
 
   // Client Themes 
-  .presets_f45ea6:not(.basicThemeSelectors_) {
+  .presets__67a11:not(.basicThemeSelectors_fbfab6) {
     position: relative ;
     margin-top: 40px ;
     
@@ -178,27 +178,27 @@ $T1_v: null !default ;
 
 // -> Server settings
 // Roles
-.layer_d4b6c5:not(.baseLayer__13b6b) {
+.layer__960e4:not(.baseLayer__13b6b) {
   
   // Default permission button
-  .container_cc7b67 { background: none }
+  .container_d8f25b { background: none }
 
   // Roles list
-  .content_eed6a8 {
+  .content__99f8c {
 
     // role btns
-    .secondary_e258f5 {
+    .secondary__06eda {
       background: none ;
     }
   }
 
   // -> Edit Roles
   // Scrollbar from sidebar
-  .contentRegionScroller_c25c6d:has(.page_e8251c)::-webkit-scrollbar { display: none }
+  .contentRegionScroller__23e6b:has(.page__91dc3)::-webkit-scrollbar { display: none }
 
-  .page_e8251c {
+  .page__91dc3 {
     // -> Header
-    .header_bd05f1 {
+    .header_c6bf1b {
       border-bottom: 1px solid grey ;
 
       div {
@@ -223,25 +223,25 @@ $T1_v: null !default ;
       }
     }
 
-    .tabBarItem_c69589 {
+    .tabBarItem__81b3e {
       border: none ;
     }
 
     // Add member btn
-    .addButton_fe3229 { @include Btn("background") }
+    .addButton__9a73f { @include Btn("background") }
     // <- Header
   }
 
 
-  // .contentColumn_c25c6d > .page_e8251c .l{
+  // .contentColumn__23e6b > .page__91dc3 .l{
     
   //   // Sidebar container main
-  //   .sidebar_e87574 {
+  //   .sidebar_e29cd7 {
   //     height: fit-content ;
   //   }
     
   //   // Left side main content container (why did i do this ?)
-  //   .contentContainer_e8251c {
+  //   .contentContainer__91dc3 {
   //     // border-right: 12px solid var(--scrollbar-auto-track);
       
   //     .scrollerBase_eed6a8, // old
@@ -251,12 +251,12 @@ $T1_v: null !default ;
   //   }
     
   //   // Header container "Manage Members"
-  //   .headerContainer_fe3229 {
+  //   .headerContainer__9a73f {
   //     right: 0 ;
   //   }
     
   //   // Header 
-  //   .header_bd05f1 {
+  //   .header_c6bf1b {
   //     padding: 0 0 24px 0 ;
   //     margin: 0 ;
   //     box-shadow: none ;
@@ -279,26 +279,26 @@ $T1_v: null !default ;
   //     }
       
   //     // Nav bar buttons
-  //     .tabBarItem_c69589 {
+  //     .tabBarItem__81b3e {
   //       border: none ;
   //     }
 
   //     // Add member btn
-  //     .addButton_fe3229 { @include Btn("background") }
+  //     .addButton__9a73f { @include Btn("background") }
 
   //     // search
-  //     .searchContainer_a73849 .input__48d49 {
+  //     .searchContainer__16663 .input__48d49 {
   //       border-bottom: 1px solid var(--interactive-muted);
   //     }
   //   }
 
   //   // Content scroller "Permissions"
-  //   .permissionsWrapper_a73849 {
+  //   .permissionsWrapper__16663 {
   //     margin-top: 16px ;
   //   }
 
   //   // linked roles config container
-  //   .container_ae96a9 {
+  //   .container_c02108 {
   //     background: none ;
   //   }
     
@@ -324,7 +324,7 @@ $T1_v: null !default ;
   //       padding: 10px ;
   //     }
 
-  //     ~ .tabBar_c69589 {
+  //     ~ .tabBar__81b3e {
   //       margin-left: 40px ;
   //     }
   //   }
@@ -341,7 +341,7 @@ $T1_v: null !default ;
     position: absolute ;
     inset: 0px -46px auto auto ;
 
-    .closeButton_df5532 {
+    .closeButton_c2b141 {
       width: 30px ;
       height: 30px ;
       flex-basis: auto ;
@@ -349,7 +349,7 @@ $T1_v: null !default ;
   }
 
   // Interactables
-  .anchor_af404b > :is(div, article) {
+  .anchor_edefb8 > :is(div, article) {
     background: var(--background-modifier-accent);
 
     &:hover {

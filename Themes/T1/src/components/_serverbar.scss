@@ -1,14 +1,14 @@
-// * serverbar v0.1.22
+// * serverbar v0.1.23
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
 // Serverbar -->
 // - Base container -->
 // App layer adjustments 
-.baseLayer_d4b6c5 > .container_a4d4d9 { flex-direction: column-reverse }
+.baseLayer__960e4 > .container_c48ade { flex-direction: column-reverse }
 
 // - Serverbar container / scroller
-.guilds_a4d4d9 {
+.guilds_c48ade {
   height: 54px ;
   width: 100vw ;
   margin: 0 ;
@@ -34,12 +34,12 @@
   }
   
   // when in voice call view
-  &.hidden_fea3ef {
+  &.hidden_ef3116 {
     height: 0 ;
   }
   
   // Child container (ul)
-  .tree_fea3ef {
+  .tree_ef3116 {
     display: grid ;
     height: 100vw ;
     width: 54px ;
@@ -49,7 +49,7 @@
   }
   
   // Scroller ( 10-48-6-20-6-20-10 )
-  .scroller_fea3ef {
+  .scroller_ef3116 {
     display: grid ;
     grid-template-columns: 54px ;
     grid-template-rows: 48px 64px auto ;
@@ -79,7 +79,7 @@
       background-color: var(--interactive-normal);
     }
 
-    .guildSeparator_d0c57e {
+    .guildSeparator__252b6 {
       position: absolute ;
       width: 32px ;
       height: 2px ;
@@ -89,12 +89,12 @@
   }
   
   // Unread mentions indicators
-  .unreadMentionsIndicatorTop_fea3ef,
-  .unreadMentionsIndicatorBottom_fea3ef { display: none }
+  .unreadMentionsIndicatorTop_ef3116,
+  .unreadMentionsIndicatorBottom_ef3116 { display: none }
 }
 
 // Margin on Mac
-.platform-osx .wrapper_fea3ef {
+.platform-osx .wrapper_ef3116 {
   margin: 0 ;
 }
 
@@ -107,17 +107,17 @@
   grid-area: Home ;
   
   // Pill
-  .pill_f9623d { display: none }
+  .pill__1f388 { display: none }
   
   // Notification badge
-  .lowerBadge_c5f96a {
+  .lowerBadge_cc5dd2 {
     left: 4px ;
     bottom: 4px ;
     @include shadow_effect("drop_2");
   }
   
   // SVG 1 conatiner
-  .wrapper_c5f96a { 
+  .wrapper_cc5dd2 { 
     transform: rotate(90deg);
   }
   
@@ -125,17 +125,17 @@
   foreignObject { mask: none }
 
   // SVG 2 conatiner
-  .childWrapper_f90abb {
+  .childWrapper__6e9f8 {
     background: none ;
     color: var(--text-normal);
     opacity: .75 ;
   }
   
   // Hover
-  .wrapper_f90abb.selected_f90abb .childWrapper_f90abb { opacity: .9 }
+  .wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8 { opacity: .9 }
   
   // SVG 2
-  .childWrapper_f90abb > svg {
+  .childWrapper__6e9f8 > svg {
     height: 26px ;
     margin: 4px 4px 0 0 ;
     overflow: visible ;
@@ -149,7 +149,7 @@
  }
  
  // -> Nitro home icon
- .childWrapper_f90abb img {
+ .childWrapper__6e9f8 img {
   border-radius: 50% ;
   height: 40px ; 
   width: 40px ;
@@ -159,7 +159,7 @@
   @include shadow_effect("server_1");
  }
 
- .svg_c5f96a:hover .childWrapper_f90abb img {
+ .svg_cc5dd2:hover .childWrapper__6e9f8 img {
   border-radius: 25% ;
  }
  // <- Nitro home icon
@@ -170,27 +170,27 @@
   display: flex ;
   width: 54px ;
   
-  .pill_db6521 { display: none }
+  .pill__5bc7e { display: none }
   
   // SVG 1 container, SVG 1
-  .wrapper_c5f96a, .svg_c5f96a {
+  .wrapper_cc5dd2, .svg_cc5dd2 {
     height: 20px ;
     width: 20px ;
   }
   
   // SVG 2 container
-  .circleIconButton_db6521 {
+  .circleIconButton__5bc7e {
     transform: rotate(90deg);
     background: none ;
     color: var(--text-normal);
     opacity: .75 ;
     
-    &.selected_db6521 { opacity: 1 }
+    &.selected__5bc7e { opacity: 1 }
     
     @include shadow_effect("drop_1");
     
     // SVG 2 
-    .circleIcon_db6521 {
+    .circleIcon__5bc7e {
       height: 100% ;
       width: 100% ;
     }
@@ -214,7 +214,7 @@
   height: 20px ;
   width: 20px ;
   
-  .anchor_af404b {
+  .anchor_edefb8 {
     transform: rotate(90deg);
     background: none ;
     border: none ;
@@ -224,16 +224,16 @@
   } 
 }
 
-.guilds_a4d4d9 .scroller_fea3ef {
+.guilds_c48ade .scroller_ef3116 {
   
   // general item container
-  .listItem_c96c45 { 
+  .listItem__650eb { 
     width: 54px ; 
     margin: 0 ; 
   }
 
   // Favorites
-  .listItem_c96c45:has(.favoriteIcon_dcc7a4) {
+  .listItem__650eb:has(.favoriteIcon_c9fddf) {
     padding-top: 2px ;
 
     &::before {
@@ -246,21 +246,21 @@
       background-color: var(--interactive-normal);
     }
 
-    .pill_dcc7a4 { display: none }
+    .pill_c9fddf { display: none }
 
     div:not([class]) {
-      .wrapper_c5f96a {
+      .wrapper_cc5dd2 {
         transform: rotate(90deg);
         @include shadow_effect("server_1");
       }
 
         // Unreads badge
-      .lowerBadge_c5f96a {
+      .lowerBadge_cc5dd2 {
         left: 4px ;
         bottom: 4px ;
       }
 
-      .childWrapper_f90abb {
+      .childWrapper__6e9f8 {
         background: none ;
         color: var(--text-normal) !important ;
         opacity: .75 ;
@@ -272,22 +272,22 @@
     }
   }
   // Remove Seperator when Dms are present
-  [style="opacity: 1; height: 56px; transform: scale(1);"] + .listItem_c96c45:has(.favoriteIcon_dcc7a4)::before {
+  [style="opacity: 1; height: 56px; transform: scale(1);"] + .listItem__650eb:has(.favoriteIcon_c9fddf)::before {
     display: none ;
   }
   
   // Home
-  .tutorialContainer_f9623d { @include Home_Icon() }
+  .tutorialContainer__1f388 { @include Home_Icon() }
 
   // Every div after servers
   > [aria-label]:not([class]) + div {
 
     @include GuildsAdd_Icon();
 
-    + .listItem_c96c45 {
+    + .listItem__650eb {
       // @include Discovery_Icon();
 
-      + .listItem_c96c45 {
+      + .listItem__650eb {
         @include GuildsError_Icon()
       }
     }
@@ -295,19 +295,19 @@
 }
 
 // Discovery container
-.guilds_a4d4d9 .footer_d71945 {
+.guilds_c48ade .footer__214dc {
   display: contents ;
 
-  .gradient_d71945 { display: none }
+  .gradient__214dc { display: none }
 
-  .listItem_c96c45 {
+  .listItem__650eb {
     position: absolute ;
     top: #{10 + 48 + 6 + 20 + 6}px ;
     left: 0 ;
 
     @include Icons();
 
-    .circleIconButton_db6521 .circleIcon_db6521 {
+    .circleIconButton__5bc7e .circleIcon__5bc7e {
       height: 90% ;
       width: 90% ;
     }
@@ -323,22 +323,22 @@
   margin: 12px 0 ;
   
   // bc drag and drop (server, dms)
-  .pill_a5ad63 + div, .listItemWrapper_dfb2f8 {
+  .pill_e5445c + div, .listItemWrapper_dfb2f8 {
     transform: rotate(90deg);
   }
   
   // Placeholder when dragging
-  .placeholderMask_f734d8 {
+  .placeholderMask__87847 {
     height: 40px ;
     width: 40px ;
     margin: 4px ; 
     
-    .dragInner_f734d8 {
+    .dragInner__87847 {
       background: rgba(0, 0, 0, 0.5);
     }
   }
   
-  .wrapper_c5f96a {
+  .wrapper_cc5dd2 {
 
     @include shadow_effect("server_1");
     
@@ -347,13 +347,13 @@
   }
   
   // Unreads badge
-  .lowerBadge_c5f96a {
+  .lowerBadge_cc5dd2 {
     left: 4px ;
     bottom: 4px ;
   }
 
   // SVG
-  .svg_c5f96a {
+  .svg_cc5dd2 {
     height: 40px ; 
     width: 40px ;
     margin: 4px ;
@@ -364,24 +364,24 @@
       mask: none ;
     }
 
-    &:hover .icon_f90abb { border-radius: 25% }
+    &:hover .icon__6e9f8 { border-radius: 25% }
   }
 
   // Image
-  .icon_f90abb {
+  .icon__6e9f8 {
     border-radius: 50% ;
     transition: .2s ;
   }
   
   // Text
-  .acronym_f90abb {
+  .acronym__6e9f8 {
     background: none ;
     
     @include shadow_effect("server_1");
   }
   
   // Pill
-  .item_c4cd66 {
+  .item__58105 {
     display: none ;
     margin-left: -5px ;
     
@@ -398,7 +398,7 @@
 }
 
 // Server container
-.scroller_fea3ef > [aria-label]:not([class]) {
+.scroller_ef3116 > [aria-label]:not([class]) {
   grid-area: Servers ;
   width: 54px ;
   max-height: 100% ;
@@ -407,22 +407,22 @@
   &::-webkit-scrollbar { display: none }
 
   // Server items
-  > .listItem_c96c45 { @include ServerIcon() }
+  > .listItem__650eb { @include ServerIcon() }
 }
 
 // Server folder / Pending applications folder
-.guilds_a4d4d9 .wrapper_bc7085 {
+.guilds_c48ade .wrapper__48112 {
   width: 54px ;
   margin: 12px 0 ;
 
   // Background when open
-  .expandedFolderBackground_bc7085 { display: none }
+  .expandedFolderBackground__48112 { display: none }
 
   // Folder Icon / preview 
-  > .listItem_c96c45 {
+  > .listItem__650eb {
     pointer-events: none ;
     
-    .pill_a5ad63 { 
+    .pill_e5445c { 
       display: none ;
       
       // Icon container (for drag)
@@ -432,29 +432,29 @@
     // Icon container
 
     // Placeholder when dragging
-    .placeholderMask_f734d8 {
+    .placeholderMask__87847 {
       height: 40px ;
       width: 40px ;
       margin: 4px ;
 
-      .dragInner_f734d8 {
+      .dragInner__87847 {
         background: rgba(0, 0, 0, 0.5);
       }
     }
     
     // Unreads badge
-    .lowerBadge_c5f96a {
+    .lowerBadge_cc5dd2 {
       left: 4px ;
       bottom: 4px ;
     }
 
     // container
-    .wrapper_c5f96a {
+    .wrapper_cc5dd2 {
       @include shadow_effect("drop_1");
     }
 
     // SVG 1
-    .svg_c5f96a {
+    .svg_cc5dd2 {
       mask, g { display: none }
 
       foreignObject {
@@ -462,10 +462,10 @@
       }
     }
 
-    .folder_bc7085 { background: none }
+    .folder__48112 { background: none }
 
     // Icon container 2
-    .folderIconWrapper_bc7085 {
+    .folderIconWrapper__48112 {
       position: absolute ;
       height: 40px ; 
       width: 40px ;
@@ -473,8 +473,8 @@
       pointer-events: all ;
 
       // Icon container open and closed
-      .closedFolderIconWrapper_bc7085,
-      .expandedFolderIconWrapper_bc7085 {
+      .closedFolderIconWrapper__48112,
+      .expandedFolderIconWrapper__48112 {
         height: 40px ; 
         width: 40px ;
         padding: 0 ;
@@ -495,7 +495,7 @@
     display: block ;
     
     // Server items in open folders
-    .listItem_c96c45 { @include ServerIcon() }
+    .listItem__650eb { @include ServerIcon() }
     
     &::after {
       content: "" ;
@@ -510,7 +510,7 @@
 }
 
 // Pending applications container
-.container_ae3d49 {
+.container__93fc9 {
   position: relative ;
 
   // Seperator to the left
@@ -525,7 +525,7 @@
   }
 
   // Inner container
-  .wrapper_bc7085 {
+  .wrapper__48112 {
     margin: 6px 0 ;
 
     // Applied servers container
@@ -536,18 +536,18 @@
     }
   }
 
-  .pendingIcon_ae3d49 {
+  .pendingIcon__93fc9 {
     opacity: .75 ;
     pointer-events: all ;
   }
 
-  .expandedFolderIconWrapper_bc7085:hover .pendingIcon_ae3d49 {
+  .expandedFolderIconWrapper__48112:hover .pendingIcon__93fc9 {
     opacity: 1 ;
   }
 }
 
 // DMs
-.guilds_a4d4d9 .scroller_fea3ef > [style="opacity: 1; height: 56px; transform: scale(1);"] {
+.guilds_c48ade .scroller_ef3116 > [style="opacity: 1; height: 56px; transform: scale(1);"] {
   @include ServerIcon();
   margin: 12px 0 10px 0 ;
 
@@ -570,19 +570,19 @@
   }
 
   // remove Seperator on Pending applications
-  // ~ .container_ae3d49::before { content: none } maybe keep it?
+  // ~ .container__93fc9::before { content: none } maybe keep it?
 
-  .pill_f36a5a { display: none }
+  .pill_ed9a5f { display: none }
 }
 // <- Dynamic
 // Serverbar <--
 
 // Additions -->
 // Channels list spacer for Server banner image
-.content_eed6a8 > div[style="height: 84px;"]:not([class]) { display: none }
+.content__99f8c > div[style="height: 84px;"]:not([class]) { display: none }
 
 // - Server options button
-.sidebar_a4d4d9 .container_fd6364 {
+.sidebar_c48ade .container_f37cb1 {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -592,10 +592,10 @@
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
   // Options popout open
-  &.selected_fd6364 { background-color: rgba(0, 0, 0, 0.2) }
+  &.selected_f37cb1 { background-color: rgba(0, 0, 0, 0.2) }
   
   // container
-  .header_fd6364 {
+  .header_f37cb1 {
     display: flex ;
     padding: 0 5px ;
     height: 54px ;
@@ -604,18 +604,18 @@
   }
 
   // Server badge
-  .guildIconV2Container_ed9816 { display: none }
+  .guildIconV2Container__85d16 { display: none }
   
   // Server name container
-  .headerContent_fd6364 {
+  .headerContent_f37cb1 {
     display: contents ;
   }
 
   // Favorites star icon 
-  .favoritesIcon_fd6364 { display: none }
+  .favoritesIcon_f37cb1 { display: none }
   
   // Server name
-  .name_fd6364 {
+  .name_f37cb1 {
     display: block ;
     margin: 0 ;
     text-align: center ;
@@ -628,19 +628,19 @@
   }
   
   // Server icon (partnerd,..)
-  .guildIconContainer_ed9816 { display: none }
+  .guildIconContainer__85d16 { display: none }
   
   // Chevron icon
-  .button_a79c58 { display: none }
+  .button__353c4 { display: none }
   
   // Server banner image
-  .animatedContainer_fd6364 { display: none }
+  .animatedContainer_f37cb1 { display: none }
   
-  + .animatedBannerHoverLayer_fd6364 { display: none }
+  + .animatedBannerHoverLayer_f37cb1 { display: none }
 }
 
 // - Search button (home)
-.privateChannels_f0963d .searchBar_f0963d {
+.privateChannels__35e86 .searchBar__35e86 {
   position: fixed;
   width: 120px ;
   height: 54px ;
@@ -652,7 +652,7 @@
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
   
   // Text
-  .searchBarComponent_f0963d {
+  .searchBarComponent__35e86 {
     height: 54px ;
     background: transparent ;
     color: var(--text-normal);
@@ -668,7 +668,7 @@
 
 // - Discovery Text (button)
 
-.content_a4d4d9 .container_e462a4 .header_e462a4 {
+.content_c48ade .container__551b0 .header__551b0 {
   position: fixed ;
   width: 120px ;
   height: 54px ;
@@ -679,7 +679,7 @@
   justify-content: center ;
 
   // text
-  .defaultColor_a595eb {
+  .defaultColor__4bd52 {
     font-weight: 400 ;
     font-size: 16px ;
     color: var(--text-normal);
@@ -690,7 +690,7 @@
 }
 
 // - Server icon tooltip
-.layerContainer_cd0de5 {
+.layerContainer_da8173 {
 
   // Activitie cards in popout
   .container_be6a5c .cards_be6a5c {
@@ -698,13 +698,13 @@
   }
 
   // fix pointer stuck when cards are present.
-  > .layer_cd0de5:has(.cards_be6a5c, .streamPreview_cfbfb9, .flowerStarContainer_ff7d90) {
+  > .layer_da8173:has(.cards_be6a5c, .streamPreview_cfbfb9, .flowerStarContainer_ff7d90) {
     margin-top: 3px ; // to make them same hight as regular tooltips
     pointer-events: none !important ;
   }
 }
 
-.tooltipContent_b6c360 .guildNameText_a6ae3c {
+.tooltipContent__382e7 .guildNameText_b1f768 {
   // word-wrap: normal ; ?
   white-space: nowrap ;
 }
