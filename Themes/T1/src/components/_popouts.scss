@@ -1,4 +1,4 @@
-// * popouts v0.1.23
+// * popouts v0.1.24
 // Text chat / Server options / Context menus / Toolbar menus / User status / Tooltips
 @use 'mixins' as * ;
 
@@ -8,18 +8,14 @@
 }
 
 // -> Autocomplete popout
-.chatContent_f75fb0 .form_f75fb0 .autocomplete_f23da8 {
+.chatContent_f75fb0 .autocomplete__13533 {
   background: var(--background-tertiary);
   
   // left sidebar
   .rail_d1405b, .list_b1e4f3 {
     background: var(--background-secondary-alt);
   }
-
-  .wrapper__4e6ce .scrollerBase_eed6a8::-webkit-scrollbar,
-  .wrapper__4e6ce .scrollerBase_c49869::-webkit-scrollbar {
-    display: none ;
-  }
+  .wrapper__4e6ce .scrollerBase_d125d2::-webkit-scrollbar { display: none }
   
   // Group header
   .categoryHeader_d1405b {
@@ -541,7 +537,8 @@
   }
 
   // For You
-  &.container_f8a938 {
+  &.container_f8a938, // old ?
+  &.container_a54d1d { 
 
     .container__0f711 {
       background: none ;
@@ -555,8 +552,7 @@
   &.messagesPopoutWrap__45690 {
     
     // Scroller
-    .scrollerBase_eed6a8, // old
-    .scrollerBase_c49869 {// new
+    .scrollerBase_d125d2 {
       
       @include scrollbar();
       
@@ -605,11 +601,10 @@
   }
   
   // Unreads
-  &.container_f1c3d9 {
+  &.container__2692d {
     
     // Scroller
-    .scrollerBase_eed6a8, // old
-    .scrollerBase_c49869 {// new
+    .scrollerBase_d125d2 {
       margin: 0 ;
       padding: 0 !important ;
 
@@ -657,18 +652,15 @@
       }
     }
     
-    // .divider_fc5f50,
     .divider__908e2 {
       border: none ;
 
       // muted unread channels
-      // &.divider__27703,
       &.divider__1ccd1 { // why ?
         margin: 30px 0 20px 0 ;
       }
 
       // Date 
-      // .content_fc5f50, 
       .content__908e2 { background: none }
 
       // Seperator lines

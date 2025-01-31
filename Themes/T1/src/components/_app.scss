@@ -1,4 +1,4 @@
-// * app v0.1.15
+// * app v0.1.16
 @use 'mixins' as * ;
 
 body {
@@ -15,18 +15,17 @@ body {
 }
 
 // "Bot"/"server" Tag Indicator
-.botTag__5d473 { 
+.botTag__82f07 { 
   color: var(--text-normal);
   background-color: var(--background-secondary);
 }
 
 // General Scrollbar
-.app_a3002d .scrollerBase_eed6a8:not(.none_eed6a8) { @include scrollbar() } 
-.app_a3002d .scrollerBase_c49869:not(.none_c49869) { @include scrollbar() }
-.app_a3002d .scrollerBase_d125d2:not(.none_c49869) { @include scrollbar() }
+.app_a3002d :is(.scrollerBase_d125d2, .scrollerBase_c8b5c7, .auto__99f8c) { @include scrollbar() }
+
 
 // Tab focus thing
-.focus-rings-ring, .focusRing_d0696b {
+.focus-rings-ring {
   box-shadow: none ;
   border-bottom: 3px solid var(--interactive-hover);
   border-radius: 0 ;

@@ -1,4 +1,4 @@
-// * settings v0.1.15
+// * settings v0.1.16
 // Client / Guilds / Channels
 @use 'mixins' as * ;
 
@@ -24,10 +24,7 @@ $T1_v: null !default ;
   // -> Searchbar
   @include searchbar(".searchBar_c7e907", ".inner_fea832");
 
-  .searchBar_c7e907 .scrollerBase_c49869 {
-
-    &::-webkit-scrollbar { display: none }
-  }
+  .searchBar_c7e907 .scrollerBase_d125d2::-webkit-scrollbar { display: none }
   // <- Searchbar
   
   // -> Sidebar
@@ -231,104 +228,6 @@ $T1_v: null !default ;
     .addButton__9a73f { @include Btn("background") }
     // <- Header
   }
-
-
-  // .contentColumn__23e6b > .page__91dc3 .l{
-    
-  //   // Sidebar container main
-  //   .sidebar_e29cd7 {
-  //     height: fit-content ;
-  //   }
-    
-  //   // Left side main content container (why did i do this ?)
-  //   .contentContainer__91dc3 {
-  //     // border-right: 12px solid var(--scrollbar-auto-track);
-      
-  //     .scrollerBase_eed6a8, // old
-  //     .scrollerBase_c49869 {// new
-  //       // margin-right: -12px ;
-  //     }
-  //   }
-    
-  //   // Header container "Manage Members"
-  //   .headerContainer__9a73f {
-  //     right: 0 ;
-  //   }
-    
-  //   // Header 
-  //   .header_c6bf1b {
-  //     padding: 0 0 24px 0 ;
-  //     margin: 0 ;
-  //     box-shadow: none ;
-      
-  //     &:before {
-  //       content: "";
-  //       position: absolute ;
-  //       height: 100% ;
-  //       width: 100% ;
-  //       background: var(--background_app);
-  //       background-position: center;
-  //       background-size: cover;
-  //       background-attachment: fixed;
-  //       background-repeat: no-repeat;
-        
-  //       --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
-  //       --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
-
-  //       filter: var(--blur) var(--brightness);
-  //     }
-      
-  //     // Nav bar buttons
-  //     .tabBarItem__81b3e {
-  //       border: none ;
-  //     }
-
-  //     // Add member btn
-  //     .addButton__9a73f { @include Btn("background") }
-
-  //     // search
-  //     .searchContainer__16663 .input__48d49 {
-  //       border-bottom: 1px solid var(--interactive-muted);
-  //     }
-  //   }
-
-  //   // Content scroller "Permissions"
-  //   .permissionsWrapper__16663 {
-  //     margin-top: 16px ;
-  //   }
-
-  //   // linked roles config container
-  //   .container_c02108 {
-  //     background: none ;
-  //   }
-    
-  //   // Info on Bot roles
-  //   .warning_f20685 {
-  //     position: absolute ;
-  //     top: 49px ;
-  //     left: 0px ;
-  //     width: auto ;
-  //     background: none ;
-  //     border: none ;
-  //     padding: 0 ;
-  //     z-index: 100 ;
-
-  //     .text_f20685 {
-  //       display: none ;
-  //     }
-
-  //     &:hover .text_f20685 {
-  //       display: block ;
-  //       background: var(--background-tertiary);
-  //       border: 1px solid var(--info-warning-foreground);
-  //       padding: 10px ;
-  //     }
-
-  //     ~ .tabBar__81b3e {
-  //       margin-left: 40px ;
-  //     }
-  //   }
-  // }
   // <- Edit Roles
 }
 // <- Server settings

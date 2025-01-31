@@ -1,4 +1,4 @@
-// * background v0.2.17
+// * background v0.2.18
 // Background image + Transparency
 @use "sass:string";
 
@@ -81,10 +81,9 @@ $Classes: (
   ".nowPlayingColumn__133bf",
   ".nowPlayingColumn__133bf > .container__7d20c",
   ".nowPlayingColumn__133bf > .emptyCard__7e549",
-  // Pretty much every scroller
-  ".app_a3002d .scrollerBase_eed6a8",
-  ".app_a3002d .scrollerBase_c49869",
+  // most scroller containers
   ".app_a3002d .scrollerBase__99f8c",
+  ".app_a3002d .scrollerBase_d125d2",
   // Server bar
   ".guilds_c48ade",
   // Settings

@@ -1,4 +1,4 @@
-// * chat v0.1.39
+// * chat v0.1.40
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -303,6 +303,7 @@
     }
   }
 
+  // -> Typing/slow mode indicator
   // Typing indicator
   .typing_b88801 {
     background: transparent ;
@@ -323,7 +324,6 @@
     bottom: -11px ;
     height: 16px ;
     width: 16px ;
-    // color: transparent !important;
     pointer-events: auto ;
 
     .cooldownText_b21699 {
@@ -340,7 +340,9 @@
       }
     }
   }
+  // <- Typing/slow mode indicator
   
+  // -> Buttons
   // Buttons conatiner
   .buttons__74017 {
     > :is(button, div) {
@@ -442,6 +444,24 @@
       background: none ;
     }
   }
+
+  // Bot dm commands
+  .entryPointButtonContainer_f75fb0 {
+    margin: 0 ;
+
+    .entryPointAppCommandButton_a83188 {
+      padding: 0 ;
+      margin: 0 16px ;
+      min-width: unset ;
+
+      @include Btn();
+
+      .contents__201d5 {
+        margin: 0 
+      }
+    }
+  }
+  // <- Buttons
 
   // Chat input replacmnet box (follow channel, complete server setup,..)
   .wrapper__44df5 {
@@ -990,6 +1010,12 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     .reactionCount__23977 {
       font-size: 0.875rem ;
     }
+
+    // image
+    .emoji {
+      width: 1rem ;
+      height: 1rem ;
+    }
   
     // Active reaction 
     &.reactionMe__23977 {
@@ -1437,9 +1463,22 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   // -> Buttons
   // always show controls/btns 
   .idle_bfe55a {
-    .controlSection_dd069c, .chatButton_dd069c {
+    .controlSection_bfe55a, .chatButton_bfe55a {
       opacity: var(--aswc) !important ;
     }
+  }
+
+  // Gradient effect on hover
+  .gradientContainer_bfe55a {
+    height: 80px ;
+    background-image: linear-gradient(
+      hsl(0, 0%, 0%) 0%,
+      hsla(0, 0%, 0%, 0.6) 50%,
+      hsla(0, 0%, 0%, 0.1) 70%,
+      hsla(0, 0%, 0%, 0) 100%
+    );
+
+    opacity: calc(1 - var(--aswc));
   }
   
   // Buttons container
@@ -1448,7 +1487,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     padding: 0 16px 0 16px ;
     
     // Top and bottom section
-    .controlSection_dd069c {
+    .controlSection_bfe55a {
       transform: translateZ(0) !important;
       
       .streamQualityIndicator__30845 { display: none }
@@ -1456,21 +1495,21 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Open voice chat btn 
-  .chatButton_dd069c {
-    transform: translateZ(0) !important;
-    top: calc(12px + var(--aswc) * -48px);
+  // .chatButton_bfe55a {
+  //   transform: translateZ(0) !important;
+  //   top: calc(12px + var(--aswc) * -48px);
     
-    .controlIcon_f1ceac {
-      color: var(--interactive-normal);
+  //   .controlIcon_f1ceac {
+  //     color: var(--interactive-normal);
       
-      &:hover {
-        color: var(--interactive-hover);
-      }
-    }
-  }
+  //     &:hover {
+  //       color: var(--interactive-hover);
+  //     }
+  //   }
+  // }
 
   // Control buttons (top & bottom)
-  .controlSection_dd069c {
+  .controlSection_bfe55a {
     // Icons
     .controlIcon_f1ceac { 
       color: var(--interactive-normal);
@@ -1488,15 +1527,15 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Bottom controls
-  .bottomControls_dd069c {
+  .bottomControls_bfe55a {
     
     // Group container
-    .flex_bba380 {
-      margin: 0 ;
+    .flex__7c0ba {
+      margin: 0 ; // ??
     }
     
     // Centerd row btns
-    .centerButton_ef18ee {
+    .centerButton_f1ceac {
       padding: 8px 5px ;
       margin: 8px 5px ;
       background: none ;
@@ -1507,41 +1546,18 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
     
     // Btn dropdownmenu
-    .contextMenuNub_ef18ee {
+    .contextMenuNub_f1ceac {
       color: white ;
       background-color: var(--background-secondary);
     }
 
 
     // btn for context menu
-    .contextMenuNub_ef18ee { 
+    .contextMenuNub_f1ceac { 
       bottom: 5px ;
     }
   }
-  
-  // Gradient effect on hover
-  .gradientContainer_dd069c { display: none }
   // <- Buttons
-
-  // @mixin TileOverlay() {
-  //   // Non video tile card
-  //   .overlayContainer__2f4f7:not(.videoWrapper__2f4f7 ~ .overlayContainer__2f4f7) {
-
-  //     .overlayTitle__2f4f7, .status__2f4f7 {
-  //       opacity: 1 ;
-  //       background: none ;
-  //     }
-  //   }
-
-  //   // video
-  //   .videoWrapper__2f4f7 ~ .overlayContainer__2f4f7 {
-  //     opacity: 0 ;
-
-  //     &:hover {
-  //       opacity: 1 ;
-  //     }
-  //   }
-  // }
 
   // -> Itemcard / Tile
   .tile__2f4f7 {
@@ -1552,7 +1568,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     .indicators__2f4f7 { display: none }
 
     // Avatar
-    .avatarWrapper_f3801e {
+    .avatarWrapper_fb62e2 {
       
       foreignObject {
         mask: none ;
@@ -1574,9 +1590,9 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   // <- Itemcard / Tile
 
-  // "invite people" empty card (should only effect when empty)
-  .tile__90dc5 {
-    // background: none ;
+  // "invite people" empty card
+  .tile_d6271c .root__4ad81 {
+    background: none ;
   }
 
   // -> Focus view
@@ -1600,22 +1616,27 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   // <- Focus view
 
-  // Grid view
+  // -> Grid view
   .videoGridWrapper_a21736 {
 
     .videoGrid_a21736::-webkit-scrollbar { display: none }
 
     // Cards main container
-    .tile_d8e960 {
+    .tile_d6271c {
       padding: 4px ;
       box-sizing: border-box ;
     }
   }
+  // <- Grid view
 }
 // <- Voicecall view
 
 // -> Stage view
 .callContainer__722ff {
+
+  .videoControls_bfe55a {
+    padding: 0 16px 6px ;
+  }
 
   // Empty/no stage
   .container__6b38f  {
@@ -1627,19 +1648,44 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // black gradiant effect
-  .gradientContainer_dd069c {
+  .gradientContainer_bfe55a {
     background: none ;
   }
   
-  .auto_ad8998 {
+  .auto__99f8c {
     @include scrollbar();
   }
   
+  // -> User Tile cards
   // Speaker
-  .rowContainer__8a920 {
-    
-    .background_f3801e {
-      background: none !important ;
+  .tileSizer_fa73d7 {
+    overflow: visible;
+  }
+
+  .tile__2f4f7 {
+    overflow: visible;
+
+    @include shadow_effect("box_2");
+
+    // Avatar
+    .avatarWrapper_fb62e2 {
+      
+      foreignObject {
+        mask: none ;
+        overflow: visible ;
+      }
+      
+      svg {
+        contain: unset ;
+        overflow: visible ;
+      }
+      
+      // Profile image
+      .avatar__44b0c {
+        border-radius: 7.5% ;
+        
+        &:not([src*=".gif"]) { @include shadow_effect("drop_1") }
+      }
     }
   }
   
@@ -1648,7 +1694,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     background: none ;
     
     // User
-    .tileContainer_e1522e {
+    .tileContainer__71eb2 {
       background: none ;
       
       &:hover {
@@ -1660,8 +1706,9 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
     }
   }
+  // <- User Tile cards
 
-  .controlSection_dd069c {
+  .controlSection_bfe55a {
     .button__201d5, .controlIcon_f1ceac, .raisedHandButtonIcon_e12b21 {
       background: none ;
       color: var(--interactive-normal);
@@ -1671,14 +1718,15 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       }
     }
 
-    .button__201d5.red_f1ceac {
+    .button__201d5.red_f1ceac .controlIcon_f1ceac {
       color: var(--red) !important ;
     }
 
-    .contextMenuNub_ef18ee {
+    .contextMenuNub_f1ceac {
       color: white ;
       background-color: var(--background-secondary);
     }
+
   }
 }
 

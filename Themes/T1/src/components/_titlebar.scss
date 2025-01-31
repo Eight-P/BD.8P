@@ -1,4 +1,4 @@
-// * titlebar v0.1.13
+// * titlebar v0.1.14
 // Header (Chat / Home tabs) | Titlebar | Notifications
 @use 'mixins' as * ;
 
@@ -52,8 +52,8 @@
   }
 }
 
-// - General Header
-.container__9293f { // also effects split view chat title bar
+// - General Header (not stage view)
+.container__9293f:not(.participants__4783a) { // also effects split view chat title bar
   box-shadow: none ;
   
   // - Main content

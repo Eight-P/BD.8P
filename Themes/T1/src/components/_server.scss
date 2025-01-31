@@ -1,4 +1,4 @@
-// * server v0.1.18
+// * server v0.1.19
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -400,7 +400,7 @@
   }
 
   // Servers scroller
-  .container_d08938 .scroller__23746 {
+  .headerBar__8a7fc + .scroller__23746 {
     margin-top: 60px ;
   }
   // <- Scroller
@@ -513,12 +513,12 @@
 .container__9293f {
 
   // return to last channel btn (Chan&Rols / Members)
-  .returnButton_c791b2 {
+  .returnButton__0b563 {
     border: none;
     background: none;
 
     // Btn text
-    .returnButtonText_c791b2 {
+    .returnButtonText__0b563 {
       color: var(--header-secondary);
       opacity: .9 ;
     }
@@ -526,7 +526,7 @@
     &:hover {
       background: var(--background-modifier-hover);
 
-      .returnButtonText_c791b2 {
+      .returnButtonText__0b563 {
         opacity: 1 ;
       }
     }
