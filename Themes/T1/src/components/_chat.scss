@@ -1,4 +1,4 @@
-// * chat v0.1.40
+// * chat v0.1.41
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -558,14 +558,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     z-index: -1 ;
   }
 
-  .popoverReactionHoverBar_f84418:before {
-    background-blend-mode: overlay ;
-  }
+  // .popoverReactionHoverBar_f84418:before {
+  //   background-blend-mode: overlay ;
+  // }
 }
 
 .cozy_c19a55 {
   background: none !important ;
-  // background: red !important ;
   padding: 0px 28px 0px 4.125rem !important ;
   
   // -> general Message components
@@ -852,13 +851,9 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   
   // -> MSg Types
   // Mention
-  &.mentioned__5126c .contents_c19a55 {
-    
-    .messageContent_c19a55 {
-
-      border-left: solid 2px var(--border-mentioned);
-      background: var(--background-mentioned);
-    }
+  &.mentioned__5126c .messageContent_c19a55 {
+    border-left: solid 2px var(--border-mentioned);
+    background: var(--background-mentioned);
   }
   
   // Clyde (client-side info/error messages)
@@ -915,22 +910,22 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
       box-shadow: none ;
 
       // not sure if this is a good idea performance wise
-      &:before {
-        content: "";
-        position: absolute ;
-        height: 100% ;
-        width: 100% ;
-        background: var(--background_app) rgba(255, 255, 255, 0.05);
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
+      // &:before {
+      //   content: "";
+      //   position: absolute ;
+      //   height: 100% ;
+      //   width: 100% ;
+      //   background: var(--background_app) rgba(255, 255, 255, 0.05);
+      //   background-position: center;
+      //   background-size: cover;
+      //   background-attachment: fixed;
+      //   background-repeat: no-repeat;
         
-        --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
-        --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+      //   --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+      //   --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
   
-        filter: var(--blur) var(--brightness);
-      }
+      //   filter: var(--blur) var(--brightness);
+      // }
 
       // when expanded
       &:has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"]) {
@@ -972,20 +967,25 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Message Buttons - Concatenating Msg / System Message 
-  &:not(.groupStart__5126c), &.isSystemMessage_ec86aa {
+  // &:not(.groupStart__5126c), &.isSystemMessage_ec86aa {
+  &:is(:not(.groupStart__5126c), .isSystemMessage_ec86aa) {
 
     // Buttons
     .popoverReactionHoverBar_f84418 {
+      background: var(--background-tertiary);
+      padding: 4px ;
 
       // when not hovered and not expanded
       &:not(:hover, :has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"])) {
+        background: none ;
 
         // menu btn when not hovered (makes it a bit more visible)
         .button_f7ecac {
           color: var(--interactive-hover);
         }
 
-        > div:not(:last-child) { display: none }
+        // > div:not(:last-child) { display: none }
+        .button_f7ecac:not(:last-child) { display: none }
       }
     }
   }

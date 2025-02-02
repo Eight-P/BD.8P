@@ -1,4 +1,4 @@
-// * home v0.1.16
+// * home v0.1.17
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -24,7 +24,6 @@
     // -> User item
     // -> General
     .peopleListItem_cc6179 {
-      // border: none; // maybe, idk ??
 
       // -> Username
       .userInfo__0a06e {
@@ -32,6 +31,10 @@
         // Username, Status text container
         .text__0a06e {
           width: 100% ;
+        }
+        
+        .text__8ac07 {
+          color: var(--header-secondary) !important;
         }
 
         // Username/ # Identifier

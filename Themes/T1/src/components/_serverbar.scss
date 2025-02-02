@@ -1,4 +1,4 @@
-// * serverbar v0.1.23
+// * serverbar v0.1.24
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -323,8 +323,11 @@
   margin: 12px 0 ;
   
   // bc drag and drop (server, dms)
-  .pill_e5445c + div, .listItemWrapper_dfb2f8 {
-    transform: rotate(90deg);
+  // .pill_e5445c + div, 
+  .blobContainer_e5445c, 
+  .listItemWrapper_dfb2f8 
+  {
+    transform: rotate(90deg) !important ; // important for serverdetails plugin idk
   }
   
   // Placeholder when dragging

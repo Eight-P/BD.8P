@@ -1,4 +1,4 @@
-// * server v0.1.19
+// * server v0.1.20
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -275,10 +275,9 @@
       height: 40px !important ;
     }
   }
-  // would remove popout hover
-  // .content__99f8c > :has(.container__0f2e8) {
-  //   pointer-events: none ;
-  // }
+  .activityText__5d473 {
+    color: var(--channels-default) !important ; // shouldn't be needed, but here we are
+}
   
   // Member
   .member__5d473 {
