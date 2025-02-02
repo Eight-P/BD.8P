@@ -1,4 +1,4 @@
-// * serverbar v0.1.24
+// * serverbar v0.1.25
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -102,6 +102,9 @@
 
 // - Static options -->
 // - Home / GuildsAd / Discovery / GuildsError
+
+// move listItem sytling over to .blobContainer_e5445c !
+
 // Home / BDPSL
 @mixin Home_Icon () {
   grid-area: Home ;
@@ -323,10 +326,7 @@
   margin: 12px 0 ;
   
   // bc drag and drop (server, dms)
-  // .pill_e5445c + div, 
-  .blobContainer_e5445c, 
-  .listItemWrapper_dfb2f8 
-  {
+  .blobContainer_e5445c, .listItemWrapper__91816 {
     transform: rotate(90deg) !important ; // important for serverdetails plugin idk
   }
   
