@@ -1,10 +1,10 @@
-// * user v0.3.14
+// * user v0.3.15
 // User popout / (Modal)
 @use 'mixins' as * ;
 
 // -> User Popout
-.layer_da8173[style^="position: absolute"] .outer_c0bea0 {
-// .outer_c0bea0.biteSize_c0bea0  { // would effect account panel
+// .layer_da8173[style^="position: absolute"] .outer_c0bea0 {
+.outer_c0bea0.biteSize_c0bea0  { // would effect account panel
 
   // -> Misc
   padding: 0 !important;
@@ -63,14 +63,13 @@
   // <- Misc
 
   // -> Animations effects
-  ~ .profileEffects__01370 {
-    opacity: .6 ;
-    height: calc(100% * var(--show-userProfile-effects));
-    width: calc(100% * var(--show-userProfile-effects));
+  // ~ .profileEffects__01370 {
+  @at-root .profileEffects__01370 {
+    opacity: calc(.6 * var(--show-userProfile-effects)) ;
     z-index: 11 ;
 
     &.hovered__01370 {
-      opacity: .25 ;
+      opacity: calc(.25 * var(--show-userProfile-effects)) ;
     }
   }
   // <- Animations
@@ -247,69 +246,6 @@
     .statusText_ab8609 {
       color: var(--redesign-button-overlay-alpha-text);
     }
-
-    // old
-    // .header__5be3e {
-    //   // container
-    //   > div:not([class]), .visibleContainer_af9888 {
-    //     display: contents ;
-    //   }
-    // }
-
-    // // Status outer container
-    // .statusBubbleOuter_af9888 {
-    //   position: absolute ;
-    //   display: flex ;
-    //   inset: 62px 20px 61px 120px ;
-    //   border: none !important;
-    //   min-width: unset ;
-    //   max-width: unset ;
-    //   background: none ;
-    //   align-items: center ;
-    //   justify-content: center ;
-    //   box-shadow: none ;
-
-    //   pointer-events: none ; // for full status with no pointer event
-
-    //   &::after, &::before { display: none }
-    // }
-
-    // // Status inner container
-    // .statusBubble_af9888 {
-    //   padding: 5px 10px ;
-    //   background: rgb(0 0 0 / .65 );
-
-    //   @include shadow_effect("box_2");
-
-    //   &.statusBubbleEmojiOnlyPadding_af9888 {
-    //     padding: 8px 10px ;
-    //   }
-
-    //   // for full status with no pointer event
-    //   .content_ab8609 {
-    //     -webkit-line-clamp: 3 ;
-    //     max-height: 100px !important;
-    //   }
-
-    //   .statusText_ab8609 {
-    //     color: var(--redesign-button-overlay-alpha-text);
-    //   }
-    // }
-    
-    // // Emoji as status only
-    // .statusEmojiOnly_af9888 { @include restrictions(26px) }
-
-    // Edit status for own profile btns
-    // .popover_bba79b { display: none }
-
-    // .addCustomStatusButtonBubble_af9888 {
-    //   display: contents ;
-
-    //   .statusBubbleOuter_af9888 {
-    //     pointer-events: auto ;
-    //   }
-    // }
-
     // <- Status text
     
     // -> "Beta" badge (maybe more, idk)
@@ -441,7 +377,8 @@
       background: none ;
       border: none ;
       gap: 0px ;
-      border-radius: 4px ;
+      // border-radius: 4px ;
+      border-radius: 0px ;
       overflow: hidden ;
 
       // for center
@@ -455,7 +392,10 @@
       max-width: 144px ; // 6 badges (12 is max per container)
 
       // First badges container when there are two
-      &:nth-last-of-type(2) {
+      // &:nth-last-of-type(2) {
+      //   top: -22px ;
+      // }
+      &:has(+ .container__8061a) {
         top: -22px ;
       }
 
@@ -463,44 +403,43 @@
       + .container__8061a {
         top: 0px ;
 
-        > div {
-          background: var(--bg_badgesFloating);
-        }
-
         // Badges No. 19+ (i mean come on)
-        > div:nth-child(n+7), ~ .container__8061a {
+        // > div:nth-child(n+7), ~ .container__8061a {
+        div:nth-child(n+7), ~ .container__8061a {
           display: none ;
         }
       }
 
       // badges
-      > div {
+      // > div {
+      div {
         padding: 1px 2px ;
-        background: var(--bg_items);
+        // background: var(--bg_items);
+        background: var(--bg_badgesFloating);
         
-        &:last-child {
-          border-radius: 0 0 4px 0 ;
-        }
+        // &:last-child {
+          // border-radius: 0 0 4px 0 ;
+        // }
       }
 
       // badges, when there are more than 6
-      &:has(:nth-child(7)) > div {
-        background: var(--bg_badgesFloating);
+      // &:has(:nth-child(7)) > div {
+        // background: var(--bg_badgesFloating);
 
         // last of first row unless second is full
-        &:not(:has(:nth-child(12))):nth-child(6) {
-          border-radius: 0 0 4px 0 ;
-        }
+        // &:not(:has(:nth-child(12))):nth-child(6) {
+        //   border-radius: 0 0 4px 0 ;
+        // }
 
         // all badges in second row
-        &:nth-child(n+7) {
-          padding-top: 0px ;
-        }
-      }
+        // &:nth-child(n+7) {
+        //   // padding-top: 0px ;
+        // }
+      // }
 
       // Badge icons
       .anchor_edefb8 {
-        @include shadow_effect("drop_2")
+        // @include shadow_effect("drop_2")
       }
     }
     // <- Badges
@@ -607,21 +546,26 @@
 .accountProfilePopoutWrapper__37e49 {
   left: 0 ;
 
-  // not ideal
-  // .avatar__75742 .svg__44b0c {
-  //   $ProfileTop: 4 + 24 + 19 + 8;
+  .profileEffects__01370 {
+    opacity: 1 ;
+  }
 
-  //   top: ($ProfileTop * 1px) !important ;
+  $ProfileTop: 20 + 19 + 8 + 22 + 4;
 
-  //   foreignObject {
-  //     y: ($ProfileTop * -1) !important ;
-  //   }
-  // }
+  .avatar__75742 .svg__44b0c {
+    top: $ProfileTop * 1px !important ;
 
+    foreignObject {
+      y: $ProfileTop * -1 !important ;
+    }
+  }
 
-  // .header__5be3e {
-  //   order: 0 !important ;
-  // }
+  .body_af7fb7 {
+    order: 2 ;
+    margin-top: 22px ;
+    padding: 0 18px 12px !important ;
+    overflow: visible !important ;
+  }
 }
 // <- Account Popout
 

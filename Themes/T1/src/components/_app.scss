@@ -1,4 +1,4 @@
-// * app v0.1.16
+// * app v0.1.17
 @use 'mixins' as * ;
 
 body {
@@ -176,6 +176,10 @@ body {
 
 // Profile image decorations user option
 .avatarDecoration__44b0c .avatar__44b0c {
-  height: calc(100% * var(--show-avatarDecorations));
-  width: calc(100% * var(--show-avatarDecorations));
+  // height: calc(100% * var(--show-avatarDecorations));
+  // width: calc(100% * var(--show-avatarDecorations));
+}
+
+.avatarDecoration__44b0c, .avatarDecoration_c19a55 {
+  opacity: var(--show-avatarDecorations) ;
 }

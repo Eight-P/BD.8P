@@ -1,4 +1,4 @@
-// * chat v0.1.41
+// * chat v0.1.42
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -582,10 +582,10 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 
-  .avatarDecoration_c19a55 {
-    width: calc(var(--custom-message-avatar-decoration-size) * var(--show-avatarDecorations));
-    height: calc(var(--custom-message-avatar-decoration-size) * var(--show-avatarDecorations));
-  }
+  // .avatarDecoration_c19a55 { handles with opacity in _apps
+    // width: calc(var(--custom-message-avatar-decoration-size) * var(--show-avatarDecorations));
+    // height: calc(var(--custom-message-avatar-decoration-size) * var(--show-avatarDecorations));
+  // }
 
   .messageContent_c19a55 {
     padding-left: 5px ;
@@ -1739,3 +1739,5 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 }
 // <- Stage view
+
+
