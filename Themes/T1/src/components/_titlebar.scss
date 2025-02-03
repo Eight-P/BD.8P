@@ -1,4 +1,4 @@
-// * titlebar v0.1.14
+// * titlebar v0.1.15
 // Header (Chat / Home tabs) | Titlebar | Notifications
 @use 'mixins' as * ;
 
@@ -177,7 +177,7 @@
     .item__133bf, .item_b3f026 {
       background: none !important ;
 
-      @include Mentions_icon('.numberBadge_df8943');
+      @include Mentions_icon('.numberBadge__2b1f5');
     }
 
     // Add friend Tab

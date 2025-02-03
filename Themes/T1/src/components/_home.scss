@@ -1,4 +1,4 @@
-// * home v0.1.17
+// * home v0.1.18
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -378,7 +378,7 @@
     padding: 0 ;
     border-radius: 0 ;
 
-    @include Mentions_icon(".numberBadge_df8943");
+    @include Mentions_icon(".numberBadge__2b1f5");
 
     // Second container
     .interactive__972a0 {
