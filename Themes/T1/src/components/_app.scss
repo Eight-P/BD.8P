@@ -1,4 +1,4 @@
-// * app v0.1.17
+// * app v0.1.18
 @use 'mixins' as * ;
 
 body {
@@ -21,7 +21,9 @@ body {
 }
 
 // General Scrollbar
-.app_a3002d :is(.scrollerBase_d125d2, .scrollerBase_c8b5c7, .auto__99f8c) { @include scrollbar() }
+.app_a3002d :is(.scrollerBase_d125d2, .scrollerBase_c8b5c7, .auto__99f8c, .scrollerBase__99f8c) { 
+  @include scrollbar();
+}
 
 
 // Tab focus thing

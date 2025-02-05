@@ -1,4 +1,4 @@
-// * serverbar v0.1.25
+// * serverbar v0.1.26
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -425,13 +425,11 @@
   > .listItem__650eb {
     pointer-events: none ;
     
-    .pill_e5445c { 
-      display: none ;
-      
-      // Icon container (for drag)
-      + div { transform: rotate(90deg) }
+    .pill_e5445c { display: none }
+    
+    .folderIcon__48112 { 
+      transform: rotate(90deg);
     }
-
     // Icon container
 
     // Placeholder when dragging
@@ -451,14 +449,10 @@
       bottom: 4px ;
     }
 
-    // container
-    .wrapper_cc5dd2 {
-      @include shadow_effect("drop_1");
-    }
-
     // SVG 1
     .svg_cc5dd2 {
-      mask, g { display: none }
+
+      :is(mask, g) { display: none }
 
       foreignObject {
         mask: none ;
@@ -475,9 +469,10 @@
       margin: 4px ;
       pointer-events: all ;
 
+      @include shadow_effect("drop_1");
+
       // Icon container open and closed
-      .closedFolderIconWrapper__48112,
-      .expandedFolderIconWrapper__48112 {
+      :is(.closedFolderIconWrapper__48112, .expandedFolderIconWrapper__48112) {
         height: 40px ; 
         width: 40px ;
         padding: 0 ;
@@ -494,7 +489,7 @@
   // Server container in folder
   ul {
     height: auto !important;
-    margin-bottom: 24px ;
+    // margin-bottom: 24px ;
     display: block ;
     
     // Server items in open folders
@@ -503,7 +498,7 @@
     &::after {
       content: "" ;
       position: absolute ;
-      bottom: -12px ;
+      bottom: -1px ;
       width: 32px ;
       height: 2px ;
       margin: 0 11px ;

@@ -1,4 +1,4 @@
-// * compatibility v0.1.18
+// * compatibility v0.1.19
 // Compatibility with plugins and Themes
 @use 'mixins' as * ;
 
@@ -237,14 +237,17 @@
     &::before { display: none }
   }
 
-  .wrapper__48112 ul {
-    margin-bottom: 6px ;
-  }
   .wrapper__48112 ul::after { display: none }
+
+  // folder icon
+  .folder__48112 {
+    transform: rotate(90deg);
+  }
 
   .expandedFolderBackground__48112 {
     display: block ;
     left: 3px ;
+    bottom: -3px ;
   }
 
   .listItem__650eb:has(.guildSeparator__252b6) {

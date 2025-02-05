@@ -1,16 +1,16 @@
-// * mixins v0.1.15
+// * mixins v0.1.16
 // Notifications / Scrollbar / Button / Default Variables
 
 // -> Mixins
 // Scrollbar design | @include scrollbar();
-@mixin scrollbar ($width:15px) {
+@mixin scrollbar ($width:13px, $borderR: 8px) {
   &::-webkit-scrollbar { 
-    // width: 12px ;
     width: $width ;
   }
   
   &::-webkit-scrollbar-thumb {
-    border-color: transparent ;
+    border: 2px solid transparent ; // for spacing
+    border-radius: $borderR ;
     background-color: var(--background-modifier-accent);
     visibility: visible ;
   }
@@ -18,7 +18,7 @@
   &::-webkit-scrollbar-track,
   &::-webkit-scrollbar-track-piece { 
     background-color: transparent ;
-    border-color: transparent ;
+    border: none ;
   }
 
   &:hover::-webkit-scrollbar-thumb { 

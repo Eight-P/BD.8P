@@ -1,4 +1,4 @@
-// * chat v0.1.42
+// * chat v0.1.43
 // Text chat, Voice chat
 @use 'mixins' as * ;
 
@@ -456,6 +456,10 @@
 
       @include Btn();
 
+      &.colorRed__201d5 {
+        color: var(--red) ;
+      }
+
       .contents__201d5 {
         margin: 0 
       }
@@ -603,21 +607,27 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   .repliedMessage_c19a55 { 
     height: 20px ;
 
-    // username in replied message
+    // username within the replied message
     .username_f9f2ca { display: none }
   }
 
   // File
-  .attachment_b52bef {
+  .file__0ccae {
     background: $BG_Embed ;
     border: none ;
   }
 
+  // -> download button
   .hoverButtonGroup__06ab4 {
     background: var(--background-tertiary);
 
     @include shadow_effect("box_3")
   }
+  .nonMediaMosaicItem__06ab4 {
+    top: 0 ;
+    right: 0 ;
+  }
+  // <- 
   
   // Code Syntax
   code {
@@ -628,7 +638,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     }
   }
 
-  // Publish Announcement msg
+  // Share message in Announcement prompt
   .bumpBox_cacd02 {
     background: $BG_Embed ;
   }
@@ -760,14 +770,19 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     background: $BG_Embed ;
   }
 
-  // Audio file 
-  .wrapperAudio_f72aac {
+  // full Audio file embed
+  .wrapperAudio_cf09d8 {
     background: $BG_Embed ;
     border: none ;
 
     .audioControls_cf09d8 {
       background: $BG_Embed-alt ;
     }
+  }
+
+  // voice message small aufio embed
+  .container_a8e786 {
+    background: $BG_Embed ;
   }
 
   // Gift code
@@ -818,7 +833,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
   
   // Embeds from links
-  .embedFull_b0068a {
+  .embedFull__623de {
     background: $BG_Embed ;
   }
   
@@ -833,13 +848,13 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
   }
 
   // Spoiler Embed
-  .spoilerContainer_a3d0f7 {
-    box-shadow: none ;
+  .spoilerContainer__54ab5 {
+    box-shadow: none !important ;
     background: $BG_Embed ;
   }
 
   // buttons with background e.g. from bots
-  .lookFilled__201d5.colorPrimary__201d5 {
+  .lookFilled__201d5:is(.colorPrimary__201d5, .colorBrand__201d5) {
     @include Btn("background");
   }
 
@@ -974,6 +989,7 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
     .popoverReactionHoverBar_f84418 {
       background: var(--background-tertiary);
       padding: 4px ;
+      margin-right: -4px ;
 
       // when not hovered and not expanded
       &:not(:hover, :has([d="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 5 0 0 0-8-4 1 1 0 0 0-2 0v3a1 1 0 0 0 1 1h3a1 1 0 1 0 0-2Z"])) {
@@ -984,8 +1000,9 @@ $BG_Embed-alt: var(--background-secondary-alt); // Inline embeds (Text Spoiler, 
           color: var(--interactive-hover);
         }
 
+        // buttons and seperator
         // > div:not(:last-child) { display: none }
-        .button_f7ecac:not(:last-child) { display: none }
+        div:not(:last-child) { display: none }
       }
     }
   }

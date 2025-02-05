@@ -1,4 +1,4 @@
-// * server v0.1.21
+// * server v0.1.22
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -115,13 +115,13 @@
     .iconItem_f6f816 { display: none }
 
     // Channel badges (e.g. "NEW", "LIVE") for channels
-    .textBadge_df8943 {
+    .textBadge__2b1f5 {
       background: none !important ;
       color: var(--interactive-hover);
 
-      &[style*="var(--red"] {
-        color: var(--red-400);
-      }
+      // &[style*="var(--red"] { ?? 
+      //   color: var(--red-400);
+      // }
     }
 
     // "new" badge on forum channel

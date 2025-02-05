@@ -1,4 +1,4 @@
-// * home v0.1.18
+// * home v0.1.19
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -409,8 +409,10 @@
   }
 
   // "new" badge on shop
-  .linkButton__972a0 .textBadge_f05120 {
-    display: none
+  .textBadge__2b1f5 {
+    // display: none ;
+    background: none !important ;
+    color: var(--interactive-hover);
   }
 }
 

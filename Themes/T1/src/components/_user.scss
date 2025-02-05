@@ -1,4 +1,4 @@
-// * user v0.3.15
+// * user v0.3.16
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -249,12 +249,12 @@
     // <- Status text
     
     // -> "Beta" badge (maybe more, idk)
-    .textBadge_df8943 {
-      right: 0 ;
-      top: 119px - 16px ;
-      margin: 0 ;
-      border-radius: 4px 0 0 0 ;
-    }
+    // .textBadge_df8943 { outdated
+    //   right: 0 ;
+    //   top: 119px - 16px ;
+    //   margin: 0 ;
+    //   border-radius: 4px 0 0 0 ;
+    // }
     // <- "Beta" badge (maybe more, idk)
 
   // <- Header
@@ -377,8 +377,8 @@
       background: none ;
       border: none ;
       gap: 0px ;
-      // border-radius: 4px ;
-      border-radius: 0px ;
+      border-radius: 4px ;
+      // border-radius: 0px ;
       overflow: hidden ;
 
       // for center
