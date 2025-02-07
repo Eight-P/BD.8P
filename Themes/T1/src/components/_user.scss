@@ -1,10 +1,11 @@
-// * user v0.3.16
+// * user v0.3.17
 // User popout / (Modal)
 @use 'mixins' as * ;
 
 // -> User Popout
 // .layer_da8173[style^="position: absolute"] .outer_c0bea0 {
-.outer_c0bea0.biteSize_c0bea0  { // would effect account panel
+// effects account panel (not: for profile preview in settings)
+.outer_c0bea0.biteSize_c0bea0:not(.container_ba7f98)  {
 
   // -> Misc
   padding: 0 !important;
@@ -206,45 +207,56 @@
     // <- Avatar / status icon
 
     // -> Status text
-    // the 2 other staus containers for some reason
-    .referenceContainer_ab8609 { display: none }
-
-    // third status main container
-    .container_ab8609 { display: contents }
-
-    // second container of third
-    .outer_ab8609 {
+    // main container
+    .container_ab8609 {
       position: absolute ;
       display: flex ;
       inset: 20px 20px 20px 120px ;
-      min-width: unset ;
-      max-width: unset ;
-      pointer-events: none ;
-      background: none ;
+      width: unset ;
+      height: unset ;
       align-items: center ;
       justify-content: center ;
-      box-shadow: none ;
-      border-radius: 0 ;
-      border: none ;
+      pointer-events: none ; // for hover on gif banner
 
-      &::after, &::before { display: none }
-    }
+      // second container
+      .outer_ab8609 {
+        display: contents ;
 
-    // self status
-    .editable_ab8609 .inner_ab8609 {
-      pointer-events: auto ;
+        &::after, &::before { display: none }
+      }
     }
 
     .inner_ab8609 {
-      padding: 5px 10px ;
+      padding: 6px 8px ;
       background: rgb(0 0 0 / .65 );
       border-radius: 8px ;
+      pointer-events: auto ;
 
       @include shadow_effect("box_2");
     }
 
     .statusText_ab8609 {
       color: var(--redesign-button-overlay-alpha-text);
+    }
+
+    // edit self status btns
+    .popover_c97e55 {
+      top: 50% ;
+      right: 50% ;
+      transform: translate(50%, -50%);
+      padding: 0px 4px ;
+      background: var(--background-floating) ;
+      box-shadow: none ;
+      animation: none !important ;
+      box-sizing: content-box ;
+
+      &.visible_c97e55 {
+        opacity: 1 ;
+      }
+      
+      .button_c97e55 {
+        padding: 8px 6px ;
+      }
     }
     // <- Status text
     
