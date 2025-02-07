@@ -1,4 +1,4 @@
-// * user v0.3.17
+// * user v0.3.18
 // User popout / (Modal)
 @use 'mixins' as * ;
 
@@ -562,7 +562,7 @@
     opacity: 1 ;
   }
 
-  $ProfileTop: 20 + 19 + 8 + 22 + 4;
+  $ProfileTop: 20 + 19 + 8 + 36 + 4;
 
   .avatar__75742 .svg__44b0c {
     top: $ProfileTop * 1px !important ;
@@ -574,9 +574,17 @@
 
   .body_af7fb7 {
     order: 2 ;
-    margin-top: 22px ;
+    margin-top: 36px ;
     padding: 0 18px 12px !important ;
     overflow: visible !important ;
+  }
+
+  .menuOverlay_af7fb7 {
+    background: var(--bg_items);
+  }
+
+  .menuItemColor_af7fb7 {
+    background: none ;
   }
 }
 // <- Account Popout
