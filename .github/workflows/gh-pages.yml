@@ -1,10 +1,10 @@
-# v1
+# v1.1
 # Build and deploy gh-pages
 # Run after "build-CSS" or manual trigger
 name: gh-pages
 on:
   workflow_run:
-    workflows: ["build-CSS"]
+    workflows: ["build-CSS", "T1buildCSS"]
     types:
       - completed
     branches:
