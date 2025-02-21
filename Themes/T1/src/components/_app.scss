@@ -1,4 +1,4 @@
-// * app v0.1.18
+// * app v0.1.19
 @use 'mixins' as * ;
 
 body {
@@ -43,6 +43,10 @@ body {
     width: 240px ;
     top: 0 ;
     box-sizing: border-box ;
+
+    .content__37e49 {
+      background: none ;
+    }
 
     // Pfp, name container
     .avatarWrapper__37e49 {
