@@ -1,4 +1,4 @@
-// * server v0.1.22
+// * server v0.1.23
 // Channels, Panels / Members / Server discovery
 @use 'mixins' as * ;
 
@@ -277,15 +277,15 @@
   }
   .activityText__5d473 {
     color: var(--channels-default) !important ; // shouldn't be needed, but here we are
-}
+  }
   
   // Member
   .member__5d473 {
     margin: 0 0 0 11px ;
+    padding: 2px 0 ;
     background: none ;
     
-    // Inner container 
-    .layout__91a9d {
+    .childContainer__91a9d {
       border-radius: 0 ;
       background: none ;
       border-right: 3px solid transparent ;
@@ -295,9 +295,14 @@
         background-color: var(--background-modifier-hover);
       }
     }
+
+    // Inner container 
+    .layout__91a9d {
+      height: 38px ;
+    }
     
     // User popout open
-    &.selected__91a9d .layout__91a9d {
+    &.selected__91a9d .childContainer__91a9d {
        border-right: 3px solid var(--interactive-hover);
     }
     
