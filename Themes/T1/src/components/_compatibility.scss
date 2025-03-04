@@ -1,4 +1,4 @@
-// * compatibility v0.1.19
+// * compatibility v0.1.20
 // Compatibility with plugins and Themes
 @use 'mixins' as * ;
 
@@ -11,9 +11,9 @@
 // - ServerDetails by DevilBro (v1.2.4)
 // - CharCounter by DevilBro (v1.6.6)
 // - Memessages by Greezor (v0.13.3)
-// - ServerFolders by DevilBro (v7.2.9)
+// - ServerFolders by DevilBro (v7.3.0)
 
-// - Icon Revert 2023 by davart154 (8ebad17)
+// - Icon Revert 2023 by davart154 (bb4e8c7)
 
 // Vencord
 // - ServerListIndicator
@@ -239,6 +239,11 @@
 
   .wrapper__48112 ul::after { display: none }
 
+  // folders container
+  .stack_dbd263 {
+    justify-content: space-around ;
+  }
+
   // folder icon
   .folder__48112 {
     transform: rotate(90deg);
@@ -272,22 +277,6 @@
 
 .toolbar__9293f .icon__9293f:has([d^="M1.3 21.3a1 1 0 1 0 1.4 1.4l20-20a1 1 0 0 0-1.4-1.4l-20 20ZM3.13 16.13c.11.27.46.28.66.08L15.73 4.27a."]) {
   background-image: none !important ;
-}
-
-// quick fix for some btns
-// user area btns
-.container__37e49  {
-
-  // mic
-  .micButtonParent__37e49 {
-    svg {
-      clip-path: path("M12.4917 9.1667C12.4917 10.55 11.3833 11.6667 10 11.6667 8.6167 11.6667 7.5 10.55 7.5 9.1667V4.1667C7.5 2.7833 8.6167 1.6667 10 1.6667 11.3833 1.6667 12.5 2.7833 12.5 4.1667L12.4917 9.1667ZM10 13.4167C12.3 13.4167 14.4167 11.6667 14.4167 9.1667H15.8333C15.8333 12.0167 13.5667 14.3667 10.8333 14.7667V18.3333H9.1667V14.7667C6.4333 14.3583 4.1667 12.0083 4.1667 9.1667H5.5833C5.5833 11.6667 7.7 13.4167 10 13.4167Z") !important ; 
-    }
-
-    [style*="--status-danger"] svg {
-      clip-path: path("M5.5833 9.1667H4.1667C4.1667 10.1583 4.45 11.0833 4.9167 11.9L5.9417 10.875C5.7167 10.3583 5.5833 9.7833 5.5833 9.1667ZM7.5083 9.2375C7.5125 9.2604 7.5167 9.2833 7.5167 9.3083L12.5 4.3167V4.1667C12.5 2.7833 11.3833 1.6667 10 1.6667 8.6167 1.6667 7.5 2.7833 7.5 4.1667V9.1667C7.5 9.1917 7.5042 9.2146 7.5083 9.2375ZM9.7697 13.4106 9.136 14.0442 8.5444 14.6407C8.7482 14.6942 8.9558 14.7366 9.1667 14.7667V18.3333H10.8333V14.7667C13.5667 14.3583 15.8333 12.0083 15.8333 9.1667H14.4167C14.4167 11.6667 12.3 13.4167 10 13.4167 9.923 13.4167 9.8462 13.4146 9.7697 13.4106ZM17.5 3.5583 16.4417 2.5 2.5 16.4417 3.5583 17.5 7.05 14.0167 8.075 12.9833 9.4583 11.6 12.4917 8.5667 17.5 3.5583Z") !important ;
-    }
-  }
 }
 // <- Icon Revert 2023
 
