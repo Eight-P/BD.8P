@@ -1,4 +1,4 @@
-// * serverbar v0.1.26
+// * serverbar v0.1.27
 // Horizontal serverbar + Additions
 @use 'mixins' as * ;
 
@@ -629,7 +629,8 @@
   .guildIconContainer__85d16 { display: none }
   
   // Chevron icon
-  .button__353c4 { display: none }
+  // .button__353c4 { display: none }
+  .headerChildren_f37cb1 { display: none }
   
   // Server banner image
   .animatedContainer_f37cb1 { display: none }

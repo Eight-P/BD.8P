@@ -1,4 +1,4 @@
-// * home v0.1.19
+// * home v0.1.20
 // DMs Sidebar / Friendslist / Live Stages / Nitro store
 @use 'mixins' as * ;
 
@@ -316,8 +316,12 @@
 // -> Nitro subscription page
 .applicationStore_f07d62 {
 
-  .headerBar__0920e {
+  .root__52b47 {
     display: none
+  }
+
+  .whatsNewSectionBackground_c880e8 {
+    background: none ;
   }
 
   .scroller__244e5 {
@@ -355,6 +359,12 @@
       display: none
     }
   }
+
+  // nitro offer badge
+  .badgeContainer_f14037 {
+    background: none ;
+  }
+
 
   // Category header text
   .headerText__99e7c {
