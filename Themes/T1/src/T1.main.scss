@@ -1,37 +1,41 @@
-$T1_version: "0.6.82" ; // Theme file Fv8
+@use "sass:meta";
+
+$T1_version: "0.7.0b" ; // Theme file Fv9
+
+@include meta.load-css("components_refresh");
 
 // Global Mixins and Variables
-@use 'components/_mixins';
+// @use 'components/_mixins';
 
-// General App related stuff
-@use 'components/_app';
+// // General App related stuff
+// @use 'components/_app';
 
-// Background image and Transparency
-@use 'components/_background';
+// // Background image and Transparency
+// @use 'components/_background';
 
-// Text and voice chat
-@use 'components/_chat';
+// // Text and voice chat
+// @use 'components/_chat';
 
-// Home Tabs / DMs-Sidebar
-@use 'components/_home';
+// // Home Tabs / DMs-Sidebar
+// @use 'components/_home';
 
-// Popouts / Tooltips
-@use 'components/_popouts';
+// // Popouts / Tooltips
+// @use 'components/_popouts';
 
-// Channels / Member / Discovery
-@use 'components/_server';
+// // Channels / Member / Discovery
+// @use 'components/_server';
 
-// Serverbar + Addons
-@use 'components/_serverbar';
+// // Serverbar + Addons
+// @use 'components/_serverbar';
 
-// Settings menus
-@use 'components/_settings' with ( $T1_v: $T1_version );
+// // Settings menus
+// @use 'components/_settings' with ( $T1_v: $T1_version );
 
-// Header-, Titlebar / Notifications
-@use 'components/_titlebar';
+// // Header-, Titlebar / Notifications
+// @use 'components/_titlebar';
 
-// User Popout, Modal
-@use 'components/_user';
+// // User Popout, Modal
+// @use 'components/_user';
 
-// Addon Compatibility
-@use 'components/_compatibility';
+// // Addon Compatibility
+// @use 'components/_compatibility';
