@@ -10,14 +10,105 @@
 
 
 .form_f75fb0  {
+  margin-top: 0 !important ;
+  padding: 0 5px 0 0 !important ;
+
   @include divider(top);
 
   .channelTextArea__74017 {
     border: none ;
   }
 
+  .scrollableContainer__74017 {
+    @include scrollbar(none);
+  }
+
+  .inner__74017 {
+    padding-left: 0;
+  }
 
   &.formWithLoadedChatInput_f75fb0:before {
     display: none ;
   }
+
+
+  // -> Buttons
+
+  // -> "Attach file" Button 
+  // Seperator line between button and text input
+  .attachWrapper__0923f::after {
+    content: "" ;
+    position: absolute ; 
+    top: 5px ;
+    bottom: 5px ;
+    right: 0px ;
+    width: 1px ;
+    background-color: var(--background-modifier-accent);
+  }
+  // btn
+  .attachButton__0923f {
+    padding: 0 12px ;
+    margin: 0 ;
+  }
+  // <- "Attach file" Button 
+
+  // -> Right side btns
+  .buttons__74017 {
+ 
+    // Nitro btn
+    @container style(--show-nitro-btn: 0) {
+      .button__201d5:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
+        display: none ;
+      }
+    }
+
+    .expression-picker-chat-input-button {
+
+      // Gifs picker
+      @container style(--show-gif-btn: 0) {
+        &:has([d^=" M-7,-10 C-8.656999588012695,-10 -10,-8.656999588012695 -10"]) {
+          display: none ;
+        }
+      }
+      // Stickers picker
+      @container style(--show-sticker-btn: 0) {
+        &:has([d^=" M-6,-10 C-6,-10 6,-10 6,-10 C8.208999633789062,-10 10"]) {
+          display: none ;
+        }
+      }
+      // Emoji picker
+      @container style(--show-emoji-btn: 0) {
+        &:has(.emojiButton__04eed) {
+          display: none ;
+        }
+      }
+    }
+
+    // Apps & Commands btn
+    @container style(--show-apps-btn: 0) {
+      .channelAppLauncher_e6e74f {
+        display: none ;
+      }
+    }
+  }
+  // <- Right side btns
+  
+  // <- Buttons
+
+  // -> file/upload attachment
+  .channelAttachmentArea_b77158 {
+    // Attachment item
+    .upload_aa605f {
+      background: none ;
+      border: none ;
+      
+      // Buttons
+      .wrapper_f7ecac {
+
+        @include shadowEffect("box_2");
+      }
+    }
+  }
+  // <- file/upload attachment
+
 }

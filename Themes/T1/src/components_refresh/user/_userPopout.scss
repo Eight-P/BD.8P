@@ -15,7 +15,7 @@
 
   &::-webkit-scrollbar { display: none }
 
-  // --custom-user-profile-width-bite-size: 340px ;
+  --bg-surface-overlay: transparent !important ;
 
   --bg_items: var(--background-modifier-hover);
   --bg_itemsHover: var(--background-modifier-selected);
@@ -24,6 +24,10 @@
     hsl(220 calc(var(--saturation-factor, 1) * 8.1%) 7.3% / 1) 84%,
     hsl(from var(--background-modifier-hover) h s l / 1 ) 16%
   );
+
+  &:not(.custom-profile-theme) {
+    background: var(--background-floating);
+  }
 
   // with color theme
   &.custom-profile-theme {
@@ -474,10 +478,10 @@
 
     // Edit own profile btn
     > .button__201d5 {
-      background: none ;
+      background: none !important;
       height: 100% ;
       padding: 0 ;
-      color: var(--text-normal);
+      color: var(--text-normal) !important;
 
       &:hover {
         color: var(--header-primary);

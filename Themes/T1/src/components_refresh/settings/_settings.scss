@@ -1,0 +1,25 @@
+@use '../mixins' as * ;
+
+// -- Settings
+
+.layer__960e4:not(.baseLayer__960e4) {
+
+  margin-top: var(--custom-app-top-bar-height);
+
+  .container_fea832 { @include searchbar(".inner_fea832") }
+
+  // -> Left side sidebar
+  .sidebarRegion__23e6b {
+
+    .sidebar__23e6b {
+      padding-top: 20px ;
+    }
+  }
+  // <- Left side
+
+  // -> main content
+  .contentRegionScroller__23e6b {
+    margin-top: 0px ;
+  }
+  // <- main content
+}

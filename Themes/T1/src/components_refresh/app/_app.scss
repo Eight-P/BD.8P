@@ -182,6 +182,11 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
   background-color: var(--background-secondary);
 }
 
+// border from .theme-midnight (chat, home, titlebar)
+:is(.content_f75fb0, .tabBody__133bf, .subtitleContainer_f75fb0) {
+  border-left: none ;
+}
+
 .app_a3002d {
 
   // General searchbar

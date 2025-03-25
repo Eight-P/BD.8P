@@ -76,11 +76,6 @@
     .wrapper__14245 {
       background: $BG_Body !important ;
       padding-bottom: 6px ;
-
-      &::after {
-        height: 1px ;
-        background: var(--background-modifier-accent);
-      }
     }
 
     // nitro locked emoji category
@@ -88,7 +83,7 @@
       background: $BG_Body !important ;
 
       .header__14245 {
-        color: var(--interactive-muted);
+        color: rgba(180, 115, 245, 0.5);
       }
 
       .emojiListRow_fc7141 {
@@ -96,10 +91,6 @@
         margin-right: 3px ;
         border-right: 3px solid rgba(180, 115, 245, 0.5);
       }
-    }
-
-    .categorySectionNitroDivider_c656ac {
-      padding-bottom: var(--custom-emoji-picker-constants-emoji-section-margin-bottom);
     }
 
     // -> Emoji item

@@ -20,6 +20,9 @@
 // - Text / Voice / Special Channels, Members list, boost page
 @forward 'server/_server';
 
+// Settings
+@forward 'settings/_settings';
+
 // User profiles
 // - Popout, DMs sidebar, decorations
 @forward 'user/_user';
