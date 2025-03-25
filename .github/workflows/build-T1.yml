@@ -1,6 +1,6 @@
 # v1.5
 # Build and commit css for T1
-name: T1buildCSS
+name: build-T1
 on:
   push:
     branches:
