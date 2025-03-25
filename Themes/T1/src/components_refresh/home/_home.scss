@@ -1,0 +1,100 @@
+@use '../mixins' as * ;
+
+// -- Home
+
+// Friends - header, list, activity sidebar
+@import '_homeFriends';
+
+
+#app-mount {
+
+// -> DMs Sidebar
+.privateChannels__35e86 {
+
+  // Scroller container
+  .scroller__99e7c {
+
+    @container style(--sidebarScrollbar: 0 ) {
+      &::-webkit-scrollbar-thumb {
+        background-color: transparent !important ;
+      }
+    }
+  }
+
+  // Category header text
+  .headerText__99e7c {
+    color: var(--channels-default); // removes hover effect
+  }
+
+  // Create Group DM Button (not necessary, there is one at the top right)
+  :is(.privateChannelRecipientsInviteButtonIcon__99e7c, .sectionDivider__35e86) {
+    display: none
+  }
+
+  // category header
+  .privateChannelsHeaderContainer__99e7c  {
+    margin: 16px 0 6px 0 ;
+  }
+
+  // Sidebar item container
+  .channel__972a0 {
+    padding: 2px 0 ;
+    border-radius: 0 ;
+
+    // Second container
+    .interactive__972a0 {
+      background: none ;
+
+      &.selected_bf202d {
+        border-left: 3px solid var(--interactive-hover);
+      }
+
+      &:hover {
+        border-left: 3px solid var(--interactive-hover);
+        background: var(--background-modifier-hover);
+      }
+    }
+  }
+
+  // "new" badge on shop
+  .textBadge__2b1f5 {
+    // display: none ;
+    background: none !important ;
+    color: var(--interactive-hover);
+  }
+}
+// <- DMs Sidebar
+
+// -> Shops
+// Nitro store
+.homeWrapperNormal__0920e {
+  border: none ;
+
+  .container_c880e8 {
+    margin: 16px ;
+  }
+
+  .headerBar__0920e, .root__52b47 {
+    display: none
+  }
+
+  .whatsNewSectionBackground_c880e8 {
+    background: none ,
+  }
+}
+
+/// Profile decorations shop
+.shop__6db1d {
+
+  // Titlebar
+  .headerBar__80679  { display: none }
+
+  // Floating ad ??
+  .countDownWrapper_a1b7b8 {
+    left: calc(50% + 120px);
+    bottom: 20px ;
+  }
+}
+// <- Shops
+
+}

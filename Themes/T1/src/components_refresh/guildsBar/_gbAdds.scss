@@ -1,0 +1,171 @@
+// Server bar | App adjustments for server bar
+
+#app-mount {
+
+
+// -> App container
+.base_c48ade {
+  display: flex ;
+  margin-bottom: $SB_height ;
+
+  // sidebar + page container
+  .content_c48ade {
+    display: flex ;
+  }
+
+  // main page container
+  .page_c48ade {
+    margin-left: calc(var(--custom-guild-list-width) * -1);
+  }
+}
+
+// Sidebar
+.sidebar_c48ade {
+  display: flex ;
+  left: calc(var(--custom-guild-list-width) * -1);
+  padding-left: var(--custom-guild-list-width);
+  box-sizing: border-box ;
+
+  &[data-collapsed=true] {
+    width: 0px !important ;
+  }
+
+  .sidebarList_c48ade {
+    // container-type: unset ;
+    // needed to position server btns as fixed
+    backdrop-filter: unset ;
+  }
+  
+  // needs to counter: display none on collapse
+  // channels
+  .container__2637a {
+    display: flex !important ;
+  }
+  
+  // dms, discovery
+  .privateChannels__35e86, .container__551b0 {
+    display: flex !important ;
+  }
+
+  .panels_c48ade {
+    display: contents ;
+  }
+}
+// <- App container
+
+
+// -> Server options btn
+// channels list spacer for banner image 
+/// (content__99f8c not unique), needs [style="height: 130px;"]
+// .sidebarList_c48ade .content__99f8c > [style="height: 130px;"]:not([class]) // old?
+.sidebarList_c48ade .content__99f8c > [style="height: 84px;"]:not([class]) { 
+  margin-top: -84px ; // helps remove the space from bottom of the list
+  visibility: hidden ;
+}
+
+// button
+.sidebarList_c48ade .container_f37cb1 {
+  position: fixed ;
+  bottom: 0 ;
+  right: 0 ;
+  width: 120px ;
+  height: $SB_height ;
+  display: block !important;
+
+  &:hover, &.selected_f37cb1 { background-color: rgba(0, 0, 0, 0.2) !important }
+
+  // second container
+  .header_f37cb1 {
+    display: contents !important;
+  }
+
+  .headerContent_f37cb1 {
+    height: 100% ;
+    align-items: center ;
+    justify-content: center ;
+    display: flex !important ;
+  }
+
+  // server name
+  .name_f37cb1 {
+    margin: 5px ;
+    white-space: normal ;
+    max-height: 32px ;
+    line-height: 16px ;
+    font-weight: 400 ;
+    text-align: center ;
+    color: var(--text-normal);
+    display: block !important;
+
+    @include shadowEffect("text_1");
+  }
+
+  // Icons, Chevron, star icon in favorites tab, banner image
+  :is(
+    .guildIconV2Container__85d16, 
+    .guildIconContainer__85d16,
+    .headerChildren_f37cb1,
+    .favoritesIcon_f37cb1,
+    .animatedContainer_f37cb1,
+    .headerEllipseBackdrop_f37cb1,
+    .headerEllipseForeground_f37cb1,
+    .headerGlass_f37cb1
+  ) { display: none }
+}
+// <- Server options btn
+
+// -> Quick Switcher (home)
+.privateChannels__35e86 .searchBar__35e86  {
+  position: fixed ;
+  display: flex !important ;
+  width: 120px ;
+  height: 54px ;
+  right: 0 ;
+  bottom: 0 ;
+  padding: 0 ;
+  z-index: 0 ;
+
+  &:hover { background-color: rgba(0, 0, 0, 0.2) }
+
+  .button__201d5 {
+    display: flex !important ;
+    padding: 0 ;
+    background: none ;
+  }
+
+  // text
+  .contents__201d5 {
+    display: block !important ;
+    white-space: wrap ;
+    color: var(--text-normal);
+
+    @include shadowEffect("text_1");
+  }
+}
+// <- Quick Switcher (home)
+
+// -> Discovery Text
+.container__551b0 .header__551b0 {
+  position: fixed ;
+  display: flex !important ;
+  width: 120px ;
+  height: 54px ;
+  right: 0 ;
+  bottom: 0 ;
+  margin: 0 ;
+  padding: 0 ;
+  justify-content: center ;
+
+  .text-lg\/semibold_cf4812 {
+    display: block !important ;
+    font-weight: 400 ;
+    font-size: 16px ;
+    color: var(--text-normal);
+    overflow: hidden ;
+
+    @include shadowEffect("text_1");
+  }
+}
+// <- Discovery Text
+
+}

@@ -1,0 +1,73 @@
+@use '../mixins' as * ;
+
+// -- Floating
+
+$BG_Meta: var(--background-secondary-alt);
+$BG_Body: var(--background-tertiary);
+$BG_BodyAlt: var(--background-modifier-hover);
+$BG_Floating: var(--background-floating);
+
+// Popouts & Tooltips & Context menus
+@import '_popouts';
+
+// @import '_modals';
+
+.layerContainer_da8173 {
+
+// General searchbar
+.container_a45028 { @include searchbar(".inner_a45028", true) }
+
+// -> Layers general
+// Popouts & Tooltips & Context menus, Modals
+:is(.layer_da8173, .layer_bc663c) {
+
+  --background-surface-high: #{$BG_Meta};
+  --background-surface-higher: #{$BG_Body};
+  --background-surface-highest: #{$BG_BodyAlt};
+
+  --modal-background: #{$BG_Meta};
+  --modal-footer-background: #{$BG_Meta};
+  --background-secondary: #{$BG_Meta};
+
+  --border-subtle: transparent ;
+
+  // -> Settings items/options
+  :is(.select__3f413, .pauseContainer_c38e9f) {
+    border: none ;
+  }
+
+  // Dropdown option select btn
+  .select__3f413 {
+    background: $BG_Floating ;
+  }
+
+  // Dropdown menu popout
+  .popout__3f413 {
+    background: $BG_Floating ;
+  }
+  // <- Settings items/options
+}
+// <- Layers general
+
+
+// -> Modals
+.layer_bc663c {
+
+  .root__49fc1 {
+    border: none ;
+
+    @include scrollbar(none);
+
+    .header__49fc1 {
+      padding-bottom: 16px ;
+
+      // invite modal
+      + .templatesList_c04f35 {
+        margin-top: 0 ;
+      }
+    }
+  }
+}
+// <- Modals
+
+}

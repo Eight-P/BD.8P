@@ -1,0 +1,206 @@
+// Server view | Server guide/home, Channels&Roles, Member safety, Server shop
+
+
+// -> Server guide/home
+.homeContent__7449f {
+
+  :is(.row_d13feb, .card__73069) {
+    background: var(--background-modifier-accent);
+    border: none ;
+  }
+}
+// <- Server guide/home
+
+
+// -> Channels & Roles
+.container__0b563 {
+
+  // -> Header nav bar
+  .tabBar__0b563 {
+    margin: 16px 32px 0 32px ;
+
+    // item
+    .tabBarItem__0b563 {
+      color: var(--interactive-normal);
+  
+      &:hover, &.selected_b3f026 {
+        color: var(--interactive-hover);
+      }
+
+      &::after { display: none }
+    }
+  }
+  // <- Header nav bar
+
+  // -> Customize page
+  .pageBody__5d7c9 {
+
+    // Category containers
+    .prompt__5d7c9 {
+      border: none ;
+    }
+
+    // option items
+    .optionButtonWrapper__270d7 {
+      background: var(--background-modifier-accent);
+      border-color: transparent ;
+
+      &:hover {
+        background: var(--background-modifier-hover);
+      }
+
+      &.selected__270d7 {
+        border-color: var(--interactive-muted);
+      }
+
+      .text-md\/medium_cf4812 {
+        margin-right: 10px ;
+      }
+
+      .checkIcon__270d7 {
+        top: 4px ;
+        right: 4px ;
+      }
+    }
+  }
+
+  // Profile preview
+  .profile__5d7c9 {
+    
+    .profileCard__5d7c9 {
+      background: var(--background-modifier-accent);
+    }
+
+    .bio__5d7c9 {
+      color: var(--header-secondary) !important;
+    }
+  }
+  // <- Customize page
+
+  // -> Channels list
+  .pageBody__41ed7 {
+
+    // -> Category header
+    .categoryRow_e4503a {
+      justify-content: space-around ;
+      justify-content: center ;
+      gap: 20px ;
+
+      @include divider(top);
+    }
+
+    .categoryText_e4503a {
+      color: var(--header-secondary) !important ;
+      font-size: 14px ;
+    }
+
+    .selectAll_e4503a {
+      background: var(--background-modifier-hover);
+      padding: 2px 6px ;
+
+      .checkbox_f525d3 {
+        border-color: transparent ;
+      }
+
+      &:hover {
+        background: var(--background-modifier-selected);
+      }
+    }
+    // <- Category header
+
+    // -> Row item
+    .channelRow_e4503a {
+      border: none ;
+
+      &:hover {
+        background: var(--background-modifier-hover) !important;
+      }
+    }
+
+    .iconContainer__2ea32 {
+      margin-right: 6px ;
+    }
+
+    .viewChannelButton_e4503a {
+      display: block ;
+    }
+    // <- Row item
+
+    .checkbox_f525d3 {
+      background: none ;
+      border-color: var(--interactive-normal) ;
+    }
+  }
+  // <- Channels list
+
+}
+// <- Channels & Roles
+
+
+// -> Member Safety Page
+#app-mount .container_c791b2 {
+  padding: 0 ;
+}
+
+.container_c791b2 {
+
+  .mainTableContainer__09a38 {
+    border: none ;
+  }
+
+  .horizatonalScroller__09a38 {
+
+    &::-webkit-scrollbar {
+      height: 14px ;
+    }
+  }
+
+  .table_b4ec0b {
+    padding: 0 ;
+    margin-top: 10px ;
+    border: none ;
+  }
+
+  .tableHeaderRow__9dd6b {
+    &::after { display: none }
+  }
+}
+// <- Member Safety Page
+
+
+// -> Server shop
+.container__49668 {
+
+  .container_adb50a {
+    border: none ;
+  }
+  
+  .tabContainer__49668 {
+    border: none ;
+  }
+
+  // item card
+  .card__8833c {
+    
+    .cardContent__8833c {
+      background: var(--background-modifier-hover);
+      transform: scale(1);
+      outline: none ;
+      box-shadow: none ;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--background-modifier-selected);
+      }
+
+      > div {
+        padding-bottom: 12px ;
+      }
+    }
+
+    .opaqueBackground__79d38 {
+      background: none ;
+    }
+  }
+}
+// <- Server shop

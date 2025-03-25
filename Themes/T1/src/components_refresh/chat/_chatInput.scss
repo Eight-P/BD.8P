@@ -1,0 +1,23 @@
+// Chat | Text input
+
+// -> Chatting restrictions notice (e.g. when under timeout)
+.spamBanner_a2eac3 {
+  background: none ;
+
+  @include divider(top);
+}
+// <- Chatting restrictions notice
+
+
+.form_f75fb0  {
+  @include divider(top);
+
+  .channelTextArea__74017 {
+    border: none ;
+  }
+
+
+  &.formWithLoadedChatInput_f75fb0:before {
+    display: none ;
+  }
+}

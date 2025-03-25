@@ -1,0 +1,136 @@
+// App | Sidebar
+
+#app-mount {
+
+// -> Sidebar
+.sidebar_c48ade {
+
+  // seperator to page line for resize bar 
+  &::after {
+    content: "";
+    position: absolute ;
+    top: 0 ;
+    right: 2px ;
+    bottom: 0 ;
+    left: unset;
+    background: var(--background-modifier-accent);
+    width: 1px ;
+    height: 100% ;
+  }
+
+  .sidebarResizeHandle_c48ade {
+    transform: none ; // idk
+  }
+}
+
+// Sidebar inner
+.sidebarList_c48ade {
+  padding-right: 6px ;
+  flex: 1 1 auto ;
+  border: none ;
+  
+  // inner container
+  .container__2637a {
+    margin-right: 6px ;
+    padding: 0 ;
+  }
+
+  .scrollerBase__99f8c {
+    margin: 0 ;
+
+    @include scrollerFadeOut();
+
+    @container style(--sidebarScrollbar: 0 ) {
+      &::-webkit-scrollbar-thumb {
+        background-color: transparent !important ;
+      }
+    }
+  }
+}
+// <- Sidebar
+
+// -> Panels
+.panels_c48ade {
+  display: contents ; // only works with hsb
+
+  // -> Profile
+  .container__37e49 {
+    order: -1 ;
+    height: 48px ;
+    container-type: inline-size ;
+
+    @container (width < 195px) {
+      .nameTag__37e49 { display: none }
+
+      .avatarWrapper__37e49, .buttons__37e49 {
+        margin: 0 auto ;
+      }
+    }
+
+    .avatarWrapper__37e49 {
+      background: none ;
+      flex: 0 1 auto ;
+    }
+
+    .svg__44b0c {
+      transform: scale(.8);
+    }
+  }
+  // <- Profile
+
+  // -> Activity
+  .activityPanel_c48ade {
+    padding: 0px 10px ;
+    border-color: var(--background-modifier-accent);
+    
+    .gameIconWrapper__8c6c2 {
+      height: 30px ;
+    }
+
+    // Image
+    .gameIcon__8c6c2 { 
+      height: 30px;
+      width: 30px ;
+    }
+    
+    // Text
+    .title_d1da5f { 
+      line-height: 32px;
+    }
+  }
+  // <- Activity
+
+  // -> Voice connection
+  .wrapper_e131a9 {
+
+    // Conected text
+    .text-md\/medium_cf4812 {
+      font-size: 14px ;
+    }
+
+    // Channel name
+    .text-sm\/medium_cf4812 {
+      font-size: 12px ;
+    }
+
+    // -> action btns
+    .button_e131a9 {
+      background: none !important ;
+      color: var(--interactive-normal) !important;
+
+      &:hover {
+        color: var(--interactive-hover) !important;
+      }
+    }
+
+    .buttonIcon_e131a9 {
+      height: 18px !important ;
+      width: 18px !important ;
+    }
+    // <- action btns
+  }
+  // <- Voice connection
+}
+// <- Panels
+
+}

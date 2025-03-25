@@ -1,0 +1,305 @@
+// Chat | Messages
+
+
+// -> Messages seperator
+.divider__5126c {
+  align-items: unset ;
+  border: none ;
+  margin: 20px 10px !important;
+  
+  // date 
+  .content__908e2 { 
+    height: fit-content ;
+    transform: translateY(-50%);
+    background: none ;
+  }
+  
+  // // seperator lines
+  &::before, &::after {
+    content: "" ;
+    height: 1px ;
+    width: 100% ;
+    background: var(--background-modifier-accent);
+  }
+  
+  // new messages seperator
+  &.isUnread__908e2 {
+    &::before, &::after {
+      background: var(--red);
+      opacity: .7 ;
+    }
+    
+    .unreadPill__908e2 {
+      top: 0 ;
+      padding: 0 4px ;
+      border-radius: 0 0 4px 4px ;
+      background: var(--red);
+
+      path { display: none }
+    }
+  }
+}
+// <- Messages seperator
+
+// -> Messages cozy
+
+.cozy_c19a55 {
+  // -> general msg
+  background: none !important ;
+  padding: 3px 30px 3px 60px !important ;
+  border-radius: 0 !important ;
+
+  // Highlight border-left (Mention, Clyde, ..)
+  &:before { display: none }
+
+  // profile picture
+  .avatar_c19a55 {
+    left: 10px ;
+  }
+
+  // profile decorations
+  .avatarDecoration_c19a55 {
+    left: 6px ;
+  }
+
+  .header_c19a55 {
+    margin-bottom: 2px ;
+  }
+
+  .messageContent_c19a55 {
+    margin: 0 ;
+    padding: 0 ;
+  }
+  // <- general msg
+
+  // -> Msg types
+  // Mention
+  &.mentioned__5126c .contents_c19a55 .messageContent_c19a55 {
+    padding-left: 6px ;
+    border-left: solid 2px var(--border-mentioned);
+    background: var(--background-mentioned);
+  }
+
+  // client-side info/error messages
+  &.ephemeral__5126c .contents_c19a55 .messageContent_c19a55 {
+    padding-left: 6px ;
+    border-left: solid 2px var(--Blurple);
+    background: var(--Blurple-light);
+  }
+
+  // selected for reply bg highlight
+  &.replying__5126c { 
+    background: rgba(255, 255, 255, 0.05) !important ;
+  }
+  // <- Msg types
+
+  // -> Message Buttons
+
+  // -> btn hover and appear behaviour
+  // hide emojis until hover
+  @container style(--emojiMsgBtns: 1 ) {
+    :is(.button_f7ecac:not(:last-child):has(.emoji), .separator_f84418) { display: none }
+  }
+
+  // always hide emojis
+  @container style(--emojiMsgBtns: 0 ) {
+    :is(
+      .button_f7ecac:not(:last-child):has(.emoji),
+      .separator_f84418) { 
+        display: none !important 
+      }
+  }
+
+  // reduce all btns until hover
+  @container style(--messageBtns: 0 ) {
+    :is(.button_f7ecac:not(:last-child), .separator_f84418) { display: none }
+
+    .button_f7ecac:not(:hover) {
+      color: var(--interactive-hover);
+    }
+  }
+
+  // hover on btns
+  &:has(.buttons__5126c:hover),
+  // extended msg btns on hovered msg
+  &:hover:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) 
+  {
+    background: rgba(255, 255, 255, 0.05) !important ;
+
+    .buttons__5126c::before {
+      background-blend-mode: overlay ;
+    }
+
+    :is(.button_f7ecac:not(:last-child), .separator_f84418) { display: flex }
+
+    .button_f7ecac:not(:hover) {
+      color: var(--interactive-normal) !important ;
+    }
+  }
+
+  // hide btns on: concatenating Msg, System msg
+  &:is(:not(.groupStart__5126c), .isSystemMessage_c19a55) {
+
+    :is(.button_f7ecac:not(:last-child), .separator_f84418) { display: none }
+  }
+  // <- btn hover and appear behaviour
+
+  // -> Button container
+  .buttons__5126c {
+    // opacity: 1 ; // debug
+
+    top: -2px ;
+    padding: 0 ;
+
+    &:before {
+      content: "";
+      position: absolute ;
+      height: 100% ;
+      width: 100% ;
+      inset: 0px ;
+      background: var(--background_app) rgba(255, 255, 255, 0.05);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      
+      --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+      --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+
+      filter: var(--blur) var(--brightness);
+    }
+
+    // inner container
+    .wrapper_f7ecac {
+      padding: 0 2px ;
+      border: none ;
+      border-radius: 0 ;
+      background: none ;
+      box-shadow: none !important ;
+    }
+
+    // btn container
+    .hoverBarButton_f84418 {
+      background: none ;
+    }
+
+    // Inner button icon
+    .icon_f84418 {
+      transform: scale(1) ;
+    }
+
+    // quick reaction emoji
+    .emoji__040f0 {
+      width: 18px ;
+      height: 18px ;
+    }
+  }
+  // <- 
+
+  // <- Message Buttons
+
+  // -> Unmask links
+  @container style(--unmask-links: 1 ) {
+    .messageContent_c19a55 .anchor_edefb8[title$=")"] {
+      &::after {
+        content: " (" attr(href) ")" ;
+        position: relative ;
+        display: inline-flex ;
+        height: calc(100% * var(--unmask-links));
+        max-height: 22px ;
+        width: calc(100% * var(--unmask-links));
+        max-width: max-content ;
+        font-size: 0.7rem ;
+        font-weight: 400 ;
+        font-style: normal ;
+        filter: grayscale(1.0) brightness(1.15);
+        overflow: hidden ;
+      }
+      &:hover::after {
+        text-decoration: underline ;
+      }
+    }
+
+    :is(u, s):has(.anchor_edefb8[title$=")"]) {
+      text-decoration: none ;
+    }
+
+    s span {
+      text-decoration: line-through ;
+    }
+
+    u span {
+      text-decoration: underline ;
+    }
+  }
+  // <- Unmask links
+
+  // -> Message content
+  $embedBg: var(--background-modifier-accent);
+  $embedBg-hover: var(--background-modifier-selected);
+
+  :is(.contents_c19a55, .container_b7e1cb) {
+    --bg-overlay-floating: #{$embedBg} ;
+    --chat-background-default: #{$embedBg} ;
+    --background-surface-high: #{$embedBg} ;
+    --background-code: #{$embedBg} ;
+    --background-secondary: #{$embedBg} ;
+    --background-tertiary: #{$embedBg} ;
+    --background-mod-subtle: #{$embedBg} ;
+
+    // hover
+    --background-surface-higher: #{$embedBg-hover} ;
+
+    // removes border
+    --border-subtle: transparent ;
+    --border-normal: transparent ;
+  }
+
+  // code blocks
+  .markup__75297 code {
+    max-width: unset ;
+
+    background: $embedBg-hover
+  }
+
+  // thread link
+  .container__9271d {
+    background: none ;
+  }
+  // Thread line thing
+  &.hasThread_c19a55:after {
+    left: 28px !important ;
+  }
+
+  // spoiler block
+  .spoilerContainer__54ab5 {
+    box-shadow: none !important ;
+    background: $embedBg;
+  }
+
+  // audio file mebed
+  .audioControls_cf09d8 {
+    background: var(--background-secondary-alt);
+  }
+
+  .bd-addon-store-card {
+    transition: none ;
+    transform: none !important ;
+    box-shadow: none !important ;
+    background: $embedBg ;
+
+    .bd-addon-store-card-author {
+      cursor: pointer ;
+    }
+
+    .bd-addon-store-card-author-mask {
+      background: var(--background-secondary-alt) !important ;
+
+      &:hover  {
+        background: var(--background-floating) !important ;
+      }
+    }
+  }
+  // <- Message content
+}
+// <- Messages cozy

@@ -1,0 +1,52 @@
+// App | Title & Header bar
+
+#app-mount {
+
+  --custom-app-top-bar-height: 30px  ;
+
+// -> Title bar
+.bar_c38106 {
+  box-shadow: 0 .5px 0 var(--header-secondary);
+
+  .button__85643 {
+    height: var(--custom-app-top-bar-height);
+    width: var(--custom-app-top-bar-height);
+  }
+
+  .anchor_edefb8, .winButtons_c38106::before { display: none }
+
+  .winButton_c38106 {
+    min-width: 32px ;
+  }
+}
+// <- Title bar
+
+// -> general Header bar
+// outer containers
+:is(.chat_f75fb0, .container__133bf) {
+  border-top: none ;
+}
+
+.container__9293f {
+  padding: 8px 10px ;
+  height: 48px ;
+  min-height: unset ;
+  border: none ;
+
+  // seperator fade thing 
+  .children__9293f::after { display: none }
+}
+// <- general Header bar
+
+// -> Notification bar
+.notice__6e2b9 {
+  background: var(--background-primary);
+  border-radius: 0 ;
+
+  .header_c5cd6a {
+    color: var(--header-secondary);
+  }
+}
+// <- Notification bar
+
+}

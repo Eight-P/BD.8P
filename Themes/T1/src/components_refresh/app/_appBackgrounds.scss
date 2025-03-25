@@ -1,0 +1,43 @@
+// App | Background images
+
+body {
+// -> Main
+:is(
+  #app-mount, /* main */
+  .container__01ae2, /* floating threat/forum */
+  .header_c6bf1b /* role settings header */
+)::before {
+  content: "" ;
+  position: absolute ;
+  inset: 0px ;
+  background: var(--background_app);
+  background-position: center ;
+  background-size: cover ;
+  background-repeat: no-repeat ;
+  background-attachment: fixed ;
+
+  --blur: blur(calc(var(--backgroundBlur_app) / 100 * 1px));
+  --brightness: brightness(calc((var(--backgroundBrightness_app) / 100)));
+
+  filter: var(--blur) var(--brightness);
+}
+// <- Main
+
+// -> Server
+.guilds_c48ade::before {
+  content: "" ;
+    position: absolute ;
+    display: block ;
+    inset: 0px ;
+    background: var(--background_server);
+    background-position: center ;
+    background-size: cover ;
+    background-repeat: no-repeat ;
+
+    --blur: blur(calc((var(--backgroundBlur_server) / 100) * 1px));
+    --brightness: brightness(calc((var(--backgroundBrightness_server) / 100)));
+
+    filter: var(--blur) var(--brightness);
+}
+// <- Server
+}

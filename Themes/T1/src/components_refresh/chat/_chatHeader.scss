@@ -1,0 +1,122 @@
+// Chat | Header bar + Seacrh
+
+// -> Channel & DMs header
+.title_f75fb0 {
+  
+  // -> Left side info
+  .children__9293f {
+
+    // "#" / "@", "AKA" icon, seperator dot
+    :is(.iconWrapper__9293f, .akaBadge__488b1, .dot__9293f) { display: none }
+  }
+
+  // DM group name
+  .channelName__754bd {
+    margin: 0 3px ;
+
+    .input__4f074 {
+      padding: 0 12px ;
+    }
+
+    .container__4f074 { @include searchbar(".input__4f074") }
+  }
+
+  // Channel description
+  .topic__6ec1a {
+    margin: 0 8px ;
+    text-align: center ;
+    
+    // Mentions/Channels, Weblinks
+    :is(.interactive, .anchor_edefb8) { 
+      pointer-events: none ;
+      opacity: .8 ;
+    }
+
+    &:hover {
+      color: var(--interactive-hover);
+      
+      :is(.interactive, .anchor_edefb8) { 
+        opacity: 1 ;
+      }
+    }
+  }
+  // <- Left side info
+
+  // -> Right side btns
+  .toolbar__9293f {
+    max-width: 100% ;
+    justify-content: end ;
+
+    .iconWrapper__9293f {
+      margin: 0 2px ;
+    }
+  }
+  // <- Right side btns
+}
+// <- Channel & DMs header
+
+// -> Searchbar icon & input
+.title_f75fb0 {
+
+  // Searchbar outer
+  .search__49676 {
+    margin: 0 ;
+  }
+
+  // second container
+  .search__97492 {
+
+    // inner
+    .searchBar__97492 {
+      padding: 0 ;
+      height: 28px ;
+      width: 28px ;
+      cursor: pointer;
+      border: none ;
+      border-radius: 0 ;
+    }
+
+    &.open__97492 {
+
+      .searchBar__97492 {
+        min-width: 240px ;
+        width: min-content ;
+        border-bottom: 1px solid var(--header-secondary);
+      }
+      
+      .DraftEditor-root {
+        position: relative ;
+      }
+    }
+
+    .public-DraftEditorPlaceholder-root {
+      display: none ;
+    }
+
+    .DraftEditor-root {
+      position: absolute ;
+      width: 100% ;
+      padding: 0 ;
+    }
+    
+    // Icon container
+    .icon__97492 {
+      height: 28px ;
+      width: 28px ;
+      pointer-events: none ;
+    }
+    // icon inner
+    .icon_fea832 {
+      color: var(--interactive-normal);
+    }
+
+    .clear_fea832 {
+      pointer-events: auto ;
+    }
+
+    &:hover .icon_fea832 {
+      color: var(--interactive-active);
+    }
+  }
+}
+// <- Searchbar icon & input

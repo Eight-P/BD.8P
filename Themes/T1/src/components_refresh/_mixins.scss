@@ -1,0 +1,358 @@
+@use "sass:map";
+@use "sass:string";
+@use "sass:list";
+
+// -- Mixins & Variables (to be reworked later)
+
+// -> Mixins
+// Scrollbar design | @include scrollbar();
+@mixin scrollbar ($width:13px, $borderR: 7px) {
+
+  @if $width == none {
+    &::-webkit-scrollbar { display: none }
+  }
+  @else {
+    &::-webkit-scrollbar { 
+      width: $width ;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      border: 2px solid transparent ;
+      border-radius: $borderR ;
+      background-color: var(--scrollbar-thumb);
+      background-clip: padding-box ;
+      visibility: visible ;
+    }
+  
+    &::-webkit-scrollbar-track { 
+      background-color: transparent ;
+    }
+  
+    &:hover::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb-hover);
+    }
+  }
+}
+
+// Shadow effects | @include shadowEffect("drop_1");
+@mixin shadowEffect ($type:"drop_1") {
+  $Map: (
+    "drop_1": append("filter", "drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75))"),
+    "drop_2": append("filter", "drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))"),
+
+    "box_1": append("box-shadow", "4px 4px 10px rgba(0, 0, 0, 0.75)"),
+    "box_2": append("box-shadow", "1px 1px 3px rgba(0, 0, 0, 0.75)"),
+    "box_3": append("box-shadow", "1px 1px 3px rgba(0, 0, 0, 0.4)"),
+
+    "server_1": append("filter", "drop-shadow( 2px 2px 3px black)"),
+    "server_2": append("filter", "drop-shadow( 1px 1px 2px black)"),
+
+    "text_1": append("text-shadow", "1.5px 1.5px 3px rgba(0, 0, 0, 0.75)"),
+    "text_2": append("text-shadow", "1px 1px 3px rgba(0, 0, 0, 0.5)"),
+
+    "card_1": append("box-shadow", "2px 2px 10px rgba(0, 0, 0, 0.4)")
+  );
+
+  $shadow: map.get($Map, $type);
+
+  #{list.nth($shadow, 1)}: #{list.nth($shadow, 2)};
+}
+
+// Scroller fade out effect | @include scrollerFadeOut();
+@mixin scrollerFadeOut ($top:5px, $bottom:5px) {
+
+  $LG: to bottom, transparent, #000 $top, #000 calc(100% - $bottom), transparent;
+  -webkit-mask-image: linear-gradient($LG);
+}
+
+// Set width and height restrictions | @include restrictions();
+@mixin restrictions ($width:0px, $height:false) {
+  min-width: $width ;
+  max-width: $width ;
+  min-height: if($height, $height, $width);
+  max-height: if($height, $height, $width);
+}
+
+// Searchbar @include searchbar(".inner");
+@mixin searchbar ($inner, $flat:false) {
+  border: none ;
+
+  @if ($flat) {
+    background: none ;
+    border-radius: 0 ;
+
+    #{$inner} {
+      // border: solid var(--header-secondary);
+      // border-width: 0 0 1px 0 ;
+      border-bottom: 1px solid var(--interactive-normal);
+      // border-radius: 0 ;
+      outline: none ;
+      box-shadow: none !important ;
+    }
+  }
+  @else {
+    background: var(--background-modifier-accent);
+
+    // input + icon parent
+    #{$inner} {
+      border: solid transparent ;
+      border-width: 0 0 1px 0 ;
+      background: none ;
+      box-shadow: none !important ;
+      outline: none ;
+    }
+
+    &:focus-within {
+      background: none ;
+      border-radius: 0 ;
+
+      #{$inner} {
+        border-color: var(--header-secondary);
+        border-radius: 0 ;
+        outline: none ;
+      }
+    }
+  }
+}
+
+// Seperator line  @include divider(top);
+@mixin divider ($l...) {
+  $width: 1px ;
+  $style: solid ;
+  $color: var(--background-modifier-accent);
+
+  border-width: 0 ;
+  border-radius: 0 ;
+
+  @if length($l) == 0 {
+    @warn "divider() requires border location" ;
+  }
+  @else if length($l) == 1 {
+    border-#{$l}: $width $style $color ;
+  }
+  @else { 
+    border-color: $color ;
+    border-style: $style ;
+
+    @each $d in $l {
+      border-#{$d}-width: $width ;
+    }
+  }
+}
+// <- Mixins
+
+// -> User settings
+:root {
+  
+  // will be reworked later
+
+  --Main_Background: url("https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg");
+  --background_app: var(--Main_Background);
+
+  --Main_Brightness: 80 ;
+  --backgroundBrightness_app: var(--Main_Brightness);
+
+  --Main_Background_blur: 0 ;
+  --backgroundBlur_app: var(--Main_Background_blur);
+
+  
+  --Server_Background: url("https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg");
+  --background_server: var(--Server_Background);
+
+  --Server_Brightness: 100 ;
+  --backgroundBrightness_server: var(--Server_Brightness);
+
+  --Server_Background_blur: 0 ;
+  --backgroundBlur_server: var(--Server_Background_blur);
+
+  
+  --show-nitro-btn: 0 ;
+  // --chatBtn_nitro: flex ;
+
+  --show-gif-btn: 1 ;
+  // --chatBtn_gif: flex ;
+
+  --show-sticker-btn: 1 ;
+  // --chatBtn_sticker: flex ;
+
+  --show-emoji-btn: 1 ;
+  // --chatBtn_emoji: flex ;
+
+  --show-apps-btn: 1 ;
+  // --chatBtn_Apps: block ;
+  
+
+  --show-userProfile-effects: 1 ;
+  // --userProfileEffects: block ;
+
+  --show-avatarDecorations: 1 ;
+  // --avatarDecorations: block ;
+
+
+  // --show-friends-activity: 0 ;
+  // --friendsActivitySidebar: block ;
+
+  // --hide-empty-friends-activity: 1 ;
+  // --friendsActivitySidebar_empty: block ;
+
+
+  --unmask-links: 0 ;
+  // --unmaskedLinks: inline-flex ;
+
+  --show-serverboost-stats: 1 ;
+  // --serverBoostStatus: flex ;
+
+  --always-show-voicecontrols: 0 ;
+  --voiceControlOverlay: var(--always-show-voicecontrols);
+
+  --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+  --font: var(--Font);
+
+  
+  // Discord vars
+  --font-primary: var(--font) !important ;
+  --font-display: var(--font) !important ;
+
+
+  // new
+
+  // 0 = hide | 1 = show | 2 = hide empty
+  --friendsActivity: 1 ;
+
+  // 0 = hidden | 1 = visible
+  --sidebarScrollbar: 0 ;
+  --membersListScrollbar: 0 ;
+
+  // 0 = old | 1 = new
+  --serverBarFolderStyle: 1 ;
+
+  // Message buttons
+  // 0: Reduced until hovered
+  // 1: Show all (default)
+  --messageBtns: 1 ;
+
+  // Emojis in message buttons
+  // 0: Hidden
+  // 1: Show on hover
+  // 2: Show (default)
+  --emojiMsgBtns: 2 ;
+}
+// <- User settings
+
+
+// -> Theme colors dark mode
+html.theme-dark:root, #app-mount .theme-dark {
+  --header-primary: #fff;
+  --header-secondary: #b9bbbe;
+  
+  --text-normal: #dcddde;
+  --text-muted: #72767d;
+  --text-link: #00b0f4;
+  --text-positive: #4fdc7b;
+  --text-link-low-saturation: hsl(197,100%,52.9%);
+  --text-link-low-saturation: #0fbbff ;
+
+  --interactive-normal: #7c7d7e ; // #b9bbbe 
+  --interactive-hover: #dcddde;
+  --interactive-active: #fff;
+  --interactive-muted: #4f545c;
+  
+  --background-primary: #36393f;
+  --background-secondary: #2f3136;
+  --background-secondary-alt: #292b2f;
+  --background-tertiary: #202225;
+  --background-accent: #4f545c;
+  --background-floating: #18191c;
+  
+  --background-mobile-primary: #36393f;
+  --background-mobile-secondary: #2f3136;
+    
+  --background-modifier-hover: rgba(79,84,92,0.16);
+  --background-modifier-active: rgba(79,84,92,0.24);
+  --background-modifier-selected: rgba(79,84,92,0.32);
+  --background-modifier-accent: hsla(0,0%,100%,0.06);
+  
+  --background-mentioned: rgba(250,166,26,0.1);
+  --background-mentioned-hover: rgba(250,166,26,0.08);
+  --background-message-hover: rgba(4,4,5,0.07);
+  
+  --info-positive-text: #fff;
+  --info-warning-text: #fff;
+  --info-danger-text: #fff;
+  --info-help-background: rgba(0,176,244,0.1);
+  --info-help-foreground: #00b0f4;
+  --info-help-text: #fff;
+  
+  --status-warning-text: #000;
+  
+  --scrollbar-thin-thumb: var(--scrollbar-thumb); // #202225
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: var(--scrollbar-thumb); // #202225
+  --scrollbar-auto-track: transparent; // #2e3338
+  --scrollbar-auto-scrollbar-color-thumb: var(--scrollbar-thumb); // #202225
+  --scrollbar-auto-scrollbar-color-track: transparent; // #2f3136
+  
+  --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
+  --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+  --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
+  --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+  
+  --logo-primary: #fff;
+  
+  --control-brand-foreground: #a5b3e7;
+  --control-brand-foreground-new: #949cf7;
+  
+  --channels-default: #8e9297;
+  --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  --channeltextarea-background: #40444b;
+  --activity-card-background: #202225;
+  --textbox-markdown-syntax: #8e9297;
+  
+  --deprecated-card-bg: rgba(32,34,37,0.6);
+  --deprecated-card-editable-bg: rgba(32,34,37,0.3);
+  --deprecated-store-bg: #36393f;
+  --deprecated-quickswitcher-input-background: #72767d;
+  --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
+  --deprecated-text-input-bg: rgba(0,0,0,0.1);
+  --deprecated-text-input-border: rgba(0,0,0,0.3);
+  --deprecated-text-input-border-hover: #040405;
+  --deprecated-text-input-border-disabled: #202225;
+  --deprecated-text-input-prefix: #dcddde;
+  
+  --text-warning: #faa61a;
+  --text-danger: #ed4245;
+  --info-positive-background: rgba(59,165,92,0.1);
+  --info-positive-foreground: #3ba55c;
+  --info-warning-background: rgba(250,166,26,0.1);
+  --info-warning-foreground: #faa61a;
+  --info-danger-background: rgba(237,66,69,0.1);
+  --info-danger-foreground: #ed4245;
+  --status-positive-background: #3ba55c;
+  --status-positive-text: #fff;
+  --status-warning-background: #faa61a;
+  --status-danger-background: #ed4245;
+  --status-danger-text: #fff;
+  --focus-primary: #00b0f4;
+
+  --shadow-low: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  
+  // T1 - Additions
+
+  --scrollbar-thumb: var(--background-modifier-accent);
+  --scrollbar-thumb-hover: var(--interactive-normal);
+  
+  --red: #f04747;
+  --red-secondary: rgb(210, 80, 80);
+  --border-mentioned: rgba(250, 166, 26, 0.65);
+  --Blurple: rgb(114, 137, 218);
+  --Blurple-light: rgba(114, 137, 218, 0.2);
+  --Blurple-light-hover: rgba(114, 137, 218, 0.4);
+  
+  --BD-Blue: #3e82e5 ;
+  
+  --status-online: #3ba55c ;  /* #43b581 */
+  --status-idle: #faa61a ;
+  --status-DnD: #ed4245 ; /* #f04747 */
+  --status-invisible: #747f8d ;
+}
+// <- Theme colors

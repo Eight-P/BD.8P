@@ -1,0 +1,197 @@
+@use '../mixins' as * ;
+
+// -- Chat
+
+// Forums & Threads
+@import '_chatForums';
+
+// Header bar + Search
+@import '_chatHeader';
+
+// Syntax highlighting
+@import '_chatHljs';
+
+// Text input
+@import '_chatInput';
+
+// Messages
+@import '_chatMessages';
+
+// Voice & Stage channel
+@import '_chatVoice';
+
+
+#app-mount {
+
+// -> Chat container
+.page_c48ade {
+  :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
+    @include scrollerFadeOut();
+  }
+}
+// Page inner container (chat+header)
+.chat_f75fb0 {
+  border-top: none ;
+}
+
+// main chat container
+.chatContent_f75fb0 {
+
+  // "#" Icon at the channels very top
+  .container__00de6 :is(.emptyChannelIcon__00de6, .iconWrapper__54b20) { display: none }
+}
+// <- Chat container
+
+// -> Chat bars
+.chatContent_f75fb0 .barBase__0f481 {
+  // -> general
+  right: 5px ;
+  left: 5px ;
+  min-height: unset ;
+  height: 32px ;
+  width: auto ;
+  padding: 0 ;
+  margin: 0 ;
+  background: var(--background-secondary-alt);
+  border-radius: 5px ;
+  border: none ;
+  cursor: auto ;
+
+  &::before { display: none }
+
+  @include shadowEffect("box_3");
+
+  // Mark As Read
+  &.newMessagesBar__0f481 {
+    top: -4px ;
+  }
+
+  // Viewing older messages
+  &.jumpToPresentBar__0f481 {
+    bottom: 1px ;
+  }
+
+  // -> buttons
+  button {
+    height: 28px ;
+    margin: 0 12px ;
+    padding: 0 ;
+    background: none !important;
+    color: var(--interactive-hover) !important;
+
+    &:hover {
+      color: var(--interactive-active) !important;
+    }
+  }
+
+  //text btn left
+  .barButtonMain__0f481 {
+    flex: 0 1 auto ;
+    margin-right: auto ;
+  }
+  // <- buttons
+  // <- general
+
+  // -> Summaries
+  :is(.barButtonAlt__0f481, .newTopicsBarTopicSection__0f481) {
+    color: var(--interactive-hover);
+    background: none ;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--interactive-active);
+    }
+  }
+
+  .newTopicsBarText__0f481 {
+    color: var(--interactive-hover);
+  }
+
+  .newTopicsBarTopicSection__0f481:hover .newTopicsBarText__0f481 {
+    color: var(--interactive-active);
+  }
+  // <- Summaries
+}
+
+// "This channel is not on your channel list" bar
+.chatHeaderBar_dc83f5 {
+  background: none ;
+  box-shadow: none ;
+
+  // border-top: 1px solid var(--background-modifier-accent);
+
+  .chatHeaderBarText_dc83f5 {
+    font-weight: 600 ;
+  }
+}
+// <- Chat bars
+
+// -> Mentions (Channel, User, Role, Discord cdn File)
+.wrapper_f61d60 {
+  color: var(--Blurple);
+  background: none ;
+
+  // Role, User
+  &.roleMention__75297, &.mention:not(:hover) {
+    background: none !important ;
+  }
+
+  // File link
+  &.attachmentLink .icon_a9c2d1 path {
+    fill: var(--Blurple);
+  }
+  
+  &:hover {
+    background-color: var(--Blurple-light);
+    color: var(--Blurple);
+  }
+
+}
+// <- Mentions
+
+// -> Reactions
+// Reaction item chat, foum post
+:is(.reaction__23977, .reaction_f8896c) {
+  background-color: var(--background-modifier-hover);
+  border: none ;
+  border-radius:4px ;
+
+  &:hover { 
+    background-color: var(--background-modifier-selected);
+  }
+
+  // number 
+  :is(.reactionCount__23977, .reactionCount_f8896c) {
+    font-size: 0.875rem ;
+  }
+
+  // image
+  .emoji {
+    width: 1rem ;
+    height: 1rem ;
+  }
+}
+
+// Active reaction 
+:is(.reaction__23977.reactionMe__23977, .reaction_f8896c.reactionMe_f8896c) {
+  background-color: var(--Blurple-light);
+
+  &:hover { 
+    background-color: var(--Blurple-light-hover);
+  }
+
+  :is(.reactionCount__23977, .reactionCount_f8896c) { 
+    color: var(--Blurple);
+  }
+}
+
+// add reaction btn
+.reactions__23977 .reactionBtn__23977 {
+  border: none ;
+  background: none !important;
+}
+// <- Reactions
+
+
+
+}

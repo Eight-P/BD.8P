@@ -1,0 +1,527 @@
+// User | User popout, Account popout
+
+// -> User Popout
+// effects account panel (not: for profile preview in settings)
+.outer_c0bea0.biteSize_c0bea0:not(.container_ba7f98)  {
+
+  // -> Misc
+  padding: 0 !important;
+  border-radius: 12px ;
+  width: 340px ;
+  overflow: hidden scroll ;
+
+  @include shadowEffect("box_2");
+  
+
+  &::-webkit-scrollbar { display: none }
+
+  // --custom-user-profile-width-bite-size: 340px ;
+
+  --bg_items: var(--background-modifier-hover);
+  --bg_itemsHover: var(--background-modifier-selected);
+  // mixing popout bg + item bg (modifier has .16 alpha)
+  --bg_badges: color-mix(in hsl,
+    hsl(220 calc(var(--saturation-factor, 1) * 8.1%) 7.3% / 1) 84%,
+    hsl(from var(--background-modifier-hover) h s l / 1 ) 16%
+  );
+
+  // with color theme
+  &.custom-profile-theme {
+    --bg_items: hsl(from var(--profile-body-background-hover) h s l / .075 );
+
+    // this sucks
+    // getting the base gradient 
+    --bg_badges_gradient: color-mix(in srgb,
+      rgb(from var(--profile-gradient-primary-color) r g b) 74%,
+      rgb(from var(--profile-gradient-secondary-color) r g b)
+    );
+
+    // mix with overlay at gradient
+    --bg_badges_overlay: color-mix(in srgb,
+      var(--profile-gradient-overlay-color) 74%,
+      var(--bg_badges_gradient)
+    );
+
+    --bg_badges: color-mix(in srgb,
+      rgb(from var(--bg_badges_overlay) r g b / 1 ) 92.5%,
+      rgb(from var(--profile-body-background-hover) r g b / 1 )
+    );
+  }
+
+  .profileEffects__01370 {
+    opacity: .9 ;
+  }
+
+  // most buttons
+  .button__201d5 {
+    border: none ;
+  }
+
+  // <- Misc
+
+  // top row (14) + [Badges:144] + (14) + [ActBtn:(28 + ((1-n)*3)n] + (3) + [NoteBtn:(28 + ((1-n)*3)n] + (14)
+
+  // -> User actions
+  .wrapper_da5890 {
+    position: relative ;
+    inset: unset ;
+    width: max-content ;
+    height: 28px ;
+    margin: 2px 14px 2px auto ;
+    gap: 3px ;
+    order: 2 ;
+    z-index: 2 ; // to be in line with notes btn, when profile effect
+    cursor: pointer;
+
+    // At own profile 
+    &:empty { display: flex }
+
+    // Btns
+    .button__201d5 {
+      background: var(--bg_items) !important;
+      width: 28px ;
+      height: 28px ;
+      padding: 0 ;
+      color: var(--header-primary);
+      border-radius: 50% !important ;
+    }
+  }
+
+  // With Notes btn
+  &:has(.nicknameIcons__63ed3 > div:nth-child(1)) .wrapper_da5890 {
+    margin-right: #{3+28+14}px ;
+  }
+
+  // When there is a second nickname icon e.g.: profile loading error icon
+  &:has(.nicknameIcons__63ed3 > div:nth-child(2)) .wrapper_da5890 {
+    margin-right: #{3+28+3+28+14}px ;
+  }
+  // <- User actions
+
+  // -> Header
+    .header__5be3e {
+      min-height: unset ;
+      position: relative ; 
+      height: 119px ;
+      order: 1 ;
+    }
+
+    // -> Banner (Default aspect: 20:7) (340:119)
+    .mask__68edb {
+      // Mask for cutout / seperator line below banner / Gif indicator
+      mask, .banner__68edb:before, .gifTag__68edb { display: none }
+    }
+    // <- Banner
+
+    // -> Avatar / Status icon
+    $ProfileTop: 4 + 24 + 19 + 8 + 32 + 8 - 4 ;
+    $ProfileLeft: -64 + 2 ;
+
+    // Main container
+    .avatar__75742 {
+      top: 20px ;
+      left: 20px ;
+      z-index: 10 ; // for status icon
+
+      // -> Image / Status icon
+      .svg__44b0c {
+        top: $ProfileTop * 1px ;
+        left: $ProfileLeft * 1px ;
+        contain: none ;
+        overflow: visible ;
+        pointer-events: none ;
+
+        // -> Image
+        foreignObject {
+          position: absolute ;
+          x: $ProfileLeft * -1 ;
+          y: $ProfileTop * -1 ;
+          mask: none ;
+          overflow: visible ;
+          pointer-events: auto ;
+        }
+
+        // hover overlay
+        .avatarStack__44b0c::after {
+          border-radius: 7.5% ;
+          opacity: 0 ;
+        }
+
+        .avatarStack__44b0c:hover::after {
+          opacity: .4 ;
+        }
+        
+        // Picture
+        .avatar__44b0c {
+          border-radius: 7.5% ;
+
+          &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
+        }
+        // <- Image
+
+        // -> Status
+        // Status icon shadow
+        [style^="opacity:"] { display: none }
+
+        // online on mobile icon (regular)
+        .pointerEvents__44b0c[mask="url(#svg-mask-status-online-mobile)"] {
+          height: 18px ;
+          width: 12px ;
+          x: 60 + 2 ;
+          y: 52 + 7 ;
+        }
+        // <- Status
+      }
+      // <- Image / Status icon
+
+      // -> Avatar decorations
+      .avatarDecoration__44b0c {
+
+        // cutout for status icon
+        foreignObject {
+          mask: none ;
+        }
+      }
+      // <- Avatar decorations
+    }
+    // <- Avatar / status icon
+
+    // -> Status text
+    // main container
+    .container_ab8609 {
+      position: absolute ;
+      display: flex ;
+      inset: 20px 20px 20px 120px ;
+      width: unset ;
+      height: unset ;
+      align-items: center ;
+      justify-content: center ;
+      pointer-events: none ; // for hover on gif banner
+
+      // second container
+      .outer_ab8609 {
+        display: contents ;
+
+        &::after, &::before { display: none }
+      }
+    }
+
+    .inner_ab8609 {
+      padding: 6px 8px ;
+      background: rgb(0 0 0 / .65 );
+      border-radius: 8px ;
+      pointer-events: auto ;
+
+      @include shadowEffect("box_2");
+    }
+
+    .statusText_ab8609 {
+      color: var(--redesign-button-overlay-alpha-text);
+    }
+
+    // edit self status btns
+    .popover_c97e55 {
+      top: 50% ;
+      right: 50% ;
+      transform: translate(50%, -50%);
+      padding: 0px 4px ;
+      background: var(--background-floating) ;
+      box-shadow: none ;
+      animation: none !important ;
+      box-sizing: content-box ;
+
+      &.visible_c97e55 {
+        opacity: 1 ;
+      }
+      
+      .button_c97e55 {
+        padding: 8px 6px ;
+      }
+    }
+    // <- Status text
+
+  // <- Header
+
+  // -> Body
+    $Padding_body: 18px ; // 16
+
+    .body__5be3e {
+      padding: 0px $Padding_body !important ;
+      background: none ; // to counter general popout scroller design
+      overflow: visible !important ;
+      z-index: 2 ;
+      order: 3 ;
+      gap: 16px ;
+      flex: 1 0 auto ;
+
+      &::-webkit-scrollbar { display: none }
+    }
+
+    // -> User Main info (Name, pronouns, badges, ...)
+    .container__63ed3 {
+      display: flex ;
+      flex-direction: column ;
+      gap: 8px ;
+    }
+
+      // -> Display / Nickname
+      // When popout has online stauts icon
+      :has(.pointerEvents__44b0c) .usernameRow__63ed3 .clickableUsername__63ed3 {
+        margin-left: 42px - $Padding_body ;
+      }
+
+      .nickname__63ed3 {
+        font-size: 19px ;
+        line-height: 24px ;
+        max-width: 308px - 26px ;
+        // white-space: nowrap ;
+        text-overflow: ellipsis ;
+      }
+      // <- Display / Nickname
+
+      // -> App tag
+      .botTag__82f07 {
+        position: absolute ;
+        top: - 8 - 32 - 8 - 119 * 1px ;
+        left: 170px ;
+        padding: 3px 8px ;
+        transform: translateX(-50%);
+        border-radius: 0 0 4px 4px ;
+        // background: rgb(42, 44, 47) ;
+        background: oklab(0.183076 0.00112209 -0.00388214) ;
+
+        @include shadowEffect("box_3");
+      }
+      // <- App tag
+
+      // -> Notes btn / loading error icon
+      // container
+      .nicknameIcons__63ed3 {
+        position: absolute ;
+        top: -8px - 32px ;
+        right: 14px ;
+        height: 28px ;
+        margin-top: 2px ;
+        padding-top: 0 ;
+        cursor: pointer;
+        gap: 3px ;
+
+        // Btns Note, "Unable to load profile...", user in voice (vencord)
+        :is(.button__201d5, .container__23ba6, .vc-uvs-speaker) {
+          width: 28px ;
+          height: 28px ;
+          padding: 0 ;
+          opacity: 1 ;
+          background: var(--bg_items) !important;
+          color: var(--interactive-hover) !important;
+          align-items: center ;
+          justify-content: center ;
+
+          &:hover {
+            color: var(--interactive-active) !important;
+          }
+        }
+      }
+      // <- Notes btn / loading error icon
+
+      // -> Username / Pronouns
+      .tags__63ed3 {
+        margin-top: 4px ;
+        flex-direction: column ;
+        align-items: flex-start ;
+        row-gap: 6px ;
+
+        .clickableUsername__63ed3 {
+          pointer-events: none ;
+        }
+
+        .userTagUsername__63ed3 {
+          font-size: 15px ;
+        }
+
+        .dotSpacer__63ed3 { display: none }
+
+        .pronounsText_c32acf  {
+          color: var(--text-normal) !important;
+        }
+      }
+      // <- Username / Pronouns
+
+      // -> Badges
+    .container__8061a {
+      // top row (14) + [Badges] + (14) + [ ActBtn: (28 + 4)n + NoteBtn: 28 ] + (14)
+
+      position: absolute ;
+      left: 14px ;
+      margin: 0 ;
+      padding: 0px ;
+      background: none ;
+      border: none ;
+      gap: 0px ;
+      border-radius: 4px ;
+      // border-radius: 0px ;
+      overflow: hidden ;
+
+      // for center
+      // top: -24px ;
+      // transform: translateY(-50%);
+
+      // for bottom
+      top: -13px ;
+      transform: translateY(-100%);
+
+      max-width: 144px ; // 6 badges (12 is max per container)
+
+      // First badges container when there are two
+      &:has(+ .container__8061a) {
+        top: -22px ;
+      }
+
+      // Second badges container for badges n. 13-24
+      + .container__8061a {
+        top: 0px ;
+        // Badges No. 19+
+        max-height: 22px ;
+        overflow: hidden ;
+      }
+
+      // badge img
+      .badge__8061a {
+        padding: 1px 2px ;
+        background: var(--bg_badges);
+      }
+    }
+    // <- Badges
+    
+    // <- User Main info (Name, pronouns, badges, ...)
+
+    // -> Bot action btns
+    .buttons_bc38cd {
+      .button_bc38cd {
+        background: var(--bg_items);
+
+        &:hover {
+          background: var(--bg_itemsHover);
+        }
+      }
+    }
+    // <- Bot action btns
+
+    // -> Activitys
+    .activity__5be3e {
+      padding: 8px 0 ;
+      background: none ;
+
+      // "playing" header
+      .headerText__39ec2 {
+        color: var(--header-secondary) !important ;
+      }
+
+      // Activity container
+      .content__39ec2 {
+        gap: 16px ;
+      }
+
+      // Activity interaction btn
+      .actions__39ec2 button {
+        background: var(--bg_items);
+        transition: none ;
+        color: var(--text-normal) ;
+
+        &:hover {
+          background: var(--bg_itemsHover);
+        }
+      }
+    }
+    // <- Activitys
+
+    // -> Bot commands
+    .list__20827 {
+      .button__201d5 {
+        background: var(--bg_items);
+
+        &:hover {
+          background: var(--bg_itemsHover);
+        }
+      }
+    }
+    // <- Bot commands
+
+    // -> Roles 
+    .role_dfa8b6, // roles
+    .root_fccfdf .button__7d7f7, // add roles btn
+    .expandButton_fccfdf, // view all roles btn
+    .collapseButton_fccfdf // revert "view all"
+    {
+      background: var(--bg_items);
+      border-color: transparent ;
+    }
+    // <- Roles
+  
+  // <- Body
+
+  // -> Footer
+  .footer__5be3e {
+    padding: 0 ;
+    margin-top: 8px ;
+    border-top: 1px solid var(--profile-message-input-border-color);
+    order: 4 ;
+
+    .container_a99829  {
+      border: none ;
+      background: none ;
+    }
+
+    // Edit own profile btn
+    > .button__201d5 {
+      background: none ;
+      height: 100% ;
+      padding: 0 ;
+      color: var(--text-normal);
+
+      &:hover {
+        color: var(--header-primary);
+      }
+    }
+  }
+  // <- Footer
+}
+
+// User popout loading indicator 
+.layer_da8173 .loadingPopout__58f1c { display: none }
+// <- User Popout
+
+// -> Account Popout
+.accountProfilePopoutWrapper__37e49 {
+  left: 0 ;
+
+  .profileEffects__01370 {
+    opacity: 1 ;
+  }
+
+  $ProfileTop: 20 + 19 + 8 + 36 + 4;
+
+  .avatar__75742 .svg__44b0c {
+    top: $ProfileTop * 1px !important ;
+
+    foreignObject {
+      y: $ProfileTop * -1 !important ;
+    }
+  }
+
+  .body_af7fb7 {
+    order: 2 ;
+    margin-top: 36px ;
+    padding: 0 18px 12px !important ;
+    overflow: visible !important ;
+  }
+
+  .menuOverlay_af7fb7 {
+    background: var(--bg_items);
+  }
+
+  .menuItemColor_af7fb7 {
+    background: none ;
+  }
+}
+// <- Account Popout

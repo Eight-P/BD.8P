@@ -1,0 +1,26 @@
+@use '../mixins' as * ;
+
+// -- User
+
+// Popout
+@import '_userPopout';
+
+// Dm's sidebar
+@import '_userSidebar';
+
+
+
+#app-mount {
+
+  // Profile picture decorations
+  @container style(--show-avatarDecorations: 0) {
+    :is(.avatarDecoration__44b0c, .avatarDecoration_c19a55) { display: none }
+  }
+
+  // Profile Animations effects
+  @container style(--show-userProfile-effects: 0) {
+    .profileEffects__01370 { display: none }
+  }
+
+}
+
