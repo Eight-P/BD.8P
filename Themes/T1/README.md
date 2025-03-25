@@ -15,6 +15,9 @@
   
 </div>
 
+> [!WARNING]
+> Discord is rolling out their Visual Refresh update, breaking T1. [updated version & Infos ](https://github.com/Eight-P/BD.8P/issues/38)
+
 <br/>
 
 ![][image1]
