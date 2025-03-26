@@ -45,8 +45,10 @@
 
 .cozy_c19a55 {
   // -> general msg
+  $spacing: 13px ;
+
   background: none !important ;
-  padding: 3px 30px 3px 60px !important ;
+  padding: 3px 30px 3px ($spacing * 2 + 40px) !important ;
   border-radius: 0 !important ;
 
   // Highlight border-left (Mention, Clyde, ..)
@@ -54,12 +56,12 @@
 
   // profile picture
   .avatar_c19a55 {
-    left: 10px ;
+    left: $spacing ;
   }
 
   // profile decorations
   .avatarDecoration_c19a55 {
-    left: 6px ;
+    left: $spacing - 4px ;
   }
 
   .header_c19a55 {
@@ -98,21 +100,23 @@
   // -> btn hover and appear behaviour
   // hide emojis until hover
   @container style(--emojiMsgBtns: 1 ) {
-    :is(.button_f7ecac:not(:last-child):has(.emoji), .separator_f84418) { display: none }
+    :is(.button_f7ecac:not(:last-child):has(.emoji), .separator_f84418) { 
+      display: none ;
+    }
   }
 
   // always hide emojis
   @container style(--emojiMsgBtns: 0 ) {
-    :is(
-      .button_f7ecac:not(:last-child):has(.emoji),
-      .separator_f84418) { 
-        display: none !important 
-      }
+    :is(.button_f7ecac:not(:last-child):has(.emoji), .separator_f84418) { 
+      display: none !important ;
+    }
   }
 
   // reduce all btns until hover
   @container style(--messageBtns: 0 ) {
-    :is(.button_f7ecac:not(:last-child), .separator_f84418) { display: none }
+    :is(.button_f7ecac:not(:last-child), .separator_f84418) { 
+      display: none ;
+    }
 
     .button_f7ecac:not(:hover) {
       color: var(--interactive-hover);
@@ -122,8 +126,7 @@
   // hover on btns
   &:has(.buttons__5126c:hover),
   // extended msg btns on hovered msg
-  &:hover:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) 
-  {
+  &:hover:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) {
     background: rgba(255, 255, 255, 0.05) !important ;
 
     .buttons__5126c::before {
@@ -141,14 +144,22 @@
   &:is(:not(.groupStart__5126c), .isSystemMessage_c19a55) {
 
     :is(.button_f7ecac:not(:last-child), .separator_f84418) { display: none }
+
+    .button_f7ecac:not(:hover) {
+      color: var(--interactive-hover);
+    }
   }
   // <- btn hover and appear behaviour
 
   // -> Button container
+  .buttonContainer_c19a55 {
+    z-index: 9 ; // to not interfere with the hover btns on images and similar 
+  }
+
   .buttons__5126c {
     // opacity: 1 ; // debug
 
-    top: -2px ;
+    top: -1px ;
     padding: 0 ;
 
     &:before {
@@ -170,22 +181,28 @@
     }
 
     // inner container
-    .wrapper_f7ecac {
-      padding: 0 2px ;
+    .buttonsInner__5126c  {
+      padding: 2px 0 ;
+      gap: 4px ;
       border: none ;
       border-radius: 0 ;
       background: none ;
       box-shadow: none !important ;
     }
 
-    // btn container
+    // btn item
     .hoverBarButton_f84418 {
       background: none ;
+      padding: 0  ;
     }
 
     // Inner button icon
     .icon_f84418 {
       transform: scale(1) ;
+    }
+
+    .separator_f84418 {
+      margin: 0 ;
     }
 
     // quick reaction emoji
@@ -194,7 +211,7 @@
       height: 18px ;
     }
   }
-  // <- 
+  // <- Button container
 
   // <- Message Buttons
 

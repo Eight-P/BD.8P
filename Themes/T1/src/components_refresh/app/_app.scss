@@ -25,7 +25,7 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
 @scope (.app_a3002d) to (.guilds_c48ade) {
   .numberBadge__2b1f5 {
     background-color: transparent !important ;
-    border-radius: 0 ;
+    border-radius: 0 !important ;
     color: var(--text-normal);
     box-shadow: none ;
 
@@ -48,15 +48,13 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
   border-radius: 0 ;
 }
 
-// General searchbar
-// .container_a45028 { @include searchbar(".inner_a45028") }
-
 // -> Buttons (not ideal)
 :is(
   .button__201d5,
   .button__9db96,
   .actionIcon_c69b6,
-  .button__71c22
+  .button__71c22,
+  .button__06eda
 ) {
   background: none ;
   border: none ;
@@ -182,15 +180,21 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
   background-color: var(--background-secondary);
 }
 
-// border from .theme-midnight (chat, home, titlebar)
-:is(.content_f75fb0, .tabBody__133bf, .subtitleContainer_f75fb0) {
+// border from .theme-midnight
+:is(
+  .content_f75fb0, // chat
+  .tabBody__133bf, // home
+  .subtitleContainer_f75fb0 // titlebar
+) {
   border-left: none ;
 }
 
 .app_a3002d {
 
   // General searchbar
-  .container_a45028 { @include searchbar(".inner_a45028") }
+  .container_a45028 { 
+    @include searchbar(".inner_a45028");
+  }
 
   // -> Scrollbars
   :is(

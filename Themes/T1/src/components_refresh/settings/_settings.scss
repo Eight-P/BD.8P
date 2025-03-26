@@ -2,6 +2,8 @@
 
 // -- Settings
 
+$T1_v: null !default ;
+
 .layer__960e4:not(.baseLayer__960e4) {
 
   margin-top: var(--custom-app-top-bar-height);
@@ -13,6 +15,18 @@
 
     .sidebar__23e6b {
       padding-top: 20px ;
+    }
+
+    // Theme version info
+    .info__2debe:before {
+      content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
+      display: block !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      color: rgb(114, 118, 125) !important;
+      white-space: break-spaces !important;
+      margin-bottom: 8px !important;
+      text-transform: none !important;
     }
   }
   // <- Left side

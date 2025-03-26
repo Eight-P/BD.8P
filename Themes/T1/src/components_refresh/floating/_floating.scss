@@ -7,6 +7,8 @@ $BG_Body: var(--background-tertiary);
 $BG_BodyAlt: var(--background-modifier-hover);
 $BG_Floating: var(--background-floating);
 
+$C_Header: var(--interactive-normal);
+
 // Popouts & Tooltips & Context menus
 @import '_popouts';
 
