@@ -8,7 +8,7 @@
   "private": false,
   "scripts": {
     "build": "sass src/T1.main.scss:imports/T1.main.css --style=compressed --no-source-map",
-    "buildCSS": "sass src/T1_refresh.main.scss:dist/T1.css --style=compressed --no-source-map",
+    "buildCSS": "sass src/T1.main.scss:dist/T1.css --style=compressed --no-source-map",
     "watch": "node ../scripts/compileDevTheme.js",
     "replaceClasses": "node ../scripts/replaceClasses.js"
   }

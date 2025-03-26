@@ -5,7 +5,7 @@
 name: gh-pages
 on:
   workflow_run:
-    workflows: ["build-CSS", "build-T1"]
+    workflows: ["build-Old", "build-T1"]
     types:
       - completed
     branches:
