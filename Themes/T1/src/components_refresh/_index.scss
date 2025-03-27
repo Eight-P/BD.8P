@@ -6,6 +6,9 @@
 // - Forums & Threads, Header bar, Text input, Messages, Voice & Stage channel
 @forward 'chat/_chat';
 
+// Plugin compatibility
+@forward 'compatibility/_compatibility';
+
 // - Popouts, Modals, Tooltips, Context menus
 @forward 'floating/_floating';
 

@@ -1,0 +1,36 @@
+// -> ServerListIndicator
+.guilds_c48ade div:has(> #vc-friendcount, > #vc-guildcount) {
+  display: flex ;
+  height: 54px ;
+  padding: 0 !important ; // counter against T1 sb 
+  width: max-content ;
+  margin: 15px -7px !important ; // idk
+  flex-direction: column ;
+  justify-content: center ;
+  align-items: center ;
+  gap: 5px ;
+  transform: rotate(90deg);
+}
+
+#vc-friendcount, #vc-guildcount {
+  width: max-content !important ;
+  white-space: nowrap ;
+
+  @include shadowEffect("text_1");
+}
+// <- ServerListIndicator
+
+// -> ReadAllNotificationsButton
+.guilds_c48ade .vc-ranb-button {
+  padding: 28px 0 ; // super scuffed
+  transform: rotate(90deg);
+  background: none !important ;
+  
+  .contents__201d5 {
+    overflow: visible ;
+    width: min-content ;
+    
+    @include shadowEffect("text_1");
+  }
+}
+// <- ReadAllNotificationsButton

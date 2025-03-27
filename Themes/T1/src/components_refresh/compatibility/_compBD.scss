@@ -1,0 +1,104 @@
+// - ReadAllNotificationsButton by DevilBro (v1.8.0)
+// - SpotifyControls by DevilBro (v1.4.6)
+// - ServerDetails by DevilBro (v1.2.5)
+// - ServerFolders by DevilBro (v7.3.3)
+
+// -> ReadAllNotificationsButton by DevilBro
+// "Read all" btn
+.guilds_c48ade .frame_oXWS21 {
+  
+  .innerFrame_8Hg64E {
+    
+    transform: rotate(90deg);
+
+    .childWrapper__6e9f8 {
+      background: none ;
+      color: var(--text-normal);
+      font-weight: 500;
+      font-size: 13px ;
+      font-style: normal ;
+      transition: none ;
+
+      @include shadowEffect("server_1");
+
+      &:hover {
+        color: var(--header-primary);
+      }
+    }
+  }
+}
+// <- ReadAllNotificationsButton by DevilBro
+
+// -> SpotifyControls by DevilBro
+// Sidebar control panel
+#app-mount .panels_c48ade .container_6sXIoE {
+  display: contents ;
+
+  &.maximized_vv2Wr0 .coverWrapper_YAplwJ {
+    width: 100% ;
+  }
+  
+  .timeline_UWmgAx {
+    margin: 6px ;
+  }
+}
+// <- SpotifyControls by DevilBro
+
+// -> ServerDetails by DevilBro
+// make tooltip top center
+.detailsTooltip_G9hSSa {
+  transform: translate(-195px, -50px);
+}
+// <- ServerDetails by DevilBro
+
+// -> ServerFolders by DevilBro
+.sidebar_c48ade:has(.guilds_c48ade) {
+  flex-direction: column !important;
+  width: var(--custom-guild-sidebar-width) !important;
+}
+
+// idk maybe .content_c48ade + ">" helps with performance
+#app-mount .content_c48ade:has(> .sidebar_c48ade > .content_Pph8t6:not(.closed_j55_T-)) {
+  margin-bottom: 54px ;
+}
+
+// regular list
+.guilds_c48ade.hasSideBar_sda9Fa {
+  .folder__48112 {
+    background: none ;
+  }
+}
+
+// second column
+#app-mount .guilds_c48ade.content_Pph8t6 {
+  bottom: 54px ;
+  transition: none !important ;
+
+  .scroller_ef3116 {
+    display: flex ;
+    height: 100vw ;
+    margin: 0 ;
+    padding: 0 ;
+
+    &::before, &::after { display: none }
+  }
+
+  // folders container
+  .stack_dbd263 {
+    justify-content: space-around ;
+  }
+
+  // folder icon
+  .folder__48112 {
+    transform: rotate(90deg);
+    background: none ;
+
+    @include shadowEffect("server_1");
+  }
+}
+
+// second column closed
+#app-mount .guilds_c48ade.closed_j55_T- {
+  height: 0px ;
+}
+// <- ServerFolders by DevilBro
