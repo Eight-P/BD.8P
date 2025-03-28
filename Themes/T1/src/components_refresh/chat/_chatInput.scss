@@ -10,6 +10,9 @@
 
 
 .form_f75fb0  {
+  --space-8: 4px ; // btn spacing (discord var)
+  --channel-text-area-placeholder: var(--text-muted);
+
   margin-top: 0 !important ;
   padding: 0 5px 0 0 !important ;
 
@@ -17,6 +20,7 @@
 
   .channelTextArea__74017 {
     border: none ;
+    margin: 0 ;
   }
 
   .scrollableContainer__74017 {
@@ -31,6 +35,68 @@
     display: none ;
   }
 
+  // -> Typing/slow mode indicator
+  // Typing indicator
+  .typing_b88801 {
+    background: transparent ;
+    position: absolute ;
+    top: -14px ;
+    left: -2px ;
+    height: 15px ;
+    padding: 0 5px ;
+    overflow: visible ;
+    pointer-events: none ;
+    line-height: 15px ;
+  }
+
+  // Slowmode icon
+  .cooldownWrapper_b21699 {
+    position: absolute ;
+    right: -17px ;
+    bottom: -13px ;
+    height: 16px ;
+    width: 16px ;
+    pointer-events: auto ;
+
+    .cooldownText_b21699 {
+      visibility: hidden ;
+    }
+
+    .slowModeIcon_b21699 {
+      position: absolute ;
+      margin: 0 ;
+      visibility: visible ;
+
+      path { 
+        fill: var(--interactive-normal);
+      }
+    }
+  }
+  // <- Typing/slow mode indicator
+
+  // -> Chat input replacmnet
+  .wrapper__44df5 {
+    margin: 0 ;
+    border: none ;
+    height: min-content ;
+    padding: 6px 4px 6px 12px ;
+
+    .content__44df5 {
+      display: contents ;
+    }
+
+    :is(.image__44df5, .animation__44df5 ) { display: none }
+
+    .title__44df5 {
+      color: var(--header-secondary);
+      font-weight: 500 ;
+    }
+
+    .buttonContainer__44df5 {
+      margin: 0 ;
+    }
+  }
+  // <- 
 
   // -> Buttons
 

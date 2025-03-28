@@ -91,7 +91,7 @@
 
   // selected for reply bg highlight
   &.replying__5126c { 
-    background: rgba(255, 255, 255, 0.05) !important ;
+    background: $BG_MsgHighlight !important ;
   }
   // <- Msg types
 
@@ -127,7 +127,7 @@
   &:has(.buttons__5126c:hover),
   // extended msg btns on hovered msg
   &:hover:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) {
-    background: rgba(255, 255, 255, 0.05) !important ;
+    background: $BG_MsgHighlight !important ;
 
     .buttons__5126c::before {
       background-blend-mode: overlay ;
@@ -168,7 +168,7 @@
       height: 100% ;
       width: 100% ;
       inset: 0px ;
-      background: var(--background_app) rgba(255, 255, 255, 0.05);
+      background: var(--background_app) $BG_MsgHighlight;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;

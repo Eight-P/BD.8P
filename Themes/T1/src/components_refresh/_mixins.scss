@@ -245,6 +245,10 @@ html.theme-dark:root, #app-mount .theme-dark {
   --text-link-low-saturation: hsl(197,100%,52.9%);
   --text-link-low-saturation: #0fbbff ;
 
+  --text-primary: var(--header-primary);
+  --text-secondary: var(--header-secondary);
+  --text-tertiary: var(--header-secondary);
+
   --interactive-normal: #7c7d7e ; // #b9bbbe 
   --interactive-hover: #dcddde;
   --interactive-active: #fff;

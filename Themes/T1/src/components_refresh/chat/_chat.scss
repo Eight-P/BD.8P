@@ -2,6 +2,8 @@
 
 // -- Chat
 
+$BG_MsgHighlight: rgba(255, 255, 255, 0.05);
+
 // Forums & Threads
 @import '_chatForums';
 
@@ -36,6 +38,10 @@
 
 // main chat container
 .chatContent_f75fb0 {
+
+  &:has(.typing_b88801 .dots__5ad89) .messagesWrapper__36d07 {
+    margin-bottom: 14px ;
+  }
 
   // "#" Icon at the channels very top
   .container__00de6 :is(.emptyChannelIcon__00de6, .iconWrapper__54b20) { display: none }
@@ -192,6 +198,93 @@
 }
 // <- Reactions
 
+// -> Searchbar results popout
+.searchResultsWrap_a9e706 {
+  border: none ;
+  width: 50% ;
+  resize: horizontal ;
+  direction: rtl;
 
+  @include shadowEffect("box_1");
+  
+  // -> Header
+  .searchHeader_f3b986 {
+    direction: ltr ;
+
+    // n of search results
+    .text-md\/medium_cf4812 {
+      color: var(--text-normal) !important ;
+    }
+
+    // Nav bar Tab item
+    .item_b3f026 {
+      background: none !important ;
+
+      &:hover {
+        color: var(--interactive-hover);
+      }
+
+      &.selected_b3f026 {
+        color: var(--interactive-active);
+      }
+    }
+  }
+  // <- Header
+  
+  // -> Body
+  // Content scroller
+  .scroller_a9e706 {
+    padding: 6px 0 0 0 !important ;
+    direction: ltr ;
+    
+    .searchResultGroup_c68065 {
+      margin-bottom: 14px ;
+      padding-bottom: 10px ;
+
+      @include divider(bottom);
+    }
+
+    // message item
+    .searchResult__02a39 {
+      border: none ;
+      border-radius: 0 ;
+
+      &:hover {
+        background: $BG_MsgHighlight ;
+      }
+    }
+  
+    // channel name container
+    .channelNameContainer_c68065 {
+      margin-left: 10px ;
+    }
+
+    // channel name & icon
+    :is(.channelNameText_c68065, .channelNameIcon_c68065) {
+      padding-right: 6px ;
+      color: var(--text-normal);
+    }
+
+    .button__02a39 {
+      @include shadowEffect("box_3");
+    }
+  }
+
+  // Switch page btns
+  .pageButton_c15210 {
+    background: none ;
+    color: var(--interactive-normal);
+
+    &:hover {
+      color: var(--interactive-hover);
+    }
+
+    &.activeButton_c15210 {
+      color: var(--interactive-active);
+    }
+  }
+  // <- Body
+}
+// <- Searchbar results popout
 
 }

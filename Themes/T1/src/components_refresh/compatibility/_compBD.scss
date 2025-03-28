@@ -2,13 +2,13 @@
 // - SpotifyControls by DevilBro (v1.4.6)
 // - ServerDetails by DevilBro (v1.2.5)
 // - ServerFolders by DevilBro (v7.3.3)
+// - InvisibleTyping by Strencher (v1.3.7)
 
 // -> ReadAllNotificationsButton by DevilBro
 // "Read all" btn
 .guilds_c48ade .frame_oXWS21 {
   
   .innerFrame_8Hg64E {
-    
     transform: rotate(90deg);
 
     .childWrapper__6e9f8 {
@@ -102,3 +102,10 @@
   height: 0px ;
 }
 // <- ServerFolders by DevilBro
+
+// -> InvisibleTyping by Strencher
+.invisibleTypingButton {
+  margin-right: var(--space-8);
+  transform: scale(.9);
+}
+// <- InvisibleTyping by Strencher

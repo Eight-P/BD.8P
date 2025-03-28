@@ -198,6 +198,7 @@ margin: 0 ;
   .childWrapper__6e9f8 {
     transition: none ;
     background: none ;
+    color: var(--header-secondary) !important;
 
     svg {
       height: 26px ;
@@ -217,6 +218,10 @@ margin: 0 ;
     &:hover img {
       border-radius: 25% ;
     }
+  }
+
+  .wrapper__6e9f8:hover .childWrapper__6e9f8 {
+    color: var(--interactive-active);
   }
 
   path {
