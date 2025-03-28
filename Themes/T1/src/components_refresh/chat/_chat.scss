@@ -38,10 +38,20 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 
 // main chat container
 .chatContent_f75fb0 {
+  
+  // -> for typing indicator
+  .scrollerContent__36d07 {
+    margin-bottom: 14px ; // to prevent jumping 
+  }
 
   &:has(.typing_b88801 .dots__5ad89) .messagesWrapper__36d07 {
     margin-bottom: 14px ;
+
+    .scrollerContent__36d07 {
+      margin: 0 ;
+    }
   }
+  // <- for typing indicator
 
   // "#" Icon at the channels very top
   .container__00de6 :is(.emptyChannelIcon__00de6, .iconWrapper__54b20) { display: none }
