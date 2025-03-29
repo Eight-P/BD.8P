@@ -1,4 +1,4 @@
-@use '../mixins' as * ;
+@use '../mixins/_mixins' as * ;
 
 // -- Serverbar
 
@@ -8,7 +8,7 @@ $innerSpace: $SB_Spacing * .5 ;
 $DM_Spacing: $SB_Spacing * .8 ;
 
 // App adjustments
-@import '_gbAdds' ;
+@import 'gbAdds' ;
 
 
 @mixin itemSeperator() {

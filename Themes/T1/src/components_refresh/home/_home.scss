@@ -1,9 +1,9 @@
-@use '../mixins' as * ;
+@use '../mixins/_mixins' as * ;
 
 // -- Home
 
 // Friends - header, list, activity sidebar
-@import '_homeFriends';
+@import 'homeFriends' ;
 
 
 #app-mount {

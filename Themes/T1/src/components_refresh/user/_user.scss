@@ -1,12 +1,12 @@
-@use '../mixins' as * ;
+@use '../mixins/_mixins' as * ;
 
 // -- User
 
 // Popout
-@import '_userPopout';
+@import 'userPopout' ;
 
 // Dm's sidebar
-@import '_userSidebar';
+@import 'userSidebar' ;
 
 
 

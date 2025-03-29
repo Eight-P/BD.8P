@@ -1,26 +1,26 @@
-@use '../mixins' as * ;
+@use '../mixins/_mixins' as * ;
 
 // -- Chat
 
 $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 
 // Forums & Threads
-@import '_chatForums';
+@import 'chatForums' ;
 
 // Header bar + Search
-@import '_chatHeader';
+@import 'chatHeader' ;
 
 // Syntax highlighting
-@import '_chatHljs';
+@import 'chatHljs' ;
 
 // Text input
-@import '_chatInput';
+@import 'chatInput' ;
 
 // Messages
-@import '_chatMessages';
+@import 'chatMessages' ;
 
 // Voice & Stage channel
-@import '_chatVoice';
+@import 'chatVoice' ;
 
 
 #app-mount {
@@ -49,6 +49,9 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 
     .scrollerContent__36d07 {
       margin: 0 ;
+    }
+    .jumpToPresentBar__0f481  {
+      bottom: 1px !important ;
     }
   }
   // <- for typing indicator
@@ -84,7 +87,7 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 
   // Viewing older messages
   &.jumpToPresentBar__0f481 {
-    bottom: 1px ;
+    bottom: 14px ; // to prevent jumping, when typing indicator
   }
 
   // -> buttons

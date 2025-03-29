@@ -1,4 +1,4 @@
-@use '../mixins' as * ;
+@use '../mixins/_mixins' as * ;
 
 // -- Floating
 
@@ -10,9 +10,9 @@ $BG_Floating: var(--background-floating);
 $C_Header: var(--interactive-normal);
 
 // Popouts & Tooltips & Context menus
-@import '_popouts';
+@import 'popouts' ;
 
-// @import '_modals';
+// @import 'modals' ;
 
 .layerContainer_da8173 {
 

@@ -114,13 +114,14 @@
     }
 
     // -> action btns
-    .button_e131a9 {
-      background: none !important ;
-      color: var(--interactive-normal) !important;
+    // btns container
+    .actionButtons_e131a9 {
+      gap: 0 ;
+    }
 
-      &:hover {
-        color: var(--interactive-hover) !important;
-      }
+    // btn class for just the action btns
+    .button_e131a9 {
+      padding: 0 ;
     }
 
     .buttonIcon_e131a9 {

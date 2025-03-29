@@ -100,21 +100,27 @@
   // -> btn hover and appear behaviour
   // hide emojis until hover
   @container style(--emojiMsgBtns: 1 ) {
-    :is(.button_f7ecac:not(:last-child):has(.emoji), .separator_f84418) { 
+    :is(.button_f7ecac:not(:last-child):has(.emoji),
+    .separator_f84418
+    ) { 
       display: none ;
     }
   }
 
   // always hide emojis
   @container style(--emojiMsgBtns: 0 ) {
-    :is(.button_f7ecac:not(:last-child):has(.emoji), .separator_f84418) { 
+    :is(.button_f7ecac:not(:last-child):has(.emoji),
+    .separator_f84418
+    ) { 
       display: none !important ;
     }
   }
 
   // reduce all btns until hover
   @container style(--messageBtns: 0 ) {
-    :is(.button_f7ecac:not(:last-child), .separator_f84418) { 
+    :is(.button_f7ecac:not(:last-child),
+    .separator_f84418
+    ) { 
       display: none ;
     }
 
@@ -133,20 +139,24 @@
       background-blend-mode: overlay ;
     }
 
-    :is(.button_f7ecac:not(:last-child), .separator_f84418) { display: flex }
-
-    .button_f7ecac:not(:hover) {
-      color: var(--interactive-normal) !important ;
-    }
+    :is(
+      .button_f7ecac:not(:last-child),
+      .separator_f84418
+      ) { display: flex }
   }
 
   // hide btns on: concatenating Msg, System msg
   &:is(:not(.groupStart__5126c), .isSystemMessage_c19a55) {
 
-    :is(.button_f7ecac:not(:last-child), .separator_f84418) { display: none }
+    // Hide all btns, but last
+    :is(
+      .button_f7ecac:has(~ .button_f7ecac),
+      .separator_f84418
+      ) { display: none }
 
-    .button_f7ecac:not(:hover) {
-      color: var(--interactive-hover);
+    // better visibility for last icon when alone
+    .buttonContainer_c19a55:not(:hover) .button_f7ecac {
+      color: $BtnIconHover !important;
     }
   }
   // <- btn hover and appear behaviour

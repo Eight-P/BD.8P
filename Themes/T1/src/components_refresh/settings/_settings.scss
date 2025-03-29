@@ -1,19 +1,24 @@
-@use '../mixins' as * ;
+@use '../mixins/_mixins' as * ;
 
 // -- Settings
 
 $T1_v: null !default ;
 
 .layer__960e4:not(.baseLayer__960e4) {
-
   margin-top: var(--custom-app-top-bar-height);
 
   .container_fea832 { @include searchbar(".inner_fea832") }
 
   // -> Left side sidebar
+  .sidebarRegionScroller__23e6b {
+    @include scrollbar(none);
+  }
+
   .sidebarRegion__23e6b {
+    flex: 1 0 240px ;
 
     .sidebar__23e6b {
+      width: 240px ;
       padding-top: 20px ;
     }
 
@@ -32,8 +37,43 @@ $T1_v: null !default ;
   // <- Left side
 
   // -> main content
-  .contentRegionScroller__23e6b {
-    margin-top: 0px ;
+  .contentTransitionWrap__23e6b {
+    flex: unset ;
+    position: relative;
   }
+
+  .contentRegionScroller__23e6b {
+    margin-top: 60px ;
+  }
+
+  .contentColumnDefault__23e6b {
+    padding: 10px 10px 80px 20px ;
+  }
+
+  // -> Close btn
+  .toolsContainer__23e6b {
+    display: contents;
+
+    .tools__23e6b {
+      position: absolute ;
+      top: 20px ;
+      right: 20px ;
+    }
+
+    .container_c2b141 {
+      flex-direction: row-reverse ;
+    }
+
+    .closeButton_c2b141 {
+      width: 32px ;
+      height: 32px ;
+      flex: unset ;
+    }
+
+    .keybind_c2b141 {
+      margin: 0 6px ;
+     }
+  }
+  // <- Close btn
   // <- main content
 }

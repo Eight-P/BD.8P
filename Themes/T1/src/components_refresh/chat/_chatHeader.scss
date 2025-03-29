@@ -107,7 +107,7 @@
     }
     // icon inner
     .icon_fea832 {
-      color: var(--interactive-normal);
+      color: $BtnIconNormal ;
     }
 
     .clear_fea832 {
@@ -115,7 +115,7 @@
     }
 
     &:hover .icon_fea832 {
-      color: var(--interactive-active);
+      color: $BtnIconHover ;
     }
   }
 }

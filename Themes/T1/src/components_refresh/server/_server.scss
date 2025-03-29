@@ -1,15 +1,15 @@
-@use '../mixins' as * ;
+@use '../mixins/_mixins' as * ;
 
 // -- Guild/Server view
 
 // Text & Voice Channels sidebar
-@import '_serverChannels';
+@import 'serverChannels' ;
 
 // Members list
-@import '_serverMembers.scss';
+@import 'serverMembers.scss' ;
 
 // Server home, Channels&Roles, Member safety, Server shop
-@import '_serverSpecials.scss';
+@import 'serverSpecials.scss' ;
 
 
 // Server boost screen

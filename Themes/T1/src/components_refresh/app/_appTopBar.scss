@@ -38,15 +38,39 @@
 }
 // <- general Header bar
 
-// -> Notification bar
-.notice__6e2b9 {
+// -> Discord, bd notification bar
+.notice__6e2b9, .bd-notice {
   background: var(--background-primary);
   border-radius: 0 ;
 
   .header_c5cd6a {
     color: var(--header-secondary);
   }
-}
-// <- Notification bar
 
+  .button__6e2b9, .bd-notice-button {
+    border: none ;
+    color: #{$BtnTextNormal} !important;
+    background: $BtnBackgroundNormal ;
+  
+    &:hover {
+      color: #{$BtnTextHover} !important;
+      background: $BtnBackgroundHover ;
+      border-radius: 3px ;
+    }
+  }
+}
+// <- Discord notification bar
+
+// -> Title bar & header bar icons
+.clickable__9293f  {
+
+  .icon__9293f {
+    color: $BtnIconNormal ;
+  }
+  
+  &:hover .icon__9293f {
+    color: $BtnIconHover ;
+  }
+}
+// <- Title bar & header bar icons
 }

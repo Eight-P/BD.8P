@@ -1,21 +1,21 @@
-@use '../mixins' as * ;
+@use '../mixins/_mixins' as * ;
 
 // -- App
 
 // Background images
-@import '_appBackgrounds';
+@import 'appBackgrounds' ;
 
 // Discovery
-@import '_appDiscovery';
+@import 'appDiscovery' ;
 
 // Sidebar
-@import '_appSidebar';
+@import 'appSidebar' ;
 
 // Title & Header bar
-@import '_appTopBar';
+@import 'appTopBar' ;
 
 // Transparency
-@import '_appTransparency';
+@import 'appTransparency' ;
 
 
 // text rendering thing
@@ -48,131 +48,100 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
   border-radius: 0 ;
 }
 
-// -> Buttons (not ideal)
+// -> Icon btns
+// "When in doubt, ..."
+path[fill="currentColor"] {
+  fill: currentColor !important ;
+}
+
+// lotties normal ( hover usually via btn container)
+.lottieIcon__5eb9b  {
+  --__lottieIconColor: #{$BtnIconNormal} !important ;
+}
+// not ideal
 :is(
-  .button__201d5,
-  .button__9db96,
-  .actionIcon_c69b6,
-  .button__71c22,
-  .button__06eda
+  .button__201d5, .button__9db96, .button__71c22,
+  .button__06eda, .button_f7ecac, .button__24af7
 ) {
   background: none ;
   border: none ;
+  color: $BtnIconNormal ;
 
-  color: var(--interactive-normal);
-  --__lottieIconColor: var(--interactive-normal);
-
-  &.enabled__67645 {
-    background: none !important ;
-  }
-
+  // who dis ?
   &.red_f1ceac path {
-    color: var(--red);
+    color: $BtnIconDanger ;
   }
 
-  .lottieIcon__5eb9b  {
-    --__lottieIconColor: var(--interactive-normal) !important ;
-  }
-
-  // -> mostly voice view
-  .controlIcon_f1ceac {
-    color: var(--interactive-normal);
-  }
-
+  // Voice channel view, disconnect btn
   &.disconnect_f1ceac .controlIcon_f1ceac {
-    color: var(--red) !important ;
+    color: #{$BtnIconDanger} !important ;
   }
-  // <- mostly voice view
 
   &:hover {
-    color: var(--interactive-hover);
-    --__lottieIconColor: var(--interactive-hover);
+    color: $BtnIconHover ;
 
-    :is(.closeIcon__45690, .controlIcon_f1ceac) {
-      color: var(--interactive-hover);
-    }
-
-    .lottieIcon__5eb9b  {
-      --__lottieIconColor: var(--interactive-hover) !important ;
+    .lottieIcon__5eb9b {
+      --__lottieIconColor: #{$BtnIconHover} !important ;
     }
   }
-}
 
-.clickable__9293f {
-
-  .icon__9293f {
-    color: var(--interactive-normal);
-  }
-
-  &:hover .icon__9293f {
-    color: var(--interactive-hover);
-  }
-
-  &.selected__9293f .icon__9293f {
-    // color: var(--interactive-hover);
+  :is(
+    .closeIcon__45690,
+    .controlIcon_f1ceac,
+    .addButtonIcon__29444
+  ) {
+    color: currentColor ;
   }
 }
+// who dis ?
+.closeIcon_e2d7b8 {
+  // path { fill: red }
+  // &:hover path { fill: red }
+}
 
-// Suggested channels in sidebar
-.dismissButton__29444 {
-  color: var(--interactive-normal);
-
+// basic
+:is(
+  .searchClearHistory__56fec, // search popout clear
+  .searchLearnMore__56fec, // search popout help link btn
+  .closeIcon__972a0, // remove dms
+  .embedSuppressButton__623de, // remove embed from msg
+  .closeIcon__6e2b9 // close discord notice bar
+) {
+  color: $BtnIconNormal ;
+  
   &:hover {
-    color: var(--interactive-hover);
+    color: $BtnIconHover ;
   }
 }
+// <- Icon btns
 
-// most btns with text & bg
-.button__201d5 {
+
+// -> Text btns (not voice panel btns)
+.button__201d5:not(.button_e131a9) {
 
   &.lookFilled__201d5 {
-    color: var(--interactive-hover);
-    background: var(--background-modifier-hover);
+    color: $BtnTextNormal ;
+    background: $BtnBackgroundNormal ;
 
     &:hover {
-      color: var(--interactive-active);
-      background: var(--background-modifier-selected);
+      color: $BtnTextHover ;
+      background: $BtnBackgroundHover ;
       border-radius: 3px ;
     }
   }
 
   &.colorRed__201d5  {
-    color: var(--red);
+    color: $BtnTextDanger ;
 
     &:hover {
-      color: var(--status-warning-text);
-      background: var(--red);
+      color: $BtnTextDangerHover ;
+      background: $BtnBackgroundDanger ;
       border-radius: 3px ;
     }
   }
   // &.lookOutlined__201d5  &.lookLink__201d5
 }
-
-// -> Notification bar (maybe more)
-.button__6e2b9 {
-  border: none ;
-  color: var(--interactive-hover) !important;
-  background: var(--background-modifier-hover);
-
-  &:hover {
-    color: var(--interactive-active) !important;
-    background: var(--background-modifier-selected);
-    border-radius: 3px ;
-  }
-}
-// <- Notification bar
-
-:is(.closeIcon_e2d7b8, .closeIcon__6e2b9) {
-
-  path {
-    fill: var(--interactive-normal);
-  }
-
-  &:hover path {
-    fill: var(--interactive-hover);
-  }
-}
-// <- Btns
+// <- Text btns
 
 // "Bot"/"server" Tag Indicator
 .botTag__82f07 {
@@ -205,6 +174,6 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
   ) { 
     @include scrollbar();
   }
+  // <- Scrollbars
 }
-// <- Scrollbars
 }
