@@ -36,22 +36,19 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
   border-top: none ;
 }
 
-// main chat container
 .chatContent_f75fb0 {
   
   // -> for typing indicator
-  .scrollerContent__36d07 {
-    margin-bottom: 14px ; // to prevent jumping 
-  }
-
-  &:has(.typing_b88801 .dots__5ad89) .messagesWrapper__36d07 {
+  // &:has(.dots__5ad89) .messagesWrapper__36d07 {
+  .messagesWrapper__36d07:has( ~ .form_f75fb0 .dots__5ad89) {
     margin-bottom: 14px ;
 
     .scrollerContent__36d07 {
-      margin: 0 ;
+      margin-bottom: -14px ;
     }
+    
     .jumpToPresentBar__0f481  {
-      bottom: 1px !important ;
+      bottom: 0px !important ;
     }
   }
   // <- for typing indicator

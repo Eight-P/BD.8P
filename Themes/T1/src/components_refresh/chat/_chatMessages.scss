@@ -92,6 +92,10 @@
   // selected for reply bg highlight
   &.replying__5126c { 
     background: $BG_MsgHighlight !important ;
+
+    .buttons__5126c::before {
+      background-blend-mode: overlay ;
+    }
   }
   // <- Msg types
 
@@ -169,7 +173,7 @@
   .buttons__5126c {
     // opacity: 1 ; // debug
 
-    top: -1px ;
+    top: 0 ;
     padding: 0 ;
 
     &:before {
