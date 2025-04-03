@@ -40,20 +40,24 @@
   .typing_b88801 {
     background: transparent ;
     position: absolute ;
-    top: -14px ;
-    left: -2px ;
+    top: -16px ;
+    left: 0px ;
     height: 15px ;
     padding: 0 5px ;
     overflow: visible ;
     pointer-events: none ;
     line-height: 15px ;
+
+    .text_b88801 {
+      z-index: 9 ;
+    }
   }
 
   // Slowmode icon
   .cooldownWrapper_b21699 {
     position: absolute ;
-    right: -17px ;
-    bottom: -13px ;
+    right: -16px ;
+    bottom: -16px ;
     height: 16px ;
     width: 16px ;
     pointer-events: auto ;

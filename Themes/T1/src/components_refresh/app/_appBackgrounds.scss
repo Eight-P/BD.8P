@@ -3,9 +3,10 @@
 body {
 // -> Main
 :is(
-  #app-mount, /* main */
-  .container__01ae2, /* floating threat/forum */
-  .header_c6bf1b /* role settings header */
+  #app-mount, // main
+  .container__01ae2, // floating threat/forum
+  .header_c6bf1b, // role settings header
+  .typing_b88801:has(.dots__5ad89) // chat input typing indicator bar
 )::before {
   content: "" ;
   position: absolute ;
