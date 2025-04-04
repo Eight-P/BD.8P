@@ -6,7 +6,7 @@
 
 <br/>
 
-<img align="right" src="https://betterdiscord.app/Image/1249" alt="Preview" height="190px">
+<img align="right" src="https://eight-p.github.io/BD.8P/Themes/T1/dist/T1-Thumbnail.png" alt="Preview" height="190px">
 
 <div align="center">
 
