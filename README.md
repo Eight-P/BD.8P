@@ -10,8 +10,6 @@
 
 <div align="center">
 
-  <br/>
-
   ### [T1-Theme](Themes/T1/)
 
   Simple design with focus on improvements and a horizontal server bar.
