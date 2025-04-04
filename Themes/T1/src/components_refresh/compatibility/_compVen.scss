@@ -1,10 +1,10 @@
 // -> ServerListIndicator
 .guilds_c48ade div:has(> #vc-friendcount, > #vc-guildcount) {
   display: flex ;
-  height: 54px ;
+  width: 54px !important ;
   padding: 0 !important ; // counter against T1 sb 
   width: max-content ;
-  margin: 15px -7px !important ; // idk
+  margin: 10px 0 25px 0px !important ;
   flex-direction: column ;
   justify-content: center ;
   align-items: center ;

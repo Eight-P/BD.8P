@@ -3,9 +3,18 @@
 // -- Serverbar
 
 $SB_height: 54px ;
-$SB_Spacing: 20px ; //should be 4 or more
-$innerSpace: $SB_Spacing * .5 ;
-$DM_Spacing: $SB_Spacing * .8 ;
+$sbIS_B: 40px ;
+
+:root {
+  --sbInnerSpace: calc(var(--serverbarSpacing) * .5 );
+  --sbDMSpace: calc(var(--serverbarSpacing) * .8 );
+  --sbIS: calc(var(--serverbarIconSize) / 100 );
+
+  --guildbar-avatar-size: #{$sbIS_B} !important;
+}
+
+$sbS: var(--serverbarSpacing) ;
+$sbISs: var(--sbIS);
 
 // App adjustments
 @import 'gbAdds' ;
@@ -142,8 +151,8 @@ margin: 0 ;
     }
 
     .avatar__44b0c {
-      width: 40px ;
-      height: 40px ;
+      // width: 40px ;
+      // height: 40px ;
     }
 
     // Text
@@ -162,7 +171,7 @@ margin: 0 ;
 
     // .wrapper__44b0c .svg__44b0c {
     .svg__44b0c {
-      left: -4px ;
+      // left: -4px ; // why did i do that ?
     }
     // <- Group DM item
   }
@@ -171,6 +180,25 @@ margin: 0 ;
 // this way instead of wrapper bc of icon when drag
 :is(.blobContainer_e5445c, .listItemWrapper__91816) {
   transform: rotate(90deg) !important ; // "important" for serverdetails plugin idk
+  scale: var(--sbIS);
+  margin: calc( (40px - ( 40px * $sbISs ) ) / 2 * -1) 0 ;
+  height: 40px ;
+  width: 40px ;
+}
+
+// some wierd shit
+.wobble_e5445c {
+  transform-origin: center ;
+}
+
+// placeholder for drag&drop
+.placeholderMask__87847 {
+  scale: var(--sbIS);
+}
+
+.wrapper_d144f8 {
+  top: calc( $sbS * -1 );
+  bottom: 0 ;
 }
 // <- general item
 
@@ -184,6 +212,13 @@ margin: 0 ;
   margin: 14px 0 7px 0 ;
 
   .pill__1f388 { display: none }
+
+  .listItemWrapper__91816 {
+    scale: 1 !important ;
+    margin: 0 !important ;
+    height: unset !important ;
+    width: unset !important ;
+  }
 
   .svg_cc5dd2 {
     pointer-events: none ;
@@ -233,6 +268,13 @@ margin: 0 ;
 @mixin secondaryIcons() {
   height: 20px ;
 
+  .listItemWrapper__91816 {
+    scale: 1 !important ;
+    margin: 0 !important ;
+    height: unset !important ;
+    width: unset !important ;
+  }
+
   .wrapper_cc5dd2 {
     width: 20px ;
     height: 20px ;
@@ -260,6 +302,9 @@ margin: 0 ;
     height: 100% ;
     width: 100% ;
   }
+
+  // Drag&Drop target
+  .wrapper_d144f8 { display: none }
 }
 
 // GuildsAdd
@@ -284,9 +329,9 @@ margin: 0 ;
   grid-area: Servers ;
   overflow: hidden scroll ;
   max-height: -webkit-fill-available ;
-  padding: $SB_Spacing 0 !important ;
+  padding: var(--serverbarSpacing) 0 !important ;
   box-sizing: border-box ;
-  gap: $SB_Spacing !important ;
+  gap: var(--serverbarSpacing) !important ;
 
   &::-webkit-scrollbar { display: none }
 
@@ -294,10 +339,15 @@ margin: 0 ;
   .wrapper__48112 {
     width: $SB_height ;
 
+    > .listItem__650eb {
+      // margin: calc( (40px - ( 40px * $sbISs ) ) / 2 * -1) 0 ;
+    }
+
     .expandedFolderBackground__48112 {
       $folderheight: $SB_height - 20 ;
-      width: $folderheight ;
-      left: ($SB-height - $folderheight) * .5;
+
+      width: calc($folderheight * var(--sbIS)) ;
+      left: calc(($SB-height - ($folderheight * var(--sbIS))) / 2 );
       top: 2px ;
       bottom: 2px ;
       border: none ;
@@ -312,6 +362,8 @@ margin: 0 ;
     .folderIcon__48112 {
       margin: 0 ;
       transform: rotate(90deg);
+      scale: var(--sbIS);
+      margin: calc( (40px - ( 40px * $sbISs ) ) / 2 * -1) 0 ;
 
       .wrapper_cc5dd2 {
         height: 40px !important;
@@ -349,13 +401,13 @@ margin: 0 ;
     // servers list in folder
     ul {
       height: auto !important;
-      gap: $SB_Spacing !important ;
-      padding: $innerSpace 0 $innerSpace 0 !important;
+      gap: var(--serverbarSpacing) !important ;
+      padding: var(--sbInnerSpace) 0 var(--sbInnerSpace) 0 !important;
 
       @container style(--serverBarFolderStyle: 0) {
         &::after {
           @include itemSeperator();
-          bottom: ((($SB_Spacing + $innerSpace) * .5) - $innerSpace + 1) * -1 ;
+          bottom: calc((((var(--serverbarSpacing) + var(--sbInnerSpace)) / 2) - var(--sbInnerSpace) + 1px) * -1 );
         }
       }
     }
@@ -366,14 +418,15 @@ margin: 0 ;
 
 // -> Favorites / Dms / Server preview
 .tutorialContainer__1f388 ~ div:not(.stack_dbd263, .stack_dbd263 ~ div) {
-  padding-bottom: $DM_Spacing;
+  padding-bottom: var(--sbDMSpace);
+  height: auto !important ;
 
   .pill_ed9a5f { display: none }
 }
 
 // only first
 .tutorialContainer__1f388 + div:not(.stack_dbd263) {
-  padding-top: $DM_Spacing !important ;
+  padding-top: var(--sbDMSpace) !important ;
 
   &::before {
     @include itemSeperator();
@@ -383,26 +436,17 @@ margin: 0 ;
 
 // Favorites
 .listItem__650eb:has(.favoriteIcon_c9fddf) {
+  pointer-events: none ;
 
   .pill_c9fddf { display: none }
 
   .wrapper_cc5dd2 {
     transform: rotate(90deg);
-    width: 20px ;
-    height: 20px ;
-  }
-
-  .svg_cc5dd2 {
-    top: -14px ;
-    left: -14px ;
-    pointer-events: none ;
-  }
-
-  .wrapper__6e9f8 {
+    scale: var(--sbIS);
+    margin: calc((40px - ( 40px * $sbISs ) ) / 2 * -1) 0 ;
+    height: 40px ;
+    width: 40px ;
     pointer-events: auto ;
-    width: 20px ;
-    height: 20px ;
-    margin: 10px ;
   }
 
   .childWrapper__6e9f8 {
