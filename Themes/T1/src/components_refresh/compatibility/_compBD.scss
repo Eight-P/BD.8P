@@ -1,9 +1,10 @@
 // - ReadAllNotificationsButton by DevilBro (v1.8.0)
 // - SpotifyControls by DevilBro (v1.4.6)
 // - ServerDetails by DevilBro (v1.2.5)
-// - ServerFolders by DevilBro (v7.3.3)
+// - ServerFolders by DevilBro (v7.3.4)
 // - InvisibleTyping by Strencher (v1.3.7)
 
+#app-mount {
 // -> ReadAllNotificationsButton by DevilBro
 // "Read all" btn
 .guilds_c48ade .frame_oXWS21 {
@@ -14,7 +15,7 @@
     .childWrapper__6e9f8 {
       background: none ;
       color: var(--text-normal);
-      font-weight: 500;
+      font-weight: 500 ;
       font-size: 13px ;
       font-style: normal ;
       transition: none ;
@@ -31,7 +32,7 @@
 
 // -> SpotifyControls by DevilBro
 // Sidebar control panel
-#app-mount .panels_c48ade .container_6sXIoE {
+.panels_c48ade .container_6sXIoE {
   display: contents ;
 
   &.maximized_vv2Wr0 .coverWrapper_YAplwJ {
@@ -52,13 +53,13 @@
 // <- ServerDetails by DevilBro
 
 // -> ServerFolders by DevilBro
-.sidebar_c48ade:has(.guilds_c48ade) {
-  flex-direction: column !important;
+.sidebar_c48ade:has(> .guilds_c48ade) {
+  flex-direction: column !important ;
   width: var(--custom-guild-sidebar-width) !important;
 }
 
-// idk maybe .content_c48ade + ">" helps with performance
-#app-mount .content_c48ade:has(> .sidebar_c48ade > .content_Pph8t6:not(.closed_j55_T-)) {
+// idk maybe ">" helps with performance
+.content_c48ade:has(> .sidebar_c48ade > .content_Pph8t6:not(.closed_j55_T-)) {
   margin-bottom: 54px ;
 }
 
@@ -70,7 +71,7 @@
 }
 
 // second column
-#app-mount .guilds_c48ade.content_Pph8t6 {
+.guilds_c48ade.content_Pph8t6 {
   bottom: 54px ;
   transition: none !important ;
 
@@ -98,7 +99,7 @@
 }
 
 // second column closed
-#app-mount .guilds_c48ade.closed_j55_T- {
+.guilds_c48ade.closed_j55_T- {
   height: 0px ;
 }
 // <- ServerFolders by DevilBro
@@ -109,3 +110,4 @@
   transform: scale(.9);
 }
 // <- InvisibleTyping by Strencher
+}

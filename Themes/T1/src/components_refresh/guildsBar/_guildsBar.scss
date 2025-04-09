@@ -2,19 +2,22 @@
 
 // -- Serverbar
 
-$SB_height: 54px ;
-$sbIS_B: 40px ;
+$sb_height: 54px ;
+$iconBaseSize: 40px ;
 
 :root {
-  --sbInnerSpace: calc(var(--serverbarSpacing) * .5 );
-  --sbDMSpace: calc(var(--serverbarSpacing) * .8 );
-  --sbIS: calc(var(--serverbarIconSize) / 100 );
+  --sbInnerSpacing: calc(var(--serverbarSpacing) * .5 );
+  --sbDmSpacing: calc(var(--serverbarSpacing) * .8 );
+  --sbIconScale: calc(var(--serverbarIconSize) * 0.01 );
 
-  --guildbar-avatar-size: #{$sbIS_B} !important;
+  --guildbar-avatar-size: #{$iconBaseSize} !important ; // discord var
 }
 
-$sbS: var(--serverbarSpacing) ;
-$sbISs: var(--sbIS);
+$spacing: var(--serverbarSpacing);
+$innerSpacing: var(--sbInnerSpacing);
+$dmSpacing: var(--sbDmSpacing);
+$iconScale: var(--sbIconScale);
+
 
 // App adjustments
 @import 'gbAdds' ;
@@ -23,7 +26,7 @@ $sbISs: var(--sbIS);
 @mixin itemSeperator() {
   content: "" ;
   position: absolute ;
-  width: $SB_height - 22 ;
+  width: $sb_height - 22 ;
   height: 2px ;
   margin: 0 11px ;
   background-color: var(--interactive-normal);
@@ -38,15 +41,15 @@ left: 0 ;
 bottom: 0 ;
 right: 0 ;
 
-height: $SB_height ;
+height: $sb_height ;
 width: 100vw ;
 margin: 0 ;
 
 .tree_ef3116 {
   height: 100vw ;
   min-height: 100vw ;
-  width: $SB_height ;
-  transform: rotate(-90deg) translateX(-#{$SB_height});
+  width: $sb_height ;
+  transform: rotate(-90deg) translateX(-#{$sb_height});
   transform-origin: top left ;
   outline: none ;
 }
@@ -59,13 +62,13 @@ margin: 0 ;
 .scroller_ef3116 {
   display: grid ;
   height: 100% ;
-  width: $SB_height ;
+  width: $sb_height ;
   margin: 0 0 120px 0 ;
   padding: 0 !important ;
   gap: 0 !important ;
   overflow: hidden !important ;
 
-  grid-template-columns: $SB_height ;
+  grid-template-columns: $sb_height ;
   grid-template-rows: min-content min-content min-content auto ;
   grid-template-areas: 
     "Home"
@@ -91,23 +94,20 @@ margin: 0 ;
 
 // -> general item
 .listItem__650eb {
-  width: $SB_height ;
-
-  // Server icon placeholder
-  .dragInner__87847 {
-    background: rgba(0, 0, 0, 0.5);
-  }
+  width: $sb_height ;
 
   // Pill
   .item__58105 {
     visibility: hidden ;
-    height: 8px !important ;
+    // height: 8px !important ;
+    height: calc($iconBaseSize * $iconScale * 0.20 ) !important ;
     margin-left: -5px ;
     
     // Server selected
     &[style="opacity: 1; height: 40px; transform: none;"] {
       visibility: visible ;
-      height: 35px !important ;
+      // height: 35px !important ;
+      height: calc($iconBaseSize * $iconScale * 0.87 ) !important ;
       border-radius: 0 8px 8px 0 ;
     }
     
@@ -175,30 +175,37 @@ margin: 0 ;
     }
     // <- Group DM item
   }
+
+  // -> Drag&Drop
+  // Server icon placeholder
+  .dragInner__87847 {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  // some wierd shit
+  .wobble_e5445c {
+    transform-origin: center ;
+  }
+
+  // placeholder for drag&drop
+  .placeholderMask__87847 {
+    scale: $iconScale;
+  }
+
+  .wrapper_d144f8 {
+    top: calc( $spacing * -1 );
+    bottom: 0 ;
+  }
+  // <- Drag&Drop
 }
 
 // this way instead of wrapper bc of icon when drag
 :is(.blobContainer_e5445c, .listItemWrapper__91816) {
   transform: rotate(90deg) !important ; // "important" for serverdetails plugin idk
-  scale: var(--sbIS);
-  margin: calc( (40px - ( 40px * $sbISs ) ) / 2 * -1) 0 ;
-  height: 40px ;
-  width: 40px ;
-}
-
-// some wierd shit
-.wobble_e5445c {
-  transform-origin: center ;
-}
-
-// placeholder for drag&drop
-.placeholderMask__87847 {
-  scale: var(--sbIS);
-}
-
-.wrapper_d144f8 {
-  top: calc( $sbS * -1 );
-  bottom: 0 ;
+  scale: $iconScale;
+  margin: calc( ($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
+  height: $iconBaseSize ;
+  width: $iconBaseSize ;
 }
 // <- general item
 
@@ -329,25 +336,21 @@ margin: 0 ;
   grid-area: Servers ;
   overflow: hidden scroll ;
   max-height: -webkit-fill-available ;
-  padding: var(--serverbarSpacing) 0 !important ;
+  padding: $spacing 0 !important ;
   box-sizing: border-box ;
-  gap: var(--serverbarSpacing) !important ;
+  gap: $spacing !important ;
 
   &::-webkit-scrollbar { display: none }
 
   // -> Server folder
   .wrapper__48112 {
-    width: $SB_height ;
-
-    > .listItem__650eb {
-      // margin: calc( (40px - ( 40px * $sbISs ) ) / 2 * -1) 0 ;
-    }
+    width: $sb_height ;
 
     .expandedFolderBackground__48112 {
-      $folderheight: $SB_height - 20 ;
+      $folderheight: $sb_height - 20 ;
 
-      width: calc($folderheight * var(--sbIS)) ;
-      left: calc(($SB-height - ($folderheight * var(--sbIS))) / 2 );
+      width: calc($folderheight * $iconScale) ;
+      left: calc(($sb_height - ($folderheight * $iconScale)) / 2 );
       top: 2px ;
       bottom: 2px ;
       border: none ;
@@ -362,18 +365,18 @@ margin: 0 ;
     .folderIcon__48112 {
       margin: 0 ;
       transform: rotate(90deg);
-      scale: var(--sbIS);
-      margin: calc( (40px - ( 40px * $sbISs ) ) / 2 * -1) 0 ;
+      scale: $iconScale;
+      margin: calc( ($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
 
       .wrapper_cc5dd2 {
-        height: 40px !important;
-        width: 40px !important;
+        height: $iconBaseSize !important;
+        width: $iconBaseSize !important;
       }
 
       // icon container for open & closed
       .folderIconWrapper__48112 {
-        height: 40px ;
-        width: 40px ;
+        height: $iconBaseSize ;
+        width: $iconBaseSize ;
         transition: .2s ;
 
         &:hover {
@@ -401,13 +404,13 @@ margin: 0 ;
     // servers list in folder
     ul {
       height: auto !important;
-      gap: var(--serverbarSpacing) !important ;
-      padding: var(--sbInnerSpace) 0 var(--sbInnerSpace) 0 !important;
+      gap: $spacing !important ;
+      padding: $innerSpacing 0 $innerSpacing 0 !important;
 
       @container style(--serverBarFolderStyle: 0) {
         &::after {
           @include itemSeperator();
-          bottom: calc((((var(--serverbarSpacing) + var(--sbInnerSpace)) / 2) - var(--sbInnerSpace) + 1px) * -1 );
+          bottom: calc(((($spacing + $innerSpacing) / 2) - $innerSpacing + 1px) * -1 );
         }
       }
     }
@@ -418,7 +421,7 @@ margin: 0 ;
 
 // -> Favorites / Dms / Server preview
 .tutorialContainer__1f388 ~ div:not(.stack_dbd263, .stack_dbd263 ~ div) {
-  padding-bottom: var(--sbDMSpace);
+  padding-bottom: $dmSpacing;
   height: auto !important ;
 
   .pill_ed9a5f { display: none }
@@ -426,7 +429,7 @@ margin: 0 ;
 
 // only first
 .tutorialContainer__1f388 + div:not(.stack_dbd263) {
-  padding-top: var(--sbDMSpace) !important ;
+  padding-top: $dmSpacing !important ;
 
   &::before {
     @include itemSeperator();
@@ -442,10 +445,10 @@ margin: 0 ;
 
   .wrapper_cc5dd2 {
     transform: rotate(90deg);
-    scale: var(--sbIS);
-    margin: calc((40px - ( 40px * $sbISs ) ) / 2 * -1) 0 ;
-    height: 40px ;
-    width: 40px ;
+    scale: $iconScale;
+    margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
+    height: $iconBaseSize ;
+    width: $iconBaseSize ;
     pointer-events: auto ;
   }
 

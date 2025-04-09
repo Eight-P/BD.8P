@@ -2,9 +2,8 @@
 @use "sass:string";
 @use "sass:list";
 
-@import 'variables' ;
+@import 'userVars' ;
 @import 'colors' ;
-// @forward 'variables' ;
 
 // -- Mixins & Variables (to be reworked later)
 
@@ -144,94 +143,3 @@
   }
 }
 // <- Mixins
-
-// -> User settings
-:root {
-  
-  // will be reworked later
-
-  --Main_Background: url("https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg");
-  --background_app: var(--Main_Background);
-
-  --Main_Brightness: 80 ;
-  --backgroundBrightness_app: var(--Main_Brightness);
-
-  --Main_Background_blur: 0 ;
-  --backgroundBlur_app: var(--Main_Background_blur);
-
-  
-  --Server_Background: url("https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg");
-  --background_server: var(--Server_Background);
-
-  --Server_Brightness: 100 ;
-  --backgroundBrightness_server: var(--Server_Brightness);
-
-  --Server_Background_blur: 0 ;
-  --backgroundBlur_server: var(--Server_Background_blur);
-
-  
-  --show-nitro-btn: 0 ;
-  // --chatBtn_nitro: flex ;
-
-  --show-gif-btn: 1 ;
-  // --chatBtn_gif: flex ;
-
-  --show-sticker-btn: 1 ;
-  // --chatBtn_sticker: flex ;
-
-  --show-emoji-btn: 1 ;
-  // --chatBtn_emoji: flex ;
-
-  --show-apps-btn: 1 ;
-  // --chatBtn_Apps: block ;
-  
-
-  --show-userProfile-effects: 1 ;
-  // --userProfileEffects: block ;
-
-  --show-avatarDecorations: 1 ;
-  // --avatarDecorations: block ;
-
-
-  --unmask-links: 0 ;
-  // --unmaskedLinks: inline-flex ;
-
-  --show-serverboost-stats: 1 ;
-  // --serverBoostStatus: flex ;
-
-  --always-show-voicecontrols: 0 ;
-  --voiceControlOverlay: var(--always-show-voicecontrols);
-
-  --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
-  --font: var(--Font);
-
-  
-  // Discord vars
-  --font-primary: var(--font) !important ;
-  --font-display: var(--font) !important ;
-
-
-  // new
-
-  // 0 = hide | 1 = show | 2 = hide empty
-  --friendsActivity: 1 ;
-
-  // 0 = hidden | 1 = visible
-  --sidebarScrollbar: 0 ;
-  --membersListScrollbar: 0 ;
-
-  // 0 = old | 1 = new
-  --serverBarFolderStyle: 1 ;
-
-  // Message buttons
-  // 0: Reduced until hovered
-  // 1: Show all (default)
-  --messageBtns: 1 ;
-
-  // Emojis in message buttons
-  // 0: Hidden
-  // 1: Show on hover
-  // 2: Show (default)
-  --emojiMsgBtns: 2 ;
-}
-// <- User settings

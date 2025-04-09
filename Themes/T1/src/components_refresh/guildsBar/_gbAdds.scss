@@ -6,7 +6,7 @@
 // -> App container
 .base_c48ade {
   display: flex ;
-  margin-bottom: $SB_height ;
+  margin-bottom: $sb_height ;
 
   // sidebar + page container
   .content_c48ade {
@@ -65,7 +65,7 @@
   bottom: 0 ;
   right: 0 ;
   width: 120px ;
-  height: $SB_height ;
+  height: $sb_height ;
   display: block !important;
 
   &:hover, &.selected_f37cb1 { background-color: rgba(0, 0, 0, 0.2) !important }
