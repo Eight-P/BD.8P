@@ -104,33 +104,41 @@
   // -> btn hover and appear behaviour
   // hide emojis until hover
   @container style(--emojiMsgBtns: 1 ) {
-    :is(.button_f7ecac:not(:last-child):has(.emoji),
-    .separator_f84418
-    ) { 
-      display: none ;
-    }
+    :is(
+      .button_f7ecac:has(.emoji),
+      .separator_f84418
+    ) { display: none }
   }
 
   // always hide emojis
   @container style(--emojiMsgBtns: 0 ) {
-    :is(.button_f7ecac:not(:last-child):has(.emoji),
-    .separator_f84418
-    ) { 
-      display: none !important ;
+    :is(
+      .button_f7ecac:has(.emoji),
+      .separator_f84418
+    ) {  display: none !important }
+  }
+
+  // reduce btns to menu icon
+  @mixin reducedBtns() {
+    // Hide all btns & separators, but last
+    :is(
+      .button_f7ecac:has(~ .button_f7ecac), 
+      .separator_f84418
+    ) {  display: none  }
+
+    .buttons__5126c:not(:hover) .button_f7ecac {
+      color: $BtnIconHover !important; // !important bc of general btn design
     }
   }
 
-  // reduce all btns until hover
-  @container style(--messageBtns: 0 ) {
-    :is(.button_f7ecac:not(:last-child),
-    .separator_f84418
-    ) { 
-      display: none ;
-    }
 
-    .button_f7ecac:not(:hover) {
-      color: var(--interactive-hover);
-    }
+  @container style(--messageBtns: 0 ) {
+    @include reducedBtns();
+  }
+
+  // hide btns on: concatenating Msg, System msg
+  &:is(:not(.groupStart__5126c), .isSystemMessage_c19a55) {
+    @include reducedBtns();
   }
 
   // hover on btns
@@ -143,27 +151,12 @@
       background-blend-mode: overlay ;
     }
 
-    :is(
-      .button_f7ecac:not(:last-child),
-      .separator_f84418
-      ) { display: flex }
-  }
-
-  // hide btns on: concatenating Msg, System msg
-  &:is(:not(.groupStart__5126c), .isSystemMessage_c19a55) {
-
-    // Hide all btns, but last
-    :is(
-      .button_f7ecac:has(~ .button_f7ecac),
-      .separator_f84418
-      ) { display: none }
-
-    // better visibility for last icon when alone
-    .buttonContainer_c19a55:not(:hover) .button_f7ecac {
-      color: $BtnIconHover !important;
+    :is(.button_f7ecac, .separator_f84418) { 
+      display: flex ;
     }
   }
   // <- btn hover and appear behaviour
+
 
   // -> Button container
   .buttonContainer_c19a55 {
@@ -196,7 +189,8 @@
 
     // inner container
     .buttonsInner__5126c  {
-      padding: 2px 0 ;
+      margin-top: 2px ;
+      padding: 0 ;
       gap: 4px ;
       border: none ;
       border-radius: 0 ;
@@ -212,7 +206,7 @@
 
     // Inner button icon
     .icon_f84418 {
-      transform: scale(1) ;
+      transform: scale(1);
     }
 
     .separator_f84418 {

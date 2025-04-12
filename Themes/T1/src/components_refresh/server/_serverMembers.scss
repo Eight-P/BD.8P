@@ -36,7 +36,7 @@
 
   // -> Member item
   .member__5d473 {
-
+    max-width: unset ;
     margin: 1px 0 2px 11px ;
     
     // second container 
@@ -51,6 +51,10 @@
         background-color: var(--background-modifier-hover);
       }
     }
+
+    .container__4bbc6 {
+      margin-left: 3px ;
+    }
     
     // User popout open
     &.selected__91a9d .childContainer__91a9d {
@@ -61,7 +65,7 @@
     &.offline__5d473:not(:hover) .avatar__91a9d {
       filter: grayscale(100%);
     }
-    
+
     // mostly for Nitro icon 
     .nameAndDecorators__91a9d { 
       pointer-events: none ;

@@ -19,21 +19,20 @@
 
   --bg_items: var(--background-modifier-hover);
   --bg_itemsHover: var(--background-modifier-selected);
-  // mixing popout bg + item bg (modifier has .16 alpha)
-  --bg_badges: color-mix(in hsl,
-    hsl(220 calc(var(--saturation-factor, 1) * 8.1%) 7.3% / 1) 84%,
-    hsl(from var(--background-modifier-hover) h s l / 1 ) 16%
+  // mixing popout bg + item bg (modifier has .16 alpha) for overlap with bg
+  --bg_badges: color-mix(in srgb,
+    rgb(from var(--background-floating) r g b ) 84%,
+    rgb(from var(--background-modifier-hover) r g b / 1 ) 16%
   );
 
-  &:not(.custom-profile-theme) {
+  &:not(.custom-user-profile-theme) {
     background: var(--background-floating);
   }
 
   // with color theme
-  &.custom-profile-theme {
+  &.custom-user-profile-theme {
     --bg_items: hsl(from var(--profile-body-background-hover) h s l / .075 );
 
-    // this sucks
     // getting the base gradient 
     --bg_badges_gradient: color-mix(in srgb,
       rgb(from var(--profile-gradient-primary-color) r g b) 74%,
