@@ -1,8 +1,8 @@
 // User | User popout, Account popout
 
 // -> User Popout
-// effects account panel (not: for profile preview in settings)
-.outer_c0bea0.biteSize_c0bea0:not(.container_ba7f98)  {
+// effects account panel (not: for profile preview in settings) (no account panel for now (not a fan) )
+.outer_c0bea0.biteSize_c0bea0:not(.container__5a2c6, :has(.body_ce8328))  {
 
   // -> Misc
   padding: 0 !important;
@@ -223,23 +223,25 @@
     }
 
     // edit self status btns
-    .popover_c97e55 {
-      top: 50% ;
-      right: 50% ;
-      transform: translate(50%, -50%);
-      padding: 0px 4px ;
-      background: var(--background-floating) ;
-      box-shadow: none ;
-      animation: none !important ;
-      box-sizing: content-box ;
+    // .popover_c97e55 {
+    .popover__2d0ab {
+      display: none ;
+      // top: 50% ;
+      // right: 50% ;
+      // transform: translate(50%, -50%);
+      // padding: 0px 4px ;
+      // background: var(--background-floating) ;
+      // box-shadow: none ;
+      // animation: none !important ;
+      // box-sizing: content-box ;
 
-      &.visible_c97e55 {
-        opacity: 1 ;
-      }
+      // &.visible__2d0ab {
+      //   opacity: 1 ;
+      // }
       
-      .button_c97e55 {
-        padding: 8px 6px ;
-      }
+      // .button_c97e55 {
+      //   padding: 8px 6px ;
+      // }
     }
     // <- Status text
 
@@ -488,43 +490,38 @@
     }
   }
   // <- Footer
+
+  // -> Account Panel
+  // .body_ce8328 {
+  //   background: none !important ;
+  //   order: 3 ;
+  //   margin-top: 36px ;
+  //   padding: 0 18px 12px !important ;
+  //   overflow: visible !important ;
+  // }
+
+  // .inner_c0bea0:has(> .body_ce8328) {
+  //   $ProfileTop: 20 + 19 + 8 + 36 + 4;
+
+  //   .avatar__75742 .svg__44b0c {
+  //     top: $ProfileTop * 1px !important ;
+
+  //     foreignObject {
+  //       y: $ProfileTop * -1 !important ;
+  //     }
+  //   }
+
+  //   .menuOverlay_ce8328 {
+  //     background: var(--bg_items);
+  //   }
+  
+  //   .menuItemColor_ce8328 {
+  //     background: none ;
+  //   }
+  // }
+  // <- Account Panel
 }
 
 // User popout loading indicator 
 .layer_da8173 .loadingPopout__58f1c { display: none }
 // <- User Popout
-
-// -> Account Popout
-.accountProfilePopoutWrapper__37e49 {
-  left: 0 ;
-
-  .profileEffects__01370 {
-    opacity: 1 ;
-  }
-
-  $ProfileTop: 20 + 19 + 8 + 36 + 4;
-
-  .avatar__75742 .svg__44b0c {
-    top: $ProfileTop * 1px !important ;
-
-    foreignObject {
-      y: $ProfileTop * -1 !important ;
-    }
-  }
-
-  .body_af7fb7 {
-    order: 2 ;
-    margin-top: 36px ;
-    padding: 0 18px 12px !important ;
-    overflow: visible !important ;
-  }
-
-  .menuOverlay_af7fb7 {
-    background: var(--bg_items);
-  }
-
-  .menuItemColor_af7fb7 {
-    background: none ;
-  }
-}
-// <- Account Popout
