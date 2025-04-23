@@ -29,9 +29,12 @@
     background: var(--background-floating);
   }
 
-  // with color theme
+  // with color theme ( needs tweaking )
   &.custom-user-profile-theme {
-    --bg_items: hsl(from var(--profile-body-background-hover) h s l / .075 );
+
+    --bgModifier_item: var(--redesign-button-overlay-alpha-background, var(--profile-body-background-hover));
+
+    --bg_items: hsl(from var(--bgModifier_item) h s l / .075 );
 
     // getting the base gradient 
     --bg_badges_gradient: color-mix(in srgb,
@@ -47,7 +50,7 @@
 
     --bg_badges: color-mix(in srgb,
       rgb(from var(--bg_badges_overlay) r g b / 1 ) 92.5%,
-      rgb(from var(--profile-body-background-hover) r g b / 1 )
+      rgb(from var(--bgModifier_item) r g b / 1 )
     );
   }
 
