@@ -2,7 +2,8 @@
 
 // -> User Popout
 // effects account panel (not: for profile preview in settings) (no account panel for now (not a fan) )
-.outer_c0bea0.biteSize_c0bea0:not(.container__5a2c6, :has(.body_ce8328))  {
+//temp (outer = old)
+:is(.outer_c0bea0.biteSize_c0bea0, .user-profile-popout):not(.container__5a2c6, :has(.body_ce8328)) {
 
   // -> Misc
   padding: 0 !important;
@@ -34,7 +35,7 @@
 
     --bgModifier_item: var(--redesign-button-overlay-alpha-background, var(--profile-body-background-hover));
 
-    --bg_items: hsl(from var(--bgModifier_item) h s l / .075 );
+    --bg_items: hsl(from var(--bgModifier_item) h s l / .15 );
 
     // getting the base gradient 
     --bg_badges_gradient: color-mix(in srgb,
@@ -42,14 +43,13 @@
       rgb(from var(--profile-gradient-secondary-color) r g b)
     );
 
-    // mix with overlay at gradient
     --bg_badges_overlay: color-mix(in srgb,
-      var(--profile-gradient-overlay-color) 74%,
+      var(--profile-gradient-overlay-color) 70%,
       var(--bg_badges_gradient)
     );
 
     --bg_badges: color-mix(in srgb,
-      rgb(from var(--bg_badges_overlay) r g b / 1 ) 92.5%,
+      rgb(from var(--bg_badges_overlay) r g b / 1 ) 85%,
       rgb(from var(--bgModifier_item) r g b / 1 )
     );
   }
