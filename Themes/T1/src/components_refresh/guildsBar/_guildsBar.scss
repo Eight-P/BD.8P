@@ -32,18 +32,19 @@ $iconScale: var(--sbIconScale);
   background-color: var(--interactive-normal);
 }
 
-#app-mount {
-.guilds_c48ade {
+// #app-mount {
+@scope (.guilds_c48ade) {
 
 // -> Containers
-position: fixed ;
-left: 0 ;
-bottom: 0 ;
-right: 0 ;
-
-height: $sb_height ;
-width: 100vw ;
-margin: 0 ;
+:scope {
+  position: fixed ;
+  left: 0 ;
+  bottom: 0 ;
+  right: 0 ;
+  height: $sb_height ;
+  width: 100vw !important ;
+  margin: 0 !important ;
+}
 
 .tree_ef3116 {
   height: 100vw ;
@@ -76,9 +77,8 @@ margin: 0 ;
     "Discovery"
     "Servers"
   ;
-  // grid-auto-rows: 58px ;
   grid-auto-rows: min-content ;
-  align-items: center ;
+  align-items: center !important ;
 
   &::before {
     @include itemSeperator();
@@ -99,14 +99,12 @@ margin: 0 ;
   // Pill
   .item__58105 {
     visibility: hidden ;
-    // height: 8px !important ;
     height: calc($iconBaseSize * $iconScale * 0.20 ) !important ;
     margin-left: -5px ;
     
     // Server selected
     &[style="opacity: 1; height: 40px; transform: none;"] {
       visibility: visible ;
-      // height: 35px !important ;
       height: calc($iconBaseSize * $iconScale * 0.87 ) !important ;
       border-radius: 0 8px 8px 0 ;
     }
@@ -182,7 +180,7 @@ margin: 0 ;
     background: rgba(0, 0, 0, 0.5);
   }
 
-  // some wierd shit
+  // some weird shit
   .wobble_e5445c {
     transform-origin: center ;
   }
@@ -203,14 +201,14 @@ margin: 0 ;
 :is(.blobContainer_e5445c, .listItemWrapper__91816) {
   transform: rotate(90deg) !important ; // "important" for serverdetails plugin idk
   scale: $iconScale;
-  margin: calc( ($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
+  margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
   height: $iconBaseSize ;
   width: $iconBaseSize ;
 }
 // <- general item
 
 // -> Left side icons
-// ( 14-[40]-7/3-[20]-3/3-[20]-10|2 )
+// ( 14-[40]-7/3-[20]-3/3-[20]-12 )
 
 // Home
 .tutorialContainer__1f388 {
@@ -315,7 +313,7 @@ margin: 0 ;
 }
 
 // GuildsAdd
-.stack_dbd263 + :is(.tutorialContainer__650eb, .listItem__650eb) {
+.stack_dbd263:not([id]) + :is(.tutorialContainer__650eb, .listItem__650eb) {
   grid-area: GuildsAdd ;
   margin: 3px 0 3px 0 ;
 
@@ -323,7 +321,7 @@ margin: 0 ;
 }
 
 // Discovery
-.stack_dbd263 + :is(.tutorialContainer__650eb, .listItem__650eb) + :is(.tutorialContainer__650eb, .listItem__650eb) {
+.stack_dbd263:not([id]) + :is(.tutorialContainer__650eb, .listItem__650eb) + :is(.tutorialContainer__650eb, .listItem__650eb) {
   grid-area: Discovery ;
   margin: 3px 0 12px 0 ;
 
@@ -332,7 +330,7 @@ margin: 0 ;
 // <- Left side icons
 
 // -> Servers
-.scroller_ef3116 > .stack_dbd263 {
+.scroller_ef3116 > .stack_dbd263:not([id]) {
   grid-area: Servers ;
   overflow: hidden scroll ;
   max-height: -webkit-fill-available ;
@@ -420,28 +418,59 @@ margin: 0 ;
 // <- Servers
 
 // -> Favorites / Dms / Server preview
-.tutorialContainer__1f388 ~ div:not(.stack_dbd263, .stack_dbd263 ~ div) {
-  padding-bottom: $dmSpacing;
-  height: auto !important ;
+// Dms container
+#guild-list-unread-dms {
+  position: relative;
+  padding: $spacing 0 !important ;
+  gap: $dmSpacing !important ;
 
-  .pill_ed9a5f { display: none }
+  // seperator, unless favorite are present
+  &:not(.listItem__650eb ~ #guild-list-unread-dms)::before {
+    @include itemSeperator();
+    top: 0px ;
+  }
+
+  // remove padding from server preview (removes from seperator otherwise)
+  + .listItem__650eb {
+    padding-top: 0 !important ;
+  }
+
+  // remove if empty
+  &:empty { display: none }
 }
 
-// only first
-.tutorialContainer__1f388 + div:not(.stack_dbd263) {
-  padding-top: $dmSpacing !important ;
+// removes server preview (not good)
+// .scrollerBase_d125d2 > .listItem__650eb:not(:is(
+//   .tutorialContainer__1f388 + .listItem__650eb,
+//   .stack_dbd263:not([id]) ~ .listItem__650eb
+// )) {
+//   display: none ;
+// }
+
+// Favorites & Server preview
+.scrollerBase_d125d2 > .listItem__650eb:not(.stack_dbd263:not([id]) ~ .listItem__650eb) {
+  padding: $dmSpacing 0 !important ;
+
+  .pill_e5445c { display: none }
+}
+
+// Favorites
+// .tutorialContainer__1f388 + .listItem__650eb
+.listItem__650eb:has(.favoriteIcon_c9fddf) {
+  pointer-events: none ;
+
+  // remove padding from dms container if favorites are present
+  + #guild-list-unread-dms {
+    padding-top: 0 !important ;
+  }
 
   &::before {
     @include itemSeperator();
     top: 0px ;
   }
-}
 
-// Favorites
-.listItem__650eb:has(.favoriteIcon_c9fddf) {
-  pointer-events: none ;
-
-  .pill_c9fddf { display: none }
+  // counter
+  .pill_e5445c { display: flex }
 
   .wrapper_cc5dd2 {
     transform: rotate(90deg);
@@ -464,4 +493,5 @@ margin: 0 ;
 // <- Favorites / Dms / Server preview
 
 }
-}
+// }
+// }
