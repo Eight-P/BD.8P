@@ -118,27 +118,44 @@
   }
 }
 
-// Seperator line  @include divider(top);
-@mixin divider ($l...) {
+// Seperator line  
+//  @include divider(top);
+//  @include divider(bottom, ("color": red));
+//  @include divider( (top, bottom), ("color": red) );
+@mixin divider ($l, $c:false) {
   $width: 1px ;
   $style: solid ;
   $color: var(--background-modifier-accent);
 
-  border-width: 0 ;
-  border-radius: 0 ;
+  @if $c {
+    $C_width: map.get($c, "width"); ;
+    $C_style: map.get($c, "style"); ;
+    $C_color: map.get($c, "color");;
+
+    @if $C_width { $width: $C_width }
+    @if $C_style { $style: $C_style }
+    @if $C_color { $color: $C_color }
+  }
+
+  $valid-sides: top, bottom, left, right ;
 
   @if length($l) == 0 {
-    @warn "divider() requires border location" ;
+    @warn "divider() expects border side/s" ;
   }
-  @else if length($l) == 1 {
-    border-#{$l}: $width $style $color ;
-  }
-  @else { 
+  @else {
+    border-width: 0 ;
+    border-radius: 0 ;
     border-color: $color ;
     border-style: $style ;
 
-    @each $d in $l {
-      border-#{$d}-width: $width ;
+    @each $side in $l {
+
+      @if list.index($valid-sides, $side) {
+        border-#{$side}-width: $width ;
+      }
+      @else {
+        @warn "invalid border side: #{$side}" ;
+      }
     }
   }
 }

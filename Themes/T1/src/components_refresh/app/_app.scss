@@ -122,21 +122,21 @@ path[fill="currentColor"] {
   &.lookFilled__201d5 {
     color: $BtnTextNormal ;
     background: $BtnBackgroundNormal ;
+    border-radius: 3px ;
 
     &:hover {
       color: $BtnTextHover ;
       background: $BtnBackgroundHover ;
-      border-radius: 3px ;
     }
   }
 
   &.colorRed__201d5  {
     color: $BtnTextDanger ;
+    border-radius: 3px ;
 
     &:hover {
       color: $BtnTextDangerHover ;
       background: $BtnBackgroundDanger ;
-      border-radius: 3px ;
     }
   }
   // &.lookOutlined__201d5  &.lookLink__201d5

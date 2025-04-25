@@ -2,11 +2,11 @@
 
 #app-mount {
 
-  --custom-app-top-bar-height: 30px  ;
+  --custom-app-top-bar-height: 28px  ;
 
 // -> Title bar
 .bar_c38106 {
-  box-shadow: 0 .5px 0 var(--header-secondary);
+  @include divider(bottom, ("color": rgb(100, 100, 100) ));
 
   .button__85643 {
     height: var(--custom-app-top-bar-height);

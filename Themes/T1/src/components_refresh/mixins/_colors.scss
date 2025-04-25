@@ -82,7 +82,7 @@ html.theme-dark:root, #app-mount .theme-dark {
   --deprecated-text-input-prefix: #dcddde;
   
   --text-warning: #faa61a;
-  --text-danger: #ed4245;
+  --text-danger: #d63e41;
   --info-positive-background: rgba(59,165,92,0.1);
   --info-positive-foreground: #3ba55c;
   --info-warning-background: rgba(250,166,26,0.1);
@@ -93,6 +93,7 @@ html.theme-dark:root, #app-mount .theme-dark {
   --status-positive-text: #fff;
   --status-warning-background: #faa61a;
   --status-danger-background: #ed4245;
+  // --status-danger-background: rgba(210, 45, 56, 0.1);
   --status-danger-text: #fff;
   --focus-primary: #00b0f4;
 

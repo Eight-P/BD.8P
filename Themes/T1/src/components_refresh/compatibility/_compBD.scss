@@ -1,8 +1,10 @@
 // - ReadAllNotificationsButton by DevilBro (v1.8.0)
 // - SpotifyControls by DevilBro (v1.4.6)
 // - ServerDetails by DevilBro (v1.2.5)
-// - ServerFolders by DevilBro (v7.3.4)
+// - ServerFolders by DevilBro (v7.3.6)
 // - InvisibleTyping by Strencher (v1.3.7)
+// - PingNotification by DaddyBoard (v8.0.3)
+// - FriendNotifications by DevilBro (v2.0.8)
 
 #app-mount {
 // -> ReadAllNotificationsButton by DevilBro
@@ -53,25 +55,23 @@
 // <- ServerDetails by DevilBro
 
 // -> ServerFolders by DevilBro
-.sidebar_c48ade:has(> .guilds_c48ade) {
-  flex-direction: column !important ;
-  width: var(--custom-guild-sidebar-width) !important;
-}
-
-// idk maybe ">" helps with performance
-.content_c48ade:has(> .sidebar_c48ade > .content_Pph8t6:not(.closed_j55_T-)) {
+// added content container spacing for folder row
+@at-root .folderContentIsOpen_ac0584 .content_c48ade {
   margin-bottom: 54px ;
 }
 
-// regular list
-.guilds_c48ade.hasSideBar_sda9Fa {
-  .folder__48112 {
-    background: none ;
-  }
+// Folder row closed (not really needed)
+.guilds_c48ade.closed_ac0584 {
+  height: 0px ;
 }
 
-// second column
-.guilds_c48ade.content_Pph8t6 {
+// Regular list
+.folder__48112 {
+  background: none ;
+}
+
+// Folder row
+.guilds_c48ade.content_ac0584 {
   bottom: 54px ;
   transition: none !important ;
 
@@ -97,11 +97,6 @@
     @include shadowEffect("server_1");
   }
 }
-
-// second column closed
-.guilds_c48ade.closed_j55_T- {
-  height: 0px ;
-}
 // <- ServerFolders by DevilBro
 
 // -> InvisibleTyping by Strencher
@@ -110,4 +105,30 @@
   transform: scale(.9);
 }
 // <- InvisibleTyping by Strencher
+
+// -> PingNotification by DaddyBoard
+.chat_f75fb0 {
+  // bg render (idk)
+  transform: unset !important ;
+}
+// <- PingNotification by DaddyBoard
+
+// -> FriendNotifications by DevilBro
+.guilds_c48ade .friendsOnlineWrap_aa9717 {
+  display: flex !important ;
+  position: absolute ;
+  transform: rotate(90deg);
+  top: 60px ;
+  left: -19px ;
+  z-index: 1 ;
+
+  .friendsOnline_aa9717 {
+    color: var(--text-normal);
+    font-size: 10px ;
+
+    @include shadowEffect("text_1");
+  }
+}
+// <- FriendNotifications by DevilBro
+
 }
