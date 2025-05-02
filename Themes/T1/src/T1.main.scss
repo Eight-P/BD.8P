@@ -8,4 +8,4 @@ $T1_version: "0.7.17" ; // Theme file v0.9
 
 */
 
-@include meta.load-css("components_refresh", $with: ( "T1_v": $T1_version ));
+@include meta.load-css("components", $with: ( "T1_v": $T1_version ));

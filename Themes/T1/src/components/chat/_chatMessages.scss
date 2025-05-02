@@ -122,7 +122,7 @@
   @mixin reducedBtns() {
     // Hide all btns & separators, but last
     :is(
-      .button_f7ecac:has(~ .button_f7ecac), 
+      .button_f7ecac:has(~ .button_f7ecac), // could use :not(:nth-last-child(1 of .button_f7ecac))
       .separator_f84418
     ) {  display: none  }
 
