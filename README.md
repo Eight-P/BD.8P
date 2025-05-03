@@ -28,6 +28,7 @@
 
 ### Usefull Links:
 
-#### [BetterDiscord.app](https://betterdiscord.app/)
+#### [BetterDiscord.app](https://betterdiscord.app/) 
+#### [Vencord.dev](https://vencord.dev/)
 </div>
 
