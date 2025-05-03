@@ -1,12 +1,13 @@
 // - ReadAllNotificationsButton by DevilBro (v1.8.0)
 // - SpotifyControls by DevilBro (v1.4.6)
 // - ServerDetails by DevilBro (v1.2.5)
-// - ServerFolders by DevilBro (v7.3.6)
+// - ServerFolders by DevilBro (v7.3.8)
 // - InvisibleTyping by Strencher (v1.3.7)
 // - PingNotification by DaddyBoard (v8.0.3)
 // - FriendNotifications by DevilBro (v2.0.8)
 
 #app-mount {
+
 // -> ReadAllNotificationsButton by DevilBro
 // "Read all" btn
 .guilds_c48ade .frame_oXWS21 {
@@ -60,14 +61,13 @@
   margin-bottom: 54px ;
 }
 
+.guilds_c48ade .folderHeader__48112 {
+  background: none ;
+}
+
 // Folder row closed (not really needed)
 .guilds_c48ade.closed_ac0584 {
   height: 0px ;
-}
-
-// Regular list
-.folder__48112 {
-  background: none ;
 }
 
 // Folder row

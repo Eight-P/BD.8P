@@ -85,10 +85,7 @@
     border-radius: 0 ;
 
     #{$inner} {
-      // border: solid var(--header-secondary);
-      // border-width: 0 0 1px 0 ;
       border-bottom: 1px solid var(--interactive-normal);
-      // border-radius: 0 ;
       outline: none ;
       box-shadow: none !important ;
     }
@@ -128,9 +125,9 @@
   $color: var(--background-modifier-accent);
 
   @if $c {
-    $C_width: map.get($c, "width"); ;
-    $C_style: map.get($c, "style"); ;
-    $C_color: map.get($c, "color");;
+    $C_width: map.get($c, "width");
+    $C_style: map.get($c, "style");
+    $C_color: map.get($c, "color");
 
     @if $C_width { $width: $C_width }
     @if $C_style { $style: $C_style }
@@ -140,7 +137,7 @@
   $valid-sides: top, bottom, left, right ;
 
   @if length($l) == 0 {
-    @warn "divider() expects border side/s" ;
+    @warn "divider() expects border side" ;
   }
   @else {
     border-width: 0 ;

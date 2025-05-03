@@ -38,6 +38,7 @@ $iconScale: var(--sbIconScale);
 
 // -> Containers
 :scope {
+// .guilds_c48ade {
   position: fixed ;
   left: 0 ;
   bottom: 0 ;
@@ -342,78 +343,78 @@ $iconScale: var(--sbIconScale);
   &::-webkit-scrollbar { display: none }
 
   // -> Server folder old
-  .wrapper__48112 {
-    width: $sb_height ;
+  // .wrapper__48112 {
+  //   width: $sb_height ;
 
-    .expandedFolderBackground__48112 {
-      $folderheight: $sb_height - 20 ;
+  //   .expandedFolderBackground__48112 {
+  //     $folderheight: $sb_height - 20 ;
 
-      width: calc($folderheight * $iconScale) ;
-      left: calc(($sb_height - ($folderheight * $iconScale)) / 2 );
-      top: 2px ;
-      bottom: 2px ;
-      border: none ;
-      border-radius: 10px ;
+  //     width: calc($folderheight * $iconScale) ;
+  //     left: calc(($sb_height - ($folderheight * $iconScale)) / 2 );
+  //     top: 2px ;
+  //     bottom: 2px ;
+  //     border: none ;
+  //     border-radius: 10px ;
 
-      @container style(--serverBarFolderStyle: 1) {
-        background-color: rgba(30, 30, 30, .5);
-      }
-    }
+  //     @container style(--serverBarFolderStyle: 1) {
+  //       background-color: rgba(30, 30, 30, .5);
+  //     }
+  //   }
 
-    // -> Folder icon
-    .folderIcon__48112 {
-      margin: 0 ;
-      transform: rotate(90deg);
-      scale: $iconScale;
-      margin: calc( ($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
+  //   // -> Folder icon
+  //   .folderIcon__48112 {
+  //     margin: 0 ;
+  //     transform: rotate(90deg);
+  //     scale: $iconScale;
+  //     margin: calc( ($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
 
-      .wrapper_cc5dd2 {
-        height: $iconBaseSize !important;
-        width: $iconBaseSize !important;
-      }
+  //     .wrapper_cc5dd2 {
+  //       height: $iconBaseSize !important;
+  //       width: $iconBaseSize !important;
+  //     }
 
-      // icon container for open & closed
-      .folderIconWrapper__48112 {
-        height: $iconBaseSize ;
-        width: $iconBaseSize ;
-        transition: .2s ;
+  //     // icon container for open & closed
+  //     .folderIconWrapper__48112 {
+  //       height: $iconBaseSize ;
+  //       width: $iconBaseSize ;
+  //       transition: .2s ;
 
-        &:hover {
-          border-radius: 25% ;
-        }
-      }
+  //       &:hover {
+  //         border-radius: 25% ;
+  //       }
+  //     }
 
-      // open folder icon 
-      .expandedFolderIconWrapper__48112 {
-        background: none ;
+  //     // open folder icon 
+  //     .expandedFolderIconWrapper__48112 {
+  //       background: none ;
 
-        svg {
-          height: 22px ;
-          width: 22px ;
-        }
-      }
+  //       svg {
+  //         height: 22px ;
+  //         width: 22px ;
+  //       }
+  //     }
 
-      // server icon preview in closed folder
-      .guildIcon__48112 {
-        border-radius: 4px !important ;
-      }
-    }
-    // <- Folder icon
+  //     // server icon preview in closed folder
+  //     .guildIcon__48112 {
+  //       border-radius: 4px !important ;
+  //     }
+  //   }
+  //   // <- Folder icon
 
-    // servers list in folder
-    ul {
-      height: auto !important;
-      gap: $spacing !important ;
-      padding: $innerSpacing 0 $innerSpacing 0 !important;
+  //   // servers list in folder
+  //   ul {
+  //     height: auto !important;
+  //     gap: $spacing !important ;
+  //     padding: $innerSpacing 0 $innerSpacing 0 !important;
 
-      @container style(--serverBarFolderStyle: 0) {
-        &::after {
-          @include itemSeperator();
-          bottom: calc(((($spacing + $innerSpacing) / 2) - $innerSpacing + 1px) * -1 );
-        }
-      }
-    }
-  }
+  //     @container style(--serverBarFolderStyle: 0) {
+  //       &::after {
+  //         @include itemSeperator();
+  //         bottom: calc(((($spacing + $innerSpacing) / 2) - $innerSpacing + 1px) * -1 );
+  //       }
+  //     }
+  //   }
+  // }
   // <- Server folder old
 
   // -> Server folder new
@@ -454,17 +455,18 @@ $iconScale: var(--sbIconScale);
       .folderPreviewWrapper__48112 { display: none }
     }
 
+    
+    .folderPreviewWrapper__48112 {
+      // padding: 1px ;
+      transition: .2s ;
+      overflow: hidden ;
+
+      &:hover {
+        border-radius: 25% ;
+      }
+    }
+
     // would revert mostly to before
-    // .folderPreviewWrapper__48112 {
-    //   padding: 1px ;
-    //   transition: .2s ;
-    //   overflow: hidden ;
-
-    //   &:hover {
-    //     border-radius: 25% ;
-    //   }
-    // }
-
     // .folderPreview__48112 {
     //   $previewSize: ($iconBaseSize - 4) * .5 ;
     //   --custom-folder-preview-guild-size: #{$previewSize} ;
@@ -478,20 +480,20 @@ $iconScale: var(--sbIconScale);
     // }
     // <- Folder Icon & Grid preview
 
-    .folderGuildsList__48112 {
+    // .folderGuildsList__48112 {
+    > .stack_dbd263 { // for serverFolders
       height: auto !important;
       gap: $spacing !important ;
       padding: $innerSpacing 0 $innerSpacing 0 !important;
 
-      @container style(--serverBarFolderStyle: 0) {
-        &::after {
-          @include itemSeperator();
-          bottom: calc(((($spacing + $innerSpacing) / 2) - $innerSpacing + 1px) * -1 );
-        }
-      }
-
       .listItem__650eb {
         margin: 0 ;
+      }
+    }
+    @container style(--serverBarFolderStyle: 0) {
+      .folderGuildsList__48112::after {
+        @include itemSeperator();
+        bottom: calc(((($spacing + $innerSpacing) / 2) - $innerSpacing + 1px) * -1 );
       }
     }
   }
@@ -576,5 +578,3 @@ $iconScale: var(--sbIconScale);
 // <- Favorites / Dms / Server preview
 
 }
-// }
-// }
