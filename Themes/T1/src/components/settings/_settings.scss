@@ -77,3 +77,16 @@ $T1_v: null !default ;
   // <- Close btn
   // <- main content
 }
+
+
+
+
+// -> Channel settings
+.sidebarRegion__23e6b  {
+ 
+  // delete channel button
+  .tabBarItemContainer_c7e907:has([d="M5.06 7a1 1 0 0 0-1 1.06l.76 12.13a3 3 0 0 0 3 2.81h8.36a3 3 0 0 0 3-2.81l.75-12.13a1 1 0 0 0-1-1.06H5.07ZM11 12a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"]) {
+    color: var(--red) ;
+  }
+}
+// <-

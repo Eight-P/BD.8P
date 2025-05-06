@@ -27,6 +27,9 @@ $C_Header: var(--interactive-normal);
   --background-surface-higher: #{$BG_Body};
   --background-surface-highest: #{$BG_BodyAlt};
 
+  --bg-base-secondary: #{$BG_Meta};
+  // --bg-base-primary: #{$BG_Body};
+
   --modal-background: #{$BG_Meta};
   --modal-footer-background: #{$BG_Meta};
   --background-secondary: #{$BG_Meta};

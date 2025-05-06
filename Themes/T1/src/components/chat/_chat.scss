@@ -51,7 +51,7 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
   min-height: unset ;
   height: 32px ;
   width: auto ;
-  padding: 0 ;
+  padding: 0 6px ;
   margin: 0 ;
   background: var(--background-secondary-alt);
   border-radius: 5px ;
@@ -62,35 +62,42 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 
   @include shadowEffect("box_3");
 
-  // Mark As Read
-  &.newMessagesBar__0f481 {
-    top: -4px ;
-  }
-
-  // Viewing older messages
+  // Viewing older messages (really just one big button)
   &.jumpToPresentBar__0f481 {
-    bottom: 14px ; // to prevent jumping, when typing indicator
-  }
-
-  // -> buttons
-  button {
-    height: 28px ;
-    margin: 0 12px ;
-    padding: 0 ;
-    background: none !important;
-    color: var(--interactive-hover) !important;
+    bottom: 14px ; // space for typing indicator
+    cursor: pointer ;
 
     &:hover {
-      color: var(--interactive-active) !important;
+      background: var(--background-secondary);
     }
   }
 
-  //text btn left
-  .barButtonMain__0f481 {
-    flex: 0 1 auto ;
-    margin-right: auto ;
+  // Mark As Read (two seperate buttons)
+  &.newMessagesBar__0f481 {
+    top: -4px ;
+
+    button {
+      height: 28px ;
+      background: none !important;
+      color: var(--interactive-hover) !important;
+  
+      &:hover {
+        color: var(--interactive-active) !important;
+      }
+    }
+  
+    // text btn left
+    .barButtonMain__0f481 {
+      flex: 0 1 auto ;
+      margin-right: auto ;
+    }
   }
-  // <- buttons
+
+  button {
+    padding: 0 4px ;
+    background: none !important;
+    color: var(--interactive-hover) !important;
+  }
   // <- general
 
   // -> Summaries

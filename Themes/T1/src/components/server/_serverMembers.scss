@@ -8,6 +8,12 @@
   --custom-member-list-width: 240px ;
 }
 
+// Main container
+.membersWrap_c8ffbb {
+  border: none ; // for threads memberlist
+}
+
+// inner container
 .members_c8ffbb {
 
   @container style(--membersListScrollbar: 0 ) {

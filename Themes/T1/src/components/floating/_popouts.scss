@@ -6,6 +6,8 @@
   :is(
     .menu_c1e9c4, // context menus
 
+    .wrapper_c0e32c, // add reactions popout
+    .contentWrapper__9c62c, // Apps&Cmds
     .contentWrapper__08434, // Chat picker
     .container_d9c882, // Threads
     .messagesPopoutWrap__45690, // Pinned Msgs
@@ -48,7 +50,7 @@
   // <- General content
 
   // -> Chat input Emoji, Sticker, Gif picker
-  .contentWrapper__08434 {
+  :is(.contentWrapper__08434, .wrapper_c0e32c) {
 
     // -> Nav bar
     .navButtonActive__08434  {
@@ -86,10 +88,10 @@
 
     // -> Emoji item
     .emojiItem_fc7141 {
-      background: none ;
+      // background: none ;
 
-      &:hover .image__1859b {
-        background: var(--background-modifier-accent);
+      &:hover {
+        // background: var(--background-modifier-accent);
       }
     }
     // <- Emoji item
@@ -372,6 +374,19 @@
   }
   // <- Inbox
 
+  // -> Apps & Commands popout
+  .positionContainer__31a96 {
+    max-height: calc(100vh - 130px);
+
+    .drawerSizingWrapper__9c62c {
+      height: 100% !important ;
+
+      .slideContent__9c62c {
+        // max-height: calc(100vh - 130px);
+      }
+    }
+  }
+  // <- Apps & Commands popout
 }
 
 .chatContent_f75fb0 {

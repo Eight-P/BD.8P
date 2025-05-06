@@ -22,5 +22,9 @@
     .profileEffects__01370 { display: none }
   }
 
+  // Nameplates
+  @container style(--show-namePlates: 0 ) {
+    .nameplated__91a9d .container__4bbc6 { display: none }
+  }
 }
 

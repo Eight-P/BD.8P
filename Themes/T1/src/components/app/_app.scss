@@ -72,6 +72,10 @@ path[fill="currentColor"] {
     color: $BtnIconDanger ;
   }
 
+  &.dangerous_f7ecac {
+    color: $BtnIconDanger ;
+  }
+
   // Voice channel view, disconnect btn
   &.disconnect_f1ceac .controlIcon_f1ceac {
     color: #{$BtnIconDanger} !important ;
