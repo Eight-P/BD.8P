@@ -102,7 +102,8 @@ $iconScale: var(--sbIconScale);
   .item__58105 {
     visibility: hidden ;
     height: calc($iconBaseSize * $iconScale * 0.20 ) !important ;
-    margin-left: -5px ;
+    // margin-left: -5px ;
+    margin-left: -4px ;
     
     // Server selected
     &[style="opacity: 1; height: 40px; transform: none;"] {
@@ -148,11 +149,6 @@ $iconScale: var(--sbIconScale);
     .avatarStack__44b0c {
       justify-content: center ;
       align-items: center ;
-    }
-
-    .avatar__44b0c {
-      // width: 40px ;
-      // height: 40px ;
     }
 
     // Text
@@ -344,82 +340,7 @@ $iconScale: var(--sbIconScale);
 
   &::-webkit-scrollbar { display: none }
 
-  // -> Server folder old
-  // .wrapper__48112 {
-  //   width: $sb_height ;
-
-  //   .expandedFolderBackground__48112 {
-  //     $folderheight: $sb_height - 20 ;
-
-  //     width: calc($folderheight * $iconScale) ;
-  //     left: calc(($sb_height - ($folderheight * $iconScale)) / 2 );
-  //     top: 2px ;
-  //     bottom: 2px ;
-  //     border: none ;
-  //     border-radius: 10px ;
-
-  //     @container style(--serverBarFolderStyle: 1) {
-  //       background-color: rgba(30, 30, 30, .5);
-  //     }
-  //   }
-
-  //   // -> Folder icon
-  //   .folderIcon__48112 {
-  //     margin: 0 ;
-  //     transform: rotate(90deg);
-  //     scale: $iconScale;
-  //     margin: calc( ($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
-
-  //     .wrapper_cc5dd2 {
-  //       height: $iconBaseSize !important;
-  //       width: $iconBaseSize !important;
-  //     }
-
-  //     // icon container for open & closed
-  //     .folderIconWrapper__48112 {
-  //       height: $iconBaseSize ;
-  //       width: $iconBaseSize ;
-  //       transition: .2s ;
-
-  //       &:hover {
-  //         border-radius: 25% ;
-  //       }
-  //     }
-
-  //     // open folder icon 
-  //     .expandedFolderIconWrapper__48112 {
-  //       background: none ;
-
-  //       svg {
-  //         height: 22px ;
-  //         width: 22px ;
-  //       }
-  //     }
-
-  //     // server icon preview in closed folder
-  //     .guildIcon__48112 {
-  //       border-radius: 4px !important ;
-  //     }
-  //   }
-  //   // <- Folder icon
-
-  //   // servers list in folder
-  //   ul {
-  //     height: auto !important;
-  //     gap: $spacing !important ;
-  //     padding: $innerSpacing 0 $innerSpacing 0 !important;
-
-  //     @container style(--serverBarFolderStyle: 0) {
-  //       &::after {
-  //         @include itemSeperator();
-  //         bottom: calc(((($spacing + $innerSpacing) / 2) - $innerSpacing + 1px) * -1 );
-  //       }
-  //     }
-  //   }
-  // }
-  // <- Server folder old
-
-  // -> Server folder new
+  // -> Server folder
   .folderGroup__48112 {
     width: $sb_height ;
 
@@ -448,6 +369,10 @@ $iconScale: var(--sbIconScale);
       margin: calc( ($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
     }
 
+    .folderButton__48112 {
+      overflow: visible ;
+    }
+
     .wrapper_cc5dd2 {
       height: $iconBaseSize !important;
       width: $iconBaseSize !important;
@@ -463,7 +388,6 @@ $iconScale: var(--sbIconScale);
     
     .folderPreviewWrapper__48112 {
       transition: .2s ;
-      overflow: hidden ;
 
       &:hover {
         border-radius: 25% ;
@@ -471,8 +395,14 @@ $iconScale: var(--sbIconScale);
     }
 
     // would revert mostly to before
+    // .folderPreviewWrapper__48112 {
+    //   padding: 0 ;
+    //   overflow: hidden ;
+    // }
+
     // .folderPreview__48112 {
-    //   $previewSize: ($iconBaseSize - 4) * .5 ;
+    //   $previeGridGap: 2px ;
+    //   $previewSize: ($iconBaseSize - $previeGridGap) * .5 ;
     //   --custom-folder-preview-guild-size: #{$previewSize} ;
 
     //   height: $iconBaseSize ;
@@ -501,7 +431,7 @@ $iconScale: var(--sbIconScale);
       }
     }
   }
-  // <- Server folder new
+  // <- Server folder
 
 }
 // <- Servers
@@ -528,14 +458,6 @@ $iconScale: var(--sbIconScale);
   &:empty { display: none }
 }
 
-// removes server preview (not good)
-// .scrollerBase_d125d2 > .listItem__650eb:not(:is(
-//   .tutorialContainer__1f388 + .listItem__650eb,
-//   .stack_dbd263:not([id]) ~ .listItem__650eb
-// )) {
-//   display: none ;
-// }
-
 // Favorites & Server preview
 .scrollerBase_d125d2 > .listItem__650eb:not(.stack_dbd263:not([id]) ~ .listItem__650eb) {
   padding: $dmSpacing 0 !important ;
@@ -543,8 +465,7 @@ $iconScale: var(--sbIconScale);
   .pill_e5445c { display: none }
 }
 
-// Favorites
-// .tutorialContainer__1f388 + .listItem__650eb
+// -> Favorites
 .listItem__650eb:has(.favoriteIcon_c9fddf) {
   pointer-events: none ;
 
@@ -558,8 +479,9 @@ $iconScale: var(--sbIconScale);
     top: 0px ;
   }
 
-  // counter
-  .pill_e5445c { display: flex }
+  .pill_e5445c { 
+    display: flex ; // counter
+  } 
 
   .wrapper_cc5dd2 {
     transform: rotate(90deg);
@@ -587,6 +509,6 @@ $iconScale: var(--sbIconScale);
     }
   }
 }
+// <- Favorites
 // <- Favorites / Dms / Server preview
-
 }

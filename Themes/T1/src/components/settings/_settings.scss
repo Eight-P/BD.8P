@@ -4,12 +4,13 @@
 
 $T1_v: null !default ;
 
+// -> User settings
 .layer__960e4:not(.baseLayer__960e4) {
   margin-top: var(--custom-app-top-bar-height);
 
+  // -> Left side sidebar
   .container_fea832 { @include searchbar(".inner_fea832") }
 
-  // -> Left side sidebar
   .sidebarRegionScroller__23e6b {
     @include scrollbar(none);
   }
@@ -22,7 +23,13 @@ $T1_v: null !default ;
       padding-top: 20px ;
     }
 
-    // Theme version info
+    // -> Category item
+    .item_b3f026 {
+      transition: none ;
+    }
+    // <- Category item
+
+    // -> Theme version info
     .info__2debe:before {
       content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
       display: block !important;
@@ -33,21 +40,17 @@ $T1_v: null !default ;
       margin-bottom: 8px !important;
       text-transform: none !important;
     }
+    // <- Theme version info
   }
   // <- Left side
 
-  // -> main content
-  .contentTransitionWrap__23e6b {
-    flex: unset ;
-    position: relative;
-  }
-
+  // -> Content region
   .contentRegionScroller__23e6b {
     margin-top: 60px ;
   }
 
   .contentColumnDefault__23e6b {
-    padding: 10px 10px 80px 20px ;
+    padding: 0px 10px 0px 20px ;
   }
 
   // -> Close btn
@@ -75,10 +78,9 @@ $T1_v: null !default ;
      }
   }
   // <- Close btn
-  // <- main content
+  // <- Content region
 }
-
-
+// <- User settings
 
 
 // -> Channel settings

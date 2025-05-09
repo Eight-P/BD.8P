@@ -1,36 +1,47 @@
-// -> ServerListIndicator
-.guilds_c48ade div:has(> #vc-friendcount, > #vc-guildcount) {
-  display: flex ;
-  width: 54px !important ;
-  padding: 0 !important ; // counter against T1 sb 
-  width: max-content ;
-  margin: 10px 0 25px 0px !important ;
-  flex-direction: column ;
-  justify-content: center ;
-  align-items: center ;
-  gap: 5px ;
-  transform: rotate(90deg);
-}
+// -- ServerListIndicator
+// -- ReadAllNotificationsButton
 
+// To-Do
+// -- BetterFolders
+
+// -> ServerListIndicator (not a fan)
 #vc-friendcount, #vc-guildcount {
-  width: max-content !important ;
   white-space: nowrap ;
+  height: 60px !important ;
+  transform: rotate(90deg) translateY(calc(50% + 2px)) ;
 
   @include shadowEffect("text_1");
+}
+
+#vc-friendcount:not(:has(+ #vc-guildcount)),
+#vc-guildcount:not(:has(+ #vc-friendcount)) {
+  transform: rotate(90deg) translateY(calc(50% - 6px)) translateX(-5px);
+}
+
+:is(#vc-friendcount, #vc-guildcount) + :is(#vc-friendcount, #vc-guildcount) {
+  height: 12px !important ;
+  transform: rotate(90deg) translateY(calc(50% - 14px)) translateX(-40px);
 }
 // <- ServerListIndicator
 
 // -> ReadAllNotificationsButton
 .guilds_c48ade .vc-ranb-button {
-  padding: 28px 0 ; // super scuffed
-  transform: rotate(90deg);
+  display: flex ;
+  padding: 5px 0 ;
   background: none !important ;
-  
+  align-items: center ;
+
   .contents__201d5 {
     overflow: visible ;
     width: min-content ;
+    color: var(--header-secondary);
+    transform: rotate(90deg);
     
     @include shadowEffect("text_1");
+
+    &:hover {
+      color: var(--interactive-hover);
+    }
   }
 }
 // <- ReadAllNotificationsButton

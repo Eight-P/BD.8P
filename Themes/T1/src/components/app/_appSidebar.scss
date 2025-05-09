@@ -41,9 +41,7 @@
     @include scrollerFadeOut();
 
     @container style(--sidebarScrollbar: 0 ) {
-      &::-webkit-scrollbar-thumb {
-        background-color: transparent !important ;
-      }
+      @include scrollbar(none);
     }
   }
 }

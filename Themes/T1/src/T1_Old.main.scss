@@ -1,6 +1,6 @@
 @use "sass:meta";
 
-$T1_version: "0.7.19b" ; // Theme file v0.9
+$T1_version: "0.7.20b" ; // Theme file v0.9
 
 /*! 
   T1 Theme (c) Eight_P <github.com/Eight-P/BD.8P>
@@ -42,12 +42,4 @@ $T1_version: "0.7.19b" ; // Theme file v0.9
   .standardSidebarView__23e6b {
     top: 16px + 12px + (2* 7px) + 22px ;
   }
-}
-
-// just a test
-html::after {
-  content: "" !important;
-  position: absolute !important;
-  background-image: url("https://i.imgur.com/Lyqepv8.jpeg")!important;
-  visibility: hidden !important;
 }

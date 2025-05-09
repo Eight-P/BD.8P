@@ -52,6 +52,16 @@
   // -> Channels
   .wrapper__2ea32 {
 
+    // inner container with link
+    .link__2ea32 {
+      background: transparent;
+      
+      &:hover {
+        .name__2ea32 { color: var(--interactive-hover) }
+        .iconItem_c69b6d { visibility: visible }
+      }
+    }
+
     // Icon ("#", speaker, ..)
     .icon__2ea32 {
       width: 15px ;
@@ -64,6 +74,7 @@
     // Channel name
     .name__2ea32 { 
       color: var(--channels-default);
+      margin-right: calc(var(--space-xs) * -0.5); // counter for gap
     }
 
     :is(
@@ -105,16 +116,6 @@
         top: 0px ;
         left: -5px ;
         border: none ;
-      }
-    }
-    
-    // container for hover
-    .link__2ea32 {
-      background: transparent;
-      
-      &:hover {
-        .name__2ea32 { color: var(--interactive-hover) }
-        .iconItem_c69b6d { visibility: visible }
       }
     }
     // <- Channel options and infos

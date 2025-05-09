@@ -7,9 +7,7 @@
 
 @import '../src/T1.main.scss' ;
 
-// @import url(https://eight-p.github.io/BD.8P/Themes/T1/imports/T1.main.css);
-
-// @import url(https://davart154.github.io/Themes/Icon%20Revert%202023/2023%20Icon%20Revert.css);
+// @import url(https://eight-p.github.io/BD.8P/Themes/T1/dist/T1.css);
 
 :root {
   --show-nitro-btn: 0 ;
@@ -42,6 +40,7 @@
 
   --show-userProfile-effects: 1 ;
   --show-avatarDecorations: 1 ;
+  --show-namePlates: 1 ;
 
   --unmask-links: 0 ;
 
@@ -59,10 +58,10 @@
 
 // Dev build indicator
 .platform-win #app-mount::after {
-  content: "T1 Dev build";
+  content: "T1 Dev build" ;
   position: absolute ;
   display: block !important ;
-  top: calc(var(--custom-app-top-bar-height) / 2) ;
+  top: calc(var(--custom-app-top-bar-height) / 2);
   transform: translateY(-50%);
   left: 7px ;
   line-height: 22px ;
