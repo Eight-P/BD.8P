@@ -18,6 +18,12 @@
 
   @include divider(top);
 
+  @container style(--highlightFocusedInput: 1) {
+    &:focus-within {
+      border-color: hsla(0,0%,100%,0.3);
+    }
+  }
+  
   .channelTextArea__74017 {
     border: none ;
     margin: 0 ;

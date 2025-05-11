@@ -50,7 +50,7 @@ $T1_v: null !default ;
   }
 
   .contentColumnDefault__23e6b {
-    padding: 0px 10px 0px 20px ;
+    padding: 0px 10px 100px 20px ;
   }
 
   // -> Close btn
@@ -78,6 +78,34 @@ $T1_v: null !default ;
      }
   }
   // <- Close btn
+  
+  // -> Client Themes 
+  .presets__67a11:not(.basicThemeSelectors_fbfab6) {
+    position: relative ;
+    margin-top: 40px ;
+    
+    &:after {
+      content: "Not compatible with T1 Theme.";
+      position: absolute ;
+      display: block ;
+      inset: -30px 0 0 0 ;
+      color: var(--red);
+      font-weight: 600 ;
+    }
+  }
+  // <- Client Themes 
+
+  // -> BD
+  .bd-addon-card {
+
+    .bd-links {
+      margin-right: 10px ;
+      gap: 5px ;
+      flex-wrap: wrap ;
+    }
+  }
+  // <- BD
+
   // <- Content region
 }
 // <- User settings

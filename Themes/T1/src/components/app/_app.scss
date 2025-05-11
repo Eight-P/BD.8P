@@ -70,15 +70,18 @@ path[fill="currentColor"] {
   // who dis ?
   &.red_f1ceac path {
     color: $BtnIconDanger ;
+    --__lottieIconColor: #{$BtnIconDanger} !important ;
   }
 
   &.dangerous_f7ecac {
     color: $BtnIconDanger ;
+    --__lottieIconColor: #{$BtnIconDanger} !important ;
   }
 
   // Voice channel view, disconnect btn
   &.disconnect_f1ceac .controlIcon_f1ceac {
     color: #{$BtnIconDanger} !important ;
+    --__lottieIconColor: #{$BtnIconDanger} !important ;
   }
 
   &:hover {

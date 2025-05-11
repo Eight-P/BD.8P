@@ -3,58 +3,175 @@
 #app-mount {
 
 // -> Voicecall view
-.callContainer_cb9592 {
-  --aswc: var(--always-show-voicecontrols);
+// .callContainer_cb9592 .l {
+//   --aswc: var(--always-show-voicecontrols);
 
-  .root_bfe55a {
-    margin: calc(var(--aswc) * 48px) 0 calc(var(--aswc) * 56px) 0 ;
-    height: calc(100% - (var(--aswc) * (48px + 56px)));
-  }
+//   .root_bfe55a {
+//     margin: calc(var(--aswc) * 48px) 0 calc(var(--aswc) * 56px) 0 ;
+//     height: calc(100% - (var(--aswc) * (48px + 56px)));
+//   }
+
+//   // player popped out
+//   .root_e605a1 {
+//     background: none ;
+//   }
+  
+//   // -> Buttons
+//   // always show controls/btns 
+//   .idle_bfe55a {
+//     :is(.controlSection_bfe55a, .chatButton_bfe55a) {
+//       opacity: var(--aswc) !important ;
+//     }
+//   }
+
+//   // Gradient effect on hover
+//   .gradientContainer_bfe55a {
+//     height: 80px ;
+//     background-image: linear-gradient(
+//       hsl(0, 0%, 0%) 0%,
+//       hsla(0, 0%, 0%, 0.6) 50%,
+//       hsla(0, 0%, 0%, 0.1) 70%,
+//       hsla(0, 0%, 0%, 0) 100%
+//     ); // to much ?
+
+//     opacity: calc(1 - var(--aswc));
+//   }
+  
+//   // Buttons container
+//   .videoControls_bfe55a { 
+//     inset: calc(var(--aswc) * -48px) 0 calc(var(--aswc) * -56px) 0 ;
+//     padding: 0 16px 0 16px ;
+    
+//     // Top and bottom section
+//     .controlSection_bfe55a {
+//       transform: translateZ(0) !important;
+      
+//       .streamQualityIndicator__30845 { display: none }
+//     }
+
+//     // seperator in header toolbar (right side top)
+//     .dot__9293f  { display: none }
+//   }
+//   // <- Buttons
+
+//   // -> Itemcard / Tile
+//   // .tile__2f4f7 {
+
+//   //   @include shadowEffect("box_2");
+
+//   //   // stream quality / live indicator
+//   //   .indicators__2f4f7 { display: none }
+
+//   //   // Avatar
+//   //   .avatarWrapper_fb62e2 {
+      
+//   //     foreignObject {
+//   //       mask: none ;
+//   //       overflow: visible ;
+//   //     }
+      
+//   //     svg {
+//   //       contain: unset ;
+//   //       overflow: visible ;
+//   //     }
+      
+//   //     // Profile image
+//   //     .avatar__44b0c {
+//   //       border-radius: 7.5% ;
+        
+//   //       &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
+//   //     }
+//   //   }
+//   // }
+//   // // <- Itemcard / Tile
+
+//   // // "invite people" empty card
+//   // .tile_d6271c .root__4ad81 {
+//   //   background: none ;
+//   // }
+
+//   // -> Focus view
+//   .root__6981d {
+//     padding: 0 12px ;
+//     box-sizing: border-box ;
+
+//     // Main frame top
+//     .videoFrame__6981d {
+
+//       // hide members btn
+//       .participantsButton__211d1 {
+//         background: var(--background-accent);
+//       }
+//     }
+
+//     // Secondary Tiles
+//     .participantsWrapperAnimated__6981d {
+//       overflow: visible ; // for shadow
+//     }
+//   }
+//   // <- Focus view
+
+//   // -> Grid view
+//   .videoGridWrapper_a21736 {
+
+//     .videoGrid_a21736::-webkit-scrollbar { display: none }
+
+//     // Cards main container
+//     .tile_d6271c {
+//       padding: 4px ;
+//       box-sizing: border-box ;
+//     }
+//   }
+//   // <- Grid view
+// }
+
+.callContainer_cb9592 {
+  border: none ;
 
   // player popped out
   .root_e605a1 {
     background: none ;
   }
 
-  .gradientBackground__11664 { display: none }
-  
-  // -> Buttons
-  // always show controls/btns 
-  .idle_bfe55a {
-    :is(.controlSection_bfe55a, .chatButton_bfe55a) {
-      opacity: var(--aswc) !important ;
+  // -> Control buttons
+  .buttonSection__1405b {
+    background: none ;
+    border: none ;
+  }
+
+  @container style(--always-show-voicecontrols: 1) {
+    .root_bfe55a {
+      padding: 48px 0 50px 0 ;
+      box-sizing: border-box ;
     }
-  }
 
-  // Gradient effect on hover
-  .gradientContainer_bfe55a {
-    height: 80px ;
-    background-image: linear-gradient(
-      hsl(0, 0%, 0%) 0%,
-      hsla(0, 0%, 0%, 0.6) 50%,
-      hsla(0, 0%, 0%, 0.1) 70%,
-      hsla(0, 0%, 0%, 0) 100%
-    ); // to much ?
+    .videoControls_bfe55a {
+      padding: 0 16px ;
+    }
 
-    opacity: calc(1 - var(--aswc));
-  }
-  
-  // Buttons container
-  .videoControls_bfe55a { 
-    inset: calc(var(--aswc) * -48px) 0 calc(var(--aswc) * -56px) 0 ;
-    padding: 0 16px 0 16px ;
-    
-    // Top and bottom section
     .controlSection_bfe55a {
-      transform: translateZ(0) !important;
-      
-      .streamQualityIndicator__30845 { display: none }
+      opacity: 1 ;
+      transform: none ;
+      transition: none ;
     }
 
-    // seperator in header toolbar (right side top)
-    .dot__9293f  { display: none }
+    .gradientContainer_bfe55a { display: none }
+
+    .buttonSection__1405b {
+      background: none ;
+      border: none ;
+    }
+
+    .attachedCaret_f1ceac {
+      background: none ;
+      color: var(--interactive-normal);
+
+      &:hover {
+        color: var(--interactive-hover);
+      }
+    }
   }
-  // <- Buttons
+  // <- Control buttons
 
   // -> Itemcard / Tile
   .tile__2f4f7 {
@@ -85,12 +202,25 @@
       }
     }
   }
-  // <- Itemcard / Tile
 
   // "invite people" empty card
   .tile_d6271c .root__4ad81 {
     background: none ;
   }
+  // <- Itemcard / Tile
+
+  // -> Grid view
+  .videoGridWrapper_a21736 {
+
+    .videoGrid_a21736::-webkit-scrollbar { display: none }
+
+    // Cards main container
+    .tile_d6271c {
+      padding: 8px ;
+      box-sizing: border-box ;
+    }
+  }
+  // <- Grid view
 
   // -> Focus view
   .root__6981d {
@@ -102,7 +232,7 @@
 
       // hide members btn
       .participantsButton__211d1 {
-        background: var(--background-accent);
+        background: var(--background-floating);
       }
     }
 
@@ -112,125 +242,113 @@
     }
   }
   // <- Focus view
-
-  // -> Grid view
-  .videoGridWrapper_a21736 {
-
-    .videoGrid_a21736::-webkit-scrollbar { display: none }
-
-    // Cards main container
-    .tile_d6271c {
-      padding: 4px ;
-      box-sizing: border-box ;
-    }
-  }
-  // <- Grid view
 }
+
 // <- Voicecall view
 
 
 // -> Stage view
-.callContainer__722ff {
+// .callContainer__722ff .l {
 
-  .gradientBackground__11664 { display: none }
+//   .gradientBackground__11664 { display: none }
 
-  .videoControls_bfe55a {
-    padding: 0 16px 6px ;
-  }
+//   .videoControls_bfe55a {
+//     padding: 0 16px 6px ;
+//   }
 
-  // Empty/no stage
-  .container__6b38f  {
-    background: var(--background-modifier-hover);
+//   // Empty/no stage
+//   .container__6b38f  {
+//     background: var(--background-modifier-hover);
 
-    &:hover {
-      background: var(--background-modifier-selected);
-    }
-  }
+//     &:hover {
+//       background: var(--background-modifier-selected);
+//     }
+//   }
 
-  // black gradiant effect
-  .gradientContainer_bfe55a {
-    background: none ;
-  }
+//   // black gradiant effect
+//   .gradientContainer_bfe55a {
+//     background: none ;
+//   }
   
-  // -> User Tile cards
-  // Speaker
-  .tileSizer_fa73d7 {
-    overflow: visible;
-  }
+//   // -> User Tile cards
+//   // Speaker
+//   .tileSizer_fa73d7 {
+//     overflow: visible;
+//   }
 
-  .tile__2f4f7 {
-    overflow: visible;
+//   .tile__2f4f7 {
+//     overflow: visible;
 
-    @include shadowEffect("box_2");
+//     @include shadowEffect("box_2");
 
-    // Avatar
-    .avatarWrapper_fb62e2 {
+//     // Avatar
+//     .avatarWrapper_fb62e2 {
       
-      foreignObject {
-        mask: none ;
-        overflow: visible ;
-      }
+//       foreignObject {
+//         mask: none ;
+//         overflow: visible ;
+//       }
       
-      svg {
-        contain: unset ;
-        overflow: visible ;
-      }
+//       svg {
+//         contain: unset ;
+//         overflow: visible ;
+//       }
       
-      // Profile image
-      .avatar__44b0c {
-        border-radius: 7.5% ;
+//       // Profile image
+//       .avatar__44b0c {
+//         border-radius: 7.5% ;
         
-        &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
-      }
-    }
-  }
+//         &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
+//       }
+//     }
+//   }
   
-  // Audience
-  .participants__9c309 {
-    background: none ;
+//   // Audience
+//   .participants__9c309 {
+//     background: none ;
     
-    // User
-    .tileContainer__71eb2 {
-      background: none ;
+//     // User
+//     .tileContainer__71eb2 {
+//       background: none ;
       
-      &:hover {
-        background: var(--background-modifier-hover);
-      }
+//       &:hover {
+//         background: var(--background-modifier-hover);
+//       }
       
-      .avatar__71eb2 {
-        background: none ;
-      }
-    }
-  }
-  // <- User Tile cards
+//       .avatar__71eb2 {
+//         background: none ;
+//       }
+//     }
+//   }
+//   // <- User Tile cards
 
-  // -> Buttons
-  .controlSection_bfe55a {
+//   // -> Buttons
+//   .controlSection_bfe55a {
 
-    .buttonWithTextButton_fcb27c {
-      color: var(--interactive-normal);
-      background: none !important ;
+//     .buttonWithTextButton_fcb27c {
+//       color: var(--interactive-normal);
+//       background: none !important ;
 
-      &:hover {
-        color: var(--interactive-active);
-      }
-    }
+//       &:hover {
+//         color: var(--interactive-active);
+//       }
+//     }
 
-    .contextMenuNub_f1ceac {
-      color: white ;
-      background-color: var(--background-secondary);
-    }
-  }
-  // <- Buttons
-}
+//     .contextMenuNub_f1ceac {
+//       color: white ;
+//       background-color: var(--background-secondary);
+//     }
+//   }
+//   // <- Buttons
+// }
 
-// Stage view talk requests sidebar
-.container__664ff {
+// // Stage view talk requests sidebar
+// .container__664ff .l {
   
-  .headerContainer__664ff {
-    box-shadow: none ;
-  }
-}
+//   .headerContainer__664ff {
+//     box-shadow: none ;
+//   }
+// }
 // <- Stage view
 
 }

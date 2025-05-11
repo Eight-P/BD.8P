@@ -2,6 +2,7 @@
 :root {
   
   // will be reworked later
+  // these act as defaults
 
   --Main_Background: url("https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg");
   --background_app: var(--Main_Background);
@@ -34,6 +35,8 @@
   --show-namePlates: 1 ;
 
   --unmask-links: 0 ;
+
+  --highlightFocusedInput: 0 ;
 
   --show-serverboost-stats: 1 ;
 
