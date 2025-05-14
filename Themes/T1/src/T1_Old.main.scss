@@ -1,6 +1,6 @@
 @use "sass:meta";
 
-$T1_version: "0.7.20b" ; // Theme file v0.9
+$T1_version: "0.7.21b" ; // Theme file v0.9
 
 /*! 
   T1 Theme (c) Eight_P <github.com/Eight-P/BD.8P>
@@ -9,7 +9,7 @@ $T1_version: "0.7.20b" ; // Theme file v0.9
   You are viewing an outdated version of T1, that will soon be removed.
 */
 
-@include meta.load-css("components", $with: ( "T1_v": $T1_version ));
+// @include meta.load-css("components", $with: ( "T1_v": $T1_version ));
 
 .layer__960e4:not(.baseLayer__960e4) {
 
