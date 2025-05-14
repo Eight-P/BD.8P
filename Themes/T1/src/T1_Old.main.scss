@@ -1,6 +1,6 @@
 @use "sass:meta";
 
-$T1_version: "0.7.21b" ; // Theme file v0.9
+$T1_version: "0.7.21c" ; // Theme file v0.9
 
 /*! 
   T1 Theme (c) Eight_P <github.com/Eight-P/BD.8P>
@@ -11,12 +11,14 @@ $T1_version: "0.7.21b" ; // Theme file v0.9
 
 // @include meta.load-css("components", $with: ( "T1_v": $T1_version ));
 
-.layer__960e4:not(.baseLayer__960e4) {
+.content_c48ade {
 
   &::before {
     content: "Your T1 Theme is outdated. Please get the newest version from: betterdiscord.app/theme/T1";
     display: block ;
-    padding: 6px 0 ;
+    grid-column: guildsEnd / end ;
+    grid-row: titleBarEnd / noticeEnd ;
+    padding: 8px 0 ;
     font-size: 16px ;
     line-height: 20px ;
     line-height: 16px ;
@@ -24,22 +26,26 @@ $T1_version: "0.7.21b" ; // Theme file v0.9
     color: var(--header-primary);
     background: var(--background-primary);
     text-align: center ;
+    z-index: 9999 ;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
   }
+}
 
-  &::after {
-    content: "Yeah I know it can't be clicked, sorry. Link in the theme card";
+.layer__960e4:not(.baseLayer__960e4) .contentRegionScroller__23e6b {
+
+  &::before {
+    content: "Your T1 Theme is outdated. Please get the newest version from: betterdiscord.app/theme/T1";
     display: block ;
-    padding-bottom: 2px;
-    font-size: 12px ;
+    position: absolute ;
+    width: 100% ;
+    padding: 8px 0 ;
+    font-size: 16px ;
+    line-height: 20px ;
     line-height: 16px ;
     font-weight: 400 ;
-    color: var(--header-secondary);
+    color: var(--header-primary);
     background: var(--background-primary);
     text-align: center ;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75) ;
-  }
-
-  .standardSidebarView__23e6b {
-    top: 16px + 12px + (2* 7px) + 22px ;
+    z-index: 9999 ;
   }
 }
