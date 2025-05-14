@@ -1,6 +1,6 @@
 /*! 
   T1 Theme (c) Eight_P <github.com/Eight-P/BD.8P>
-  version 0.7.21b for Fv0.9.0
+  version 0.7.21c for Fv0.9.0
 
   You are viewing an outdated version of T1, that will soon be removed.
-*/.layer__960e4:not(.baseLayer__960e4)::before{content:"Your T1 Theme is outdated. Please get the newest version from: betterdiscord.app/theme/T1";display:block;padding:6px 0;font-size:16px;line-height:20px;line-height:16px;font-weight:400;color:var(--header-primary);background:var(--background-primary);text-align:center}.layer__960e4:not(.baseLayer__960e4)::after{content:"Yeah I know it can't be clicked, sorry. Link in the theme card";display:block;padding-bottom:2px;font-size:12px;line-height:16px;font-weight:400;color:var(--header-secondary);background:var(--background-primary);text-align:center;box-shadow:1px 1px 1px rgba(0,0,0,.75)}.layer__960e4:not(.baseLayer__960e4) .standardSidebarView__23e6b{top:64px}
+*/.content_c48ade::before{content:"Your T1 Theme is outdated. Please get the newest version from: betterdiscord.app/theme/T1";display:block;grid-column:guildsEnd/end;grid-row:titleBarEnd/noticeEnd;padding:8px 0;font-size:16px;line-height:20px;line-height:16px;font-weight:400;color:var(--header-primary);background:var(--background-primary);text-align:center;z-index:9999;box-shadow:1px 1px 1px rgba(0,0,0,.75)}.layer__960e4:not(.baseLayer__960e4) .contentRegionScroller__23e6b::before{content:"Your T1 Theme is outdated. Please get the newest version from: betterdiscord.app/theme/T1";display:block;position:absolute;width:100%;padding:8px 0;font-size:16px;line-height:20px;line-height:16px;font-weight:400;color:var(--header-primary);background:var(--background-primary);text-align:center;z-index:9999}
