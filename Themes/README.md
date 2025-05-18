@@ -1,26 +1,41 @@
-[download-image]: https://i.imgur.com/aFT3bFw.png
+## Themes
 
-[T1-download-link]: https://betterdiscord.app/Download?id=218
+-   ### [T1-Theme](T1/)
 
-# Themes for BetterDiscord
+<br/>
 
-CSS code that changes the default appearance of Discord.
+## Theme Customization
 
+The theme.css file offers variables that can be changed for customization and can be edited with any text editor or the edit feature within BetterDiscord.
 
-## Themes:
+Make sure you save your changes to make them apply.
 
-- [T1 - Theme](https://betterdiscord.app/theme/T1) | [download][T1-download-link] [![download-image]][T1-download-link]
+<br/>
 
+### Any changes made to the theme file directly are reset by theme file updates.
 
+It is therefore recommended to copy & paste the variables you want to change into your Custom CSS/ QuickCSS.
+<br/>
 
-## Install:
+All variables are found within:
 
-1. head into your "Themes" Settings.
-2. open Themes Folder.
-3. drop in the theme.css file.
-4. enable the Theme and enjoy.
+```css
+:root {
 
+}
+```
 
-## Customize:
+They are prefixed by `--` and closed with a semicolon.
 
-Edit the theme.css file in a Texteditor
+Copy the full lines into the root block, e.g.:
+
+```css
+:root {
+  --show-serverboost-stats: 1 ;
+  --show-sticker-btn: 0 ;
+}
+```
+
+<br/>
+
+It is usually worth checking the theme file after an update to see if any variables were changed or added.
