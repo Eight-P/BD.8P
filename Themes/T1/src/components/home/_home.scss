@@ -14,11 +14,11 @@
   // Scroller container
   .scroller__99e7c {
 
-    @container style(--sidebarScrollbar: 0 ) {
-      &::-webkit-scrollbar-thumb {
-        background-color: transparent !important ;
-      }
-    }
+    // @container style(--sidebarScrollbar: 0 ) {
+    //   &::-webkit-scrollbar-thumb {
+    //     background-color: transparent !important ;
+    //   }
+    // }
   }
 
   // Category header text

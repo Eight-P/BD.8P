@@ -94,20 +94,15 @@
 
 .nowPlayingColumn__133bf {
   min-width: 300px ;
-
-  @container (width > 650px) and style(--friendsActivity: 1) {
-    display: block !important ;
-  }
+  display: block ;
 
   @container style(--friendsActivity: 2) {
     &:has(.emptyCard__7e549) {
-      display: none ;
+      display: none !important ;
     }
   }
 
-  @container style(--friendsActivity: 0) {
-    display: none ;
-  }
+  @container style(--friendsActivity: 0) or (width < 650px) { display: none !important }
 
   // "Active now" header text
   .header__7d20c {

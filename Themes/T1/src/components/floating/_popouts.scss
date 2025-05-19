@@ -178,8 +178,8 @@
   }
   // <- Pins
 
-  // -> Bookmarks
-  .popoutContainer__4ad69 {
+  // -> Bookmarks (solo, inbox)
+  :is(.popoutContainer__4ad69, .recentMentionsPopout__95796) {
 
     .messagesScroller__4ad69 {
       gap: 8px ;

@@ -69,8 +69,8 @@ path[fill="currentColor"] {
 
   // who dis ?
   &.red_f1ceac path {
-    color: $BtnIconDanger ;
-    --__lottieIconColor: #{$BtnIconDanger} !important ;
+    // color: $BtnIconDanger ;
+    // --__lottieIconColor: #{$BtnIconDanger} !important ;
   }
 
   &.dangerous_f7ecac {
@@ -99,11 +99,6 @@ path[fill="currentColor"] {
   ) {
     color: currentColor ;
   }
-}
-// who dis ?
-.closeIcon_e2d7b8 {
-  // path { fill: red }
-  // &:hover path { fill: red }
 }
 
 // basic

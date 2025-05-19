@@ -25,16 +25,16 @@
 
 // Sidebar inner
 .sidebarList_c48ade {
-  padding-right: 6px ;
+  // padding-right: 6px ;
   flex: 1 1 auto ;
   border: none ;
   
   // inner container
-  .container__2637a {
+  :is(.container__2637a, .privateChannels__35e86) {
     margin-right: 6px ;
     padding: 0 ;
   }
-
+  
   .scrollerBase__99f8c {
     margin: 0 ;
 
