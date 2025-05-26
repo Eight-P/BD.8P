@@ -54,7 +54,8 @@
 
     // inner container with link
     .link__2ea32 {
-      background: transparent;
+      background: transparent ;
+      padding: var(--space-xxs);
       
       &:hover {
         .name__2ea32 { color: var(--interactive-hover) }
@@ -66,7 +67,7 @@
     .icon__2ea32 {
       width: 15px ;
       height: 15px ;
-      margin: 2.5px 0 ;
+      margin: 2.5px ;
       color: var(--channels-default);
       opacity: .8 ;
     }

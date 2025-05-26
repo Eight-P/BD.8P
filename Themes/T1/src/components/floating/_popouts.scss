@@ -76,25 +76,9 @@
       background: $BG_Body !important ;
 
       .header__14245 {
-        color: rgba(180, 115, 245, 0.5);
-      }
-
-      .emojiListRow_fc7141 {
-        padding-left: 2px ;
-        margin-right: 3px ;
-        border-right: 3px solid rgba(180, 115, 245, 0.5);
+        color: rgb(166, 103, 228);
       }
     }
-
-    // -> Emoji item
-    .emojiItem_fc7141 {
-      // background: none ;
-
-      &:hover {
-        // background: var(--background-modifier-accent);
-      }
-    }
-    // <- Emoji item
 
     // -> Sticker item
     .assetWrapperMasked__31fc2 {

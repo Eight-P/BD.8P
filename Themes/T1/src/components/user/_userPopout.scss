@@ -115,7 +115,7 @@
     // -> Banner (Default aspect: 20:7) (340:119)
     .mask__68edb {
       // Mask for cutout / seperator line below banner / Gif indicator
-      mask, .banner__68edb:before, .gifTag__68edb { display: none }
+      :is(mask, .banner__68edb:before, .gifTag__68edb) { display: none }
     }
     // <- Banner
 
@@ -136,48 +136,48 @@
         contain: none ;
         overflow: visible ;
         pointer-events: none ;
-
-        // -> Image
-        foreignObject {
-          position: absolute ;
-          x: $ProfileLeft * -1 ;
-          y: $ProfileTop * -1 ;
-          mask: none ;
-          overflow: visible ;
-          pointer-events: auto ;
-        }
-
-        // hover overlay
-        .avatarStack__44b0c::after {
-          border-radius: 7.5% ;
-          opacity: 0 ;
-        }
-
-        .avatarStack__44b0c:hover::after {
-          opacity: .4 ;
-        }
-        
-        // Picture
-        .avatar__44b0c {
-          border-radius: 7.5% ;
-
-          &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
-        }
-        // <- Image
-
-        // -> Status
-        // Status icon shadow
-        [style^="opacity:"] { display: none }
-
-        // online on mobile icon (regular)
-        .pointerEvents__44b0c[mask="url(#svg-mask-status-online-mobile)"] {
-          height: 18px ;
-          width: 12px ;
-          x: 60 + 2 ;
-          y: 52 + 7 ;
-        }
-        // <- Status
       }
+
+      // -> Image
+      foreignObject {
+        position: absolute ;
+        x: $ProfileLeft * -1 ;
+        y: $ProfileTop * -1 ;
+        mask: none ;
+        overflow: visible ;
+        pointer-events: auto ;
+      }
+
+      // hover overlay
+      .avatarStack__44b0c::after {
+        border-radius: 7.5% ;
+        opacity: 0 ;
+      }
+
+      .avatarStack__44b0c:hover::after {
+        opacity: .4 ;
+      }
+      
+      // Picture
+      .avatar__44b0c {
+        border-radius: 7.5% ;
+
+        &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
+      }
+      // <- Image
+
+      // -> Status
+      // Status icon shadow
+      [style^="opacity:"] { display: none }
+
+      // online on mobile icon (regular)
+      .pointerEvents__44b0c[mask="url(#svg-mask-status-online-mobile)"] {
+        height: 18px ;
+        width: 12px ;
+        x: 60 + 2 ;
+        y: 52 + 7 ;
+      }
+      // <- Status
       // <- Image / Status icon
 
       // -> Avatar decorations
@@ -214,37 +214,21 @@
 
     .inner_ab8609 {
       padding: 6px 8px ;
-      background: rgb(0 0 0 / .65 );
+      // background: rgb(0 0 0 / .65 );
       border-radius: 8px ;
       pointer-events: auto ;
+      opacity: .8 ;
 
       @include shadowEffect("box_2");
     }
 
     .statusText_ab8609 {
-      color: var(--redesign-button-overlay-alpha-text);
+      // color: var(--redesign-button-overlay-alpha-text);
     }
 
     // edit self status btns
-    // .popover_c97e55 {
     .popover__2d0ab {
       display: none ;
-      // top: 50% ;
-      // right: 50% ;
-      // transform: translate(50%, -50%);
-      // padding: 0px 4px ;
-      // background: var(--background-floating) ;
-      // box-shadow: none ;
-      // animation: none !important ;
-      // box-sizing: content-box ;
-
-      // &.visible__2d0ab {
-      //   opacity: 1 ;
-      // }
-      
-      // .button_c97e55 {
-      //   padding: 8px 6px ;
-      // }
     }
     // <- Status text
 
@@ -397,6 +381,8 @@
       .badge__8061a {
         padding: 1px 2px ;
         background: var(--bg_badges);
+        border-radius: 0 !important ;
+        transform: none !important ;
       }
     }
     // <- Badges
@@ -416,8 +402,7 @@
     // <- Bot action btns
 
     // -> Activitys
-    .activity__5be3e {
-      padding: 8px 0 ;
+    .card__39ec2 {
       background: none ;
 
       // "playing" header
@@ -428,17 +413,6 @@
       // Activity container
       .content__39ec2 {
         gap: 16px ;
-      }
-
-      // Activity interaction btn
-      .actions__39ec2 button {
-        background: var(--bg_items);
-        transition: none ;
-        color: var(--text-normal) ;
-
-        &:hover {
-          background: var(--bg_itemsHover);
-        }
       }
     }
     // <- Activitys
