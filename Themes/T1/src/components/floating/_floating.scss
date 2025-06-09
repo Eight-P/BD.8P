@@ -15,6 +15,8 @@ $C_Header: var(--interactive-normal);
 // @import 'modals' ;
 
 .layerContainer_da8173 {
+  z-index: 9999999 ;
+  // z-index: auto ;
 
 // General searchbar
 .container_a45028 { @include searchbar(".inner_a45028", true) }
@@ -56,7 +58,13 @@ $C_Header: var(--interactive-normal);
 
 
 // -> Modals
+// Modal backdrop
+.backdrop__78332 {
+  background: rgba(0, 0, 0, 0.75) !important;
+}
+
 .layer_bc663c {
+  padding: 20px 0 ;
 
   .root__49fc1 {
     border: none ;

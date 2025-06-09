@@ -67,10 +67,8 @@ path[fill="currentColor"] {
   border: none ;
   color: $BtnIconNormal ;
 
-  // who dis ?
-  &.red_f1ceac path {
-    // color: $BtnIconDanger ;
-    // --__lottieIconColor: #{$BtnIconDanger} !important ;
+  &.colorWhite__201d5 {
+    color: $BtnIconActive ;
   }
 
   &.dangerous_f7ecac {
@@ -129,6 +127,15 @@ path[fill="currentColor"] {
     &:hover {
       color: $BtnTextHover ;
       background: $BtnBackgroundHover ;
+    }
+  }
+
+  // Nitro
+  &.shinyButton__6a443 {
+    color: $BtnIconActive !important ;
+
+    .subButtonText_c880e8 {
+      color: $BtnIconActive ;
     }
   }
 

@@ -50,7 +50,7 @@ $T1_v: null !default ;
   }
 
   .contentColumnDefault__23e6b {
-    padding: 0px 10px 100px 20px ;
+    padding: 20px 10px 100px 20px ;
   }
 
   // -> Close btn
@@ -78,6 +78,7 @@ $T1_v: null !default ;
      }
   }
   // <- Close btn
+  // <- Content region
   
   // -> Client Themes 
   .presets__67a11:not(.basicThemeSelectors_fbfab6) {
@@ -106,7 +107,19 @@ $T1_v: null !default ;
   }
   // <- BD
 
-  // <- Content region
+  // -> Nitro
+  .subscriptionRows_e335a7 .banner__84995 {
+    background: none ;
+
+    &.canceled__84995 :is(.planInfo__84995, .planName__84995) {
+      color: var(--header-secondary) ;
+    }
+  }
+  .subscriptionRows_e335a7 .banner__84995, .tierCard_a45ed3 {
+    border: none ;
+  }
+  // <- Nitro
+
 }
 // <- User settings
 

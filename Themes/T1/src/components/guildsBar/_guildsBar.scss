@@ -443,6 +443,10 @@ $iconScale: var(--sbIconScale);
   padding: $spacing 0 !important ;
   gap: $dmSpacing !important ;
 
+  > div:not([class]) {
+    height: auto !important ;
+  }
+
   // seperator, unless favorite are present
   &:not(.listItem__650eb ~ #guild-list-unread-dms)::before {
     @include itemSeperator();

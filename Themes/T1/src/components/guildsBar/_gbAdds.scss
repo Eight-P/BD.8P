@@ -2,9 +2,11 @@
 
 #app-mount {
 
+// some stuff was done bc. of the collapsable sidebar bar before that was removed
 
 // -> App container
-.base_c48ade {
+// fullscreen/Hidden e.g.: fullscreen screenshare 
+.base_c48ade[data-fullscreen="false"] {
   display: flex ;
   margin-bottom: $sb_height ;
 
@@ -20,7 +22,7 @@
 }
 
 // Sidebar
-.sidebar_c48ade {
+.sidebar_c48ade:not(.hidden_c48ade) {
   display: flex ;
   left: calc(var(--custom-guild-list-width) * -1);
   padding-left: var(--custom-guild-list-width);
@@ -31,8 +33,7 @@
   }
 
   .sidebarList_c48ade {
-    // container-type: unset ;
-    // needed to position server btns as fixed
+    // needed to position server btn as fixed
     backdrop-filter: unset ;
   }
   
@@ -53,7 +54,6 @@
 // -> Server options btn
 // channels list spacer for banner image 
 /// (content__99f8c not unique), needs [style="height: 130px;"]
-// .sidebarList_c48ade .content__99f8c > [style="height: 130px;"]:not([class]) // old?
 .sidebarList_c48ade .content__99f8c > [style="height: 84px;"]:not([class]) { 
   margin-top: -84px ; // helps remove the space from bottom of the list
   visibility: hidden ;
