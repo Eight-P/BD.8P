@@ -1,4 +1,4 @@
-# v1.5
+# v1.6
 # Build and commit css for T1
 name: build-T1
 on:
@@ -24,7 +24,7 @@ jobs:
         node-version: 20.x
 
     - run: npm ci
-    - run: npm run build -w Themes/T1 && npm run buildCSS -w Themes/T1
+    - run: npm run buildCSS -w Themes/T1
 
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@e348103e9026cc0eee72ae06630dbe30c8bf7a79
