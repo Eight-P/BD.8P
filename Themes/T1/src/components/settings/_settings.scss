@@ -120,6 +120,15 @@ $T1_v: null !default ;
   }
   // <- Nitro
 
+  // Fix bc of background speudo
+  .header_c6bf1b :is(.titleContainer__81b3e, .warning__35859) {
+    position: relative ;
+  }
+
+  // Fix for double scrollbar
+  .contentRegionScroller__23e6b:has(> #roles-tab)  {
+    @include scrollbar(none);
+  }
 }
 // <- User settings
 

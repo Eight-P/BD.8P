@@ -204,3 +204,28 @@
   }
 }
 // <- Server shop
+
+
+// -> Server Boosts
+.page_c48ade .container__89463 {
+  container-type: inline-size ;
+}
+
+.contentContainer__89463 {
+  @container (width < 950px) { 
+    flex-direction: column-reverse ;
+
+    .sidebarContainer__89463 {
+      flex-direction: row ;
+      width: auto ;
+      max-height: 200px ;
+
+      .header__2281b { display: none }
+
+      .container__2281b {
+        padding: 16px ;
+      }
+    }
+  }
+}
+// <- Server Boosts

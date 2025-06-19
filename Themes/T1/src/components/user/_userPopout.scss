@@ -54,10 +54,6 @@
     );
   }
 
-  .profileEffects__01370 {
-    opacity: .9 ;
-  }
-
   // most buttons
   .button__201d5 {
     border: none ;
@@ -498,6 +494,11 @@
   // }
   // <- Account Panel
 }
+
+// sibling of outer
+.profileEffects__01370 {
+    z-index: 11 ; // for avatar 
+  }
 
 // User popout loading indicator 
 .layer_da8173 .loadingPopout__58f1c { display: none }

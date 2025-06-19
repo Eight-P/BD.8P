@@ -47,6 +47,12 @@
   /* Nameplates */
   --hide-nameplates: 0 ;
 
+  /* Clan tags
+    0: Show all (default)
+    1: Hide in member list
+    2: hide all */
+  --hide-clanTags: 0 ;
+
   /* Username holographic gradient & animation */
   --disable-roleGradients: 0 ;
 
