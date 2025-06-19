@@ -40,7 +40,8 @@
 
     @include scrollerFadeOut();
 
-    @container style(--sidebarScrollbar: 0 ) {
+    // @container style(--sidebarScrollbar: 0 ) {
+    @container style(--show-sidebarScrollbar: 0 ) {
       @include scrollbar(none);
     }
   }

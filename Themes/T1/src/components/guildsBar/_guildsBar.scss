@@ -5,16 +5,21 @@
 $sb_height: 54px ;
 $iconBaseSize: 40px ;
 
-:root {
-  --sbInnerSpacing: calc(var(--serverbarSpacing) * .5 );
-  --sbDmSpacing: calc(var(--serverbarSpacing) * .8 );
-  --sbIconScale: calc(var(--serverbarIconSize) * 0.01 );
+// :root {
+body {
+  // --sbInnerSpacing: calc(var(--serverbarSpacing) * .5 );
+  --sbInnerSpacing: calc(var(--serverbar-Spacing) * .5 );
+  // --sbDmSpacing: calc(var(--serverbarSpacing) * .8 );
+  --sbDmSpacing: calc(var(--serverbar-Spacing) * .8 );
+  // --sbIconScale: calc(var(--serverbarIconSize) * 0.01 );
+  --sbIconScale: calc(var(--serverbar-IconSize) * 0.01 );
 
   --guildbar-avatar-size: #{$iconBaseSize} !important ; // discord var
   --guildbar-folder-size: #{$iconBaseSize} !important ;
 }
 
-$spacing: var(--serverbarSpacing);
+// $spacing: var(--serverbarSpacing);
+$spacing: var(--serverbar-Spacing);
 $innerSpacing: var(--sbInnerSpacing);
 $dmSpacing: var(--sbDmSpacing);
 $iconScale: var(--sbIconScale);
@@ -354,9 +359,11 @@ $iconScale: var(--sbIconScale);
       bottom: 2px ;
       border: none ;
       border-radius: 10px ;
+      background-color: rgba(30, 30, 30, .5);
 
-      @container style(--serverBarFolderStyle: 1) {
-        background-color: rgba(30, 30, 30, .5);
+      // @container style(--serverBarFolderStyle: 0) {
+      @container style(--serverBar-FolderStyle: 0) {
+        display: none ;
       }
     }
 
@@ -424,7 +431,8 @@ $iconScale: var(--sbIconScale);
         margin: 0 ;
       }
     }
-    @container style(--serverBarFolderStyle: 0) {
+    // @container style(--serverBarFolderStyle: 0) {
+    @container style(--serverBar-FolderStyle: 0) {
       .folderGuildsList__48112::after {
         @include itemSeperator();
         bottom: calc(((($spacing + $innerSpacing) / 2) - $innerSpacing + 1px) * -1 );

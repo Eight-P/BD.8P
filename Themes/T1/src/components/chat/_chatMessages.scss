@@ -103,7 +103,8 @@
 
   // -> btn hover and appear behaviour
   // hide emojis until hover
-  @container style(--emojiMsgBtns: 1 ) {
+  // @container style(--emojiMsgBtns: 1 ) {
+  @container style( --hide-messageBtnEmojis: 1 ) {
     :is(
       .button_f7ecac:has(.emoji),
       .separator_f84418
@@ -111,7 +112,8 @@
   }
 
   // always hide emojis
-  @container style(--emojiMsgBtns: 0 ) {
+  // @container style(--emojiMsgBtns: 0 ) {
+  @container style( --hide-messageBtnEmojis: 2 ) {
     :is(
       .button_f7ecac:has(.emoji),
       .separator_f84418
@@ -132,7 +134,8 @@
   }
 
 
-  @container style(--messageBtns: 0 ) {
+  // @container style(--messageBtns: 0 ) {
+  @container style( --reduce-messageBtns: 1 ) {
     @include reducedBtns();
   }
 
@@ -175,14 +178,17 @@
       height: 100% ;
       width: 100% ;
       inset: 0px ;
-      background: var(--background_app) $BG_MsgHighlight;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      // background: var(--background_app) $BG_MsgHighlight;
+      background: var(--background-app) $BG_MsgHighlight ;
+      background-position: center ;
+      background-size: cover ;
+      background-repeat: no-repeat ;
+      background-attachment: fixed ;
       
-      --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
-      --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+      // --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
+      --blur: blur(calc(var(--backgroundBlur-app, 0) / 100 * 1px));
+      // --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
+      --brightness: brightness(calc((var(--backgroundBrightness-app, 80) / 100)));
 
       filter: var(--blur) var(--brightness);
     }

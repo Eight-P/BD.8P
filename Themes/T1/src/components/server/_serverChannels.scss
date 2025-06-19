@@ -25,7 +25,8 @@
     border: none ;
     margin-bottom: 6px ;
 
-    @container style(--show-serverboost-stats: 0) { & { display: none } }
+    // @container style(--show-serverboost-stats: 0) { & { display: none } }
+    @container style(--hide-serverBoostStats: 1) { & { display: none } }
   }
   // <- Meta channels
 

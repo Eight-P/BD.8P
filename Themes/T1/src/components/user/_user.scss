@@ -13,17 +13,20 @@
 #app-mount {
 
   // Profile picture decorations
-  @container style(--show-avatarDecorations: 0) {
+  // @container style(--show-avatarDecorations: 0) {
+  @container style(--hide-avatarDecorations: 1) {
     :is(.avatarDecoration__44b0c, .avatarDecoration_c19a55) { display: none }
   }
 
   // Profile Animations effects
-  @container style(--show-userProfile-effects: 0) {
+  // @container style(--show-userProfile-effects: 0) {
+  @container style(--hide-profileEffects: 1) {
     .profileEffects__01370 { display: none }
   }
 
   // Nameplates
-  @container style(--show-namePlates: 0 ) {
+  // @container style(--show-namePlates: 0 ) {
+  @container style(--hide-namePlates: 1 ) {
     .nameplated__91a9d .container__4bbc6 { display: none }
   }
 }

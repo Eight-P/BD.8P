@@ -175,7 +175,8 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
   }
 }
 
-@container style(--show-reactionAnimations: 1) {
+// @container style(--show-reactionAnimations: 1) {
+@container style(--hide-reactionAnimations: 0) {
 
   :is(.reaction__23977, .reaction_f8896c) {
     background: var(--background-modifier-hover);
@@ -198,7 +199,8 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
   }
 }
 
-@container style(--show-reactionAnimations: 0) {
+// @container style(--show-reactionAnimations: 0) {
+@container style(--hide-reactionAnimations: 1) {
 
   :is(.reaction__23977, .reaction_f8896c) {
     background: var(--background-modifier-hover) !important ;

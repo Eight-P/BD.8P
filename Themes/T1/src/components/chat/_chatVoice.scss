@@ -139,7 +139,8 @@
     border: none ;
   }
 
-  @container style(--always-show-voicecontrols: 1) {
+  // @container style(--always-show-voicecontrols: 1) {
+  @container style(--keep-voiceChannelBtns: 1) {
     .root_bfe55a {
       padding: 48px 0 50px 0 ;
       box-sizing: border-box ;

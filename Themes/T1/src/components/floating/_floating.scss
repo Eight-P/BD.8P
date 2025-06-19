@@ -25,18 +25,21 @@ $C_Header: var(--interactive-normal);
 // Popouts & Tooltips & Context menus, Modals
 :is(.layer_da8173, .layer_bc663c) {
 
-  --background-surface-high: #{$BG_Meta};
-  --background-surface-higher: #{$BG_Body};
-  --background-surface-highest: #{$BG_BodyAlt};
+  --background-surface-high: #{$BG_Meta} ;
+  --background-surface-higher: #{$BG_Body} ;
+  --background-surface-highest: #{$BG_BodyAlt} ;
 
-  --bg-base-secondary: #{$BG_Meta};
+  --bg-base-secondary: #{$BG_Meta} ;
   // --bg-base-primary: #{$BG_Body};
 
-  --modal-background: #{$BG_Meta};
-  --modal-footer-background: #{$BG_Meta};
-  --background-secondary: #{$BG_Meta};
+  --modal-background: #{$BG_Meta} ;
+  --modal-footer-background: #{$BG_Meta} ;
+  --background-secondary: #{$BG_Meta} ;
 
   --border-subtle: transparent ;
+
+  // server preview popout
+  --bg-surface-overlay: #{$BG_Body} ;
 
   // -> Settings items/options
   :is(.select__3f413, .pauseContainer_c38e9f) {
@@ -56,6 +59,11 @@ $C_Header: var(--interactive-normal);
 }
 // <- Layers general
 
+// -> Tooltips
+.tooltipPrimary__382e7 {
+  background: $BG_Floating ;
+}
+// <- Tooltips
 
 // -> Modals
 // Modal backdrop
@@ -70,6 +78,10 @@ $C_Header: var(--interactive-normal);
     border: none ;
 
     @include scrollbar(none);
+
+    .outer_c0bea0 {
+      background: $BG_Floating ;
+    }
 
     .header__49fc1 {
       padding-bottom: 16px ;

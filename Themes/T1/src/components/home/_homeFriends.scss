@@ -96,13 +96,13 @@
   min-width: 300px ;
   display: block ;
 
-  @container style(--friendsActivity: 2) {
-    &:has(.emptyCard__7e549) {
-      display: none !important ;
-    }
+  // hide empty
+  @container style(--hide-friendsActivity: 1) {
+    &:has(.emptyCard__7e549) { display: none !important }
   }
 
-  @container style(--friendsActivity: 0) or (width < 650px) { display: none !important }
+  // @container style(--friendsActivity: 0) or (width < 650px) { display: none !important }
+  @container style(--hide-friendsActivity: 2) or (width < 650px) { display: none !important }
 
   // "Active now" header text
   .header__7d20c {
