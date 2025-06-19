@@ -42,8 +42,8 @@ body {
   @container style(--show-avatarDecorations: 1 ) { --hide-avatarDecorations: 0 }
   @container style(--show-avatarDecorations: 0 ) { --hide-avatarDecorations: 1 }
 
-  @container style(--show-namePlates: 1 ) { --hide-namePlates: 0 }
-  @container style(--show-namePlates: 0 ) { --hide-namePlates: 1 }
+  @container style(--show-namePlates: 1 ) { --hide-nameplates: 0 }
+  @container style(--show-namePlates: 0 ) { --hide-nameplates: 1 }
 
   @container style(--show-reactionAnimations: 1 ) { --hide-reactionAnimations: 0 }
   @container style(--show-reactionAnimations: 0 ) { --hide-reactionAnimations: 1 }
@@ -54,9 +54,9 @@ body {
     --serverBar-FolderStyle: var(--serverBarFolderStyle) 
   }
 
-  @container style(--serverbarSpacing) { --serverbar-Spacing: var(--serverbarSpacing) }
+  @container style(--serverbarSpacing) { --serverBar-Spacing: var(--serverbarSpacing) }
 
-  @container style(--serverbarIconSize) { --serverbar-IconSize: var(--serverbarIconSize) }
+  @container style(--serverbarIconSize) { --serverBar-IconSize: var(--serverbarIconSize) }
   // <- Server bar
 
   // -> Backgrounds

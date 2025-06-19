@@ -26,8 +26,43 @@
 
   // Nameplates
   // @container style(--show-namePlates: 0 ) {
-  @container style(--hide-namePlates: 1 ) {
-    .nameplated__91a9d .container__4bbc6 { display: none }
+  @container style(--hide-nameplates: 1 ) {
+    .nameplated__91a9d {
+      &.childContainer__91a9d {
+        padding-right: 8px ;
+      }
+      .container__4bbc6 { display: none }
+    }
+  }
+
+  // User name (holographic) gradient effect
+  @container style(--disable-roleGradients: 1 ) {
+    .animateGradient_e5de78 {
+      animation: none ;
+
+      &::after { display: none }
+    } 
+
+    .usernameGradient_e5de78 {
+      background: var(--custom-gradient-color-1);
+      background-clip: text ;
+      background-size: 100px auto ;
+    }
+
+    // member list
+    .usernameGlow_e5de78 { display: none }
+  }
+
+  // Clan tags member list
+  @container style(--hide-clanTags: 1 ) {
+    
+    .username__5d473 .chipletContainerInner__10651 { display: none }
+  }
+
+  // Clan tags all
+  @container style(--hide-clanTags: 2 ) {
+    
+    .clanTagChiplet_c19a55, .clanTag__5d473 { display: none }
   }
 }
 

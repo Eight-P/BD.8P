@@ -45,7 +45,10 @@
   --hide-avatarDecorations: 0 ;
 
   /* Nameplates */
-  --hide-namePlates: 0 ;
+  --hide-nameplates: 0 ;
+
+  /* Username holographic gradient & animation */
+  --disable-roleGradients: 0 ;
 
   /* Super reaction animations */
   --hide-reactionAnimations: 0 ;
@@ -58,11 +61,11 @@
   --serverBar-FolderStyle: 1 ;
 
   /* Space between server bar icons */
-  --serverbar-Spacing: 17px ;
+  --serverBar-Spacing: 17px ;
 
   /* Scaler/Percentage value for icon size (can make the images look blurry)
    100: default | lower number: smaller */
-  --serverbar-IconSize: 100 ;
+  --serverBar-IconSize: 100 ;
 
   /* Backgrounds */
 

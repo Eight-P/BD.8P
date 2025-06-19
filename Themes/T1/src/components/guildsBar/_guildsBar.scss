@@ -8,18 +8,18 @@ $iconBaseSize: 40px ;
 // :root {
 body {
   // --sbInnerSpacing: calc(var(--serverbarSpacing) * .5 );
-  --sbInnerSpacing: calc(var(--serverbar-Spacing) * .5 );
+  --sbInnerSpacing: calc(var(--serverBar-Spacing) * .5 );
   // --sbDmSpacing: calc(var(--serverbarSpacing) * .8 );
-  --sbDmSpacing: calc(var(--serverbar-Spacing) * .8 );
+  --sbDmSpacing: calc(var(--serverBar-Spacing) * .8 );
   // --sbIconScale: calc(var(--serverbarIconSize) * 0.01 );
-  --sbIconScale: calc(var(--serverbar-IconSize) * 0.01 );
+  --sbIconScale: calc(var(--serverBar-IconSize) * 0.01 );
 
   --guildbar-avatar-size: #{$iconBaseSize} !important ; // discord var
   --guildbar-folder-size: #{$iconBaseSize} !important ;
 }
 
 // $spacing: var(--serverbarSpacing);
-$spacing: var(--serverbar-Spacing);
+$spacing: var(--serverBar-Spacing);
 $innerSpacing: var(--sbInnerSpacing);
 $dmSpacing: var(--sbDmSpacing);
 $iconScale: var(--sbIconScale);

@@ -86,7 +86,11 @@
 
   --hide-avatarDecorations: 0 ;
 
-  --hide-namePlates: 0 ;
+  --hide-nameplates: 1 ;
+
+  --hide-clanTags: 1 ;
+
+  --disable-roleGradients: 0 ;
 
   --hide-reactionAnimations: 0 ;
   // <- Effects & Decorations
@@ -94,9 +98,9 @@
   // -> Server bar / Guilds list
   --serverBar-FolderStyle: 1 ;
 
-  --serverbar-Spacing: 17px ;
+  --serverBar-Spacing: 17px ;
 
-  --serverbar-IconSize: 100 ;
+  --serverBar-IconSize: 100 ;
   // <- Server bar / Guilds list
 
   // -> Backgrounds
