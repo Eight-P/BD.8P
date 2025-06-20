@@ -31,8 +31,8 @@ Copy the full lines into the root block, e.g.:
 
 ```css
 :root {
-  --show-serverboost-stats: 1 ;
-  --show-sticker-btn: 0 ;
+  --hide-serverBoostStats: 1 ;
+  --hide-chatBtn-sticker: 1 ;
 }
 ```
 
