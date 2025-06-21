@@ -1,103 +1,160 @@
 /**
  * @name T1
- * @description Simple design with focus on improvements and a horizontal server bar. 🛈 Click Edit 🖊 for more information and customization.
- * @version 0.9.0
+ * @description Simple design with focus on improvements and a horizontal server bar. 🛈 Edit the theme file for more options.
+ * @version 0.10.0
  * @author Eight_P
- * @authorId 120202910586896385
+ * @authorLink https://github.com/Eight-P
  * @website https://betterdiscord.app/theme/T1
  * @source https://github.com/Eight-P/BD.8P/tree/master/Themes/T1
 */
 
-/* T1 */
 @import url(https://eight-p.github.io/BD.8P/Themes/T1/dist/T1.css);
 
-/* Icon Revert 2023 by davart154 */
-/* - Reverts all icons back to their previous version .*/
-/* - To enable: uncomment the link below by removing the: /* and */
-/* @import url(https://davart154.github.io/Themes/Icon%20Revert%202023/2023%20Icon%20Revert.css); */
-
-
 :root {
-/*  ==> IMPORTANT <== 
+/*
+==> IMPORTANT <==
 
-  - The Theme might not work properly when mixed with others.
+- The Theme might not work properly when mixed with others.
 
-  - Theme updates are made to match the stable release channel on Windows.
-    Discord's stable client is therefore highly recommended to reduce potential bugs.
+- Theme updates are made to match the stable release channel on Windows.
+  Discord's stable client is therefore highly recommended to reduce potential bugs.
 
-  - To report any issues, go to: https://github.com/Eight-P/BD.8P/issues
-  - Or ask questions at: https://github.com/Eight-P/BD.8P/discussions
+- To report any issues, go to: https://github.com/Eight-P/BD.8P/issues
+- Or ask questions at: https://github.com/Eight-P/BD.8P/discussions
 
 
-    ==> SETTINGS <== 
+==> SETTINGS <==
 
-  - Change the values between ":" and ";" | Do not remove the colons or semicolons.
-  
-  - 0: hidden | 1: visible
-*/
+- For more infos check: https://github.com/Eight-P/BD.8P/tree/master/Themes
 
-  /* Chat buttons */
-  --show-nitro-btn: 0 ;
-  --show-gif-btn: 1 ;
-  --show-sticker-btn: 1 ;
-  --show-emoji-btn: 1 ;
-  --show-apps-btn: 1 ;
 
-  /* Message buttons
-    0: Reduced until hovered
-    1: Show all (default) */
-  --messageBtns: 1 ;
+/*  Hide chat input buttons
+/*  -  0: Visible | 1: Hidden */
 
-  /* Emojis in message buttons
-    0: Hidden
-    1: Show on hover
-    2: Show (default) */
-  --emojiMsgBtns: 1 ;
+--hide-chatBtn-nitro: 1 ;
+--hide-chatBtn-gif: 0 ;
+--hide-chatBtn-sticker: 0 ;
+--hide-chatBtn-emoji: 0 ;
+--hide-chatBtn-apps: 0 ;
 
-  /* Friends activities section in home tab 
-    0: Hidden
-    1: Show 
-    2: Show but hide empty */
-  --friendsActivity: 2 ;
 
-  /* Server folders in guild bar
-    0: No background
-    1: Background */
-  --serverBarFolderStyle: 1 ;
+/*  Reduce message buttons unless hovered
+/*  -  0: Show all (default)
+/*  -  1: Reduce until hovered */
 
-  /* Server boost goal in the channel sidebar */
-  --show-serverboost-stats: 1 ;
+--reduce-messageBtns: 0 ;
 
-  /* Backgrounds can be links, colors or gradients (links must be HTTPS). */
-  --Main_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Main-bg.jpg);
-  --Server_Background: url(https://eight-p.github.io/BD.8P/Themes/T1/imports/Server-bg.jpg);
 
-  /* Background brightness
-    lower = darker | higher = brighter */
-  --Main_Brightness: 80 ;
-  --Server_Brightness: 100 ;
+/*  Hide emojis in message buttons
+/*  -  0: Show all (default)
+/*  -  1: Hide until hovered
+/*  -  2: Hidden */
 
-  /* Background blur effect
-    0: off | higher number = more blur */
-  --Main_Background_blur: 0 ;
-  --Server_Background_blur: 0 ;
+--hide-messageBtnEmojis: 1 ;
 
-  /* User profile effects and decorations */
-  --show-userProfile-effects: 1 ;
-  --show-avatarDecorations: 1 ;
 
-  /* Show the URL next to a masked link */
-  --unmask-links: 0 ;
+/*  Button overlay in call view
+/*  -  0: Only show on hover (default)
+/*  -  1: Always show  */
 
-  /* Button overlay in call view 
-    1: Always show 
-    0: Only show on hover (default) */
-  --always-show-voicecontrols: 0 ;
+--keep-voiceChannelBtns: 0 ;
 
-  /* Scrollbars */
-  --sidebarScrollbar: 0 ;
-  --membersListScrollbar: 0 ;
 
-  /* Main font (prioritization: left to right) */
-  --Font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+/*  Visualize chat input when focused/selected
+/*  -  0: Off (default)
+/*  -  1: Highlight */
+
+--highlight-focusedChatInput: 0 ;
+
+
+/*  Show the URL next to a masked link
+/*  -  0: Masked (default)
+/*  -  1: Show URL */
+
+--unmask-links: 0 ;
+
+
+/*  Nitro effects & decorations
+/*  -  0: Visible | 1: Hidden */
+
+--hide-profileEffects: 0 ;
+--hide-avatarDecorations: 0 ;
+--hide-nameplates: 0 ;
+--disable-roleGradients: 0 ;
+--hide-reactionAnimations: 0 ;
+
+
+/*  Clan tags
+/*  -  0: Show all (default)
+/*  -  1: Hide in member list
+/*  -  2: hide all */
+
+--hide-clanTags: 0 ;
+
+
+/*  Folder background-style
+/*  -  0: No background
+/*  -  1: Background */
+
+--serverBar-FolderStyle: 1 ;
+
+
+/*  Space between server bar icons  */
+
+--serverBar-Spacing: 17px ;
+
+
+/*  Scaler/Percentage value for icon size (can make the images look blurry)
+/*  -  100: default | lower number: smaller */
+
+--serverBar-IconSize: 100 ;
+
+
+/*  Backgrounds
+/*  -  can be links, colors or gradients (links must be HTTPS) */
+
+--background-app: url(https://eight-p.github.io/BD.8P/Themes/T1/assets/Main-bg.jpg);
+--background-server: url(https://eight-p.github.io/BD.8P/Themes/T1/assets/Server-bg.jpg);
+
+
+/*  Background brightness
+/*  -  lower: darker | higher: brighter */
+
+--backgroundBrightness-app: 80 ;
+--backgroundBrightness-server: 100 ;
+
+
+/*  Background blur effect
+/*  -  0: Off | higher number: more blur */
+
+--backgroundBlur-app: 0 ;
+--backgroundBlur-server: 0 ;
+
+
+/*  Friend activities section in home tab
+/*  -  0: Always show (default)
+/*  -  1: Hide when empty
+/*  -  2: Always Hide */
+
+--hide-friendsActivity: 1 ;
+
+
+/*  Server boost goal in the channel sidebar
+/*  -  0: Visible (default)
+/*  -  1: Hidden */
+
+--hide-serverBoostStats: 0 ;
+
+
+/*  Add Scrollbars
+/*  -  0: Hidden | 1: Visible */
+
+--show-sidebarScrollbar: 0 ;
+--show-memberListScrollbar: 0 ;
+
+
+/*  Change default font
+/*  -  Prioritization: left to right | Fonts should be installed & may need quotation marks */
+
+--font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
 }
