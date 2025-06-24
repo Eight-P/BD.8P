@@ -33,13 +33,10 @@
 
 - The Theme might not work properly when mixed with others.
 
-- Theme updates are made to match the stable release channel on Windows.
+- Updates are made to match the stable release channel on Windows.
 
 - Discord's Dark mode (User-Settings/Appearance) and a dark background image is recommended.
 
 - [Read how to customize][ThemesReadMe-link] or check out the theme file.
 
 - To report any problems, go to: [Issues][Issues-link] or ask questions at: [Discussions][Discussions-link]
-
-<br/>
-
