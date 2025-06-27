@@ -13,7 +13,7 @@
   
   # T1
   
-  Simple design with focus on improvements and a horizontal server bar.
+  Simple design with focus on improvements and a horizontal server bar
   
 </div>
 
