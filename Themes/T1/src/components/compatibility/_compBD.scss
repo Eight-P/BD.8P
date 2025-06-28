@@ -1,8 +1,8 @@
-// - ReadAllNotificationsButton by DevilBro (v1.8.0)
-// - SpotifyControls by DevilBro (v1.4.6)
-// - ServerDetails by DevilBro (v1.2.5)
+// - ReadAllNotificationsButton by DevilBro (v1.8.3)
+// - SpotifyControls by DevilBro (v1.4.9)
+// - ServerDetails by DevilBro (v1.2.7)
 // - ServerFolders by DevilBro (v7.3.8)
-// - InvisibleTyping by Strencher (v1.3.7)
+// - InvisibleTyping by Strencher (v1.4.0)
 // - PingNotification by DaddyBoard (v8.0.3)
 // - FriendNotifications by DevilBro (v2.0.8)
 
@@ -10,9 +10,9 @@
 
 // -> ReadAllNotificationsButton by DevilBro
 // "Read all" btn
-.guilds_c48ade .frame_oXWS21 {
-  
-  .innerFrame_8Hg64E {
+.guilds_c48ade .frame_aa90f4 {
+
+  .innerFrame_aa90f4 {
     transform: rotate(90deg);
 
     .childWrapper__6e9f8 {
@@ -35,14 +35,14 @@
 
 // -> SpotifyControls by DevilBro
 // Sidebar control panel
-.panels_c48ade .container_6sXIoE {
+.panels_c48ade .container_791eb8 {
   display: contents ;
 
-  &.maximized_vv2Wr0 .coverWrapper_YAplwJ {
+  &.maximized_791eb8 .coverWrapper_791eb8 {
     width: 100% ;
   }
-  
-  .timeline_UWmgAx {
+
+  .timeline_791eb8 {
     margin: 6px ;
   }
 }
@@ -50,7 +50,7 @@
 
 // -> ServerDetails by DevilBro
 // make tooltip top center
-.detailsTooltip_G9hSSa {
+.detailsTooltip_78f589 {
   transform: translate(-195px, -50px);
 }
 // <- ServerDetails by DevilBro
@@ -101,8 +101,8 @@
 
 // -> InvisibleTyping by Strencher
 .invisibleTypingButton {
-  margin-right: var(--space-8);
-  transform: scale(.9);
+  // margin-right: var(--space-8);
+  transform: scale(.8);
 }
 // <- InvisibleTyping by Strencher
 

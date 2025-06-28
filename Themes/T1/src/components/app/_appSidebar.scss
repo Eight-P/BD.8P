@@ -5,7 +5,7 @@
 // -> Sidebar
 .sidebar_c48ade {
 
-  // seperator to page line for resize bar 
+  // seperator to page line for resize bar
   &::after {
     content: "";
     position: absolute ;
@@ -28,13 +28,13 @@
   // padding-right: 6px ;
   flex: 1 1 auto ;
   border: none ;
-  
+
   // inner container
   :is(.container__2637a, .privateChannels__35e86) {
     margin-right: 6px ;
     padding: 0 ;
   }
-  
+
   .scrollerBase__99f8c {
     margin: 0 ;
 
@@ -57,6 +57,7 @@
     order: -1 ;
     height: 48px ;
     container-type: inline-size ;
+    gap: 0 ; // helps with GameActivityToggle
 
     @container (width < 195px) {
       .nameTag__37e49 { display: none }
@@ -69,6 +70,7 @@
     .avatarWrapper__37e49 {
       background: none ;
       flex: 0 1 auto ;
+      margin-right: 4px ;
     }
 
     .svg__44b0c {
@@ -81,19 +83,19 @@
   .activityPanel_c48ade {
     padding: 0px 10px ;
     border-color: var(--background-modifier-accent);
-    
+
     .gameIconWrapper__8c6c2 {
       height: 30px ;
     }
 
     // Image
-    .gameIcon__8c6c2 { 
+    .gameIcon__8c6c2 {
       height: 30px;
       width: 30px ;
     }
-    
+
     // Text
-    .title_d1da5f { 
+    .title_d1da5f {
       line-height: 32px;
     }
   }

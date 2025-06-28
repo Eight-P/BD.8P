@@ -20,7 +20,7 @@
 
   // scroller
   :is(
-    .scrollerBase_d125d2, 
+    .scrollerBase_d125d2,
     .scrollerBase__99f8c,
     .container_d9c882 // Threads
   ) {
@@ -115,12 +115,12 @@
     }
     // <- left side category items
 
-    :is(.inspector_aeaaeb, .nitroTopDividerContainer_b3fb5f, .nitroBottomDivider_c656ac) { 
+    :is(.inspector_aeaaeb, .nitroTopDividerContainer_b3fb5f, .nitroBottomDivider_c656ac) {
       display: none ;
     }
   }
   // <- Chat input Emoji, Sticker, Gif picker
-    
+
   // -> Soundborad picker
   .picker__09f65 {
 
@@ -151,7 +151,7 @@
       padding: 4px 16px ;
 
       @include shadowEffect("box_3");
-  
+
       + .button__201d5 {
         width: 24px ;
         background: $BG_Meta !important ;
@@ -226,10 +226,10 @@
     .checkbox_f525d3  {
       background: none ;
       border: none ;
-      
+
       &:not(.checked_f525d3) path {
         fill: currentColor ;
-        d: path("M 18.625 3 H 5.375 C 4.06519 3 3 4.06519 3 5.375 V 18.625 C 3 19.936 4.06519 21 5.375 21 H 18.625 C 19.936 21 21 19.936 21 18.625 V 5.375 C 21.0057 4.08803 19.9197 3 18.625 3 Z M 19 19 V 5 H 4.99999 V 19 H 19 Z"); 
+        d: path("M 18.625 3 H 5.375 C 4.06519 3 3 4.06519 3 5.375 V 18.625 C 3 19.936 4.06519 21 5.375 21 H 18.625 C 19.936 21 21 19.936 21 18.625 V 5.375 C 21.0057 4.08803 19.9197 3 18.625 3 Z M 19 19 V 5 H 4.99999 V 19 H 19 Z");
       }
     }
 
@@ -243,7 +243,7 @@
       }
     }
     // <- Checkbox options
-  
+
     // -> Radio selection options
     .radioIndicator__001a7 {
 
@@ -256,7 +256,7 @@
       }
     }
     // <- Radio selection options
-  
+
   }
   // <- Context menus
 
@@ -307,7 +307,7 @@
     // channel item
     .channel__427f0 {
       padding-bottom: 3px ;
-      
+
       // Collapse btn
       .collapseButton__427f0 {
         position: static ;
@@ -320,7 +320,7 @@
         padding: 0 ;
         color: var(--interactive-normal);
         border-radius: 50% ;
-        
+
         &:hover {
           color: var(--interactive-hover);
         }
@@ -353,7 +353,7 @@
       @include shadowEffect("box_3");
     }
     // <- Mentions
-      
+
       // <- Body
   }
   // <- Inbox
@@ -364,10 +364,10 @@
 
     .drawerSizingWrapper__9c62c {
       height: 100% !important ;
+    }
 
-      .slideContent__9c62c {
-        // max-height: calc(100vh - 130px);
-      }
+    .slideContent__9c62c {
+      max-height: calc(100vh - 130px);
     }
   }
   // <- Apps & Commands popout
@@ -375,11 +375,11 @@
 
 .chatContent_f75fb0 {
   z-index: 9 ; // to keep sumaries above the members list
-  
+
   // -> Chat Summaries
   .topicsDropdownBase__0f481 {
     background: $BG_Body ;
-  
+
     .topicsDropdownHeading__0f481 {
       background: $BG_Meta ;
     }
