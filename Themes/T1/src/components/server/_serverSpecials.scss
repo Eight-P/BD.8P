@@ -22,7 +22,7 @@
     // item
     .tabBarItem__0b563 {
       color: var(--interactive-normal);
-  
+
       &:hover, &.selected_b3f026 {
         color: var(--interactive-hover);
       }
@@ -66,7 +66,7 @@
 
   // Profile preview
   .profile__5d7c9 {
-    
+
     .profileCard__5d7c9 {
       background: var(--background-modifier-accent);
     }
@@ -174,14 +174,14 @@
   .container_adb50a {
     border: none ;
   }
-  
+
   .tabContainer__49668 {
     border: none ;
   }
 
   // item card
   .card__8833c {
-    
+
     .cardContent__8833c {
       background: var(--background-modifier-hover);
       transform: scale(1);
@@ -212,18 +212,19 @@
 }
 
 .contentContainer__89463 {
-  @container (width < 950px) { 
+  @container (width < 950px) {
     flex-direction: column-reverse ;
 
     .sidebarContainer__89463 {
       flex-direction: row ;
       width: auto ;
-      max-height: 200px ;
 
       .header__2281b { display: none }
 
+      // boots history
       .container__2281b {
         padding: 16px ;
+        max-height: 350px ;
       }
     }
   }

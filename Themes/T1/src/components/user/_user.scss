@@ -2,8 +2,18 @@
 
 // -- User
 
-// Popout
-@import 'userPopout' ;
+// Popout gone until reworked for performance (after new modal hits to stable)
+// @import 'userPopout' ;
+
+
+// -> Temp
+.layer_da8173 .loadingPopout__58f1c { display: none }
+
+#app-mount .outer_c0bea0 .body__5be3e {
+  background: none ;
+}
+// <- Temp
+
 
 // Dm's sidebar
 @import 'userSidebar' ;
@@ -41,7 +51,7 @@
       animation: none ;
 
       &::after { display: none }
-    } 
+    }
 
     .usernameGradient_e5de78 {
       background: var(--custom-gradient-color-1);
@@ -55,13 +65,13 @@
 
   // Clan tags member list
   @container style(--hide-clanTags: 1 ) {
-    
+
     .username__5d473 .chipletContainerInner__10651 { display: none }
   }
 
   // Clan tags all
   @container style(--hide-clanTags: 2 ) {
-    
+
     .clanTagChiplet_c19a55, .clanTag__5d473 { display: none }
   }
 }

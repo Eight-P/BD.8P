@@ -24,7 +24,8 @@
       border-color: hsla(0,0%,100%,0.3);
     }
   }
-  
+
+  // inner container
   .channelTextArea__74017 {
     border: none ;
     margin: 0 ;
@@ -34,8 +35,13 @@
     @include scrollbar(none);
   }
 
+  // components parent
   .inner__74017 {
     padding-left: 0;
+  }
+
+  .textArea__74017 {
+    margin: 0 4px 0 10px ;
   }
 
   &.formWithLoadedChatInput_f75fb0:before {
@@ -60,7 +66,7 @@
     }
   }
 
-  // Slowmode icon
+  // Slow mode icon
   .cooldownWrapper_b21699 {
     position: absolute ;
     right: -16px ;
@@ -78,14 +84,14 @@
       margin: 0 ;
       visibility: visible ;
 
-      path { 
+      path {
         fill: var(--interactive-normal);
       }
     }
   }
   // <- Typing/slow mode indicator
 
-  // -> Chat input replacmnet
+  // -> Chat input replacement
   .wrapper__44df5 {
     margin: 0 ;
     border: none ;
@@ -107,15 +113,15 @@
       margin: 0 ;
     }
   }
-  // <- 
+  // <-
 
   // -> Buttons
 
-  // -> "Attach file" Button 
-  // Seperator line between button and text input
+  // -> "Attach file" Button
+  // Separator line between button and text input
   .attachWrapper__0923f::after {
     content: "" ;
-    position: absolute ; 
+    position: absolute ;
     top: 5px ;
     bottom: 5px ;
     right: 0px ;
@@ -127,11 +133,11 @@
     padding: 0 12px ;
     margin: 0 ;
   }
-  // <- "Attach file" Button 
+  // <- "Attach file" Button
 
   // -> Right side btns
   .buttons__74017 {
- 
+
     // Nitro btn
     // @container style(--show-nitro-btn: 0) {
     @container style(--hide-chatBtn-nitro: 1) {
@@ -174,7 +180,7 @@
     }
   }
   // <- Right side btns
-  
+
   // <- Buttons
 
   // -> file/upload attachment
@@ -183,7 +189,7 @@
     .upload_aa605f {
       background: none ;
       border: none ;
-      
+
       // Buttons
       .wrapper_f7ecac {
 

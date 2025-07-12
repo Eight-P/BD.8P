@@ -1,4 +1,4 @@
-// floating |  Popouts & Tooltips & Context menus
+// floating |  Pop-outs & Tooltips & Context menus
 .layer_da8173 {
 
   // -> General content
@@ -6,7 +6,7 @@
   :is(
     .menu_c1e9c4, // context menus
 
-    .wrapper_c0e32c, // add reactions popout
+    .wrapper_c0e32c, // add reactions pop-out
     .contentWrapper__9c62c, // Apps&Cmds
     .contentWrapper__08434, // Chat picker
     .container_d9c882, // Threads
@@ -39,12 +39,19 @@
     max-height: 85vh ;
   }
 
-  // "Protip" footer
+  // "Pro tip" footer
   .footer__45690 { display: none }
 
   // Header text (bookmarks & Pins)
   .titleContainer__45690 .text-lg\/semibold_cf4812 {
     color: $C_Header !important ;
+  }
+
+  :is(.header_d9c882, .header__45690, .header_ab6641) {
+    border: none ;
+    z-index: 1 ;
+
+    @include shadowEffect("box_3");
   }
 
   // <- General content
@@ -94,7 +101,7 @@
     }
     // <- Sticker item
 
-    // hover indicator, nitro upsell banner
+    // hover indicator, nitro upsell banner Gifs
     :is(.inspectedIndicator_c6367b, .upsellContainer__0b69f) {
       display: none ;
     }
@@ -121,12 +128,12 @@
   }
   // <- Chat input Emoji, Sticker, Gif picker
 
-  // -> Soundborad picker
+  // -> Soundboard picker
   .picker__09f65 {
 
     .upsellContainer__0b69f { display: none }
   }
-  // <- Soundborad
+  // <- Soundboard
 
   // -> Threads
   .container_d9c882 {
@@ -358,7 +365,7 @@
   }
   // <- Inbox
 
-  // -> Apps & Commands popout
+  // -> Apps & Commands pop-out
   .positionContainer__31a96 {
     max-height: calc(100vh - 130px);
 
@@ -370,11 +377,11 @@
       max-height: calc(100vh - 130px);
     }
   }
-  // <- Apps & Commands popout
+  // <- Apps & Commands pop-out
 }
 
 .chatContent_f75fb0 {
-  z-index: 9 ; // to keep sumaries above the members list
+  z-index: 9 ; // to keep summaries above the members list
 
   // -> Chat Summaries
   .topicsDropdownBase__0f481 {
@@ -386,7 +393,7 @@
   }
   // <- Summaries
 
-  // -> Slash cmds popout
+  // -> Slash cmds pop-out
   .autocomplete__13533 {
     --background-base-lowest: #{$BG_Meta};
     --autocomplete-bg: #{$BG_Body};
@@ -400,7 +407,7 @@
       @include scrollbar(none);
     }
   }
-  // <- Slash cmds popout
+  // <- Slash cmds pop-out
 
 }
 
