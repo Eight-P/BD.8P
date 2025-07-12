@@ -8,8 +8,6 @@
 
 The theme.css file offers variables that can be changed for customization and can be edited with any text editor or the edit feature within BetterDiscord.
 
-Make sure you save your changes to make them apply.
-
 <br/>
 
 ### Any changes made to the theme file directly are reset by theme file updates.
@@ -27,15 +25,19 @@ All variables are found within:
 
 They are prefixed by `--` and closed with a semicolon.
 
+You can also find all available variables [here](https://github.com/Eight-P/BD.8P/blob/master/Themes/T1/src/components/mixins/_userVars.scss)
+
 Copy the full lines into the root block, e.g.:
 
 ```css
 :root {
-  --hide-serverBoostStats: 1 ;
+  --disable-roleGradients: 0 ;
   --hide-chatBtn-sticker: 1 ;
 }
 ```
 
 <br/>
+
+Make sure you save your changes to make them apply.
 
 It is usually worth checking the theme file after an update to see if any variables were changed or added.
