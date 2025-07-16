@@ -1,8 +1,8 @@
 // -- ServerListIndicator
 // -- ReadAllNotificationsButton
-
-// To-Do
+// -- UserVoiceShow
 // -- BetterFolders
+
 
 // -> ServerListIndicator (not a fan)
 #vc-friendcount, #vc-guildcount {
@@ -36,7 +36,7 @@
     width: min-content ;
     color: var(--header-secondary);
     transform: rotate(90deg);
-    
+
     @include shadowEffect("text_1");
 
     &:hover {
@@ -45,3 +45,37 @@
   }
 }
 // <- ReadAllNotificationsButton
+
+// -> UserVoiceShow
+.vc-member-list-decorators-wrapper {
+  pointer-events: auto ;
+}
+// <- UserVoiceShow
+
+
+// -> BetterFolders
+.content_c48ade:has(.vc-betterFolders-sidebar) {
+  margin-bottom: 54px ;
+}
+
+.vc-betterFolders-sidebar {
+  display: contents ;
+
+  > .guilds_c48ade {
+    bottom: 54px ;
+  }
+
+  .scroller_ef3116 {
+    // display: flex ;
+    height: 100vw ;
+    margin: 0 ;
+    padding: 0 ;
+
+    &::before, &::after { display: none }
+  }
+  // folders container
+  .stack_dbd263 {
+    // justify-content: space-around ;
+  }
+}
+// <- BetterFolders
