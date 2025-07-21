@@ -3,12 +3,12 @@
 .container__2637a {
 
   // -> Meta channels
-  // All seperators but the first
+  // All separators but the first
   .containerDefault__29444 ~ .sectionDivider__629e4 {
     display: none ;
   }
 
-  // Seperator between normal channels and favorites/suggested
+  // Separator between normal channels and favorites/suggested
   .sectionDivider__629e4 ~ .sectionDivider__629e4 ~ [style="height: 12px;"] {
     margin-top: 12px ;
 
@@ -21,20 +21,25 @@
   }
 
   // Server boost stats
-  .container_eff079 {
-    border: none ;
-    margin-bottom: 6px ;
+  .container__0d0f9 {
 
-    // @container style(--show-serverboost-stats: 0) { & { display: none } }
     @container style(--hide-serverBoostStats: 1) { & { display: none } }
+
+    .progressContainer__0d0f9 {
+      background: none ;
+    }
+
+    .progress__0d0f9 {
+      opacity: .6 ;
+    }
   }
   // <- Meta channels
 
   // -> Text & Voice Channels
-  // -> Catgeorys
+  // -> Categories
   .wrapper__29444  {
     padding: 0 8px 0 4px ;
-    
+
     // inner container
     .mainContent__29444 {
       flex-direction: row-reverse ;
@@ -48,7 +53,7 @@
       text-transform: uppercase ;
     }
   }
-  // <- Catgeorys
+  // <- Categories
 
   // -> Channels
   .wrapper__2ea32 {
@@ -57,11 +62,6 @@
     .link__2ea32 {
       background: transparent ;
       padding: var(--space-xxs);
-      
-      &:hover {
-        .name__2ea32 { color: var(--interactive-hover) }
-        .iconItem_c69b6d { visibility: visible }
-      }
     }
 
     // Icon ("#", speaker, ..)
@@ -74,10 +74,12 @@
     }
 
     // Channel name
-    .name__2ea32 { 
+    .name__2ea32 {
       color: var(--channels-default);
       margin-right: calc(var(--space-xs) * -0.5); // counter for gap
     }
+
+    &:hover .name__2ea32 { color: var(--interactive-hover) }
 
     :is(
       .dismissButton__29444, // Suggested channels in sidebar
@@ -92,7 +94,8 @@
 
     // -> Channel options and infos
     // Settings and invite buttons
-    .iconItem_c69b6d { visibility: hidden }
+    .iconItem_c69b6d { display: none }
+    &:hover .iconItem_c69b6d { display: block }
 
     // Channel badges (e.g. "NEW" (suggested panel), "LIVE")
     .textBadge__2b1f5 {
@@ -104,15 +107,15 @@
     .channelInfo_c69b6d .text-xs\/semibold_cf4812 {
       color: var(--interactive-hover) !important;
     }
-    
+
     // Connection limit (voice)
     .wrapper__260e1 {
       background: none ;
       border: none ;
       color: var(--channels-default);
-      
+
       span { background: none }
-      
+
       .total__260e1::after {
         content: "|" ;
         top: 0px ;
@@ -127,11 +130,11 @@
     &.modeSelected__2ea32, &.modeConnected__2ea32 {
 
       // Channel name
-      .name__2ea32 { 
-        color: var(--interactive-active) !important; 
+      .name__2ea32 {
+        color: var(--interactive-active) !important;
       }
       // Channel icon (left)
-      .icon__2ea32 { 
+      .icon__2ea32 {
         color: var(--interactive-active) !important;
       }
     }
@@ -139,7 +142,7 @@
     // Channel muted
     &.modeMuted__2ea32 {
       // Channel icon (left)
-      .icon__2ea32 { 
+      .icon__2ea32 {
         color: var(--interactive-muted);
       }
     }
@@ -147,17 +150,17 @@
     // Channel unread
     &.modeUnreadImportant__2ea32 {
       // pill
-      .unread__2ea32 { 
+      .unread__2ea32 {
         background-color: var(--interactive-hover);
       }
     }
-    
+
     // <- Channel types
   }
   // <- Channels
 
   // "live" indicator for user in Voice channel
-  .voiceUser__07f91 .live_a7acae { 
+  .voiceUser__07f91 .live_a7acae {
     background: none !important ;
     color: var(--red);
   }

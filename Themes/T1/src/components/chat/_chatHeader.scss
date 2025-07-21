@@ -1,8 +1,8 @@
-// Chat | Header bar + Seacrh
+// Chat | Header bar + Search
 
 // -> Channel & DMs header
 .title_f75fb0 {
-  
+
   // -> Left side info
   .children__9293f {
 
@@ -25,17 +25,17 @@
   .topic__6ec1a {
     margin: 0 8px ;
     text-align: center ;
-    
+
     // Mentions/Channels, Weblinks
-    :is(.interactive, .anchor_edefb8) { 
+    :is(.interactive, .anchor_edefb8) {
       pointer-events: none ;
       opacity: .8 ;
     }
 
     &:hover {
       color: var(--interactive-hover);
-      
-      :is(.interactive, .anchor_edefb8) { 
+
+      :is(.interactive, .anchor_edefb8) {
         opacity: 1 ;
       }
     }
@@ -84,7 +84,7 @@
         width: min-content ;
         border-bottom: 1px solid var(--header-secondary);
       }
-      
+
       .DraftEditor-root {
         position: relative ;
       }
@@ -99,7 +99,7 @@
       width: 100% ;
       padding: 0 ;
     }
-    
+
     // Icon container
     .icon__97492 {
       height: 28px ;
@@ -111,7 +111,7 @@
       color: $BtnIconNormal ;
     }
 
-    .clear_fea832 {
+    .pointer_a45028 {
       pointer-events: auto ;
     }
 

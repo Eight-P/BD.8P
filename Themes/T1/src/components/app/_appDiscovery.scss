@@ -18,11 +18,11 @@
   .navItem__551b0 {
     border-radius: 0 ;
     border-left: 3px solid transparent;
-  
+
     &:hover {
       border-left: 3px solid var(--interactive-hover);
     }
-    
+
     &.selected__551b0 {
       background-color: transparent ;
       border-left: 3px solid var(--interactive-hover);
@@ -40,7 +40,6 @@
   .headerBar__8a7fc {
     height: 48px ;
     justify-content: end ;
-
 
     // border bottom
     &::after { display: none }
@@ -72,11 +71,11 @@
       color: var(--interactive-normal);
       height: 47px ;
 
-      &::after { 
+      &::after {
         visibility: hidden ;
         background: var(--interactive-hover) ;
       }
-      
+
       &:hover {
         color: var(--interactive-hover) ;
       }
@@ -87,7 +86,7 @@
       }
     }
     // <- nav bar
-  
+
     // -> Search
     // icon (closed)
     .searchIcon__1ac1c {
@@ -103,7 +102,11 @@
   }
 
   // Quest header
-  .container__955a3 .headerBar__8a7fc { display: none }
+  // .container__955a3 .headerBar__8a7fc { display: none }
+  .container__955a3 .headerBar__1a9ce {
+    // position: relative ;
+
+   }
   // <- Header bar
 
   // -> Scroller
@@ -121,7 +124,15 @@
 
   // Quest scroller
   .container__955a3 .scroller__23746 {
-    margin-top: 0px ;
+    overflow: hidden !important ;
+    padding-right: 0 ;
+
+    .contentSection_b6bcee {
+      overflow: hidden scroll ;
+
+      @include scrollbar();
+      @include scrollerFadeOut();
+    }
   }
   // <- Scroller
 

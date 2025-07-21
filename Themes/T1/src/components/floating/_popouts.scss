@@ -57,9 +57,20 @@
   // <- General content
 
   // -> Chat input Emoji, Sticker, Gif picker
+  #emoji-picker-tab-panel {
+    box-shadow: none ;
+  }
+
   :is(.contentWrapper__08434, .wrapper_c0e32c) {
+    border: none ;
+    @include shadowEffect("box_2");
 
     // -> Nav bar
+    .navButton__08434 {
+      background: none ;
+      color: var(--interactive-normal);
+    }
+
     .navButtonActive__08434  {
       color: var(--interactive-active) !important;
     }
@@ -344,6 +355,19 @@
       // divider in channel item
       &.divider__1ccd1 {
         margin: 20px 0 20px 16px ;
+      }
+    }
+    .forumPost__7d15e {
+      margin: 0 ;
+      padding: 10px 12px 16px 12px ;
+      background: none ;
+      border: none ;
+      border-radius: 0 ;
+      border-bottom: 1px solid var(--background-modifier-accent);
+      transition: none ;
+
+      &:hover {
+        background: var(--background-modifier-hover);
       }
     }
     // <- Unreads

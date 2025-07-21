@@ -13,6 +13,11 @@
     width: var(--custom-app-top-bar-height);
   }
 
+  // guild icon txt
+  .noIcon_f34534 {
+    background: none ;
+  }
+
   .anchor_edefb8, .winButtons_c38106::before { display: none }
 
   .winButton_c38106 {
@@ -33,7 +38,7 @@
   min-height: unset ;
   border: none ;
 
-  // seperator fade thing 
+  // seperator fade thing
   .children__9293f::after { display: none }
 }
 // <- general Header bar
@@ -51,7 +56,7 @@
     border: none ;
     color: #{$BtnTextNormal} !important;
     background: $BtnBackgroundNormal ;
-  
+
     &:hover {
       color: #{$BtnTextHover} !important;
       background: $BtnBackgroundHover ;
@@ -67,7 +72,7 @@
   .icon__9293f {
     color: $BtnIconNormal ;
   }
-  
+
   &:hover .icon__9293f {
     color: $BtnIconHover ;
   }
