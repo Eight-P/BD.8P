@@ -1,6 +1,6 @@
 @use '../mixins/_mixins' as * ;
 
-// -- Serverbar
+// -- Server bar
 
 $sb_height: 54px ;
 $iconBaseSize: 40px ;
@@ -51,6 +51,7 @@ $iconScale: var(--sbIconScale);
   height: $sb_height ;
   width: 100vw !important ;
   margin: 0 !important ;
+  mask: none !important ; // for server btn
 }
 
 .tree_ef3116 {
@@ -78,7 +79,7 @@ $iconScale: var(--sbIconScale);
 
   grid-template-columns: $sb_height ;
   grid-template-rows: min-content min-content min-content auto ;
-  grid-template-areas: 
+  grid-template-areas:
     "Home"
     "GuildsAdd"
     "Discovery"
@@ -109,16 +110,16 @@ $iconScale: var(--sbIconScale);
     height: calc($iconBaseSize * $iconScale * 0.20 ) !important ;
     // margin-left: -5px ;
     margin-left: -4px ;
-    
+
     // Server selected
     &[style="opacity: 1; height: 40px; transform: none;"] {
       visibility: visible ;
       height: calc($iconBaseSize * $iconScale * 0.87 ) !important ;
       border-radius: 0 8px 8px 0 ;
     }
-    
+
     // Unread indicator
-    &[style="opacity: 1; height: 8px; transform: none;"] { 
+    &[style="opacity: 1; height: 8px; transform: none;"] {
       visibility: visible ;
     }
   }
@@ -159,7 +160,7 @@ $iconScale: var(--sbIconScale);
     // Text
     .acronym__6e9f8 {
       background: none ;
-      
+
       @include shadowEffect("server_1");
     }
     // <- Server item
@@ -202,7 +203,7 @@ $iconScale: var(--sbIconScale);
 
 // this way instead of wrapper bc of icon when drag
 :is(.blobContainer_e5445c, .listItemWrapper__91816) {
-  transform: rotate(90deg) !important ; // "important" for serverdetails plugin idk
+  transform: rotate(90deg) !important ; // "important" for server details plugin idk
   scale: $iconScale;
   margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
   height: $iconBaseSize ;
@@ -252,7 +253,7 @@ $iconScale: var(--sbIconScale);
     // Nitro home icon
     img {
       border-radius: 50% ;
-      height: 40px ; 
+      height: 40px ;
       width: 40px ;
       margin: 4px ;
       transition: .2s ;
@@ -392,7 +393,7 @@ $iconScale: var(--sbIconScale);
     .folderButtonContent__48112 {
       transition: none ;
     }
-    
+
     .folderPreviewWrapper__48112 {
       transition: .2s ;
 
@@ -400,25 +401,6 @@ $iconScale: var(--sbIconScale);
         border-radius: 25% ;
       }
     }
-
-    // would revert mostly to before
-    // .folderPreviewWrapper__48112 {
-    //   padding: 0 ;
-    //   overflow: hidden ;
-    // }
-
-    // .folderPreview__48112 {
-    //   $previeGridGap: 2px ;
-    //   $previewSize: ($iconBaseSize - $previeGridGap) * .5 ;
-    //   --custom-folder-preview-guild-size: #{$previewSize} ;
-
-    //   height: $iconBaseSize ;
-    //   width: $iconBaseSize ;
-
-    //   .folderPreviewGuildIcon__48112 {
-    //     border-radius: 4px ;
-    //   }
-    // }
     // <- Folder Icon & Grid preview
 
     // .folderGuildsList__48112 {
@@ -455,13 +437,13 @@ $iconScale: var(--sbIconScale);
     height: auto !important ;
   }
 
-  // seperator, unless favorite are present
+  // separator, unless favorite are present
   &:not(.listItem__650eb ~ #guild-list-unread-dms)::before {
     @include itemSeperator();
     top: 0px ;
   }
 
-  // remove padding from server preview (removes from seperator otherwise)
+  // remove padding from server preview (removes from separator otherwise)
   + .listItem__650eb {
     padding-top: 0 !important ;
   }
@@ -491,9 +473,9 @@ $iconScale: var(--sbIconScale);
     top: 0px ;
   }
 
-  .pill_e5445c { 
+  .pill_e5445c {
     display: flex ; // counter
-  } 
+  }
 
   .wrapper_cc5dd2 {
     transform: rotate(90deg);

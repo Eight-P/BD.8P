@@ -5,7 +5,7 @@
 // some stuff was done bc. of the collapsable sidebar bar before that was removed
 
 // -> App container
-// fullscreen/Hidden e.g.: fullscreen screenshare 
+// fullscreen/Hidden e.g.: fullscreen screenshare
 .base_c48ade[data-fullscreen="false"] {
   display: flex ;
   margin-bottom: $sb_height ;
@@ -32,17 +32,12 @@
     width: 0px !important ;
   }
 
-  .sidebarList_c48ade {
-    // needed to position server btn as fixed
-    backdrop-filter: unset ;
-  }
-  
   // needs to counter: display none on collapse
   // channels
   .container__2637a {
     display: flex !important ;
   }
-  
+
   // dms, discovery
   .privateChannels__35e86, .container__551b0 {
     display: flex !important ;
@@ -52,11 +47,21 @@
 
 
 // -> Server options btn
-// channels list spacer for banner image 
+// channels list spacer for banner image
 /// (content__99f8c not unique), needs [style="height: 130px;"]
-.sidebarList_c48ade .content__99f8c > [style="height: 84px;"]:not([class]) { 
+.sidebarList_c48ade .content__99f8c > [style="height: 84px;"]:not([class]) {
   margin-top: -84px ; // helps remove the space from bottom of the list
   visibility: hidden ;
+}
+
+.sidebarList_c48ade {
+  overflow: visible ;
+  backdrop-filter: unset ;
+  -webkit-backdrop-filter: unset ;
+}
+
+.container__2637a {
+  mask: none ;
 }
 
 // button
@@ -98,7 +103,7 @@
 
   // Icons, Chevron, star icon in favorites tab, banner image
   :is(
-    .guildIconV2Container__85d16, 
+    .guildIconV2Container__85d16,
     .guildIconContainer__85d16,
     .headerChildren_f37cb1,
     .favoritesIcon_f37cb1,
