@@ -5,7 +5,7 @@
 // -> Sidebar
 .sidebar_c48ade {
 
-  // seperator to page line for resize bar
+  // separator to page line for resize bar
   &::after {
     content: "";
     position: absolute ;
@@ -104,7 +104,7 @@
   // -> Voice connection
   .wrapper_e131a9 {
 
-    // Conected text
+    // Connected text
     .text-md\/medium_cf4812 {
       font-size: 14px ;
     }
@@ -132,6 +132,27 @@
     // <- action btns
   }
   // <- Voice connection
+
+  // -> Quest reminder (weird thing)
+  > .mask__0d616 {
+    min-height: 70px !important ;
+    order: 200 ;
+  }
+
+  .wrapper__0d616 {
+    margin-right: 4px ;
+
+    .postEnrollmentBackground__636a2 {
+      background: var(--background-floating) !important;
+      border: none ;
+      border-radius: 0 ;
+    }
+
+    .inner_bb1069 {
+      box-shadow: none !important;
+    }
+  }
+  // <- Quest reminder
 }
 // <- Panels
 

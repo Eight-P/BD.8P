@@ -141,8 +141,19 @@
 
   // -> Soundboard picker
   .picker__09f65 {
+    background: $BG_Meta ;
 
-    .upsellContainer__0b69f { display: none }
+    // -> Nitro locked
+    :is(.upsellContainer__0b69f, .nitroTopDividerContainer_b3fb5f) { display: none }
+
+    .sectionContainerNitroLocked__61424 .sectionTitle__61424 {
+      color: rgb(166, 103, 228);
+    }
+
+    :is(.sectionContainerNitroLocked__61424, .soundRowNitroLocked__61424) {
+      background: none ;
+    }
+    // <- Nitro locked
   }
   // <- Soundboard
 
