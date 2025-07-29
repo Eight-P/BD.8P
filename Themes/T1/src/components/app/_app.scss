@@ -108,7 +108,7 @@ path[fill="currentColor"] {
   .closeIcon__6e2b9 // close discord notice bar
 ) {
   color: $BtnIconNormal ;
-  
+
   &:hover {
     color: $BtnIconHover ;
   }
@@ -117,6 +117,7 @@ path[fill="currentColor"] {
 
 
 // -> Text btns (not voice panel btns)
+// .button__201d5:not(.button_e131a9, .icon_fb7f94) {
 .button__201d5:not(.button_e131a9) {
 
   &.lookFilled__201d5 {
@@ -170,7 +171,7 @@ path[fill="currentColor"] {
 .app_a3002d {
 
   // General searchbar
-  .container_a45028 { 
+  .container_a45028 {
     @include searchbar(".inner_a45028");
   }
 
@@ -180,7 +181,7 @@ path[fill="currentColor"] {
     .scrollerBase_c8b5c7,
     .auto__99f8c,
     .scrollerBase__99f8c
-  ) { 
+  ) {
     @include scrollbar();
   }
   // <- Scrollbars
