@@ -6,7 +6,7 @@
   // -> Left side info
   .children__9293f {
 
-    // "#" / "@", "AKA" icon, seperator dot
+    // "#" / "@", "AKA" icon, separator dot
     :is(.iconWrapper__9293f, .akaBadge__488b1, .dot__9293f) { display: none }
   }
 
@@ -26,7 +26,7 @@
     margin: 0 8px ;
     text-align: center ;
 
-    // Mentions/Channels, Weblinks
+    // Mentions/Channels, Web links
     :is(.interactive, .anchor_edefb8) {
       pointer-events: none ;
       opacity: .8 ;
@@ -111,7 +111,7 @@
       color: $BtnIconNormal ;
     }
 
-    .pointer_a45028 {
+    .pointer__0c4c4 {
       pointer-events: auto ;
     }
 

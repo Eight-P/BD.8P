@@ -130,13 +130,17 @@
   }
   // btn
   .attachButton__0923f {
-    padding: 0 12px ;
+    // padding: 0 12px ;
     margin: 0 ;
   }
   // <- "Attach file" Button
 
   // -> Right side btns
   .buttons__74017 {
+
+    .button__74017, .buttonContainer_e6e74f {
+       background: none ;
+    }
 
     // Nitro btn
     // @container style(--show-nitro-btn: 0) {
