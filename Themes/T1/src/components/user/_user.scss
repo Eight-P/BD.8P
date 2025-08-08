@@ -2,11 +2,12 @@
 
 // -- User
 
-// Popout gone until reworked for performance (after new modal hits to stable)
+// Popout gone until reworked
 // @import 'userPopout' ;
 
+ @import 'userModal' ;
 
-// -> Temp
+// -> Temp (until new popout)
 .layer_da8173 .loadingPopout__58f1c { display: none }
 
 #app-mount .outer_c0bea0 .body__5be3e {

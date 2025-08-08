@@ -116,18 +116,24 @@ path[fill="currentColor"] {
 // <- Icon btns
 
 
-// -> Text btns (not voice panel btns)
-// .button__201d5:not(.button_e131a9, .icon_fb7f94) {
-.button__201d5:not(.button_e131a9) {
+// -> Text btns
+.button__6af3a:not(.icon-only__6af3a) {
+  border: none ;
+  border-radius: 3px ;
+  color: $BtnTextNormal ;
+  background: $BtnBackgroundNormal ;
 
-  &.lookFilled__201d5 {
-    color: $BtnTextNormal ;
-    background: $BtnBackgroundNormal ;
-    border-radius: 3px ;
+  &:hover {
+    color: $BtnTextHover ;
+    background: $BtnBackgroundHover ;
+  }
+
+  &.secondary__6af3a {
+    background: none ;
+    color: $BtnTextSecondary ;
 
     &:hover {
-      color: $BtnTextHover ;
-      background: $BtnBackgroundHover ;
+      color: $BtnTextHoverSecondary ;
     }
   }
 
@@ -140,9 +146,9 @@ path[fill="currentColor"] {
     }
   }
 
-  &.colorRed__201d5  {
+  // Danger
+  &:is(.critical-secondary__6af3a, .critical-primary__6af3a) {
     color: $BtnTextDanger ;
-    border-radius: 3px ;
 
     &:hover {
       color: $BtnTextDangerHover ;
@@ -185,9 +191,5 @@ path[fill="currentColor"] {
     @include scrollbar();
   }
   // <- Scrollbars
-}
-// really not sure what this is
-.container_a58267 {
-  display: none ;
 }
 }

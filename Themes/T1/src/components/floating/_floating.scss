@@ -12,14 +12,18 @@ $C_Header: var(--interactive-normal);
 // Popouts & Tooltips & Context menus
 @import 'popouts' ;
 
-// @import 'modals' ;
+@import 'modals' ;
 
 .layerContainer_da8173 {
-  z-index: 9999999 ;
-  // z-index: auto ;
+  z-index: 9999999 ; // against title bar border
 
-// General searchbar
+// -> Searchbar
 .container_a45028 { @include searchbar(".inner_a45028", true) }
+// Threads, invite to server, ...
+.container__0f084 { @include searchbar(".wrapper_d14335", true) }
+// Create group DM, ...
+.container__0e476 { @include searchbar(".inner__0e476", true) }
+// <- Searchbar
 
 // -> Layers general
 // Popouts & Tooltips & Context menus, Modals
@@ -64,35 +68,5 @@ $C_Header: var(--interactive-normal);
   background: $BG_Floating ;
 }
 // <- Tooltips
-
-// -> Modals
-// Modal backdrop
-.backdrop__78332 {
-  background: rgba(0, 0, 0, 0.75) !important;
-}
-
-.layer_bc663c {
-  padding: 20px 0 ;
-
-  .root__49fc1 {
-    border: none ;
-
-    @include scrollbar(none);
-
-    .outer_c0bea0 {
-      background: $BG_Floating ;
-    }
-
-    .header__49fc1 {
-      padding-bottom: 16px ;
-
-      // invite modal
-      + .templatesList_c04f35 {
-        margin-top: 0 ;
-      }
-    }
-  }
-}
-// <- Modals
 
 }

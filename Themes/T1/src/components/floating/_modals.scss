@@ -1,0 +1,66 @@
+// Modal backdrop
+.backdrop__78332 {
+  background: rgba(0, 0, 0, 0.75) !important;
+}
+
+.layer_bc663c {
+  // padding: 20px 0 ; // why ?
+
+  // most modals
+  .root__49fc1 {
+
+    // -> General
+    max-height: 75vh ;
+    height: auto ;
+    border: none ;
+    background: $BG_Body ;
+
+    @include scrollbar(none); // not sure why
+
+    // -> Header
+    .header__49fc1 {
+      background: $BG_Meta ;
+      padding-bottom: 8px ;
+
+      @include shadowEffect("box_3");
+
+      .headerText__67dba {
+        margin-bottom: 14px ;
+      }
+
+      .marginTop8_fd297e { display: none }
+    }
+    // <- Header
+
+    // -> Body
+    .scrollerBase__99f8c {
+      background: $BG_Body ;
+      height: fit-content ;
+      max-height: unset ;
+
+      @include scrollbar();
+      @include scrollerFadeOut(2px, 2px);
+    }
+    // <- Body
+
+    // -> Footer
+    .footer__49fc1 {
+      background: $BG_Body ;
+      background: $BG_Meta ;
+
+      .h5_b717a1 {
+        font-size: 14px ;
+        color: var(--header-secondary);
+      }
+    }
+    // <- Footer
+
+    // <- General
+
+    // -> Create group DM
+    .friendSelected_bbd192:not(:hover) {
+      background: none ;
+    }
+    // <- Create group DM
+  }
+}

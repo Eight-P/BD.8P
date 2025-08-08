@@ -11,16 +11,6 @@
 // -> DMs Sidebar
 .privateChannels__35e86 {
 
-  // Scroller container
-  .scroller__99e7c {
-
-    // @container style(--sidebarScrollbar: 0 ) {
-    //   &::-webkit-scrollbar-thumb {
-    //     background-color: transparent !important ;
-    //   }
-    // }
-  }
-
   // Category header text
   .headerText__99e7c {
     color: var(--channels-default); // removes hover effect
@@ -64,6 +54,12 @@
   }
 }
 // <- DMs Sidebar
+
+// -> MSG Requests
+.upperContainer__9293f .topPill_b3f026 .item_f391e3 {
+  background: none ;
+}
+// <- MSG Requests
 
 // -> Shops
 // Nitro store

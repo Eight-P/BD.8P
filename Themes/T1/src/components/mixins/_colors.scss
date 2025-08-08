@@ -2,7 +2,7 @@
 html.theme-dark:root, #app-mount .theme-dark {
   --header-primary: #fff;
   --header-secondary: #b9bbbe;
-  
+
   --text-normal: #dcddde;
   --text-muted: #72767d;
   --text-link: #00b0f4;
@@ -14,62 +14,62 @@ html.theme-dark:root, #app-mount .theme-dark {
   --text-secondary: var(--header-secondary);
   --text-tertiary: var(--header-secondary);
 
-  --interactive-normal: #7c7d7e ; // #b9bbbe 
+  --interactive-normal: #7c7d7e ; // #b9bbbe
   --interactive-hover: #dcddde;
   --interactive-active: #fff;
   --interactive-muted: #4f545c;
-  
+
   --background-primary: #36393f;
   --background-secondary: #2f3136;
   --background-secondary-alt: #292b2f;
   --background-tertiary: #202225;
   --background-accent: #4f545c;
   --background-floating: #18191c;
-  
+
   --background-mobile-primary: #36393f;
   --background-mobile-secondary: #2f3136;
-    
+
   --background-modifier-hover: rgba(79,84,92,0.16);
   --background-modifier-active: rgba(79,84,92,0.24);
   --background-modifier-selected: rgba(79,84,92,0.32);
   --background-modifier-accent: hsla(0,0%,100%,0.06);
-  
+
   --background-mentioned: rgba(250,166,26,0.1);
   --background-mentioned-hover: rgba(250,166,26,0.08);
   --background-message-hover: rgba(4,4,5,0.07);
-  
+
   --info-positive-text: #fff;
   --info-warning-text: #fff;
   --info-danger-text: #fff;
   --info-help-background: rgba(0,176,244,0.1);
   --info-help-foreground: #00b0f4;
   --info-help-text: #fff;
-  
+
   --status-warning-text: #000;
-  
+
   --scrollbar-thin-thumb: var(--scrollbar-thumb); // #202225
   --scrollbar-thin-track: transparent;
   --scrollbar-auto-thumb: var(--scrollbar-thumb); // #202225
   --scrollbar-auto-track: transparent; // #2e3338
   --scrollbar-auto-scrollbar-color-thumb: var(--scrollbar-thumb); // #202225
   --scrollbar-auto-scrollbar-color-track: transparent; // #2f3136
-  
+
   --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
   --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
   --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
   --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
-  
+
   --logo-primary: #fff;
-  
+
   --control-brand-foreground: #a5b3e7;
   --control-brand-foreground-new: #949cf7;
-  
+
   --channels-default: #8e9297;
   --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
   --channeltextarea-background: #40444b;
   --activity-card-background: #202225;
   --textbox-markdown-syntax: #8e9297;
-  
+
   --deprecated-card-bg: rgba(32,34,37,0.6);
   --deprecated-card-editable-bg: rgba(32,34,37,0.3);
   --deprecated-store-bg: #36393f;
@@ -80,7 +80,7 @@ html.theme-dark:root, #app-mount .theme-dark {
   --deprecated-text-input-border-hover: #040405;
   --deprecated-text-input-border-disabled: #202225;
   --deprecated-text-input-prefix: #dcddde;
-  
+
   --text-warning: #faa61a;
   --text-danger: #d63e41;
   --info-positive-background: rgba(59,165,92,0.1);
@@ -98,25 +98,31 @@ html.theme-dark:root, #app-mount .theme-dark {
   --focus-primary: #00b0f4;
 
   --shadow-low: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-  
+
   // T1 - Additions
 
   --scrollbar-thumb: var(--background-modifier-accent);
   --scrollbar-thumb-hover: var(--interactive-normal);
-  
+
   --red: #f04747;
   --red-secondary: rgb(210, 80, 80);
   --border-mentioned: rgba(250, 166, 26, 0.65);
   --Blurple: rgb(114, 137, 218);
   --Blurple-light: rgba(114, 137, 218, 0.2);
   --Blurple-light-hover: rgba(114, 137, 218, 0.4);
-  
+
   --BD-Blue: #3e82e5 ;
-  
+
   --status-online: #3ba55c ;  /* #43b581 */
   --status-idle: #faa61a ;
   --status-DnD: #ed4245 ; /* #f04747 */
   --status-invisible: #747f8d ;
+
+  --onlineSC: #23a55a ;
+  --idleSC: #f0b232 ;
+  --DnDSC: #f23f43 ;
+  --offlineSC: #80848e ;
+
 }
 // <- Theme colors
 
@@ -135,18 +141,14 @@ $BtnIconMuted: bvar(--interactive-muted);
 $BtnIconDanger: var(--red);
 
 $BtnTextNormal: var(--interactive-hover);
+$BtnTextSecondary: var(--interactive-normal);
+
 $BtnTextHover: var(--interactive-active);
+$BtnTextHoverSecondary: var(--interactive-hover);
+
 $BtnTextDanger: var(--red);
 $BtnTextDangerHover: var(--status-warning-text);
 
 $BtnBackgroundNormal: var(--background-modifier-hover);
 $BtnBackgroundHover: var(--background-modifier-selected);
 $BtnBackgroundDanger: var(--red);
-
-
-html.theme-dark:root, #app-mount .theme-dark {
-  // --interactive-normal: #{$BtnIconNormal} ;
-  // --interactive-hover: #{$BtnIconHover} ;
-  // --interactive-active: #{$BtnIconActive} ;
-  // --interactive-muted: #{$BtnIconMuted} ;
-}

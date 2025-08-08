@@ -89,6 +89,10 @@
       border-bottom: 1px solid var(--interactive-normal);
       outline: none ;
       box-shadow: none !important ;
+
+      &:focus-within {
+        border-color: var(--header-secondary); ;
+      }
     }
   }
   @else {
