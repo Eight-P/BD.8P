@@ -11,6 +11,7 @@
 
     // -> General
     max-height: 75vh ;
+    min-height: min(500px, 90vh) ;
     height: auto ;
     border: none ;
     background: $BG_Body ;
@@ -33,7 +34,7 @@
     // <- Header
 
     // -> Body
-    .scrollerBase__99f8c {
+    :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
       background: $BG_Body ;
       height: fit-content ;
       max-height: unset ;
@@ -57,9 +58,23 @@
 
     // <- General
 
-    // -> Create group DM
-    .friendSelected_bbd192:not(:hover) {
-      background: none ;
+    // -> Create group DM (hopefully)
+    &.popout_cba592 {
+      height: 70vh ; // fixed, so that it won't shift when searching with low results
+
+      .header__49fc1 {
+        box-shadow: none ;
+      }
+
+      .friendSelected_bbd192:not(:hover) {
+        background: none ;
+      }
+
+      .searchBar_cba592 {
+        background: $BG_Meta ;
+
+        @include shadowEffect("box_3");
+      }
     }
     // <- Create group DM
   }

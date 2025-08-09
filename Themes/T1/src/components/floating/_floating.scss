@@ -19,8 +19,8 @@ $C_Header: var(--interactive-normal);
 
 // -> Searchbar
 .container_a45028 { @include searchbar(".inner_a45028", true) }
-// Threads, invite to server, ...
-.container__0f084 { @include searchbar(".wrapper_d14335", true) }
+// Threads
+.container_d14335 { @include searchbar(".wrapper_d14335", true) }
 // Create group DM, ...
 .container__0e476 { @include searchbar(".inner__0e476", true) }
 // <- Searchbar

@@ -86,9 +86,12 @@
     border-radius: 0 ;
 
     #{$inner} {
+      border: none ;
+      background: none ;
       border-bottom: 1px solid var(--interactive-normal);
       outline: none ;
       box-shadow: none !important ;
+      border-radius: 0 ;
 
       &:focus-within {
         border-color: var(--header-secondary); ;
