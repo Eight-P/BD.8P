@@ -203,4 +203,13 @@
   }
   // <- file/upload attachment
 
+  // post onboarding steps
+  .floatingBars__74017 {
+    .banner__183e8 {
+      padding: 10px 16px ;
+      background: none ;
+
+       @include divider(bottom);
+    }
+  }
 }

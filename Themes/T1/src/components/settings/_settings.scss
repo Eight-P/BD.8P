@@ -79,12 +79,12 @@ $T1_v: null !default ;
   }
   // <- Close btn
   // <- Content region
-  
-  // -> Client Themes 
+
+  // -> Client Themes
   .presets__67a11:not(.basicThemeSelectors_fbfab6) {
     position: relative ;
     margin-top: 40px ;
-    
+
     &:after {
       content: "Not compatible with T1 Theme.";
       position: absolute ;
@@ -94,17 +94,9 @@ $T1_v: null !default ;
       font-weight: 600 ;
     }
   }
-  // <- Client Themes 
+  // <- Client Themes
 
   // -> BD
-  .bd-addon-card {
-
-    .bd-links {
-      margin-right: 10px ;
-      gap: 5px ;
-      flex-wrap: wrap ;
-    }
-  }
   // <- BD
 
   // -> Nitro
@@ -120,7 +112,7 @@ $T1_v: null !default ;
   }
   // <- Nitro
 
-  // Fix bc of background speudo
+  // Fix bc of background pseudo
   .header_c6bf1b :is(.titleContainer__81b3e, .warning__35859) {
     position: relative ;
   }
@@ -135,7 +127,7 @@ $T1_v: null !default ;
 
 // -> Channel settings
 .sidebarRegion__23e6b  {
- 
+
   // delete channel button
   .tabBarItemContainer_c7e907:has([d="M5.06 7a1 1 0 0 0-1 1.06l.76 12.13a3 3 0 0 0 3 2.81h8.36a3 3 0 0 0 3-2.81l.75-12.13a1 1 0 0 0-1-1.06H5.07ZM11 12a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"]) {
     color: var(--red) ;

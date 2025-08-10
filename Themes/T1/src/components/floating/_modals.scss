@@ -4,14 +4,13 @@
 }
 
 .layer_bc663c {
-  // padding: 20px 0 ; // why ?
 
-  // most modals
+  // -> most modals
   .root__49fc1 {
 
     // -> General
     max-height: 75vh ;
-    min-height: min(500px, 90vh) ;
+    // min-height: min(500px, 90vh);
     height: auto ;
     border: none ;
     background: $BG_Body ;
@@ -36,7 +35,6 @@
     // -> Body
     :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
       background: $BG_Body ;
-      height: fit-content ;
       max-height: unset ;
 
       @include scrollbar();
@@ -58,9 +56,15 @@
 
     // <- General
 
+    // -> Invite to server
+    .scroller__67dba {
+      height: 100vh ; // fix height to max
+    }
+    // <- Invite to server
+
     // -> Create group DM (hopefully)
     &.popout_cba592 {
-      height: 70vh ; // fixed, so that it won't shift when searching with low results
+      height: 100vh ; // fix height to max
 
       .header__49fc1 {
         box-shadow: none ;
@@ -77,5 +81,121 @@
       }
     }
     // <- Create group DM
+
   }
+  // <- most modals
+
+  // -> BD Modals
+  .bd-modal-root {
+
+    // -> General
+    max-height: 80vh ;
+    height: auto ;
+
+    .bd-modal-header {
+      background: $BG_Meta ;
+    }
+
+    // -> Body
+    .bd-modal-content {
+      background: $BG_Body ;
+      padding: 20px ;
+    }
+    // <- Body
+
+    .bd-modal-footer {
+      background: $BG_Meta ;
+    }
+    // <- General
+
+    // -> Addon settings
+    &.bd-addon-modal {
+      // width: 700px ;
+      max-width: 90vw ;
+
+      display: grid ;
+      grid-template-rows: min-content 1fr ;
+      grid-template-areas:
+        "title close"
+        "body body"
+      ;
+
+      // -> new header
+      .bd-modal-header {
+        grid-area: title ;
+      }
+
+      // -> "Done" btn
+      .bd-modal-footer {
+        grid-area: close ;
+
+        .bd-button-filled {
+          border: none ;
+          border-radius: 3px ;
+          color: $BtnTextNormal ;
+          background: $BtnBackgroundNormal ;
+
+          &:hover {
+            color: $BtnTextHover ;
+            background: $BtnBackgroundHover ;
+          }
+        }
+      }
+      // <- "Done" btn
+      // <- new header
+
+      .bd-modal-content {
+        grid-area: body ;
+      }
+
+      // -> Category title
+      .bd-settings-title {
+        flex-direction: row-reverse ;
+        justify-content: left ;
+        gap: 10px ;
+        font-size: 15px ;
+
+        &::before {
+          display: none ;
+        }
+      }
+
+      // Category container
+      .bd-settings-group {
+
+        &.collapsed .bd-settings-title::after {
+          transform: rotate(-90deg);
+        }
+
+        &:not(:last-child) .bd-settings-title {
+          margin-bottom: 20px ;
+        }
+      }
+      // <- Category title
+
+      // Settings container in category
+      .bd-settings-container {
+        margin: 0 5px 0 15px ;
+      }
+
+      // -> Settings options
+      .bd-setting-item.inline {
+
+        &:first-child:has(.bd-slider-wrap) {
+          padding-top: 10px ;
+        }
+
+        &:last-child {
+          margin: 0 ;
+
+          .bd-setting-divider {
+            visibility: hidden ;
+          }
+        }
+      }
+      // <- Settings options
+    }
+    // <- Addon settings
+  }
+  // <- BD Modals
 }
