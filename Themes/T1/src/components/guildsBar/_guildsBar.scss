@@ -7,20 +7,17 @@ $iconBaseSize: 40px ;
 
 // :root {
 body {
-  // --sbInnerSpacing: calc(var(--serverbarSpacing) * .5 );
   --sbInnerSpacing: calc(var(--serverBar-Spacing) * .5 );
-  // --sbDmSpacing: calc(var(--serverbarSpacing) * .8 );
   --sbDmSpacing: calc(var(--serverBar-Spacing) * .8 );
-  // --sbIconScale: calc(var(--serverbarIconSize) * 0.01 );
   --sbIconScale: calc(var(--serverBar-IconSize) * 0.01 );
 
-  --guildbar-avatar-size: #{$iconBaseSize} !important ; // discord var
-  --guildbar-folder-size: #{$iconBaseSize} !important ;
+  // discord vars
+  --guildbar-avatar-size: #{$iconBaseSize} ;
+  --guildbar-folder-size: #{$iconBaseSize} ;
 }
 
-// $spacing: var(--serverbarSpacing);
-$spacing: var(--serverBar-Spacing);
-$innerSpacing: var(--sbInnerSpacing);
+$iconSpacing: var(--serverBar-Spacing);
+$halfSpacing: var(--sbInnerSpacing);
 $dmSpacing: var(--sbDmSpacing);
 $iconScale: var(--sbIconScale);
 
@@ -29,12 +26,15 @@ $iconScale: var(--sbIconScale);
 @import 'gbAdds' ;
 
 
-@mixin itemSeperator() {
+@mixin itemSeparator() {
+
+  $separatorPadding: 11px ;
+
   content: "" ;
   position: absolute ;
-  width: $sb_height - 22 ;
+  width: $sb_height - ( $separatorPadding * 2);
   height: 2px ;
-  margin: 0 11px ;
+  margin: 0  $separatorPadding ;
   background-color: var(--interactive-normal);
 }
 
@@ -63,10 +63,13 @@ $iconScale: var(--sbIconScale);
   outline: none ;
 }
 
-// Unread mentions indicators
-.unreadMentionsIndicatorTop_ef3116,
-.unreadMentionsIndicatorBottom_ef3116,
-.listItem__650eb:has(.guildSeparator__252b6) { display: none }
+:is(
+  // Unread mentions indicators
+  .unreadMentionsIndicatorTop_ef3116,
+  .unreadMentionsIndicatorBottom_ef3116,
+  // default separator
+  .listItem__650eb:has(.guildSeparator__252b6)
+) { display: none }
 
 .scroller_ef3116 {
   display: grid ;
@@ -89,12 +92,12 @@ $iconScale: var(--sbIconScale);
   align-items: center !important ;
 
   &::before {
-    @include itemSeperator();
+    @include itemSeparator();
     top: 120px ;
   }
 
   &::after {
-    @include itemSeperator();
+    @include itemSeparator();
     bottom: 0px ;
   }
 }
@@ -108,7 +111,6 @@ $iconScale: var(--sbIconScale);
   .item__58105 {
     visibility: hidden ;
     height: calc($iconBaseSize * $iconScale * 0.20 ) !important ;
-    // margin-left: -5px ;
     margin-left: -4px ;
 
     // Server selected
@@ -134,6 +136,7 @@ $iconScale: var(--sbIconScale);
   .lowerBadge_cc5dd2 {
     left: 0px ;
     bottom: 0px ;
+    animation: none ; // makes icon blurry when scaled
   }
 
   .wrapper_cc5dd2 {
@@ -195,7 +198,7 @@ $iconScale: var(--sbIconScale);
   }
 
   .wrapper_d144f8 {
-    top: calc( $spacing * -1 );
+    top: calc( $iconSpacing * -1 );
     bottom: 0 ;
   }
   // <- Drag&Drop
@@ -204,7 +207,7 @@ $iconScale: var(--sbIconScale);
 // this way instead of wrapper bc of icon when drag
 :is(.blobContainer_e5445c, .listItemWrapper__91816) {
   transform: rotate(90deg) !important ; // "important" for server details plugin idk
-  scale: $iconScale;
+  scale: $iconScale ;
   margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
   height: $iconBaseSize ;
   width: $iconBaseSize ;
@@ -340,9 +343,9 @@ $iconScale: var(--sbIconScale);
   grid-area: Servers ;
   overflow: hidden scroll ;
   max-height: -webkit-fill-available ;
-  padding: $spacing 0 !important ;
+  padding: $iconSpacing 0 !important ;
   box-sizing: border-box ;
-  gap: $spacing !important ;
+  gap: $iconSpacing !important ;
 
   &::-webkit-scrollbar { display: none }
 
@@ -354,16 +357,17 @@ $iconScale: var(--sbIconScale);
     .folderGroupBackground__48112 {
       $folderheight: $sb_height - 20 ;
 
-      width: calc($folderheight * $iconScale) ;
-      left: calc(($sb_height - ($folderheight * $iconScale)) / 2 );
-      top: 2px ;
-      bottom: 2px ;
-      border: none ;
-      border-radius: 10px ;
-      background-color: rgba(30, 30, 30, .5);
+      @container style(--serverBar-FolderStyle: 1) {
+        width: calc($folderheight * $iconScale) ;
+        left: calc(($sb_height - ($folderheight * $iconScale)) / 2 );
+        top: 2px ;
+        bottom: 2px ;
+        border: none ;
+        border-radius: 10px ;
+        background-color: rgba(30, 30, 30, .5);
+      }
 
-      // @container style(--serverBarFolderStyle: 0) {
-      @container style(--serverBar-FolderStyle: 0) {
+      @container not style(--serverBar-FolderStyle: 1) {
         display: none ;
       }
     }
@@ -406,18 +410,18 @@ $iconScale: var(--sbIconScale);
     // .folderGuildsList__48112 {
     > .stack_dbd263 { // for serverFolders
       height: auto !important;
-      gap: $spacing !important ;
-      padding: $innerSpacing 0 $innerSpacing 0 !important;
+      gap: $iconSpacing !important ;
+      padding: $halfSpacing 0 $halfSpacing 0 !important;
 
       .listItem__650eb {
         margin: 0 ;
       }
     }
-    // @container style(--serverBarFolderStyle: 0) {
-    @container style(--serverBar-FolderStyle: 0) {
+
+    @container not style(--serverBar-FolderStyle: 1) {
       .folderGuildsList__48112::after {
-        @include itemSeperator();
-        bottom: calc(((($spacing + $innerSpacing) / 2) - $innerSpacing + 1px) * -1 );
+        @include itemSeparator();
+        bottom: calc(((($iconSpacing + $halfSpacing) / 2) - $halfSpacing + 1px) * -1 );
       }
     }
   }
@@ -430,7 +434,7 @@ $iconScale: var(--sbIconScale);
 // Dms container
 #guild-list-unread-dms {
   position: relative;
-  padding: $spacing 0 !important ;
+  padding: $iconSpacing 0 !important ;
   gap: $dmSpacing !important ;
 
   > div:not([class]) {
@@ -439,7 +443,7 @@ $iconScale: var(--sbIconScale);
 
   // separator, unless favorite are present
   &:not(.listItem__650eb ~ #guild-list-unread-dms)::before {
-    @include itemSeperator();
+    @include itemSeparator();
     top: 0px ;
   }
 
@@ -469,7 +473,7 @@ $iconScale: var(--sbIconScale);
   }
 
   &::before {
-    @include itemSeperator();
+    @include itemSeparator();
     top: 0px ;
   }
 

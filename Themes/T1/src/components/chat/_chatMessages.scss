@@ -236,9 +236,11 @@
         content: " (" attr(href) ")" ;
         position: relative ;
         display: inline-flex ;
-        height: calc(100% * var(--unmask-links));
+        // height: calc(100% * var(--unmask-links));
+        height: 100% ;
         max-height: 22px ;
-        width: calc(100% * var(--unmask-links));
+        // width: calc(100% * var(--unmask-links));
+        width: 100% ;
         max-width: max-content ;
         font-size: 0.7rem ;
         font-weight: 400 ;
@@ -251,17 +253,17 @@
       }
     }
 
-    :is(u, s):has(.anchor_edefb8[title$=")"]) {
-      text-decoration: none ;
-    }
+    // :is(u, s):has(.anchor_edefb8[title$=")"]) {
+    //   text-decoration: none ;
+    // }
 
-    s span {
-      text-decoration: line-through ;
-    }
+    // s span {
+    //   text-decoration: line-through ;
+    // }
 
-    u span {
-      text-decoration: underline ;
-    }
+    // u span {
+    //   text-decoration: underline ;
+    // }
   }
   // <- Unmask links
 
@@ -324,7 +326,7 @@
     transition: none ;
     transform: none !important ;
     box-shadow: none !important ;
-    background: $embedBg ;
+    background: $embedBg !important ;
 
     .bd-addon-store-card-author {
       cursor: pointer ;

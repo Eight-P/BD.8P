@@ -76,6 +76,11 @@ path[fill="currentColor"] {
     --__lottieIconColor: #{$BtnIconDanger} !important ;
   }
 
+  // text
+  &.colorRed__201d5 {
+    color: $BtnIconDanger ;
+  }
+
   // Voice channel view, disconnect btn
   &.disconnect_f1ceac .controlIcon_f1ceac {
     color: #{$BtnIconDanger} !important ;
