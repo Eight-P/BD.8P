@@ -1,6 +1,86 @@
 #app-mount .root__9c3be {
+  pointer-events: none ;
 
-  .outer_c0bea0  {
+  // .outer_c0bea0  {
+  .user-profile-modal-v2  {
+    width: 800px ;
     border: none ;
+    background: none ;
+
+    // main layout container
+    .inner_c0bea0 {
+      padding: 0 ;
+      gap: 0px ;
+      background: none ;
+    }
+
+    .backgroundImage__9c3be {
+      display: none ;
+    }
+
+    // -> left side profile section
+    .profile__9c3be {
+      width: 375px ;
+      border-radius: var(--radius-lg);
+      overflow: hidden ;
+      z-index: 1 ;
+      pointer-events: auto ;
+      outline: none ;
+
+      @include shadowEffect("box_2");
+
+      .profileBody__9c3be  {
+        padding: 4px 14px 8px 22px !important ;
+
+        @include scrollerFadeOut();
+      }
+
+      // overriding my stupid btn design
+      .profileButtons__9c3be {
+        .themeColor_fb7f94.primary_fb7f94 {
+          background: var(--profile-gradient-button-color) !important ;
+          color: var(--white-500);
+        }
+
+        .lookFilled__201d5.colorPrimary__201d5 {
+          background-color: var(--button-secondary-background) !important ;
+          color: var(--button-secondary-text) !important ;
+        }
+      }
+    }
+    // <- left side profile section
+
+    // -> right side body
+    .container__37bfc {
+      position: relative ;
+      height: 85% ;
+      margin: 0 ;
+      align-self: center ;
+      padding: 20px 12px 0 20px ;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0 ;
+      pointer-events: auto ;
+      background: linear-gradient(
+        color-mix(in oklab,
+          var(--profile-gradient-overlay-color) 80% ,
+          var(--profile-gradient-modal-background-color)
+        ),
+
+        color-mix(in oklab,
+          var(--profile-gradient-overlay-color) 20% ,
+          var(--profile-gradient-modal-background-color)
+        )
+        300px
+      );
+
+      &::before {
+        content: "";
+        position: absolute ;
+        display: block ;
+        inset: 0 ;
+        background: linear-gradient(var(--profile-gradient-modal-background-color), var(--profile-gradient-modal-background-color));
+        z-index: -1 ;
+      }
+    }
+    // <- right side body
   }
 }

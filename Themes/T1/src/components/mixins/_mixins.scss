@@ -38,7 +38,7 @@
   }
 }
 
-// Shadow effects | @include shadowEffect("drop_1");
+// Shadow effects | @include shadowEffect("box_1");
 @mixin shadowEffect ($type:"drop_1") {
   $Map: (
     "drop_1": append("filter", "drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75))"),
@@ -87,7 +87,7 @@
 
     #{$inner} {
       border: none ;
-      background: none ;
+      background: none !important ;
       border-bottom: 1px solid var(--interactive-normal);
       outline: none ;
       box-shadow: none !important ;
@@ -105,7 +105,7 @@
     #{$inner} {
       border: solid transparent ;
       border-width: 0 0 1px 0 ;
-      background: none ;
+      background: none !important ;
       box-shadow: none !important ;
       outline: none ;
     }
