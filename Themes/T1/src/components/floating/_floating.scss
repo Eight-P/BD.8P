@@ -66,6 +66,12 @@ $C_Header: var(--interactive-normal);
 // -> Tooltips
 .theme-dark .tooltipPrimary__382e7 {
   background: $BG_Floating ;
+
+  --tooltip-pointer-bg: #{$BG_Floating} ;
+
+  .tooltipPointer__382e7 {
+    border-top-color: $BG_Floating ;
+  }
 }
 // <- Tooltips
 
