@@ -74,7 +74,7 @@
 }
 
 // Dev build indicator
-.platform-win #app-mount::after {
+.platform-win .app__160d8::after {
   content: "T1 Dev build" ;
   position: absolute ;
   display: block !important ;

@@ -1,9 +1,16 @@
 // App | Background images
 
 body {
+
+  $blur-main: blur(calc(var(--backgroundBlur-app) / 100 * 1px));
+  $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
+
+  $blur-server: blur(calc(var(--backgroundBlur-server) / 100 * 1px));
+  $brightness-server: brightness(calc((var(--backgroundBrightness-server) / 100)));
+
 // -> Main
 :is(
-  #app-mount, // main
+  .bg__960e4, // main
   .container__01ae2, // floating threat/forum
   .header_c6bf1b, // role settings header
   .typing_b88801:has(.dots__5ad89) // chat input typing indicator bar
@@ -11,19 +18,13 @@ body {
   content: "" ;
   position: absolute ;
   inset: 0px ;
-  // background: var(--background_app);
   background: var(--background-app);
   background-position: center ;
   background-size: cover ;
   background-repeat: no-repeat ;
   background-attachment: fixed ;
 
-  // --blur: blur(calc(var(--backgroundBlur_app) / 100 * 1px));
-  --blur: blur(calc(var(--backgroundBlur-app) / 100 * 1px));
-  // --brightness: brightness(calc((var(--backgroundBrightness_app) / 100)));
-  --brightness: brightness(calc((var(--backgroundBrightness-app) / 100)));
-
-  filter: var(--blur) var(--brightness);
+  filter: $blur-main $brightness-main;
 }
 // <- Main
 
@@ -33,18 +34,15 @@ body {
     position: absolute ;
     display: block ;
     inset: 0px ;
-    // background: var(--background_server);
     background: var(--background-server);
     background-position: center ;
     background-size: cover ;
     background-repeat: no-repeat ;
 
-    // --blur: blur(calc((var(--backgroundBlur_server) / 100) * 1px));
-    --blur: blur(calc((var(--backgroundBlur-server) / 100) * 1px));
-    // --brightness: brightness(calc((var(--backgroundBrightness_server) / 100)));
-    --brightness: brightness(calc((var(--backgroundBrightness-server) / 100)));
+    // --blur: blur(calc((var(--backgroundBlur-server) / 100) * 1px));
+    // --brightness: brightness(calc((var(--backgroundBrightness-server) / 100)));
 
-    filter: var(--blur) var(--brightness);
+    filter: $blur-server $brightness-server;
 }
 // <- Server
 }
