@@ -3,6 +3,7 @@
 
   // .outer_c0bea0  {
   .user-profile-modal-v2  {
+    min-width: unset ;
     width: 800px ;
     border: none ;
     background: none ;
@@ -56,9 +57,10 @@
       height: 85% ;
       margin: 0 ;
       align-self: center ;
-      padding: 20px 12px 0 20px ;
+      padding: 20px 0px 0 24px ;
       border-radius: 0 var(--radius-lg) var(--radius-lg) 0 ;
       pointer-events: auto ;
+      gap: 0 ;
       background: linear-gradient(
         color-mix(in oklab,
           var(--profile-gradient-overlay-color) 80% ,
@@ -77,9 +79,30 @@
         position: absolute ;
         display: block ;
         inset: 0 ;
-        background: linear-gradient(var(--profile-gradient-modal-background-color), var(--profile-gradient-modal-background-color));
+        background: linear-gradient(
+          var(--profile-gradient-modal-background-color),
+          var(--profile-gradient-modal-background-color)
+        );
         z-index: -1 ;
       }
+
+      // -> Activity body
+      // Activity action/reaction btns
+      .activityPopover__2d0ab { display: none }
+
+      // activity scroller container
+      :is(.scroller__764cd, .scroller__28fdc) {
+        padding: 20px (20px - 8) 0 0 !important ;
+        margin: 0 !important ;
+
+        @include scrollerFadeOut();
+      }
+
+      // item cards
+      .overlay_c0bea0  {
+        background: none ;
+      }
+      // <- Activity body
     }
     // <- right side body
   }

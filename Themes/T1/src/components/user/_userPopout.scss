@@ -75,7 +75,7 @@
     .avatar__75742 {
       top: $AvatarPadding ;
       left: $AvatarPadding ;
-      z-index: 10 ; // for status icon
+      // z-index: 10 ; // for status icon
 
       // -> Image / Status icon
       .svg__44b0c {
@@ -237,7 +237,7 @@
 
   // -> Account name, Pronouns, Guild tag, Badges
   .tags__63ed3 {
-    gap: 4px ;
+    gap: 8px ;
   }
 
   .guildTagContainer__63ed3 {
