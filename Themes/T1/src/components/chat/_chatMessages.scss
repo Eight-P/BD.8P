@@ -128,7 +128,7 @@
       .separator_f84418
     ) {  display: none  }
 
-    .buttons__5126c:not(:hover) .button_f7ecac {
+    .button_f7ecac {
       color: $BtnIconHover !important; // !important bc of general btn design
     }
   }
@@ -157,6 +157,10 @@
     :is(.button_f7ecac, .separator_f84418) {
       display: flex ;
     }
+
+    .button_f7ecac:not(:hover) {
+      color: $BtnIconNormal !important; // !important bc of general btn design
+    }
   }
   // <- btn hover and appear behavior
 
@@ -178,16 +182,13 @@
       height: 100% ;
       width: 100% ;
       inset: 0px ;
-      // background: var(--background_app) $BG_MsgHighlight;
       background: var(--background-app) $BG_MsgHighlight ;
       background-position: center ;
       background-size: cover ;
       background-repeat: no-repeat ;
       background-attachment: fixed ;
 
-      // --blur: blur(calc(var(--backgroundBlur_app, 0) / 100 * 1px));
       --blur: blur(calc(var(--backgroundBlur-app, 0) / 100 * 1px));
-      // --brightness: brightness(calc((var(--backgroundBrightness_app, 80) / 100)));
       --brightness: brightness(calc((var(--backgroundBrightness-app, 80) / 100)));
 
       filter: var(--blur) var(--brightness);
@@ -236,10 +237,8 @@
         content: " (" attr(href) ")" ;
         position: relative ;
         display: inline-flex ;
-        // height: calc(100% * var(--unmask-links));
         height: 100% ;
         max-height: 22px ;
-        // width: calc(100% * var(--unmask-links));
         width: 100% ;
         max-width: max-content ;
         font-size: 0.7rem ;
@@ -252,18 +251,6 @@
         text-decoration: underline ;
       }
     }
-
-    // :is(u, s):has(.anchor_edefb8[title$=")"]) {
-    //   text-decoration: none ;
-    // }
-
-    // s span {
-    //   text-decoration: line-through ;
-    // }
-
-    // u span {
-    //   text-decoration: underline ;
-    // }
   }
   // <- Unmask links
 
@@ -288,6 +275,14 @@
     // removes border
     --border-subtle: transparent ;
     --border-normal: transparent ;
+  }
+
+  // to avoid msg btn overlap with solid content (maybe not ideal)
+  &:not(.groupStart__5126c) {
+    // .visualMediaItemContainer_f4758a {
+    //   margin-top: 22px + 2px ;
+    //   // background: red ;
+    // }
   }
 
   // e.g. server invite (overlaps with body)

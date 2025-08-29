@@ -2,13 +2,10 @@
 
 body {
 
-  $blur-main: blur(calc(var(--backgroundBlur-app) / 100 * 1px));
-  $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
-
-  $blur-server: blur(calc(var(--backgroundBlur-server) / 100 * 1px));
-  $brightness-server: brightness(calc((var(--backgroundBrightness-server) / 100)));
-
 // -> Main
+$blur-main: blur(calc(var(--backgroundBlur-app) / 100 * 1px));
+$brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
+
 :is(
   .bg__960e4, // main
   .container__01ae2, // floating threat/forum
@@ -23,12 +20,14 @@ body {
   background-size: cover ;
   background-repeat: no-repeat ;
   background-attachment: fixed ;
-
-  filter: $blur-main $brightness-main;
+  filter: $blur-main $brightness-main ;
 }
 // <- Main
 
 // -> Server
+$blur-server: blur(calc(var(--backgroundBlur-server) / 100 * 1px));
+$brightness-server: brightness(calc((var(--backgroundBrightness-server) / 100)));
+
 .guilds_c48ade::before {
   content: "" ;
     position: absolute ;
@@ -38,11 +37,7 @@ body {
     background-position: center ;
     background-size: cover ;
     background-repeat: no-repeat ;
-
-    // --blur: blur(calc((var(--backgroundBlur-server) / 100) * 1px));
-    // --brightness: brightness(calc((var(--backgroundBrightness-server) / 100)));
-
-    filter: $blur-server $brightness-server;
+    filter: $blur-server $brightness-server ;
 }
 // <- Server
 }

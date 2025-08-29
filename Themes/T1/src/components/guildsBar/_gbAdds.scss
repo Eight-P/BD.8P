@@ -47,71 +47,73 @@
 
 
 // -> Server options btn
-// channels list spacer for banner image
-/// (content__99f8c not unique), needs [style="height: 130px;"]
-.sidebarList_c48ade .content__99f8c > [style="height: 84px;"]:not([class]) {
-  margin-top: -84px ; // helps remove the space from bottom of the list
-  visibility: hidden ;
-}
-
 .sidebarList_c48ade {
   overflow: visible ;
   backdrop-filter: unset ;
   -webkit-backdrop-filter: unset ;
-}
 
-.container__2637a {
-  mask: none ;
-}
-
-// button
-.sidebarList_c48ade .container_f37cb1 {
-  position: fixed ;
-  bottom: 0 ;
-  right: 0 ;
-  width: 120px ;
-  height: $sb_height ;
-  display: block !important;
-
-  &:hover, &.selected_f37cb1 { background-color: rgba(0, 0, 0, 0.2) !important }
-
-  // second container
-  .header_f37cb1 {
-    display: contents !important;
+  // channels list spacer for banner image
+  /// (content__99f8c not unique), needs [style="height: 130px;"]
+  .content__99f8c > [style="height: 84px;"]:not([class]) {
+    margin-top: -84px ; // helps remove the space from bottom of the list
+    visibility: hidden ;
   }
 
-  .headerContent_f37cb1 {
-    height: 100% ;
-    align-items: center ;
-    justify-content: center ;
-    display: flex !important ;
+  .animatedBannerHoverLayer_f37cb1 { display: none }
+
+  .container__2637a {
+    mask: none ;
   }
 
-  // server name
-  .name_f37cb1 {
-    margin: 5px ;
-    white-space: normal ;
-    max-height: 32px ;
-    line-height: 16px ;
-    font-weight: 400 ;
-    text-align: center ;
-    color: var(--text-normal);
+  // button
+  .container_f37cb1 {
+    position: fixed ;
+    bottom: 0 ;
+    right: 0 ;
+    width: 120px ;
+    height: $sb_height ;
     display: block !important;
 
-    @include shadowEffect("text_1");
-  }
+    &:hover, &.selected_f37cb1 { background-color: rgba(0, 0, 0, 0.2) !important }
 
-  // Icons, Chevron, star icon in favorites tab, banner image
-  :is(
-    .guildIconV2Container__85d16,
-    .guildIconContainer__85d16,
-    .headerChildren_f37cb1,
-    .favoritesIcon_f37cb1,
-    .animatedContainer_f37cb1,
-    .headerEllipseBackdrop_f37cb1,
-    .headerEllipseForeground_f37cb1,
-    .headerGlass_f37cb1
-  ) { display: none }
+    // second container
+    .header_f37cb1 {
+      display: contents !important;
+    }
+
+    .headerContent_f37cb1 {
+      height: 100% ;
+      align-items: center ;
+      justify-content: center ;
+      display: flex !important ;
+    }
+
+    // server name
+    .name_f37cb1 {
+      margin: 5px ;
+      white-space: normal ;
+      max-height: 32px ;
+      line-height: 16px ;
+      font-weight: 400 ;
+      text-align: center ;
+      color: var(--text-normal);
+      display: block !important;
+
+      @include shadowEffect("text_1");
+    }
+
+    // Icons, Chevron, star icon in favorites tab, banner image
+    :is(
+      .guildIconV2Container__85d16,
+      .guildIconContainer__85d16,
+      .headerChildren_f37cb1,
+      .favoritesIcon_f37cb1,
+      .animatedContainer_f37cb1,
+      .headerEllipseBackdrop_f37cb1,
+      .headerEllipseForeground_f37cb1,
+      .headerGlass_f37cb1
+    ) { display: none }
+  }
 }
 // <- Server options btn
 

@@ -28,7 +28,10 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 // -> Chat container
 .page_c48ade {
   :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
-    @include scrollerFadeOut();
+    // not for new text input exp. (temporary)
+    &:not(.typingGradientNotAtBottom__36d07, .typingGradientAtBottom__36d07, .gradientDefault__36d07) {
+      @include scrollerFadeOut();
+    }
   }
 }
 // Page inner container (chat+header)
@@ -72,7 +75,7 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
     }
   }
 
-  // Mark As Read (two seperate buttons)
+  // Mark As Read (two separate buttons)
   &.newMessagesBar__0f481 {
     top: -4px ;
 
@@ -123,7 +126,8 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 }
 
 // "This channel is not on your channel list" bar
-.chatHeaderBar_dc83f5 {
+.chatHeaderBar_dc83f5,
+.chatHeaderBar_a53846 {
   background: none ;
   box-shadow: none ;
 
@@ -159,7 +163,7 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 // <- Mentions
 
 // -> Reactions
-// Reaction item chat, foum post
+// Reaction item chat, forum post
 :is(.reaction__23977, .reaction_f8896c) {
   border: none ;
   border-radius:4px ;

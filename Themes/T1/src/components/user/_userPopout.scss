@@ -167,6 +167,41 @@
       @include shadowEffect("box_3");
     }
 
+    // status type label
+    .labelRow__1fdc8 {
+
+      path {
+        fill: var(--header-secondary) !important;
+      }
+
+      .labelText__1fdc8 {
+        color: var(--header-secondary) !important;
+      }
+    }
+
+    // -> add self status
+    .addStatusIcon_ab8609 path {
+      fill: var(--header-secondary) !important;
+      fill: $BtnTextNormal !important;
+    }
+
+    .addStatusPrompt_ab8609 {
+      color: var(--header-secondary) !important;
+      color: $BtnTextNormal !important;
+      font-style: normal ;
+    }
+
+    // hover
+    .clickable_ab8609:hover {
+      .addStatusIcon_ab8609 path {
+        fill: $BtnTextHover !important;
+      }
+      .addStatusPrompt_ab8609 {
+        color: $BtnTextHover !important;
+      }
+    }
+    // <- add self status
+
     .statusText_ab8609 {
       color: var(--white);
     }
@@ -177,10 +212,7 @@
 
     // edit self status btns
     .popover_c97e55 {
-      // display: none ;
-
       top: 50% !important ;
-      // top: 0px !important ;
       right: 50% ;
       transform: translate(50%, -50%);
       background: var(--redesign-button-overlay-alpha-background);
@@ -273,9 +305,17 @@
   // -> Activities
   .card__39ec2 {
     background: var(--bg_items);
+
+    .button__201d5 {
+      background: var(--bg_items) !important ;
+
+      &:hover {
+        background: var(--bg_itemsHover) !important ;
+      }
+    }
   }
 
-  .clickableContainer__39ec2:hover>.card__39ec2 {
+  .clickableContainer__39ec2:hover > .card__39ec2 {
     background: var(--bg_itemsHover);
   }
   // <- Activities

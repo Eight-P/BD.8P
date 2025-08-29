@@ -458,7 +458,8 @@ $iconScale: var(--sbIconScale);
 
 // Favorites & Server preview
 .scrollerBase_d125d2 > .listItem__650eb:not(.stack_dbd263:not([id]) ~ .listItem__650eb) {
-  padding: $dmSpacing 0 !important ;
+  // padding: $dmSpacing 0 !important ; // ?
+  padding: $dmSpacing 0 ;
 
   .pill_e5445c { display: none }
 }
@@ -473,6 +474,12 @@ $iconScale: var(--sbIconScale);
   }
 
   &::before {
+    // @include itemSeparator();
+    // top: 0px ;
+  }
+
+  // separator, unless notify exp. is present
+  &:not(.listItem__650eb ~ .listItem__650eb:has(.favoriteIcon_c9fddf))::before {
     @include itemSeparator();
     top: 0px ;
   }
@@ -485,8 +492,8 @@ $iconScale: var(--sbIconScale);
     transform: rotate(90deg);
     scale: $iconScale;
     margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
-    height: $iconBaseSize ;
-    width: $iconBaseSize ;
+    height: $iconBaseSize !important ;
+    width: $iconBaseSize !important ;
     pointer-events: auto ;
   }
 
@@ -508,5 +515,37 @@ $iconScale: var(--sbIconScale);
   }
 }
 // <- Favorites
+
+// notification center exp.
+.listItem__650eb:has(.notificationsIcon__4f4b6) {
+
+  .wrapper_cc5dd2 {
+    transform: rotate(90deg);
+    scale: $iconScale;
+    margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
+    height: $iconBaseSize !important ;
+    width: $iconBaseSize !important ;
+  }
+
+  // remove padding from Favorites container if notification is present
+  + .listItem__650eb {
+    padding-top: 0 !important ;
+  }
+
+  &::before {
+    @include itemSeparator();
+    top: 0px ;
+  }
+
+  .childWrapper__6e9f8 {
+    background: none ;
+    color: var(--header-secondary);
+
+    &:hover {
+      color: var(--text-normal);
+    }
+  }
+}
+
 // <- Favorites / Dms / Server preview
 }
