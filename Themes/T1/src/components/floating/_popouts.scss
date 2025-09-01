@@ -294,10 +294,6 @@
 
     // -> Header
     // Header icon & text
-    .header_ab6641 {
-      border-bottom: 2px solid $BG_Body ;
-    }
-
     :is(.inboxIcon_ab6641, .inboxTitle_ab6641) {
       color: $C_Header !important ;
     }
@@ -323,6 +319,7 @@
     // -> Body
     .scrollerBase_d125d2 {
       padding: 0 !important ;
+      border-top: 2px solid $BG_Body ;
 
       @include scrollbar(none);
 
@@ -330,6 +327,12 @@
       .jumpButton_ed0c8c {
         background: $BG_Meta ;
       }
+    }
+
+    // for you empty
+    .container_a54d1d {
+      margin: 0 ;
+      background: $BG_Body ;
     }
 
     // -> Unreads

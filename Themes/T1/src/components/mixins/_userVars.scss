@@ -44,17 +44,24 @@
   /* User avatar decorations */
   --hide-avatarDecorations: 0 ;
 
-  /* Nameplates */
+  /* Nameplates
+    0: Show all (default)
+    1: Hide in member list
+    2: Hide own in profile panel
+    3: Hide all */
   --hide-nameplates: 0 ;
 
   /* Clan tags
     0: Show all (default)
     1: Hide in member list
-    2: hide all */
+    2: Hide all */
   --hide-clanTags: 0 ;
 
   /* Username holographic gradient & animation */
   --disable-roleGradients: 0 ;
+
+  /* Username styles */
+  --hide-nameStyles: 0 ;
 
   /* Super reaction animations */
   --hide-reactionAnimations: 0 ;

@@ -57,7 +57,7 @@
       height: 85% ;
       margin: 0 ;
       align-self: center ;
-      padding: 20px 0px 0 24px ;
+      padding: 20px 0 0 0 ;
       border-radius: 0 var(--radius-lg) var(--radius-lg) 0 ;
       pointer-events: auto ;
       gap: 0 ;
@@ -92,8 +92,6 @@
 
       // activity scroller container
       :is(.scroller__764cd, .scroller__28fdc) {
-        padding: 20px (20px - 8) 0 0 !important ;
-        margin: 0 !important ;
 
         @include scrollerFadeOut();
       }
@@ -101,6 +99,7 @@
       // item cards
       .overlay_c0bea0  {
         background: none ;
+        border: none ;
       }
       // <- Activity body
     }

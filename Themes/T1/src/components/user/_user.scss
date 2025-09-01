@@ -15,27 +15,45 @@
 
 #app-mount {
 
-  // Profile picture decorations
+  // -> Profile picture decorations
   @container style(--hide-avatarDecorations: 1) {
     :is(.avatarDecoration__44b0c, .avatarDecoration_c19a55) { display: none }
   }
+  // <- Profile picture decorations
 
-  // Profile Animations effects
+  // -> Profile Animations effects
   @container style(--hide-profileEffects: 1) {
     .profileEffects__01370 { display: none }
   }
+  // <- Profile Animations effects
 
-  // Nameplates
-  @container style(--hide-nameplates: 1 ) {
+  // -> Nameplates
+  @container style(--hide-nameplates: 1 ) or style(--hide-nameplates: 3 ) {
+    // member list
     .nameplated__91a9d {
       &.childContainer__91a9d {
         padding-right: 8px ;
       }
       .container__4bbc6 { display: none }
     }
+
+    // dms
+    .channel__972a0 {
+      .container__4bbc6 { display: none }
+      .innerCloseButtonPlated__972a0 {
+        background: none ;
+        backdrop-filter: none ;
+      }
+    }
   }
 
-  // User name (holographic) gradient effect
+  @container style(--hide-nameplates: 2 ) or style(--hide-nameplates: 3 ) {
+    // sidebar profile panel
+    .container__37e49 .container__4bbc6 { display: none }
+  }
+  // <- Nameplates
+
+  // -> User name (holographic) gradient effect
   @container style(--disable-roleGradients: 1 ) {
     .animateGradient_e5de78 {
       animation: none ;
@@ -52,8 +70,9 @@
     // member list
     .usernameGlow_e5de78 { display: none }
   }
+  // <- User name (holographic) gradient effect
 
-  // Clan tags member list
+  // -> Clan tags member list
   @container style(--hide-clanTags: 1 ) {
 
     .username__5d473 .chipletContainerInner__10651 { display: none }
@@ -64,5 +83,42 @@
 
     .clanTagChiplet_c19a55, .clanTag__5d473 { display: none }
   }
-}
+  // <- Clan tags member list
 
+  // -> Name Styles
+  @container style(--hide-nameStyles: 1 ) {
+    // user popout
+    .showEffect_dfb989 {
+      font-family: var(--font-display);
+      letter-spacing: normal ;
+
+      .innerContainer_dfb989 {
+        background: unset ;
+        -webkit-text-fill-color: unset ;
+        text-decoration-color: unset ;
+        animation: none ;
+        padding: unset ;
+        margin: unset ;
+
+        -webkit-text-stroke-width: unset ;
+        -webkit-text-stroke-color: unset ;
+        color: var(--text-default);
+
+        &::before { display: none }
+      }
+
+      .glowContainer_dfb989 { display: none }
+    }
+
+    :is(
+      .memberInner__5d473 .name__703b9,
+      .message__5126c .username_c19a55,
+      .channel__972a0 .name__20a53,
+      .channel__972a0 .overflow__82b15
+    ) {
+      font-family: var(--font-display);
+      letter-spacing: normal ;
+    }
+  }
+  // <- Name Styles
+}

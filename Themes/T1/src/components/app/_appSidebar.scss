@@ -25,7 +25,6 @@
 
 // Sidebar inner
 .sidebarList_c48ade {
-  // padding-right: 6px ;
   flex: 1 1 auto ;
   border: none ;
 
@@ -40,7 +39,6 @@
 
     @include scrollerFadeOut();
 
-    // @container style(--sidebarScrollbar: 0 ) {
     @container style(--show-sidebarScrollbar: 0 ) {
       @include scrollbar(none);
     }
@@ -67,14 +65,28 @@
       }
     }
 
+    // nameplate
+    .container__4bbc6 {
+      left: -2px ;
+      border-radius: 0 ;
+      transform: scale(-1, 1);
+    }
+
+    // image & name container
     .avatarWrapper__37e49 {
       background: none ;
       flex: 0 1 auto ;
       margin-right: 4px ;
     }
 
-    .svg__44b0c {
-      transform: scale(.8);
+    // name & status container
+    .nameTag__37e49 {
+      z-index: 1 ;
+    }
+
+    // remove btn bg with nameplate
+    .plated__67645 {
+      background: none !important ;
     }
 
     // right click for dummies

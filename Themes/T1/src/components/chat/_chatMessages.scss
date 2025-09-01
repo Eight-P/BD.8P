@@ -174,7 +174,7 @@
     // opacity: 1 ; // debug
 
     top: 0 ;
-    padding: 0 ;
+    padding: 1px ;
 
     &:before {
       content: "";
@@ -187,6 +187,8 @@
       background-size: cover ;
       background-repeat: no-repeat ;
       background-attachment: fixed ;
+
+      border-radius: 0 0 0 8px ;
 
       --blur: blur(calc(var(--backgroundBlur-app, 0) / 100 * 1px));
       --brightness: brightness(calc((var(--backgroundBrightness-app, 80) / 100)));
@@ -277,15 +279,9 @@
     --border-normal: transparent ;
   }
 
-  // to avoid msg btn overlap with solid content (maybe not ideal)
-  &:not(.groupStart__5126c) {
-    // .visualMediaItemContainer_f4758a {
-    //   margin-top: 22px + 2px ;
-    //   // background: red ;
-    // }
-  }
-
   // e.g. server invite (overlaps with body)
+  .gradient__083ae { display: none }
+
   .footerContent__083ae {
     background: none ;
   }
@@ -295,6 +291,11 @@
     max-width: unset ;
 
     background: $embedBg-hover
+  }
+
+  // code block in text file wrapper
+  .container__4d95d .hljs {
+    background: none ;
   }
 
   // thread link

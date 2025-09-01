@@ -431,10 +431,18 @@ $iconScale: var(--sbIconScale);
 // <- Servers
 
 // -> Favorites / Dms / Server preview
+@mixin iconSep() {
+  &::before {
+    @include itemSeparator();
+    top: calc($dmSpacing * -1);
+  }
+}
+
 // Dms container
 #guild-list-unread-dms {
   position: relative;
-  padding: $iconSpacing 0 !important ;
+  // padding: $iconSpacing 0 !important ;
+  margin: $iconSpacing 0 !important ;
   gap: $dmSpacing !important ;
 
   > div:not([class]) {
@@ -442,14 +450,19 @@ $iconScale: var(--sbIconScale);
   }
 
   // separator, unless favorite are present
-  &:not(.listItem__650eb ~ #guild-list-unread-dms)::before {
-    @include itemSeparator();
-    top: 0px ;
+  // &:not(.listItem__650eb ~ #guild-list-unread-dms)::before {
+    // @include itemSeparator();
+    // top: $iconSpacing ;
+  // }
+
+  &:not(.listItem__650eb ~ #guild-list-unread-dms) {
+    @include iconSep();
   }
 
   // remove padding from server preview (removes from separator otherwise)
   + .listItem__650eb {
-    padding-top: 0 !important ;
+    // padding-top: 0 !important ;
+    margin-top: 0 !important ;
   }
 
   // remove if empty
@@ -458,10 +471,11 @@ $iconScale: var(--sbIconScale);
 
 // Favorites & Server preview
 .scrollerBase_d125d2 > .listItem__650eb:not(.stack_dbd263:not([id]) ~ .listItem__650eb) {
-  // padding: $dmSpacing 0 !important ; // ?
-  padding: $dmSpacing 0 ;
+  // padding: $dmSpacing 0 ;
+  margin: $dmSpacing 0 ;
 
-  .pill_e5445c { display: none }
+  // .pill_e5445c { display: none }
+  .pill_c9fddf { display: none }
 }
 
 // -> Favorites
@@ -470,22 +484,23 @@ $iconScale: var(--sbIconScale);
 
   // remove padding from dms container if favorites are present
   + #guild-list-unread-dms {
-    padding-top: 0 !important ;
-  }
-
-  &::before {
-    // @include itemSeparator();
-    // top: 0px ;
+    // padding-top: 0 !important ;
+    margin-top: 0 !important ;
   }
 
   // separator, unless notify exp. is present
-  &:not(.listItem__650eb ~ .listItem__650eb:has(.favoriteIcon_c9fddf))::before {
-    @include itemSeparator();
-    top: 0px ;
+  // &:not(.listItem__650eb ~ .listItem__650eb:has(.favoriteIcon_c9fddf))::before {
+    // @include itemSeparator();
+    // top: 0px ;
+  // }
+
+  &:not(.listItem__650eb ~ .listItem__650eb:has(.favoriteIcon_c9fddf)) {
+    @include iconSep();
   }
 
-  .pill_e5445c {
-    display: flex ; // counter
+  // .pill_e5445c {
+  .pill_c9fddf {
+    display: flex !important ; // counter
   }
 
   .wrapper_cc5dd2 {
@@ -516,7 +531,7 @@ $iconScale: var(--sbIconScale);
 }
 // <- Favorites
 
-// notification center exp.
+// -> notification center exp.
 .listItem__650eb:has(.notificationsIcon__4f4b6) {
 
   .wrapper_cc5dd2 {
@@ -529,13 +544,16 @@ $iconScale: var(--sbIconScale);
 
   // remove padding from Favorites container if notification is present
   + .listItem__650eb {
-    padding-top: 0 !important ;
+    // padding-top: 0 !important ;
+    margin-top: 0 !important ;
   }
 
-  &::before {
-    @include itemSeparator();
-    top: 0px ;
-  }
+  // &::before {
+  //   @include itemSeparator();
+  //   top: calc($iconSpacing * -1) ;
+  // }
+
+  @include iconSep();
 
   .childWrapper__6e9f8 {
     background: none ;
@@ -546,6 +564,7 @@ $iconScale: var(--sbIconScale);
     }
   }
 }
+// <- notification center exp.
 
 // <- Favorites / Dms / Server preview
 }
