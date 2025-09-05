@@ -19,8 +19,9 @@ $C_Header: var(--interactive-normal);
 
 // -> Searchbar
 .container_a45028 { @include searchbar(".inner_a45028", true) }
-// Threads
-.container_d14335 { @include searchbar(".wrapper_d14335", true) }
+// Threads / Sticker-picker / Apps & Cmds
+// .container_d14335 { @include searchbar(".wrapper_d14335", true) }
+.container__3412a { @include searchbar(".wrapper__3412a", true) }
 // Create group DM, ...
 .container__0e476 { @include searchbar(".inner__0e476", true) }
 // <- Searchbar
@@ -64,13 +65,21 @@ $C_Header: var(--interactive-normal);
 // <- Layers general
 
 // -> Tooltips
-.theme-dark .tooltipPrimary__382e7 {
+.layer_da8173:not(.theme-light) .tooltipPrimary__382e7 {
   background: $BG_Floating ;
 
   --tooltip-pointer-bg: #{$BG_Floating} ;
 
   .tooltipPointer__382e7 {
     border-top-color: $BG_Floating ;
+  }
+}
+
+.tooltip__4e35b {
+  background: $BG_Floating ;
+
+  .caretFill__4e35b {
+    fill: $BG_Floating ;
   }
 }
 // <- Tooltips

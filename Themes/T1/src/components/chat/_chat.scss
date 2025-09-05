@@ -43,6 +43,9 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 
   // "#" Icon at the channels very top
   .container__00de6 :is(.emptyChannelIcon__00de6, .iconWrapper__54b20) { display: none }
+
+  // new chat input exp.
+  .chatGradientBase__36d07 { display: none }
 }
 // <- Chat container
 
