@@ -202,4 +202,12 @@
     margin: 6px auto 0 auto ;
     padding: 0 16px ;
   }
+
+  // loading placeholder blobs
+  .category__3b43f {
+      background: var(--background-modifier-active);
+    }
+  .channel__3b43f :is(.category__3b43f, .channelName__3b43f, .channelIcon__3b43f) {
+      background: var(--background-modifier-accent);
+    }
 }

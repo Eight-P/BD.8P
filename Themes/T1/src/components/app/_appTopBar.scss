@@ -18,11 +18,20 @@
     background: none ;
   }
 
+  // -> right side btns
   .anchor_edefb8, .winButtons_c38106::before { display: none }
 
   .winButton_c38106 {
     min-width: 32px ;
   }
+
+  .trailing_c38106 {
+    .clickable_c99c29 > svg {
+      height: 20px ;
+      width: 20px ;
+    }
+  }
+  // <- right side btns
 }
 // <- Title bar
 
@@ -38,7 +47,7 @@
   min-height: unset ;
   border: none ;
 
-  // seperator fade thing
+  // separator fade thing
   .children__9293f::after { display: none }
 }
 // <- general Header bar

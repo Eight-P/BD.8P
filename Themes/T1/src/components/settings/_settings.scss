@@ -9,7 +9,12 @@ $T1_v: null !default ;
   margin-top: var(--custom-app-top-bar-height);
 
   // -> Left side sidebar
-  .container_fea832 { @include searchbar(".inner_fea832") }
+  .container__3412a {
+    @include searchbar(".container__0f084") {
+      min-height: 30px ;
+      padding-left: 0 ;
+    }
+  }
 
   .sidebarRegionScroller__23e6b {
     @include scrollbar(none);

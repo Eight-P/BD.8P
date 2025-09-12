@@ -3,6 +3,7 @@
 // -- Chat
 
 $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
+$ChatScrollerBottomSpacing: 10px ;
 
 // Forums & Threads
 @import 'chatForums' ;
@@ -28,24 +29,25 @@ $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 // -> Chat container
 .page_c48ade {
   :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
-    // not for new text input exp. (temporary)
-    &:not(.typingGradientNotAtBottom__36d07, .typingGradientAtBottom__36d07, .gradientDefault__36d07) {
       @include scrollerFadeOut();
-    }
+
+      &::-webkit-scrollbar-track {
+        margin: 2px 0 ;
+      }
   }
 }
-// Page inner container (chat+header)
-.chat_f75fb0 {
-  border-top: none ;
-}
-
 .chatContent_f75fb0 {
 
-  // "#" Icon at the channels very top
+  // "#" Icon at the channels very top, idk
   .container__00de6 :is(.emptyChannelIcon__00de6, .iconWrapper__54b20) { display: none }
 
-  // new chat input exp.
+  // Scroller gradient
   .chatGradientBase__36d07 { display: none }
+
+  // Scroller bottom spacer
+  .scrollerSpacer__36d07 {
+    height: $ChatScrollerBottomSpacing ;
+  }
 }
 // <- Chat container
 

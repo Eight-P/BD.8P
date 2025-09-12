@@ -9,11 +9,11 @@
     // friends icon & text
     :is(.dot__9293f, .iconWrapper__9293f, .titleWrapper__9293f) { display: none }
   }
-    
+
   // Nav bar
   .tabBar__133bf {
     margin: 0 auto ;
-    
+
     .item__133bf {
       background: none !important ;
       color: var(--interactive-normal);
@@ -39,7 +39,14 @@
   // <- Header bar
 }
 
-// -> Friendslist
+// -> Friends list
+.container__3412a {
+  @include searchbar(".container__0f084") {
+    min-height: 30px ;
+    padding-left: 0 ;
+  }
+}
+
 .peopleList__5ec2f {
   margin-top: 15px ;
 
@@ -58,7 +65,7 @@
     .text__0a06e {
       width: 100% ;
     }
-    
+
     :is(.statusText__19b6d, .text_c9d15c) {
       color: var(--header-secondary) !important;
     }
@@ -84,7 +91,7 @@
   }
   // <- User item
 }
-// <- Friendslist
+// <- Friends list
 
 // -> Friends activity sidebar
 // main content container
