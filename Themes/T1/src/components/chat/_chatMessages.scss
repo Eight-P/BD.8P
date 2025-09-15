@@ -45,7 +45,7 @@
 
 .cozy_c19a55 {
   // -> general msg
-  $spacing: 13px ;
+  $spacing: 15px ;
 
   background: none !important ;
   padding: 3px 30px 3px ($spacing * 2 + 40px) !important ;
@@ -316,6 +316,13 @@
   // audio file embed
   .audioControls_cf09d8 {
     background: var(--background-secondary-alt);
+  }
+
+  // image content
+  .hoverButtonGroup__06ab4 {
+    background: var(--background-floating);
+
+    @include shadowEffect("box_2");
   }
 
   .bd-addon-store-card {

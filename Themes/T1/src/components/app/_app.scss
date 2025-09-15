@@ -122,7 +122,8 @@ path[fill="currentColor"] {
 
 
 // -> Text btns
-.button__6af3a:not(.icon-only__6af3a) {
+// __6af3a -> _a22cb0
+.button_a22cb0:not(.icon-only_a22cb0) {
   border: none ;
   border-radius: 3px ;
   color: $BtnTextNormal ;
@@ -133,7 +134,7 @@ path[fill="currentColor"] {
     background: $BtnBackgroundHover ;
   }
 
-  &.secondary__6af3a {
+  &.secondary_a22cb0 {
     background: none ;
     color: $BtnTextSecondary ;
 
@@ -143,7 +144,7 @@ path[fill="currentColor"] {
   }
 
   // Nitro
-  &.shinyButton__6a443 {
+  &.shinyButton_a22cb0 {
     color: $BtnIconActive !important ;
 
     .subButtonText_c880e8 {
@@ -152,7 +153,7 @@ path[fill="currentColor"] {
   }
 
   // Danger
-  &:is(.critical-secondary__6af3a, .critical-primary__6af3a) {
+  &:is(.critical-secondary_a22cb0, .critical-primary_a22cb0) {
     color: $BtnTextDanger ;
 
     &:hover {

@@ -4,9 +4,10 @@
   // .outer_c0bea0  {
   .user-profile-modal-v2  {
     min-width: unset ;
-    width: 800px ;
+    width: 750px ;
     border: none ;
     background: none ;
+    max-height: 75vh ;
 
     // main layout container
     .inner_c0bea0 {
@@ -57,7 +58,7 @@
       height: 85% ;
       margin: 0 ;
       align-self: center ;
-      padding: 20px 0 0 0 ;
+      padding: 10px 0 0 0 ;
       border-radius: 0 var(--radius-lg) var(--radius-lg) 0 ;
       pointer-events: auto ;
       gap: 0 ;
@@ -86,15 +87,40 @@
         z-index: -1 ;
       }
 
-      // -> Activity body
-      // Activity action/reaction btns
-      .activityPopover__2d0ab { display: none }
+      // -> tab bar
+      .tabListScroller__37bfc {
+        margin: 0 ;
+        padding: 0 5px ;
 
-      // activity scroller container
-      :is(.scroller__764cd, .scroller__28fdc) {
+        @include divider(bottom);
+      }
+
+      // inner
+      .top_b3f026 {
+        justify-content: space-around ;
+        border: none ;
+      }
+
+      // item
+      .tabBarItem__37bfc {
+        margin: 0 ;
+        padding: 6px ;
+
+        &::after { display: none }
+      }
+      // <- tab bar
+
+      // -> body
+      .tabBarPanel__37bfc {
+        padding-left: 12px ;
 
         @include scrollerFadeOut();
       }
+      // <- body
+
+      // -> Activity body
+      // Activity action/reaction btns
+      .activityPopover__2d0ab { display: none }
 
       // item cards
       .overlay_c0bea0  {
@@ -102,6 +128,17 @@
         border: none ;
       }
       // <- Activity body
+
+      // -> Games
+      .container__62dd3 {
+        background: none ;
+        border: none ;
+      }
+      // "games i like" container
+      .coverList__9a5c3 {
+        grid-template-columns: repeat(auto-fit, var(--custom-game-cover-width, 88px));
+      }
+      // <- Games
     }
     // <- right side body
   }

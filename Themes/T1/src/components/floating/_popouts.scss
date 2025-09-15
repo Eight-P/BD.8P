@@ -252,11 +252,11 @@
     // <- Menu options
 
     // -> Checkbox options
-    .checkbox_f525d3  {
+    .checkbox_c4538f {
       background: none ;
       border: none ;
 
-      &:not(.checked_f525d3) path {
+      &:not(.checked_c4538f) path {
         fill: currentColor ;
         d: path("M 18.625 3 H 5.375 C 4.06519 3 3 4.06519 3 5.375 V 18.625 C 3 19.936 4.06519 21 5.375 21 H 18.625 C 19.936 21 21 19.936 21 18.625 V 5.375 C 21.0057 4.08803 19.9197 3 18.625 3 Z M 19 19 V 5 H 4.99999 V 19 H 19 Z");
       }
@@ -266,7 +266,7 @@
     .focused_c1e9c4 {
 
       // turn check into "x"
-      .checked_f525d3 path {
+      .checked_c4538f path {
         fill: var(--red);
         d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
       }
