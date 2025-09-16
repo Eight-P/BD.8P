@@ -123,6 +123,11 @@ html.theme-dark:root, #app-mount .theme-dark {
   --DnDSC: #f23f43 ;
   --offlineSC: #80848e ;
 
+  // refresh
+
+  --background-base-low: var(--background-tertiary);
+  --background-surface-highest: var(--background-floating);
+
 }
 // <- Theme colors
 
