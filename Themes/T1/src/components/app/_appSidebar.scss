@@ -89,8 +89,14 @@
       background: none !important ;
     }
 
+    // -> Buttons
+    .buttons__37e49 {
+      gap: 5px ;
+    }
+
     // right click for dummies
     .buttonChevron__37e49 { display: none }
+    // <- Buttons
   }
   // <- Profile
 
@@ -156,6 +162,7 @@
 
   .wrapper__0d616 {
     margin-right: 4px ;
+    z-index: 2 ;
 
     .postEnrollmentBackground__636a2 {
       background: var(--background-floating) !important;

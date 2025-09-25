@@ -14,27 +14,27 @@ $C_Header: var(--interactive-normal);
 
 @import 'modals' ;
 
-.layerContainer_da8173 {
+.layerContainer__59d0d {
   z-index: 9999999 ; // against title bar border
 
 // -> Searchbar
 .container_a45028 { @include searchbar(".inner_a45028", true) }
 // Threads / Sticker-picker / Apps & Cmds
-// .container_d14335 { @include searchbar(".wrapper_d14335", true) }
-.container__3412a { @include searchbar(".wrapper__3412a", true) }
+.container__3412a { @include searchbar(".container__0f084", true) }
 // Create group DM, ...
 .container__0e476 { @include searchbar(".inner__0e476", true) }
 // <- Searchbar
 
 // -> Layers general
 // Popouts & Tooltips & Context menus, Modals
-:is(.layer_da8173, .layer_bc663c) {
+:is(.layer__59d0d, .layer_bc663c) {
 
   --background-surface-high: #{$BG_Meta} ;
   --background-surface-higher: #{$BG_Body} ;
   --background-surface-highest: #{$BG_BodyAlt} ;
 
   --bg-base-secondary: #{$BG_Meta} ;
+  --background-base-lower: #{$BG_Meta} ;
   // --bg-base-primary: #{$BG_Body};
 
   --modal-background: #{$BG_Meta} ;
@@ -65,7 +65,7 @@ $C_Header: var(--interactive-normal);
 // <- Layers general
 
 // -> Tooltips
-.layer_da8173:not(.theme-light) .tooltipPrimary__382e7 {
+.layer__59d0d:not(.theme-light) .tooltipPrimary__382e7 {
   background: $BG_Floating ;
 
   --tooltip-pointer-bg: #{$BG_Floating} ;

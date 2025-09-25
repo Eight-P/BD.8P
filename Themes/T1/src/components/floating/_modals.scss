@@ -93,6 +93,25 @@
       margin: 0 ;
     }
   }
+
+  // (per Server) Notification Settings
+  .container__53cea {
+    .bodySpacerTopBorder__53cea { display: none }
+
+    .header__53cea {
+      padding-bottom: 16px ;
+      z-index: 1 ;
+
+      @include shadowEffect("box_3");
+    }
+
+    .body__53cea {
+      background: $BG_Body ;
+
+      // @include scrollbar();
+      @include scrollerFadeOut(2px, 2px);
+    }
+  }
   // <- most modals
 
   // -> BD Modals

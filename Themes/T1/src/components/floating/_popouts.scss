@@ -1,5 +1,5 @@
 // floating |  Pop-outs & Tooltips & Context menus
-.layer_da8173 {
+.layer__59d0d {
 
   // -> General content
   // first inner container with class (not a fan)
@@ -99,6 +99,10 @@
     }
 
     // -> Sticker item
+    #sticker-picker-tab-panel .header__8ef02 {
+      height: 40px ; // keeps the left side aligned
+    }
+
     .assetWrapperMasked__31fc2 {
       mask: none ;
     }
@@ -119,8 +123,8 @@
     // <- Right side content
 
     // -> left side category items
-    // default emoji shortcut
-    .unicodeShortcut_b9ee0c {
+    // default emoji shortcut, sticker shortcut - category
+    :is(.unicodeShortcut_b9ee0c, .standardStickerShortcut__3ad28) {
       background: $BG_Body ;
     }
 
@@ -252,11 +256,11 @@
     // <- Menu options
 
     // -> Checkbox options
-    .checkbox_c4538f {
+    .checkbox__09aca {
       background: none ;
       border: none ;
 
-      &:not(.checked_c4538f) path {
+      &:not(.checked__09aca) path {
         fill: currentColor ;
         d: path("M 18.625 3 H 5.375 C 4.06519 3 3 4.06519 3 5.375 V 18.625 C 3 19.936 4.06519 21 5.375 21 H 18.625 C 19.936 21 21 19.936 21 18.625 V 5.375 C 21.0057 4.08803 19.9197 3 18.625 3 Z M 19 19 V 5 H 4.99999 V 19 H 19 Z");
       }
@@ -266,7 +270,7 @@
     .focused_c1e9c4 {
 
       // turn check into "x"
-      .checked_c4538f path {
+      .checked__09aca path {
         fill: var(--red);
         d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
       }
@@ -413,6 +417,24 @@
 
     .slideContent__9c62c {
       max-height: calc(100vh - 130px);
+    }
+
+    .searchBarContainer__927fc {
+      z-index: 1 ;
+
+      @include shadowEffect("box_3");
+    }
+
+    .scrollableContent__927fc {
+      @include scrollerFadeOut();
+
+      // spacer
+      &::before {
+        content: "";
+        position: relative;
+        display: block ;
+        height: 10px ;
+      }
     }
   }
   // <- Apps & Commands pop-out
