@@ -18,14 +18,34 @@
 
   @include divider(top);
 
-  // @container style(--highlightFocusedInput: 1) {
   @container style(--highlight-focusedChatInput: 1) {
     &:focus-within {
       border-color: hsla(0,0%,100%,0.3);
     }
   }
 
-  // inner container
+  // -> input unavailable
+  .wrapper__44df5 {
+    border: none ;
+
+    .defaultColor__5345c {
+      color: var(--text-secondary);
+    }
+
+    // "follow" btn
+    .button_a22cb0 {
+      color: $BtnTextNormal !important ;
+      background: $BtnBackgroundNormal !important ;
+
+      &:hover {
+        color: $BtnTextHover !important ;
+        background: $BtnBackgroundHover !important ;
+      }
+    }
+  }
+  // <- input unavailable
+
+  // inner container text available
   .channelTextArea__74017 {
     border: none ;
     margin: 0 ;

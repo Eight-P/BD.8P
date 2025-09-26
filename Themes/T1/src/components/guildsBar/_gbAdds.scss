@@ -53,8 +53,8 @@
   -webkit-backdrop-filter: unset ;
 
   // channels list spacer for banner image
-  /// (content__99f8c not unique), needs [style="height: 130px;"]
-  .content__99f8c > [style="height: 84px;"]:not([class]) {
+  /// (content not unique), needs [style="height: 130px;"]
+  .content_d125d2 > [style="height: 84px;"]:not([class]) {
     margin-top: -84px ; // helps remove the space from bottom of the list
     visibility: hidden ;
   }

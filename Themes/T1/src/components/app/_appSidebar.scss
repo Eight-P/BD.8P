@@ -34,12 +34,12 @@
     padding: 0 ;
   }
 
-  .scrollerBase__99f8c {
+  .scrollerBase_d125d2 {
     margin: 0 ;
 
     @include scrollerFadeOut();
 
-    @container style(--show-sidebarScrollbar: 0 ) {
+    @container not style(--show-sidebarScrollbar: 1 ) {
       @include scrollbar(none);
     }
   }
