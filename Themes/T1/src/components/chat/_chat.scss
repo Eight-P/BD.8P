@@ -28,7 +28,8 @@ $ChatScrollerBottomSpacing: 16px ;
 
 // -> Chat container
 .page_c48ade {
-  :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
+  // :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
+  .scrollerBase_d125d2 {
       @include scrollerFadeOut();
 
       &::-webkit-scrollbar-track {

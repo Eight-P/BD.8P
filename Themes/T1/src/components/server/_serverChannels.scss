@@ -123,6 +123,11 @@
         border: none ;
       }
     }
+
+    // elapsed time
+    .tabularNumbers__4bd52 {
+      color: var(--channels-default) !important;
+    }
     // <- Channel options and infos
 
     // -> Channel types
@@ -205,9 +210,9 @@
 
   // loading placeholder blobs
   .category__3b43f {
-      background: var(--background-modifier-active);
-    }
+    background: var(--background-modifier-active);
+  }
   .channel__3b43f :is(.category__3b43f, .channelName__3b43f, .channelIcon__3b43f) {
-      background: var(--background-modifier-accent);
-    }
+    background: var(--background-modifier-accent);
+  }
 }

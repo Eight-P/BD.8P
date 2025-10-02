@@ -16,8 +16,7 @@
 // inner container
 .members_c8ffbb {
 
-  // @container style(--membersListScrollbar: 0 ) {
-  @container style(--show-memberListScrollbar: 0 ) {
+  @container not style(--show-memberListScrollbar: 1 ) {
     @include scrollbar(none);
   }
 

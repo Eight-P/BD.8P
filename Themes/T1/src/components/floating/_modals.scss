@@ -35,7 +35,8 @@
     // <- Header
 
     // -> Body
-    :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
+    // :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
+    .scrollerBase_d125d2 {
       background: $BG_Body ;
       max-height: unset ;
 

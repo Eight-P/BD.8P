@@ -190,9 +190,9 @@ path[fill="currentColor"] {
   // -> Scrollbars
   :is(
     .scrollerBase_d125d2,
-    .scrollerBase_c8b5c7,
-    .auto__99f8c,
-    .scrollerBase__99f8c
+    .scrollerBase_c8b5c7
+    // .auto__99f8c,
+    // .scrollerBase__99f8c
   ) {
     @include scrollbar();
   }

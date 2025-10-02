@@ -21,7 +21,7 @@
   // scroller
   :is(
     .scrollerBase_d125d2,
-    .scrollerBase__99f8c,
+    // .scrollerBase__99f8c,
     .container_d9c882 // Threads
   ) {
     background: $BG_Body ;
@@ -115,6 +115,12 @@
       }
     }
     // <- Sticker item
+
+    // -> Add reactions
+    &#emoji-picker-tab-panel .header_c0e32c {
+      height: 40px ; // keeps the left side aligned
+    }
+    // <- Add reactions
 
     // hover indicator, nitro upsell banner Gifs
     :is(.inspectedIndicator_c6367b, .upsellContainer__0b69f) {

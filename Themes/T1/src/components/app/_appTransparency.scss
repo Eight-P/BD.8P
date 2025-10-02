@@ -10,7 +10,8 @@ $Classes:
   ".layer__960e4",
   ".page_c791b2",
   // most scroller containers
-  ".app_a3002d :is(.scrollerBase__99f8c,.scrollerBase_d125d2)",
+  // ".app_a3002d :is(.scrollerBase__99f8c,.scrollerBase_d125d2)",
+  ".app_a3002d .scrollerBase_d125d2",
   // Title bar
   "!.container__9293f",
   // Discovery

@@ -72,18 +72,23 @@
   }
   // <- User name (holographic) gradient effect
 
-  // -> Clan tags member list
-  @container style(--hide-clanTags: 1 ) {
+  // -> Clan tags
+  // member list
+  @container style(--hide-clanTags: 1 ) or style(--hide-clanTags: 2 ) {
 
-    .username__5d473 .chipletContainerInner__10651 { display: none }
+    .username__5d473 .clanTag__5d473 { display: none }
   }
 
   // Clan tags all
   @container style(--hide-clanTags: 2 ) {
 
-    .clanTagChiplet_c19a55, .clanTag__5d473 { display: none }
+    :is(
+      .clanTagChiplet_c19a55, // chat
+      .voiceUser__07f91 .clanTag__07f91 // user in voice
+    )
+    { display: none }
   }
-  // <- Clan tags member list
+  // <- Clan tags
 
   // -> Name Styles
   @container style(--hide-nameStyles: 1 ) {
@@ -111,10 +116,11 @@
     }
 
     :is(
-      .memberInner__5d473 .name__703b9,
-      .message__5126c .username_c19a55,
-      .channel__972a0 .name__20a53,
-      .channel__972a0 .overflow__82b15
+      .memberInner__5d473 .name__703b9, // member list
+      .message__5126c .username_c19a55, // chat
+      .channel__972a0 .name__20a53, // dm
+      .channel__972a0 .overflow__82b15, // dm
+      .voiceUser__07f91 .username__07f91 // voice channel
     ) {
       font-family: var(--font-display);
       letter-spacing: normal ;
