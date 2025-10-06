@@ -6,7 +6,7 @@
 
 ## Theme Customization
 
-The theme.css file offers variables that can be changed for customization and can be edited with any text editor or the edit feature within BetterDiscord.
+The theme.css file offers variables that can be changed for customization and can be edited with any text editor or the edit feature within BetterDiscord (when it's not broken).
 
 <br/>
 
@@ -31,8 +31,9 @@ Copy the full lines into the root block, e.g.:
 
 ```css
 :root {
-  --disable-roleGradients: 0 ;
-  --hide-chatBtn-sticker: 1 ;
+  --disable-roleGradients: 1 ;
+  --serverBar-IconSize: 90 ;
+  --serverBar-Spacing: 14px ;
 }
 ```
 
