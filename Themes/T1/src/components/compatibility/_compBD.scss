@@ -5,6 +5,7 @@
 // - InvisibleTyping by Strencher (v1.4.0)
 // - PingNotification by DaddyBoard (v8.0.3)
 // - FriendNotifications by DevilBro (v2.0.8)
+// - BetterAnimations by arg0NNY (v2.0.6) (partial)
 
 #app-mount {
 
@@ -133,3 +134,80 @@
 // <- FriendNotifications by DevilBro
 
 }
+
+// -> BetterAnimations by arg0NNY
+// more of a band aid solution
+.BA__module_servers #app-mount {
+
+  .BA__baseEnhancedLayout {
+
+    // inner server view container
+    &[data-fullscreen="false"] > .BA__content > .BA__content {
+      display: flex !important ;
+    }
+
+    // when switching
+    .BA__content[data-baa-switch] {
+
+      // server name, quick switch (home)
+      .sidebarList_c48ade :is(.container_f37cb1, .searchBar__35e86) {
+        display: none !important ;
+      }
+    }
+
+    // sidebar
+    .container__2637a {
+      padding-bottom: calc(var(--custom-app-panels-height, 0) + var(--space-xs) - 16px);
+    }
+
+    // -> profile panels
+    .panels_c48ade {
+      display: block ;
+      width: calc(
+        var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - var(--space-xs) * 2
+      ) !important ;
+
+      @include shadowEffect("box_3");
+
+      $blur-main: blur(calc(var(--backgroundBlur-app) / 100 * 1px));
+      $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
+
+      &::before {
+        content: "" ;
+        position: absolute ;
+        inset: 0px ;
+        background: var(--background-app);
+        background-position: center ;
+        background-size: cover ;
+        background-repeat: no-repeat ;
+        background-attachment: fixed ;
+        filter: $blur-main $brightness-main ;
+      }
+
+      // quest thing
+      > .mask__0d616 {
+        display: block ;
+
+        .wrapper__0d616 {
+          margin-right: unset ;
+        }
+      }
+
+      // profile panel
+      .container__37e49 {
+        overflow: hidden ;
+      }
+
+      // nameplate in profile panel
+      .container__4bbc6 {
+        left: 0 ;
+      }
+    }
+
+    &[data-fullscreen="true"] .panels_c48ade {
+      display: none !important ;
+    }
+    // <- profile panels
+  }
+}
+// <- BetterAnimations by arg0NNY

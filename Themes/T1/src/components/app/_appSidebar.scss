@@ -154,15 +154,16 @@
   }
   // <- Voice connection
 
-  // -> Quest reminder (weird thing)
+  // -> Quest reminder
   > .mask__0d616 {
-    min-height: 70px !important ;
-    order: 200 ;
-  }
+    display: contents ;
 
-  .wrapper__0d616 {
-    margin-right: 4px ;
-    z-index: 2 ;
+    // main container
+    .wrapper__0d616 {
+      margin-right: 4px ;
+      // z-index: 2 ;
+      order: 200 ;
+    }
 
     .postEnrollmentBackground__636a2 {
       background: var(--background-floating) !important;
@@ -170,10 +171,12 @@
       border-radius: 0 ;
     }
 
+    // glow on image
     .inner_bb1069 {
       box-shadow: none !important;
     }
   }
+
   // <- Quest reminder
 }
 // <- Panels

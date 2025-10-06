@@ -38,12 +38,10 @@ $iconScale: var(--sbIconScale);
   background-color: var(--interactive-normal);
 }
 
-// #app-mount {
 @scope (.guilds_c48ade) {
 
 // -> Containers
 :scope {
-// .guilds_c48ade {
   position: fixed ;
   left: 0 ;
   bottom: 0 ;
@@ -67,8 +65,7 @@ $iconScale: var(--sbIconScale);
   // Unread mentions indicators
   .unreadMentionsIndicatorTop_ef3116,
   .unreadMentionsIndicatorBottom_ef3116,
-  // default separator
-  .listItem__650eb:has(.guildSeparator__252b6)
+  .listItem__650eb:has(.guildSeparator__252b6) // default separator
 ) { display: none }
 
 .scroller_ef3116 {
@@ -148,12 +145,12 @@ $iconScale: var(--sbIconScale);
 
     // -> Server item
     // Image, default avatar (group dm)
-    :is(.icon__6e9f8,.avatar__44b0c) {
+    :is(.icon__6e9f8, .avatar__44b0c) {
       border-radius: 50% ;
       transition: .2s ;
     }
 
-    &:hover :is(.icon__6e9f8,.avatar__44b0c) { border-radius: 25% }
+    &:hover :is(.icon__6e9f8, .avatar__44b0c) { border-radius: 25% }
 
     .avatarStack__44b0c {
       justify-content: center ;
@@ -172,11 +169,6 @@ $iconScale: var(--sbIconScale);
     .childWrapper__6e9f8 {
       scale: 1 ;
       background: none ;
-    }
-
-    // .wrapper__44b0c .svg__44b0c {
-    .svg__44b0c {
-      // left: -4px ; // why did i do that ?
     }
     // <- Group DM item
   }
@@ -320,7 +312,6 @@ $iconScale: var(--sbIconScale);
 }
 
 // GuildsAdd
-// .stack_dbd263:not([id]) + :is(.tutorialContainer__650eb, .listItem__650eb) {
 .scroller_ef3116 > :is(.tutorialContainer__650eb, .listItem__650eb):nth-last-child(3) {
   grid-area: GuildsAdd ;
   margin: 3px 0 3px 0 ;
@@ -329,7 +320,6 @@ $iconScale: var(--sbIconScale);
 }
 
 // Discovery
-// .stack_dbd263:not([id]) + :is(.tutorialContainer__650eb, .listItem__650eb) + :is(.tutorialContainer__650eb, .listItem__650eb) {
 .scroller_ef3116 > :is(.tutorialContainer__650eb, .listItem__650eb):nth-last-child(2) {
   grid-area: Discovery ;
   margin: 3px 0 12px 0 ;
@@ -430,7 +420,7 @@ $iconScale: var(--sbIconScale);
 }
 // <- Servers
 
-// -> Favorites / Dms / Server preview
+// -> Right side icons (Favorites, Dms, Server preview, ...)
 @mixin iconSep() {
   &::before {
     @include itemSeparator();
@@ -438,65 +428,27 @@ $iconScale: var(--sbIconScale);
   }
 }
 
-// Dms container
-#guild-list-unread-dms {
-  position: relative;
-  // padding: $iconSpacing 0 !important ;
-  margin: $iconSpacing 0 !important ;
-  gap: $dmSpacing !important ;
-
-  > div:not([class]) {
-    height: auto !important ;
-  }
-
-  // separator, unless favorite are present
-  // &:not(.listItem__650eb ~ #guild-list-unread-dms)::before {
-    // @include itemSeparator();
-    // top: $iconSpacing ;
-  // }
-
-  &:not(.listItem__650eb ~ #guild-list-unread-dms) {
-    @include iconSep();
-  }
-
-  // remove padding from server preview (removes from separator otherwise)
-  + .listItem__650eb {
-    // padding-top: 0 !important ;
-    margin-top: 0 !important ;
-  }
-
-  // remove if empty
-  &:empty { display: none }
-}
-
-// Favorites & Server preview
+// non dm items
 .scrollerBase_d125d2 > .listItem__650eb:not(.stack_dbd263:not([id]) ~ .listItem__650eb) {
-  // padding: $dmSpacing 0 ;
   margin: $dmSpacing 0 ;
 
-  // .pill_e5445c { display: none }
+  @include iconSep();
+
   .pill_c9fddf { display: none }
+
+  // remove margin and separator from following items
+  + .listItem__650eb,
+  + #guild-list-unread-dms,
+  + #guild-list-unread-dms:empty + .listItem__650eb {
+    margin-top: 0 !important ;
+
+    &::before { display: none }
+  }
 }
 
 // -> Favorites
 .listItem__650eb:has(.favoriteIcon_c9fddf) {
   pointer-events: none ;
-
-  // remove padding from dms container if favorites are present
-  + #guild-list-unread-dms {
-    // padding-top: 0 !important ;
-    margin-top: 0 !important ;
-  }
-
-  // separator, unless notify exp. is present
-  // &:not(.listItem__650eb ~ .listItem__650eb:has(.favoriteIcon_c9fddf))::before {
-    // @include itemSeparator();
-    // top: 0px ;
-  // }
-
-  &:not(.listItem__650eb ~ .listItem__650eb:has(.favoriteIcon_c9fddf)) {
-    @include iconSep();
-  }
 
   // .pill_e5445c {
   .pill_c9fddf {
@@ -531,6 +483,30 @@ $iconScale: var(--sbIconScale);
 }
 // <- Favorites
 
+// -> DMs
+#guild-list-unread-dms {
+  position: relative;
+  margin: $iconSpacing 0 !important ;
+  gap: $dmSpacing !important ;
+
+  @include iconSep();
+
+  > div:not([class]) {
+    height: auto !important ;
+  }
+
+  // remove margin from following items
+  &:not(:empty) + .listItem__650eb {
+    margin-top: 0 !important ;
+
+    &::before { display: none }
+  }
+
+  // remove if empty
+  &:empty { display: none }
+}
+// <- DMs
+
 // -> notification center exp.
 .listItem__650eb:has(.notificationsIcon__4f4b6) {
 
@@ -541,19 +517,6 @@ $iconScale: var(--sbIconScale);
     height: $iconBaseSize !important ;
     width: $iconBaseSize !important ;
   }
-
-  // remove padding from Favorites container if notification is present
-  + .listItem__650eb {
-    // padding-top: 0 !important ;
-    margin-top: 0 !important ;
-  }
-
-  // &::before {
-  //   @include itemSeparator();
-  //   top: calc($iconSpacing * -1) ;
-  // }
-
-  @include iconSep();
 
   .childWrapper__6e9f8 {
     background: none ;
@@ -566,5 +529,18 @@ $iconScale: var(--sbIconScale);
 }
 // <- notification center exp.
 
-// <- Favorites / Dms / Server preview
+// -> Guilds error
+.guildsError_e8d03f {
+  border: none !important ;
+  background: none !important ;
+  color: var(--red-secondary) !important ;
+
+  &:hover {
+    color: var(--red) !important ;
+  }
+}
+// <- Guilds error
+
+// <- Right side icons
+
 }

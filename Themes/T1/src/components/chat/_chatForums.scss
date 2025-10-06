@@ -37,7 +37,7 @@
       background: none ;
     }
 
-    // -> "View All" quideline
+    // -> "View All" guideline
     .descriptionContainer_ca49a1:has(.showMore_ca49a1) .guidelines_ca49a1 {
       margin-bottom: 10px ;
 
@@ -52,7 +52,7 @@
     .showMoreLink_ca49a1 {
       padding: 4px 16px ;
     }
-    // <- "View All" quideline
+    // <- "View All" guideline
   }
   // <- Post Guidelines
 
@@ -144,7 +144,7 @@
   // border-radius: 0 ;
   border: none ;
   overflow: visible ;
-  
+
   &::after {
     content: "";
     position: absolute ;
@@ -187,12 +187,12 @@
   border: none ;
   border-radius: 0 ;
 
-  // header - seperator
+  // header - separator
   .chat_ee72fa::before {
     display: none ;
   }
 
-  // Forum, Thread Icon, post to comment seperator
+  // Forum, Thread Icon, post to comment separator
   :is(.iconWrapper__7e6bb, .iconWrapper__54b20, .divider_ee23ac) {
     display: none ;
   }
@@ -221,8 +221,8 @@
     :is(.addReactButton__34c2c, .buttonInner__34c2c) {
       background: none  ;
     }
-    
-    // when sticky 
+
+    // when sticky
     &.header__34c2c {
       background: var(--background-secondary-alt) !important;
       top: 0px ;
@@ -243,7 +243,7 @@
 
     @include shadowEffect("box_1");
 
-    :is(.container__9293f, .container_fb64c9, .chat_ee72fa, .chat_f02135) {
+    :is(.container__9293f, .container_fb64c9, .chat_ee72fa, .chat_f02135, .chat_a44415) {
       direction: ltr ;
     }
   }

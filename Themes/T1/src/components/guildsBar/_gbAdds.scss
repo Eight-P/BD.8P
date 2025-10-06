@@ -120,7 +120,7 @@
 // -> Quick Switcher (home)
 .privateChannels__35e86 .searchBar__35e86  {
   position: fixed ;
-  display: flex !important ;
+  // display: flex !important ; // ?
   width: 120px ;
   height: 54px ;
   right: 0 ;
@@ -128,17 +128,22 @@
   padding: 0 ;
   z-index: 0 ;
 
-  &:hover { background-color: rgba(0, 0, 0, 0.2) }
-
   .button__201d5 {
-    display: flex !important ;
-    padding: 0 ;
-    background: none ;
+    height: 100% ;
+    padding: 0px 10px ;
+
+    // display: flex !important ; // ?
+
+    &:hover { background-color: rgba(0, 0, 0, 0.2) }
   }
 
   // text
   .contents__201d5 {
-    display: block !important ;
+    // display: block !important ; // ?
+  }
+
+  // text
+  .overflow__82b15 {
     white-space: wrap ;
     color: var(--text-normal);
 
