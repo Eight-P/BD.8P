@@ -65,21 +65,24 @@ $C_Header: var(--interactive-normal);
 // <- Layers general
 
 // -> Tooltips
-.layer__59d0d:not(.theme-light) .tooltipPrimary__382e7 {
-  background: $BG_Floating ;
+.layer__59d0d:not(.theme-light) {
 
-  --tooltip-pointer-bg: #{$BG_Floating} ;
+  .tooltipPrimary_c36707 {
+    background: $BG_Floating ;
 
-  .tooltipPointer__382e7 {
-    border-top-color: $BG_Floating ;
+    --tooltip-pointer-bg: #{$BG_Floating} ;
+
+    .tooltipPointer_c36707 {
+      border-top-color: $BG_Floating ;
+    }
   }
-}
 
-.tooltip__4e35b {
-  background: $BG_Floating ;
+  .tooltip__4e35b {
+    background: $BG_Floating ;
 
-  .caretFill__4e35b {
-    fill: $BG_Floating ;
+    .caretFill__4e35b {
+      fill: $BG_Floating ;
+    }
   }
 }
 // <- Tooltips

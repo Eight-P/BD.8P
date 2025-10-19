@@ -48,7 +48,7 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
   border-radius: 0 ;
 }
 
-// -> Icon btns
+// -> Icon btns (don't like this)
 // "When in doubt, ..."
 path[fill="currentColor"] {
   fill: currentColor !important ;
@@ -61,7 +61,7 @@ path[fill="currentColor"] {
 // not ideal
 :is(
   .button__201d5, .button__9db96, .button__71c22,
-  .button__06eda, .button_f7ecac, .button__24af7
+  .button__06eda, .button_f7ecac, .button__24af7, .button_e6e74f
 ) {
   background: none ;
   border: none ;

@@ -105,7 +105,7 @@
   // reduce btns to menu icon
   @mixin reducedBtns() {
     .buttonsInner__5126c > {
-      // sticking with btns vs span for performance?
+      // sticking with class vs span for performance?
       .button_f7ecac, // for btns added by plugins
       // all items but last two
       .separator_f84418,
@@ -170,6 +170,11 @@
   // -> Button container
   .buttonContainer_c19a55 {
     z-index: 9 ; // to not interfere with the hover btns on images and similar
+  }
+
+  // to not shift positions (e.g. of plugin btns) when hover (couldn't avoid span or :has i think)
+  .buttonsInner__5126c > span:has(.emoji__040f0) {
+    order: -1 ;
   }
 
   .buttons__5126c {

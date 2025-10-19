@@ -26,20 +26,55 @@
 
 // -> ReadAllNotificationsButton
 .guilds_c48ade .vc-ranb-button {
-  display: flex ;
-  padding: 5px 0 ;
-  background: none !important ;
-  align-items: center ;
+  color: transparent ;
+  width: 18px ;
+  height: 18px ;
+  margin: 6px auto ;
+  overflow: hidden ; // keeps size constrained to height and width
 
-  .contents__201d5 {
-    overflow: visible ;
-    width: min-content ;
+  // not 100% sure why they are positioned they way they are.
+  // fake tooltip
+  &::before {
+    content: "Read All" ;
+    display: none ;
+    position: absolute ;
+    width: auto ;
+    padding: 6px 8px ;
+    color: var(--text-default);
+    font-size: 14px ;
+    font-weight: 600 ;
+    line-height: 18px ;
+    text-align: center ;
+    border-radius: 4px ;
+    background: var(--background-floating);
+    transform: translateY(calc(-100% - 20px)) rotate(90deg); // can't go top and outside guildBar
+    z-index: 2 ;
+
+    @include shadowEffect("box_2");
+  }
+
+  // "R" Btn
+  &::after {
+    content: "R" ;
+    display: block ;
+    position: absolute ;
+    height: 18px ;
+    width: 18px ;
     color: var(--header-secondary);
+    font-size: 23px ;
+    font-weight: 700 ;
+    line-height: 18px ;
+    text-align: center ;
     transform: rotate(90deg);
 
     @include shadowEffect("text_1");
+  }
 
-    &:hover {
+  &:hover {
+    &::before {
+      display: block ;
+    }
+    &::after {
       color: var(--interactive-hover);
     }
   }
@@ -51,7 +86,6 @@
   pointer-events: auto ;
 }
 // <- UserVoiceShow
-
 
 // -> BetterFolders
 .content_c48ade:has(.vc-betterFolders-sidebar) {
