@@ -111,14 +111,14 @@ $iconScale: var(--sbIconScale);
     margin-left: -4px ;
 
     // Server selected
-    &[style="opacity: 1; height: 40px; transform: none;"] {
+    &[style^="opacity: 1; height: 40px"] {
       visibility: visible ;
       height: calc($iconBaseSize * $iconScale * 0.87 ) !important ;
       border-radius: 0 8px 8px 0 ;
     }
 
     // Unread indicator
-    &[style="opacity: 1; height: 8px; transform: none;"] {
+    &[style^="opacity: 1; height: 8px"] {
       visibility: visible ;
     }
   }
