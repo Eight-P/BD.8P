@@ -11,7 +11,7 @@
 
 // -> ReadAllNotificationsButton by DevilBro
 // "Read all" btn
-.guilds_c48ade .frame_aa90f4 {
+.guilds__5e434 .frame_aa90f4 {
   padding: 10px 0px ;
 
   .innerFrame_aa90f4 {
@@ -37,7 +37,7 @@
 
 // -> SpotifyControls by DevilBro
 // Sidebar control panel
-.panels_c48ade .container_791eb8 {
+.panels__5e434 .container_791eb8 {
   display: contents ;
 
   &.maximized_791eb8 .coverWrapper_791eb8 {
@@ -59,21 +59,21 @@
 
 // -> ServerFolders by DevilBro
 // added content container spacing for folder row
-@at-root .folderContentIsOpen_ac0584 .content_c48ade {
+@at-root .folderContentIsOpen_ac0584 .content__5e434 {
   margin-bottom: 54px ;
 }
 
-.guilds_c48ade .folderHeader__48112 {
+.guilds__5e434 .folderHeader__48112 {
   background: none ;
 }
 
 // Folder row closed (not really needed)
-.guilds_c48ade.closed_ac0584 {
+.guilds__5e434.closed_ac0584 {
   height: 0px ;
 }
 
 // Folder row
-.guilds_c48ade.content_ac0584 {
+.guilds__5e434.content_ac0584 {
   bottom: 54px ;
   transition: none !important ;
 
@@ -116,7 +116,7 @@
 // <- PingNotification by DaddyBoard
 
 // -> FriendNotifications by DevilBro
-.guilds_c48ade .friendsOnlineWrap_aa9717 {
+.guilds__5e434 .friendsOnlineWrap_aa9717 {
   display: flex !important ;
   position: absolute ;
   transform: rotate(90deg);
@@ -150,7 +150,7 @@
     .BA__content[data-baa-switch] {
 
       // server name, quick switch (home)
-      .sidebarList_c48ade :is(.container_f37cb1, .searchBar__35e86) {
+      .sidebarList__5e434 :is(.container_f37cb1, .searchBar_e6b769) {
         display: none !important ;
       }
     }
@@ -161,7 +161,7 @@
     }
 
     // -> profile panels
-    .panels_c48ade {
+    .panels__5e434 {
       display: block ;
       width: calc(
         var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - var(--space-xs) * 2
@@ -204,7 +204,7 @@
       }
     }
 
-    &[data-fullscreen="true"] .panels_c48ade {
+    &[data-fullscreen="true"] .panels__5e434 {
       display: none !important ;
     }
     // <- profile panels

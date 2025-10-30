@@ -22,7 +22,7 @@
 html, span:not([class*='spinner']) { backface-visibility: hidden }
 
 // -> Unread mentions badge
-@scope (.app_a3002d) to (.guilds_c48ade) {
+@scope (.app_a3002d) to (.guilds__5e434) {
   .numberBadge__2b1f5 {
     background-color: transparent !important ;
     border-radius: 0 !important ;

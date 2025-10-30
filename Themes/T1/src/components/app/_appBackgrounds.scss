@@ -28,7 +28,7 @@ $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
 $blur-server: blur(calc(var(--backgroundBlur-server) / 100 * 1px));
 $brightness-server: brightness(calc((var(--backgroundBrightness-server) / 100)));
 
-.guilds_c48ade::before {
+.guilds__5e434::before {
   content: "" ;
     position: absolute ;
     display: block ;

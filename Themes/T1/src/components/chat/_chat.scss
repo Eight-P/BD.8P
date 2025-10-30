@@ -27,14 +27,14 @@ $ChatScrollerBottomSpacing: 16px ;
 #app-mount {
 
 // -> Chat container
-.page_c48ade {
+.page__5e434 {
   // :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
   .scrollerBase_d125d2 {
-      @include scrollerFadeOut();
+    @include scrollerFadeOut();
 
-      &::-webkit-scrollbar-track {
-        margin: 2px 0 ;
-      }
+    &::-webkit-scrollbar-track {
+      margin: 2px 0 ;
+    }
   }
 }
 .chatContent_f75fb0 {

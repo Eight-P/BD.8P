@@ -89,42 +89,4 @@
     { display: none }
   }
   // <- Clan tags
-
-  // -> Name Styles
-  @container style(--hide-nameStyles: 1 ) {
-    // user popout
-    .showEffect_dfb989 {
-      font-family: var(--font-display);
-      letter-spacing: normal ;
-
-      .innerContainer_dfb989 {
-        background: unset ;
-        -webkit-text-fill-color: unset ;
-        text-decoration-color: unset ;
-        animation: none ;
-        padding: unset ;
-        margin: unset ;
-
-        -webkit-text-stroke-width: unset ;
-        -webkit-text-stroke-color: unset ;
-        color: var(--text-default);
-
-        &::before { display: none }
-      }
-
-      .glowContainer_dfb989 { display: none }
-    }
-
-    :is(
-      .memberInner__5d473 .name__703b9, // member list
-      .message__5126c .username_c19a55, // chat
-      .channel__972a0 .name__20a53, // dm
-      .channel__972a0 .overflow__82b15, // dm
-      .voiceUser__07f91 .username__07f91 // voice channel
-    ) {
-      font-family: var(--font-display);
-      letter-spacing: normal ;
-    }
-  }
-  // <- Name Styles
 }

@@ -9,7 +9,7 @@
 #app-mount {
 
 // -> DMs Sidebar
-.privateChannels__35e86 {
+.privateChannels_e6b769 {
 
   // Category header text
   .headerText__99e7c {
@@ -17,7 +17,7 @@
   }
 
   // Create Group DM Button (not necessary, there is one at the top right)
-  :is(.privateChannelRecipientsInviteButtonIcon__99e7c, .sectionDivider__35e86) {
+  :is(.privateChannelRecipientsInviteButtonIcon__99e7c, .sectionDivider_e6b769) {
     display: none
   }
 

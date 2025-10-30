@@ -25,7 +25,7 @@
 // <- ServerListIndicator
 
 // -> ReadAllNotificationsButton
-.guilds_c48ade .vc-ranb-button {
+.guilds__5e434 .vc-ranb-button {
   color: transparent ;
   width: 18px ;
   height: 18px ;
@@ -88,14 +88,14 @@
 // <- UserVoiceShow
 
 // -> BetterFolders
-.content_c48ade:has(.vc-betterFolders-sidebar) {
+.content__5e434:has(.vc-betterFolders-sidebar) {
   margin-bottom: 54px ;
 }
 
 .vc-betterFolders-sidebar {
   display: contents ;
 
-  > .guilds_c48ade {
+  > .guilds__5e434 {
     bottom: 54px ;
   }
 

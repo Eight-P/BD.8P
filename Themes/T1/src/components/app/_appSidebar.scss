@@ -3,7 +3,7 @@
 #app-mount {
 
 // -> Sidebar
-.sidebar_c48ade {
+.sidebar__5e434 {
 
   // separator to page line for resize bar
   &::after {
@@ -18,18 +18,18 @@
     height: 100% ;
   }
 
-  .sidebarResizeHandle_c48ade {
+  .sidebarResizeHandle__5e434 {
     transform: none ; // idk
   }
 }
 
 // Sidebar inner
-.sidebarList_c48ade {
+.sidebarList__5e434 {
   flex: 1 1 auto ;
   border: none ;
 
   // inner container
-  :is(.container__2637a, .privateChannels__35e86) {
+  :is(.container__2637a, .privateChannels_e6b769) {
     margin-right: 6px ;
     padding: 0 ;
   }
@@ -47,7 +47,7 @@
 // <- Sidebar
 
 // -> Panels
-.panels_c48ade {
+.panels__5e434 {
   display: contents ; // only works with hsb
 
   // -> Profile
@@ -101,7 +101,7 @@
   // <- Profile
 
   // -> Activity
-  .activityPanel_c48ade {
+  .activityPanel__5e434 {
     padding: 0px 10px ;
     border-color: var(--background-modifier-accent);
 
