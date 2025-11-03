@@ -6,7 +6,7 @@
 @import 'homeFriends' ;
 
 
-#app-mount {
+// #app-mount {
 
 // -> DMs Sidebar
 .privateChannels_e6b769 {
@@ -79,15 +79,42 @@
   }
 }
 
-/// Profile decorations shop
+// -> Profile decorations shop
 .shop__6db1d {
+  container-type: inline-size ; // for @container width
 
-  // Floating ad ??
-  .countDownWrapper_a1b7b8 {
-    left: calc(50% + 120px);
-    bottom: 20px ;
+  .headerBar__80679 .discordLogo__80679 { display: none }
+
+  @container (width < 800px) {
+
+    .headerBar__80679 {
+      height: auto !important ;
+    }
+
+    .headerBarInner__80679 {
+      flex-wrap: wrap ;
+      height: max-content ;
+      justify-content: center ;
+      gap: 6px ;
+
+      // "featured", "browse", .. tabs
+      .tabs__80679 {
+        margin-left: 12px ;
+      }
+
+      // main shop tab, other tabs
+      :is(.shopHomeLink__80679, .tabs__80679) {
+        height: 46px ;
+      }
+
+      // search, filter, ...
+      .alignedRightContent__80679 {
+        margin: 0 ;
+      }
+    }
   }
 }
+// <- Profile decorations shop
 // <- Shops
 
-}
+// }

@@ -40,13 +40,6 @@
 }
 
 // -> Friends list
-.container__3412a {
-  @include searchbar(".container__0f084") {
-    min-height: 30px ;
-    padding-left: 0 ;
-  }
-}
-
 .peopleList__5ec2f {
   margin-top: 15px ;
 
@@ -108,7 +101,6 @@
     &:has(.emptyCard__7e549) { display: none !important }
   }
 
-  // @container style(--friendsActivity: 0) or (width < 650px) { display: none !important }
   @container style(--hide-friendsActivity: 2) or (width < 650px) { display: none !important }
 
   // "Active now" header text
@@ -146,8 +138,8 @@
       border-top: 1px solid var(--background-modifier-accent);
     }
 
-    // container for activity
-    .body__00943 {
+    // containers for activity
+    :is(.body__00943, .wrapper__960df) {
       background: none ;
     }
 
@@ -161,4 +153,9 @@
 }
 // <- Friends activity sidebar
 
+// Friends activity as separate tab
+// empty activity
+.emptyCard__7e549 {
+  background: none ;
+}
 }

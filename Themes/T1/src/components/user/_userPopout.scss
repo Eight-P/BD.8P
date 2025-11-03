@@ -1,6 +1,7 @@
 // User | User popout, Account popout
 
-.user-profile-popout {
+// not shop preview
+.user-profile-popout:not(.container__5a2c6) {
   // -> General
   $BG-Body: var(--background-tertiary);
 

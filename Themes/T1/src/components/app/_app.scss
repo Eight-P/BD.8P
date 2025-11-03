@@ -122,7 +122,6 @@ path[fill="currentColor"] {
 
 
 // -> Text btns
-// __6af3a -> _a22cb0
 .button_a22cb0:not(.icon-only_a22cb0) {
   border: none ;
   border-radius: 3px ;
@@ -182,10 +181,19 @@ path[fill="currentColor"] {
 
 .app_a3002d {
 
-  // General searchbar
+  // -> search bars
+  // settings / friends list
+  .container__72c38 {
+    @include searchbar(".container__0f084") {
+      // min-height: 30px ;
+      // padding-left: 0 ;
+    }
+  }
+
   .container_a45028 {
     @include searchbar(".inner_a45028");
   }
+  // <- search bars
 
   // -> Scrollbars
   :is(

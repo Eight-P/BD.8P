@@ -89,7 +89,7 @@
       border: none ;
       background: none !important ;
       border-bottom: 1px solid var(--interactive-normal);
-      outline: none ;
+      outline: none !important ;
       box-shadow: none !important ;
       border-radius: 0 ;
 
@@ -110,7 +110,7 @@
       border-width: 0 0 1px 0 ;
       background: none !important ;
       box-shadow: none !important ;
-      outline: none ;
+      outline: none !important ;
 
       @content ;
     }
