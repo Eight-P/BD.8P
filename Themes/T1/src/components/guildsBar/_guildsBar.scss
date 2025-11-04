@@ -71,7 +71,7 @@ $iconScale: var(--sbIconScale);
 .scroller_ef3116 {
   display: grid ;
   height: 100% ;
-  width: $sb_height ;
+  width: $sb_height !important ;
   margin: 0 0 120px 0 ;
   padding: 0 !important ;
   gap: 0 !important ;

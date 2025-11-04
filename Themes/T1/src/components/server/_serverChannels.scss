@@ -173,26 +173,44 @@
   // <- Text & Voice Channels
 
   // -> Floating notice bar (unreads, voice user, ..)
-  .container__7aaec .bar__7aaec {
-    color: var(--header-secondary);
-    background: var(--background-secondary-alt);
-    border: none ;
+  .positionedContainer__629e4 {
 
-    @include shadowEffect("box_3");
-
-    &:hover {
-      background: var(--background-tertiary);
-    }
-
-    // Unread mentions bar
-    &.mentionsBar__7aaec .barText__7aaec {
-      color: var(--red-secondary) !important;
-    }
-
-    .voiceChannelsIcon__7aaec {
+    @mixin channelBar($mentionText) {
       color: var(--header-secondary);
+      background: var(--background-secondary-alt);
+      border: none ;
+
+      @include shadowEffect("box_3");
+
+      &:hover {
+        background: var(--background-tertiary);
+      }
+
+      &#{$mentionText} {
+        color: var(--red-secondary) !important;
+      }
+
+      @content ;
+    }
+
+    .bar__3b95d {
+      @include channelBar(".mention__3b95d .text__3b95d");
+    }
+
+    .bar__7aaec {
+      @include channelBar(".mentionsBar__7aaec .barText__7aaec") {
+        .voiceChannelsIcon__7aaec {
+          color: var(--header-secondary);
+        }
+      }
     }
   }
+
+
+
+
+  // different "new mentions" bar (idk)
+  // .positionedContainer__629e4
   // <- Floating notice bar
 
    // Voice user list when channels are hidden
