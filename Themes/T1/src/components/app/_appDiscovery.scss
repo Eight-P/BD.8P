@@ -1,6 +1,6 @@
 // App | Discovery & Quests
 
-#app-mount {
+// #app-mount {
 
   .page__5e434 {
     overflow: hidden ; // mostly for scroll behavior
@@ -61,30 +61,9 @@
     .tabs__65d41 {
       align-items: center ;
       gap: 10px ;
-      height: 47px ;
       border: none ;
     }
 
-    // Tab item
-    .tab__65d41 {
-      border: none ;
-      color: var(--interactive-normal);
-      height: 47px ;
-
-      &::after {
-        visibility: hidden ;
-        background: var(--interactive-hover) ;
-      }
-
-      &:hover {
-        color: var(--interactive-hover) ;
-      }
-
-      &.selected_b3f026 {
-        color: var(--interactive-active) ;
-        &::after { visibility: visible }
-      }
-    }
     // <- nav bar
 
     // -> Search
@@ -167,4 +146,4 @@
 }
 // <- Content region
 
-}
+// }

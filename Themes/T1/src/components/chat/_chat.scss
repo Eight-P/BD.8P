@@ -273,19 +273,6 @@ $ChatScrollerBottomSpacing: 16px ;
     .text-md\/medium_cf4812 {
       color: var(--text-normal) !important ;
     }
-
-    // Nav bar Tab item
-    .item_b3f026 {
-      background: none !important ;
-
-      &:hover {
-        color: var(--interactive-hover);
-      }
-
-      &.selected_b3f026 {
-        color: var(--interactive-active);
-      }
-    }
   }
   // <- Header
 

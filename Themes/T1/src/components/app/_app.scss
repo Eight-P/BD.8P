@@ -179,6 +179,31 @@ path[fill="currentColor"] {
   border-left: none ;
 }
 
+// -> Selectable items (settings sidebar, various nav/tab bars, ...)
+.item_aa8da2 {
+  background: none !important ;
+  border: none ;
+  color: var(--interactive-normal);
+
+  // border below tab (selected indicator) (.tab version)
+  &::after {
+    background: transparent ;
+  }
+
+  &:hover {
+    color: var(--interactive-hover);
+  }
+
+  &.selected_aa8da2 {
+    color: var(--interactive-active);
+
+    &::after {
+      background: var(--interactive-hover);
+    }
+  }
+}
+// <-
+
 .app_a3002d {
 
   // -> search bars

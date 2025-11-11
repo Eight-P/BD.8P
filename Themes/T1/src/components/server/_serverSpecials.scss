@@ -21,11 +21,6 @@
 
     // item
     .tabBarItem__0b563 {
-      color: var(--interactive-normal);
-
-      &:hover, &.selected_b3f026 {
-        color: var(--interactive-hover);
-      }
 
       &::after { display: none }
     }

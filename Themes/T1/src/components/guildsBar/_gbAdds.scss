@@ -126,18 +126,23 @@
   padding: 0 ;
   z-index: 0 ;
 
-  .button__201d5 {
+  .button_a22cb0 {
     height: 100% ;
-    padding: 0px 10px ;
+    max-height: unset ;
     border-radius: 0px ;
 
     &:hover { background-color: rgba(0, 0, 0, 0.2) }
+  }
+
+  .buttonChildrenWrapper_a22cb0 {
+    padding: 0px 10px ;
   }
 
   // text
   .overflow_b0dfc2 {
     white-space: wrap ;
     color: var(--text-normal);
+    text-align: center ;
 
     @include shadowEffect("text_1");
   }

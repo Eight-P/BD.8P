@@ -6,8 +6,6 @@
 @import 'homeFriends' ;
 
 
-// #app-mount {
-
 // -> DMs Sidebar
 .privateChannels_e6b769 {
 
@@ -56,9 +54,6 @@
 // <- DMs Sidebar
 
 // -> MSG Requests
-.upperContainer__9293f .topPill_b3f026 .item_f391e3 {
-  background: none ;
-}
 // <- MSG Requests
 
 // -> Shops
@@ -81,40 +76,35 @@
 
 // -> Profile decorations shop
 .shop__6db1d {
-  container-type: inline-size ; // for @container width
 
-  .headerBar__80679 .discordLogo__80679 { display: none }
+  // discord logo & home tab that just leads to "featured" anyway
+  .shopHomeLink__80679 { display: none }
 
-  @container (width < 800px) {
+  // main shop tab, other tabs
+  :is(.shopHomeLink__80679, .tabs__80679) {
+    height: 32px ; // matching the regular Header bar height with respect to padding
+  }
 
-    .headerBar__80679 {
-      height: auto !important ;
+  .headerBar__80679 {
+    height: auto !important ;
+  }
+
+  .headerBarInner__80679 {
+    flex-wrap: wrap ;
+    height: max-content ;
+    justify-content: center ;
+    gap: 8px ;
+
+    // "featured", "browse", .. tabs
+    .tabs__80679 {
+      margin-left: 12px ;
     }
 
-    .headerBarInner__80679 {
-      flex-wrap: wrap ;
-      height: max-content ;
-      justify-content: center ;
-      gap: 6px ;
-
-      // "featured", "browse", .. tabs
-      .tabs__80679 {
-        margin-left: 12px ;
-      }
-
-      // main shop tab, other tabs
-      :is(.shopHomeLink__80679, .tabs__80679) {
-        height: 46px ;
-      }
-
-      // search, filter, ...
-      .alignedRightContent__80679 {
-        margin: 0 ;
-      }
+    // search, filter, ...
+    .alignedRightContent__80679 {
+      margin: 0 ;
     }
   }
 }
 // <- Profile decorations shop
 // <- Shops
-
-// }

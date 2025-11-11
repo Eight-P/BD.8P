@@ -189,7 +189,7 @@
 
   // header - separator
   .chat_ee72fa::before {
-    display: none ;
+    // display: none ;
   }
 
   // Forum, Thread Icon, post to comment separator
@@ -237,9 +237,11 @@
   &.floating__01ae2 {
     resize: horizontal ;
     direction: rtl;
+    right: 0 ;
     min-width: 250px ;
     max-width: 100% ;
     border: none ;
+    inset-inline-end: unset ;
 
     @include shadowEffect("box_1");
 
