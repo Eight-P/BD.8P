@@ -1,10 +1,9 @@
 #app-mount .root__9c3be {
   pointer-events: none ;
 
-  // .outer_c0bea0  {
   .user-profile-modal-v2  {
     min-width: unset ;
-    width: 750px ;
+    width: 800px ;
     border: none ;
     background: none ;
     max-height: 75vh ;
@@ -23,7 +22,7 @@
 
     // -> left side profile section
     .profile__9c3be {
-      width: 375px ;
+      width: 350px ;
       border-radius: var(--radius-lg);
       overflow: hidden ;
       z-index: 1 ;
@@ -53,8 +52,9 @@
     }
     // <- left side profile section
 
-    // -> right side body
+    // -> right side info
     .container__37bfc {
+      // -> main container
       position: relative ;
       height: 85% ;
       margin: 0 ;
@@ -87,6 +87,7 @@
         );
         z-index: -1 ;
       }
+      // <- main container
 
       // -> tab bar
       .tabListScroller__37bfc {
@@ -117,7 +118,11 @@
 
         @include scrollerFadeOut();
       }
-      // <- body
+
+      .empty_e766f2 {
+        padding-top: 0 ;
+        justify-content: center ;
+      }
 
       // -> Activity body
       // Activity action/reaction btns
@@ -131,16 +136,45 @@
       // <- Activity body
 
       // -> Games
+      .dragAndDropHitbox__62dd3  {
+        margin-left: 0 ;
+        padding-left: 0 ;
+      }
+
+      .dragHandleButton__62dd3 {
+        inset-inline-start: unset !important ;
+        top: 0 !important ;
+        left: 0 !important ;
+        transform: translate(-25%, -25%);
+      }
+
       .container__62dd3 {
         background: none ;
         border: none ;
+        padding: 12px 8px ;
       }
       // "games i like" container
       .coverList__9a5c3 {
-        grid-template-columns: repeat(auto-fit, var(--custom-game-cover-width, 88px));
+        // grid-template-columns: repeat(auto-fit, var(--custom-game-cover-width, 88px));
+        // only loads first 8 :(
+
+        // "show more" btn
+        ~ .button_b46968 {
+          margin: 15px auto 0 auto ;
+        }
       }
       // <- Games
+      // <- body
     }
-    // <- right side body
+    // <- right side info
+  }
+
+  // save changes banner
+  .pendingChangesNotice__9fc7d {
+    pointer-events: auto ;
+
+    .content_a58267 {
+      background: var(--background-tertiary);
+    }
   }
 }
