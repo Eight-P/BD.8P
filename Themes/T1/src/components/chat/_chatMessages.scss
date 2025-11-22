@@ -290,11 +290,10 @@
     --border-normal: transparent ;
   }
 
-  // e.g. server invite (overlaps with body)
-  .gradient__083ae { display: none }
+  // server invite (weird overlap design)
+  .guildInviteContainer__083ae {
 
-  .footerContent__083ae {
-    background: none ;
+    --background-surface-high: #202225 ; // bad
   }
 
   // code blocks

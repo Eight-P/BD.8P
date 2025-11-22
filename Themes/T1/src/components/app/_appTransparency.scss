@@ -123,14 +123,19 @@ $Classes:
   ".nowPlayingColumn__133bf :is(.container__7d20c, .emptyCard__7e549)",
   // <- Home & Friends list
 
-  // -> Settings
+  // -> Settings old
   ".standardSidebarView__23e6b",
   ".sidebarRegionScroller__23e6b",
   ".contentRegion__23e6b",
   ".contentRegionScroller__23e6b",
   // Roles Settings
   ".page__91dc3 .titleContainer_e29cd7",
-  ".container_d8f25b"
+  ".container_d8f25b",
+  // <- Settings old
+
+  // -> Settings
+  ".content_e9e3ed", // content region
+  ".contentHeader_e9e3ed"
   // <- Settings
 ;
 

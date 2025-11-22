@@ -15,7 +15,8 @@ $C_Header: var(--interactive-normal);
 @import 'modals' ;
 
 .layerContainer__59d0d {
-  z-index: 9999999 ; // against title bar border
+  // z-index: 9999999 ; // against title bar border
+  // need to move up the modal instead (settings issue)
 
 // -> Searchbar
 .container_a45028 { @include searchbar(".inner_a45028", true) }

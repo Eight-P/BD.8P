@@ -169,6 +169,14 @@
       }
     }
 
+
+    // Add media btn
+    @container style(--hide-chatBtn-media: 1) {
+      .button__24af7:has([d^="M2 5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v14a3 3 0 0 1-3"]) {
+        display: none ;
+      }
+    }
+
     // Emoji icon
     .spriteContainer__04eed {
       --custom-emoji-sprite-size: 20px !important ;
@@ -180,6 +188,9 @@
     @container style(--hide-chatBtn-apps: 1) {
       .channelAppLauncher_e6e74f { display: none }
     }
+
+    // Separator
+    .spacer__74017 { display: none }
   }
   // <- Right side btns
 

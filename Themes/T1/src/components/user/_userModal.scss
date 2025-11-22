@@ -1,4 +1,5 @@
-#app-mount .root__9c3be {
+// #app-mount .root__9c3be {
+.root__9c3be {
   pointer-events: none ;
 
   .user-profile-modal-v2  {
@@ -20,9 +21,21 @@
       display: none ;
     }
 
+    // default / no theme
+    &:not(.custom-user-profile-theme) {
+
+      .profile__9c3be {
+        background: var(--background-tertiary);
+      }
+
+      .container__37bfc {
+        background: var(--background-secondary-alt);
+      }
+    }
+
     // -> left side profile section
     .profile__9c3be {
-      width: 350px ;
+      width: 375px ;
       border-radius: var(--radius-lg);
       overflow: hidden ;
       z-index: 1 ;
@@ -119,7 +132,9 @@
         @include scrollerFadeOut();
       }
 
-      .empty_e766f2 {
+      // empty tabs containers (activity/friends/servers, board, wishlist)
+      :is(.empty_e766f2, .empty__7ff05, .emptyStateContainer__4fbcc) {
+        height: 100% ;
         padding-top: 0 ;
         justify-content: center ;
       }

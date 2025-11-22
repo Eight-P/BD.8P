@@ -102,8 +102,10 @@
 
   // -> Activity
   .activityPanel__5e434 {
-    padding: 0px 10px ;
+    padding: 7px 10px ;
     border-color: var(--background-modifier-accent);
+    // margin-bottom: -1px ;
+    border: none ;
 
     .gameIconWrapper__8c6c2 {
       height: 30px ;
@@ -118,6 +120,11 @@
     // Text
     .title_d1da5f {
       line-height: 32px;
+    }
+
+    // Separator between voice connection
+    ~ .wrapper_e131a9:not(:empty) {
+      @include divider(top);
     }
   }
   // <- Activity
