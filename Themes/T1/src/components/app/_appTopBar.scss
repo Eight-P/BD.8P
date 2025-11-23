@@ -5,8 +5,8 @@
   --custom-app-top-bar-height: 28px  ;
 
 // -> Title bar
+// app and base layer bar bar
 .bar_c38106 {
-  @include divider(bottom, ("color": rgb(100, 100, 100) ));
 
   .button__85643 {
     height: var(--custom-app-top-bar-height);
@@ -32,6 +32,11 @@
     }
   }
   // <- right side btns
+}
+
+// base layer bar only, to avoid separator overlapping modal backdrop
+.base__5e434 .bar_c38106 {
+  @include divider(bottom, ("color": rgb(100, 100, 100) ));
 }
 // <- Title bar
 

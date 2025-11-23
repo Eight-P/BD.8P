@@ -5,26 +5,30 @@
 $T1_v: null !default ;
 
 // -> User settings
-// layer container
-.layerContainer__59d0d .layer_bc663c {
+// layer container inner (not an ideal class)
+.outerContainer_e44912 {
 
-  .container__8a031 {
+  // just some more specificity since it's just a modal now
+  .container__8a031.modal_e44912 {
     --custom-viewport-padding: 0px ;
 
-    border-radius: 0 ;
-    padding-top: var(--custom-app-top-bar-height);
-  }
-
-  .modal_e44912 {
     // max-width: unset ;
     // width: 100vw ; // don't now if want to stretch it out
     height: 100% ;
     transform: none !important ; // remove transition effect
+    border-radius: 0 ;
+    padding-top: var(--custom-app-top-bar-height);
+
+    .scrollerBase_d125d2 {
+      @include scrollerFadeOut();
+    }
+
+    // bring back title bar separator
+    .modalContent_e44912 {
+      @include divider(top, ("color": rgb(100, 100, 100) ));
+    }
   }
 
-  .scrollerBase_d125d2 {
-    @include scrollerFadeOut();
-  }
 
   // -> sidebar region
   .fixedContent__409aa::after { display: none }
@@ -53,6 +57,10 @@ $T1_v: null !default ;
   // <- sidebar region
 
   // -> content region
+  .panel__6131a {
+    margin-top: 30px ;
+  }
+
   // -> Client Themes
   .colorThemesBackground_fbfab6 {
 

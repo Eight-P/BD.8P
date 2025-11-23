@@ -11,7 +11,7 @@ $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
   .container__01ae2, // floating threat/forum
   .header_c6bf1b, // role settings header
   .typing_b88801:has(.dots__5ad89), // chat input typing indicator bar
-  .layerContainer__59d0d .container__8a031 // user settings
+  .outerContainer_e44912 .container__8a031.modal_e44912 // user settings (suboptimal class)
 )::before {
   content: "" ;
   position: absolute ;
