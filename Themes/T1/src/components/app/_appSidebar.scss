@@ -102,35 +102,50 @@
 
   // -> Activity
   .activityPanel__5e434 {
-    padding: 7px 10px ;
+    margin-right: 3px ; // adjust to resize line offset (2+1)
+    padding: 10px 7px 10px 10px ;
     border-color: var(--background-modifier-accent);
-    // margin-bottom: -1px ;
     border: none ;
 
+    &:not(:empty, :first-child) {
+      @include divider(top);
+    }
+
     .gameIconWrapper__8c6c2 {
-      height: 30px ;
+      height: 28px ;
     }
 
     // Image
     .gameIcon__8c6c2 {
-      height: 30px;
-      width: 30px ;
+      height: 28px ;
+      width: 28px ;
     }
 
     // Text
-    .title_d1da5f {
-      line-height: 32px;
-    }
-
-    // Separator between voice connection
-    ~ .wrapper_e131a9:not(:empty) {
-      @include divider(top);
+    .title_b6c092 {
+      font-size: 14px ;
     }
   }
   // <- Activity
 
   // -> Voice connection
   .wrapper_e131a9 {
+    margin-right: 3px ; // adjust to resize line offset (2+1)
+
+    .container_e131a9 {
+      padding: 7px 7px 7px 10px ;
+    }
+
+    &:not(:empty, :first-child) {
+      @include divider(top);
+    }
+
+    // connection icon
+    .ping__06d62 {
+      background: none ;
+      box-shadow: none ;
+      margin-right: 3px ;
+    }
 
     // Connected text
     .text-md\/medium_cf4812 {

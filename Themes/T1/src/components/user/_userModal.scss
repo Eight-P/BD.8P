@@ -1,13 +1,15 @@
-// #app-mount .root__9c3be {
+// -> User modal (new)
 .root__9c3be {
   pointer-events: none ;
+
+  @include scrollbar(none);
 
   .user-profile-modal-v2  {
     min-width: unset ;
     width: 800px ;
     border: none ;
     background: none ;
-    max-height: 75vh ;
+    max-height: 75vh ; // affected by general modal design (_modals:9)
     outline: none ;
 
     // main layout container
@@ -35,7 +37,7 @@
 
     // -> left side profile section
     .profile__9c3be {
-      width: 375px ;
+      width: 375px ; // 350px ?
       border-radius: var(--radius-lg);
       overflow: hidden ;
       z-index: 1 ;
@@ -193,3 +195,4 @@
     }
   }
 }
+// <- User modal (new)
