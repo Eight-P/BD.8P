@@ -27,6 +27,12 @@ $C_Header: var(--interactive-normal);
 // <- Searchbar
 
 // -> Layers general
+
+// (temporary) fix BD context menu height
+.menu_c1e9c4 {
+  --reference-position-layer-max-height: calc(100vh - var(--custom-menu-viewport-padding)*2);
+}
+
 // Popouts & Tooltips & Context menus, Modals
 :is(.layer__59d0d, .layer_bc663c) {
 

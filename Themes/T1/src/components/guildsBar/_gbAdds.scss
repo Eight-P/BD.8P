@@ -87,6 +87,10 @@
       display: flex !important ;
     }
 
+    .guildDropdown_f37cb1 {
+      padding: 0 ;
+    }
+
     // server name
     .name_f37cb1 {
       margin: 5px ;
@@ -110,7 +114,8 @@
       .animatedContainer_f37cb1,
       .headerEllipseBackdrop_f37cb1,
       .headerEllipseForeground_f37cb1,
-      .headerGlass_f37cb1
+      .headerGlass_f37cb1,
+      .inviteButton_f37cb1
     ) { display: none }
   }
 }

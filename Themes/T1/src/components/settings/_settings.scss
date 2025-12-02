@@ -24,8 +24,15 @@ $T1_v: null !default ;
     }
 
     // bring back title bar separator
-    .modalContent_e44912 {
-      @include divider(top, ("color": rgb(100, 100, 100) ));
+    &::after {
+      content: "";
+      display: block ;
+      position: fixed ;
+      left: 0 ;
+      height: 1px ;
+      width: 100vw;
+      background: rgb(100, 100, 100) ;
+      top: var(--custom-app-top-bar-height);
     }
   }
 
@@ -33,18 +40,13 @@ $T1_v: null !default ;
   // -> sidebar region
   .fixedContent__409aa::after { display: none }
 
-  // bd icon
-  [data-list-item-id="settings-sidebar___openUserSettingssettings_sidebar_item"] .icon_caf372 {
-    filter: grayscale(1);
-  }
-
   // log out item
   [data-list-item-id="settings-sidebar___logout_sidebar_item"] {
     color: var(--red) ;
   }
 
-  // T1 version
-  .compactInfo__2debe::before {
+  // T1 version (bd, regular)
+  :is(.bd-version-info, .compactInfo__2debe)::before {
     content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
     display: block !important;
     font-size: 12px !important;
@@ -62,20 +64,18 @@ $T1_v: null !default ;
   }
 
   // -> Client Themes
-  .colorThemesBackground_fbfab6 {
+  .header__67a11 .title__67a11 {
+    position: relative ;
+    padding-top: 30px ;
 
-    .header__67a11 {
-      position: relative ;
-      margin-top: 25px ;
-
-      &:before {
-        content: "Not compatible with T1 Theme.";
-        position: absolute ;
-        display: block ;
-        inset: -30px 0 0 0 ;
-        color: var(--red);
-        font-weight: 600 ;
-      }
+    &::before {
+      content: "Not compatible with T1 Theme.";
+      position: absolute ;
+      display: block ;
+      top: 0px ;
+      color: var(--red);
+      font-weight: 600 ;
+      width: max-content ;
     }
   }
   // <- Client Themes
@@ -213,3 +213,123 @@ $T1_v: null !default ;
   }
 }
 // <- Channel settings
+
+
+// -> User settings old (thx Vencord)
+.layer__960e4:not(.baseLayer__960e4) {
+  margin-top: var(--custom-app-top-bar-height);
+
+  // -> Left side sidebar
+  .sidebarRegionScroller__23e6b {
+    @include scrollbar(none);
+  }
+
+  .sidebarRegion__23e6b {
+    flex: 1 0 240px ;
+
+    .sidebar__23e6b {
+      width: 240px ;
+      padding-top: 20px ;
+    }
+
+    // -> Category item
+    .item_aa8da2 {
+      transition: none ;
+    }
+    // <- Category item
+
+    // -> Theme version info
+    .info__2debe:before {
+      content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
+      display: block !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      color: rgb(114, 118, 125) !important;
+      white-space: break-spaces !important;
+      margin-bottom: 8px !important;
+      text-transform: none !important;
+    }
+    // <- Theme version info
+  }
+  // <- Left side
+
+  // -> Content region
+  .contentRegionScroller__23e6b {
+    margin-top: 60px ;
+  }
+
+  .contentColumnDefault__23e6b {
+    padding: 20px 10px 100px 20px ;
+  }
+
+  // -> Close btn
+  .toolsContainer__23e6b {
+    display: contents;
+
+    .tools__23e6b {
+      position: absolute ;
+      top: 20px ;
+      right: 20px ;
+    }
+
+    .container_c2b141 {
+      flex-direction: row-reverse ;
+    }
+
+    .closeButton_c2b141 {
+      width: 32px ;
+      height: 32px ;
+      flex: unset ;
+    }
+
+    .keybind_c2b141 {
+      margin: 0 6px ;
+     }
+  }
+  // <- Close btn
+  // <- Content region
+
+  // -> Client Themes
+  .header__67a11 .title__67a11 {
+    position: relative ;
+    padding-top: 30px ;
+
+    &::before {
+      content: "Not compatible with T1 Theme.";
+      position: absolute ;
+      display: block ;
+      top: 0px ;
+      color: var(--red);
+      font-weight: 600 ;
+      width: max-content ;
+    }
+  }
+  // <- Client Themes
+
+  // -> BD
+  // <- BD
+
+  // -> Nitro
+  .subscriptionRows_e335a7 .banner__84995 {
+    background: none ;
+
+    &.canceled__84995 :is(.planInfo__84995, .planName__84995) {
+      color: var(--header-secondary) ;
+    }
+  }
+  .subscriptionRows_e335a7 .banner__84995, .tierCard_a45ed3 {
+    border: none ;
+  }
+  // <- Nitro
+
+  // Fix bc of background pseudo
+  .header_c6bf1b :is(.titleContainer__81b3e, .warning__35859) {
+    position: relative ;
+  }
+
+  // Fix for double scrollbar
+  .contentRegionScroller__23e6b:has(> #roles-tab)  {
+    @include scrollbar(none);
+  }
+}
+// <- User settings old
