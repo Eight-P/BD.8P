@@ -1,46 +1,47 @@
 // Server bar | App adjustments for server bar
 
-#app-mount {
-
 // some stuff was done bc. of the collapsable sidebar bar before that was removed
 
 // -> App container
 // fullscreen/Hidden e.g.: fullscreen screenshare
-.base__5e434[data-fullscreen="false"] {
-  display: flex ;
-  margin-bottom: $sb_height ;
+#app-mount { // remove soon
 
-  // sidebar + page container
-  .content__5e434 {
+  .base__5e434[data-fullscreen="false"] {
     display: flex ;
+    margin-bottom: $sb_height ;
+
+    // sidebar + page container
+    .content__5e434 {
+      display: flex ;
+    }
+
+    // main page container
+    .page__5e434 {
+      margin-left: calc(var(--custom-guild-list-width) * -1);
+    }
   }
 
-  // main page container
-  .page__5e434 {
-    margin-left: calc(var(--custom-guild-list-width) * -1);
-  }
-}
+  // Sidebar
+  .sidebar__5e434:not(.hidden__5e434) {
+    display: flex ;
+    left: calc(var(--custom-guild-list-width) * -1);
+    padding-left: var(--custom-guild-list-width);
+    box-sizing: border-box ;
 
-// Sidebar
-.sidebar__5e434:not(.hidden__5e434) {
-  display: flex ;
-  left: calc(var(--custom-guild-list-width) * -1);
-  padding-left: var(--custom-guild-list-width);
-  box-sizing: border-box ;
+    &[data-collapsed=true] {
+      width: 0px !important ;
+    }
 
-  &[data-collapsed=true] {
-    width: 0px !important ;
-  }
+    // needs to counter: display none on collapse
+    // channels
+    .container__2637a {
+      display: flex !important ;
+    }
 
-  // needs to counter: display none on collapse
-  // channels
-  .container__2637a {
-    display: flex !important ;
-  }
-
-  // dms, discovery
-  .privateChannels_e6b769, .container__551b0 {
-    display: flex !important ;
+    // dms, discovery
+    .privateChannels_e6b769, .container__551b0 {
+      display: flex !important ;
+    }
   }
 }
 // <- App container
@@ -73,22 +74,19 @@
     height: $sb_height ;
     display: block !important;
 
-    &:hover, &.selected_f37cb1 { background-color: rgba(0, 0, 0, 0.2) !important }
-
-    // second container
-    .header_f37cb1 {
-      display: contents !important;
+    // some containers between main and text
+    :is(.headerContent_f37cb1, .header_f37cb1, .guildBadgeAndName_f37cb1) {
+      display: contents !important ;
     }
 
-    .headerContent_f37cb1 {
-      height: 100% ;
-      align-items: center ;
-      justify-content: center ;
-      display: flex !important ;
-    }
-
+    // click container
     .guildDropdown_f37cb1 {
       padding: 0 ;
+      height: 100% ;
+      width: 100% ;
+      justify-content: center ;
+
+      &:hover, &[aria-expanded="true"] { background-color: rgba(0, 0, 0, 0.2) !important }
     }
 
     // server name
@@ -98,9 +96,9 @@
       max-height: 32px ;
       line-height: 16px ;
       font-weight: 400 ;
-      text-align: center ;
       color: var(--text-normal);
-      display: block !important;
+      text-align: center ;
+      // display: block !important; // ?
 
       @include shadowEffect("text_1");
     }
@@ -131,12 +129,12 @@
   padding: 0 ;
   z-index: 0 ;
 
+  &:hover { background-color: rgba(0, 0, 0, 0.2) }
+
   .button_a22cb0 {
     height: 100% ;
     max-height: unset ;
-    border-radius: 0px ;
-
-    &:hover { background-color: rgba(0, 0, 0, 0.2) }
+    border-radius: 0px !important ;
   }
 
   .buttonChildrenWrapper_a22cb0 {
@@ -177,5 +175,3 @@
   }
 }
 // <- Discovery Text
-
-}

@@ -117,40 +117,41 @@
 
   // -> BD Modals
   .bd-modal-root {
-
-    // -> General
+    border: none ;
+    overflow: hidden ;
     max-height: 80vh ;
     height: auto ;
+    background: $BG_Body ;
 
     .bd-modal-header {
       background: $BG_Meta ;
+      border-radius: 0 ;
     }
 
-    // -> Body
     .bd-modal-content {
       background: $BG_Body ;
       padding: 20px ;
+      border-radius: 0 ;
     }
-    // <- Body
 
     .bd-modal-footer {
       background: $BG_Meta ;
+      border-radius: 0 ;
     }
-    // <- General
 
-    // -> Addon settings
+    // -> Addon settings (what other modals are there?)
     &.bd-addon-modal {
       // width: 700px ;
       max-width: 90vw ;
-
       display: grid ;
       grid-template-rows: min-content 1fr ;
+      grid-template-columns: 1fr min-content ;
       grid-template-areas:
         "title close"
         "body body"
       ;
 
-      // -> new header
+      // -> header
       .bd-modal-header {
         grid-area: title ;
       }
@@ -158,6 +159,7 @@
       // -> "Done" btn
       .bd-modal-footer {
         grid-area: close ;
+        align-items: center ;
 
         .bd-button-filled {
           border: none ;
@@ -172,10 +174,15 @@
         }
       }
       // <- "Done" btn
-      // <- new header
+      // <- header
 
+      // -> body
       .bd-modal-content {
         grid-area: body ;
+      }
+
+      .bd-scroller-base {
+        @include scrollerFadeOut();
       }
 
       // -> Category title
@@ -184,6 +191,11 @@
         justify-content: left ;
         gap: 10px ;
         font-size: 15px ;
+
+        &:hover {
+          color: var(--interactive-hover);
+          cursor: pointer ;
+        }
 
         &::before {
           display: none ;
@@ -223,6 +235,7 @@
           }
         }
       }
+      // <- body
       // <- Settings options
     }
     // <- Addon settings

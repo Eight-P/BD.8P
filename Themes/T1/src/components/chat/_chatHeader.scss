@@ -25,6 +25,7 @@
   .topic__6ec1a {
     margin: 0 8px ;
     text-align: center ;
+    color: var(--header-secondary);
 
     // Mentions/Channels, Web links
     :is(.interactive, .anchor_edefb8) {
@@ -48,7 +49,7 @@
     justify-content: end ;
 
     .iconWrapper__9293f {
-      margin: 0 2px ;
+      // margin: 0 2px ;
     }
   }
   // <- Right side btns
