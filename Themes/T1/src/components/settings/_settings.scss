@@ -87,8 +87,6 @@ $T1_v: null !default ;
       background: $BtnBackgroundHover ;
     }
   }
-
-
   // <- content region
 }
 // <- User settings
@@ -105,7 +103,7 @@ $T1_v: null !default ;
 // <- Channel settings
 
 
-// -> User settings old (for Vencord & channels settings)
+// -> User settings old (for channels settings) (might remove)
 .layer__960e4:not(.baseLayer__960e4) {
   margin-top: var(--custom-app-top-bar-height);
 
@@ -127,19 +125,6 @@ $T1_v: null !default ;
       transition: none ;
     }
     // <- Category item
-
-    // -> Theme version info
-    .info__2debe:before {
-      content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
-      display: block !important;
-      font-size: 12px !important;
-      font-weight: 600 !important;
-      color: rgb(114, 118, 125) !important;
-      white-space: break-spaces !important;
-      margin-bottom: 8px !important;
-      text-transform: none !important;
-    }
-    // <- Theme version info
   }
   // <- Left side
 
@@ -178,36 +163,6 @@ $T1_v: null !default ;
   }
   // <- Close btn
   // <- Content region
-
-  // -> Client Themes
-  .header__67a11 .title__67a11 {
-    position: relative ;
-    padding-top: 30px ;
-
-    &::before {
-      content: "Not compatible with T1 Theme.";
-      position: absolute ;
-      display: block ;
-      top: 0px ;
-      color: var(--red);
-      font-weight: 600 ;
-      width: max-content ;
-    }
-  }
-  // <- Client Themes
-
-  // -> Nitro
-  .subscriptionRows_e335a7 .banner__84995 {
-    background: none ;
-
-    &.canceled__84995 :is(.planInfo__84995, .planName__84995) {
-      color: var(--header-secondary) ;
-    }
-  }
-  .subscriptionRows_e335a7 .banner__84995, .tierCard_a45ed3 {
-    border: none ;
-  }
-  // <- Nitro
 
   // Fix bc of background pseudo
   .header_c6bf1b :is(.titleContainer__81b3e, .warning__35859) {

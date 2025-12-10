@@ -46,7 +46,8 @@
       width: 100% ;
     }
 
-    :is(.statusText__19b6d, .text_c9d15c) {
+    // activity, idk, online-status
+    :is(.statusText__19b6d, .text_c9d15c, .subtext__0a06e) {
       color: var(--header-secondary) !important;
     }
 

@@ -179,9 +179,13 @@
 
     // Emoji icon
     .spriteContainer__04eed {
-      --custom-emoji-sprite-size: 20px !important ;
-      height: 20px ;
-      width: 20px ;
+      --custom-emoji-sprite-size: 19px !important ;
+      height: 19px ;
+      width: 19px ;
+    }
+
+    .spriteGreyscale__04eed {
+      background-color: var(--interactive-normal) !important ;
     }
 
     // Apps & Commands btn

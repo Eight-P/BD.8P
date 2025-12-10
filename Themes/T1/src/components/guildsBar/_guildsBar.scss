@@ -5,7 +5,6 @@
 $sb_height: 54px ;
 $iconBaseSize: 40px ;
 
-// :root {
 body {
   --sbInnerSpacing: calc(var(--serverBar-Spacing) * .5 );
   --sbDmSpacing: calc(var(--serverBar-Spacing) * .8 );
@@ -136,42 +135,42 @@ $iconScale: var(--sbIconScale);
     animation: none ; // makes icon blurry when scaled
   }
 
-  .wrapper_cc5dd2 {
+  // only first
+  .wrapper_cc5dd2:not(.wrapper_cc5dd2 .wrapper_cc5dd2) {
     @include shadowEffect("server_1");
-
-    :is(mask, g) { display: none }
-
-    foreignObject { mask: none }
-
-    // -> Server item
-    // Image, default avatar (group dm)
-    :is(.icon__6e9f8, .avatar__44b0c) {
-      border-radius: 50% ;
-      transition: .2s ;
-    }
-
-    &:hover :is(.icon__6e9f8, .avatar__44b0c) { border-radius: 25% }
-
-    .avatarStack__44b0c {
-      justify-content: center ;
-      align-items: center ;
-    }
-
-    // Text
-    .acronym__6e9f8 {
-      background: none ;
-
-      @include shadowEffect("server_1");
-    }
-    // <- Server item
-
-    // -> Group DM item
-    .childWrapper__6e9f8 {
-      scale: 1 ;
-      background: none ;
-    }
-    // <- Group DM item
   }
+
+  :is(mask, g) { display: none }
+
+  foreignObject { mask: none }
+
+  // inner container for icons, non image server, home, dm group
+  .childWrapper__6e9f8 {
+    scale: 1 ; // ?
+    background: none !important;
+  }
+
+  // -> Server item
+  // Image, default avatar (group dm)
+  :is(.icon__6e9f8, .avatar__44b0c) {
+    border-radius: 50% ;
+    transition: .2s ;
+  }
+
+  &:hover :is(.icon__6e9f8, .avatar__44b0c) { border-radius: 25% }
+
+  .avatarStack__44b0c {
+    justify-content: center ;
+    align-items: center ;
+  }
+
+  // Server name/text instead of icon
+  .acronym__6e9f8 {
+    background: none ;
+
+    @include shadowEffect("server_1"); // double shadow, but not to bad i guess
+  }
+  // <- Server item
 
   // -> Drag&Drop
   // Server icon placeholder
@@ -236,7 +235,7 @@ $iconScale: var(--sbIconScale);
 
   .childWrapper__6e9f8 {
     transition: none ;
-    background: none ;
+    // background: none !important;
     color: var(--header-secondary) !important;
 
     svg {
