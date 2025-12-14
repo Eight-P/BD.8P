@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "T1-Dev-BD",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "isBackground": true,
+      "command": "npm run watch -w Themes/T1 BD"
+    },
+    {
+      "label": "T1-Dev-Vencord",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "isBackground": true,
+      "command": "npm run watch -w Themes/T1 Ven"
+    },
+    {
+      "label": "T1-Dev-VenBD",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "isBackground": true,
+      "command": "npm run watch -w Themes/T1 BD Ven"
+    }
+  ]
+}
