@@ -1,0 +1,96 @@
+// App | Title & Header bar
+
+#app-mount {
+
+  --custom-app-top-bar-height: 28px  ;
+
+// -> Title bar
+// app and base layer bar bar
+.c38106a3f0c3ca76-bar {
+
+  ._85643a485899904b-button {
+    height: var(--custom-app-top-bar-height);
+    width: var(--custom-app-top-bar-height);
+  }
+
+  // guild icon txt
+  .f34534e8a5d3ca64-noIcon {
+    background: none ;
+  }
+
+  // -> right side btns
+  .edefb8e22d63c542-anchor, .c38106a3f0c3ca76-winButtons::before { display: none }
+
+  .c38106a3f0c3ca76-winButton {
+    min-width: 32px ;
+  }
+
+  .c38106a3f0c3ca76-trailing {
+    .c99c29809d200a61-clickable > svg {
+      height: 20px ;
+      width: 20px ;
+    }
+  }
+  // <- right side btns
+}
+
+// base layer bar only, to avoid separator overlapping modal backdrop
+._5e434347c823b592-base .c38106a3f0c3ca76-bar {
+  @include divider(bottom, ("color": rgb(100, 100, 100) ));
+}
+// <- Title bar
+
+// -> general Header bar
+// outer containers
+:is(.f75fb00fb7356cbe-chat, ._133bf5eea8e33a34-container) {
+  border-top: none ;
+}
+
+._9293f6b2fc12398a-container {
+  padding: 8px 10px ;
+  height: 48px ;
+  min-height: unset ;
+  border: none ;
+  box-sizing: border-box ;
+
+  // separator fade thing
+  ._9293f6b2fc12398a-children::after { display: none }
+}
+// <- general Header bar
+
+// -> Discord, bd notification bar
+._6e2b9359c6f84cfd-notice, .bd-notice {
+  background: var(--background-primary);
+  border-radius: 0 ;
+
+  .c5cd6ac154c385c9-header {
+    color: var(--header-secondary);
+  }
+
+  ._6e2b9359c6f84cfd-button, .bd-notice-button {
+    border: none ;
+    color: #{$BtnTextNormal} !important;
+    background: $BtnBackgroundNormal ;
+
+    &:hover {
+      color: #{$BtnTextHover} !important;
+      background: $BtnBackgroundHover ;
+      border-radius: 3px ;
+    }
+  }
+}
+// <- Discord notification bar
+
+// -> Title bar & header bar icons
+._9293f6b2fc12398a-clickable  {
+
+  ._9293f6b2fc12398a-icon {
+    color: $BtnIconNormal ;
+  }
+
+  &:hover ._9293f6b2fc12398a-icon {
+    color: $BtnIconHover ;
+  }
+}
+// <- Title bar & header bar icons
+}

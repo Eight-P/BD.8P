@@ -1,0 +1,90 @@
+body {
+  // -> Chat
+  @container style(--show-nitro-btn: 1 ) { --hide-chatBtn-nitro: 0 }
+  @container style(--show-nitro-btn: 0 ) { --hide-chatBtn-nitro: 1 }
+
+  @container style(--show-gif-btn: 1 ) { --hide-chatBtn-gif: 0 }
+  @container style(--show-gif-btn: 0 ) { --hide-chatBtn-gif: 1 }
+
+  @container style(--show-sticker-btn: 1 ) { --hide-chatBtn-sticker: 0 }
+  @container style(--show-sticker-btn: 0 ) { --hide-chatBtn-sticker: 1 }
+
+  @container style(--show-emoji-btn: 1 ) { --hide-chatBtn-emoji: 0 }
+  @container style(--show-emoji-btn: 0 ) { --hide-chatBtn-emoji: 1 }
+
+  @container style(--show-apps-btn: 1 ) { --hide-chatBtn-apps: 0 }
+  @container style(--show-apps-btn: 0 ) { --hide-chatBtn-apps: 1 }
+
+  @container style(--messageBtns: 1 ) { --reduce-messageBtns: 0 }
+  @container style(--messageBtns: 0 ) { --reduce-messageBtns: 1 }
+
+  @container style(--emojiMsgBtns: 0 ) { --hide-messageBtnEmojis: 2 }
+  @container style(--emojiMsgBtns: 1 ) { --hide-messageBtnEmojis: 1 }
+  @container style(--emojiMsgBtns: 2 ) { --hide-messageBtnEmojis: 0 }
+
+  @container style(--always-show-voicecontrols) { 
+    --keep-voiceChannelBtns: var(--always-show-voicecontrols) 
+  }
+  @container style(--highlightFocusedInput) { 
+    --highlight-focusedChatInput: var(--highlightFocusedInput) 
+  }
+
+  @container style(--Font) { 
+    --font-primary: var(--Font);
+    --font-display: var(--Font);
+  }
+  // <- Chat
+
+  // -> Effects & Decorations
+  @container style(--show-userProfile-effects: 1 ) { --hide-profileEffects: 0 }
+  @container style(--show-userProfile-effects: 0 ) { --hide-profileEffects: 1 }
+
+  @container style(--show-avatarDecorations: 1 ) { --hide-avatarDecorations: 0 }
+  @container style(--show-avatarDecorations: 0 ) { --hide-avatarDecorations: 1 }
+
+  @container style(--show-namePlates: 1 ) { --hide-nameplates: 0 }
+  @container style(--show-namePlates: 0 ) { --hide-nameplates: 1 }
+
+  @container style(--show-reactionAnimations: 1 ) { --hide-reactionAnimations: 0 }
+  @container style(--show-reactionAnimations: 0 ) { --hide-reactionAnimations: 1 }
+  // <- Effects & Decorations
+
+  // -> Server bar
+  @container style(--serverBarFolderStyle) { 
+    --serverBar-FolderStyle: var(--serverBarFolderStyle) 
+  }
+
+  @container style(--serverbarSpacing) { --serverBar-Spacing: var(--serverbarSpacing) }
+
+  @container style(--serverbarIconSize) { --serverBar-IconSize: var(--serverbarIconSize) }
+  // <- Server bar
+
+  // -> Backgrounds
+  @container style(--Main_Background) { --background-app: var(--Main_Background) }
+  @container style(--Server_Background) { --background-server: var(--Server_Background) }
+
+  @container style(--Main_Brightness) {--backgroundBrightness-app: var(--Main_Brightness) }
+  @container style(--Server_Brightness) { 
+    --backgroundBrightness-server: var(--Server_Brightness) 
+  }
+
+  @container style(--Main_Background_blur) { --backgroundBlur-app: var(--Main_Background_blur) }
+  @container style(--Server_Background_blur) { 
+    --backgroundBlur-server: var(--Server_Background_blur) 
+  }
+  // <- Backgrounds
+
+  // -> Misc
+  @container style(--friendsActivity: 0) { --hide-friendsActivity: 2 }
+  @container style(--friendsActivity: 1) { --hide-friendsActivity: 0 }
+  @container style(--friendsActivity: 2) { --hide-friendsActivity: 1 }
+
+  @container style(--show-serverboost-stats: 1) { --hide-serverBoostStats: 0 }
+  @container style(--show-serverboost-stats: 0) { --hide-serverBoostStats: 1 }
+
+  @container style(--sidebarScrollbar) { --show-sidebarScrollbar: var(--sidebarScrollbar) }
+  @container style(--membersListScrollbar) { 
+    --show-memberListScrollbar: var(--membersListScrollbar) 
+  }
+  // <- Misc
+}

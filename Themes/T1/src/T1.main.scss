@@ -1,6 +1,6 @@
 @use "sass:meta";
 
-$T1_version: "0.8.42" ;
+$T1_version: "0.8.43" ;
 
 /*!
   T1 Theme (c) Eight_P <github.com/Eight-P/BD.8P>
@@ -8,4 +8,7 @@ $T1_version: "0.8.42" ;
 
 */
 
-@include meta.load-css("components", $with: ( "T1_v": $T1_version ));
+// temporary
+// @include meta.load-css("components", $with: ( "T1_v": $T1_version ));
+// @include meta.load-css("components/_index", $with: ( "T1_v": $T1_version ));
+@include meta.load-css("components/_new_index", $with: ( "T1_v": $T1_version ));

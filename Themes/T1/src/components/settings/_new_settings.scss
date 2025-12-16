@@ -1,0 +1,177 @@
+@use '../mixins/new_mixins' as * ;
+
+// -- Settings
+
+$T1_v: null !default ;
+
+// -> User settings
+// layer container inner (not an ideal class)
+.e4491282b6a5364a-outerContainer {
+
+  // just some more specificity since it's just a modal now
+  ._8a031a135bfcb9ba-container.e4491282b6a5364a-modal {
+    --custom-viewport-padding: 0px ;
+
+    // max-width: unset ;
+    // width: 100vw ; // don't now if want to stretch it out
+    height: 100% ;
+    transform: none !important ; // remove transition effect
+    border-radius: 0 ;
+    padding-top: var(--custom-app-top-bar-height);
+
+    .d125d22cdfd32cfe-scrollerBase {
+      @include scrollerFadeOut();
+    }
+
+    // bring back title bar separator
+    &::after {
+      content: "";
+      display: block ;
+      position: fixed ;
+      left: 0 ;
+      height: 1px ;
+      width: 100vw;
+      background: rgb(100, 100, 100) ;
+      top: var(--custom-app-top-bar-height);
+    }
+  }
+
+  // -> sidebar region
+  ._409aa1aeee28d5f7-fixedContent::after { display: none }
+
+  // log out item
+  [data-list-item-id="settings-sidebar___logout_sidebar_item"] {
+    color: var(--red);
+  }
+
+  // T1 version (bd, regular)
+  :is(.bd-version-info, ._2debea61131de3de-compactInfo)::before {
+    content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
+    display: block !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: rgb(114, 118, 125) !important;
+    white-space: break-spaces !important;
+    margin-bottom: 16px !important;
+    text-transform: none !important;
+  }
+  // <- sidebar region
+
+  // -> content region
+  ._6131ab3dbe0affed-panel {
+    margin-top: 30px ;
+  }
+
+  // -> Client Themes
+  ._67a117a74ffaf557-header ._67a117a74ffaf557-title {
+    position: relative ;
+    padding-top: 30px ;
+
+    &::before {
+      content: "Not compatible with T1 Theme.";
+      position: absolute ;
+      display: block ;
+      top: 0px ;
+      color: var(--red);
+      font-weight: 600 ;
+      width: max-content ;
+    }
+  }
+  // <- Client Themes
+
+  // BD
+  .bd-store-card {
+    background: $BtnBackgroundNormal ;
+
+    &:hover {
+      background: $BtnBackgroundHover ;
+    }
+  }
+  // <- content region
+}
+// <- User settings
+
+
+// -> Channel settings
+._23e6b439306f125a-sidebarRegion  {
+
+  // delete channel button
+  .c7e9071ee8df9113-tabBarItemContainer:has([d="M5.06 7a1 1 0 0 0-1 1.06l.76 12.13a3 3 0 0 0 3 2.81h8.36a3 3 0 0 0 3-2.81l.75-12.13a1 1 0 0 0-1-1.06H5.07ZM11 12a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"]) {
+    color: var(--red) ;
+  }
+}
+// <- Channel settings
+
+
+// -> User settings old (for channels settings) (might remove)
+._960e4207cea8323e-layer:not(._960e4207cea8323e-baseLayer) {
+  margin-top: var(--custom-app-top-bar-height);
+
+  // -> Left side sidebar
+  ._23e6b439306f125a-sidebarRegionScroller {
+    @include scrollbar(none);
+  }
+
+  ._23e6b439306f125a-sidebarRegion {
+    flex: 1 0 240px ;
+
+    ._23e6b439306f125a-sidebar {
+      width: 240px ;
+      padding-top: 20px ;
+    }
+
+    // -> Category item
+    .aa8da23faa27393c-item {
+      transition: none ;
+    }
+    // <- Category item
+  }
+  // <- Left side
+
+  // -> Content region
+  ._23e6b439306f125a-contentRegionScroller {
+    margin-top: 60px ;
+  }
+
+  ._23e6b439306f125a-contentColumnDefault {
+    padding: 20px 10px 100px 20px ;
+  }
+
+  // -> Close btn
+  ._23e6b439306f125a-toolsContainer {
+    display: contents;
+
+    ._23e6b439306f125a-tools {
+      position: absolute ;
+      top: 20px ;
+      right: 20px ;
+    }
+
+    .c2b141c0f80863fb-container {
+      flex-direction: row-reverse ;
+    }
+
+    .c2b141c0f80863fb-closeButton {
+      width: 32px ;
+      height: 32px ;
+      flex: unset ;
+    }
+
+    .c2b141c0f80863fb-keybind {
+      margin: 0 6px ;
+     }
+  }
+  // <- Close btn
+  // <- Content region
+
+  // Fix bc of background pseudo
+  .c6bf1b7af480dfda-header :is(._81b3e843d09e285a-titleContainer, ._358591fa30baeebc-warning) {
+    position: relative ;
+  }
+
+  // Fix for double scrollbar
+  ._23e6b439306f125a-contentRegionScroller:has(> #roles-tab)  {
+    @include scrollbar(none);
+  }
+}
+// <- User settings old

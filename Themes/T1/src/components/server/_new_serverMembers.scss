@@ -1,0 +1,88 @@
+// Server view | Members list
+
+#app-mount {
+
+.c8ffbb79449f399c-container {
+  border: none ;
+
+  --custom-member-list-width: 240px ;
+}
+
+// Main container
+.c8ffbb79449f399c-membersWrap {
+  border: none ; // for threads member list
+}
+
+// inner container
+.c8ffbb79449f399c-members {
+
+  @container not style(--show-memberListScrollbar: 1 ) {
+    @include scrollbar(none);
+  }
+
+  // Role header
+  .c8ffbb79449f399c-membersGroup {
+    margin-bottom: 4px ;
+    font-weight: 600 ;
+  }
+
+  // Activities
+  ._0f2e83213c878a13-container {
+    background: none ;
+
+    ._42bf58529787eb7a-contentImage {
+      width: 40px !important ;
+      height: 40px !important ;
+    }
+  }
+
+  .activityText__5d473 {
+    color: var(--channels-default) !important ;
+  }
+
+  // -> Member item
+  ._5d473ecff348c314-member {
+    max-width: unset ;
+    margin: 1px 0 2px 11px ;
+
+    // second container
+    ._91a9d7f7e5248a56-childContainer {
+      background: none ;
+      padding-left: 0 ;
+      border-radius: 0 ;
+      border-right: 3px solid transparent ;
+
+      &:hover {
+        border-color: var(--interactive-hover);
+        background-color: var(--background-modifier-hover);
+      }
+    }
+
+    ._4bbc6dc06e75ad52-container {
+      margin-left: 3px ;
+    }
+
+    // User popout open
+    &._91a9d7f7e5248a56-selected ._91a9d7f7e5248a56-childContainer {
+      border-right: 3px solid var(--interactive-hover);
+    }
+
+    // Offline member
+    &._5d473ecff348c314-offline:not(:hover) ._91a9d7f7e5248a56-avatar {
+      filter: grayscale(100%);
+    }
+
+    // mostly for Nitro icon
+    ._91a9d7f7e5248a56-nameAndDecorators {
+      pointer-events: none ;
+    }
+
+    // Server owner crown
+    ._5d473ecff348c314-ownerIcon {
+      color: var(--header-secondary);
+    }
+  }
+  // <- Member item
+}
+
+}

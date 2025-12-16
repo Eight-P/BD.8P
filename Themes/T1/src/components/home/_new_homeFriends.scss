@@ -1,0 +1,149 @@
+// Home | Friends - header, list, activity sidebar
+
+#app-mount {
+
+._133bf5eea8e33a34-container { // to be more specific
+
+  // -> Header bar
+  ._9293f6b2fc12398a-children {
+    // friends icon & text
+    :is(._9293f6b2fc12398a-dot, ._9293f6b2fc12398a-iconWrapper, ._9293f6b2fc12398a-titleWrapper) { display: none }
+  }
+
+  // Nav bar
+  ._133bf5eea8e33a34-tabBar {
+    margin: 0 auto ;
+  }
+
+  ._9293f6b2fc12398a-toolbar {
+
+    @media (width > 700px) {
+      ._133bf5eea8e33a34-inviteToolbar {
+        display: flex !important;
+      }
+    }
+  }
+  // <- Header bar
+}
+
+// -> Friends list
+._5ec2fb8b5de26b21-peopleList {
+  margin-top: 15px ;
+
+  @include scrollerFadeOut();
+
+  &::-webkit-scrollbar {
+    display: none ;
+  }
+
+  // -> User item
+  .cc61794aab086a2e-peopleListItem {
+    transition: none ;
+    border-radius: 0 ;
+
+    // Username, Status text container
+    ._0a06ed6ea040aa1b-text {
+      width: 100% ;
+    }
+
+    // activity, idk, online-status
+    :is(._19b6da809e654e70-statusText, .text_c9d15c, .sub_0a06ed6ea040aa1b-text) {
+      color: var(--header-secondary) !important;
+    }
+
+    // Username/ # Identifier
+    ._0a06ed6ea040aa1b-discriminator {
+      width: 0 ;
+    }
+
+    .f8fa068db52f043f-actionButton {
+      background: none ;
+    }
+
+    &:hover {
+      background: var(--background-modifier-accent);
+
+      ._0a06ed6ea040aa1b-discriminator {
+        width: auto ;
+        visibility: visible ;
+      }
+    }
+
+  }
+  // <- User item
+}
+// <- Friends list
+
+// -> Friends activity sidebar
+// main content container
+._133bf5eea8e33a34-tabBody {
+  container-type: inline-size ; // for @container width
+}
+
+._133bf5eea8e33a34-nowPlayingColumn {
+  min-width: 300px ;
+  display: block ;
+
+  // hide empty
+  @container style(--hide-friendsActivity: 1) {
+    &:has(._7e549558f336cddb-emptyCard) { display: none !important }
+  }
+
+  @container style(--hide-friendsActivity: 2) or (width < 650px) { display: none !important }
+
+  // "Active now" header text
+  ._7d20cf18f8a2784c-header {
+    margin: 16px ;
+    color: var(--header-secondary);
+  }
+
+  ._7d20cf18f8a2784c-scroller {
+    margin: 0 ;
+    padding: 0px !important ;
+    border: none ;
+
+    &::-webkit-scrollbar { display: none }
+  }
+
+  ._7e549558f336cddb-emptyCard {
+    background: none ;
+  }
+
+  // -> User activity card
+  ._7e549558f336cddb-itemCard {
+    margin: 0 ;
+    padding: 16px ;
+    border: none ;
+    border-radius: 0 ;
+    background: none ;
+
+    &:hover {
+      background: var(--background-modifier-hover);
+    }
+
+    // subsequent cards
+    + ._7e549558f336cddb-itemCard {
+      border-top: 1px solid var(--background-modifier-accent);
+    }
+
+    // containers for activity
+    :is(._00943886e1cf89d1-body, ._11054c9baccea7a2-wrapper) {
+      background: none ;
+    }
+
+    // inner body container
+    ._00943886e1cf89d1-section {
+      background: none ;
+      padding: 6px 0 0 12px ;
+    }
+  }
+  // <- User activity card
+}
+// <- Friends activity sidebar
+
+// Friends activity as separate tab
+// empty activity
+._7e549558f336cddb-emptyCard {
+  background: none ;
+}
+}

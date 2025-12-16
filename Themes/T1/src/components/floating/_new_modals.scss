@@ -1,0 +1,244 @@
+// Modal backdrop
+._783321f3468cf9e8-backdrop {
+  background: rgba(0, 0, 0, 0.75) !important;
+}
+
+.bc663cf6190ce9ad-layer {
+
+  :is(._49fc18ba07c5025f-small, ._49fc18ba07c5025f-medium) {
+    max-height: 75vh ;
+    height: auto ;
+    border: none ;
+  }
+
+  // -> most modals (not user modal)
+  ._49fc18ba07c5025f-root:not(._9c3bea41fd465666-root) {
+
+    // -> General
+    background: $BG_Body ;
+
+    @include scrollbar(none); // not sure why
+
+    // -> Header
+    ._49fc18ba07c5025f-header {
+      background: $BG_Meta ;
+      padding-bottom: 8px ;
+
+      @include shadowEffect("box_3");
+
+      .headerText__67dba {
+        margin-bottom: 14px ;
+      }
+
+      .fd297e0eff2da25e-marginTop8 { display: none }
+    }
+    // <- Header
+
+    // -> Body
+    // :is(._99f8cc7ad4790ce9-scrollerBase, .d125d22cdfd32cfe-scrollerBase) {
+    .d125d22cdfd32cfe-scrollerBase {
+      background: $BG_Body ;
+      max-height: unset ;
+
+      @include scrollbar();
+      @include scrollerFadeOut(2px, 2px);
+    }
+
+    ._49fc18ba07c5025f-content {
+      padding-top: 20px ;
+    }
+    // <- Body
+
+    // -> Footer
+    ._49fc18ba07c5025f-footer {
+      background: $BG_Body ;
+      background: $BG_Meta ;
+
+      .b717a15017b82443-h5 {
+        font-size: 14px ;
+        color: var(--header-secondary);
+      }
+    }
+    // <- Footer
+
+    // <- General
+
+    // -> Invite to server
+    :is(.scroller__67dba, ._67dba15a1ae9a3e9-inviteRowEmptyState) {
+      height: 100vh ; // fix height to max
+    }
+    // <- Invite to server
+
+    // -> Create group DM (hopefully)
+    &.cba5926a3ea0ad97-popout {
+      height: 100vh ; // fix height to max
+
+      ._49fc18ba07c5025f-header {
+        box-shadow: none ;
+      }
+
+      .bbd19242e12654ad-friendSelected:not(:hover) {
+        background: none ;
+      }
+
+      .cba5926a3ea0ad97-searchBar {
+        background: $BG_Meta ;
+
+        @include shadowEffect("box_3");
+      }
+    }
+    // <- Create group DM
+
+    // join new server
+    .c04f357ea00ccf57-templatesList {
+      margin: 0 ;
+    }
+  }
+
+  // (per Server) Notification Settings
+  ._8a031a135bfcb9ba-container {
+    ._8a031a135bfcb9ba-bodySpacerTopBorder { display: none }
+
+    ._8a031a135bfcb9ba-header {
+      padding-bottom: 16px ;
+      z-index: 1 ;
+
+      @include shadowEffect("box_3");
+    }
+
+    ._8a031a135bfcb9ba-body {
+      background: $BG_Body ;
+
+      // @include scrollbar();
+      @include scrollerFadeOut(2px, 2px);
+    }
+  }
+  // <- most modals
+
+  // -> BD Modals
+  .bd-modal-root {
+    border: none ;
+    overflow: hidden ;
+    max-height: 80vh ;
+    height: auto ;
+    background: $BG_Body ;
+
+    .bd-modal-header {
+      background: $BG_Meta ;
+      border-radius: 0 ;
+    }
+
+    .bd-modal-content {
+      background: $BG_Body ;
+      padding: 20px ;
+      border-radius: 0 ;
+    }
+
+    .bd-modal-footer {
+      background: $BG_Meta ;
+      border-radius: 0 ;
+    }
+
+    // -> Addon settings (what other modals are there?)
+    &.bd-addon-modal {
+      // width: 700px ;
+      max-width: 90vw ;
+      display: grid ;
+      grid-template-rows: min-content 1fr ;
+      grid-template-columns: 1fr min-content ;
+      grid-template-areas:
+        "title close"
+        "body body"
+      ;
+
+      // -> header
+      .bd-modal-header {
+        grid-area: title ;
+      }
+
+      // -> "Done" btn
+      .bd-modal-footer {
+        grid-area: close ;
+        align-items: center ;
+
+        .bd-button-filled {
+          border: none ;
+          border-radius: 3px ;
+          color: $BtnTextNormal ;
+          background: $BtnBackgroundNormal ;
+
+          &:hover {
+            color: $BtnTextHover ;
+            background: $BtnBackgroundHover ;
+          }
+        }
+      }
+      // <- "Done" btn
+      // <- header
+
+      // -> body
+      .bd-modal-content {
+        grid-area: body ;
+      }
+
+      .bd-scroller-base {
+        @include scrollerFadeOut();
+      }
+
+      // -> Category title
+      .bd-settings-title {
+        flex-direction: row-reverse ;
+        justify-content: left ;
+        gap: 10px ;
+        font-size: 15px ;
+
+        &:hover {
+          color: var(--interactive-hover);
+          cursor: pointer ;
+        }
+
+        &::before {
+          display: none ;
+        }
+      }
+
+      // Category container
+      .bd-settings-group {
+
+        &.collapsed .bd-settings-title::after {
+          transform: rotate(-90deg);
+        }
+
+        &:not(:last-child) .bd-settings-title {
+          margin-bottom: 20px ;
+        }
+      }
+      // <- Category title
+
+      // Settings container in category
+      .bd-settings-container {
+        margin: 0 5px 0 15px ;
+      }
+
+      // -> Settings options
+      .bd-setting-item.inline {
+
+        &:first-child:has(.bd-slider-wrap) {
+          padding-top: 10px ;
+        }
+
+        &:last-child {
+          margin: 0 ;
+
+          .bd-setting-divider {
+            visibility: hidden ;
+          }
+        }
+      }
+      // <- body
+      // <- Settings options
+    }
+    // <- Addon settings
+  }
+  // <- BD Modals
+}
