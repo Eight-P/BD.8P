@@ -135,7 +135,7 @@ $iconScale: var(--sbIconScale);
     animation: none ; // makes icon blurry when scaled
   }
 
-  // only first
+  // most generic container (only first)
   .cc5dd25190031396-wrapper:not(.cc5dd25190031396-wrapper .cc5dd25190031396-wrapper) {
     @include shadowEffect("server_1");
   }
@@ -144,7 +144,12 @@ $iconScale: var(--sbIconScale);
 
   foreignObject { mask: none }
 
-  // inner container for icons, non image server, home, dm group
+  // more inner wrapper
+  ._6e9f8dce4cc18de3-wrapper:hover :is(._6e9f8dce4cc18de3-icon, ._44b0c28be7879b7b-avatar) {
+    border-radius: 25% ;
+  }
+
+  // non image server, inner container / home / dm group
   ._6e9f8dce4cc18de3-childWrapper {
     scale: 1 ; // ?
     background: none !important;
@@ -157,8 +162,7 @@ $iconScale: var(--sbIconScale);
     transition: .2s ;
   }
 
-  &:hover :is(._6e9f8dce4cc18de3-icon, ._44b0c28be7879b7b-avatar) { border-radius: 25% }
-
+  // ?
   ._44b0c28be7879b7b-avatarStack {
     justify-content: center ;
     align-items: center ;
@@ -196,12 +200,13 @@ $iconScale: var(--sbIconScale);
 }
 
 // this way instead of wrapper bc of icon when drag
-:is(.e5445cbd3ad226f2-blobContainer, ._918165dab2b1e10b-listItemWrapper) {
+// (servers, left icons, dms) (span to only apply to dms and avoid the double wrapper)
+:is(.e5445cbd3ad226f2-blobContainer, ._918165dab2b1e10b-listItemWrapper, span > .cc5dd25190031396-wrapper) {
   transform: rotate(90deg) !important ; // "important" for server details plugin idk
   scale: $iconScale ;
   margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
-  height: $iconBaseSize ;
-  width: $iconBaseSize ;
+  height: $iconBaseSize !important ;
+  width: $iconBaseSize !important ;
 }
 // <- general item
 
@@ -361,10 +366,9 @@ $iconScale: var(--sbIconScale);
       }
     }
 
-    // -> Folder Icon & Grid preview
+    // -> Folder Icon & small server in folder icon preview
     // list item inner
     ._48112cbe77dc5022-folderHeader {
-      margin: 0 ;
       transform: rotate(90deg);
       scale: $iconScale;
       margin: calc( ($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
@@ -372,6 +376,11 @@ $iconScale: var(--sbIconScale);
 
     ._48112cbe77dc5022-folderButton {
       overflow: visible ;
+
+      // dirty fix for overlap
+      .cc5dd25190031396-svg {
+        pointer-events: none ;
+      }
     }
 
     .cc5dd25190031396-wrapper {
@@ -389,9 +398,10 @@ $iconScale: var(--sbIconScale);
 
     ._48112cbe77dc5022-folderPreviewWrapper {
       transition: .2s ;
+      pointer-events: auto ;
 
       &:hover {
-        border-radius: 25% ;
+        border-radius: 15% ;
       }
     }
     // <- Folder Icon & Grid preview
@@ -455,11 +465,6 @@ $iconScale: var(--sbIconScale);
   }
 
   .cc5dd25190031396-wrapper {
-    transform: rotate(90deg);
-    scale: $iconScale;
-    margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
-    height: $iconBaseSize !important ;
-    width: $iconBaseSize !important ;
     pointer-events: auto ;
   }
 

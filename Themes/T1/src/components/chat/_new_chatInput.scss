@@ -11,7 +11,8 @@
 
 .f75fb00fb7356cbe-form {
   margin-top: 0 !important ;
-  padding: 0 8px 0 0 !important ;
+  // padding: 0 8px 0 0 !important ;
+  padding: 0 !important ;
 
   --channel-text-area-placeholder: var(--text-muted);
   --custom-channel-textarea-text-area-height: 46px ;
@@ -77,13 +78,33 @@
   }
 
   // Slow mode icon
+  // :is(.b216994de061a9e2-cooldownWrapper, .b216994de061a9e2-cooldownTex) {
+  //   display: contents ;
+  //   position: absolute ;
+  // }
+
+  // .b216994de061a9e2-cooldownWrapper {
+  //   .b216994de061a9e2-cooldownText {
+  //     visibility: hidden ;
+  //   }
+
+  //   .b216994de061a9e2-slowModeIcon {
+  //     position: absolute ;
+  //     visibility: visible ;
+  //     margin: 0 ;
+  //     width: 16px ;
+  //     height: 16px ;
+  //   }
+  // }
+
   .b216994de061a9e2-cooldownWrapper {
     position: absolute ;
-    right: -32px ;
-    bottom: -20px ;
+    top: 16px ;
+    left: 0px ;
     height: 16px ;
     width: 16px ;
     pointer-events: auto ;
+    padding: 0 ;
 
     .b216994de061a9e2-cooldownText {
       visibility: hidden ;
@@ -93,8 +114,7 @@
       position: absolute ;
       margin: 0 ;
       visibility: visible ;
-      width: 16px ;
-      height: 16px ;
+      scale: 1.3 ;
 
       path {
         fill: var(--interactive-normal);
@@ -105,11 +125,14 @@
 
   // -> Buttons
   // -> Attach btn
-  // parent container
+  // main container
   ._0923f156a0410684-attachWrapper {
-    padding: 0 ;
+    padding: 0px ;
     height: var(--custom-channel-textarea-text-area-height);
     width: var(--custom-channel-textarea-text-area-height);
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
 
     &:after {
       content: "" ;
@@ -122,13 +145,19 @@
     }
   }
 
+  // pointer events
   ._740174f3d6a2c8fe-attachButton {
     margin: 0 ;
-    height: 100% ;
   }
 
-  ._0923f156a0410684-attachButtonInner:hover {
-    background: none ;
+  ._0923f156a0410684-attachButtonInner {
+    height: auto ;
+    width: auto ;
+    padding: 2px ;
+
+    &:hover {
+      background: none ;
+    }
   }
   // <- Attach btn
 
@@ -142,7 +171,8 @@
 
     // Nitro btn
     @container style(--hide-chatBtn-nitro: 1) {
-      ._740174f3d6a2c8fe-button:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
+      // ._740174f3d6a2c8fe-button:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
+      .c0c49a3e5c8626ac-container:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
         display: none ;
       }
     }
