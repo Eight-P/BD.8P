@@ -175,3 +175,8 @@
   }
 }
 // <- Discovery Text
+
+// Tooltips (shouldn't need them anyway)
+._59d0d7075b521375-clickTrapContainer > ._59d0d7075b521375-layer:has(._4e35b986167c457d-tooltip) {
+  pointer-events: none ;
+}
