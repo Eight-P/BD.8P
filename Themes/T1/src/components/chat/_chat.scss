@@ -1,4 +1,4 @@
-@use '../mixins/_mixins' as * ;
+@use '../mixins/mixins' as * ;
 
 // -- Chat
 
@@ -27,9 +27,9 @@ $ChatScrollerBottomSpacing: 16px ;
 #app-mount {
 
 // -> Chat container
-.page__5e434 {
-  // :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
-  .scrollerBase_d125d2 {
+._5e434347c823b592-page {
+  // :is(._99f8cc7ad4790ce9-scrollerBase, .d125d22cdfd32cfe-scrollerBase) {
+  .d125d22cdfd32cfe-scrollerBase {
     @include scrollerFadeOut();
 
     &::-webkit-scrollbar-track {
@@ -37,23 +37,23 @@ $ChatScrollerBottomSpacing: 16px ;
     }
   }
 }
-.chatContent_f75fb0 {
+.f75fb00fb7356cbe-chatContent {
 
   // "#" Icon at the channels very top, idk
-  .container__00de6 :is(.emptyChannelIcon__00de6, .iconWrapper__54b20) { display: none }
+  ._00de6f6c14b53606-container :is(._00de6f6c14b53606-emptyChannelIcon, ._54b20d287f944f7b-iconWrapper) { display: none }
 
   // Scroller gradient
-  .chatGradientBase__36d07 { display: none }
+  ._36d072eab2b2e737-chatGradientBase { display: none }
 
   // Scroller bottom spacer
-  .scrollerSpacer__36d07 {
+  ._36d072eab2b2e737-scrollerSpacer {
     height: $ChatScrollerBottomSpacing ;
   }
 }
 // <- Chat container
 
 // -> Chat bars
-.chatContent_f75fb0 .barBase__0f481 {
+.f75fb00fb7356cbe-chatContent ._0f481cbbd7530492-barBase {
   // -> general
   right: 5px ;
   left: 5px ;
@@ -72,7 +72,7 @@ $ChatScrollerBottomSpacing: 16px ;
   @include shadowEffect("box_3");
 
   // Viewing older messages (really just one big button)
-  &.jumpToPresentBar__0f481 {
+  &._0f481cbbd7530492-jumpToPresentBar {
     bottom: 14px ; // space for typing indicator
     cursor: pointer ;
 
@@ -82,7 +82,7 @@ $ChatScrollerBottomSpacing: 16px ;
   }
 
   // Mark As Read (two separate buttons)
-  &.newMessagesBar__0f481 {
+  &._0f481cbbd7530492-newMessagesBar {
     top: -4px ;
 
     button {
@@ -96,7 +96,7 @@ $ChatScrollerBottomSpacing: 16px ;
     }
 
     // text btn left
-    .barButtonMain__0f481 {
+    ._0f481cbbd7530492-barButtonMain {
       flex: 0 1 auto ;
       margin-right: auto ;
     }
@@ -111,7 +111,7 @@ $ChatScrollerBottomSpacing: 16px ;
   // <- general
 
   // -> Summaries
-  :is(.barButtonAlt__0f481, .newTopicsBarTopicSection__0f481) {
+  :is(._0f481cbbd7530492-barButtonAlt, ._0f481cbbd7530492-newTopicsBarTopicSection) {
     color: var(--interactive-hover);
     background: none ;
     cursor: pointer;
@@ -121,42 +121,42 @@ $ChatScrollerBottomSpacing: 16px ;
     }
   }
 
-  .newTopicsBarText__0f481 {
+  ._0f481cbbd7530492-newTopicsBarText {
     color: var(--interactive-hover);
   }
 
-  .newTopicsBarTopicSection__0f481:hover .newTopicsBarText__0f481 {
+  ._0f481cbbd7530492-newTopicsBarTopicSection:hover ._0f481cbbd7530492-newTopicsBarText {
     color: var(--interactive-active);
   }
   // <- Summaries
 }
 
 // "This channel is not on your channel list" bar
-.chatHeaderBar_dc83f5,
-.chatHeaderBar_a53846 {
+.dc83f5490ab160ad-chatHeaderBar,
+.a53846f6e9583cbd-chatHeaderBar {
   background: none ;
   box-shadow: none ;
 
   // border-top: 1px solid var(--background-modifier-accent);
 
-  .chatHeaderBarText_dc83f5 {
+  .dc83f5490ab160ad-chatHeaderBarText {
     font-weight: 600 ;
   }
 }
 // <- Chat bars
 
 // -> Mentions (Channel, User, Role, Discord cdn File)
-.wrapper_f61d60 {
+.cdf8a9a2bbd98bd3-wrapper {
   color: var(--Blurple);
   background: none ;
 
   // Role, User
-  &.roleMention__75297, &.mention:not(:hover) {
+  &._752971923a1e6683-roleMention, &.mention:not(:hover) {
     background: none !important ;
   }
 
   // File link
-  &.attachmentLink .icon_a9c2d1 path {
+  &.attachmentLink .e599633bf6c09eb3-icon path {
     fill: var(--Blurple);
   }
 
@@ -170,12 +170,12 @@ $ChatScrollerBottomSpacing: 16px ;
 
 // -> Reactions
 // Reaction item chat, forum post
-:is(.reaction__23977, .reaction_f8896c) {
+:is(._23977d5b7cef7361-reaction, .f8896c4f6be18f59-reaction) {
   border: none ;
   border-radius:4px ;
 
   // number
-  :is(.reactionCount__23977, .reactionCount_f8896c) {
+  :is(._23977d5b7cef7361-reactionCount, .f8896c4f6be18f59-reactionCount) {
     font-size: 0.875rem ;
   }
 
@@ -189,7 +189,7 @@ $ChatScrollerBottomSpacing: 16px ;
 // @container style(--show-reactionAnimations: 1) {
 @container style(--hide-reactionAnimations: 0) {
 
-  :is(.reaction__23977, .reaction_f8896c) {
+  :is(._23977d5b7cef7361-reaction, .f8896c4f6be18f59-reaction) {
     background: var(--background-modifier-hover);
 
     &:hover {
@@ -197,14 +197,14 @@ $ChatScrollerBottomSpacing: 16px ;
     }
   }
 
-  :is(.reactionMe__23977, .reactionMe_f8896c) {
+  :is(._23977d5b7cef7361-reactionMe, .f8896c4f6be18f59-reactionMe) {
     background-color: var(--Blurple-light);
 
     &:hover {
       background-color: var(--Blurple-light-hover);
     }
 
-    :is(.reactionCount__23977, .reactionCount_f8896c) {
+    :is(._23977d5b7cef7361-reactionCount, .f8896c4f6be18f59-reactionCount) {
       color: var(--Blurple);
     }
   }
@@ -213,7 +213,7 @@ $ChatScrollerBottomSpacing: 16px ;
 // @container style(--show-reactionAnimations: 0) {
 @container style(--hide-reactionAnimations: 1) {
 
-  :is(.reaction__23977, .reaction_f8896c) {
+  :is(._23977d5b7cef7361-reaction, .f8896c4f6be18f59-reaction) {
     background: var(--background-modifier-hover) !important ;
     animation: none !important ;
 
@@ -221,29 +221,29 @@ $ChatScrollerBottomSpacing: 16px ;
       background: var(--background-modifier-selected) !important ;
     }
 
-    :is(.burstGlow__23977, .effectsWrapper_a9ddb3) { display: none }
+    :is(._23977d5b7cef7361-burstGlow, .a9ddb3f9f511689f-effectsWrapper) { display: none }
 
-    .hideEmoji__23977 {
+    ._23977d5b7cef7361-hideEmoji {
       opacity: 1 !important ;
     }
   }
 
   // Active reaction
-  :is(.reactionMe__23977, .reactionMe_f8896c) {
+  :is(._23977d5b7cef7361-reactionMe, .f8896c4f6be18f59-reactionMe) {
     background-color: var(--Blurple-light) !important ;
 
     &:hover {
       background-color: var(--Blurple-light-hover) !important ;
     }
 
-    :is(.reactionCount__23977, .reactionCount_f8896c) {
+    :is(._23977d5b7cef7361-reactionCount, .f8896c4f6be18f59-reactionCount) {
       color: var(--Blurple) !important ;
     }
   }
 }
 
 // add reaction btn
-.reactions__23977 .reactionBtn__23977 {
+._23977d5b7cef7361-reactions ._23977d5b7cef7361-reactionBtn {
   border: none ;
   background: none !important;
 }
@@ -251,11 +251,11 @@ $ChatScrollerBottomSpacing: 16px ;
 
 // -> Searchbar results popout
 // when forum channel is open on the left
-.container_f369db + .searchResultsWrap_a9e706 {
+.f369dba7416c67f0-container + .a9e7064fdee8e9b0-searchResultsWrap {
   max-width: calc(100% - 350px);
 }
 
-.searchResultsWrap_a9e706 {
+.a9e7064fdee8e9b0-searchResultsWrap {
   border: none ;
   width: 50% ;
   max-width: calc(100% - 45px);
@@ -266,7 +266,7 @@ $ChatScrollerBottomSpacing: 16px ;
   @include shadowEffect("box_1");
 
   // -> Header
-  .searchHeader_f3b986 {
+  .f3b986a284a18c78-searchHeader {
     direction: ltr ;
 
     // n of search results
@@ -278,11 +278,11 @@ $ChatScrollerBottomSpacing: 16px ;
 
   // -> Body
   // Content scroller
-  .scroller_a9e706 {
+  .a9e7064fdee8e9b0-scroller {
     padding: 6px 0 0 0 !important ;
     direction: ltr ;
 
-    .searchResultGroup_c68065 {
+    .c68065c20f8328a7-searchResultGroup {
       margin-bottom: 14px ;
       padding-bottom: 10px ;
 
@@ -290,7 +290,7 @@ $ChatScrollerBottomSpacing: 16px ;
     }
 
     // message item
-    .searchResult__02a39 {
+    ._02a39cb2980ceaaf-searchResult {
       border: none ;
       border-radius: 0 ;
 
@@ -300,23 +300,23 @@ $ChatScrollerBottomSpacing: 16px ;
     }
 
     // channel name container
-    .channelNameContainer_c68065 {
+    .c68065c20f8328a7-channelNameContainer {
       margin-left: 10px ;
     }
 
     // channel name & icon
-    :is(.channelNameText_c68065, .channelNameIcon_c68065) {
+    :is(.c68065c20f8328a7-channelNameText, .c68065c20f8328a7-channelNameIcon) {
       padding-right: 6px ;
       color: var(--text-normal);
     }
 
-    .button__02a39 {
+    ._02a39cb2980ceaaf-button {
       @include shadowEffect("box_3");
     }
   }
 
   // Switch page btns
-  .pageButton_c15210 {
+  .c1521037ef09de7e-pageButton {
     background: none ;
     color: var(--interactive-normal);
 
@@ -324,7 +324,7 @@ $ChatScrollerBottomSpacing: 16px ;
       color: var(--interactive-hover);
     }
 
-    &.activeButton_c15210 {
+    &.c1521037ef09de7e-activeButton {
       color: var(--interactive-active);
     }
   }

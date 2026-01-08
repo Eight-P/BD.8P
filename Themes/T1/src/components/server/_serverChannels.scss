@@ -1,35 +1,35 @@
 // Server view | Channels sidebar
 
-.container__2637a {
+._2637a2609f343032-container {
 
   // -> Meta channels
   // All separators but the first
-  .containerDefault__29444 ~ .sectionDivider__629e4 {
+  ._29444ba32c7fbeab-containerDefault ~ ._629e4c86564a4ee7-sectionDivider {
     display: none ;
   }
 
   // Separator between normal channels and favorites/suggested
-  .sectionDivider__629e4 ~ .sectionDivider__629e4 ~ [style="height: 12px;"] {
+  ._629e4c86564a4ee7-sectionDivider ~ ._629e4c86564a4ee7-sectionDivider ~ [style="height: 12px;"] {
     margin-top: 12px ;
 
     @include divider(top);
   }
 
   // Events
-  .eventName_e2d7b8 {
+  .e2d7b8b5e6e6e751-eventName {
     color: var(--header-secondary) !important;
   }
 
   // Server boost stats
-  .container__0d0f9 {
+  ._0d0f9ddd12a3ace3-container {
 
     @container style(--hide-serverBoostStats: 1) { & { display: none } }
 
-    .progressContainer__0d0f9 {
+    ._0d0f9ddd12a3ace3-progressContainer {
       background: none ;
     }
 
-    .progress__0d0f9 {
+    ._0d0f9ddd12a3ace3-progress {
       opacity: .6 ;
     }
   }
@@ -37,17 +37,17 @@
 
   // -> Text & Voice Channels
   // -> Categories
-  .wrapper__29444  {
+  ._29444ba32c7fbeab-wrapper  {
     padding: 0 8px 0 4px ;
 
     // inner container
-    .mainContent__29444 {
+    ._29444ba32c7fbeab-mainContent {
       flex-direction: row-reverse ;
       justify-content: left ;
     }
 
     // Category names
-    .name__29444 {
+    ._29444ba32c7fbeab-name {
       font-size: 12px ;
       font-weight: 700 ;
       text-transform: uppercase ;
@@ -56,16 +56,16 @@
   // <- Categories
 
   // -> Channels
-  .wrapper__2ea32 {
+  ._2ea32c412048f708-wrapper {
 
     // inner container with link
-    .link__2ea32 {
+    ._2ea32c412048f708-link {
       background: transparent ;
       padding: var(--space-xxs);
     }
 
     // Icon ("#", speaker, ..)
-    .icon__2ea32 {
+    ._2ea32c412048f708-icon {
       width: 15px ;
       height: 15px ;
       margin: 2.5px ;
@@ -74,16 +74,16 @@
     }
 
     // Channel name
-    .name__2ea32 {
+    ._2ea32c412048f708-name {
       color: var(--channels-default);
       margin-right: calc(var(--space-xs) * -0.5); // counter for gap
     }
 
-    &:hover .name__2ea32 { color: var(--interactive-hover) }
+    &:hover ._2ea32c412048f708-name { color: var(--interactive-hover) }
 
     :is(
-      .dismissButton__29444, // Suggested channels in sidebar
-      .actionIcon_c69b6d // channels item btns
+      ._29444ba32c7fbeab-dismissButton, // Suggested channels in sidebar
+      .c69b6db0641110f6-actionIcon // channels item btns
     ) {
       color: $BtnIconNormal ;
 
@@ -94,29 +94,29 @@
 
     // -> Channel options and infos
     // Settings and invite buttons
-    .iconItem_c69b6d { display: none }
-    &:hover .iconItem_c69b6d { display: block }
+    .c69b6db0641110f6-iconItem { display: none }
+    &:hover .c69b6db0641110f6-iconItem { display: block }
 
     // Channel badges (e.g. "NEW" (suggested panel), "LIVE")
-    .textBadge__2b1f5 {
+    ._2b1f52e43a8f1c02-textBadge {
       background: none !important ;
       color: var(--interactive-hover);
     }
 
     // "new" badge on forum channel
-    .channelInfo_c69b6d .text-xs\/semibold_cf4812 {
+    .c69b6db0641110f6-channelInfo .text-xs\/semibold_cf4812 {
       color: var(--interactive-hover) !important;
     }
 
     // Connection limit (voice)
-    .wrapper__260e1 {
+    ._260e1982cd52c5c3-wrapper {
       background: none ;
       border: none ;
       color: var(--channels-default);
 
       span { background: none }
 
-      .total__260e1::after {
+      ._260e1982cd52c5c3-total::after {
         content: "|" ;
         top: 0px ;
         left: -5px ;
@@ -125,37 +125,37 @@
     }
 
     // elapsed time
-    .tabularNumbers__4bd52 {
+    ._4bd5201c86a2042b-tabularNumbers {
       color: var(--channels-default) !important;
     }
     // <- Channel options and infos
 
     // -> Channel types
     // Channel selected / connected
-    &.modeSelected__2ea32, &.modeConnected__2ea32 {
+    &._2ea32c412048f708-modeSelected, &._2ea32c412048f708-modeConnected {
 
       // Channel name
-      .name__2ea32 {
+      ._2ea32c412048f708-name {
         color: var(--interactive-active) !important;
       }
       // Channel icon (left)
-      .icon__2ea32 {
+      ._2ea32c412048f708-icon {
         color: var(--interactive-active) !important;
       }
     }
 
     // Channel muted
-    &.modeMuted__2ea32 {
+    &._2ea32c412048f708-modeMuted {
       // Channel icon (left)
-      .icon__2ea32 {
+      ._2ea32c412048f708-icon {
         color: var(--interactive-muted);
       }
     }
 
     // Channel unread
-    &.modeUnreadImportant__2ea32 {
+    &._2ea32c412048f708-modeUnreadImportant {
       // pill
-      .unread__2ea32 {
+      ._2ea32c412048f708-unread {
         background-color: var(--interactive-hover);
       }
     }
@@ -165,7 +165,7 @@
   // <- Channels
 
   // "live" indicator for user in Voice channel
-  .voiceUser__07f91 .live_a7acae {
+  ._07f9193042954787-voiceUser .a7acaedd978a9637-live {
     background: none !important ;
     color: var(--red);
   }
@@ -191,13 +191,13 @@
     @content ;
   }
 
-  .bar__3b95d {
-    @include channelBar(".mention__3b95d .text__3b95d");
+  ._3b95d7d910416e54-bar {
+    @include channelBar("._3b95d7d910416e54-mention ._3b95d7d910416e54-text");
   }
 
-  .bar__7aaec {
-    @include channelBar(".mentionsBar__7aaec .barText__7aaec") {
-      .voiceChannelsIcon__7aaec, .barText__7aaec {
+  ._7aaec78b97ff00f7-bar {
+    @include channelBar("._7aaec78b97ff00f7-mentionsBar ._7aaec78b97ff00f7-barText") {
+      ._7aaec78b97ff00f7-voiceChannelsIcon, ._7aaec78b97ff00f7-barText {
         color: var(--header-secondary);
       }
     }
@@ -205,23 +205,23 @@
   // <- Floating notice bar
 
    // Voice user list when channels are hidden
-   .overlap__07f91 .avatar__07f91 {
+   ._07f9193042954787-overlap ._07f9193042954787-avatar {
     border: none ;
     margin: 4px ;
   }
 
   // "Hide/Show all voice Channels btn
-  .refreshVoiceChannelsButton__29444 {
+  ._29444ba32c7fbeab-refreshVoiceChannelsButton {
     width: 65% ;
     margin: 6px auto 0 auto ;
     padding: 0 16px ;
   }
 
   // loading placeholder blobs
-  .category__3b43f {
+  ._3b43ffc98ef7a68a-category {
     background: var(--background-modifier-active);
   }
-  .channel__3b43f :is(.category__3b43f, .channelName__3b43f, .channelIcon__3b43f) {
+  ._3b43ffc98ef7a68a-channel :is(._3b43ffc98ef7a68a-category, ._3b43ffc98ef7a68a-channelName, ._3b43ffc98ef7a68a-channelIcon) {
     background: var(--background-modifier-accent);
   }
 }

@@ -3,29 +3,29 @@
 #app-mount {
 
 // -> Voicecall view
-// .callContainer_cb9592 .l {
+// .cb9592ad77576717-callContainer .l {
 //   --aswc: var(--always-show-voicecontrols);
 
-//   .root_bfe55a {
+//   .bfe55a0aaaf62375-root {
 //     margin: calc(var(--aswc) * 48px) 0 calc(var(--aswc) * 56px) 0 ;
 //     height: calc(100% - (var(--aswc) * (48px + 56px)));
 //   }
 
 //   // player popped out
-//   .root_e605a1 {
+//   .ccf17423f104902d-root {
 //     background: none ;
 //   }
   
 //   // -> Buttons
 //   // always show controls/btns 
-//   .idle_bfe55a {
-//     :is(.controlSection_bfe55a, .chatButton_bfe55a) {
+//   .bfe55a0aaaf62375-idle {
+//     :is(.bfe55a0aaaf62375-controlSection, .chatButton_bfe55a) {
 //       opacity: var(--aswc) !important ;
 //     }
 //   }
 
 //   // Gradient effect on hover
-//   .gradientContainer_bfe55a {
+//   .bfe55a0aaaf62375-gradientContainer {
 //     height: 80px ;
 //     background-image: linear-gradient(
 //       hsl(0, 0%, 0%) 0%,
@@ -38,32 +38,32 @@
 //   }
   
 //   // Buttons container
-//   .videoControls_bfe55a { 
+//   .bfe55a0aaaf62375-videoControls { 
 //     inset: calc(var(--aswc) * -48px) 0 calc(var(--aswc) * -56px) 0 ;
 //     padding: 0 16px 0 16px ;
     
 //     // Top and bottom section
-//     .controlSection_bfe55a {
+//     .bfe55a0aaaf62375-controlSection {
 //       transform: translateZ(0) !important;
       
-//       .streamQualityIndicator__30845 { display: none }
+//       ._30845ecfafc292c8-streamQualityIndicator { display: none }
 //     }
 
 //     // seperator in header toolbar (right side top)
-//     .dot__9293f  { display: none }
+//     ._9293f6b2fc12398a-dot  { display: none }
 //   }
 //   // <- Buttons
 
 //   // -> Itemcard / Tile
-//   // .tile__2f4f7 {
+//   // ._2f4f7eb58b61c328-tile {
 
 //   //   @include shadowEffect("box_2");
 
 //   //   // stream quality / live indicator
-//   //   .indicators__2f4f7 { display: none }
+//   //   ._2f4f7eb58b61c328-indicators { display: none }
 
 //   //   // Avatar
-//   //   .avatarWrapper_fb62e2 {
+//   //   .fb62e279d3f0a88a-avatarWrapper {
       
 //   //     foreignObject {
 //   //       mask: none ;
@@ -76,7 +76,7 @@
 //   //     }
       
 //   //     // Profile image
-//   //     .avatar__44b0c {
+//   //     ._44b0c28be7879b7b-avatar {
 //   //       border-radius: 7.5% ;
         
 //   //       &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
@@ -86,38 +86,38 @@
 //   // // <- Itemcard / Tile
 
 //   // // "invite people" empty card
-//   // .tile_d6271c .root__4ad81 {
+//   // .d6271c8ee3948714-tile ._4ad815b9a8eb0838-root {
 //   //   background: none ;
 //   // }
 
 //   // -> Focus view
-//   .root__6981d {
+//   ._6981dc6d72610110-root {
 //     padding: 0 12px ;
 //     box-sizing: border-box ;
 
 //     // Main frame top
-//     .videoFrame__6981d {
+//     ._6981dc6d72610110-videoFrame {
 
 //       // hide members btn
-//       .participantsButton__211d1 {
+//       ._211d1cc3f7e37d69-participantsButton {
 //         background: var(--background-accent);
 //       }
 //     }
 
 //     // Secondary Tiles
-//     .participantsWrapperAnimated__6981d {
+//     ._6981dc6d72610110-participantsWrapperAnimated {
 //       overflow: visible ; // for shadow
 //     }
 //   }
 //   // <- Focus view
 
 //   // -> Grid view
-//   .videoGridWrapper_a21736 {
+//   .a21736575ea33af0-videoGridWrapper {
 
-//     .videoGrid_a21736::-webkit-scrollbar { display: none }
+//     .a21736575ea33af0-videoGrid::-webkit-scrollbar { display: none }
 
 //     // Cards main container
-//     .tile_d6271c {
+//     .d6271c8ee3948714-tile {
 //       padding: 4px ;
 //       box-sizing: border-box ;
 //     }
@@ -125,45 +125,45 @@
 //   // <- Grid view
 // }
 
-.callContainer_cb9592 {
+.cb9592ad77576717-callContainer {
   border: none ;
 
   // player popped out
-  .root_e605a1 {
+  .ccf17423f104902d-root {
     background: none ;
   }
 
   // -> Control buttons
-  .buttonSection__1405b {
+  ._1405b3b8e8eb5fd0-buttonSection {
     background: none ;
     border: none ;
   }
 
   // @container style(--always-show-voicecontrols: 1) {
   @container style(--keep-voiceChannelBtns: 1) {
-    .root_bfe55a {
+    .bfe55a0aaaf62375-root {
       padding: 48px 0 50px 0 ;
       box-sizing: border-box ;
     }
 
-    .videoControls_bfe55a {
+    .bfe55a0aaaf62375-videoControls {
       padding: 0 16px ;
     }
 
-    .controlSection_bfe55a {
+    .bfe55a0aaaf62375-controlSection {
       opacity: 1 ;
       transform: none ;
       transition: none ;
     }
 
-    .gradientContainer_bfe55a { display: none }
+    .bfe55a0aaaf62375-gradientContainer { display: none }
 
-    .buttonSection__1405b {
+    ._1405b3b8e8eb5fd0-buttonSection {
       background: none ;
       border: none ;
     }
 
-    .attachedCaret_f1ceac {
+    .f1ceaca61b18918e-attachedCaret {
       background: none ;
       color: var(--interactive-normal);
 
@@ -175,15 +175,15 @@
   // <- Control buttons
 
   // -> Itemcard / Tile
-  .tile__2f4f7 {
+  ._2f4f7eb58b61c328-tile {
 
     @include shadowEffect("box_2");
 
     // stream quality / live indicator
-    .indicators__2f4f7 { display: none }
+    ._2f4f7eb58b61c328-indicators { display: none }
 
     // Avatar
-    .avatarWrapper_fb62e2 {
+    .fb62e279d3f0a88a-avatarWrapper {
       
       foreignObject {
         mask: none ;
@@ -196,7 +196,7 @@
       }
       
       // Profile image
-      .avatar__44b0c {
+      ._44b0c28be7879b7b-avatar {
         border-radius: 7.5% ;
         
         &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
@@ -205,18 +205,18 @@
   }
 
   // "invite people" empty card
-  .tile_d6271c .root__4ad81 {
+  .d6271c8ee3948714-tile ._4ad815b9a8eb0838-root {
     background: none ;
   }
   // <- Itemcard / Tile
 
   // -> Grid view
-  .videoGridWrapper_a21736 {
+  .a21736575ea33af0-videoGridWrapper {
 
-    .videoGrid_a21736::-webkit-scrollbar { display: none }
+    .a21736575ea33af0-videoGrid::-webkit-scrollbar { display: none }
 
     // Cards main container
-    .tile_d6271c {
+    .d6271c8ee3948714-tile {
       padding: 8px ;
       box-sizing: border-box ;
     }
@@ -224,21 +224,21 @@
   // <- Grid view
 
   // -> Focus view
-  .root__6981d {
+  ._6981dc6d72610110-root {
     padding: 0 12px ;
     box-sizing: border-box ;
 
     // Main frame top
-    .videoFrame__6981d {
+    ._6981dc6d72610110-videoFrame {
 
       // hide members btn
-      .participantsButton__211d1 {
+      ._211d1cc3f7e37d69-participantsButton {
         background: var(--background-floating);
       }
     }
 
     // Secondary Tiles
-    .participantsWrapperAnimated__6981d {
+    ._6981dc6d72610110-participantsWrapperAnimated {
       overflow: visible ; // for shadow
     }
   }
@@ -249,16 +249,16 @@
 
 
 // -> Stage view
-// .callContainer__722ff .l {
+// ._722ffae0e1be2672-callContainer .l {
 
 //   .gradientBackground__11664 { display: none }
 
-//   .videoControls_bfe55a {
+//   .bfe55a0aaaf62375-videoControls {
 //     padding: 0 16px 6px ;
 //   }
 
 //   // Empty/no stage
-//   .container__6b38f  {
+//   ._6b38f2a3ad7aaedf-container  {
 //     background: var(--background-modifier-hover);
 
 //     &:hover {
@@ -267,23 +267,23 @@
 //   }
 
 //   // black gradiant effect
-//   .gradientContainer_bfe55a {
+//   .bfe55a0aaaf62375-gradientContainer {
 //     background: none ;
 //   }
   
 //   // -> User Tile cards
 //   // Speaker
-//   .tileSizer_fa73d7 {
+//   .fa73d78b7c24c7ac-tileSizer {
 //     overflow: visible;
 //   }
 
-//   .tile__2f4f7 {
+//   ._2f4f7eb58b61c328-tile {
 //     overflow: visible;
 
 //     @include shadowEffect("box_2");
 
 //     // Avatar
-//     .avatarWrapper_fb62e2 {
+//     .fb62e279d3f0a88a-avatarWrapper {
       
 //       foreignObject {
 //         mask: none ;
@@ -296,7 +296,7 @@
 //       }
       
 //       // Profile image
-//       .avatar__44b0c {
+//       ._44b0c28be7879b7b-avatar {
 //         border-radius: 7.5% ;
         
 //         &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
@@ -305,18 +305,18 @@
 //   }
   
 //   // Audience
-//   .participants__9c309 {
+//   ._9c309f82892ed3cd-participants {
 //     background: none ;
     
 //     // User
-//     .tileContainer__71eb2 {
+//     ._71eb2d6ae9535ae3-tileContainer {
 //       background: none ;
       
 //       &:hover {
 //         background: var(--background-modifier-hover);
 //       }
       
-//       .avatar__71eb2 {
+//       ._71eb2d6ae9535ae3-avatar {
 //         background: none ;
 //       }
 //     }
@@ -324,7 +324,7 @@
 //   // <- User Tile cards
 
 //   // -> Buttons
-//   .controlSection_bfe55a {
+//   .bfe55a0aaaf62375-controlSection {
 
 //     .buttonWithTextButton_fcb27c {
 //       color: var(--interactive-normal);
@@ -335,7 +335,7 @@
 //       }
 //     }
 
-//     .contextMenuNub_f1ceac {
+//     .f1ceaca61b18918e-contextMenuNub {
 //       color: white ;
 //       background-color: var(--background-secondary);
 //     }
@@ -344,9 +344,9 @@
 // }
 
 // // Stage view talk requests sidebar
-// .container__664ff .l {
+// ._664ffc673b75c994-container .l {
   
-//   .headerContainer__664ff {
+//   ._664ffc673b75c994-headerContainer {
 //     box-shadow: none ;
 //   }
 // }

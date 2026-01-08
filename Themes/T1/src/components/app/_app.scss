@@ -1,4 +1,4 @@
-@use '../mixins/_mixins' as * ;
+@use '../mixins/mixins' as * ;
 
 // -- App
 
@@ -22,8 +22,8 @@
 html, span:not([class*='spinner']) { backface-visibility: hidden }
 
 // -> Unread mentions badge
-@scope (.app_a3002d) to (.guilds__5e434) {
-  .numberBadge__2b1f5 {
+@scope (.a3002d7de5be5280-app) to (._5e434347c823b592-guilds) {
+  ._2b1f52e43a8f1c02-numberBadge {
     background-color: transparent !important ;
     border-radius: 0 !important ;
     color: var(--text-normal);
@@ -39,7 +39,7 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
 #app-mount {
 
 // Layer transitions
-// .layer__960e4 { transform: none !important }
+// ._960e4207cea8323e-layer { transform: none !important }
 
 // Tab focus thing
 .focus-rings-ring {
@@ -55,34 +55,34 @@ path[fill="currentColor"] {
 }
 
 // lotties normal ( hover usually via btn container)
-.lottieIcon__5eb9b  {
+._5eb9b3cc7c2b1ce8-lottieIcon  {
   --__lottieIconColor: #{$BtnIconNormal} !important ;
 }
 // not ideal
 :is(
-  .button__201d5, .button__9db96, .button__71c22,
-  .button__06eda, .button_f7ecac, .button__24af7, .button_e6e74f
+  ._201d5e8a3c09670a-button, ._9db96f7a92c2b507-button, ._71c22426f1aad6f4-button,
+  .button__06eda, .f7ecaca5c80dbf3a-button, ._24af7f4d0326ba4f-button, .e6e74fd4d1221f53-button
 ) {
   background: none ;
   border: none ;
   color: $BtnIconNormal ;
 
-  &.colorWhite__201d5 {
+  &._201d5e8a3c09670a-colorWhite {
     color: $BtnIconActive ;
   }
 
-  &.dangerous_f7ecac {
+  &.f7ecaca5c80dbf3a-dangerous {
     color: $BtnIconDanger ;
     --__lottieIconColor: #{$BtnIconDanger} !important ;
   }
 
   // text
-  &.colorRed__201d5 {
+  &._201d5e8a3c09670a-colorRed {
     color: $BtnIconDanger ;
   }
 
   // Voice channel view, disconnect btn
-  &.disconnect_f1ceac .controlIcon_f1ceac {
+  &.f1ceaca61b18918e-disconnect .f1ceaca61b18918e-controlIcon {
     color: #{$BtnIconDanger} !important ;
     --__lottieIconColor: #{$BtnIconDanger} !important ;
   }
@@ -90,15 +90,15 @@ path[fill="currentColor"] {
   &:hover {
     color: $BtnIconHover ;
 
-    .lottieIcon__5eb9b {
+    ._5eb9b3cc7c2b1ce8-lottieIcon {
       --__lottieIconColor: #{$BtnIconHover} !important ;
     }
   }
 
   :is(
-    .closeIcon__45690,
-    .controlIcon_f1ceac,
-    .addButtonIcon__29444
+    .closeIcon_e8b59c,
+    .f1ceaca61b18918e-controlIcon,
+    ._29444ba32c7fbeab-addButtonIcon
   ) {
     color: currentColor ;
   }
@@ -106,11 +106,11 @@ path[fill="currentColor"] {
 
 // basic
 :is(
-  .searchClearHistory__56fec, // search popout clear
-  .searchLearnMore__56fec, // search popout help link btn
-  .closeIcon__972a0, // remove dms
-  .embedSuppressButton__623de, // remove embed from msg
-  .closeIcon__6e2b9 // close discord notice bar
+  ._56fec8e8b8048fe0-searchClearHistory, // search popout clear
+  ._56fec8e8b8048fe0-searchLearnMore, // search popout help link btn
+  ._972a0d22c8afa7f0-closeIcon, // remove dms
+  ._623de82e76ad7f82-embedSuppressButton, // remove embed from msg
+  ._6e2b9359c6f84cfd-closeIcon // close discord notice bar
 ) {
   color: $BtnIconNormal ;
 
@@ -122,7 +122,7 @@ path[fill="currentColor"] {
 
 
 // -> Text btns
-.button_a22cb0:not(.icon-only_a22cb0) {
+.a22cb0c66246f5d3-button:not(.a22cb0c66246f5d3-icon-only) {
   border: none ;
   border-radius: 3px ;
   color: $BtnTextNormal ;
@@ -133,7 +133,7 @@ path[fill="currentColor"] {
     background: $BtnBackgroundHover ;
   }
 
-  &.secondary_a22cb0 {
+  &.a22cb0c66246f5d3-secondary {
     background: none ;
     color: $BtnTextSecondary ;
 
@@ -146,13 +146,13 @@ path[fill="currentColor"] {
   &.shinyButton_a22cb0 {
     color: $BtnIconActive !important ;
 
-    .subButtonText_c880e8 {
+    .ac86f68ab746d5ff-subButtonText {
       color: $BtnIconActive ;
     }
   }
 
   // Danger
-  &:is(.critical-secondary_a22cb0, .critical-primary_a22cb0) {
+  &:is(.a22cb0c66246f5d3-critical-secondary, .a22cb0c66246f5d3-critical-primary) {
     color: $BtnTextDanger ;
 
     &:hover {
@@ -160,27 +160,27 @@ path[fill="currentColor"] {
       background: $BtnBackgroundDanger ;
     }
   }
-  // &.lookOutlined__201d5  &.lookLink__201d5
+  // &._201d5e8a3c09670a-lookOutlined  &._201d5e8a3c09670a-lookLink
 }
 // <- Text btns
 
 // "Bot"/"server" Tag Indicator
-.botTag__82f07 {
+._82f0793afa59e5dc-botTag {
   color: var(--text-normal);
   background-color: var(--background-secondary);
 }
 
 // border from .theme-midnight
 :is(
-  .content_f75fb0, // chat
-  .tabBody__133bf, // home
-  .subtitleContainer_f75fb0 // titlebar
+  .f75fb00fb7356cbe-content, // chat
+  ._133bf5eea8e33a34-tabBody, // home
+  .f75fb00fb7356cbe-subtitleContainer // titlebar
 ) {
   border-left: none ;
 }
 
 // -> Selectable items (settings sidebar, various nav/tab bars, ...)
-.item_aa8da2 {
+.aa8da23faa27393c-item {
   background: none !important ;
   border: none ;
   color: var(--interactive-normal);
@@ -194,7 +194,7 @@ path[fill="currentColor"] {
     color: var(--interactive-hover);
   }
 
-  &.selected_aa8da2 {
+  &.aa8da23faa27393c-selected {
     color: var(--interactive-active);
 
     &::after {
@@ -204,12 +204,12 @@ path[fill="currentColor"] {
 }
 // <- Selectable items
 
-.app_a3002d {
+.a3002d7de5be5280-app {
 
   // -> search bars
   // settings / friends list
-  .container__72c38 {
-    @include searchbar(".container__0f084") {
+  ._72c3859781ebce8f-container {
+    @include searchbar("._0f0849b61557225e-container") {
       // min-height: 30px ;
       // padding-left: 0 ;
     }
@@ -222,10 +222,10 @@ path[fill="currentColor"] {
 
   // -> Scrollbars
   :is(
-    .scrollerBase_d125d2,
-    .scrollerBase_c8b5c7
-    // .auto__99f8c,
-    // .scrollerBase__99f8c
+    .d125d22cdfd32cfe-scrollerBase,
+    .c8b5c7128a90b79f-scrollerBase
+    // ._99f8cc7ad4790ce9-auto,
+    // ._99f8cc7ad4790ce9-scrollerBase
   ) {
     @include scrollbar();
   }

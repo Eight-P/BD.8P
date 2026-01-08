@@ -3,15 +3,15 @@
 #app-mount {
 
 // -> Forum channel
-.container_f369db {
+.f369dba7416c67f0-container {
 
   // -> Search/Create Posts header
-  .header_f369db {
+  .f369dba7416c67f0-header {
     background: var(--background-modifier-accent);
     border: none ;
 
     // search has focus
-    &.headerWithMatchingPosts_f369db {
+    &.f369dba7416c67f0-headerWithMatchingPosts {
       background: var(--background-modifier-selected);
       border-radius: 0 ;
     }
@@ -23,33 +23,33 @@
   }
 
   // Search footer when expanded
-  .matchingPostsRow_f369db {
+  .f369dba7416c67f0-matchingPostsRow {
     background: var(--background-modifier-selected);
     border: none ;
   }
   // <- Search/Create Posts header
 
   // -> Post Guidelines
-  .container_ca49a1  {
+  .ca49a1898ddc29e3-container  {
     border: none ;
 
-    .descriptionContainer_ca49a1 {
+    .ca49a1898ddc29e3-descriptionContainer {
       background: none ;
     }
 
     // -> "View All" guideline
-    .descriptionContainer_ca49a1:has(.showMore_ca49a1) .guidelines_ca49a1 {
+    .ca49a1898ddc29e3-descriptionContainer:has(.ca49a1898ddc29e3-showMore) .ca49a1898ddc29e3-guidelines {
       margin-bottom: 10px ;
 
       @include scrollerFadeOut($top:0px, $bottom:20px);
     }
 
-    .gradient_ca49a1 { display: none }
+    .ca49a1898ddc29e3-gradient { display: none }
 
-    .linkContainer_ca49a1 {
+    .ca49a1898ddc29e3-linkContainer {
       background: none ;
     }
-    .showMoreLink_ca49a1 {
+    .ca49a1898ddc29e3-showMoreLink {
       padding: 4px 16px ;
     }
     // <- "View All" guideline
@@ -57,10 +57,10 @@
   // <- Post Guidelines
 
   // -> Tags filter
-  .tagsContainer_f369db {
+  .f369dba7416c67f0-tagsContainer {
 
     // Button, Tags
-    .button__201d5, .tag_f369db {
+    ._201d5e8a3c09670a-button, .tag_f369db {
       background: var(--background-modifier-accent);
       border-radius: 24px !important ;
 
@@ -68,21 +68,21 @@
         background: var(--background-modifier-selected);
 
         // Sort, Tags, All tags btn text
-        .sortDropdownText_f369db, .defaultColor__4bd52, .contents__201d5 {
+        .f369dba7416c67f0-sortDropdownText, ._4bd5201c86a2042b-defaultColor, ._201d5e8a3c09670a-contents {
           color: var(--interactive-active) !important ;
         }
       }
     }
 
     // Sort, Tags, All tags btn text
-    .sortDropdownText_f369db, .defaultColor__4bd52, .contents__201d5 {
+    .f369dba7416c67f0-sortDropdownText, ._4bd5201c86a2042b-defaultColor, ._201d5e8a3c09670a-contents {
       color: var(--text-normal) !important ;
     }
   }
   // <- Tags filter
 
   // -> Item card list & grid
-  :is(.container_faa96b, .container__9a337) {
+  :is(.faa96b2163f6a142-container, ._9a337c84ff86a914-container) {
     border: none ;
     transform: none ;
     box-shadow: none ;
@@ -96,7 +96,7 @@
   }
 
   // Tags
-  .pill_a2c9e8 {
+  .a2c9e80f6531ccc2-pill {
     background: var(--background-modifier-accent);
     border: none ;
     box-shadow: none ;
@@ -105,11 +105,11 @@
 
   // -> Grid view
   // grid item inner
-  .contentPreview__9a337 {
+  ._9a337c84ff86a914-contentPreview {
     background: none ;
     border: none ;
 
-    .content__9a337 {
+    ._9a337c84ff86a914-content {
       height: calc(100% - 27px);
 
       @include scrollerFadeOut(0px, 10px);
@@ -117,18 +117,18 @@
   }
 
   // Pin icon & Tags container on text posts
-  .textContentFooter__9a337 {
+  ._9a337c84ff86a914-textContentFooter {
     background: none ;
     padding: 0 ;
     margin: 0 ;
 
-    .tags__08166 {
+    ._08166c4389c22135-tags {
       margin-bottom: 0 ;
     }
   }
 
   // tags footer in image post
-  .tagsRow__9a337 .pill_a2c9e8 {
+  ._9a337c84ff86a914-tagsRow .a2c9e80f6531ccc2-pill {
     background: var(--background-tertiary);
   }
 
@@ -140,7 +140,7 @@
 }
 
 // main chat with split view thread
-.threadSidebarOpen_f75fb0 {
+.f75fb00fb7356cbe-threadSidebarOpen {
   // border-radius: 0 ;
   border: none ;
   overflow: visible ;
@@ -162,13 +162,13 @@
 
 // -> Forum / Threads chat
 // -> main container
-.chatLayerWrapper__01ae2  {
+._01ae244280823725-chatLayerWrapper  {
   // for floating resize
   width: 100% ;
   pointer-events: none ;
 
   // resize bar
-  .resizeHandle__01ae2 {
+  ._01ae244280823725-resizeHandle {
     background: none ;
     pointer-events: auto ;
     width: 4px ;
@@ -182,34 +182,34 @@
 // <- main container
 
 // -> split and floating chat
-.container__01ae2 {
+._01ae244280823725-container {
   pointer-events: auto ;
   border: none ;
   border-radius: 0 ;
 
   // header - separator
-  .chat_ee72fa::before {
+  .a44415a3320e67de-chat::before {
     // display: none ;
   }
 
   // Forum, Thread Icon, post to comment separator
-  :is(.iconWrapper__7e6bb, .iconWrapper__54b20, .divider_ee23ac) {
+  :is(._7e6bb757ba16c548-iconWrapper, ._54b20d287f944f7b-iconWrapper, .ee23ac2acd215184-divider) {
     display: none ;
   }
 
   // fixing discord underline color
-  .threadCreatorName__54b20 {
+  ._54b20d287f944f7b-threadCreatorName {
     text-decoration: none ;
 
     &:hover {
-      .username__703b9 {
+      ._703b91fc872193e8-username {
         text-decoration: underline ;
       }
     }
   }
 
   // -> meta/info bar
-  .container__34c2c {
+  ._34c2c51cfce1632e-container {
     margin: 12px 0 0 13px ;
     padding: 4px 10px ;
     background: var(--background-modifier-accent) !important;
@@ -218,12 +218,12 @@
 
     @include shadowEffect("box_2");
 
-    :is(.addReactButton__34c2c, .buttonInner__34c2c) {
+    :is(._34c2c51cfce1632e-addReactButton, .buttonInner__34c2c) {
       background: none  ;
     }
 
     // when sticky
-    &.header__34c2c {
+    &._34c2c51cfce1632e-header {
       background: var(--background-secondary-alt) !important;
       top: 0px ;
     }
@@ -231,10 +231,10 @@
   // <- meta/info bar
 
   // -> floating
-  &.floating__01ae2.chatTarget__01ae2 {
+  &._01ae244280823725-floating._01ae244280823725-chatTarget {
     display: none ;
   }
-  &.floating__01ae2 {
+  &._01ae244280823725-floating {
     resize: horizontal ;
     direction: rtl;
     right: 0 ;
@@ -245,7 +245,7 @@
 
     @include shadowEffect("box_1");
 
-    :is(.container__9293f, .container_fb64c9, .chat_ee72fa, .chat_f02135, .chat_a44415) {
+    :is(._9293f6b2fc12398a-container, .fb64c9a451c49797-container, .a44415a3320e67de-chat, .f02135b221cc85a6-chat, .a44415a3320e67de-chat) {
       direction: ltr ;
     }
   }

@@ -1,18 +1,18 @@
 // Modal backdrop
-.backdrop__78332 {
+._783321f3468cf9e8-backdrop {
   background: rgba(0, 0, 0, 0.75) !important;
 }
 
-.layer_bc663c {
+.bc663cf6190ce9ad-layer {
 
-  :is(.small__49fc1, .medium__49fc1) {
+  :is(._49fc18ba07c5025f-small, ._49fc18ba07c5025f-medium) {
     max-height: 75vh ;
     height: auto ;
     border: none ;
   }
 
   // -> most modals (not user modal)
-  .root__49fc1:not(.root__9c3be) {
+  ._49fc18ba07c5025f-root:not(._9c3bea41fd465666-root) {
 
     // -> General
     background: $BG_Body ;
@@ -20,7 +20,7 @@
     @include scrollbar(none); // not sure why
 
     // -> Header
-    .header__49fc1 {
+    ._49fc18ba07c5025f-header {
       background: $BG_Meta ;
       padding-bottom: 8px ;
 
@@ -30,13 +30,13 @@
         margin-bottom: 14px ;
       }
 
-      .marginTop8_fd297e { display: none }
+      .fd297e0eff2da25e-marginTop8 { display: none }
     }
     // <- Header
 
     // -> Body
-    // :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
-    .scrollerBase_d125d2 {
+    // :is(._99f8cc7ad4790ce9-scrollerBase, .d125d22cdfd32cfe-scrollerBase) {
+    .d125d22cdfd32cfe-scrollerBase {
       background: $BG_Body ;
       max-height: unset ;
 
@@ -44,17 +44,17 @@
       @include scrollerFadeOut(2px, 2px);
     }
 
-    .content__49fc1 {
+    ._49fc18ba07c5025f-content {
       padding-top: 20px ;
     }
     // <- Body
 
     // -> Footer
-    .footer__49fc1 {
+    ._49fc18ba07c5025f-footer {
       background: $BG_Body ;
       background: $BG_Meta ;
 
-      .h5_b717a1 {
+      .b717a15017b82443-h5 {
         font-size: 14px ;
         color: var(--header-secondary);
       }
@@ -64,24 +64,24 @@
     // <- General
 
     // -> Invite to server
-    :is(.scroller__67dba, .inviteRowEmptyState__67dba) {
+    :is(.scroller__67dba, ._67dba15a1ae9a3e9-inviteRowEmptyState) {
       height: 100vh ; // fix height to max
     }
     // <- Invite to server
 
     // -> Create group DM (hopefully)
-    &.popout_cba592 {
+    &.cba5926a3ea0ad97-popout {
       height: 100vh ; // fix height to max
 
-      .header__49fc1 {
+      ._49fc18ba07c5025f-header {
         box-shadow: none ;
       }
 
-      .friendSelected_bbd192:not(:hover) {
+      .bbd19242e12654ad-friendSelected:not(:hover) {
         background: none ;
       }
 
-      .searchBar_cba592 {
+      .cba5926a3ea0ad97-searchBar {
         background: $BG_Meta ;
 
         @include shadowEffect("box_3");
@@ -90,23 +90,23 @@
     // <- Create group DM
 
     // join new server
-    .templatesList_c04f35 {
+    .c04f357ea00ccf57-templatesList {
       margin: 0 ;
     }
   }
 
   // (per Server) Notification Settings
-  .container__53cea {
-    .bodySpacerTopBorder__53cea { display: none }
+  ._8a031a135bfcb9ba-container {
+    ._8a031a135bfcb9ba-bodySpacerTopBorder { display: none }
 
-    .header__53cea {
+    ._8a031a135bfcb9ba-header {
       padding-bottom: 16px ;
       z-index: 1 ;
 
       @include shadowEffect("box_3");
     }
 
-    .body__53cea {
+    ._8a031a135bfcb9ba-body {
       background: $BG_Body ;
 
       // @include scrollbar();

@@ -2,13 +2,13 @@
 
 
 // -> Messages separator
-.divider__5126c {
+._5126c0cd07f243a0-divider {
   align-items: unset ;
   border: none ;
   margin: 20px 10px !important;
 
   // date
-  .content__908e2 {
+  ._908e20001ad67812-content {
     height: fit-content ;
     transform: translateY(-50%);
     background: none ;
@@ -23,13 +23,13 @@
   }
 
   // new messages separator
-  &.isUnread__908e2 {
+  &._908e20001ad67812-isUnread {
     &::before, &::after {
       background: var(--red);
       opacity: .7 ;
     }
 
-    .unreadPill__908e2 {
+    ._908e20001ad67812-unreadPill {
       top: 0 ;
       padding: 0 4px ;
       border-radius: 0 0 4px 4px ;
@@ -43,7 +43,7 @@
 
 // -> Messages cozy
 
-.cozy_c19a55 {
+.c19a557985eb7793-cozy {
   // -> general msg
   $spacing: 15px ;
 
@@ -55,20 +55,20 @@
   &:before { display: none }
 
   // profile picture
-  .avatar_c19a55 {
+  .c19a557985eb7793-avatar {
     left: $spacing ;
   }
 
   // profile decorations
-  .avatarDecoration_c19a55 {
+  .c19a557985eb7793-avatarDecoration {
     left: $spacing - 4px ;
   }
 
-  .header_c19a55 {
+  .c19a557985eb7793-header {
     margin-bottom: 2px ;
   }
 
-  .messageContent_c19a55 {
+  .c19a557985eb7793-messageContent {
     margin: 0 ;
     padding: 0 ;
   }
@@ -76,24 +76,24 @@
 
   // -> Msg types
   // Mention
-  &.mentioned__5126c .contents_c19a55 .messageContent_c19a55 {
+  &._5126c0cd07f243a0-mentioned .c19a557985eb7793-contents .c19a557985eb7793-messageContent {
     padding-left: 6px ;
     border-left: solid 2px var(--border-mentioned);
     background: var(--background-mentioned);
   }
 
   // client-side info/error messages
-  &.ephemeral__5126c .contents_c19a55 .messageContent_c19a55 {
+  &._5126c0cd07f243a0-ephemeral .c19a557985eb7793-contents .c19a557985eb7793-messageContent {
     padding-left: 6px ;
     border-left: solid 2px var(--Blurple);
     background: var(--Blurple-light);
   }
 
   // selected for reply bg highlight
-  &.replying__5126c {
+  &._5126c0cd07f243a0-replying {
     background: $BG_MsgHighlight !important ;
 
-    .buttons__5126c::before {
+    ._5126c0cd07f243a0-buttons::before {
       background-blend-mode: overlay ;
     }
   }
@@ -104,17 +104,17 @@
   // -> btn hover and appear behavior
   // reduce btns to menu icon
   @mixin reducedBtns() {
-    .buttonsInner__5126c > {
+    ._5126c0cd07f243a0-buttonsInner > {
       // sticking with class vs span for performance?
-      .button_f7ecac, // for btns added by plugins
+      .f7ecaca5c80dbf3a-button, // for btns added by plugins
       // all items but last two
-      .separator_f84418,
-      :nth-last-child(n+3) .button_f7ecac {
+      .f84418acfdbdfe54-separator,
+      :nth-last-child(n+3) .f7ecaca5c80dbf3a-button {
         display: none ;
       }
     }
 
-    .button_f7ecac {
+    .f7ecaca5c80dbf3a-button {
       color: $BtnIconHover !important; // !important bc of general btn design
     }
   }
@@ -122,8 +122,8 @@
   // hide emojis until hover
   @container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
     // separator unless there are plugin btns
-    .separator_f84418:not(.button_f7ecac ~ .separator_f84418),
-    .button_f7ecac:has(.emoji) {
+    .f84418acfdbdfe54-separator:not(.f7ecaca5c80dbf3a-button ~ .f84418acfdbdfe54-separator),
+    .f7ecaca5c80dbf3a-button:has(.emoji) {
       display: none
     }
   }
@@ -133,34 +133,34 @@
   }
 
   // hide btns on: concatenating Msg, System msg
-  &:is(:not(.groupStart__5126c), .isSystemMessage_c19a55) {
+  &:is(:not(._5126c0cd07f243a0-groupStart), .c19a557985eb7793-isSystemMessage) {
     @include reducedBtns();
   }
 
   // hover on btns (is this ideal?)
-  &:has(.buttons__5126c:hover),
+  &:has(._5126c0cd07f243a0-buttons:hover),
   // extended msg btns on hovered msg
   &:hover:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) {
     background: $BG_MsgHighlight !important ;
 
-    .buttons__5126c::before {
+    ._5126c0cd07f243a0-buttons::before {
       background-blend-mode: overlay ;
     }
 
     @container style(--hide-messageBtnEmojis: 2 ) {
-      .button_f7ecac:not(:has(.emoji)), // don't unhide emojis if hideEmojis is 2
-      .separator_f84418 {
+      .f7ecaca5c80dbf3a-button:not(:has(.emoji)), // don't unhide emojis if hideEmojis is 2
+      .f84418acfdbdfe54-separator {
         display: flex ;
       }
     }
 
     @container NOT style(--hide-messageBtnEmojis: 2 ) {
-      :is(.button_f7ecac, .separator_f84418) {
+      :is(.f7ecaca5c80dbf3a-button, .f84418acfdbdfe54-separator) {
         display: flex !important;
       }
     }
 
-    .button_f7ecac:not(:hover) {
+    .f7ecaca5c80dbf3a-button:not(:hover) {
       color: $BtnIconNormal !important; // !important bc of general btn design
     }
   }
@@ -168,16 +168,16 @@
 
 
   // -> Button container
-  .buttonContainer_c19a55 {
+  .c19a557985eb7793-buttonContainer {
     z-index: 9 ; // to not interfere with the hover btns on images and similar
   }
 
   // to not shift positions (e.g. of plugin btns) when hover (couldn't avoid span or :has i think)
-  .buttonsInner__5126c > span:has(.emoji__040f0) {
+  ._5126c0cd07f243a0-buttonsInner > span:has(._040f07d21e1fb0d6-emoji) {
     order: -1 ;
   }
 
-  .buttons__5126c {
+  ._5126c0cd07f243a0-buttons {
     // opacity: 1 ; // debug
 
     top: 0 ;
@@ -208,7 +208,7 @@
 
     // (bit of legacy code mixed in)
     // inner container
-    .buttonsInner__5126c  {
+    ._5126c0cd07f243a0-buttonsInner  {
       margin-top: 2px ;
       padding: 0 ;
       border: none ;
@@ -218,22 +218,22 @@
     }
 
     // btn item
-    .hoverBarButton_f84418 {
+    .f84418acfdbdfe54-hoverBarButton {
       background: none ;
       padding: 0 2px ;
     }
 
     // Inner button icon
-    .icon_f84418 {
+    .f84418acfdbdfe54-icon {
       transform: scale(1);
     }
 
-    .separator_f84418 {
+    .f84418acfdbdfe54-separator {
       margin: 0 2px ;
     }
 
     // quick reaction emoji
-    .emoji__040f0 {
+    ._040f07d21e1fb0d6-emoji {
       width: 18px ;
       height: 18px ;
     }
@@ -244,7 +244,7 @@
 
   // -> Unmask links
   @container style(--unmask-links: 1 ) {
-    .messageContent_c19a55 .anchor_edefb8[title$=")"] {
+    .c19a557985eb7793-messageContent .edefb8e22d63c542-anchor[title$=")"] {
       &::after {
         content: " (" attr(href) ")" ;
         position: relative ;
@@ -271,7 +271,7 @@
   $embedBg: var(--background-modifier-accent);
   $embedBg-hover: var(--background-modifier-selected);
 
-  :is(.contents_c19a55, .container_b7e1cb) {
+  :is(.c19a557985eb7793-contents, .b7e1cb0370c2dd0e-container) {
     --bg-overlay-floating: #{$embedBg} ;
     --chat-background-default: #{$embedBg} ;
     --background-surface-high: #{$embedBg} ;
@@ -291,45 +291,45 @@
   }
 
   // server invite (weird overlap design)
-  .guildInviteContainer__083ae {
+  ._083ae98ea5145b08-guildInviteContainer {
 
     --background-surface-high: #202225 ; // bad
   }
 
   // code blocks
-  .markup__75297 code {
+  ._752971923a1e6683-markup code {
     max-width: unset ;
 
     background: $embedBg-hover
   }
 
   // code block in text file wrapper
-  .container__4d95d .hljs {
+  ._4d95d73152192cf9-container .hljs {
     background: none ;
   }
 
   // thread link
-  .container__9271d {
+  ._9271d23503a01b50-container {
     background: none ;
   }
   // Thread line thing
-  &.hasThread_c19a55:after {
+  &.c19a557985eb7793-hasThread:after {
     left: 28px !important ;
   }
 
   // spoiler block
-  .spoilerContainer__54ab5 {
+  ._299eb87491f4b6d1-spoilerContainer {
     box-shadow: none !important ;
     background: $embedBg;
   }
 
   // audio file embed
-  .audioControls_cf09d8 {
+  .cf09d85aafe7e124-audioControls {
     background: var(--background-secondary-alt);
   }
 
   // image content
-  .hoverButtonGroup__06ab4 {
+  ._06ab41fd2ef7af3f-hoverButtonGroup {
     background: var(--background-floating);
 
     @include shadowEffect("box_2");

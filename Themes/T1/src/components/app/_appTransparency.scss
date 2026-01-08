@@ -5,137 +5,138 @@
 
 $Classes:
   // -> App
-  ".bg__960e4",
-  ".app__160d8",
-  ".layer__960e4",
-  ".page_c791b2",
+  "._960e4207cea8323e-bg",
+  "._160d8e55254637e5-app",
+  "._960e4207cea8323e-layer",
+  ".c791b281f2fedc32-page",
   // most scroller containers
-  // ".app_a3002d :is(.scrollerBase__99f8c,.scrollerBase_d125d2)",
-  ".app_a3002d .scrollerBase_d125d2",
+  // ".a3002d7de5be5280-app :is(._99f8cc7ad4790ce9-scrollerBase,.d125d22cdfd32cfe-scrollerBase)",
+  ".a3002d7de5be5280-app .d125d22cdfd32cfe-scrollerBase",
   // Title bar
-  "!.container__9293f",
+  "!._9293f6b2fc12398a-container",
   // Discovery
-  ".container__551b0",
+  "._551b0894962ff66f-container",
   // Server bar
-  ".guilds__5e434",
+  "._5e434347c823b592-guilds",
   // <- App
 
   // -> Text chat
-  "!.chat_f75fb0",
-  ".chatContent_f75fb0",
-  ".themedBackground__74017", // txt input (more?)
+  "!.f75fb00fb7356cbe-chat",
+  ".f75fb00fb7356cbe-chatContent",
+  "._740174f3d6a2c8fe-themedBackground", // txt input (more?)
   // search results sidebar
-  ".searchResultsWrap_a9e706",
-  ".searchResult__02a39",
+  ".a9e7064fdee8e9b0-searchResultsWrap",
+  "._02a39cb2980ceaaf-searchResult",
   // Forum channel
-  ".container_f369db",
-  ".pageBody__41ed7",
-  ".container__93db4",
-  ".container_ca49a1",
+  ".f369dba7416c67f0-container",
+  "._41ed70e52483df6d-pageBody",
+  "._5a2c624eb18affaa-container",
+  ".ca49a1898ddc29e3-container",
   // Chat box text input
-  ".channelTextArea_f75fb0",
-  ".channelAttachmentArea_b77158",
-  ".chatLayerWrapper__01ae2 .channelTextArea__74017", // threads
+  ".f75fb00fb7356cbe-channelTextArea",
+  ".b77158512e0ab116-channelAttachmentArea",
+  "._01ae244280823725-chatLayerWrapper ._740174f3d6a2c8fe-channelTextArea", // threads
   // chat box replaced channel action
-  ".wrapper__44df5",
+  "._44df51b030bd5ece-wrapper",
   // reply bar ui
-  ".stackedBars__74017",
+  "._740174f3d6a2c8fe-stackedBars",
   // loading messages placeholder
-  ".wrapper_d852db",
-  ".wrapper_fc8177",
+  "._6c79861fd96f56b1-wrapper",
+  ".fc817765600a960a-wrapper",
+  ".d852db00c0588eb9-wrapper",
   // Threads meta bar
-  ".container__34c2c",
-  ".chatHeaderBar_a5700d",
+  "._34c2c51cfce1632e-container",
+  ".a5700d36f7c29ded-chatHeaderBar",
   // Dms user sidebar
-  ".content_f75fb0 .outer_c0bea0",
+  ".f75fb00fb7356cbe-content .c0bea05627c5dc35-outer",
   // <- Text chat
 
   // -> Voice chat
-  ".callContainer_cb9592",
-  ".callContainer_cb9592 .root_bfe55a",
-  ".wrapper_cb9592",
+  ".cb9592ad77576717-callContainer",
+  ".cb9592ad77576717-callContainer .bfe55a0aaaf62375-root",
+  ".cb9592ad77576717-wrapper",
   // Stage view
-  ".container__722ff",
-  ".callContainer__722ff",
-  ".scroller__56ccd",
-  ".rowContainer__8a920",
-  ".container__664ff",
+  "._722ffae0e1be2672-container",
+  "._722ffae0e1be2672-callContainer",
+  "._56ccd9a4ea869e7b-scroller",
+  "._1e702474dc791be1-rowContainer",
+  "._664ffc673b75c994-container",
   // <- Voice chat
 
   // -> Sidebar
-  ".sidebar__5e434",
+  "._5e434347c823b592-sidebar",
   // DMs Sidebar
-  ".privateChannels_e6b769",
+  ".e6b7699ce8339e1c-privateChannels",
   // Sidebar Panels
-  ".panels__5e434",
+  "._5e434347c823b592-panels",
   // Server panel
-  ".container_f37cb1",
-  ".header_f37cb1",
+  ".f37cb1984c371ee5-container",
+  ".f37cb1984c371ee5-header",
   // User profile container, Voice channel, Activity
-  ".container__37e49",
-  ".container_e131a9",
-  ".activityPanel__5e434",
+  "._37e49614b9f110a9-container",
+  ".e131a99484292a19-container",
+  "._5e434347c823b592-activityPanel",
   // Server channels container
-  ".container__2637a",
+  "._2637a2609f343032-container",
   // <- Sidebar
 
   // -> Server
   // "Channels & Roles"
-  "!.container__0b563",
-  ".prompt__5d7c9",
-  ".channelRow_e4503a",
-  ".emptyPage__5d7c9",
+  "!._0b56311ebc6682e2-container",
+  "._5d7c9a81ac5dd074-prompt",
+  ".e4503acec53c64dd-channelRow",
+  "._5d7c9a81ac5dd074-emptyPage",
   // Member Safety Page
-  ".container_c791b2",
-  ".mainTableContainer__09a38",
+  ".c791b281f2fedc32-container",
+  "._09a38002c6c2466d-mainTableContainer",
   // Server shop
-  ".container_adb50a",
+  ".adb50a654b4cd212-container",
   // Server Boosts
-  ".container__89463",
-  ".contentContainer__89463",
-  ".sidebarContainer__89463",
+  "._8946359d8adb1488-container",
+  "._8946359d8adb1488-contentContainer",
+  "._8946359d8adb1488-sidebarContainer",
   // Members list
-  ".container_c8ffbb",
-  ".member_c8ffbb",
+  ".c8ffbb79449f399c-container",
+  ".c8ffbb79449f399c-member",
   // Server Boost page
-  ".scroller__6fd0e",
-  ".header__6fd0e",
+  "._6fd0e42f91edfda6-scroller",
+  "._6fd0e42f91edfda6-header",
   // Threads members
-  ".container__7641b",
-  ".members_c8ffbb",
+  "._7641b507c6cdbb10-container",
+  ".c8ffbb79449f399c-members",
   // <- Server
 
   // -> Home & Friends list
-  ".container__133bf",
-  ".tabBody__133bf",
+  "._133bf5eea8e33a34-container",
+  "._133bf5eea8e33a34-tabBody",
   // Nitro store
-  ".applicationStore_f07d62",
-  ".homeWrapperNormal__0920e",
+  ".f07d62e29a48ceee-applicationStore",
+  "._0920e02cc8fc7b7b-homeWrapperNormal",
   // Profile decorations shop (Home)
-  ".shop__6db1d",
-  ".shop__08415",
+  "._6db1d32c47b6ad72-shop",
+  "._084152b107f71237-shop",
   ".shopScroll__6db1d",
   ".pageWrapper__6db1d",
-  ".page__1feb0",
-  ".filterBar__11877",
+  "._1feb0fca744244ab-page",
+  "._1187745e085c713e-filterBar",
   // Friends Activity Sidebar
-  ".nowPlayingColumn__133bf",
-  ".nowPlayingColumn__133bf :is(.container__7d20c, .emptyCard__7e549)",
+  "._133bf5eea8e33a34-nowPlayingColumn",
+  "._133bf5eea8e33a34-nowPlayingColumn :is(._7d20cf18f8a2784c-container, ._7e549558f336cddb-emptyCard)",
   // <- Home & Friends list
 
   // -> Settings old
-  ".standardSidebarView__23e6b",
-  ".sidebarRegionScroller__23e6b",
-  ".contentRegion__23e6b",
-  ".contentRegionScroller__23e6b",
+  "._23e6b439306f125a-standardSidebarView",
+  "._23e6b439306f125a-sidebarRegionScroller",
+  "._23e6b439306f125a-contentRegion",
+  "._23e6b439306f125a-contentRegionScroller",
   // Roles Settings
-  ".page__91dc3 .titleContainer_e29cd7",
-  ".container_d8f25b",
+  "._91dc3971e82843c1-page .e29cd7b93c4f1266-titleContainer",
+  ".d8f25bf4f76423e6-container",
   // <- Settings old
 
   // -> Settings
-  ".content_e9e3ed", // content region
-  ".contentHeader_e9e3ed"
+  ".e9e3ed8b8badfe05-content", // content region
+  ".e9e3ed8b8badfe05-contentHeader"
   // <- Settings
 ;
 

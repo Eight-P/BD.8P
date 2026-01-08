@@ -1,18 +1,18 @@
 // floating |  Pop-outs & Tooltips & Context menus
-.layer__59d0d {
+._59d0d7075b521375-layer {
 
   // -> General content
   // first inner container with class (not a fan)
   :is(
-    .menu_c1e9c4, // context menus
+    .c1e9c47c23f12ca3-menu, // context menus
 
-    .wrapper_c0e32c, // add reactions pop-out
-    .contentWrapper__9c62c, // Apps&Cmds
-    .contentWrapper__08434, // Chat picker
-    .container_d9c882, // Threads
-    .messagesPopoutWrap__45690, // Pinned Msgs
-    .popoutContainer__4ad69, // Bookmarks
-    .recentMentionsPopout__95796 // Inbox
+    .c0e32c5cffed3d9f-wrapper, // add reactions pop-out
+    ._9c62c6ed231468c4-contentWrapper, // Apps&Cmds
+    ._084343c4f11eaaab-contentWrapper, // Chat picker
+    .d9c8822889d1d4a1-container, // Threads
+    .e8b59c4b335dd2fc-messagesPopoutWrap, // Pinned Msgs
+    ._4ad6936dd30096b3-popoutContainer, // Bookmarks
+    ._957962c2bd49881b-recentMentionsPopout // Inbox
   ) {
     border: none ;
     @include shadowEffect("box_2");
@@ -20,18 +20,18 @@
 
   // scroller
   :is(
-    .scrollerBase_d125d2,
-    // .scrollerBase__99f8c,
-    .container_d9c882 // Threads
+    .d125d22cdfd32cfe-scrollerBase,
+    // ._99f8cc7ad4790ce9-scrollerBase,
+    .d9c8822889d1d4a1-container // Threads
   ) {
     background: $BG_Body ;
   }
 
   :is(
-    .container_d9c882, // Threads
-    .messagesPopoutWrap__45690, // Pinned Msgs
-    .popoutContainer__4ad69, // Bookmarks
-    .recentMentionsPopout__95796 // Inbox
+    .d9c8822889d1d4a1-container, // Threads
+    .e8b59c4b335dd2fc-messagesPopoutWrap, // Pinned Msgs
+    ._4ad6936dd30096b3-popoutContainer, // Bookmarks
+    ._957962c2bd49881b-recentMentionsPopout // Inbox
   ) {
     width: 50vw ;
     min-width: 480px ;
@@ -40,14 +40,14 @@
   }
 
   // "Pro tip" footer
-  .footer__45690 { display: none }
+  .e8b59c4b335dd2fc-footer { display: none }
 
   // Header text (bookmarks & Pins)
-  .titleContainer__45690 .text-lg\/semibold_cf4812 {
+  .e8b59c4b335dd2fc-titleContainer .text-lg\/semibold_cf4812 {
     color: $C_Header !important ;
   }
 
-  :is(.header_d9c882, .header__45690, .header_ab6641) {
+  :is(.d9c8822889d1d4a1-header, .e8b59c4b335dd2fc-header, .ab66419eae73260f-header) {
     border: none ;
     z-index: 1 ;
 
@@ -61,53 +61,53 @@
     box-shadow: none ;
   }
 
-  :is(.contentWrapper__08434, .wrapper_c0e32c) {
+  :is(._084343c4f11eaaab-contentWrapper, .c0e32c5cffed3d9f-wrapper) {
     border: none ;
     @include shadowEffect("box_2");
 
     // -> Nav bar
-    .navButton__08434 {
+    ._084343c4f11eaaab-navButton {
       background: none ;
       color: var(--interactive-normal);
     }
 
-    .navButtonActive__08434  {
+    ._084343c4f11eaaab-navButtonActive  {
       color: var(--interactive-active) !important;
     }
     // <- Nav bar
 
     // -> Header
-    .header_c0e32c, .header__8ef02, .header_fed6d3 {
+    .c0e32c5cffed3d9f-header, ._8ef02eea17068b73-header, .fed6d32841cc2da2-header {
       box-shadow: var(--shadow-low);
     }
     // <- Header
 
     // -> Right side content
     // category headers (emoji & sticker)
-    .wrapper__14245 {
+    ._14245bb948377a25-wrapper {
       background: $BG_Body !important ;
       padding-bottom: 6px ;
     }
 
     // nitro locked emoji category
-    .categorySectionNitroLocked_c656ac {
+    .c656aca9a3db31a9-categorySectionNitroLocked {
       background: $BG_Body !important ;
 
-      .header__14245 {
+      ._14245bb948377a25-header {
         color: rgb(166, 103, 228);
       }
     }
 
     // -> Sticker item
-    #sticker-picker-tab-panel .header__8ef02 {
+    #sticker-picker-tab-panel ._8ef02eea17068b73-header {
       height: 40px ; // keeps the left side aligned
     }
 
-    .assetWrapperMasked__31fc2 {
+    ._31fc2df9348cd84a-assetWrapperMasked {
       mask: none ;
     }
 
-    .sticker_c6367b {
+    .c6367b0f171ba6d7-sticker {
       border-radius: 8px ;
 
       &:hover {
@@ -117,24 +117,24 @@
     // <- Sticker item
 
     // -> Add reactions
-    &#emoji-picker-tab-panel .header_c0e32c {
+    &#emoji-picker-tab-panel .c0e32c5cffed3d9f-header {
       height: 40px ; // keeps the left side aligned
     }
     // <- Add reactions
 
     // hover indicator, nitro upsell banner Gifs
-    :is(.inspectedIndicator_c6367b, .upsellContainer__0b69f) {
+    :is(.c6367b0f171ba6d7-inspectedIndicator, ._0b69f200eb3bf411-upsellContainer) {
       display: none ;
     }
     // <- Right side content
 
     // -> left side category items
     // default emoji shortcut, sticker shortcut - category
-    :is(.unicodeShortcut_b9ee0c, .standardStickerShortcut__3ad28) {
+    :is(.b9ee0c229bc0b6bb-unicodeShortcut, ._3ad28b0867fa3fad-standardStickerShortcut) {
       background: $BG_Body ;
     }
 
-    :is(.stickerCategory__3ad28, .categoryItem_b9ee0c) {
+    :is(._3ad28b0867fa3fad-stickerCategory, .b9ee0c229bc0b6bb-categoryItem) {
       background: none ;
 
       &:hover path {
@@ -143,24 +143,24 @@
     }
     // <- left side category items
 
-    :is(.inspector_aeaaeb, .nitroTopDividerContainer_b3fb5f, .nitroBottomDivider_c656ac) {
+    :is(.aeaaeb2a573807f0-inspector, .b3fb5fe9675b4b4d-nitroTopDividerContainer, .c656aca9a3db31a9-nitroBottomDivider) {
       display: none ;
     }
   }
   // <- Chat input Emoji, Sticker, Gif picker
 
   // -> Soundboard picker
-  .picker__09f65 {
+  ._09f65b4b8a3f8d26-picker {
     background: $BG_Meta ;
 
     // -> Nitro locked
-    :is(.upsellContainer__0b69f, .nitroTopDividerContainer_b3fb5f) { display: none }
+    :is(._0b69f200eb3bf411-upsellContainer, .b3fb5fe9675b4b4d-nitroTopDividerContainer) { display: none }
 
-    .sectionContainerNitroLocked__61424 .sectionTitle__61424 {
+    ._614244fbcb264b94-sectionContainerNitroLocked ._614244fbcb264b94-sectionTitle {
       color: rgb(166, 103, 228);
     }
 
-    :is(.sectionContainerNitroLocked__61424, .soundRowNitroLocked__61424) {
+    :is(._614244fbcb264b94-sectionContainerNitroLocked, ._614244fbcb264b94-soundRowNitroLocked) {
       background: none ;
     }
     // <- Nitro locked
@@ -168,30 +168,30 @@
   // <- Soundboard
 
   // -> Threads
-  .container_d9c882 {
+  .d9c8822889d1d4a1-container {
 
     // Header icon & text
-    :is(.threadIcon_d9c882, .title_d9c882) {
+    :is(.d9c8822889d1d4a1-threadIcon, .d9c8822889d1d4a1-title) {
       color: $C_Header !important ;
     }
   }
   // <- Threads
 
   // -> Pins
-  // .messagesPopoutWrap__45690 {
+  // .e8b59c4b335dd2fc-messagesPopoutWrap {
 
   // }
 
   // jump to message btns
-  .actionButtons__45690 {
+  .e8b59c4b335dd2fc-actionButtons {
 
-    .jumpButton__45690 {
+    .jumpButton_e8b59c {
       background: $BG_Meta ;
       padding: 4px 16px ;
 
       @include shadowEffect("box_3");
 
-      + .button__201d5 {
+      + ._201d5e8a3c09670a-button {
         width: 24px ;
         background: $BG_Meta !important ;
 
@@ -202,27 +202,27 @@
   // <- Pins
 
   // -> Bookmarks (solo, inbox)
-  :is(.popoutContainer__4ad69, .recentMentionsPopout__95796) {
+  :is(._4ad6936dd30096b3-popoutContainer, ._957962c2bd49881b-recentMentionsPopout) {
 
-    .messagesScroller__4ad69 {
+    ._4ad6936dd30096b3-messagesScroller {
       gap: 8px ;
     }
 
-    .messageContainer__4ad69 {
+    ._4ad6936dd30096b3-messageContainer {
       border-radius: 0 ;
       border-bottom: 1px solid var(--background-modifier-accent);
       box-shadow: none ;
 
       // container for click/jump to msg action (but it's weird)
-      .clickableMessageBackground__4ad69 { display: none }
+      ._4ad6936dd30096b3-clickableMessageBackground { display: none }
 
       // header for channel name
-      .channelHeader__06fb5 {
+      ._06fb54b93b7ce763-channelHeader {
         border: none ;
       }
 
       // msg btns
-      .hoverBar__4ad69 .icon_f84418 {
+      ._4ad6936dd30096b3-hoverBar .f84418acfdbdfe54-icon {
         transform: none ;
       }
     }
@@ -230,53 +230,53 @@
   // <- Bookmarks
 
   // -> Context menus
-  .menu_c1e9c4 {
+  .c1e9c47c23f12ca3-menu {
 
-    .scrollerBase_d125d2::-webkit-scrollbar-thumb {
+    .d125d22cdfd32cfe-scrollerBase::-webkit-scrollbar-thumb {
       background-color: transparent ;
     }
 
-    .separator_c1e9c4 {
+    .c1e9c47c23f12ca3-separator {
       border-color: var(--background-modifier-accent);
     }
 
     // -> Menu options
     // Name text
-    .label_c1e9c4 {
+    .c1e9c47c23f12ca3-label {
       color: var(--interactive-normal);
     }
 
     // Option on hover
-    .focused_c1e9c4 {
-      .label_c1e9c4 {
+    .c1e9c47c23f12ca3-focused {
+      .c1e9c47c23f12ca3-label {
         color: var(--interactive-hover);
       }
     }
 
     // Critical option (ban, block,..)
-    .colorDanger_c1e9c4 {
-      .label_c1e9c4 {
+    .c1e9c47c23f12ca3-colorDanger {
+      .c1e9c47c23f12ca3-label {
         color: var(--text-danger);
       }
     }
     // <- Menu options
 
     // -> Checkbox options
-    .checkbox__09aca {
+    ._09aca73e6d4b214b-checkbox {
       background: none ;
       border: none ;
 
-      &:not(.checked__09aca) path {
+      &:not(._09aca73e6d4b214b-checked) path {
         fill: currentColor ;
         d: path("M 18.625 3 H 5.375 C 4.06519 3 3 4.06519 3 5.375 V 18.625 C 3 19.936 4.06519 21 5.375 21 H 18.625 C 19.936 21 21 19.936 21 18.625 V 5.375 C 21.0057 4.08803 19.9197 3 18.625 3 Z M 19 19 V 5 H 4.99999 V 19 H 19 Z");
       }
     }
 
     // on hover
-    .focused_c1e9c4 {
+    .c1e9c47c23f12ca3-focused {
 
       // turn check into "x"
-      .checked__09aca path {
+      ._09aca73e6d4b214b-checked path {
         fill: var(--red);
         d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
       }
@@ -284,13 +284,13 @@
     // <- Checkbox options
 
     // -> Radio selection options
-    .radioIndicator__001a7 {
+    ._88a69141dd70013a-radioIndicator {
 
-      .refreshIconFill__001a7 {
+      ._88a69141dd70013a-refreshIconFill {
         fill: transparent ;
       }
 
-      &.radioIndicatorChecked__001a7 .refreshIconStroke__001a7 {
+      &._88a69141dd70013a-radioIndicatorChecked ._88a69141dd70013a-refreshIconStroke {
         stroke: var(--checkbox-border-default);
       }
     }
@@ -300,19 +300,19 @@
   // <- Context menus
 
   // -> Inbox
-  .recentMentionsPopout__95796 {
+  ._957962c2bd49881b-recentMentionsPopout {
 
     // -> Header
     // Header icon & text
-    :is(.inboxIcon_ab6641, .inboxTitle_ab6641) {
+    :is(.ab66419eae73260f-inboxIcon, .ab66419eae73260f-inboxTitle) {
       color: $C_Header !important ;
     }
 
-    .tabBar_ab6641 {
+    .ab66419eae73260f-tabBar {
       margin: 16px 16px 0 16px ;
       justify-content: space-around ;
 
-      .tab_ab6641 {
+      .ab66419eae73260f-tab {
         margin: 0 ;
 
         &::after {
@@ -323,27 +323,27 @@
     // <- Header
 
     // -> Body
-    .scrollerBase_d125d2 {
+    .d125d22cdfd32cfe-scrollerBase {
       padding: 0 !important ;
       border-top: 2px solid $BG_Body ;
 
       @include scrollbar(none);
 
       // jump to msg btn mentions & unreads
-      .jumpButton_ed0c8c {
+      .ed0c8cb44ff95773-jumpButton {
         background: $BG_Meta ;
       }
     }
 
     // for you empty
-    .container_a54d1d {
+    .a54d1d0b84a59dce-container {
       margin: 0 ;
       background: $BG_Body ;
     }
 
     // -> Unreads
     // channel item
-    .channel__427f0 {
+    ._427f0273a157ab7a-channel {
       padding-bottom: 3px ;
 
       // Collapse btn
@@ -365,19 +365,19 @@
       }
     }
     // msg divider general
-    .divider__908e2 {
+    ._908e20001ad67812-divider {
       margin: 30px 0 30px 0 ;
 
-      .content__908e2 {
+      ._908e20001ad67812-content {
         background: $BG_Body ;
       }
 
       // divider in channel item
-      &.divider__1ccd1 {
+      &._1ccd1ba5cb2270c2-divider {
         margin: 20px 0 20px 16px ;
       }
     }
-    .forumPost__7d15e {
+    ._7d15e06278d36a38-forumPost {
       margin: 0 ;
       padding: 10px 12px 16px 12px ;
       background: none ;
@@ -393,12 +393,12 @@
     // <- Unreads
 
     // -> Mentions
-    .container__95796 {
+    ._957962c2bd49881b-container {
       padding: 0 ;
     }
 
     // mention header
-    .channelHeader__35a7e {
+    ._35a7ecf3aba351b2-channelHeader {
       padding: 12px 16px ;
 
       @include shadowEffect("box_3");
@@ -410,24 +410,24 @@
   // <- Inbox
 
   // -> Apps & Commands pop-out
-  .positionContainer__31a96 {
+  ._31a96fe07c7d9258-positionContainer {
     max-height: calc(100vh - 130px);
 
-    .drawerSizingWrapper__9c62c {
+    ._9c62c6ed231468c4-drawerSizingWrapper {
       height: 100% !important ;
     }
 
-    .slideContent__9c62c {
+    ._9c62c6ed231468c4-slideContent {
       max-height: calc(100vh - 130px);
     }
 
-    .searchBarContainer__927fc {
+    ._927fca0ac7164d54-searchBarContainer {
       z-index: 1 ;
 
       @include shadowEffect("box_3");
     }
 
-    .scrollableContent__927fc {
+    ._927fca0ac7164d54-scrollableContent {
       @include scrollerFadeOut();
 
       // spacer
@@ -442,21 +442,21 @@
   // <- Apps & Commands pop-out
 }
 
-.chatContent_f75fb0 {
+.f75fb00fb7356cbe-chatContent {
   z-index: 9 ; // to keep summaries above the members list
 
   // -> Chat Summaries
-  .topicsDropdownBase__0f481 {
+  ._0f481cbbd7530492-topicsDropdownBase {
     background: $BG_Body ;
 
-    .topicsDropdownHeading__0f481 {
+    ._0f481cbbd7530492-topicsDropdownHeading {
       background: $BG_Meta ;
     }
   }
   // <- Summaries
 
   // -> Slash cmds pop-out
-  .autocomplete__13533 {
+  ._13533e3c5791980f-autocomplete {
     --background-base-lowest: #{$BG_Meta};
     --autocomplete-bg: #{$BG_Body};
     --background-surface-high: #{$BG_Body};
@@ -465,7 +465,7 @@
     @include shadowEffect("box_2");
 
     // left side categories
-    .none_d125d2 {
+    .d125d22cdfd32cfe-none {
       @include scrollbar(none);
     }
   }

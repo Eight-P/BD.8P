@@ -25,7 +25,7 @@
 // <- ServerListIndicator
 
 // -> ReadAllNotificationsButton
-.guilds__5e434 .vc-ranb-button {
+._5e434347c823b592-guilds .vc-ranb-button {
   color: transparent ;
   width: 18px ;
   height: 18px ;
@@ -88,18 +88,18 @@
 // <- UserVoiceShow
 
 // -> BetterFolders
-.content__5e434:has(.vc-betterFolders-sidebar) {
+._5e434347c823b592-content:has(.vc-betterFolders-sidebar) {
   margin-bottom: 54px ;
 }
 
 .vc-betterFolders-sidebar {
   display: contents ;
 
-  > .guilds__5e434 {
+  > ._5e434347c823b592-guilds {
     bottom: 54px ;
   }
 
-  .scroller_ef3116 {
+  .ef3116c2da186559-scroller {
     // display: flex ;
     height: 100vw ;
     margin: 0 ;
@@ -108,7 +108,7 @@
     &::before, &::after { display: none }
   }
   // folders container
-  .stack_dbd263 {
+  .dbd2630aec71879b-stack {
     // justify-content: space-around ;
   }
 }

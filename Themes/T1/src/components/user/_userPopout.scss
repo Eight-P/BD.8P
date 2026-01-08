@@ -1,7 +1,7 @@
 // User | User popout, Account popout
 
 // not shop preview
-.user-profile-popout:not(.container__5a2c6) {
+.user-profile-popout:not(._5a2c624eb18affaa-container) {
   // -> General
   $BG-Body: var(--background-tertiary);
 
@@ -39,7 +39,7 @@
     --bg_itemsHover: hsl(from var(--bgModifier_item) h s l / .35 );
   }
 
-  .inner_c0bea0 {
+  .c0bea05627c5dc35-inner {
     padding: 0 ;
     gap: 0px ;
     overflow: visible ;
@@ -47,21 +47,21 @@
   // <- General
 
   // -> Background effects
-  .profileEffects__01370 {
+  ._0137000bc80ab6ea-profileEffects {
     z-index: 1 ;
 
-    &:not(.hovered__01370) {
+    &:not(._0137000bc80ab6ea-hovered) {
       opacity: .8 ;
     }
   }
   // <- Background effects
 
   // -> User action btns
-  .wrapper_da5890 {
+  ._0c74f6fd004aa317-wrapper {
     top: $ActionBtnPadding ;
     right: $ActionBtnPadding ;
 
-    .button__201d5 {
+    ._201d5e8a3c09670a-button {
       height: 30px ;
       width: 30px ;
 
@@ -81,22 +81,22 @@
   // <- User action btns
 
   // -> Header
-  .header__5be3e {
+  ._5be3ef42f92174b2-header {
     min-height: unset ;
     height: auto ;
 
     // banner: mask, separator, gif indicator, avatar/status react action
-    :is(.mask__68edb mask, .banner__68edb:before, .gifTag__68edb, .popover__2d0ab) { display: none }
+    :is(._68edb95846a37624-mask mask, ._68edb95846a37624-banner:before, ._68edb95846a37624-gifTag, ._2d0abf0638bcaa3f-popover) { display: none }
 
     // -> Avatar / Status icon
     // Main container
-    .avatar__75742 {
+    ._75742e4cc9019aeb-avatar {
       top: $AvatarPadding ;
       left: $AvatarPadding ;
       // z-index: 10 ; // for status icon
 
       // -> Image / Status icon
-      .svg__44b0c {
+      ._44b0c28be7879b7b-svg {
         top: $ProfileTop * 1px ;
         left: $ProfileLeft * 1px ;
         contain: none ;
@@ -113,7 +113,7 @@
       }
 
       // hover overlay
-      .avatarStack__44b0c {
+      ._44b0c28be7879b7b-avatarStack {
         &::after {
           border-radius: 7.5% ;
           opacity: 0 ;
@@ -124,7 +124,7 @@
       }
 
       // Picture
-      .avatar__44b0c {
+      ._44b0c28be7879b7b-avatar {
         border-radius: 7.5% ;
 
         &:not([src$="animated=true"]) { @include shadowEffect("drop_1") }
@@ -132,7 +132,7 @@
 
       // -> Status
       // Status icon
-      .pointerEvents__44b0c {
+      ._44b0c28be7879b7b-pointerEvents {
         pointer-events: none ;
 
         // online on mobile icon (regular)
@@ -149,7 +149,7 @@
       // <- Status
 
       // Avatar decorations cutout for status icon
-      .avatarDecoration__44b0c > foreignObject { mask: none }
+      ._44b0c28be7879b7b-avatarDecoration > foreignObject { mask: none }
 
       // <- Image / Status icon
     }
@@ -157,7 +157,7 @@
 
     // -> Status text
     // main container
-    .container_ab8609 {
+    .ab86098b36386ff7-container {
       position: absolute ;
       display: flex ;
       // sets center mostly
@@ -169,14 +169,14 @@
       pointer-events: none ; // for hover on gif banner
 
       // second container
-      .outer_ab8609 {
+      .ab86098b36386ff7-outer {
         display: contents ;
 
         &::after, &::before { display: none }
       }
     }
 
-    .inner_ab8609 {
+    .ab86098b36386ff7-inner {
       padding: 3px 6px ;
       background: var(--redesign-button-overlay-alpha-background);
       border-radius: 8px ;
@@ -198,38 +198,38 @@
     }
 
     // -> add self status
-    .addStatusIcon_ab8609 path {
+    .ab86098b36386ff7-addStatusIcon path {
       fill: var(--header-secondary) !important;
       fill: $BtnTextNormal !important;
     }
 
-    .addStatusPrompt_ab8609 {
+    .ab86098b36386ff7-addStatusPrompt {
       color: var(--header-secondary) !important;
       color: $BtnTextNormal !important;
       font-style: normal ;
     }
 
     // hover
-    .clickable_ab8609:hover {
-      .addStatusIcon_ab8609 path {
+    .ab86098b36386ff7-clickable:hover {
+      .ab86098b36386ff7-addStatusIcon path {
         fill: $BtnTextHover !important;
       }
-      .addStatusPrompt_ab8609 {
+      .ab86098b36386ff7-addStatusPrompt {
         color: $BtnTextHover !important;
       }
     }
     // <- add self status
 
-    .statusText_ab8609 {
+    .ab86098b36386ff7-statusText {
       color: var(--white);
     }
 
-    .content_ab8609.unclamped_ab8609 {
+    .ab86098b36386ff7-content.ab86098b36386ff7-unclamped {
       -webkit-line-clamp: 4 ;
     }
 
     // edit self status btns
-    .popover_c97e55 {
+    .c97e55feac203869-popover {
       top: 50% !important ;
       right: 50% ;
       transform: translate(50%, -50%);
@@ -237,7 +237,7 @@
     }
 
     // don't know but needed
-    .referenceContainer_ab8609 {
+    .ab86098b36386ff7-referenceContainer {
       position: absolute ;
     }
     // <- Status text
@@ -246,7 +246,7 @@
   // <- Header
 
   // -> Body user popout
-  .body__5be3e {
+  ._5be3ef42f92174b2-body {
     gap: 14px ;
     padding: 12px 16px 18px !important ;
     background: none ;
@@ -258,22 +258,22 @@
 
   // -> Name, Badges, ..
   // section container
-  .container__63ed3 {
+  ._63ed30c16c7151f2-container {
     display: flex ;
     flex-direction: column ;
     gap: 7px ;
   }
 
   // -> Display name
-  .usernameRow__63ed3 {
+  ._63ed30c16c7151f2-usernameRow {
     gap: 0 ;
   }
 
-  :has(.pointerEvents__44b0c) .usernameRow__63ed3 .clickableUsername__63ed3 {
+  :has(._44b0c28be7879b7b-pointerEvents) ._63ed30c16c7151f2-usernameRow ._63ed30c16c7151f2-clickableUsername {
     margin-left: 24px ;
   }
 
-  .nickname__63ed3 {
+  ._63ed30c16c7151f2-nickname {
     font-size: 19px ;
     line-height: 24px ;
     max-width: 308px - 24px ;
@@ -281,22 +281,22 @@
   }
 
   // name action btns
-  .nicknameIcons__63ed3 {
+  ._63ed30c16c7151f2-nicknameIcons {
     margin-left: 7px ;
   }
   // <- Display name
 
   // -> Account name, Pronouns, Guild tag, Badges
-  .tags__63ed3 {
+  ._63ed30c16c7151f2-tags {
     gap: 8px ;
   }
 
-  .guildTagContainer__63ed3 {
+  ._63ed30c16c7151f2-guildTagContainer {
     background: var(--bg_items);
     border-color: transparent ;
   }
 
-  .botTag__82f07 {
+  ._82f0793afa59e5dc-botTag {
     position: absolute ;
     top: - 122 - 2 * 1px ;
     left: $PopoutWidht * 0.5 ;
@@ -311,10 +311,10 @@
   // <- Name, Badges, ..
 
   // -> Roles
-  .role_dfa8b6, // roles
-  .root_fccfdf .button__7d7f7, // add roles btn
-  .expandButton_fccfdf, // view all roles btn
-  .collapseButton_fccfdf // revert "view all"
+  .dfa8b6b94cddb191-role, // roles
+  .fccfdf3cfff21921-root ._7d7f78b99d0a7581-button, // add roles btn
+  .fccfdf3cfff21921-expandButton, // view all roles btn
+  .fccfdf3cfff21921-collapseButton // revert "view all"
   {
     background: var(--bg_items);
     border-color: transparent ;
@@ -323,12 +323,12 @@
 
   // -> Item cards (Activities, Game Collection)
   // item inner container outer
-  .clickableContainer__39ec2 {
+  ._39ec2e3dfb4fd2f2-clickableContainer {
     pointer-events: none ;
   }
 
   // item outer
-  .card__39ec2 {
+  ._39ec2e3dfb4fd2f2-card {
     // background: var(--bg_cards);
 
     // not sure if they should have bg or not
@@ -338,16 +338,16 @@
     border: none !important ;
     padding: 0 ;
 
-    :is(.header__39ec2, .actions__39ec2) {
+    :is(._39ec2e3dfb4fd2f2-header, ._39ec2e3dfb4fd2f2-actions) {
       pointer-events: auto ;
     }
 
     // btn container
-    .actions__39ec2 {
+    ._39ec2e3dfb4fd2f2-actions {
       justify-content: center ;
     }
 
-    .button_a22cb0 {
+    .a22cb0c66246f5d3-button {
       background: var(--bg_items) !important ;
       color: var(--c_items) !important;
 
@@ -370,13 +370,13 @@
   }
 
   // Game Collection (has acrylic effect)
-  .innerContainer_c2a763 {
+  .c2a7636633222ffa-innerContainer {
     background: var(--bg_cards);
   }
   // <- Item cards (Activities, Game Collection)
 
   // -> Bot action btns
-  .buttons_bc38cd .button_bc38cd {
+  .bc38cddea75da082-buttons .aec7abc73c126bc0-button {
     background: var(--bg_items) !important ;
 
     &:hover {
@@ -386,7 +386,7 @@
   // <- Bot action btns
 
   // -> Bot commands
-  .list__20827 .button__201d5 {
+  ._20827cfa325893cd-list ._201d5e8a3c09670a-button {
     background: var(--bg_items) !important ;
 
     &:hover {
@@ -399,18 +399,18 @@
 
   // -> Body account panel
   // best to avoid overflow
-  .body_ce8328 {
+  .ce832809562bf737-body {
     padding: 12px 16px 18px !important ;
     gap: 22px ;
     background: none ;
     overflow: visible !important ;
 
-    .upsellContainer__5997d { display: none }
+    ._5997d01a3565bdaa-upsellContainer { display: none }
   }
 
-  .menus_ce8328 {
+  .ce832809562bf737-menus {
 
-    .overlay_c0bea0  {
+    .c0bea05627c5dc35-overlay  {
       padding: 4px 8px ;
       background: var(--bg_items);
     }
@@ -418,21 +418,21 @@
   // <- account panel
 
   // -> Footer
-  .footer__5be3e {
+  ._5be3ef42f92174b2-footer {
     padding: 0 ;
 
     --footerDivider: rgb(from var(--channel-text-area-placeholder) r g b / .5 );
 
     @include divider(top, ("color": var(--footerDivider)));
 
-    .channelTextArea__74017 {
+    ._740174f3d6a2c8fe-channelTextArea {
       border: none ;
       border-radius: 0 ;
       background: var(--background-secondary-alt);
       background: none ;
     }
 
-    > .button__6af3a {
+    > .a22cb0c66246f5d3-button {
       background: none !important ;
     }
   }
@@ -441,4 +441,4 @@
 }
 
 // User popout loading indicator
-.layer__59d0d .loadingPopout__58f1c { display: none }
+._59d0d7075b521375-layer ._58f1c3000c2c5b3e-loadingPopout { display: none }

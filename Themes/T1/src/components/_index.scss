@@ -1,33 +1,33 @@
-@forward 'mixins/_mixins' ;
+@forward 'mixins/mixins' ;
 
 // General App components
 // - Backgrounds, Discovery, SideBar, TopBars, Transparency
-@forward 'app/_app' ;
+@forward 'app/app' ;
 
 // Text & Voice Chat
 // - Forums & Threads, Header bar, Text input, Messages, Voice & Stage channel
-@forward 'chat/_chat' ;
+@forward 'chat/chat' ;
 
 // Plugin compatibility
-@forward 'compatibility/_compatibility' ;
+@forward 'compatibility/compatibility' ;
 
 // - Popouts, Modals, Tooltips, Context menus
-@forward 'floating/_floating' ;
+@forward 'floating/floating' ;
 
 // Server bar & Adjustments
-@forward 'guildsBar/_guildsBar' ;
+@forward 'guildsBar/guildsBar' ;
 
 // User home
 // - DMs Sidebar, Shops, Friends - header, list, activity sidebar
-@forward 'home/_home' ;
+@forward 'home/home' ;
 
 // Guild/Server view
 // - Text / Voice / Special Channels, Members list, boost page
-@forward 'server/_server' ;
+@forward 'server/server' ;
 
 // Settings
-@forward 'settings/_settings' ;
+@forward 'settings/settings' ;
 
 // User profiles
 // - Popout, DMs sidebar, decorations
-@forward 'user/_user' ;
+@forward 'user/user' ;

@@ -11,13 +11,13 @@
 
 // -> ReadAllNotificationsButton by DevilBro
 // "Read all" btn
-.guilds__5e434 .frame_aa90f4 {
+._5e434347c823b592-guilds .frame_aa90f4 {
   padding: 10px 0px ;
 
   .innerFrame_aa90f4 {
     transform: rotate(90deg);
 
-    .childWrapper__6e9f8 {
+    ._6e9f8dce4cc18de3-childWrapper {
       background: none ;
       color: var(--text-normal);
       font-weight: 500 ;
@@ -37,7 +37,7 @@
 
 // -> SpotifyControls by DevilBro
 // Sidebar control panel
-.panels__5e434 .container_791eb8 {
+._5e434347c823b592-panels .container_791eb8 {
   display: contents ;
 
   &.maximized_791eb8 .coverWrapper_791eb8 {
@@ -59,25 +59,25 @@
 
 // -> ServerFolders by DevilBro
 // added content container spacing for folder row
-@at-root .folderContentIsOpen_ac0584 .content__5e434 {
+@at-root .folderContentIsOpen_ac0584 ._5e434347c823b592-content {
   margin-bottom: 54px ;
 }
 
-.guilds__5e434 .folderHeader__48112 {
+._5e434347c823b592-guilds ._48112cbe77dc5022-folderHeader {
   background: none ;
 }
 
 // Folder row closed (not really needed)
-.guilds__5e434.closed_ac0584 {
+._5e434347c823b592-guilds.closed_ac0584 {
   height: 0px ;
 }
 
 // Folder row
-.guilds__5e434.content_ac0584 {
+._5e434347c823b592-guilds.content_ac0584 {
   bottom: 54px ;
   transition: none !important ;
 
-  .scroller_ef3116 {
+  .ef3116c2da186559-scroller {
     display: flex ;
     height: 100vw ;
     margin: 0 ;
@@ -87,12 +87,12 @@
   }
 
   // folders container
-  .stack_dbd263 {
+  .dbd2630aec71879b-stack {
     justify-content: space-around ;
   }
 
   // folder icon
-  .folder__48112 {
+  .b18fe29d6fe8dd82-hiddenVisually {
     transform: rotate(90deg);
     background: none ;
 
@@ -109,7 +109,7 @@
 // <- InvisibleTyping by Strencher
 
 // -> FriendNotifications by DevilBro
-.guilds__5e434 .friendsOnlineWrap_aa9717 {
+._5e434347c823b592-guilds .friendsOnlineWrap_aa9717 {
   display: flex !important ;
   position: absolute ;
   transform: rotate(90deg);
@@ -143,18 +143,18 @@
     .BA__content[data-baa-switch] {
 
       // server name, quick switch (home)
-      .sidebarList__5e434 :is(.container_f37cb1, .searchBar_e6b769) {
+      ._5e434347c823b592-sidebarList :is(.f37cb1984c371ee5-container, .e6b7699ce8339e1c-searchBar) {
         display: none !important ;
       }
     }
 
     // sidebar
-    .container__2637a {
+    ._2637a2609f343032-container {
       padding-bottom: calc(var(--custom-app-panels-height, 0) + var(--space-xs) - 16px);
     }
 
     // -> profile panels
-    .panels__5e434 {
+    ._5e434347c823b592-panels {
       display: block ;
       width: calc(
         var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - var(--space-xs) * 2
@@ -178,26 +178,26 @@
       }
 
       // quest thing
-      > .mask__0d616 {
+      > ._0d6162a4e6a4b802-mask {
         display: block ;
 
-        .wrapper__0d616 {
+        ._0d6162a4e6a4b802-wrapper {
           margin-right: unset ;
         }
       }
 
       // profile panel
-      .container__37e49 {
+      ._37e49614b9f110a9-container {
         overflow: hidden ;
       }
 
       // nameplate in profile panel
-      .container__4bbc6 {
+      ._4bbc6dc06e75ad52-container {
         left: 0 ;
       }
     }
 
-    &[data-fullscreen="true"] .panels__5e434 {
+    &[data-fullscreen="true"] ._5e434347c823b592-panels {
       display: none !important ;
     }
     // <- profile panels

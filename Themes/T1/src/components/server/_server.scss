@@ -1,4 +1,4 @@
-@use '../mixins/_mixins' as * ;
+@use '../mixins/mixins' as * ;
 
 // -- Guild/Server view
 
@@ -13,13 +13,13 @@
 
 
 // Server boost screen
-.root__5c9fc.enterDone__5c9fc {
+._5c9fcec194debbe7-root._5c9fcec194debbe7-enterDone {
 
-  .scroller__6fd0e { 
+  ._6fd0e42f91edfda6-scroller {
     @include scrollbar();
     @include scrollerFadeOut();
   }
 
   // weird wave design things
-  .bodyWave__1dfae, .headerWave__1dfae { display: none }
+  ._1dfaec293e55bc43-bodyWave, ._1dfaec293e55bc43-headerWave { display: none }
 }

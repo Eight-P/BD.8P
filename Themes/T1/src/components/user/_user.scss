@@ -1,4 +1,4 @@
-@use '../mixins/_mixins' as * ;
+@use '../mixins/mixins' as * ;
 
 // -- User
 
@@ -17,30 +17,30 @@
 
   // -> Profile picture decorations
   @container style(--hide-avatarDecorations: 1) {
-    :is(.avatarDecoration__44b0c, .avatarDecoration_c19a55) { display: none }
+    :is(._44b0c28be7879b7b-avatarDecoration, .c19a557985eb7793-avatarDecoration) { display: none }
   }
   // <- Profile picture decorations
 
   // -> Profile Animations effects
   @container style(--hide-profileEffects: 1) {
-    .profileEffects__01370 { display: none }
+    ._0137000bc80ab6ea-profileEffects { display: none }
   }
   // <- Profile Animations effects
 
   // -> Nameplates
   @container style(--hide-nameplates: 1 ) or style(--hide-nameplates: 3 ) {
     // member list
-    .nameplated__91a9d {
-      &.childContainer__91a9d {
+    ._91a9d7f7e5248a56-nameplated {
+      &._91a9d7f7e5248a56-childContainer {
         padding-right: 8px ;
       }
-      .container__4bbc6 { display: none }
+      ._4bbc6dc06e75ad52-container { display: none }
     }
 
     // dms
-    .channel__972a0 {
-      .container__4bbc6 { display: none }
-      .innerCloseButtonPlated__972a0 {
+    ._972a0d22c8afa7f0-channel {
+      ._4bbc6dc06e75ad52-container { display: none }
+      ._972a0d22c8afa7f0-innerCloseButtonPlated {
         background: none ;
         backdrop-filter: none ;
       }
@@ -49,26 +49,26 @@
 
   @container style(--hide-nameplates: 2 ) or style(--hide-nameplates: 3 ) {
     // sidebar profile panel
-    .container__37e49 .container__4bbc6 { display: none }
+    ._37e49614b9f110a9-container ._4bbc6dc06e75ad52-container { display: none }
   }
   // <- Nameplates
 
   // -> User name (holographic) gradient effect
   @container style(--disable-roleGradients: 1 ) {
-    .animateGradient_e5de78 {
+    .e5de7811b2777bfa-animateGradient {
       animation: none ;
 
       &::after { display: none }
     }
 
-    .usernameGradient_e5de78 {
+    .e5de7811b2777bfa-usernameGradient {
       background: var(--custom-gradient-color-1);
       background-clip: text ;
       background-size: 100px auto ;
     }
 
     // member list
-    .usernameGlow_e5de78 { display: none }
+    .e5de7811b2777bfa-usernameGlow { display: none }
   }
   // <- User name (holographic) gradient effect
 
@@ -76,15 +76,15 @@
   // member list
   @container style(--hide-clanTags: 1 ) or style(--hide-clanTags: 2 ) {
 
-    .username__5d473 .clanTag__5d473 { display: none }
+    ._5d473ecff348c314-username ._5d473ecff348c314-clanTag { display: none }
   }
 
   // Clan tags all
   @container style(--hide-clanTags: 2 ) {
 
     :is(
-      .clanTagChiplet_c19a55, // chat
-      .voiceUser__07f91 .clanTag__07f91 // user in voice
+      .c19a557985eb7793-clanTagChiplet, // chat
+      ._07f9193042954787-voiceUser ._07f9193042954787-clanTag // user in voice
     )
     { display: none }
   }
