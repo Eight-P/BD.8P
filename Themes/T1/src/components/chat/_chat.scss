@@ -28,6 +28,7 @@ $ChatScrollerBottomSpacing: 16px ;
 
 // -> Chat container
 ._5e434347c823b592-page {
+  border: none ;
   // :is(._99f8cc7ad4790ce9-scrollerBase, .d125d22cdfd32cfe-scrollerBase) {
   .d125d22cdfd32cfe-scrollerBase {
     @include scrollerFadeOut();
@@ -249,13 +250,13 @@ $ChatScrollerBottomSpacing: 16px ;
 }
 // <- Reactions
 
-// -> Searchbar results popout
+// -> Searchbar results sidebar
 // when forum channel is open on the left
-.f369dba7416c67f0-container + .a9e7064fdee8e9b0-searchResultsWrap {
+.f369dba7416c67f0-container + .a98f3b020416ad54-searchResultsWrap {
   max-width: calc(100% - 350px);
 }
 
-.a9e7064fdee8e9b0-searchResultsWrap {
+.a98f3b020416ad54-searchResultsWrap {
   border: none ;
   width: 50% ;
   max-width: calc(100% - 45px);
@@ -266,11 +267,11 @@ $ChatScrollerBottomSpacing: 16px ;
   @include shadowEffect("box_1");
 
   // -> Header
-  .f3b986a284a18c78-searchHeader {
+  .ae7890a1b8e75804-searchHeader {
     direction: ltr ;
 
     // n of search results
-    .text-md\/medium_cf4812 {
+    .cf48127484dbde85-text-md\/medium {
       color: var(--text-normal) !important ;
     }
   }
@@ -278,11 +279,11 @@ $ChatScrollerBottomSpacing: 16px ;
 
   // -> Body
   // Content scroller
-  .a9e7064fdee8e9b0-scroller {
+  .a98f3b020416ad54-scroller {
     padding: 6px 0 0 0 !important ;
     direction: ltr ;
 
-    .c68065c20f8328a7-searchResultGroup {
+    .a7e67f4ddd7c6bb2-searchResultGroup {
       margin-bottom: 14px ;
       padding-bottom: 10px ;
 
@@ -290,7 +291,7 @@ $ChatScrollerBottomSpacing: 16px ;
     }
 
     // message item
-    ._02a39cb2980ceaaf-searchResult {
+    ._80bf8435713f6adb-searchResult {
       border: none ;
       border-radius: 0 ;
 
@@ -300,17 +301,17 @@ $ChatScrollerBottomSpacing: 16px ;
     }
 
     // channel name container
-    .c68065c20f8328a7-channelNameContainer {
+    .a7e67f4ddd7c6bb2-channelNameContainer {
       margin-left: 10px ;
     }
 
     // channel name & icon
-    :is(.c68065c20f8328a7-channelNameText, .c68065c20f8328a7-channelNameIcon) {
+    :is(.a7e67f4ddd7c6bb2-channelNameText, .a7e67f4ddd7c6bb2-channelNameIcon) {
       padding-right: 6px ;
       color: var(--text-normal);
     }
 
-    ._02a39cb2980ceaaf-button {
+    ._80bf8435713f6adb-button {
       @include shadowEffect("box_3");
     }
   }

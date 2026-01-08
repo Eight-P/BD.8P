@@ -11,8 +11,8 @@
 
 .f75fb00fb7356cbe-form {
   margin-top: 0 !important ;
-  // padding: 0 8px 0 0 !important ;
-  padding: 0 !important ;
+  padding: 0 3px 0 0 !important ;
+  // padding: 0 !important ;
 
   --channel-text-area-placeholder: var(--text-muted);
   --custom-channel-textarea-text-area-height: 46px ;
@@ -171,8 +171,8 @@
 
     // Nitro btn
     @container style(--hide-chatBtn-nitro: 1) {
-      // ._740174f3d6a2c8fe-button:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
-      .c0c49a3e5c8626ac-container:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
+      ._740174f3d6a2c8fe-button:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
+      // .c0c49a3e5c8626ac-container:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
         display: none ;
       }
     }

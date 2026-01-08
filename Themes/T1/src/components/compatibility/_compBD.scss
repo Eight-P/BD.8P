@@ -6,6 +6,7 @@
 // - FriendNotifications by DevilBro (v2.1.4)
 // - BetterAnimations by arg0NNY (v2.0.6) (partial)
 // - NewOldUserPopouts by KingGamingYT (v1.0.0)
+// - MemberCount by Arashiryuu (v3.0.12)
 
 #app-mount {
 
@@ -217,3 +218,9 @@
   --background-secondary: var(--background-base-lower);
 }
 // <- NewOldUserPopouts by KingGamingYT
+
+// -> MemberCount by Arashiryuu
+#MemberCount {
+  background: none ;
+}
+// <- MemberCount by Arashiryuu

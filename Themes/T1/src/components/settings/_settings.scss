@@ -37,6 +37,10 @@ $T1_v: null !default ;
   }
 
   // -> sidebar region
+  ._409aa1aeee28d5f7-sidebar {
+    border: none ;
+  }
+
   ._409aa1aeee28d5f7-fixedContent::after { display: none }
 
   // log out item
@@ -62,6 +66,10 @@ $T1_v: null !default ;
     margin-top: 30px ;
   }
 
+  .e9e3ed8b8badfe05-contentHeader {
+    border: none ;
+  }
+
   // -> Client Themes
   ._67a117a74ffaf557-header ._67a117a74ffaf557-title {
     position: relative ;
@@ -79,7 +87,7 @@ $T1_v: null !default ;
   }
   // <- Client Themes
 
-  // BD
+  // -> BD
   .bd-store-card {
     background: $BtnBackgroundNormal ;
 
@@ -87,6 +95,11 @@ $T1_v: null !default ;
       background: $BtnBackgroundHover ;
     }
   }
+
+  .bd-search-wrapper {
+    @include searchbar(".bd-search");
+  }
+  // <- BD
   // <- content region
 }
 // <- User settings
