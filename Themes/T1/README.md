@@ -1,5 +1,3 @@
-[image1]:https://eight-p.github.io/BD.8P/Themes/T1/assets/T1-Thumbnail.png
-
 [bd-theme-page]:https://betterdiscord.app/theme/T1
 [bd-direct-download]:https://betterdiscord.app/Download?id=218
 
@@ -19,7 +17,9 @@
 
 <br/>
 
-![][image1]
+<div align="center">
+  <img width=975 src="https://eight-p.github.io/BD.8P/Themes/T1/assets/T1-Thumbnail.png">
+</div>
 
 <br/>
 
