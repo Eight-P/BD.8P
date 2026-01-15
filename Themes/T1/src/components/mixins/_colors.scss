@@ -15,6 +15,7 @@ html.theme-dark:root, #app-mount .theme-dark {
   --text-tertiary: var(--header-secondary);
 
   --interactive-normal: #7c7d7e ; // #b9bbbe
+  // --interactive-normal: #888c91 ;
   --interactive-hover: #dcddde;
   --interactive-active: #fff;
   --interactive-muted: #4f545c;
@@ -128,6 +129,13 @@ html.theme-dark:root, #app-mount .theme-dark {
   --background-base-low: var(--background-tertiary);
   --background-surface-highest: var(--background-floating);
 
+}
+
+// since these are missing now
+html.theme-light:root, #app-mount .theme-light {
+  --interactive-normal: var(--text-subtle);
+  --interactive-hover: var(--text-strong);
+  --interactive-active: var(--text-strong);
 }
 // <- Theme colors
 

@@ -116,7 +116,7 @@
   // <- Scroller
 
   // -> Items
-  .b6bcee13c278a88d-contentSection {
+  ._99f8cc7ad4790ce9-content {
 
     // Guild/Apps item
     ._84e3e626b96552ad-card {
@@ -132,15 +132,15 @@
       }
     }
 
-    // Quest item
-    ._60f82152ef4c5e63-questTile {
-      background: var(--background-modifier-active);
+    // Quest item (move away)
+    // ._60f82152ef4c5e63-questTile {
+    //   background: var(--background-modifier-active);
 
-      // bottom container
-      ._956c67492d3b967a-container {
-        background: none ;
-      }
-    }
+    //   // bottom container
+    //   ._956c67492d3b967a-container {
+    //     background: none ;
+    //   }
+    // }
   }
   // <- Items
 }

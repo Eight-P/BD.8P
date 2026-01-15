@@ -23,8 +23,8 @@
   --bg_itemsHover: var(--background-modifier-selected);
   --bg_cards: hsl(from var(--user-profile-overlay-background) h s l / .1 );
 
-  --c_items: hsl(from var(--control-text-secondary-default) h s 65% / 1 );
-  --c_itemsHover: hsl(from var(--control-text-secondary-default) h s 85% / 1 );
+  --c_items: hsl(from var(--control-secondary-text-default) h s 65% / 1 );
+  --c_itemsHover: hsl(from var(--control-secondary-text-default) h s 85% / 1 );
 
   --custom-user-profile-base-layer-z-index: 3 ; // keep profile effect below
 
@@ -149,7 +149,7 @@
       // <- Status
 
       // Avatar decorations cutout for status icon
-      ._44b0c28be7879b7b-avatarDecoration > foreignObject { mask: none }
+      ._44b0c28be7879b7b-avatarDecorationContainer > foreignObject { mask: none }
 
       // <- Image / Status icon
     }
@@ -432,8 +432,10 @@
       background: none ;
     }
 
+    // edit profile (overriding btn design)
     > .a22cb0c66246f5d3-button {
       background: none !important ;
+      color: var(--text-default) !important;
     }
   }
   // <- Footer

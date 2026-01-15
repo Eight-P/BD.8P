@@ -115,6 +115,68 @@ $T1_v: null !default ;
 }
 // <- Channel settings
 
+// -> Server settings (hell)
+._23e6b439306f125a-contentRegion {
+
+  ._91dc3971e82843c1-page {
+    flex-direction: row ;
+  }
+
+  // inner content region container (IDK)
+  ._23e6b439306f125a-contentRegionScroller:has(._91dc3971e82843c1-page) {
+    overflow: hidden !important ;
+  }
+
+  // -> Roles
+  // outer container
+  .d125d22cdfd32cfe-content > div:not([class]):first-child {
+    display: none ;
+  }
+
+  // -> roles list
+  .aa8da23faa27393c-item .cf48127484dbde85-text-sm\/medium {
+    color: currentColor !important ;
+  }
+
+  // roles sidebar "back" header
+  .e29cd7b93c4f1266-titleContainer {
+    padding: 8px ;
+  }
+  // <- roles list
+
+  // -> header right side
+  .c6bf1b7af480dfda-header {
+    width: 100% ;
+    margin: 0 ;
+    padding: 8px 8px 18px 8px ;
+  }
+  // role warning header box
+  :is(._81b3e843d09e285a-titleContainer, ._358591fa30baeebc-container, ._166631599d7f960b-noticeContainer) {
+    position: relative ;
+  }
+
+  .cdf6f1f65d603d40-notice {
+    background: none ;
+  }
+
+  ._166631599d7f960b-searchContainer ._72c3859781ebce8f-container {
+    z-index: 1 ;
+  }
+  // <- header right side
+
+  // -> right side content (the scrolling is very weird)
+  ._91dc3971e82843c1-contentContainer {
+    top: 60px ;
+  }
+
+  .c6bf1b7af480dfda-contentWidth {
+    width: auto ;
+  }
+  // <- right side content
+  // <- Roles
+}
+
+// <- Server settings
 
 // -> User settings old (for channels settings) (might remove)
 ._960e4207cea8323e-layer:not(._960e4207cea8323e-baseLayer) {
@@ -176,15 +238,5 @@ $T1_v: null !default ;
   }
   // <- Close btn
   // <- Content region
-
-  // Fix bc of background pseudo
-  .c6bf1b7af480dfda-header :is(._81b3e843d09e285a-titleContainer, ._358591fa30baeebc-warning) {
-    position: relative ;
-  }
-
-  // Fix for double scrollbar
-  ._23e6b439306f125a-contentRegionScroller:has(> #roles-tab)  {
-    @include scrollbar(none);
-  }
 }
 // <- User settings old

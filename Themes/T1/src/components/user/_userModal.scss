@@ -51,19 +51,6 @@
 
         @include scrollerFadeOut();
       }
-
-      // overriding my stupid btn design
-      ._9c3bea41fd465666-profileButtons {
-        .themeColor_fb7f94.primary_fb7f94 {
-          background: var(--profile-gradient-button-color) !important ;
-          color: var(--white-500);
-        }
-
-        ._201d5e8a3c09670a-lookFilled._201d5e8a3c09670a-colorPrimary {
-          background-color: var(--button-secondary-background) !important ;
-          color: var(--button-secondary-text) !important ;
-        }
-      }
     }
     // <- left side profile section
 
@@ -172,8 +159,6 @@
       }
       // "games i like" container
       ._9a5c352fc10aea40-coverList {
-        // grid-template-columns: repeat(auto-fit, var(--custom-game-cover-width, 88px));
-        // only loads first 8 :(
 
         // "show more" btn
         ~ ._7d7f78b99d0a7581-button {

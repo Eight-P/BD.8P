@@ -19,9 +19,9 @@
   }
 
   // scroller
-  :is(
+  &:not(.theme-light) :is(
     .d125d22cdfd32cfe-scrollerBase,
-    // ._99f8cc7ad4790ce9-scrollerBase,
+    ._99f8cc7ad4790ce9-scrollerBase,
     .d9c8822889d1d4a1-container // Threads
   ) {
     background: $BG_Body ;
@@ -319,6 +319,10 @@
           display: none ;
         }
       }
+    }
+
+    ._523aa09e59621644-friendRequestsButton {
+      border: none ;
     }
     // <- Header
 

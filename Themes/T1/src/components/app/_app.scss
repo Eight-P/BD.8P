@@ -179,30 +179,42 @@ path[fill="currentColor"] {
   border-left: none ;
 }
 
-// -> Selectable items (settings sidebar, various nav/tab bars, ...)
-.aa8da23faa27393c-item {
-  background: none !important ;
+// -> Some selectable items (not a fan)
+:is(
+  .dc2e0e7839a6713a-settingsTabBar,
+  .ab66419eae73260f-tabBar, // inbox
+  ._133bf5eea8e33a34-tabBar, .f8303a11ec48bef3-tabBar, // some nav/tab bars
+  ._81b3e843d09e285a-tabBar, // roles settings
+  ._409aa1aeee28d5f7-nav,
+  .aa8da23faa27393c-side
+  ) // settings sidebar
+  {
   border: none ;
-  color: var(--interactive-normal);
 
-  // border below tab (selected indicator) (.tab version)
-  &::after {
-    background: transparent ;
-  }
+  :is(.caf372efc4d47562-item, .aa8da23faa27393c-item, .dc2e0e7839a6713a-settingsTabBarItem) {
+    background: none !important ;
+    border: none ;
+    color: var(--interactive-normal);
 
-  &:hover {
-    color: var(--interactive-hover);
-  }
-
-  &.aa8da23faa27393c-selected {
-    color: var(--interactive-active);
-
+    // border below tab (selected indicator) (.tab version)
     &::after {
-      background: var(--interactive-hover);
+      background: transparent ;
+    }
+
+    &:hover {
+      color: var(--interactive-hover);
+    }
+
+    &:is(.aa8da23faa27393c-selected, .caf372efc4d47562-active){
+      color: var(--interactive-active);
+
+      &::after {
+        background: var(--interactive-hover);
+      }
     }
   }
 }
-// <- Selectable items
+  // <- Selectable items
 
 .a3002d7de5be5280-app {
 

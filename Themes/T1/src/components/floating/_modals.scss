@@ -14,6 +14,11 @@
     }
   }
 
+  // image view control btns
+  ._6088c3df6d10c76d-topBar :is(.cc1819cb49c2d109-actionButtons, ._6088c3df6d10c76d-closeButton .aec7abc73c126bc0-buttonInner) {
+    border: none ;
+  }
+
   // :is(._8a031a135bfcb9ba-small, ._8a031a135bfcb9ba-medium) {
   //   max-height: 75vh ;
   //   height: auto ;
