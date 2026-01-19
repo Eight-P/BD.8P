@@ -85,6 +85,7 @@
       height: 100% ;
       width: 100% ;
       justify-content: center ;
+      border-radius: 0 ;
 
       &:hover, &[aria-expanded="true"] { background-color: rgba(0, 0, 0, 0.2) !important }
     }

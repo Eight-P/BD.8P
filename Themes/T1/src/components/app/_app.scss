@@ -29,7 +29,7 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
     color: var(--text-normal);
     box-shadow: none ;
 
-    &[style^="background-color: var(--status-danger)"] {
+    &[style^="background-color: var(--background-feedback-notification)"] {
       border-bottom: 2px solid var(--red);
     }
   }
