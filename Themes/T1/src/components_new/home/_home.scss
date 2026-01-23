@@ -1,0 +1,111 @@
+@use '../mixins/mixins' as * ;
+
+// -- Home
+
+// Friends - header, list, activity sidebar
+@import 'homeFriends' ;
+
+
+// -> DMs Sidebar
+.privateChannels_e6b769 {
+
+  // Category header text
+  .headerText__99e7c {
+    color: var(--channels-default); // removes hover effect
+  }
+
+  // Create Group DM Button (not necessary, there is one at the top right)
+  :is(.privateChannelRecipientsInviteButtonIcon__99e7c, .sectionDivider_e6b769) {
+    display: none
+  }
+
+  // category header
+  .privateChannelsHeaderContainer__99e7c  {
+    margin: 16px 0 6px 0 ;
+  }
+
+  // Sidebar item container
+  .channel__972a0 {
+    padding: 2px 0 ;
+    border-radius: 0 ;
+
+    // Second container
+    .interactive__972a0 {
+      background: none ;
+      color: var(--channels-default);
+
+      &.selected_bf202d {
+        border-left: 3px solid var(--interactive-hover);
+      }
+
+      &:hover {
+        border-left: 3px solid var(--interactive-hover);
+        background: var(--background-modifier-hover);
+      }
+    }
+  }
+
+  // "new" badge on shop
+  .textBadge__2b1f5 {
+    // display: none ;
+    background: none !important ;
+    color: var(--interactive-hover);
+  }
+}
+// <- DMs Sidebar
+
+// -> MSG Requests
+// <- MSG Requests
+
+// -> Shops
+// Nitro store
+.homeWrapperNormal__0920e {
+  border: none ;
+
+  .container_c880e8 {
+    margin: 16px ;
+  }
+
+  .headerBar__0920e, .root__52b47 {
+    display: none
+  }
+
+  .whatsNewSectionContainer_c880e8 {
+    background: none ,
+  }
+}
+
+// -> Profile decorations shop
+.shop__6db1d {
+
+  // discord logo & home tab that just leads to "featured" anyway
+  .shopHomeLink__80679 { display: none }
+
+  // main shop tab, other tabs
+  :is(.shopHomeLink__80679, .tabs__80679) {
+    height: 32px ; // matching the regular Header bar height with respect to padding
+  }
+
+  .headerBar__80679 {
+    height: auto !important ;
+  }
+
+  .headerBarInner__80679 {
+    flex-wrap: wrap ;
+    height: max-content ;
+    justify-content: center ;
+    gap: 8px ;
+
+    // "featured", "browse", .. tabs
+    .tabs__80679 {
+      margin-left: 12px ;
+    }
+
+    // search, filter, ...
+    .alignedRightContent__80679 {
+      margin: 0 ;
+    }
+  }
+}
+// <- Profile decorations shop
+// <- Shops

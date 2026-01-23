@@ -1,0 +1,96 @@
+// App | Title & Header bar
+
+#app-mount {
+
+  --custom-app-top-bar-height: 28px  ;
+}
+// -> Title bar
+// app and base layer bar bar
+.bar_c38106 {
+
+  .button__85643 {
+    height: var(--custom-app-top-bar-height);
+    width: var(--custom-app-top-bar-height);
+  }
+
+  // guild icon txt
+  .noIcon_f34534 {
+    background: none ;
+  }
+
+  // -> right side btns
+  .anchor_edefb8, .winButtons_c38106::before { display: none }
+
+  .winButton_c38106 {
+    min-width: 32px ;
+  }
+
+  .trailing_c38106 {
+    .clickable_c99c29 > svg {
+      height: 20px ;
+      width: 20px ;
+    }
+  }
+  // <- right side btns
+}
+
+// base layer bar only, to avoid separator overlapping modal backdrop
+.base__5e434 .bar_c38106 {
+  @include divider(bottom, ("color": rgb(100, 100, 100) ));
+}
+// <- Title bar
+
+// -> general Header bar
+// outer containers
+:is(.chat_f75fb0, .container__133bf) {
+  border-top: none ;
+}
+
+.container__9293f {
+  padding: 8px 10px ;
+  height: 48px ;
+  min-height: unset ;
+  border: none !important ;
+  box-sizing: border-box ;
+
+  // separator fade thing
+  .children__9293f::after { display: none }
+}
+// <- general Header bar
+
+// -> Discord, bd notification bar
+.notice__6e2b9, .bd-notice {
+  background: var(--background-primary);
+  border-radius: 0 ;
+
+  .header_c5cd6a {
+    color: var(--header-secondary);
+  }
+
+  .button__6e2b9, .bd-notice-button {
+    border: none ;
+    color: #{$BtnTextNormal} !important;
+    background: $BtnBackgroundNormal ;
+
+    &:hover {
+      color: #{$BtnTextHover} !important;
+      background: $BtnBackgroundHover ;
+      border-radius: 3px ;
+    }
+  }
+}
+// <- Discord notification bar
+
+// -> Title bar & header bar icons
+.clickable__9293f  {
+
+  .icon__9293f {
+    color: $BtnIconNormal ;
+  }
+
+  &:hover .icon__9293f {
+    color: $BtnIconHover ;
+  }
+}
+// <- Title bar & header bar icons
+// }

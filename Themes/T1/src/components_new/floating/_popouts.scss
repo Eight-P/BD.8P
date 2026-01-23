@@ -1,0 +1,488 @@
+// floating |  Pop-outs & Tooltips & Context menus
+.layer__59d0d {
+
+  // -> General content
+  // first inner container with class (not a fan)
+  :is(
+    .menu_c1e9c4, // context menus
+
+    .wrapper_c0e32c, // add reactions pop-out
+    .contentWrapper__9c62c, // Apps&Cmds
+    .contentWrapper__08434, // Chat picker
+    .container_d9c882, // Threads
+    .messagesPopoutWrap_e8b59c, // Pinned Msgs
+    .popoutContainer__4ad69, // Bookmarks
+    .recentMentionsPopout__95796 // Inbox
+  ) {
+    border: none ;
+    @include shadowEffect("box_2");
+  }
+
+  // scroller
+  &:not(.theme-light) :is(
+    .scrollerBase_d125d2,
+    .scrollerBase__99f8c,
+    .container_d9c882 // Threads
+  ) {
+    background: $BG_Body ;
+  }
+
+  :is(
+    .container_d9c882, // Threads
+    .messagesPopoutWrap_e8b59c, // Pinned Msgs
+    .popoutContainer__4ad69, // Bookmarks
+    .recentMentionsPopout__95796 // Inbox
+  ) {
+    width: 50vw ;
+    min-width: 480px ;
+    max-width: 600px ;
+    max-height: 85vh ;
+  }
+
+  // "Pro tip" footer
+  .footer_e8b59c { display: none }
+
+  // Header text (bookmarks & Pins)
+  .titleContainer_e8b59c .text-lg\/semibold_cf4812 {
+    color: $C_Header !important ;
+  }
+
+  :is(.header_d9c882, .header_e8b59c, .header_ab6641) {
+    border: none ;
+    z-index: 1 ;
+
+    @include shadowEffect("box_3");
+  }
+
+  // <- General content
+
+  // -> Chat input Emoji, Sticker, Gif picker
+  #emoji-picker-tab-panel {
+    box-shadow: none ;
+  }
+
+  :is(.contentWrapper__08434, .wrapper_c0e32c) {
+    border: none ;
+    @include shadowEffect("box_2");
+
+    // -> Nav bar
+    .navButton__08434 {
+      background: none ;
+      color: var(--interactive-normal);
+    }
+
+    .navButtonActive__08434  {
+      color: var(--interactive-active) !important;
+    }
+    // <- Nav bar
+
+    // -> Header
+    .header_c0e32c, .header__8ef02, .header_fed6d3 {
+      box-shadow: var(--shadow-low);
+    }
+    // <- Header
+
+    // -> Right side content
+    // category headers (emoji & sticker)
+    .wrapper__14245 {
+      background: $BG_Body !important ;
+      padding-bottom: 6px ;
+    }
+
+    // nitro locked emoji category
+    .categorySectionNitroLocked_c656ac {
+      background: $BG_Body !important ;
+
+      .header__14245 {
+        color: rgb(166, 103, 228);
+      }
+    }
+
+    // -> Sticker item
+    #sticker-picker-tab-panel .header__8ef02 {
+      height: 40px ; // keeps the left side aligned
+    }
+
+    .assetWrapperMasked__31fc2 {
+      mask: none ;
+    }
+
+    .sticker_c6367b {
+      border-radius: 8px ;
+
+      &:hover {
+        background: var(--background-modifier-accent);
+      }
+    }
+    // <- Sticker item
+
+    // -> Add reactions
+    &#emoji-picker-tab-panel .header_c0e32c {
+      height: 40px ; // keeps the left side aligned
+    }
+    // <- Add reactions
+
+    // hover indicator, nitro upsell banner Gifs
+    :is(.inspectedIndicator_c6367b, .upsellContainer__0b69f) {
+      display: none ;
+    }
+    // <- Right side content
+
+    // -> left side category items
+    // default emoji shortcut, sticker shortcut - category
+    :is(.unicodeShortcut_b9ee0c, .standardStickerShortcut__3ad28) {
+      background: $BG_Body ;
+    }
+
+    :is(.stickerCategory__3ad28, .categoryItem_b9ee0c) {
+      background: none ;
+
+      &:hover path {
+        fill: var(--interactive-active);
+      }
+    }
+    // <- left side category items
+
+    :is(.inspector_aeaaeb, .nitroTopDividerContainer_b3fb5f, .nitroBottomDivider_c656ac) {
+      display: none ;
+    }
+  }
+  // <- Chat input Emoji, Sticker, Gif picker
+
+  // -> Soundboard picker
+  .picker__09f65 {
+    background: $BG_Meta ;
+
+    // -> Nitro locked
+    :is(.upsellContainer__0b69f, .nitroTopDividerContainer_b3fb5f) { display: none }
+
+    .sectionContainerNitroLocked__61424 .sectionTitle__61424 {
+      color: rgb(166, 103, 228);
+    }
+
+    :is(.sectionContainerNitroLocked__61424, .soundRowNitroLocked__61424) {
+      background: none ;
+    }
+    // <- Nitro locked
+  }
+  // <- Soundboard
+
+  // -> Threads
+  .container_d9c882 {
+
+    // Header icon & text
+    :is(.threadIcon_d9c882, .title_d9c882) {
+      color: $C_Header !important ;
+    }
+  }
+  // <- Threads
+
+  // -> Pins
+  // .messagesPopoutWrap_e8b59c {
+
+  // }
+
+  // jump to message btns
+  .actionButtons_e8b59c {
+
+    .jumpButton_e8b59c {
+      background: $BG_Meta ;
+      padding: 4px 16px ;
+
+      @include shadowEffect("box_3");
+
+      + .button__201d5 {
+        width: 24px ;
+        background: $BG_Meta !important ;
+
+        @include shadowEffect("box_3");
+      }
+    }
+  }
+  // <- Pins
+
+  // -> Bookmarks (solo, inbox)
+  :is(.popoutContainer__4ad69, .recentMentionsPopout__95796) {
+
+    .messagesScroller__4ad69 {
+      gap: 8px ;
+    }
+
+    .messageContainer__4ad69 {
+      border-radius: 0 ;
+      border-bottom: 1px solid var(--background-modifier-accent);
+      box-shadow: none ;
+
+      // container for click/jump to msg action (but it's weird)
+      .clickableMessageBackground__4ad69 { display: none }
+
+      // header for channel name
+      .channelHeader__06fb5 {
+        border: none ;
+      }
+
+      // msg btns
+      .hoverBar__4ad69 .icon_f84418 {
+        transform: none ;
+      }
+    }
+  }
+  // <- Bookmarks
+
+  // -> Context menus
+  .menu_c1e9c4 {
+
+    .scrollerBase_d125d2::-webkit-scrollbar-thumb {
+      background-color: transparent ;
+    }
+
+    .separator_c1e9c4 {
+      border-color: var(--background-modifier-accent);
+    }
+
+    // -> Menu options
+    // Name text
+    .label_c1e9c4 {
+      color: var(--interactive-normal);
+    }
+
+    // Option on hover
+    .focused_c1e9c4 {
+      .label_c1e9c4 {
+        color: var(--interactive-hover);
+      }
+    }
+
+    // Critical option (ban, block,..)
+    .colorDanger_c1e9c4 {
+      .label_c1e9c4 {
+        color: var(--text-danger);
+      }
+    }
+    // <- Menu options
+
+    // -> Checkbox options
+    .checkboxContainer_c1e9c4 {
+
+      .checkboxIndicator__714a9 {
+        background: none !important ;
+        border: none ;
+      }
+
+      .checkStroke__714a9 {
+        color: var(--interactive-text-default);
+        opacity: 1 ;
+      }
+
+      // unchecked state
+      &[aria-checked="false"] path {
+        d: path("M 18.625 3 H 5.375 C 4.06519 3 3 4.06519 3 5.375 V 18.625 C 3 19.936 4.06519 21 5.375 21 H 18.625 C 19.936 21 21 19.936 21 18.625 V 5.375 C 21.0057 4.08803 19.9197 3 18.625 3 Z M 19 19 V 5 H 4.99999 V 19 H 19 Z");
+      }
+
+      // x to uncheck on hover
+      &[aria-checked="true"]:hover {
+        .checkStroke__714a9 {
+          color: var(--red) !important ;
+        }
+        path {
+          d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
+        }
+      }
+    }
+    // <- Checkbox options
+
+    // -> Radio selection options
+    .radioIndicator__64e61 {
+
+      .outerRadioBase__64e61 {
+        fill: transparent ;
+      }
+
+      .outerRadioFill__64e61 {
+        fill: transparent ;
+      }
+    }
+    // <- Radio selection options
+
+  }
+  // <- Context menus
+
+  // -> Inbox
+  .recentMentionsPopout__95796 {
+
+    // -> Header
+    // Header icon & text
+    :is(.inboxIcon_ab6641, .inboxTitle_ab6641) {
+      color: $C_Header !important ;
+    }
+
+    .tabBar_ab6641 {
+      margin: 16px 16px 0 16px ;
+      justify-content: space-around ;
+
+      .tab_ab6641 {
+        margin: 0 ;
+
+        &::after {
+          display: none ;
+        }
+      }
+    }
+
+    .friendRequestsButton__523aa {
+      border: none ;
+    }
+    // <- Header
+
+    // -> Body
+    .scrollerBase_d125d2 {
+      padding: 0 !important ;
+      border-top: 2px solid $BG_Body ;
+
+      @include scrollbar(none);
+
+      // jump to msg btn mentions & unreads
+      .jumpButton_ed0c8c {
+        background: $BG_Meta ;
+      }
+    }
+
+    // for you empty
+    .container_a54d1d {
+      margin: 0 ;
+      background: $BG_Body ;
+    }
+
+    // -> Unreads
+    // channel item
+    .channel__427f0 {
+      padding-bottom: 3px ;
+
+      // Collapse btn
+      .collapseButton__427f0 {
+        position: static ;
+        display: flex ;
+        align-items: center ;
+        justify-content: center ;
+        height: 32px ;
+        width: 32px ;
+        margin-left: 12px ;
+        padding: 0 ;
+        color: var(--interactive-normal);
+        border-radius: 50% ;
+
+        &:hover {
+          color: var(--interactive-hover);
+        }
+      }
+    }
+    // msg divider general
+    .divider__908e2 {
+      margin: 30px 0 30px 0 ;
+
+      .content__908e2 {
+        background: $BG_Body ;
+      }
+
+      // divider in channel item
+      &.divider__1ccd1 {
+        margin: 20px 0 20px 16px ;
+      }
+    }
+    .forumPost__7d15e {
+      margin: 0 ;
+      padding: 10px 12px 16px 12px ;
+      background: none ;
+      border: none ;
+      border-radius: 0 ;
+      border-bottom: 1px solid var(--background-modifier-accent);
+      transition: none ;
+
+      &:hover {
+        background: var(--background-modifier-hover);
+      }
+    }
+    // <- Unreads
+
+    // -> Mentions
+    .container__95796 {
+      padding: 0 ;
+    }
+
+    // mention header
+    .channelHeader__35a7e {
+      padding: 12px 16px ;
+
+      @include shadowEffect("box_3");
+    }
+    // <- Mentions
+
+      // <- Body
+  }
+  // <- Inbox
+
+  // -> Apps & Commands pop-out
+  .positionContainer__31a96 {
+    max-height: calc(100vh - 130px);
+
+    .drawerSizingWrapper__9c62c {
+      height: 100% !important ;
+    }
+
+    .slideContent__9c62c {
+      max-height: calc(100vh - 130px);
+    }
+
+    .searchBarContainer__927fc {
+      z-index: 1 ;
+
+      @include shadowEffect("box_3");
+    }
+
+    .scrollableContent__927fc {
+      @include scrollerFadeOut();
+
+      // spacer
+      &::before {
+        content: "";
+        position: relative;
+        display: block ;
+        height: 10px ;
+      }
+    }
+  }
+  // <- Apps & Commands pop-out
+}
+
+.chatContent_f75fb0 {
+  z-index: 9 ; // to keep summaries above the members list
+
+  // -> Chat Summaries
+  .topicsDropdownBase__0f481 {
+    background: $BG_Body ;
+
+    .topicsDropdownHeading__0f481 {
+      background: $BG_Meta ;
+    }
+  }
+  // <- Summaries
+
+  // -> Slash cmds pop-out
+  .autocomplete__13533 {
+    --background-base-lowest: #{$BG_Meta};
+    --autocomplete-bg: #{$BG_Body};
+    --background-surface-high: #{$BG_Body};
+
+    box-shadow: none ;
+    @include shadowEffect("box_2");
+
+    // left side categories
+    .none_d125d2 {
+      @include scrollbar(none);
+    }
+  }
+  // <- Slash cmds pop-out
+
+}
+
+

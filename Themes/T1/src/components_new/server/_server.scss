@@ -1,0 +1,25 @@
+@use '../mixins/mixins' as * ;
+
+// -- Guild/Server view
+
+// Text & Voice Channels sidebar
+@import 'serverChannels' ;
+
+// Members list
+@import 'serverMembers.scss' ;
+
+// Server home, Channels&Roles, Member safety, Server shop
+@import 'serverSpecials.scss' ;
+
+
+// Server boost screen
+.root__5c9fc.enterDone__5c9fc {
+
+  .scroller__6fd0e {
+    @include scrollbar();
+    @include scrollerFadeOut();
+  }
+
+  // weird wave design things
+  .bodyWave__1dfae, .headerWave__1dfae { display: none }
+}

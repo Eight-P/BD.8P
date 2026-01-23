@@ -1,0 +1,160 @@
+// App | Transparency
+
+@use "sass:string";
+
+
+$Classes:
+  // -> App
+  ".bg__960e4",
+  ".app__160d8",
+  ".layer__960e4",
+  ".page_c791b2",
+  // most scroller containers
+  // ".app_a3002d :is(.scrollerBase__99f8c,.scrollerBase_d125d2)",
+  ".app_a3002d .scrollerBase_d125d2",
+  // Title bar
+  "!.container__9293f",
+  // Discovery
+  ".container__551b0",
+  ".relative__8a7fc",
+  ".container_cbd375",
+  // Server bar
+  ".guilds__5e434",
+  // <- App
+
+  // -> Text chat
+  "!.chat_f75fb0",
+  ".chatContent_f75fb0",
+  ".themedBackground__74017", // txt input (more?)
+  // search results sidebar
+  ".searchResultsWrap_a98f3b",
+  // search results msg
+  ".searchResult__80bf8",
+  // Forum channel
+  ".container_f369db",
+  ".pageBody__41ed7",
+  ".container__5a2c6",
+  ".container_ca49a1",
+  // Chat box text input
+  ".channelTextArea_f75fb0",
+  ".channelAttachmentArea_b77158",
+  ".chatLayerWrapper__01ae2 .channelTextArea__74017", // threads
+  // chat box replaced channel action
+  ".wrapper__44df5",
+  // reply bar ui
+  ".stackedBars__74017",
+  // loading messages placeholder
+  ".wrapper__6c798",
+  ".wrapper_fc8177",
+  ".wrapper_d852db",
+  // Threads meta bar
+  ".container__34c2c",
+  ".chatHeaderBar_a5700d",
+  // Dms user sidebar
+  ".content_f75fb0 .outer_c0bea0",
+  // <- Text chat
+
+  // -> Voice chat
+  ".callContainer_cb9592",
+  ".callContainer_cb9592 .root_bfe55a",
+  ".wrapper_cb9592",
+  // Stage view
+  ".container__722ff",
+  ".callContainer__722ff",
+  ".scroller__56ccd",
+  ".rowContainer__1e702",
+  ".container__664ff",
+  // <- Voice chat
+
+  // -> Sidebar
+  ".sidebar__5e434",
+  // DMs Sidebar
+  ".privateChannels_e6b769",
+  // Sidebar Panels
+  ".panels__5e434",
+  // Server panel
+  ".container_f37cb1",
+  ".header_f37cb1",
+  // User profile container, Voice channel, Activity
+  ".container__37e49",
+  ".container_e131a9",
+  ".activityPanel__5e434",
+  // Server channels container
+  ".container__2637a",
+  // <- Sidebar
+
+  // -> Server
+  // "Channels & Roles"
+  "!.container__0b563",
+  ".prompt__5d7c9",
+  ".channelRow_e4503a",
+  ".emptyPage__5d7c9",
+  // Member Safety Page
+  ".container_c791b2",
+  ".mainTableContainer__09a38",
+  // Server shop
+  ".container_adb50a",
+  // Server Boosts
+  ".container__89463",
+  ".contentContainer__89463",
+  ".sidebarContainer__89463",
+  // Members list
+  ".container_c8ffbb",
+  ".member_c8ffbb",
+  // Server Boost page
+  ".scroller__6fd0e",
+  ".header__6fd0e",
+  // Threads members
+  ".container__7641b",
+  ".members_c8ffbb",
+  // <- Server
+
+  // -> Home & Friends list
+  ".container__133bf",
+  ".tabBody__133bf",
+  // Nitro store
+  ".applicationStore_f07d62",
+  ".homeWrapperNormal__0920e",
+  // Profile decorations shop (Home)
+  ".shop__6db1d",
+  ".shop__08415",
+  ".shopScroll__6db1d",
+  ".pageWrapper__6db1d",
+  ".page__1feb0",
+  ".filterBar__11877",
+  // Friends Activity Sidebar
+  ".nowPlayingColumn__133bf",
+  ".nowPlayingColumn__133bf :is(.container__7d20c, .emptyCard__7e549)",
+  // <- Home & Friends list
+
+  // -> Settings old
+  ".standardSidebarView__23e6b",
+  ".sidebarRegionScroller__23e6b",
+  ".contentRegion__23e6b",
+  ".contentRegionScroller__23e6b",
+  // Roles Settings
+  ".page__91dc3 .titleContainer_e29cd7",
+  ".container_d8f25b",
+  // <- Settings old
+
+  // -> Settings
+  ".content_e9e3ed", // content region
+  ".contentHeader_e9e3ed"
+  // <- Settings
+;
+
+body, #app-mount { background: none !important }
+
+@each $class in $Classes {
+
+  @if string.slice($class, 1, 1) == "!" {
+    // #app-mount #{string.slice($class, 2, -1)} {
+    #{string.slice($class, 2, -1)} {
+      background: none !important
+    }
+  }
+  @else {
+    // #app-mount #{$class} { background: none }
+    #{$class} { background: none }
+  }
+}

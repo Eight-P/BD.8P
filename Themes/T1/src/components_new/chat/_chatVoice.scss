@@ -1,0 +1,141 @@
+// Chat | Voice & Stage channel view
+
+#app-mount {
+
+// -> Voice call view
+.callContainer_cb9592 {
+  border: none ;
+
+  // player popped out
+  .root_ccf174 {
+    background: none ;
+  }
+
+  // empty voice channel, gradient placeholder (e.g. after call)
+  .pulseGradient__11664,
+  // gradient background for join channel transition
+  .gradientBackground__41626,
+  // artwork when alone in channel
+  .art__4ad81 { display: none }
+
+  // -> Control buttons
+  .buttonSection__1405b {
+    background: none ;
+    border: none ;
+  }
+
+  .attachedCaret_f1ceac {
+    background: none ;
+    color: var(--interactive-normal);
+
+    &:hover {
+      color: var(--interactive-hover);
+    }
+  }
+
+  @container style(--keep-voiceChannelBtns: 1) {
+    .root_bfe55a {
+      padding: 48px 0 50px 0 ;
+      box-sizing: border-box ;
+    }
+
+    .videoControls_bfe55a {
+      padding: 0 16px ;
+    }
+
+    .controlSection_bfe55a {
+      opacity: 1 ;
+      transform: none ;
+      transition: none ;
+    }
+
+    .gradientContainer_bfe55a { display: none }
+
+    .buttonSection__1405b {
+      background: none ;
+      border: none ;
+    }
+  }
+  // <- Control buttons
+
+  // -> Item card / Tile
+  .tile__2f4f7 {
+
+    @include shadowEffect("box_2");
+
+    // stream quality / live indicator
+    .indicators__2f4f7 { display: none }
+
+    // Avatar
+    .avatarWrapper_fb62e2 {
+
+      foreignObject {
+        mask: none ;
+        overflow: visible ;
+      }
+
+      svg {
+        contain: unset ;
+        overflow: visible ;
+      }
+
+      // Profile image
+      .avatar__44b0c {
+        border-radius: 7.5% ;
+
+        &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
+      }
+    }
+  }
+
+  // "invite people" empty card
+  .tile_d6271c .root__4ad81 {
+    background: none ;
+  }
+  // <- Item card / Tile
+
+  // -> Grid view
+  .videoGridWrapper_a21736 {
+
+    .videoGrid_a21736::-webkit-scrollbar { display: none }
+
+    // Cards main container
+    .tile_d6271c {
+      padding: 8px ;
+      box-sizing: border-box ;
+    }
+  }
+  // <- Grid view
+
+  // -> Focus view
+  .root__6981d {
+    padding: 0 12px ;
+    box-sizing: border-box ;
+
+    // Main frame top
+    .videoFrame__6981d {
+
+      // hide members btn
+      .participantsButton__211d1 {
+        background: var(--background-floating);
+      }
+    }
+
+    // Secondary Tiles
+    .participantsWrapperAnimated__6981d {
+      overflow: visible ; // for shadow
+    }
+  }
+  // <- Focus view
+}
+
+// <- Voice call view
+
+
+// -> Stage view
+
+// TBD
+
+// <- Stage view
+
+}

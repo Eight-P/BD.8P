@@ -1,0 +1,92 @@
+@use '../mixins/mixins' as * ;
+
+// -- User
+
+// Popout gone until reworked
+@import 'userPopout' ;
+// @import 'userPopout_old' ;
+
+@import 'userModal' ;
+
+// Dm's sidebar
+@import 'userSidebar' ;
+
+
+
+#app-mount {
+
+  // -> Profile picture decorations
+  @container style(--hide-avatarDecorations: 1) {
+    :is(.avatarDecoration__44b0c, .avatarDecoration_c19a55) { display: none }
+  }
+  // <- Profile picture decorations
+
+  // -> Profile Animations effects
+  @container style(--hide-profileEffects: 1) {
+    .profileEffects__01370 { display: none }
+  }
+  // <- Profile Animations effects
+
+  // -> Nameplates
+  @container style(--hide-nameplates: 1 ) or style(--hide-nameplates: 3 ) {
+    // member list
+    .nameplated__91a9d {
+      &.childContainer__91a9d {
+        padding-right: 8px ;
+      }
+      .container__4bbc6 { display: none }
+    }
+
+    // dms
+    .channel__972a0 {
+      .container__4bbc6 { display: none }
+      .innerCloseButtonPlated__972a0 {
+        background: none ;
+        backdrop-filter: none ;
+      }
+    }
+  }
+
+  @container style(--hide-nameplates: 2 ) or style(--hide-nameplates: 3 ) {
+    // sidebar profile panel
+    .container__37e49 .container__4bbc6 { display: none }
+  }
+  // <- Nameplates
+
+  // -> User name (holographic) gradient effect
+  @container style(--disable-roleGradients: 1 ) {
+    .animateGradient_e5de78 {
+      animation: none ;
+
+      &::after { display: none }
+    }
+
+    .usernameGradient_e5de78 {
+      background: var(--custom-gradient-color-1);
+      background-clip: text ;
+      background-size: 100px auto ;
+    }
+
+    // member list
+    .usernameGlow_e5de78 { display: none }
+  }
+  // <- User name (holographic) gradient effect
+
+  // -> Clan tags
+  // member list
+  @container style(--hide-clanTags: 1 ) or style(--hide-clanTags: 2 ) {
+
+    .username__5d473 .clanTag__5d473 { display: none }
+  }
+
+  // Clan tags all
+  @container style(--hide-clanTags: 2 ) {
+
+    :is(
+      .clanTagChiplet_c19a55, // chat
+      .voiceUser__07f91 .clanTag__07f91 // user in voice
+    )
+    { display: none }
+  }
+  // <- Clan tags
+}

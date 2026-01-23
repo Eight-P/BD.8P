@@ -1,0 +1,122 @@
+:root {
+  /* Chat */
+
+  /* Show/Hide chat input buttons.
+    1: Visible | 0: Hidden */
+  --hide-chatBtn-nitro: 1 ;
+  --hide-chatBtn-gif: 0 ;
+  --hide-chatBtn-sticker: 0 ;
+  --hide-chatBtn-emoji: 0 ;
+  --hide-chatBtn-apps: 0 ;
+  --hide-chatBtn-media: 0 ;
+
+  /* Reduce message buttons unless hovered
+    0: Show all (default)
+    1: Reduce until hovered */
+  --reduce-messageBtns: 0 ;
+
+  /* Hide emojis in message buttons
+    0: Show all (default)
+    1: Hide until hovered
+    2: Hidden */
+  --hide-messageBtnEmojis: 1 ;
+
+  /* Button overlay in call view
+    0: Only show on hover (default)
+    1: Always show  */
+  --keep-voiceChannelBtns: 0 ;
+
+  /* Visualize chat input when focused/selected
+    0: Off (default)
+    1: Highlight */
+  --highlight-focusedChatInput: 0 ;
+
+  /* Show the URL next to a masked link
+    0: Masked (default)
+    1: Show URL */
+  --unmask-links: 0 ;
+
+  /* Effects & Decorations
+    1: Visible | 0: Hidden */
+
+  /* Profile popout/modal background effects */
+  --hide-profileEffects: 0 ;
+
+  /* User avatar decorations */
+  --hide-avatarDecorations: 0 ;
+
+  /* Nameplates
+    0: Show all (default)
+    1: Hide in member list
+    2: Hide own in profile panel
+    3: Hide all */
+  --hide-nameplates: 0 ;
+
+  /* Clan tags
+    0: Show all (default)
+    1: Hide in member list
+    2: Hide all */
+  --hide-clanTags: 0 ;
+
+  /* Username holographic gradient & animation */
+  --disable-roleGradients: 0 ;
+
+  /* Super reaction animations */
+  --hide-reactionAnimations: 0 ;
+
+  /* Server bar / Guilds list */
+
+  /* Folder background-style
+    0: No background
+    1: Background */
+  --serverBar-FolderStyle: 1 ;
+
+  /* Space between server bar icons */
+  --serverBar-Spacing: 17px ;
+
+  /* Scaler/Percentage value for icon size (can make the images look blurry)
+   100: default | lower number: smaller */
+  --serverBar-IconSize: 100 ;
+
+  /* Backgrounds */
+
+  /* Backgrounds can be links, colors or gradients (links must be HTTPS) */
+  --background-app: url(https://eight-p.github.io/BD.8P/Themes/T1/assets/Main-bg.jpg);
+  --background-server: url(https://eight-p.github.io/BD.8P/Themes/T1/assets/Server-bg.jpg);
+
+  /* Background brightness
+    lower: darker | higher: brighter */
+  --backgroundBrightness-app: 80 ;
+  --backgroundBrightness-server: 100 ;
+
+  /* Background blur effect
+    0: Off | higher number: more blur */
+  --backgroundBlur-app: 0 ;
+  --backgroundBlur-server: 0 ;
+
+  /* Misc */
+
+  /* Friend activities section in home tab
+    0: Always show (default)
+    1: Hide when empty
+    2: Always Hide */
+  --hide-friendsActivity: 1 ;
+
+  /* Server boost goal in the channel sidebar
+    0: Visible (default)
+    1: Hidden */
+  --hide-serverBoostStats: 0 ;
+
+  /* Add Scrollbars */
+  --show-sidebarScrollbar: 0 ;
+  --show-memberListScrollbar: 0 ;
+
+  /* Change default font
+    Prioritization: left to right | Fonts should be installed & may need quotation marks */
+  --font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+
+  /* Discord */
+
+  --font-primary: var(--font);
+  --font-display: var(--font);
+}

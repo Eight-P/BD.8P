@@ -1,0 +1,102 @@
+@use '../mixins/mixins' as * ;
+
+// -- Floating
+
+$BG_Meta: var(--background-secondary-alt);
+$BG_Body: var(--background-tertiary);
+$BG_BodyAlt: var(--background-modifier-hover);
+$BG_Floating: var(--background-floating);
+
+$C_Header: var(--interactive-normal);
+
+// Popouts & Tooltips & Context menus
+@import 'popouts' ;
+
+@import 'modals' ;
+
+.layerContainer__59d0d {
+  // z-index: 9999999 ; // against title bar border
+  // need to move up the modal instead (settings issue)
+
+// -> Searchbar
+.container_a45028 { @include searchbar(".inner_a45028", true) }
+// Threads / Sticker-picker / Apps & Cmds
+.container__5a838 { @include searchbar(".container__0f084", true) }
+// Create group DM, ...
+.container__0e476 { @include searchbar(".inner__0e476", true) }
+// <- Searchbar
+
+// -> Layers general
+
+// (temporary) fix BD context menu height
+.menu_c1e9c4 {
+  --reference-position-layer-max-height: calc(100vh - var(--custom-menu-viewport-padding)*2);
+}
+
+// Popouts & Tooltips & Context menus, Modals
+:is(.layer__59d0d, .layer_bc663c) {
+
+  --background-surface-high: #{$BG_Meta} ;
+  --background-surface-higher: #{$BG_Body} ;
+  --background-surface-highest: #{$BG_BodyAlt} ;
+
+  --bg-base-secondary: #{$BG_Meta} ;
+  --background-base-lower: #{$BG_Meta} ;
+  // --bg-base-primary: #{$BG_Body};
+
+  --modal-background: #{$BG_Meta} ;
+  --modal-footer-background: #{$BG_Meta} ;
+  --background-secondary: #{$BG_Meta} ;
+
+  --border-subtle: transparent ;
+
+  // server preview popout
+  --bg-surface-overlay: #{$BG_Body} ;
+
+  // -> Settings items/options
+  :is(.select_a16aea, .pauseContainer_c38e9f) {
+    border: none ;
+  }
+
+  // Dropdown option select btn
+  .select_a16aea {
+    background: $BG_Floating ;
+  }
+
+  // Dropdown menu popout
+  .popout_a16aea {
+    background: $BG_Floating ;
+  }
+  // <- Settings items/options
+
+  // picker with search
+  .container__3dde2 {
+    background: $BG_Body ;
+  }
+}
+// <- Layers general
+
+// -> Tooltips
+.layer__59d0d:not(.theme-light) {
+
+  .tooltipPrimary_c36707 {
+    background: $BG_Floating ;
+
+    --tooltip-pointer-bg: #{$BG_Floating} ;
+
+    .tooltipPointer_c36707 {
+      border-top-color: $BG_Floating ;
+    }
+  }
+
+  .tooltip__4e35b {
+    background: $BG_Floating ;
+
+    .caretFill__4e35b {
+      fill: $BG_Floating ;
+    }
+  }
+}
+// <- Tooltips
+
+}

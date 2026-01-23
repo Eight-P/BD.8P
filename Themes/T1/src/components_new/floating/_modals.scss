@@ -1,0 +1,274 @@
+// Modal backdrop
+.backdrop__78332 {
+  background: rgba(0, 0, 0, 0.75) !important;
+}
+
+.layer_bc663c {
+
+  .container__8a031 {
+    background: $BG_Body ;
+
+    .bodyControls__8a031 {
+
+      &:after { display: none }
+    }
+  }
+
+  // image view control btns
+  .topBar__6088c :is(.actionButtons_cc1819, .closeButton__6088c .buttonInner_aec7ab) {
+    border: none ;
+  }
+
+  // :is(.small__8a031, .medium__8a031) {
+  //   max-height: 75vh ;
+  //   height: auto ;
+  //   border: none ;
+  // }
+
+  // // -> most modals (not user modal)
+  // // .root__8a031:not(.root__9c3be) {
+  // .container__8a031:not(.root__9c3be) {
+  //   // -> General
+  //   background: $BG_Meta ;
+  //   overflow: hidden ;
+  //   padding-bottom: 6px ;
+
+  //   @include scrollbar(none); // not sure why
+
+  //   // -> Header
+  //   // .header__8a031 {
+  //   .header__8a031 {
+  //     background: $BG_Meta ;
+  //     padding-bottom: 8px ;
+
+  //     // @include shadowEffect("box_2");
+
+  //     .headerText__67dba {
+  //       margin-bottom: 14px ;
+  //     }
+
+  //     .marginTop8_fd297e { display: none }
+  //   }
+  //   // <- Header
+
+  //   // -> Body
+  //   .scrollerBase_d125d2 {
+  //     background: $BG_Body ;
+  //     max-height: unset ;
+
+  //     @include scrollbar();
+  //     @include scrollerFadeOut(2px, 2px);
+  //   }
+
+  //   :is(.bodySpacerTop__8a031, .bodySpacerBottom__8a031 ){
+  //     display: none ;
+  //   }
+
+  //   .bodyControls__8a031 {
+  //     padding-bottom: 6px ;
+
+  //     &:after { display: none }
+  //   }
+
+  //   .bodyInner__8a031 {
+  //     margin: 12px 0 20px 0 ;
+  //   }
+
+  //   .content__8a031 {
+  //     padding-top: 20px ;
+  //   }
+  //   // <- Body
+
+  //   // -> Footer
+  //   .actionBar__8a031 {
+  //     background: $BG_Meta ;
+  //     padding-top: 8px ;
+
+  //     .h5_b717a1 {
+  //       font-size: 14px ;
+  //       color: var(--header-secondary);
+  //     }
+  //   }
+  //   // <- Footer
+
+  //   // <- General
+
+  //   // -> Invite to server
+  //   :is(.scroller__67dba, .inviteRowEmptyState__67dba) {
+  //     height: 100vh ; // fix height to max
+  //   }
+  //   // <- Invite to server
+
+  //   // -> Create group DM (hopefully)
+  //   &.popout_cba592 {
+  //     height: 100vh ; // fix height to max
+
+  //     .header__8a031 {
+  //       box-shadow: none ;
+  //     }
+
+  //     .friendSelected_bbd192:not(:hover) {
+  //       background: none ;
+  //     }
+
+  //     .searchBar_cba592 {
+  //       background: $BG_Meta ;
+
+  //       @include shadowEffect("box_3");
+  //     }
+  //   }
+  //   // <- Create group DM
+
+  //   // join new server
+  //   .templatesList_c04f35 {
+  //     margin: 0 ;
+  //   }
+  // }
+
+  // (per Server) Notification Settings
+  // .container__8a031 {
+  //   .bodySpacerTopBorder__8a031 { display: none }
+
+    // .header__8a031 {
+    //   padding-bottom: 16px ;
+    //   z-index: 1 ;
+
+    //   @include shadowEffect("box_3");
+    // }
+
+    // .body__8a031 {
+    //   background: $BG_Body ;
+
+    //   // @include scrollbar();
+    //   @include scrollerFadeOut(2px, 2px);
+    // }
+  // }
+  // <- most modals
+
+  // -> BD Modals
+  .bd-modal-root {
+    border: none ;
+    overflow: hidden ;
+    max-height: 80vh ;
+    height: auto ;
+    background: $BG_Body ;
+
+    .bd-modal-header {
+      background: $BG_Meta ;
+      border-radius: 0 ;
+    }
+
+    .bd-modal-content {
+      background: $BG_Body ;
+      padding: 20px ;
+      border-radius: 0 ;
+    }
+
+    .bd-modal-footer {
+      background: $BG_Meta ;
+      border-radius: 0 ;
+    }
+
+    // -> Addon settings (what other modals are there?)
+    &.bd-addon-modal {
+      // width: 700px ;
+      max-width: 90vw ;
+      display: grid ;
+      grid-template-rows: min-content 1fr ;
+      grid-template-columns: 1fr min-content ;
+      grid-template-areas:
+        "title close"
+        "body body"
+      ;
+
+      // -> header
+      .bd-modal-header {
+        grid-area: title ;
+      }
+
+      // -> "Done" btn
+      .bd-modal-footer {
+        grid-area: close ;
+        align-items: center ;
+
+        .bd-button-filled {
+          border: none ;
+          border-radius: 3px ;
+          color: $BtnTextNormal ;
+          background: $BtnBackgroundNormal ;
+
+          &:hover {
+            color: $BtnTextHover ;
+            background: $BtnBackgroundHover ;
+          }
+        }
+      }
+      // <- "Done" btn
+      // <- header
+
+      // -> body
+      .bd-modal-content {
+        grid-area: body ;
+      }
+
+      .bd-scroller-base {
+        @include scrollerFadeOut();
+      }
+
+      // -> Category title
+      .bd-settings-title {
+        flex-direction: row-reverse ;
+        justify-content: left ;
+        gap: 10px ;
+        font-size: 15px ;
+
+        &:hover {
+          color: var(--interactive-hover);
+          cursor: pointer ;
+        }
+
+        &::before {
+          display: none ;
+        }
+      }
+
+      // Category container
+      .bd-settings-group {
+
+        &.collapsed .bd-settings-title::after {
+          transform: rotate(-90deg);
+        }
+
+        &:not(:last-child) .bd-settings-title {
+          margin-bottom: 20px ;
+        }
+      }
+      // <- Category title
+
+      // Settings container in category
+      .bd-settings-container {
+        margin: 0 5px 0 15px ;
+      }
+
+      // -> Settings options
+      .bd-setting-item.inline {
+
+        &:first-child:has(.bd-slider-wrap) {
+          padding-top: 10px ;
+        }
+
+        &:last-child {
+          margin: 0 ;
+
+          .bd-setting-divider {
+            visibility: hidden ;
+          }
+        }
+      }
+      // <- body
+      // <- Settings options
+    }
+    // <- Addon settings
+  }
+  // <- BD Modals
+}
