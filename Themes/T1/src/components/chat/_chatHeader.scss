@@ -1,34 +1,36 @@
 // Chat | Header bar + Search
 
 // -> Channel & DMs header
-.f75fb00fb7356cbe-title {
+.title_f75fb0 {
 
   // -> Left side info
-  ._9293f6b2fc12398a-children {
+  .children__9293f {
 
     // "#" / "@", "AKA" icon, separator dot
-    :is(._9293f6b2fc12398a-iconWrapper, ._488b1a4248d1b790-akaBadge, ._9293f6b2fc12398a-dot) { display: none }
+    // :is(.iconWrapper__9293f, .akaBadge__488b1, .dot__9293f) { display: none }
+    .iconWrapper__9293f, .akaBadge__488b1, .dot__9293f { display: none }
   }
 
   // DM group name
   .channelName__754bd {
     margin: 0 3px ;
 
-    ._4f07413b2d47139a-input {
+    .input__4f074 {
       padding: 0 12px ;
     }
 
-    ._4f07413b2d47139a-container { @include searchbar("._4f07413b2d47139a-input") }
+    .container__4f074 { @include searchbar(".input__4f074") }
   }
 
   // Channel description
-  ._6ec1a06139ec3b27-topic {
+  .topic__6ec1a {
     margin: 0 8px ;
     text-align: center ;
     color: var(--header-secondary);
 
     // Mentions/Channels, Web links
-    :is(.interactive, .edefb8e22d63c542-anchor) {
+    // :is(.interactive, .anchor_edefb8) {
+    .interactive, .anchor_edefb8 {
       pointer-events: none ;
       opacity: .8 ;
     }
@@ -36,7 +38,8 @@
     &:hover {
       color: var(--interactive-hover);
 
-      :is(.interactive, .edefb8e22d63c542-anchor) {
+      // :is(.interactive, .anchor_edefb8) {
+      .interactive, .anchor_edefb8 {
         opacity: 1 ;
       }
     }
@@ -44,11 +47,11 @@
   // <- Left side info
 
   // -> Right side btns
-  ._9293f6b2fc12398a-toolbar {
+  .toolbar__9293f {
     max-width: 100% ;
     justify-content: end ;
 
-    ._9293f6b2fc12398a-iconWrapper {
+    .iconWrapper__9293f {
       // margin: 0 2px ;
     }
   }
@@ -57,18 +60,18 @@
 // <- Channel & DMs header
 
 // -> Searchbar icon & input
-.f75fb00fb7356cbe-title {
+.title_f75fb0 {
 
   // Searchbar outer
-  ._496769951eb140fe-search {
+  .search__49676 {
     margin: 0 ;
   }
 
   // second container
-  .c322aadb96ff59c9-search {
+  .search_c322aa {
 
     // inner
-    .c322aadb96ff59c9-searchBar {
+    .searchBar_c322aa {
       padding: 0 ;
       height: 28px ;
       width: 28px ;
@@ -78,9 +81,9 @@
       background: none ;
     }
 
-    &.c322aadb96ff59c9-open {
+    &.open_c322aa {
 
-      .c322aadb96ff59c9-searchBar {
+      .searchBar_c322aa {
         min-width: 240px ;
         width: min-content ;
         border-bottom: 1px solid var(--header-secondary);
@@ -102,27 +105,27 @@
     }
 
     // Icon container
-    .c322aadb96ff59c9-icon {
+    .icon_c322aa {
       height: 28px ;
       width: 28px ;
       pointer-events: none ;
     }
     // icon inner
-    ._0c4c409e1915aba4-icon {
+    .icon__0c4c4 {
       color: $BtnIconNormal ;
     }
 
-    ._0c4c409e1915aba4-pointer {
+    .pointer__0c4c4 {
       pointer-events: auto ;
     }
 
-    &:hover ._0c4c409e1915aba4-icon {
+    &:hover .icon__0c4c4 {
       color: $BtnIconHover ;
     }
   }
 }
 
 // discord fix for empty tooltip below search bar
-._59d0d7075b521375-clickTrapContainer ._55c999adcf6db265-container:empty { display: none }
+.clickTrapContainer__59d0d .container__55c99:empty { display: none }
 
 // <- Searchbar icon & input

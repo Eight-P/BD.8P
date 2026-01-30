@@ -18,14 +18,18 @@
   transform: rotate(90deg) translateY(calc(50% - 6px)) translateX(-5px);
 }
 
-:is(#vc-friendcount, #vc-guildcount) + :is(#vc-friendcount, #vc-guildcount) {
-  height: 12px !important ;
-  transform: rotate(90deg) translateY(calc(50% - 14px)) translateX(-40px);
+// :is(#vc-friendcount, #vc-guildcount) + :is(#vc-friendcount, #vc-guildcount) {
+#vc-friendcount, #vc-guildcount {
+  & + #vc-friendcount,
+  & + #vc-guildcount {
+    height: 12px !important ;
+    transform: rotate(90deg) translateY(calc(50% - 14px)) translateX(-40px);
+  }
 }
 // <- ServerListIndicator
 
 // -> ReadAllNotificationsButton
-._5e434347c823b592-guilds .vc-ranb-button {
+.guilds__5e434 .vc-ranb-button {
   color: transparent ;
   width: 18px ;
   height: 18px ;
@@ -88,18 +92,18 @@
 // <- UserVoiceShow
 
 // -> BetterFolders
-._5e434347c823b592-content:has(.vc-betterFolders-sidebar) {
+.content__5e434:has(.vc-betterFolders-sidebar) {
   margin-bottom: 54px ;
 }
 
 .vc-betterFolders-sidebar {
   display: contents ;
 
-  > ._5e434347c823b592-guilds {
+  > .guilds__5e434 {
     bottom: 54px ;
   }
 
-  .ef3116c2da186559-scroller {
+  .scroller_ef3116 {
     // display: flex ;
     height: 100vw ;
     margin: 0 ;
@@ -108,7 +112,7 @@
     &::before, &::after { display: none }
   }
   // folders container
-  .dbd2630aec71879b-stack {
+  .stack_dbd263 {
     // justify-content: space-around ;
   }
 }

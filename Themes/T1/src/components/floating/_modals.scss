@@ -1,33 +1,37 @@
 // Modal backdrop
-._783321f3468cf9e8-backdrop {
+.backdrop__78332 {
   background: rgba(0, 0, 0, 0.75) !important;
 }
 
-.bc663cf6190ce9ad-layer {
+.layer_bc663c {
 
-  ._8a031a135bfcb9ba-container {
+  .container__8a031 {
     background: $BG_Body ;
 
-    ._8a031a135bfcb9ba-bodyControls {
+    .bodyControls__8a031 {
 
       &:after { display: none }
     }
   }
 
   // image view control btns
-  ._6088c3df6d10c76d-topBar :is(.cc1819cb49c2d109-actionButtons, ._6088c3df6d10c76d-closeButton .aec7abc73c126bc0-buttonInner) {
-    border: none ;
+  // .topBar__6088c :is(.actionButtons_cc1819, .closeButton__6088c .buttonInner_aec7ab) {
+  .topBar__6088c {
+    .actionButtons_cc1819, .closeButton__6088c .buttonInner_aec7ab
+    {
+      border: none ;
+    }
   }
 
-  // :is(._8a031a135bfcb9ba-small, ._8a031a135bfcb9ba-medium) {
+  // :is(.small__8a031, .medium__8a031) {
   //   max-height: 75vh ;
   //   height: auto ;
   //   border: none ;
   // }
 
   // // -> most modals (not user modal)
-  // // ._8a031a135bfcb9ba-root:not(._9c3bea41fd465666-root) {
-  // ._8a031a135bfcb9ba-container:not(._9c3bea41fd465666-root) {
+  // // .root__8a031:not(.root__9c3be) {
+  // .container__8a031:not(.root__9c3be) {
   //   // -> General
   //   background: $BG_Meta ;
   //   overflow: hidden ;
@@ -36,8 +40,8 @@
   //   @include scrollbar(none); // not sure why
 
   //   // -> Header
-  //   // ._8a031a135bfcb9ba-header {
-  //   ._8a031a135bfcb9ba-header {
+  //   // .header__8a031 {
+  //   .header__8a031 {
   //     background: $BG_Meta ;
   //     padding-bottom: 8px ;
 
@@ -47,12 +51,12 @@
   //       margin-bottom: 14px ;
   //     }
 
-  //     .fd297e0eff2da25e-marginTop8 { display: none }
+  //     .marginTop8_fd297e { display: none }
   //   }
   //   // <- Header
 
   //   // -> Body
-  //   .d125d22cdfd32cfe-scrollerBase {
+  //   .scrollerBase_d125d2 {
   //     background: $BG_Body ;
   //     max-height: unset ;
 
@@ -60,31 +64,31 @@
   //     @include scrollerFadeOut(2px, 2px);
   //   }
 
-  //   :is(._8a031a135bfcb9ba-bodySpacerTop, ._8a031a135bfcb9ba-bodySpacerBottom ){
+  //   :is(.bodySpacerTop__8a031, .bodySpacerBottom__8a031 ){
   //     display: none ;
   //   }
 
-  //   ._8a031a135bfcb9ba-bodyControls {
+  //   .bodyControls__8a031 {
   //     padding-bottom: 6px ;
 
   //     &:after { display: none }
   //   }
 
-  //   ._8a031a135bfcb9ba-bodyInner {
+  //   .bodyInner__8a031 {
   //     margin: 12px 0 20px 0 ;
   //   }
 
-  //   ._8a031a135bfcb9ba-content {
+  //   .content__8a031 {
   //     padding-top: 20px ;
   //   }
   //   // <- Body
 
   //   // -> Footer
-  //   ._8a031a135bfcb9ba-actionBar {
+  //   .actionBar__8a031 {
   //     background: $BG_Meta ;
   //     padding-top: 8px ;
 
-  //     .b717a15017b82443-h5 {
+  //     .h5_b717a1 {
   //       font-size: 14px ;
   //       color: var(--header-secondary);
   //     }
@@ -94,24 +98,24 @@
   //   // <- General
 
   //   // -> Invite to server
-  //   :is(.scroller__67dba, ._67dba15a1ae9a3e9-inviteRowEmptyState) {
+  //   :is(.scroller__67dba, .inviteRowEmptyState__67dba) {
   //     height: 100vh ; // fix height to max
   //   }
   //   // <- Invite to server
 
   //   // -> Create group DM (hopefully)
-  //   &.cba5926a3ea0ad97-popout {
+  //   &.popout_cba592 {
   //     height: 100vh ; // fix height to max
 
-  //     ._8a031a135bfcb9ba-header {
+  //     .header__8a031 {
   //       box-shadow: none ;
   //     }
 
-  //     .bbd19242e12654ad-friendSelected:not(:hover) {
+  //     .friendSelected_bbd192:not(:hover) {
   //       background: none ;
   //     }
 
-  //     .cba5926a3ea0ad97-searchBar {
+  //     .searchBar_cba592 {
   //       background: $BG_Meta ;
 
   //       @include shadowEffect("box_3");
@@ -120,23 +124,23 @@
   //   // <- Create group DM
 
   //   // join new server
-  //   .c04f357ea00ccf57-templatesList {
+  //   .templatesList_c04f35 {
   //     margin: 0 ;
   //   }
   // }
 
   // (per Server) Notification Settings
-  // ._8a031a135bfcb9ba-container {
-  //   ._8a031a135bfcb9ba-bodySpacerTopBorder { display: none }
+  // .container__8a031 {
+  //   .bodySpacerTopBorder__8a031 { display: none }
 
-    // ._8a031a135bfcb9ba-header {
+    // .header__8a031 {
     //   padding-bottom: 16px ;
     //   z-index: 1 ;
 
     //   @include shadowEffect("box_3");
     // }
 
-    // ._8a031a135bfcb9ba-body {
+    // .body__8a031 {
     //   background: $BG_Body ;
 
     //   // @include scrollbar();

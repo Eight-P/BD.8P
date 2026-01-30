@@ -1,17 +1,17 @@
 // User | DMs sidebar
-.f75fb00fb7356cbe-content .c0bea05627c5dc35-outer {
+.content_f75fb0 .outer_c0bea0 {
 
   --user-profile-overlay-background: var(--background-modifier-accent);
-  
+
   &.custom-user-profile-theme {
     --user-profile-overlay-background: var(--background-modifier-accent);
 
-    .c0bea05627c5dc35-inner {
+    .inner_c0bea0 {
       background: none ;
     }
   }
 
-  ._7f9c030b25536e94-footer {
+  .footer__7f9c0 {
     height: 52px ;
 
     @include divider(top);

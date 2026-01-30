@@ -3,7 +3,7 @@
 #app-mount {
 
 // -> Sidebar
-._5e434347c823b592-sidebar {
+.sidebar__5e434 {
 
   // separator to page line for resize bar
   &::after {
@@ -18,23 +18,24 @@
     height: 100% ;
   }
 
-  ._5e434347c823b592-sidebarResizeHandle {
+  .sidebarResizeHandle__5e434 {
     transform: none ; // idk
   }
 }
 
 // Sidebar inner
-._5e434347c823b592-sidebarList {
+.sidebarList__5e434 {
   flex: 1 1 auto ;
   border: none ;
 
   // inner container
-  :is(._2637a2609f343032-container, .e6b7699ce8339e1c-privateChannels) {
+  // :is(.container__2637a, .privateChannels_e6b769) {
+  .container__2637a, .privateChannels_e6b769 {
     margin-right: 6px ;
     padding: 0 ;
   }
 
-  .d125d22cdfd32cfe-scrollerBase {
+  .scrollerBase_d125d2 {
     margin: 0 ;
 
     @include scrollerFadeOut();
@@ -47,61 +48,61 @@
 // <- Sidebar
 
 // -> Panels
-._5e434347c823b592-panels {
+.panels__5e434 {
   display: contents ; // only works with hsb
 
   // -> Profile
-  ._37e49614b9f110a9-container {
+  .container__37e49 {
     order: -1 ;
     height: 48px ;
     container-type: inline-size ;
     gap: 0 ; // helps with GameActivityToggle
 
     @container (width < 195px) {
-      ._37e49614b9f110a9-nameTag { display: none }
+      .nameTag__37e49 { display: none }
 
-      ._37e49614b9f110a9-avatarWrapper, ._37e49614b9f110a9-buttons {
+      .avatarWrapper__37e49, .buttons__37e49 {
         margin: 0 auto ;
       }
     }
 
     // nameplate
-    ._4bbc6dc06e75ad52-container {
+    .container__4bbc6 {
       left: -3px ;
       border-radius: 0 ;
       transform: scale(-1, 1);
     }
 
     // image & name container
-    ._37e49614b9f110a9-avatarWrapper {
+    .avatarWrapper__37e49 {
       background: none ;
       flex: 0 1 auto ;
       margin-right: 4px ;
     }
 
     // name & status container
-    ._37e49614b9f110a9-nameTag {
+    .nameTag__37e49 {
       z-index: 1 ;
     }
 
     // remove btn bg with nameplate
-    ._67645e1530f1195d-plated {
+    .plated__67645 {
       background: none !important ;
     }
 
     // -> Buttons
-    ._37e49614b9f110a9-buttons {
+    .buttons__37e49 {
       gap: 5px ;
     }
 
     // right click for dummies
-    ._37e49614b9f110a9-buttonChevron { display: none }
+    .buttonChevron__37e49 { display: none }
     // <- Buttons
   }
   // <- Profile
 
   // -> Activity
-  ._5e434347c823b592-activityPanel {
+  .activityPanel__5e434 {
     margin-right: 3px ; // adjust to resize line offset (2+1)
     padding: 10px 7px 10px 10px ;
     border-color: var(--background-modifier-accent);
@@ -111,28 +112,28 @@
       @include divider(top);
     }
 
-    ._8c6c22ea0d0f0ea2-gameIconWrapper {
+    .gameIconWrapper__8c6c2 {
       height: 28px ;
     }
 
     // Image
-    ._8c6c22ea0d0f0ea2-gameIcon {
+    .gameIcon__8c6c2 {
       height: 28px ;
       width: 28px ;
     }
 
     // Text
-    .b6c092614b8d59f3-title {
+    .title_b6c092 {
       font-size: 14px ;
     }
   }
   // <- Activity
 
   // -> Voice connection
-  .e131a99484292a19-wrapper {
+  .wrapper_e131a9 {
     margin-right: 3px ; // adjust to resize line offset (2+1)
 
-    .e131a99484292a19-container {
+    .container_e131a9 {
       padding: 7px 7px 7px 10px ;
     }
 
@@ -141,14 +142,14 @@
     }
 
     // connection icon
-    ._06d6249a1f2584ac-ping {
+    .ping__06d62 {
       background: none ;
       box-shadow: none ;
       margin-right: 3px ;
     }
 
     // Connected text
-    .cf48127484dbde85-text-md\/medium {
+    .text-md\/medium_cf4812 {
       font-size: 14px ;
     }
 
@@ -159,16 +160,16 @@
 
     // -> action btns
     // btns container
-    .e131a99484292a19-actionButtons {
+    .actionButtons_e131a9 {
       gap: 0 ;
     }
 
     // btn class for just the action btns
-    .e131a99484292a19-button {
+    .button_e131a9 {
       padding: 0 ;
     }
 
-    .e131a99484292a19-buttonIcon {
+    .buttonIcon_e131a9 {
       height: 18px !important ;
       width: 18px !important ;
     }
@@ -177,24 +178,24 @@
   // <- Voice connection
 
   // -> Quest reminder
-  > ._0d6162a4e6a4b802-mask {
+  > .mask__0d616 {
     display: contents ;
 
     // main container
-    ._0d6162a4e6a4b802-wrapper {
+    .wrapper__0d616 {
       margin-right: 4px ;
       // z-index: 2 ;
       order: 200 ;
     }
 
-    ._24e2c2ebe64fd7d3-postEnrollmentBackground {
+    .postEnrollmentBackground__24e2c {
       background: var(--background-floating) !important;
       border: none ;
       border-radius: 0 ;
     }
 
     // glow on image
-    ._146e2f3dfd5ca841-inner {
+    .inner__146e2 {
       box-shadow: none !important;
     }
   }

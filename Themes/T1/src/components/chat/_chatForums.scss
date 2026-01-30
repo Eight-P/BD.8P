@@ -3,15 +3,15 @@
 #app-mount {
 
 // -> Forum channel
-.f369dba7416c67f0-container {
+.container_f369db {
 
   // -> Search/Create Posts header
-  .f369dba7416c67f0-header {
+  .header_f369db {
     background: var(--background-modifier-accent);
     border: none ;
 
     // search has focus
-    &.f369dba7416c67f0-headerWithMatchingPosts {
+    &.headerWithMatchingPosts_f369db {
       background: var(--background-modifier-selected);
       border-radius: 0 ;
     }
@@ -23,33 +23,33 @@
   }
 
   // Search footer when expanded
-  .f369dba7416c67f0-matchingPostsRow {
+  .matchingPostsRow_f369db {
     background: var(--background-modifier-selected);
     border: none ;
   }
   // <- Search/Create Posts header
 
   // -> Post Guidelines
-  .ca49a1898ddc29e3-container  {
+  .container_ca49a1  {
     border: none ;
 
-    .ca49a1898ddc29e3-descriptionContainer {
+    .descriptionContainer_ca49a1 {
       background: none ;
     }
 
     // -> "View All" guideline
-    .ca49a1898ddc29e3-descriptionContainer:has(.ca49a1898ddc29e3-showMore) .ca49a1898ddc29e3-guidelines {
+    .descriptionContainer_ca49a1:has(.showMore_ca49a1) .guidelines_ca49a1 {
       margin-bottom: 10px ;
 
       @include scrollerFadeOut($top:0px, $bottom:20px);
     }
 
-    .ca49a1898ddc29e3-gradient { display: none }
+    .gradient_ca49a1 { display: none }
 
-    .ca49a1898ddc29e3-linkContainer {
+    .linkContainer_ca49a1 {
       background: none ;
     }
-    .ca49a1898ddc29e3-showMoreLink {
+    .showMoreLink_ca49a1 {
       padding: 4px 16px ;
     }
     // <- "View All" guideline
@@ -57,10 +57,10 @@
   // <- Post Guidelines
 
   // -> Tags filter
-  .f369dba7416c67f0-tagsContainer {
+  .tagsContainer_f369db {
 
     // Button, Tags
-    ._201d5e8a3c09670a-button, .tag_f369db {
+    .button__201d5, .tag_f369db {
       background: var(--background-modifier-accent);
       border-radius: 24px !important ;
 
@@ -68,21 +68,22 @@
         background: var(--background-modifier-selected);
 
         // Sort, Tags, All tags btn text
-        .f369dba7416c67f0-sortDropdownText, ._4bd5201c86a2042b-defaultColor, ._201d5e8a3c09670a-contents {
+        .sortDropdownText_f369db, .defaultColor__4bd52, .contents__201d5 {
           color: var(--interactive-active) !important ;
         }
       }
     }
 
     // Sort, Tags, All tags btn text
-    .f369dba7416c67f0-sortDropdownText, ._4bd5201c86a2042b-defaultColor, ._201d5e8a3c09670a-contents {
+    .sortDropdownText_f369db, .defaultColor__4bd52, .contents__201d5 {
       color: var(--text-normal) !important ;
     }
   }
   // <- Tags filter
 
   // -> Item card list & grid
-  :is(.faa96b2163f6a142-container, ._9a337c84ff86a914-container) {
+  // :is(.container_faa96b, .container__9a337) {
+  .container_faa96b, .container__9a337 {
     border: none ;
     transform: none ;
     box-shadow: none ;
@@ -96,7 +97,7 @@
   }
 
   // Tags
-  .a2c9e80f6531ccc2-pill {
+  .pill_a2c9e8 {
     background: var(--background-modifier-accent);
     border: none ;
     box-shadow: none ;
@@ -105,11 +106,11 @@
 
   // -> Grid view
   // grid item inner
-  ._9a337c84ff86a914-contentPreview {
+  .contentPreview__9a337 {
     background: none ;
     border: none ;
 
-    ._9a337c84ff86a914-content {
+    .content__9a337 {
       height: calc(100% - 27px);
 
       @include scrollerFadeOut(0px, 10px);
@@ -117,18 +118,18 @@
   }
 
   // Pin icon & Tags container on text posts
-  ._9a337c84ff86a914-textContentFooter {
+  .textContentFooter__9a337 {
     background: none ;
     padding: 0 ;
     margin: 0 ;
 
-    ._08166c4389c22135-tags {
+    .tags__08166 {
       margin-bottom: 0 ;
     }
   }
 
   // tags footer in image post
-  ._9a337c84ff86a914-tagsRow .a2c9e80f6531ccc2-pill {
+  .tagsRow__9a337 .pill_a2c9e8 {
     background: var(--background-tertiary);
   }
 
@@ -140,7 +141,7 @@
 }
 
 // main chat with split view thread
-.f75fb00fb7356cbe-threadSidebarOpen {
+.threadSidebarOpen_f75fb0 {
   // border-radius: 0 ;
   border: none ;
   overflow: visible ;
@@ -162,13 +163,13 @@
 
 // -> Forum / Threads chat
 // -> main container
-._01ae244280823725-chatLayerWrapper  {
+.chatLayerWrapper__01ae2  {
   // for floating resize
   width: 100% ;
   pointer-events: none ;
 
   // resize bar
-  ._01ae244280823725-resizeHandle {
+  .resizeHandle__01ae2 {
     background: none ;
     pointer-events: auto ;
     width: 4px ;
@@ -182,34 +183,35 @@
 // <- main container
 
 // -> split and floating chat
-._01ae244280823725-container {
+.container__01ae2 {
   pointer-events: auto ;
   border: none ;
   border-radius: 0 ;
 
   // header - separator
-  .a44415a3320e67de-chat::before {
+  .chat_a44415::before {
     // display: none ;
   }
 
   // Forum, Thread Icon, post to comment separator
-  :is(._7e6bb757ba16c548-iconWrapper, ._54b20d287f944f7b-iconWrapper, .ee23ac2acd215184-divider) {
+  // :is(.iconWrapper__7e6bb, .iconWrapper__54b20, .divider_ee23ac) {
+  .iconWrapper__7e6bb, .iconWrapper__54b20, .divider_ee23ac {
     display: none ;
   }
 
   // fixing discord underline color
-  ._54b20d287f944f7b-threadCreatorName {
+  .threadCreatorName__54b20 {
     text-decoration: none ;
 
     &:hover {
-      ._703b91fc872193e8-username {
+      .username__703b9 {
         text-decoration: underline ;
       }
     }
   }
 
   // -> meta/info bar
-  ._34c2c51cfce1632e-container {
+  .container__34c2c {
     margin: 12px 0 0 13px ;
     padding: 4px 10px ;
     background: var(--background-modifier-accent) !important;
@@ -218,12 +220,13 @@
 
     @include shadowEffect("box_2");
 
-    :is(._34c2c51cfce1632e-addReactButton, .buttonInner__34c2c) {
+    // :is(.addReactButton__34c2c, .buttonInner__34c2c) {
+    .addReactButton__34c2c, .buttonInner__34c2c {
       background: none  ;
     }
 
     // when sticky
-    &._34c2c51cfce1632e-header {
+    &.header__34c2c {
       background: var(--background-secondary-alt) !important;
       top: 0px ;
     }
@@ -231,10 +234,10 @@
   // <- meta/info bar
 
   // -> floating
-  &._01ae244280823725-floating._01ae244280823725-chatTarget {
+  &.floating__01ae2.chatTarget__01ae2 {
     display: none ;
   }
-  &._01ae244280823725-floating {
+  &.floating__01ae2 {
     resize: horizontal ;
     direction: rtl;
     right: 0 ;
@@ -245,7 +248,8 @@
 
     @include shadowEffect("box_1");
 
-    :is(._9293f6b2fc12398a-container, .fb64c9a451c49797-container, .a44415a3320e67de-chat, .f02135b221cc85a6-chat, .a44415a3320e67de-chat) {
+    // :is(.container__9293f, .container_fb64c9, .chat_a44415, .chat_f02135, .chat_a44415) {
+    .container__9293f, .container_fb64c9, .chat_a44415, .chat_f02135, .chat_a44415 {
       direction: ltr ;
     }
   }

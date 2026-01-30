@@ -6,23 +6,23 @@
 // fullscreen/Hidden e.g.: fullscreen screenshare
 #app-mount { // remove soon
 
-  ._5e434347c823b592-base[data-fullscreen="false"] {
+  .base__5e434[data-fullscreen="false"] {
     display: flex ;
     margin-bottom: $sb_height ;
 
     // sidebar + page container
-    ._5e434347c823b592-content {
+    .content__5e434 {
       display: flex ;
     }
 
     // main page container
-    ._5e434347c823b592-page {
+    .page__5e434 {
       margin-left: calc(var(--custom-guild-list-width) * -1);
     }
   }
 
   // Sidebar
-  ._5e434347c823b592-sidebar:not(._5e434347c823b592-hidden) {
+  .sidebar__5e434:not(.hidden__5e434) {
     display: flex ;
     left: calc(var(--custom-guild-list-width) * -1);
     padding-left: var(--custom-guild-list-width);
@@ -34,12 +34,12 @@
 
     // needs to counter: display none on collapse
     // channels
-    ._2637a2609f343032-container {
+    .container__2637a {
       display: flex !important ;
     }
 
     // dms, discovery
-    .e6b7699ce8339e1c-privateChannels, ._551b0894962ff66f-container {
+    .privateChannels_e6b769, .container__551b0 {
       display: flex !important ;
     }
   }
@@ -47,26 +47,26 @@
 // <- App container
 
 // -> Server options btn
-._5e434347c823b592-sidebarList {
+.sidebarList__5e434 {
   overflow: visible ;
   backdrop-filter: unset ;
   -webkit-backdrop-filter: unset ;
 
   // channels list spacer for banner image
   /// (content not unique), needs [style="height: 130px;"]
-  .d125d22cdfd32cfe-content > [style="height: 84px;"]:not([class]) {
+  .content_d125d2 > [style="height: 84px;"]:not([class]) {
     margin-top: -84px ; // helps remove the space from bottom of the list
     visibility: hidden ;
   }
 
-  .f37cb1984c371ee5-animatedBannerHoverLayer { display: none }
+  .animatedBannerHoverLayer_f37cb1 { display: none }
 
-  ._2637a2609f343032-container {
+  .container__2637a {
     mask: none ;
   }
 
   // button
-  .f37cb1984c371ee5-container {
+  .container_f37cb1 {
     position: fixed ;
     bottom: 0 ;
     right: 0 ;
@@ -75,12 +75,13 @@
     display: block !important;
 
     // some containers between main and text
-    :is(.f37cb1984c371ee5-headerContent, .f37cb1984c371ee5-header, .f37cb1984c371ee5-guildBadgeAndName) {
+    // :is(.headerContent_f37cb1, .header_f37cb1, .guildBadgeAndName_f37cb1) {
+    .headerContent_f37cb1, .header_f37cb1, .guildBadgeAndName_f37cb1 {
       display: contents !important ;
     }
 
     // click container
-    .f37cb1984c371ee5-guildDropdown {
+    .guildDropdown_f37cb1 {
       padding: 0 ;
       height: 100% ;
       width: 100% ;
@@ -91,7 +92,7 @@
     }
 
     // server name
-    .f37cb1984c371ee5-name {
+    .name_f37cb1 {
       margin: 5px ;
       white-space: normal ;
       max-height: 32px ;
@@ -105,23 +106,34 @@
     }
 
     // Icons, Chevron, star icon in favorites tab, banner image
-    :is(
-      ._85d1663d6a9fc7f6-guildIconV2Container,
-      ._85d1663d6a9fc7f6-guildIconContainer,
-      .f37cb1984c371ee5-headerChildren,
-      .f37cb1984c371ee5-favoritesIcon,
-      .f37cb1984c371ee5-animatedContainer,
-      .f37cb1984c371ee5-headerEllipseBackdrop,
-      .f37cb1984c371ee5-headerEllipseForeground,
-      .f37cb1984c371ee5-headerGlass,
-      .f37cb1984c371ee5-inviteButton
-    ) { display: none }
+    // :is(
+    //   .guildIconV2Container__85d16,
+    //   .guildIconContainer__85d16,
+    //   .headerChildren_f37cb1,
+    //   .favoritesIcon_f37cb1,
+    //   .animatedContainer_f37cb1,
+    //   .headerEllipseBackdrop_f37cb1,
+    //   .headerEllipseForeground_f37cb1,
+    //   .headerGlass_f37cb1,
+    //   .inviteButton_f37cb1
+    // ) { display: none }
+
+  .guildIconV2Container__85d16,
+  .guildIconContainer__85d16,
+  .headerChildren_f37cb1,
+  .favoritesIcon_f37cb1,
+  .animatedContainer_f37cb1,
+  .headerEllipseBackdrop_f37cb1,
+  .headerEllipseForeground_f37cb1,
+  .headerGlass_f37cb1,
+  .inviteButton_f37cb1
+    { display: none }
   }
 }
 // <- Server options btn
 
 // -> Quick Switcher (home)
-.e6b7699ce8339e1c-privateChannels .e6b7699ce8339e1c-searchBar  {
+.privateChannels_e6b769 .searchBar_e6b769  {
   position: fixed ;
   width: 120px ;
   height: 54px ;
@@ -132,18 +144,18 @@
 
   &:hover { background-color: rgba(0, 0, 0, 0.2) }
 
-  .a22cb0c66246f5d3-button {
+  .button_a22cb0 {
     height: 100% ;
     max-height: unset ;
     border-radius: 0px !important ;
   }
 
-  .a22cb0c66246f5d3-buttonChildrenWrapper {
+  .buttonChildrenWrapper_a22cb0 {
     padding: 0px 10px ;
   }
 
   // text
-  .b0dfc2ed9c57037d-overflow {
+  .overflow_b0dfc2 {
     white-space: wrap ;
     color: var(--text-normal);
     text-align: center ;
@@ -154,7 +166,7 @@
 // <- Quick Switcher (home)
 
 // -> Discovery Text
-._551b0894962ff66f-container ._551b0894962ff66f-header {
+.container__551b0 .header__551b0 {
   position: fixed ;
   display: flex !important ;
   width: 120px ;
@@ -178,6 +190,6 @@
 // <- Discovery Text
 
 // Tooltips (shouldn't need them anyway)
-._59d0d7075b521375-clickTrapContainer > ._59d0d7075b521375-layer:has(._4e35b986167c457d-tooltip) {
+.clickTrapContainer__59d0d > .layer__59d0d:has(.tooltip__4e35b) {
   pointer-events: none ;
 }

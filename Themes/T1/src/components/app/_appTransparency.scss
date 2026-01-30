@@ -5,141 +5,143 @@
 
 $Classes:
   // -> App
-  "._960e4207cea8323e-bg",
-  "._160d8e55254637e5-app",
-  "._960e4207cea8323e-layer",
-  ".c791b281f2fedc32-page",
+  ".bg__960e4",
+  ".app__160d8",
+  ".layer__960e4",
+  ".page_c791b2",
   // most scroller containers
-  // ".a3002d7de5be5280-app :is(._99f8cc7ad4790ce9-scrollerBase,.d125d22cdfd32cfe-scrollerBase)",
-  ".a3002d7de5be5280-app .d125d22cdfd32cfe-scrollerBase",
+  // ".app_a3002d :is(.scrollerBase__99f8c,.scrollerBase_d125d2)",
+  ".app_a3002d .scrollerBase_d125d2",
   // Title bar
-  "!._9293f6b2fc12398a-container",
+  "!.container__9293f",
   // Discovery
-  "._551b0894962ff66f-container",
-  "._8a7fc664acf53af6-relative",
-  ".cbd375bef7ac11dc-container",
+  ".container__551b0",
+  ".relative__8a7fc",
+  ".container_cbd375",
   // Server bar
-  "._5e434347c823b592-guilds",
+  ".guilds__5e434",
   // <- App
 
   // -> Text chat
-  "!.f75fb00fb7356cbe-chat",
-  ".f75fb00fb7356cbe-chatContent",
-  "._740174f3d6a2c8fe-themedBackground", // txt input (more?)
+  "!.chat_f75fb0",
+  ".chatContent_f75fb0",
+  ".themedBackground__74017", // txt input (more?)
   // search results sidebar
-  ".a98f3b020416ad54-searchResultsWrap",
+  ".searchResultsWrap_a98f3b",
   // search results msg
-  "._80bf8435713f6adb-searchResult",
+  ".searchResult__80bf8",
   // Forum channel
-  ".f369dba7416c67f0-container",
-  "._41ed70e52483df6d-pageBody",
-  "._5a2c624eb18affaa-container",
-  ".ca49a1898ddc29e3-container",
+  ".container_f369db",
+  ".pageBody__41ed7",
+  ".container__5a2c6",
+  ".container_ca49a1",
   // Chat box text input
-  ".f75fb00fb7356cbe-channelTextArea",
-  ".b77158512e0ab116-channelAttachmentArea",
-  "._01ae244280823725-chatLayerWrapper ._740174f3d6a2c8fe-channelTextArea", // threads
+  ".channelTextArea_f75fb0",
+  ".channelAttachmentArea_b77158",
+  ".chatLayerWrapper__01ae2 .channelTextArea__74017", // threads
   // chat box replaced channel action
-  "._44df51b030bd5ece-wrapper",
+  ".wrapper__44df5",
   // reply bar ui
-  "._740174f3d6a2c8fe-stackedBars",
+  ".stackedBars__74017",
   // loading messages placeholder
-  "._6c79861fd96f56b1-wrapper",
-  ".fc817765600a960a-wrapper",
-  ".d852db00c0588eb9-wrapper",
+  ".wrapper__6c798",
+  ".wrapper_fc8177",
+  ".wrapper_d852db",
   // Threads meta bar
-  "._34c2c51cfce1632e-container",
-  ".a5700d36f7c29ded-chatHeaderBar",
+  ".container__34c2c",
+  ".chatHeaderBar_a5700d",
   // Dms user sidebar
-  ".f75fb00fb7356cbe-content .c0bea05627c5dc35-outer",
+  ".content_f75fb0 .outer_c0bea0",
   // <- Text chat
 
   // -> Voice chat
-  ".cb9592ad77576717-callContainer",
-  ".cb9592ad77576717-callContainer .bfe55a0aaaf62375-root",
-  ".cb9592ad77576717-wrapper",
+  ".callContainer_cb9592",
+  ".callContainer_cb9592 .root_bfe55a",
+  ".wrapper_cb9592",
   // Stage view
-  "._722ffae0e1be2672-container",
-  "._722ffae0e1be2672-callContainer",
-  "._56ccd9a4ea869e7b-scroller",
-  "._1e702474dc791be1-rowContainer",
-  "._664ffc673b75c994-container",
+  ".container__722ff",
+  ".callContainer__722ff",
+  ".scroller__56ccd",
+  ".rowContainer__1e702",
+  ".container__664ff",
   // <- Voice chat
 
   // -> Sidebar
-  "._5e434347c823b592-sidebar",
+  ".sidebar__5e434",
   // DMs Sidebar
-  ".e6b7699ce8339e1c-privateChannels",
+  ".privateChannels_e6b769",
   // Sidebar Panels
-  "._5e434347c823b592-panels",
+  ".panels__5e434",
   // Server panel
-  ".f37cb1984c371ee5-container",
-  ".f37cb1984c371ee5-header",
+  ".container_f37cb1",
+  ".header_f37cb1",
   // User profile container, Voice channel, Activity
-  "._37e49614b9f110a9-container",
-  ".e131a99484292a19-container",
-  "._5e434347c823b592-activityPanel",
+  ".container__37e49",
+  ".container_e131a9",
+  ".activityPanel__5e434",
   // Server channels container
-  "._2637a2609f343032-container",
+  ".container__2637a",
   // <- Sidebar
 
   // -> Server
   // "Channels & Roles"
-  "!._0b56311ebc6682e2-container",
-  "._5d7c9a81ac5dd074-prompt",
-  ".e4503acec53c64dd-channelRow",
-  "._5d7c9a81ac5dd074-emptyPage",
+  "!.container__0b563",
+  ".prompt__5d7c9",
+  ".channelRow_e4503a",
+  ".emptyPage__5d7c9",
   // Member Safety Page
-  ".c791b281f2fedc32-container",
-  "._09a38002c6c2466d-mainTableContainer",
+  ".container_c791b2",
+  ".mainTableContainer__09a38",
   // Server shop
-  ".adb50a654b4cd212-container",
+  ".container_adb50a",
   // Server Boosts
-  "._8946359d8adb1488-container",
-  "._8946359d8adb1488-contentContainer",
-  "._8946359d8adb1488-sidebarContainer",
+  ".container__89463",
+  ".contentContainer__89463",
+  ".sidebarContainer__89463",
   // Members list
-  ".c8ffbb79449f399c-container",
-  ".c8ffbb79449f399c-member",
+  ".container_c8ffbb",
+  ".member_c8ffbb",
   // Server Boost page
-  "._6fd0e42f91edfda6-scroller",
-  "._6fd0e42f91edfda6-header",
+  ".scroller__6fd0e",
+  ".header__6fd0e",
   // Threads members
-  "._7641b507c6cdbb10-container",
-  ".c8ffbb79449f399c-members",
+  ".container__7641b",
+  ".members_c8ffbb",
   // <- Server
 
   // -> Home & Friends list
-  "._133bf5eea8e33a34-container",
-  "._133bf5eea8e33a34-tabBody",
+  ".container__133bf",
+  ".tabBody__133bf",
   // Nitro store
-  ".f07d62e29a48ceee-applicationStore",
-  "._0920e02cc8fc7b7b-homeWrapperNormal",
+  ".applicationStore_f07d62",
+  ".homeWrapperNormal__0920e",
   // Profile decorations shop (Home)
-  "._6db1d32c47b6ad72-shop",
-  "._084152b107f71237-shop",
+  ".shop__6db1d",
+  ".shop__08415",
   ".shopScroll__6db1d",
   ".pageWrapper__6db1d",
-  "._1feb0fca744244ab-page",
-  "._1187745e085c713e-filterBar",
+  ".page__1feb0",
+  ".filterBar__11877",
   // Friends Activity Sidebar
-  "._133bf5eea8e33a34-nowPlayingColumn",
-  "._133bf5eea8e33a34-nowPlayingColumn :is(._7d20cf18f8a2784c-container, ._7e549558f336cddb-emptyCard)",
+  ".nowPlayingColumn__133bf",
+  // ".nowPlayingColumn__133bf :is(.container__7d20c, .emptyCard__7e549)",
+  ".nowPlayingColumn__133bf .container__7d20c",
+  ".nowPlayingColumn__133bf .emptyCard__7e549",
   // <- Home & Friends list
 
   // -> Settings old
-  "._23e6b439306f125a-standardSidebarView",
-  "._23e6b439306f125a-sidebarRegionScroller",
-  "._23e6b439306f125a-contentRegion",
-  "._23e6b439306f125a-contentRegionScroller",
+  ".standardSidebarView__23e6b",
+  ".sidebarRegionScroller__23e6b",
+  ".contentRegion__23e6b",
+  ".contentRegionScroller__23e6b",
   // Roles Settings
-  "._91dc3971e82843c1-page .e29cd7b93c4f1266-titleContainer",
-  ".d8f25bf4f76423e6-container",
+  ".page__91dc3 .titleContainer_e29cd7",
+  ".container_d8f25b",
   // <- Settings old
 
   // -> Settings
-  ".e9e3ed8b8badfe05-content", // content region
-  ".e9e3ed8b8badfe05-contentHeader"
+  ".content_e9e3ed", // content region
+  ".contentHeader_e9e3ed"
   // <- Settings
 ;
 
@@ -148,11 +150,13 @@ body, #app-mount { background: none !important }
 @each $class in $Classes {
 
   @if string.slice($class, 1, 1) == "!" {
-    #app-mount #{string.slice($class, 2, -1)} {
+    // #app-mount #{string.slice($class, 2, -1)} {
+    #{string.slice($class, 2, -1)} {
       background: none !important
     }
   }
   @else {
-    #app-mount #{$class} { background: none }
+    // #app-mount #{$class} { background: none }
+    #{$class} { background: none }
   }
 }

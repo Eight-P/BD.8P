@@ -1,5 +1,5 @@
 // -> User modal (new)
-._9c3bea41fd465666-root {
+.root__9c3be {
   pointer-events: none ;
 
   @include scrollbar(none);
@@ -13,30 +13,30 @@
     outline: none ;
 
     // main layout container
-    .c0bea05627c5dc35-inner {
+    .inner_c0bea0 {
       padding: 0 ;
       gap: 0px ;
       background: none ;
     }
 
-    ._9c3bea41fd465666-backgroundImage {
+    .backgroundImage__9c3be {
       display: none ;
     }
 
     // default / no theme
     &:not(.custom-user-profile-theme) {
 
-      ._9c3bea41fd465666-profile {
+      .profile__9c3be {
         background: var(--background-tertiary);
       }
 
-      ._37bfcf3d457db7a9-container {
+      .container__37bfc {
         background: var(--background-secondary-alt);
       }
     }
 
     // -> left side profile section
-    ._9c3bea41fd465666-profile {
+    .profile__9c3be {
       width: 375px ; // 350px ?
       border-radius: var(--radius-lg);
       overflow: hidden ;
@@ -46,7 +46,7 @@
 
       @include shadowEffect("box_2");
 
-      ._9c3bea41fd465666-profileBody  {
+      .profileBody__9c3be  {
         padding: 4px 14px 8px 22px !important ;
 
         @include scrollerFadeOut();
@@ -55,7 +55,7 @@
     // <- left side profile section
 
     // -> right side info
-    ._37bfcf3d457db7a9-container {
+    .container__37bfc {
       // -> main container
       position: relative ;
       height: 85% ;
@@ -92,7 +92,7 @@
       // <- main container
 
       // -> tab bar
-      ._37bfcf3d457db7a9-tabListScroller {
+      .tabListScroller__37bfc {
         margin: 0 ;
         padding: 0 5px ;
 
@@ -100,13 +100,13 @@
       }
 
       // inner
-      .aa8da23faa27393c-top {
+      .top_aa8da2 {
         justify-content: space-around ;
         border: none ;
       }
 
       // item
-      ._37bfcf3d457db7a9-tabBarItem {
+      .tabBarItem__37bfc {
         margin: 0 ;
         padding: 6px ;
 
@@ -115,14 +115,15 @@
       // <- tab bar
 
       // -> body
-      ._37bfcf3d457db7a9-tabBarPanel {
+      .tabBarPanel__37bfc {
         padding-left: 12px ;
 
         @include scrollerFadeOut();
       }
 
       // empty tabs containers (activity/friends/servers, board, wishlist)
-      :is(.e766f2028d7616c7-empty, ._7ff05402592519cc-empty, ._4fbcc81dbba4d7a8-emptyStateContainer) {
+      // :is(.empty_e766f2, .empty__7ff05, .emptyStateContainer__4fbcc) {
+      .empty_e766f2, .empty__7ff05, .emptyStateContainer__4fbcc {
         height: 100% ;
         padding-top: 0 ;
         justify-content: center ;
@@ -130,10 +131,10 @@
 
       // -> Activity body
       // Activity action/reaction btns
-      ._2d0abf0638bcaa3f-activityPopover { display: none }
+      .activityPopover__2d0ab { display: none }
 
       // item cards
-      .c0bea05627c5dc35-overlay  {
+      .overlay_c0bea0  {
         background: none ;
         border: none ;
       }
@@ -145,23 +146,23 @@
         padding-left: 0 ;
       }
 
-      ._62dd31d5e86f2841-dragHandleButton {
+      .dragHandleButton__62dd3 {
         inset-inline-start: unset !important ;
         top: 0 !important ;
         left: 0 !important ;
         transform: translate(-25%, -25%);
       }
 
-      ._62dd31d5e86f2841-container {
+      .container__62dd3 {
         background: none ;
         border: none ;
         padding: 12px 8px ;
       }
       // "games i like" container
-      ._9a5c352fc10aea40-coverList {
+      .coverList__9a5c3 {
 
         // "show more" btn
-        ~ ._7d7f78b99d0a7581-button {
+        ~ .button__7d7f7 {
           margin: 15px auto 0 auto ;
         }
       }
@@ -172,10 +173,10 @@
   }
 
   // save changes banner
-  ._9fc7dcf22fe7c714-pendingChangesNotice {
+  .pendingChangesNotice__9fc7d {
     pointer-events: auto ;
 
-    .a582673ee150fcb4-content {
+    .content_a58267 {
       background: var(--background-tertiary);
     }
   }

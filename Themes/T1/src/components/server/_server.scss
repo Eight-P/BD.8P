@@ -13,13 +13,13 @@
 
 
 // Server boost screen
-._5c9fcec194debbe7-root._5c9fcec194debbe7-enterDone {
+.root__5c9fc.enterDone__5c9fc {
 
-  ._6fd0e42f91edfda6-scroller {
+  .scroller__6fd0e {
     @include scrollbar();
     @include scrollerFadeOut();
   }
 
   // weird wave design things
-  ._1dfaec293e55bc43-bodyWave, ._1dfaec293e55bc43-headerWave { display: none }
+  .bodyWave__1dfae, .headerWave__1dfae { display: none }
 }

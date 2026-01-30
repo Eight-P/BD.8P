@@ -3,28 +3,28 @@
 #app-mount {
 
 // -> Voice call view
-.cb9592ad77576717-callContainer {
+.callContainer_cb9592 {
   border: none ;
 
   // player popped out
-  .ccf17423f104902d-root {
+  .root_ccf174 {
     background: none ;
   }
 
   // empty voice channel, gradient placeholder (e.g. after call)
-  ._116642f293ef6ec6-pulseGradient,
+  .pulseGradient__11664,
   // gradient background for join channel transition
-  ._4162607e15fa5328-gradientBackground,
+  .gradientBackground__41626,
   // artwork when alone in channel
-  ._4ad815b9a8eb0838-art { display: none }
+  .art__4ad81 { display: none }
 
   // -> Control buttons
-  ._1405b3b8e8eb5fd0-buttonSection {
+  .buttonSection__1405b {
     background: none ;
     border: none ;
   }
 
-  .f1ceaca61b18918e-attachedCaret {
+  .attachedCaret_f1ceac {
     background: none ;
     color: var(--interactive-normal);
 
@@ -34,24 +34,24 @@
   }
 
   @container style(--keep-voiceChannelBtns: 1) {
-    .bfe55a0aaaf62375-root {
+    .root_bfe55a {
       padding: 48px 0 50px 0 ;
       box-sizing: border-box ;
     }
 
-    .bfe55a0aaaf62375-videoControls {
+    .videoControls_bfe55a {
       padding: 0 16px ;
     }
 
-    .bfe55a0aaaf62375-controlSection {
+    .controlSection_bfe55a {
       opacity: 1 ;
       transform: none ;
       transition: none ;
     }
 
-    .bfe55a0aaaf62375-gradientContainer { display: none }
+    .gradientContainer_bfe55a { display: none }
 
-    ._1405b3b8e8eb5fd0-buttonSection {
+    .buttonSection__1405b {
       background: none ;
       border: none ;
     }
@@ -59,15 +59,15 @@
   // <- Control buttons
 
   // -> Item card / Tile
-  ._2f4f7eb58b61c328-tile {
+  .tile__2f4f7 {
 
     @include shadowEffect("box_2");
 
     // stream quality / live indicator
-    ._2f4f7eb58b61c328-indicators { display: none }
+    .indicators__2f4f7 { display: none }
 
     // Avatar
-    .fb62e279d3f0a88a-avatarWrapper {
+    .avatarWrapper_fb62e2 {
 
       foreignObject {
         mask: none ;
@@ -80,7 +80,7 @@
       }
 
       // Profile image
-      ._44b0c28be7879b7b-avatar {
+      .avatar__44b0c {
         border-radius: 7.5% ;
 
         &:not([src*=".gif"]) { @include shadowEffect("drop_1") }
@@ -89,18 +89,18 @@
   }
 
   // "invite people" empty card
-  .d6271c8ee3948714-tile ._4ad815b9a8eb0838-root {
+  .tile_d6271c .root__4ad81 {
     background: none ;
   }
   // <- Item card / Tile
 
   // -> Grid view
-  .a21736575ea33af0-videoGridWrapper {
+  .videoGridWrapper_a21736 {
 
-    .a21736575ea33af0-videoGrid::-webkit-scrollbar { display: none }
+    .videoGrid_a21736::-webkit-scrollbar { display: none }
 
     // Cards main container
-    .d6271c8ee3948714-tile {
+    .tile_d6271c {
       padding: 8px ;
       box-sizing: border-box ;
     }
@@ -108,21 +108,21 @@
   // <- Grid view
 
   // -> Focus view
-  ._6981dc6d72610110-root {
+  .root__6981d {
     padding: 0 12px ;
     box-sizing: border-box ;
 
     // Main frame top
-    ._6981dc6d72610110-videoFrame {
+    .videoFrame__6981d {
 
       // hide members btn
-      ._211d1cc3f7e37d69-participantsButton {
+      .participantsButton__211d1 {
         background: var(--background-floating);
       }
     }
 
     // Secondary Tiles
-    ._6981dc6d72610110-participantsWrapperAnimated {
+    .participantsWrapperAnimated__6981d {
       overflow: visible ; // for shadow
     }
   }

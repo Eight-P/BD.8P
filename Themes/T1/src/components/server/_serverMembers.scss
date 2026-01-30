@@ -2,35 +2,35 @@
 
 #app-mount {
 
-.c8ffbb79449f399c-container {
+.container_c8ffbb {
   border: none ;
 
   --custom-member-list-width: 240px ;
 }
 
 // Main container
-.c8ffbb79449f399c-membersWrap {
+.membersWrap_c8ffbb {
   border: none ; // for threads member list
 }
 
 // inner container
-.c8ffbb79449f399c-members {
+.members_c8ffbb {
 
   @container not style(--show-memberListScrollbar: 1 ) {
     @include scrollbar(none);
   }
 
   // Role header
-  .c8ffbb79449f399c-membersGroup {
+  .membersGroup_c8ffbb {
     margin-bottom: 4px ;
     font-weight: 600 ;
   }
 
   // Activities
-  ._0f2e83213c878a13-container {
+  .container__0f2e8 {
     background: none ;
 
-    ._42bf58529787eb7a-contentImage {
+    .contentImage__42bf5 {
       width: 40px !important ;
       height: 40px !important ;
     }
@@ -41,12 +41,12 @@
   }
 
   // -> Member item
-  ._5d473ecff348c314-member {
+  .member__5d473 {
     max-width: unset ;
     margin: 1px 0 2px 11px ;
 
     // second container
-    ._91a9d7f7e5248a56-childContainer {
+    .childContainer__91a9d {
       background: none ;
       padding-left: 0 ;
       border-radius: 0 ;
@@ -58,27 +58,27 @@
       }
     }
 
-    ._4bbc6dc06e75ad52-container {
+    .container__4bbc6 {
       margin-left: 3px ;
     }
 
     // User popout open
-    &._91a9d7f7e5248a56-selected ._91a9d7f7e5248a56-childContainer {
+    &.selected__91a9d .childContainer__91a9d {
       border-right: 3px solid var(--interactive-hover);
     }
 
     // Offline member
-    &._5d473ecff348c314-offline:not(:hover) ._91a9d7f7e5248a56-avatar {
+    &.offline__5d473:not(:hover) .avatar__91a9d {
       filter: grayscale(100%);
     }
 
     // mostly for Nitro icon
-    ._91a9d7f7e5248a56-nameAndDecorators {
+    .nameAndDecorators__91a9d {
       pointer-events: none ;
     }
 
     // Server owner crown
-    ._5d473ecff348c314-ownerIcon {
+    .ownerIcon__5d473 {
       color: var(--header-secondary);
     }
   }

@@ -1,7 +1,7 @@
 // Chat | Text input
 
 // -> Chatting restrictions notice (e.g. when under timeout)
-.a2eac324d62a31c3-spamBanner {
+.spamBanner_a2eac3 {
   background: none ;
 
   @include divider(top);
@@ -9,7 +9,7 @@
 // <- Chatting restrictions notice
 
 
-.f75fb00fb7356cbe-form {
+.form_f75fb0 {
   margin-top: 0 !important ;
   padding: 0 3px 0 0 !important ;
   // padding: 0 !important ;
@@ -26,16 +26,16 @@
   }
 
   // -> input unavailable
-  ._44df51b030bd5ece-wrapper {
+  .wrapper__44df5 {
     border: none ;
     margin-bottom: 0 ;
 
-    ._5345c24c6249bc5b-defaultColor {
+    .defaultColor__5345c {
       color: var(--text-secondary);
     }
 
     // "follow" btn
-    .a22cb0c66246f5d3-button {
+    .button_a22cb0 {
       color: $BtnTextNormal !important ;
       background: $BtnBackgroundNormal !important ;
 
@@ -48,25 +48,25 @@
   // <- input unavailable
 
   // inner container text available
-  ._740174f3d6a2c8fe-channelTextArea {
+  .channelTextArea__74017 {
     border: none ;
     margin: 0 ;
   }
 
-  ._740174f3d6a2c8fe-scrollableContainer {
+  .scrollableContainer__74017 {
     @include scrollbar(none);
   }
 
-  ._740174f3d6a2c8fe-inner {
+  .inner__74017 {
     padding: 0 ;
   }
 
-  ._740174f3d6a2c8fe-textArea {
+  .textArea__74017 {
     margin: 0 4px 0 10px ;
   }
 
   // -> Typing/slow mode indicator
-  .b8880176888cc928-typing {
+  .typing_b88801 {
     top: -16px !important ;
     padding: 0 !important ;
     height: 15px ;
@@ -74,22 +74,22 @@
   }
 
   // "user is typing" text
-  .b8880176888cc928-text {
+  .text_b88801 {
     margin-left: 10px ;
   }
 
   // Slow mode icon
-  // :is(.b216994de061a9e2-cooldownWrapper, .b216994de061a9e2-cooldownTex) {
+  // :is(.cooldownWrapper_b21699, .cooldownTex_b21699) {
   //   display: contents ;
   //   position: absolute ;
   // }
 
-  // .b216994de061a9e2-cooldownWrapper {
-  //   .b216994de061a9e2-cooldownText {
+  // .cooldownWrapper_b21699 {
+  //   .cooldownText_b21699 {
   //     visibility: hidden ;
   //   }
 
-  //   .b216994de061a9e2-slowModeIcon {
+  //   .slowModeIcon_b21699 {
   //     position: absolute ;
   //     visibility: visible ;
   //     margin: 0 ;
@@ -98,7 +98,7 @@
   //   }
   // }
 
-  .b216994de061a9e2-cooldownWrapper {
+  .cooldownWrapper_b21699 {
     position: absolute ;
     top: 16px ;
     left: 0px ;
@@ -107,11 +107,11 @@
     pointer-events: auto ;
     padding: 0 ;
 
-    .b216994de061a9e2-cooldownText {
+    .cooldownText_b21699 {
       visibility: hidden ;
     }
 
-    .b216994de061a9e2-slowModeIcon {
+    .slowModeIcon_b21699 {
       position: absolute ;
       margin: 0 ;
       visibility: visible ;
@@ -127,7 +127,7 @@
   // -> Buttons
   // -> Attach btn
   // main container
-  ._0923f156a0410684-attachWrapper {
+  .attachWrapper__0923f {
     padding: 0px ;
     height: var(--custom-channel-textarea-text-area-height);
     width: var(--custom-channel-textarea-text-area-height);
@@ -147,11 +147,11 @@
   }
 
   // pointer events
-  ._740174f3d6a2c8fe-attachButton {
+  .attachButton__74017 {
     margin: 0 ;
   }
 
-  ._0923f156a0410684-attachButtonInner {
+  .attachButtonInner__0923f {
     height: auto ;
     width: auto ;
     padding: 2px ;
@@ -163,17 +163,18 @@
   // <- Attach btn
 
   // -> Right side btns
-  ._740174f3d6a2c8fe-buttons {
+  .buttons__74017 {
     gap: 6px ;
 
-    :is(._740174f3d6a2c8fe-button, .e6e74fd4d1221f53-buttonContainer) {
+    // :is(.button__74017, .buttonContainer_e6e74f) {
+    .button__74017, .buttonContainer_e6e74f {
        background: none ;
     }
 
     // Nitro btn
     @container style(--hide-chatBtn-nitro: 1) {
-      ._740174f3d6a2c8fe-button:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
-      // .c0c49a3e5c8626ac-container:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
+      .button__74017:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
+      // .container_c0c49a:has([d^=" M7,-6 C7,-7.6570000648498535 5.6570000648498535,-9 4,-9 C4,-9 3.9110000133514404,-9"]) {
         display: none ;
       }
     }
@@ -194,7 +195,7 @@
       }
       // Emoji picker
       @container style(--hide-chatBtn-emoji: 1) {
-        &:has(._04eede68d145ae81-emojiButton) {
+        &:has(.emojiButton__04eed) {
           display: none ;
         }
       }
@@ -203,19 +204,19 @@
 
     // Add media btn
     @container style(--hide-chatBtn-media: 1) {
-      ._24af7f4d0326ba4f-button:has([d^="M2 5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v14a3 3 0 0 1-3"]) {
+      .button__24af7:has([d^="M2 5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v14a3 3 0 0 1-3"]) {
         display: none ;
       }
     }
 
     // Emoji icon
-    ._04eede68d145ae81-spriteContainer {
+    .spriteContainer__04eed {
       --custom-emoji-sprite-size: 19px !important ;
       height: 19px ;
       width: 19px ;
     }
 
-    ._04eede68d145ae81-spriteGreyscale {
+    .spriteGreyscale__04eed {
       background-color: var(--interactive-normal) !important ;
     }
 
@@ -225,7 +226,7 @@
     }
 
     // Separator
-    ._740174f3d6a2c8fe-spacer { display: none }
+    .spacer__74017 { display: none }
   }
   // <- Right side btns
 
@@ -238,14 +239,14 @@
   // <- Buttons
 
   // -> file/upload attachment
-  .b77158512e0ab116-channelAttachmentArea {
+  .channelAttachmentArea_b77158 {
     // Attachment item
-    .aa605f19898fe32e-upload {
+    .upload_aa605f {
       background: none ;
       border: none ;
 
       // Buttons
-      .f7ecaca5c80dbf3a-wrapper {
+      .wrapper_f7ecac {
         background: var(--background-floating);
 
         @include shadowEffect("box_2");
@@ -255,8 +256,8 @@
   // <- file/upload attachment
 
   // post onboarding steps
-  ._740174f3d6a2c8fe-floatingBars {
-    ._183e81c0d76dd7cd-banner {
+  .floatingBars__74017 {
+    .banner__183e8 {
       padding: 10px 16px ;
       background: none ;
 

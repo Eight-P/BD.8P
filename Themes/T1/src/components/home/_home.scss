@@ -7,34 +7,35 @@
 
 
 // -> DMs Sidebar
-.e6b7699ce8339e1c-privateChannels {
+.privateChannels_e6b769 {
 
   // Category header text
-  ._99e7cad8d4c55236-headerText {
+  .headerText__99e7c {
     color: var(--channels-default); // removes hover effect
   }
 
   // Create Group DM Button (not necessary, there is one at the top right)
-  :is(._99e7cad8d4c55236-privateChannelRecipientsInviteButtonIcon, .e6b7699ce8339e1c-sectionDivider) {
+  // :is(.privateChannelRecipientsInviteButtonIcon__99e7c, .sectionDivider_e6b769) {
+  .privateChannelRecipientsInviteButtonIcon__99e7c, .sectionDivider_e6b769 {
     display: none
   }
 
   // category header
-  ._99e7cad8d4c55236-privateChannelsHeaderContainer  {
+  .privateChannelsHeaderContainer__99e7c  {
     margin: 16px 0 6px 0 ;
   }
 
   // Sidebar item container
-  ._972a0d22c8afa7f0-channel {
+  .channel__972a0 {
     padding: 2px 0 ;
     border-radius: 0 ;
 
     // Second container
-    ._972a0d22c8afa7f0-interactive {
+    .interactive__972a0 {
       background: none ;
       color: var(--channels-default);
 
-      &.bf202d63ad53e289-selected {
+      &.selected_bf202d {
         border-left: 3px solid var(--interactive-hover);
       }
 
@@ -46,7 +47,7 @@
   }
 
   // "new" badge on shop
-  ._2b1f52e43a8f1c02-textBadge {
+  .textBadge__2b1f5 {
     // display: none ;
     background: none !important ;
     color: var(--interactive-hover);
@@ -59,50 +60,51 @@
 
 // -> Shops
 // Nitro store
-._0920e02cc8fc7b7b-homeWrapperNormal {
+.homeWrapperNormal__0920e {
   border: none ;
 
-  .c880e89226639033-container {
+  .container_c880e8 {
     margin: 16px ;
   }
 
-  .headerBar__0920e, ._52b471709d6d9d05-root {
+  .headerBar__0920e, .root__52b47 {
     display: none
   }
 
-  .c880e89226639033-whatsNewSectionContainer {
+  .whatsNewSectionContainer_c880e8 {
     background: none ,
   }
 }
 
 // -> Profile decorations shop
-._6db1d32c47b6ad72-shop {
+.shop__6db1d {
 
   // discord logo & home tab that just leads to "featured" anyway
-  ._8067953d83f4b8a8-shopHomeLink { display: none }
+  .shopHomeLink__80679 { display: none }
 
   // main shop tab, other tabs
-  :is(._8067953d83f4b8a8-shopHomeLink, ._8067953d83f4b8a8-tabs) {
+  // :is(.shopHomeLink__80679, .tabs__80679) {
+  .shopHomeLink__80679, .tabs__80679 {
     height: 32px ; // matching the regular Header bar height with respect to padding
   }
 
-  ._8067953d83f4b8a8-headerBar {
+  .headerBar__80679 {
     height: auto !important ;
   }
 
-  ._8067953d83f4b8a8-headerBarInner {
+  .headerBarInner__80679 {
     flex-wrap: wrap ;
     height: max-content ;
     justify-content: center ;
     gap: 8px ;
 
     // "featured", "browse", .. tabs
-    ._8067953d83f4b8a8-tabs {
+    .tabs__80679 {
       margin-left: 12px ;
     }
 
     // search, filter, ...
-    ._8067953d83f4b8a8-alignedRightContent {
+    .alignedRightContent__80679 {
       margin: 0 ;
     }
   }

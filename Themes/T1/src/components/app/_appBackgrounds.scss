@@ -6,22 +6,30 @@ body {
 $blur-main: blur(calc(var(--backgroundBlur-app) / 100 * 1px));
 $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
 
-:is(
-  ._960e4207cea8323e-bg, // main
-  ._01ae244280823725-container, // floating threat/forum
-  .c6bf1b7af480dfda-header, // role settings header
-  .b8880176888cc928-typing:has(._5ad890d06f24286d-dots), // chat input typing indicator bar
-  .e4491282b6a5364a-outerContainer ._8a031a135bfcb9ba-container.e4491282b6a5364a-modal // user settings (suboptimal class)
-)::before {
-  content: "" ;
-  position: absolute ;
-  inset: 0px ;
-  background: var(--background-app);
-  background-position: center ;
-  background-size: cover ;
-  background-repeat: no-repeat ;
-  background-attachment: fixed ;
-  filter: $blur-main $brightness-main ;
+// :is(
+//   .bg__960e4, // main
+//   .container__01ae2, // floating threat/forum
+//   .header_c6bf1b, // role settings header
+//   .typing_b88801:has(.dots__5ad89), // chat input typing indicator bar
+//   .outerContainer_e44912 .container__8a031.modal_e44912 // user settings (suboptimal class)
+// )::before {
+  .bg__960e4, // main
+  .container__01ae2, // floating threat/forum
+  .header_c6bf1b, // role settings header
+  .typing_b88801:has(.dots__5ad89), // chat input typing indicator bar
+  .outerContainer_e44912 .container__8a031.modal_e44912 // user settings (suboptimal class)
+{
+  &::before {
+    content: "" ;
+    position: absolute ;
+    inset: 0px ;
+    background: var(--background-app);
+    background-position: center ;
+    background-size: cover ;
+    background-repeat: no-repeat ;
+    background-attachment: fixed ;
+    filter: $blur-main $brightness-main ;
+  }
 }
 // <- Main
 
@@ -29,7 +37,7 @@ $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
 $blur-server: blur(calc(var(--backgroundBlur-server) / 100 * 1px));
 $brightness-server: brightness(calc((var(--backgroundBrightness-server) / 100)));
 
-._5e434347c823b592-guilds::before {
+.guilds__5e434::before {
   content: "" ;
     position: absolute ;
     display: block ;

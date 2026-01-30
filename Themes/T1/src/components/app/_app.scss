@@ -22,8 +22,8 @@
 html, span:not([class*='spinner']) { backface-visibility: hidden }
 
 // -> Unread mentions badge
-@scope (.a3002d7de5be5280-app) to (._5e434347c823b592-guilds) {
-  ._2b1f52e43a8f1c02-numberBadge {
+@scope (.app_a3002d) to (.guilds__5e434) {
+  .numberBadge__2b1f5 {
     background-color: transparent !important ;
     border-radius: 0 !important ;
     color: var(--text-normal);
@@ -39,7 +39,7 @@ html, span:not([class*='spinner']) { backface-visibility: hidden }
 #app-mount {
 
 // Layer transitions
-// ._960e4207cea8323e-layer { transform: none !important }
+// .layer__960e4 { transform: none !important }
 
 // Tab focus thing
 .focus-rings-ring {
@@ -55,34 +55,37 @@ path[fill="currentColor"] {
 }
 
 // lotties normal ( hover usually via btn container)
-._5eb9b3cc7c2b1ce8-lottieIcon  {
+.lottieIcon__5eb9b  {
   --__lottieIconColor: #{$BtnIconNormal} !important ;
 }
 // not ideal
-:is(
-  ._201d5e8a3c09670a-button, ._9db96f7a92c2b507-button, ._71c22426f1aad6f4-button,
-  .button__06eda, .f7ecaca5c80dbf3a-button, ._24af7f4d0326ba4f-button, .e6e74fd4d1221f53-button
-) {
+// :is(
+//   .button__201d5, .button__9db96, .button__71c22,
+//   .button__06eda, .button_f7ecac, .button__24af7, .button_e6e74f
+// ) {
+.button__201d5, .button__9db96, .button__71c22,
+.button__06eda, .button_f7ecac, .button__24af7, .button_e6e74f
+{
   background: none ;
   border: none ;
   color: $BtnIconNormal ;
 
-  &._201d5e8a3c09670a-colorWhite {
+  &.colorWhite__201d5 {
     color: $BtnIconActive ;
   }
 
-  &.f7ecaca5c80dbf3a-dangerous {
+  &.dangerous_f7ecac {
     color: $BtnIconDanger ;
     --__lottieIconColor: #{$BtnIconDanger} !important ;
   }
 
   // text
-  &._201d5e8a3c09670a-colorRed {
+  &.colorRed__201d5 {
     color: $BtnIconDanger ;
   }
 
   // Voice channel view, disconnect btn
-  &.f1ceaca61b18918e-disconnect .f1ceaca61b18918e-controlIcon {
+  &.disconnect_f1ceac .controlIcon_f1ceac {
     color: #{$BtnIconDanger} !important ;
     --__lottieIconColor: #{$BtnIconDanger} !important ;
   }
@@ -90,28 +93,39 @@ path[fill="currentColor"] {
   &:hover {
     color: $BtnIconHover ;
 
-    ._5eb9b3cc7c2b1ce8-lottieIcon {
+    .lottieIcon__5eb9b {
       --__lottieIconColor: #{$BtnIconHover} !important ;
     }
   }
 
-  :is(
-    .closeIcon_e8b59c,
-    .f1ceaca61b18918e-controlIcon,
-    ._29444ba32c7fbeab-addButtonIcon
-  ) {
+  // :is(
+  //   .closeIcon_e8b59c,
+  //   .controlIcon_f1ceac,
+  //   .addButtonIcon__29444
+  // ) {
+  .closeIcon_e8b59c,
+  .controlIcon_f1ceac,
+  .addButtonIcon__29444
+  {
     color: currentColor ;
   }
 }
 
 // basic
-:is(
-  ._56fec8e8b8048fe0-searchClearHistory, // search popout clear
-  ._56fec8e8b8048fe0-searchLearnMore, // search popout help link btn
-  ._972a0d22c8afa7f0-closeIcon, // remove dms
-  ._623de82e76ad7f82-embedSuppressButton, // remove embed from msg
-  ._6e2b9359c6f84cfd-closeIcon // close discord notice bar
-) {
+// :is(
+//   .searchClearHistory__56fec, // search popout clear
+//   .searchLearnMore__56fec, // search popout help link btn
+//   .closeIcon__972a0, // remove dms
+//   .embedSuppressButton__623de, // remove embed from msg
+//   .closeIcon__6e2b9 // close discord notice bar
+// ) {
+
+.searchClearHistory__56fec, // search popout clear
+.searchLearnMore__56fec, // search popout help link btn
+.closeIcon__972a0, // remove dms
+.embedSuppressButton__623de, // remove embed from msg
+.closeIcon__6e2b9 // close discord notice bar
+{
   color: $BtnIconNormal ;
 
   &:hover {
@@ -122,7 +136,7 @@ path[fill="currentColor"] {
 
 
 // -> Text btns
-.a22cb0c66246f5d3-button:not(.a22cb0c66246f5d3-icon-only) {
+.button_a22cb0:not(.icon-only_a22cb0) {
   border: none ;
   border-radius: 3px ;
   color: $BtnTextNormal ;
@@ -133,7 +147,7 @@ path[fill="currentColor"] {
     background: $BtnBackgroundHover ;
   }
 
-  &.a22cb0c66246f5d3-secondary {
+  &.secondary_a22cb0 {
     background: none ;
     color: $BtnTextSecondary ;
 
@@ -146,13 +160,14 @@ path[fill="currentColor"] {
   &.shinyButton_a22cb0 {
     color: $BtnIconActive !important ;
 
-    .ac86f68ab746d5ff-subButtonText {
+    .subButtonText_ac86f6 {
       color: $BtnIconActive ;
     }
   }
 
   // Danger
-  &:is(.a22cb0c66246f5d3-critical-secondary, .a22cb0c66246f5d3-critical-primary) {
+  // &:is(.critical-secondary_a22cb0, .critical-primary_a22cb0) {
+  &.critical-secondary_a22cb0, &.critical-primary_a22cb0 {
     color: $BtnTextDanger ;
 
     &:hover {
@@ -160,38 +175,50 @@ path[fill="currentColor"] {
       background: $BtnBackgroundDanger ;
     }
   }
-  // &._201d5e8a3c09670a-lookOutlined  &._201d5e8a3c09670a-lookLink
+  // &.lookOutlined__201d5  &.lookLink__201d5
 }
 // <- Text btns
 
 // "Bot"/"server" Tag Indicator
-._82f0793afa59e5dc-botTag {
+.botTag__82f07 {
   color: var(--text-normal);
   background-color: var(--background-secondary);
 }
 
 // border from .theme-midnight
-:is(
-  .f75fb00fb7356cbe-content, // chat
-  ._133bf5eea8e33a34-tabBody, // home
-  .f75fb00fb7356cbe-subtitleContainer // titlebar
-) {
+// :is(
+//   .content_f75fb0, // chat
+//   .tabBody__133bf, // home
+//   .subtitleContainer_f75fb0 // titlebar
+// ) {
+.content_f75fb0, // chat
+.tabBody__133bf, // home
+.subtitleContainer_f75fb0 // titlebar
+{
   border-left: none ;
 }
 
 // -> Some selectable items (not a fan)
-:is(
-  .dc2e0e7839a6713a-settingsTabBar,
-  .ab66419eae73260f-tabBar, // inbox
-  ._133bf5eea8e33a34-tabBar, .f8303a11ec48bef3-tabBar, // some nav/tab bars
-  ._81b3e843d09e285a-tabBar, // roles settings
-  ._409aa1aeee28d5f7-nav,
-  .aa8da23faa27393c-side
-  ) // settings sidebar
-  {
+// :is(
+//   .settingsTabBar_dc2e0e,
+//   .tabBar_ab6641, // inbox
+//   .tabBar__133bf, .tabBar_f8303a, // some nav/tab bars
+//   .tabBar__81b3e, // roles settings
+//   .nav__409aa,
+//   .side_aa8da2 // settings sidebar
+// ) {
+
+.settingsTabBar_dc2e0e,
+.tabBar_ab6641, // inbox
+.tabBar__133bf, .tabBar_f8303a, // some nav/tab bars
+.tabBar__81b3e, // roles settings
+.nav__409aa,
+.side_aa8da2 // settings sidebar
+{
   border: none ;
 
-  :is(.caf372efc4d47562-item, .aa8da23faa27393c-item, .dc2e0e7839a6713a-settingsTabBarItem) {
+  // :is(.item_caf372, .item_aa8da2, .settingsTabBarItem_dc2e0e) {
+  .item_caf372, .item_aa8da2, .settingsTabBarItem_dc2e0e {
     background: none !important ;
     border: none ;
     color: var(--interactive-normal);
@@ -205,7 +232,8 @@ path[fill="currentColor"] {
       color: var(--interactive-hover);
     }
 
-    &:is(.aa8da23faa27393c-selected, .caf372efc4d47562-active){
+    // &:is(.selected_aa8da2, .active_caf372) {
+    &.selected_aa8da2, .active_caf372 {
       color: var(--interactive-active);
 
       &::after {
@@ -216,12 +244,12 @@ path[fill="currentColor"] {
 }
   // <- Selectable items
 
-.a3002d7de5be5280-app {
+.app_a3002d {
 
   // -> search bars
   // settings / friends list
-  ._72c3859781ebce8f-container {
-    @include searchbar("._0f0849b61557225e-container") {
+  .container__72c38 {
+    @include searchbar(".container__0f084") {
       // min-height: 30px ;
       // padding-left: 0 ;
     }
@@ -233,12 +261,17 @@ path[fill="currentColor"] {
   // <- search bars
 
   // -> Scrollbars
-  :is(
-    .d125d22cdfd32cfe-scrollerBase,
-    .c8b5c7128a90b79f-scrollerBase
-    // ._99f8cc7ad4790ce9-auto,
-    // ._99f8cc7ad4790ce9-scrollerBase
-  ) {
+  // :is(
+  //   .scrollerBase_d125d2,
+  //   .scrollerBase_c8b5c7
+  //   // .auto__99f8c,
+  //   // .scrollerBase__99f8c
+  // ) {
+  .scrollerBase_d125d2,
+  .scrollerBase_c8b5c7
+    // .auto__99f8c,
+    // .scrollerBase__99f8c
+  {
     @include scrollbar();
   }
   // <- Scrollbars

@@ -23,14 +23,13 @@ $ChatScrollerBottomSpacing: 16px ;
 // Voice & Stage channel
 @import 'chatVoice' ;
 
-
 #app-mount {
 
 // -> Chat container
-._5e434347c823b592-page {
+.page__5e434 {
   border: none ;
-  // :is(._99f8cc7ad4790ce9-scrollerBase, .d125d22cdfd32cfe-scrollerBase) {
-  .d125d22cdfd32cfe-scrollerBase {
+  // :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
+  .scrollerBase_d125d2 {
     @include scrollerFadeOut();
 
     &::-webkit-scrollbar-track {
@@ -38,23 +37,26 @@ $ChatScrollerBottomSpacing: 16px ;
     }
   }
 }
-.f75fb00fb7356cbe-chatContent {
+.chatContent_f75fb0 {
 
   // "#" Icon at the channels very top, idk
-  ._00de6f6c14b53606-container :is(._00de6f6c14b53606-emptyChannelIcon, ._54b20d287f944f7b-iconWrapper) { display: none }
+  // .container__00de6 :is(.emptyChannelIcon__00de6, .iconWrapper__54b20) { display: none }
+  .container__00de6 {
+    .emptyChannelIcon__00de6, .iconWrapper__54b20 { display: none }
+  }
 
   // Scroller gradient
-  ._36d072eab2b2e737-chatGradientBase { display: none }
+  .chatGradientBase__36d07 { display: none }
 
   // Scroller bottom spacer
-  ._36d072eab2b2e737-scrollerSpacer {
+  .scrollerSpacer__36d07 {
     height: $ChatScrollerBottomSpacing ;
   }
 }
 // <- Chat container
 
 // -> Chat bars
-.f75fb00fb7356cbe-chatContent ._0f481cbbd7530492-barBase {
+.chatContent_f75fb0 .barBase__0f481 {
   // -> general
   right: 5px ;
   left: 5px ;
@@ -72,8 +74,8 @@ $ChatScrollerBottomSpacing: 16px ;
 
   @include shadowEffect("box_3");
 
-  // Viewing older messages (really just one big button)
-  &._0f481cbbd7530492-jumpToPresentBar {
+  // Viewing older messages (really just one big button) / messages failed to load bar (.messagesErrorBar__0f481)
+  &.bottomBar__0f481 {
     bottom: 14px ; // space for typing indicator
     cursor: pointer ;
 
@@ -83,7 +85,7 @@ $ChatScrollerBottomSpacing: 16px ;
   }
 
   // Mark As Read (two separate buttons)
-  &._0f481cbbd7530492-newMessagesBar {
+  &.newMessagesBar__0f481 {
     top: -4px ;
 
     button {
@@ -97,7 +99,7 @@ $ChatScrollerBottomSpacing: 16px ;
     }
 
     // text btn left
-    ._0f481cbbd7530492-barButtonMain {
+    .barButtonMain__0f481 {
       flex: 0 1 auto ;
       margin-right: auto ;
     }
@@ -112,7 +114,8 @@ $ChatScrollerBottomSpacing: 16px ;
   // <- general
 
   // -> Summaries
-  :is(._0f481cbbd7530492-barButtonAlt, ._0f481cbbd7530492-newTopicsBarTopicSection) {
+  // :is(.barButtonAlt__0f481, .newTopicsBarTopicSection__0f481) {
+  .barButtonAlt__0f481, .newTopicsBarTopicSection__0f481 {
     color: var(--interactive-hover);
     background: none ;
     cursor: pointer;
@@ -122,42 +125,42 @@ $ChatScrollerBottomSpacing: 16px ;
     }
   }
 
-  ._0f481cbbd7530492-newTopicsBarText {
+  .newTopicsBarText__0f481 {
     color: var(--interactive-hover);
   }
 
-  ._0f481cbbd7530492-newTopicsBarTopicSection:hover ._0f481cbbd7530492-newTopicsBarText {
+  .newTopicsBarTopicSection__0f481:hover .newTopicsBarText__0f481 {
     color: var(--interactive-active);
   }
   // <- Summaries
 }
 
 // "This channel is not on your channel list" bar
-.dc83f5490ab160ad-chatHeaderBar,
-.a53846f6e9583cbd-chatHeaderBar {
+.chatHeaderBar_dc83f5,
+.chatHeaderBar_a53846 {
   background: none ;
   box-shadow: none ;
 
   // border-top: 1px solid var(--background-modifier-accent);
 
-  .dc83f5490ab160ad-chatHeaderBarText {
+  .chatHeaderBarText_dc83f5 {
     font-weight: 600 ;
   }
 }
 // <- Chat bars
 
 // -> Mentions (Channel, User, Role, Discord cdn File)
-.f61d60ed65f9a128-wrapper {
+.wrapper_f61d60 {
   color: var(--Blurple);
   background: none ;
 
   // Role, User
-  &._752971923a1e6683-roleMention, &.mention:not(:hover) {
+  &.roleMention__75297, &.mention:not(:hover) {
     background: none !important ;
   }
 
   // File link
-  &.attachmentLink .e599633bf6c09eb3-icon path {
+  &.attachmentLink .icon_e59963 path {
     fill: var(--Blurple);
   }
 
@@ -171,12 +174,14 @@ $ChatScrollerBottomSpacing: 16px ;
 
 // -> Reactions
 // Reaction item chat, forum post
-:is(._23977d5b7cef7361-reaction, .f8896c4f6be18f59-reaction) {
+// :is(.reaction__23977, .reaction_f8896c) {
+.reaction__23977, .reaction_f8896c {
   border: none ;
   border-radius:4px ;
 
   // number
-  :is(._23977d5b7cef7361-reactionCount, .f8896c4f6be18f59-reactionCount) {
+  // :is(.reactionCount__23977, .reactionCount_f8896c) {
+  .reactionCount__23977, .reactionCount_f8896c {
     font-size: 0.875rem ;
   }
 
@@ -187,10 +192,10 @@ $ChatScrollerBottomSpacing: 16px ;
   }
 }
 
-// @container style(--show-reactionAnimations: 1) {
-@container style(--hide-reactionAnimations: 0) {
+@container not style(--hide-reactionAnimations: 1) {
 
-  :is(._23977d5b7cef7361-reaction, .f8896c4f6be18f59-reaction) {
+  // :is(.reaction__23977, .reaction_f8896c) {
+  .reaction__23977, .reaction_f8896c {
     background: var(--background-modifier-hover);
 
     &:hover {
@@ -198,23 +203,25 @@ $ChatScrollerBottomSpacing: 16px ;
     }
   }
 
-  :is(._23977d5b7cef7361-reactionMe, .f8896c4f6be18f59-reactionMe) {
+  // :is(.reactionMe__23977, .reactionMe_f8896c) {
+  .reactionMe__23977, .reactionMe_f8896c {
     background-color: var(--Blurple-light);
 
     &:hover {
       background-color: var(--Blurple-light-hover);
     }
 
-    :is(._23977d5b7cef7361-reactionCount, .f8896c4f6be18f59-reactionCount) {
+    // :is(.reactionCount__23977, .reactionCount_f8896c) {
+    .reactionCount__23977, .reactionCount_f8896c {
       color: var(--Blurple);
     }
   }
 }
 
-// @container style(--show-reactionAnimations: 0) {
 @container style(--hide-reactionAnimations: 1) {
 
-  :is(._23977d5b7cef7361-reaction, .f8896c4f6be18f59-reaction) {
+  // :is(.reaction__23977, .reaction_f8896c) {
+  .reaction__23977, .reaction_f8896c {
     background: var(--background-modifier-hover) !important ;
     animation: none !important ;
 
@@ -222,29 +229,32 @@ $ChatScrollerBottomSpacing: 16px ;
       background: var(--background-modifier-selected) !important ;
     }
 
-    :is(._23977d5b7cef7361-burstGlow, .a9ddb3f9f511689f-effectsWrapper) { display: none }
+    // :is(.burstGlow__23977, .effectsWrapper_a9ddb3) { display: none }
+    .burstGlow__23977, .effectsWrapper_a9ddb3 { display: none }
 
-    ._23977d5b7cef7361-hideEmoji {
+    .hideEmoji__23977 {
       opacity: 1 !important ;
     }
   }
 
   // Active reaction
-  :is(._23977d5b7cef7361-reactionMe, .f8896c4f6be18f59-reactionMe) {
+  // :is(.reactionMe__23977, .reactionMe_f8896c) {
+  .reactionMe__23977, .reactionMe_f8896c {
     background-color: var(--Blurple-light) !important ;
 
     &:hover {
       background-color: var(--Blurple-light-hover) !important ;
     }
 
-    :is(._23977d5b7cef7361-reactionCount, .f8896c4f6be18f59-reactionCount) {
+    // :is(.reactionCount__23977, .reactionCount_f8896c) {
+    .reactionCount__23977, .reactionCount_f8896c {
       color: var(--Blurple) !important ;
     }
   }
 }
 
 // add reaction btn
-._23977d5b7cef7361-reactions ._23977d5b7cef7361-reactionBtn {
+.reactions__23977 .reactionBtn__23977 {
   border: none ;
   background: none !important;
 }
@@ -252,11 +262,11 @@ $ChatScrollerBottomSpacing: 16px ;
 
 // -> Searchbar results sidebar
 // when forum channel is open on the left
-.f369dba7416c67f0-container + .a98f3b020416ad54-searchResultsWrap {
+.container_f369db + .searchResultsWrap_a98f3b {
   max-width: calc(100% - 350px);
 }
 
-.a98f3b020416ad54-searchResultsWrap {
+.searchResultsWrap_a98f3b {
   border: none ;
   width: 50% ;
   max-width: calc(100% - 45px);
@@ -267,11 +277,11 @@ $ChatScrollerBottomSpacing: 16px ;
   @include shadowEffect("box_1");
 
   // -> Header
-  .ae7890a1b8e75804-searchHeader {
+  .searchHeader_ae7890 {
     direction: ltr ;
 
     // n of search results
-    .cf48127484dbde85-text-md\/medium {
+    .text-md\/medium_cf4812 {
       color: var(--text-normal) !important ;
     }
   }
@@ -279,11 +289,11 @@ $ChatScrollerBottomSpacing: 16px ;
 
   // -> Body
   // Content scroller
-  .a98f3b020416ad54-scroller {
+  .scroller_a98f3b {
     padding: 6px 0 0 0 !important ;
     direction: ltr ;
 
-    .a7e67f4ddd7c6bb2-searchResultGroup {
+    .searchResultGroup_a7e67f {
       margin-bottom: 14px ;
       padding-bottom: 10px ;
 
@@ -291,7 +301,7 @@ $ChatScrollerBottomSpacing: 16px ;
     }
 
     // message item
-    ._80bf8435713f6adb-searchResult {
+    .searchResult__80bf8 {
       border: none ;
       border-radius: 0 ;
 
@@ -301,23 +311,24 @@ $ChatScrollerBottomSpacing: 16px ;
     }
 
     // channel name container
-    .a7e67f4ddd7c6bb2-channelNameContainer {
+    .channelNameContainer_a7e67f {
       margin-left: 10px ;
     }
 
     // channel name & icon
-    :is(.a7e67f4ddd7c6bb2-channelNameText, .a7e67f4ddd7c6bb2-channelNameIcon) {
+    // :is(.channelNameText_a7e67f, .channelNameIcon_a7e67f) {
+    .channelNameText_a7e67f, .channelNameIcon_a7e67f {
       padding-right: 6px ;
       color: var(--text-normal);
     }
 
-    ._80bf8435713f6adb-button {
+    .button__80bf8 {
       @include shadowEffect("box_3");
     }
   }
 
   // Switch page btns
-  .c1521037ef09de7e-pageButton {
+  .pageButton_c15210 {
     background: none ;
     color: var(--interactive-normal);
 
@@ -325,7 +336,7 @@ $ChatScrollerBottomSpacing: 16px ;
       color: var(--interactive-hover);
     }
 
-    &.c1521037ef09de7e-activeButton {
+    &.activeButton_c15210 {
       color: var(--interactive-active);
     }
   }
