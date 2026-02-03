@@ -107,7 +107,7 @@ $T1_v: null !default ;
 
 
 // -> Channel settings
-.sidebarRegion__23e6b  {
+.sidebarRegion__23e6b {
 
   // delete channel button
   .tabBarItemContainer_c7e907:has([d="M5.06 7a1 1 0 0 0-1 1.06l.76 12.13a3 3 0 0 0 3 2.81h8.36a3 3 0 0 0 3-2.81l.75-12.13a1 1 0 0 0-1-1.06H5.07ZM11 12a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"]) {
@@ -129,58 +129,63 @@ $T1_v: null !default ;
   }
 
   // -> Roles
-  // outer container
-  .content_d125d2 > div:not([class]):first-child {
-    display: none ;
+  // main overview page
+  .content_d125d2 {
+    // counter top spacer without removing it
+    margin-top: -60px ;
   }
 
-  // -> roles list
-  .item_aa8da2 .text-sm\/medium_cf4812 {
-    color: currentColor !important ;
-  }
+  // inner role details page
+  // .page__91dc3 {
 
-  // roles sidebar "back" header
-  .titleContainer_e29cd7 {
-    padding: 8px ;
-  }
-  // <- roles list
+    // -> left sidebar roles list
+    .item_aa8da2 .text-sm\/medium_cf4812 {
+      color: currentColor !important ;
+    }
 
-  // -> header right side
-  .header_c6bf1b {
-    width: 100% ;
-    margin: 0 ;
-    padding: 8px 8px 18px 8px ;
-  }
-  // role warning header box
-  // :is(.titleContainer__81b3e, .container__35859, .noticeContainer__16663) {
-  .titleContainer__81b3e, .container__35859, .noticeContainer__16663 {
-    position: relative ;
-  }
+    // roles sidebar "back" header
+    .titleContainer_e29cd7 {
+      padding: 8px ;
+    }
+    // <- left sidebar roles list
 
-  .notice_cdf6f1 {
-    background: none ;
-  }
+    // -> header right side
+    .header_c6bf1b {
+      width: 100% ;
+      margin: 0 ;
+      padding: 8px 8px 18px 8px ;
+    }
+    // role warning header box
+    // :is(.titleContainer__81b3e, .container__35859, .noticeContainer__16663) {
+    .titleContainer__81b3e, .container__35859, .noticeContainer__16663 {
+      position: relative ;
+    }
 
-  .searchContainer__16663 .container__72c38 {
-    z-index: 1 ;
-  }
-  // <- header right side
+    .notice_cdf6f1 {
+      background: none ;
+    }
 
-  // -> right side content (the scrolling is very weird)
-  .contentContainer__91dc3 {
-    top: 60px ;
-  }
+    .searchContainer__16663 .container__72c38 {
+      z-index: 1 ;
+    }
+    // <- header right side
 
-  .contentWidth_c6bf1b {
-    width: auto ;
-  }
-  // <- right side content
+    // -> right side content (the scrolling is very weird)
+    .contentContainer__91dc3 {
+      top: 60px ;
+    }
+
+    .contentWidth_c6bf1b {
+      width: auto ;
+    }
+    // <- right side content
+  // }
   // <- Roles
 }
 
 // <- Server settings
 
-// -> User settings old (for channels settings) (might remove)
+// -> Old fullscreen settings (for channels/server settings)
 .layer__960e4:not(.baseLayer__960e4) {
   margin-top: var(--custom-app-top-bar-height);
 
