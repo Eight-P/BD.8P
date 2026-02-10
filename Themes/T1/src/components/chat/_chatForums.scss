@@ -1,4 +1,4 @@
-// Chat | Forums & Threads
+// Chat | Forums & Threads & voice channel sidebar
 
 #app-mount {
 
@@ -162,6 +162,9 @@
 // <- Forum channel
 
 // -> Forum / Threads chat
+.channelChatWrapper_cb9592 {
+  background: none ;
+}
 // -> main container
 .chatLayerWrapper__01ae2  {
   // for floating resize
@@ -171,12 +174,28 @@
   // resize bar
   .resizeHandle__01ae2 {
     background: none ;
+    position: relative ;
     pointer-events: auto ;
-    width: 4px ;
-    margin-right: 2px ;
+    width: 5px ; // hit box for resize
 
-    &:hover {
-      background: var(--bg-mod-strong);
+    // line
+    &::after {
+      content: "" ;
+      position: absolute ;
+      display: block ;
+      top: 0 ;
+      bottom: 0 ;
+      left: 2px ;
+      background: var(--background-modifier-accent);
+      width: 1px ;
+    }
+
+    &:hover, &:active {
+      background: var(--background-mod-strong);
+
+      &::after {
+        background: none ;
+      }
     }
   }
 }
@@ -188,13 +207,7 @@
   border: none ;
   border-radius: 0 ;
 
-  // header - separator
-  .chat_a44415::before {
-    // display: none ;
-  }
-
   // Forum, Thread Icon, post to comment separator
-  // :is(.iconWrapper__7e6bb, .iconWrapper__54b20, .divider_ee23ac) {
   .iconWrapper__7e6bb, .iconWrapper__54b20, .divider_ee23ac {
     display: none ;
   }
@@ -237,6 +250,7 @@
   &.floating__01ae2.chatTarget__01ae2 {
     display: none ;
   }
+
   &.floating__01ae2 {
     resize: horizontal ;
     direction: rtl;
@@ -248,8 +262,13 @@
 
     @include shadowEffect("box_1");
 
-    // :is(.container__9293f, .container_fb64c9, .chat_a44415, .chat_f02135, .chat_a44415) {
-    .container__9293f, .container_fb64c9, .chat_a44415, .chat_f02135, .chat_a44415 {
+    // header
+    .container__9293f, .container_fb64c9 {
+      direction: ltr ;
+    }
+
+    // chat container (? , forum, threads/voice channel text)
+    .chat_a44415, .chat_f02135, .chat_ee72fa {
       direction: ltr ;
     }
   }

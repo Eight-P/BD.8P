@@ -5,21 +5,31 @@
 // -> Sidebar
 .sidebar__5e434 {
 
-  // separator to page line for resize bar
-  &::after {
-    content: "";
-    position: absolute ;
-    top: 0 ;
-    right: 2px ;
-    bottom: 0 ;
-    left: unset;
-    background: var(--background-modifier-accent);
-    width: 1px ;
-    height: 100% ;
-  }
+  &::after { display: none }
 
+  // separator to page line for resize bar
   .sidebarResizeHandle__5e434 {
     transform: none ; // idk
+    width: 5px ;
+    background: none ;
+
+      &::after {
+      content: "" ;
+      position: absolute ;
+      top: 0 ;
+      left: 2px ;
+      bottom: 0 ;
+      background: var(--background-modifier-accent);
+      width: 1px ;
+    }
+
+    &:hover, &:active {
+      background: var(--background-mod-strong);
+
+      &::after {
+        background: none ;
+      }
+    }
   }
 }
 

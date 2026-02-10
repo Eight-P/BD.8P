@@ -116,7 +116,16 @@ $T1_v: null !default ;
 }
 // <- Channel settings
 
-// -> Server settings (hell)
+// -> Server settings
+// -> Roles settings (hell)
+// -> landing page
+.customScroller__23e6b .content_d125d2 {
+    // counter top spacer without removing it
+  margin-top: -60px ;
+}
+// <- landing page
+
+// -> role settings page (specific enough?)
 .contentRegion__23e6b {
 
   .page__91dc3 {
@@ -128,61 +137,49 @@ $T1_v: null !default ;
     overflow: hidden !important ;
   }
 
-  // -> Roles
-  // main overview page
-  .content_d125d2 {
-    // counter top spacer without removing it
-    margin-top: -60px ;
+  // -> left sidebar roles list
+  .item_aa8da2 .text-sm\/medium_cf4812 {
+    color: currentColor !important ;
   }
 
-  // inner role details page
-  // .page__91dc3 {
+  // roles sidebar "back" header
+  .titleContainer_e29cd7 {
+    padding: 8px ;
+  }
+  // <- left sidebar roles list
 
-    // -> left sidebar roles list
-    .item_aa8da2 .text-sm\/medium_cf4812 {
-      color: currentColor !important ;
-    }
+  // -> header right side
+  .header_c6bf1b {
+    width: 100% ;
+    margin: 0 ;
+    padding: 8px 8px 18px 8px ;
+  }
+  // role warning header box
+  .titleContainer__81b3e, .container__35859, .noticeContainer__16663 {
+    position: relative ;
+  }
 
-    // roles sidebar "back" header
-    .titleContainer_e29cd7 {
-      padding: 8px ;
-    }
-    // <- left sidebar roles list
+  .notice_cdf6f1 {
+    background: none ;
+  }
 
-    // -> header right side
-    .header_c6bf1b {
-      width: 100% ;
-      margin: 0 ;
-      padding: 8px 8px 18px 8px ;
-    }
-    // role warning header box
-    // :is(.titleContainer__81b3e, .container__35859, .noticeContainer__16663) {
-    .titleContainer__81b3e, .container__35859, .noticeContainer__16663 {
-      position: relative ;
-    }
+  .searchContainer__16663 .container__72c38 {
+    z-index: 1 ;
+  }
+  // <- header right side
 
-    .notice_cdf6f1 {
-      background: none ;
-    }
+  // -> right side content (the scrolling is very weird)
+  .contentContainer__91dc3 {
+    top: 60px ;
+  }
 
-    .searchContainer__16663 .container__72c38 {
-      z-index: 1 ;
-    }
-    // <- header right side
-
-    // -> right side content (the scrolling is very weird)
-    .contentContainer__91dc3 {
-      top: 60px ;
-    }
-
-    .contentWidth_c6bf1b {
-      width: auto ;
-    }
-    // <- right side content
-  // }
-  // <- Roles
+  .contentWidth_c6bf1b {
+    width: auto ;
+  }
+  // <- right side content
 }
-
+// <- role settings page
+// <- Roles settings
 // <- Server settings
 
 // -> Old fullscreen settings (for channels/server settings)
