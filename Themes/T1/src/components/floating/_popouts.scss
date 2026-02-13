@@ -391,21 +391,25 @@
       padding-bottom: 3px ;
 
       // Collapse btn
-      .collapseButton__427f0 {
-        position: static ;
+      .collapseButton__35a7e {
+        order: 2 ;
         display: flex ;
         align-items: center ;
         justify-content: center ;
-        height: 32px ;
-        width: 32px ;
-        margin-left: 12px ;
+        height: 30px ;
+        width: 30px ;
+        margin-right: var(--space-8) ;
         padding: 0 ;
         color: var(--interactive-normal);
-        border-radius: 50% ;
 
         &:hover {
           color: var(--interactive-hover);
         }
+      }
+
+      // other action btns
+      .buttonGroup__427f0 {
+        order: 3 ;
       }
     }
     // msg divider general

@@ -34,8 +34,8 @@ $C_Header: var(--interactive-normal);
 }
 
 // Popouts & Tooltips & Context menus, Modals
-// :is(.layer__59d0d, .layer_bc663c) {
-.layer__59d0d, .layer_bc663c {
+// :is(.layer__59d0d, .layer_bc663c):not(.theme-light) {
+.layer__59d0d:not(.theme-light), .layer_bc663c:not(.theme-light) {
 
   --background-surface-high: #{$BG_Meta} ;
   --background-surface-higher: #{$BG_Body} ;

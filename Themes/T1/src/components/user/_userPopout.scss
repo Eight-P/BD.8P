@@ -38,12 +38,12 @@
   }
 
   &.custom-user-profile-theme:not(.theme-light) {
-    --bg_items: hsl(from var(--user-profile-overlay-background) h s l / .15 );
+    // --bg_items: hsl(from var(--user-profile-overlay-background) h s l / .15 );
+    --bg_items: hsl(from var(--user-profile-overlay-background) h s l / .1 );
   }
 
   &.custom-user-profile-theme.theme-light {
-    // default works fine for light
-    // --bg_items: hsl(from var(--user-profile-overlay-background) h s 50% / .15 );
+    --bg_itemsHover: hsl(from var(--user-profile-overlay-background-hover) h s 30% / .15 );
   }
 
   .inner_c0bea0 {
@@ -348,7 +348,6 @@
   // <- Roles
 
   // -> Item cards (Activities, Game Collection)
-
   .body__5be3e .button_a22cb0 {
     background: var(--bg_items) !important ;
     color: var(--c_items) !important;
@@ -368,10 +367,10 @@
   .card__9d597 {
     background: none ;
     border: none ;
+    box-shadow: none ;
 
-    // :is(.header__9d597, .actions__9d597) {
-    // .header__39ec2, .actions__39ec2 {
-    .headerContextMenu__39ec2, .actions__39ec2 {
+    // .headerContextMenu__39ec2, .actions__39ec2 {
+    .headerContextMenu__39ec2, .button_a22cb0 {
       pointer-events: auto ;
     }
 
@@ -389,6 +388,7 @@
   // games collection (maybe more?) has acrylic effect
   .innerContainer_c2a763 {
     backdrop-filter: none ;
+    background: var(--bg_items) ;
 
     &:hover {
       background: var(--bg_itemsHover);
@@ -397,13 +397,43 @@
 
   // show 1 more activity btn (do more?)
   .hasMultipleCards__9d597 {
-    // margin-bottom: 34px ;
+
+    .firstCardContainer__9d597 .card__9d597 {
+      transform: none !important ;
+    }
+
+    .backgroundCardContainer__9d597 {
+      position: relative ;
+      // transition: none ;
+      transform: none ;
+      top: unset ;
+      height: auto ;
+      width: fit-content ;
+      margin: 0 auto ;
+    }
 
     .backgroundCard__9d597 {
-      // transform: unset ;
-      background: var(--bg_items) ;
-      // border: none !important ;
-      // height: calc(var(--custom-expanded-total)*30);
+      // transition: none ;
+      transform: none ;
+      background: var(--bg_items);
+      height: 16px ;
+      padding: 0 20px ;
+
+      &::after {
+        content: "+1";
+        display: block ;
+        position: relative ;
+        height: 16px ;
+        line-height: 16px ;
+        width: 100% ;
+        color: var(--text-default);
+        text-align: center ;
+        font-size: 12px ;
+      }
+
+      &:hover {
+        background: var(--bg_itemsHover);
+      }
     }
   }
   // <- Item cards (Activities, Game Collection)
