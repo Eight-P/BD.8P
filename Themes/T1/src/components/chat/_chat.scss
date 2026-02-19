@@ -153,9 +153,10 @@ $ChatScrollerBottomSpacing: 16px ;
 .wrapper_f61d60 {
   color: var(--Blurple);
   background: none ;
+  --backgroundHover: hsl(from var(--Blurple-light) h s l / .15 );
 
-  // Role, User
-  &.roleMention__75297, &.mention:not(:hover) {
+  // Roles
+  &.roleMention__75297:not(:hover) {
     background: none !important ;
   }
 
@@ -165,7 +166,7 @@ $ChatScrollerBottomSpacing: 16px ;
   }
 
   &:hover {
-    background-color: var(--Blurple-light);
+    background-color: var(--backgroundHover);
     color: var(--Blurple);
   }
 

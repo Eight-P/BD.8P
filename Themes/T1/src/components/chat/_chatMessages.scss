@@ -311,6 +311,11 @@
     background: none ;
   }
 
+  // expanded text file preview
+  .textContainer__4d95d.expanded__4d95d {
+    @include scrollbar();
+  }
+
   // thread link
   .container__9271d {
     background: none ;
