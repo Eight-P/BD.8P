@@ -69,9 +69,16 @@
     gap: 0 ; // helps with GameActivityToggle
 
     @container (width < 195px) {
+
       .nameTag__37e49 { display: none }
 
-      .avatarWrapper__37e49, .buttons__37e49 {
+      .accountPopoutButtonWrapper__37e49 {
+        flex: unset ;
+        margin: 0 auto ;
+        padding: 5px 0 ;
+      }
+
+      .buttons__37e49 {
         margin: 0 auto ;
       }
     }
@@ -98,6 +105,7 @@
     // remove btn bg with nameplate
     .plated__67645 {
       background: none !important ;
+      backdrop-filter: none ;
     }
 
     // -> Buttons
@@ -106,7 +114,7 @@
     }
 
     // right click for dummies
-    .buttonChevron__37e49 { display: none }
+    .buttonChevron__5e764 { display: none }
     // <- Buttons
   }
   // <- Profile

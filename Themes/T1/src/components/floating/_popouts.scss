@@ -254,8 +254,12 @@
       }
 
       // msg btns
-      .hoverBar__4ad69 .icon_f84418 {
-        transform: none ;
+      .hoverBar__4ad69 {
+        border: none ;
+
+        .icon_f84418 {
+          transform: none ;
+        }
       }
     }
   }
