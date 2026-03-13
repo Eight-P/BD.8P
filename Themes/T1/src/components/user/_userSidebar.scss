@@ -11,8 +11,17 @@
     }
   }
 
+  .scrollerBase_d125d2 {
+    @include scrollbar(none);
+  }
+
+  // slight offset to avoid scroller cut-off
+  .header__7f9c0, .wrapper_da5890 {
+    margin-top: 3px ;
+  }
+
   .footer__7f9c0 {
-    height: 52px ;
+    height: 46px ;
 
     @include divider(top);
   }

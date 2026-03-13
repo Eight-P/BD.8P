@@ -8,6 +8,16 @@
 // app and base layer bar bar
 .bar_c38106 {
 
+  // navigation btns
+  .backForwardButtons__63abb {
+    gap: 4px ;
+
+    .button__63abb {
+      border-radius: 0 ;
+      height: var(--custom-app-top-bar-height);
+    }
+  }
+
   .button__85643 {
     height: var(--custom-app-top-bar-height);
     width: var(--custom-app-top-bar-height);

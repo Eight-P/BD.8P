@@ -152,6 +152,12 @@
     //   @include scrollerFadeOut(2px, 2px);
     // }
   // }
+
+  // "share a clip" full screen modal layer (maybe more)
+  .modalContent_e44912 .modalContainer__578ba {
+
+    .sidebarHeader__75f8c::after { display: none }
+  }
   // <- most modals
 
   // -> BD Modals
