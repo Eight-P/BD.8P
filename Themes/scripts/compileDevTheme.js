@@ -1,60 +1,85 @@
-// * compileDevTheme.js v3.1
-// watch and compile dev file to mod folders
+// * compileDevTheme.js v4
+// watch and compile dev files to mod folders
 
 const Fs = require('fs');
 const Path = require('path');
 const Chokidar = require('chokidar');
 const Sass = require('sass');
 
-const ThemeFolder = process.cwd();
-const ThemeName = Path.basename(ThemeFolder);
-const InputFile = checkPath(Path.join(ThemeFolder, "dev", ThemeName + "-dev.theme.scss"));
-const OutputFiles = getOutputPaths();
-
-// for debug
-// console.log(Paths = {
-//   name: ThemeName,
-//   folder: ThemeFolder,
-//   devIn: InputFile,
-//   devOut: OutputFiles
-// });
+const SourceFolder = process.cwd();
+const DevFiles = getDevFiles();
+const OutputPaths = getOutputPaths();
 
 const SassOptions = {
   style: 'expanded',
   sourceMap: false,
-  sourceMapIncludeSources: false
+  sourceMapIncludeSources: false,
+  silenceDeprecations: ["import", "if-function"]
 };
 
-Chokidar.watch(ThemeFolder, {
+Chokidar.watch(SourceFolder, {
   ignored: (path, stats) => stats?.isFile() && !path.endsWith('.scss')
 })
   .on('ready', () => {
-    console.log(`Listening for changes in:\n\u001b[36m${ThemeFolder}\u001b[0m\nCompiling to:`);
-    for (let filePath of OutputFiles) {
-      console.log(`\u001b[36m${filePath}\u001b[0m \n`);
+    console.log(`Listening for changes in:\n \u001b[36m${SourceFolder}\u001b[0m \nInput:`);
+    for (let devFile of DevFiles) {
+      console.log(` \u001b[36m${devFile}\u001b[0m`);
     }
-    compileToCss()
+    console.log("Output:");
+    for (let filePath of OutputPaths) {
+      console.log(` \u001b[36m${filePath}\u001b[0m`);
+    }
+    console.log("\n");
+    upateDevFiles();
   })
-  .on('change', (trigger) => { compileToCss(trigger) }
+  .on('change', (trigger) => { upateDevFiles(trigger) }
 );
 
-function compileToCss(trigger) {
-  try {
-    let output = Sass.compile(InputFile, SassOptions);
+function upateDevFiles(trigger) {
+  let hadError = false ;
 
-    for (let filePath of OutputFiles) {
-      Fs.writeFile(filePath, output.css, (err) => {
+  for (let devFile of DevFiles) {
+    let output ;
+    try {
+      // Sync: To favor fewer dev files, as docs state it's faster.
+      // (and proper mt would need workers or so i think)
+      output = Sass.compile(devFile, SassOptions);
+    }
+    catch (err) {
+      if (DevFiles.length > 1) {
+        console.error(`\n\u001b[31mError using Dev-file:\u001b[0m \u001b[34m${Path.basename(devFile)}\u001b[0m\n`);
+      }
+      console.error(err);
+      hadError = true ;
+      continue ;
+    }
+
+    let devFileName = Path.parse(devFile).name ;
+
+    for (let outputPath of OutputPaths) {
+      outputFile = Path.join(outputPath, devFileName + '.css');
+
+      Fs.writeFile(outputFile, output.css, (err) => {
         if (err) { throw err }
-      })
-    }
-    if (trigger) {
-      let fileName = trigger.split(Path.sep).at(-1);
-      console.log(`${getTimestamp()} Recompiled \u001b[34m${fileName}\u001b[0m`);
+      });
     }
   }
-  catch (err) { 
-    console.error(err) 
+  if (trigger && !hadError) {
+    console.log(`${getTimestamp()} Recompiled \u001b[34m${Path.parse(trigger).name}\u001b[0m`);
   }
+}
+
+function getDevFiles() {
+  let devFiles = [] ;
+  let devFolder = checkPath(Path.join(SourceFolder, 'dev'));
+  let dirEntries = Fs.readdirSync(devFolder, { withFileTypes:true });
+
+  for (let entry of dirEntries) {
+    if (entry.isFile() && entry.name.endsWith('.scss')) {
+      devFiles.push(Path.join(entry.path, entry.name));
+    }
+  }
+  return devFiles;
 }
 
 function getOutputPaths() {
@@ -82,13 +107,11 @@ function getOutputPaths() {
     for (let arg of argList) {
       let modName = modNames[arg.toLowerCase()];
       if (!modName) quitWithError(new Error(), "Invalid mod", arg);
-      let filePath = Path.join(getModFolder(modName), ThemeName + "-dev.theme.css");
-      pathsList.push(filePath);
+      pathsList.push(getModFolder(modName));
     }
   }
   else {
-    let filePath = Path.join(getModFolder("betterdiscord"), ThemeName + "-dev.theme.css");
-    pathsList.push(filePath);
+    pathsList.push(getModFolder("betterdiscord"));
   }
 
   return pathsList ;
