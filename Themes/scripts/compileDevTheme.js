@@ -1,4 +1,4 @@
-// * compileDevTheme.js v4
+// * compileDevTheme.js v4.1
 // watch and compile dev files to mod folders
 
 const Fs = require('fs');
@@ -76,7 +76,7 @@ function getDevFiles() {
 
   for (let entry of dirEntries) {
     if (entry.isFile() && entry.name.endsWith('.scss')) {
-      devFiles.push(Path.join(entry.path, entry.name));
+      devFiles.push(Path.join(entry.parentPath, entry.name));
     }
   }
   return devFiles;
