@@ -265,6 +265,7 @@
     // header
     .container__9293f, .container_fb64c9 {
       direction: ltr ;
+      z-index: 99 ; // msgs overflow get above (for some reason) overwise
     }
 
     // chat container (? , forum, threads/voice channel text)

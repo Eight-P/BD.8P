@@ -16,8 +16,8 @@
 .root__5c9fc.enterDone__5c9fc {
 
   .scroller__6fd0e {
-    @include scrollbar();
     @include scrollerFadeOut();
+    @include scrollbar();
   }
 
   // weird wave design things

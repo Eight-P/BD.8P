@@ -108,8 +108,8 @@
     .contentSection_b6bcee {
       overflow: hidden scroll ;
 
-      @include scrollbar();
       @include scrollerFadeOut();
+      @include scrollbar();
     }
   }
   // <- Scroller

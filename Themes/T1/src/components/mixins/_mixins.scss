@@ -10,6 +10,7 @@
 
 // -> Mixins
 // Scrollbar design | @include scrollbar();
+// - should be last in rule
 @mixin scrollbar ($width:13px, $borderR: 7px) {
 
   @if $width == none {
@@ -41,20 +42,20 @@
 // Shadow effects | @include shadowEffect("box_1");
 @mixin shadowEffect ($type:"drop_1") {
   $Map: (
-    "drop_1": append("filter", "drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75))"),
-    "drop_2": append("filter", "drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))"),
+    "drop_1": list.append("filter", "drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.75))"),
+    "drop_2": list.append("filter", "drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))"),
 
-    "box_1": append("box-shadow", "4px 4px 10px rgba(0, 0, 0, 0.75)"),
-    "box_2": append("box-shadow", "1px 1px 3px rgba(0, 0, 0, 0.75)"),
-    "box_3": append("box-shadow", "1px 1px 3px rgba(0, 0, 0, 0.4)"),
+    "box_1": list.append("box-shadow", "4px 4px 10px rgba(0, 0, 0, 0.75)"),
+    "box_2": list.append("box-shadow", "1px 1px 3px rgba(0, 0, 0, 0.75)"),
+    "box_3": list.append("box-shadow", "1px 1px 3px rgba(0, 0, 0, 0.4)"),
 
-    "server_1": append("filter", "drop-shadow( 2px 2px 3px black)"),
-    "server_2": append("filter", "drop-shadow( 1px 1px 2px black)"),
+    "server_1": list.append("filter", "drop-shadow( 2px 2px 3px black)"),
+    "server_2": list.append("filter", "drop-shadow( 1px 1px 2px black)"),
 
-    "text_1": append("text-shadow", "1.5px 1.5px 3px rgba(0, 0, 0, 0.75)"),
-    "text_2": append("text-shadow", "1px 1px 3px rgba(0, 0, 0, 0.5)"),
+    "text_1": list.append("text-shadow", "1.5px 1.5px 3px rgba(0, 0, 0, 0.75)"),
+    "text_2": list.append("text-shadow", "1px 1px 3px rgba(0, 0, 0, 0.5)"),
 
-    "card_1": append("box-shadow", "2px 2px 10px rgba(0, 0, 0, 0.4)")
+    "card_1": list.append("box-shadow", "2px 2px 10px rgba(0, 0, 0, 0.4)")
   );
 
   $shadow: map.get($Map, $type);
@@ -149,7 +150,7 @@
 
   $valid-sides: top, bottom, left, right ;
 
-  @if length($l) == 0 {
+  @if list.length($l) == 0 {
     @warn "divider() expects border side" ;
   }
   @else {
