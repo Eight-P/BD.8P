@@ -37,6 +37,7 @@ $ChatScrollerBottomSpacing: 16px ;
     }
   }
 }
+
 .chatContent_f75fb0 {
 
   // "#" Icon at the channels very top, idk
@@ -81,6 +82,11 @@ $ChatScrollerBottomSpacing: 16px ;
 
     &:hover {
       background: var(--background-secondary);
+    }
+
+    // main text
+    .barButtonMain__0f481 {
+      height: auto ;
     }
   }
 
@@ -261,7 +267,7 @@ $ChatScrollerBottomSpacing: 16px ;
 }
 // <- Reactions
 
-// -> Searchbar results sidebar
+// -> Search results sidebar
 // when forum channel is open on the left
 .container_f369db + .searchResultsWrap_a98f3b {
   max-width: calc(100% - 350px);
@@ -275,7 +281,8 @@ $ChatScrollerBottomSpacing: 16px ;
   resize: horizontal ;
   direction: rtl ;
 
-  @include shadowEffect("box_1");
+  // @include shadowEffect("box_1");
+  @include divider (left);
 
   // -> Header
   .searchHeader_ae7890 {
@@ -343,6 +350,6 @@ $ChatScrollerBottomSpacing: 16px ;
   }
   // <- Body
 }
-// <- Searchbar results popout
+// <- Search results popout
 
 }

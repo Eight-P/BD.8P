@@ -35,12 +35,12 @@
       &.childContainer__91a9d {
         padding-right: 8px ;
       }
-      .container__4bbc6 { display: none }
+      .container_df39b2 { display: none }
     }
 
     // dms
     .channel__972a0 {
-      .container__4bbc6 { display: none }
+      .container_df39b2 { display: none }
       .innerCloseButtonPlated__972a0 {
         background: none ;
         backdrop-filter: none ;
@@ -50,7 +50,7 @@
 
   @container style(--hide-nameplates: 2 ) or style(--hide-nameplates: 3 ) {
     // sidebar profile panel
-    .container__37e49 .container__4bbc6 { display: none }
+    .container__37e49 .container_df39b2 { display: none }
   }
   // <- Nameplates
 

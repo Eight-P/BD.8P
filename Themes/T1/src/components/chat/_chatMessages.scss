@@ -305,6 +305,15 @@
     --background-surface-high: #202225 ; // bad
   }
 
+  // some btns
+  .lookFilled__201d5 {
+    background: $BtnBackgroundNormal !important ;
+
+    &:hover {
+      background: $BtnBackgroundHover !important ;
+    }
+  }
+
   // code blocks
   .markup__75297 code {
     max-width: unset ;

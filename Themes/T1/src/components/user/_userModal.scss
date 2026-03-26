@@ -5,8 +5,10 @@
   @include scrollbar(none);
 
   .user-profile-modal-v2  {
-    min-width: unset ;
-    width: 800px ;
+    // width: 800px ;
+    min-width: 800px ;
+    max-width: 800px ;
+    margin: auto ;
     border: none ;
     background: none ;
     max-height: 75vh ; // affected by general modal design (_modals:9)
@@ -19,7 +21,7 @@
       background: none ;
     }
 
-    .backgroundImage__9c3be, .closeButton__9c3be {
+    .backgroundImage__9c3be, .modalCloseButton__9c3be {
       display: none ;
     }
 
