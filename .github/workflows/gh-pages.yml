@@ -1,16 +1,9 @@
-# v1.4
+# v1.5
 # Build and deploy gh-pages
-# auto runs after css builds
+# off; need update or removal
 
 name: gh-pages
 on:
-  workflow_run:
-    workflows: ["build-T1"]
-    types:
-      - completed
-    branches:
-      - master
-
   workflow_dispatch:
 
 permissions:
