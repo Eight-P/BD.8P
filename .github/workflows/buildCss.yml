@@ -1,4 +1,4 @@
-# CSS build action v2.1
+# CSS build action v2.2
 # Build CSS and deploy to dist branch
 name: buildCss
 
@@ -35,7 +35,7 @@ jobs:
       with:
         filters: |
           t1: '**/T1.main.scss'
-          snippets: '**/Snippets/*.main.scss'
+          snippets: Themes/Snippets/src/*.main.scss'
 
   Build:
     needs: DetermineBuilds
