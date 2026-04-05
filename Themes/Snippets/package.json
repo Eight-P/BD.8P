@@ -1,0 +1,14 @@
+{
+  "name": "snippets",
+  "version": "0.1.0",
+  "description": "Standalone css snippets",
+  "author": "Eight_P",
+  "repository": "github:Eight-P/BD.8P",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "buildCSS": "sass src:dist --no-source-map --no-charset",
+    "watch": "node ../scripts/compileDevTheme.js",
+    "replaceClasses": "node ../scripts/replaceClasses.js"
+  }
+}

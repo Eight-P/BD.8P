@@ -1,32 +1,35 @@
-# CSS build action v2
-# Build T1 & Snippest css and deploy to dist branch
+# CSS build action v2.1
+# Build CSS and deploy to dist branch
 name: buildCss
 
 on:
+  workflow_dispatch:
   push:
     branches:
     - master
     paths:
-    - "**/Themes/**/*.main.scss"
+    - "Themes/**/*.main.scss"
 
 permissions:
   contents: write
 
 jobs:
 
-  GetChanges:
+  DetermineBuilds:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: read
     outputs:
-      t1: ${{ steps.filter.outputs.t1 }}
-      snippets: ${{ steps.filter.outputs.snippets }}
+      t1: ${{ case (github.event_name == 'workflow_dispatch', 'true', steps.filter.outputs.t1) }}
+      snippets: ${{ case (github.event_name == 'workflow_dispatch', 'true', steps.filter.outputs.snippets) }}
 
     steps:
     - uses: actions/checkout@v6
-    
+      if: github.event_name != 'workflow_dispatch'
+
     - name: Identify file changes.
+      if: github.event_name != 'workflow_dispatch'
       uses: dorny/paths-filter@v4
       id: filter
       with:
@@ -35,7 +38,7 @@ jobs:
           snippets: '**/Snippets/*.main.scss'
 
   Build:
-    needs: GetChanges
+    needs: DetermineBuilds
     runs-on: ubuntu-latest
 
     steps:
@@ -49,15 +52,16 @@ jobs:
 
     # Just gonna do all cp recursively.
     - name: Build T1 css
-      if: needs.GetChanges.outputs.t1 == 'true'
+      if: needs.DetermineBuilds.outputs.t1 == 'true'
       run: |
         npm run buildCSS -w Themes/T1
         cp -r Themes/T1/dist temp-t1
 
     - name: Build Snippets css
-      if: needs.GetChanges.outputs.snippets == 'true'
+      if: needs.DetermineBuilds.outputs.snippets == 'true'
       run: |
-        echo "snippets build test"
+        npm run buildCSS -w Themes/Snippets
+        cp -r Themes/Snippets/dist temp-snippets
 
     - name: Switch to dist branch
       run: |
@@ -66,22 +70,23 @@ jobs:
 
     # Needs to remove previous files, I think.
     - name: Add T1 output to dist
-      if: needs.GetChanges.outputs.t1 == 'true'
+      if: needs.DetermineBuilds.outputs.t1 == 'true'
       run: |
         rm -rf Themes/T1/dist
         cp -r temp-t1 Themes/T1/dist
 
     - name: Add Snippets output to dist
-      if: needs.GetChanges.outputs.snippets == 'true'
+      if: needs.DetermineBuilds.outputs.snippets == 'true'
       run: |
-        echo "snippets deploy output test"
+        rm -rf Themes/Snippets/dist
+        cp -r temp-snippets Themes/Snippets/dist
 
-    # If nothing was built for some reason, this is expected to fail.
     - name: Get status & stage output
       run: |
         git status
         git add **/dist/*.css
-    
+
+    # If nothing was added, this is expected to fail.
     - name: Commit & push changes
       run: |
         git config --global user.name 'github-actions[bot]'

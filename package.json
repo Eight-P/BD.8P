@@ -1,6 +1,6 @@
 {
   "name": "bd.8p",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Collective Repository, currently containing my T1 Discord theme",
   "author": "Eight_P (https://github.com/Eight-P)",
   "repository": "github:Eight-P/BD.8P",
@@ -15,8 +15,12 @@
     "Theme"
   ],
   "workspaces": [
-    "Themes/T1"
+    "Themes/T1",
+    "Themes/Snippets"
   ],
+  "scripts": {
+    "watchThemes": "cd Themes && node scripts/compileDevTheme.js"
+  },
   "engines": {
     "node": ">= 20.0.0",
     "npm": ">= 10.0.0"
