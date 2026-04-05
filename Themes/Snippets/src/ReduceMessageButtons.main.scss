@@ -1,0 +1,19 @@
+/*!
+  ReduceMessageButtons v0.1.0
+  <github.com/Eight-P/BD.8P>
+*/
+
+@use 'ReduceMessageButtons/ReduceMessageButtons' ;
+
+:root {
+  /* Reduce message buttons unless hovered
+    0: Show all (default)
+    1: Reduce until hovered */
+  --reduce-messageBtns: 0 ;
+
+  /* Hide emojis in message buttons
+    0: Show all (default)
+    1: Hide until hovered
+    2: Hidden */
+  --hide-messageBtnEmojis: 0 ;
+}

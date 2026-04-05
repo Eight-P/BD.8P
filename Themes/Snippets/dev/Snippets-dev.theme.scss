@@ -1,0 +1,56 @@
+/*! /**
+  * @name Snippets_DEV
+  * @description Snippets Dev
+  * @author Eight_P
+  * @version 0.1.0_D
+*/
+
+@import '../src/HideChatButtons.main.scss' ;
+@import '../src/HideDecorations.main.scss' ;
+@import '../src/ReduceMessageButtons.main.scss' ;
+@import '../src/UnmaskLinks.main.scss' ;
+
+:root {
+  // -> HideChatButtons
+  --hide-chatBtn-nitro: 1 ;
+  --hide-chatBtn-gif: 0 ;
+  --hide-chatBtn-sticker: 0 ;
+  --hide-chatBtn-emoji: 0 ;
+  --hide-chatBtn-apps: 0 ;
+  // <- HideChatButtons
+
+  // -> HideDecorations
+  --hide-profileEffects: 0;
+  --hide-avatarDecorations: 0 ;
+  --hide-nameplates: 0 ; // (0/1/2/3)
+  --hide-clanTags: 0 ; // (0/1/2)
+  --disable-roleGradients: 0 ;
+  --hide-reactionAnimations: 0 ;
+  // <- HideDecorations
+
+  // -> ReduceMessageButtons
+  --reduce-messageBtns: 0 ;
+  --hide-messageBtnEmojis: 0 ; // (0/1/2)
+  // <- ReduceMessageButtons
+
+  // -> UnmaskLinks
+  --unmask-links: 0 ;
+  // <- UnmaskLinks
+
+}
+
+// Dev build indicator
+.platform-win .app__160d8::after {
+  content: "Snippets Dev build" !important ;
+  position: absolute ;
+  display: block !important ;
+  top: calc(var(--custom-app-top-bar-height) / 2);
+  transform: translateY(-50%);
+  left: 70px ;
+  line-height: 22px ;
+  font-size: 13px ;
+  font-weight: 600 ;
+  color: rgb(114, 118, 125);
+  text-transform: none ;
+  z-index: 9999 ;
+}

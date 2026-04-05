@@ -1,0 +1,16 @@
+/*!
+  HideChatButtons v0.1.0
+  <github.com/Eight-P/BD.8P>
+*/
+
+@use 'HideChatButtons/HideChatButtons';
+
+:root {
+  /* Show/Hide chat input buttons.
+    0: Visible | 1: Hidden */
+  --hide-chatBtn-nitro: 1 ;
+  --hide-chatBtn-gif: 0 ;
+  --hide-chatBtn-sticker: 0 ;
+  --hide-chatBtn-emoji: 0 ;
+  --hide-chatBtn-apps: 0 ;
+}

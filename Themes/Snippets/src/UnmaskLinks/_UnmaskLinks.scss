@@ -1,0 +1,16 @@
+@container style(--unmask-links: 1 ) {
+    .messageContent_c19a55 .anchor_edefb8[title$=")"] {
+      &::after {
+        content: " (" attr(href) ")" ;
+        position: relative ;
+        display: inline ;
+        font-size: 0.7rem ;
+        font-weight: 400 ;
+        font-style: normal ;
+        filter: grayscale(1.0) brightness(1.15);
+      }
+      &:hover::after {
+        text-decoration: underline ;
+      }
+    }
+  }

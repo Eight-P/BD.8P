@@ -1,0 +1,50 @@
+@container style(--reduce-messageBtns: 1 ) {
+  .buttonsInner__5126c > :is(
+    .button_f7ecac, // for btns added by plugins
+    // all items but last two
+    .separator_f84418,
+    :nth-last-child(n+3) .button_f7ecac
+  ) {
+    display: none ;
+  }
+}
+
+// hide emojis until hover
+@container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
+  // separator unless there are plugin btns
+  .separator_f84418:not(.button_f7ecac ~ .separator_f84418),
+  .button_f7ecac:has(.emoji) {
+    display: none ;
+  }
+
+  // to not shift positions (e.g. of plugin btns) when hover (best solution?)
+  .buttonsInner__5126c > span:has(.emoji__040f0) {
+    order: -1 ;
+  }
+}
+
+.buttons__5126c {
+  // opacity: 1 ; // debug
+
+  // hover or expanded
+  &:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+  &:hover {
+
+    // Unhide all
+    @container style(--hide-messageBtnEmojis: 0 ) OR style(--hide-messageBtnEmojis: 1 ) {
+      :is(.button_f7ecac, .separator_f84418) {
+        display: flex !important ;
+      }
+    }
+
+    // Unhide all but emojis
+    @container style(--hide-messageBtnEmojis: 2 ) {
+      :is(
+        .button_f7ecac:not(:has(.emoji)), // don't unhide emojis if hideEmojis is 2
+        .separator_f84418
+      ) {
+        display: flex ;
+      }
+    }
+  }
+}

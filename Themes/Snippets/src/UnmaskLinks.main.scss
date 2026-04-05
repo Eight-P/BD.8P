@@ -1,0 +1,13 @@
+/*!
+  UnmaskLinks v0.1.0
+  <github.com/Eight-P/BD.8P>
+*/
+
+@use 'UnmaskLinks/UnmaskLinks' ;
+
+:root {
+  /* Show the URL next to a masked link
+    0: Masked (default)
+    1: Show URL */
+  --unmask-links: 0 ;
+}
