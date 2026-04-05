@@ -1,4 +1,4 @@
-# CSS build action v2.2
+# CSS build action v2.3
 # Build CSS and deploy to dist branch
 name: buildCss
 
@@ -8,7 +8,7 @@ on:
     branches:
     - master
     paths:
-    - "Themes/**/*.main.scss"
+    - "Themes/**/src/*.scss"
 
 permissions:
   contents: write
@@ -34,8 +34,8 @@ jobs:
       id: filter
       with:
         filters: |
-          t1: '**/T1.main.scss'
-          snippets: Themes/Snippets/src/*.main.scss'
+          t1: 'Themes/T1/src/*.scss'
+          snippets: 'Themes/Snippets/src/*.scss'
 
   Build:
     needs: DetermineBuilds
@@ -88,8 +88,10 @@ jobs:
 
     # If nothing was added, this is expected to fail.
     - name: Commit & push changes
+      env:
+        msg: ${{ case (github.event_name == 'workflow_dispatch', 'workflow dispatch', github.event.head_commit.id) }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git commit -m "build for: ${{ github.event.head_commit.id }}"
+        git commit -m "build for: ${{ env.msg }}"
         git push origin dist
