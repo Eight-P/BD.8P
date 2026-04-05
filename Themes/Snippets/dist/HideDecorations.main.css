@@ -1,0 +1,96 @@
+/*!
+  HideDecorations v0.1.0
+  <github.com/Eight-P/BD.8P>
+*/
+@container style(--hide-avatarDecorations: 1) {
+  .avatarDecoration__44b0c, .avatarDecoration_c19a55 {
+    display: none;
+  }
+}
+@container style(--hide-profileEffects: 1) {
+  .profileEffects__0dd08 {
+    display: none;
+  }
+}
+@container style(--hide-nameplates: 1 ) or style(--hide-nameplates: 3 ) {
+  .nameplated__91a9d.childContainer__91a9d {
+    padding-right: 8px;
+  }
+  .nameplated__91a9d .container_df39b2 {
+    display: none;
+  }
+  .channel__972a0 .container_df39b2 {
+    display: none;
+  }
+  .channel__972a0 .innerCloseButtonPlated__972a0 {
+    background: none;
+    backdrop-filter: none;
+  }
+}
+@container style(--hide-nameplates: 2 ) or style(--hide-nameplates: 3 ) {
+  .container__37e49 .container_df39b2 {
+    display: none;
+  }
+}
+@container style(--disable-roleGradients: 1 ) {
+  .animateGradient_e5de78 {
+    animation: none;
+  }
+  .animateGradient_e5de78::after {
+    display: none;
+  }
+  .usernameGradient_e5de78 {
+    background: var(--custom-gradient-color-1);
+    background-clip: text;
+    background-size: 100px auto;
+  }
+  .usernameGlow_e5de78 {
+    display: none;
+  }
+}
+@container style(--hide-clanTags: 1 ) or style(--hide-clanTags: 2 ) {
+  .username__5d473 .clanTag__5d473 {
+    display: none;
+  }
+}
+@container style(--hide-clanTags: 2 ) {
+  .clanTagChiplet_c19a55,
+  .guildTagContainer__63ed3,
+  .voiceUser__07f91 .clanTag__07f91 {
+    display: none !important;
+  }
+}
+@container style(--hide-reactionAnimations: 1) {
+  :is(.reaction__23977, .reaction_f8896c) {
+    animation: none !important;
+  }
+  :is(.reaction__23977, .reaction_f8896c) :is(.burstGlow__23977, .effectsWrapper_a9ddb3) {
+    display: none;
+  }
+  :is(.reaction__23977, .reaction_f8896c) .hideEmoji__23977 {
+    opacity: 1 !important;
+  }
+}
+:root {
+  /* Effects & Decorations
+    0: Visible | 1: Hidden */
+  /* Profile popout/modal background effects */
+  --hide-profileEffects: 0 ;
+  /* User avatar decorations */
+  --hide-avatarDecorations: 0 ;
+  /* Nameplates
+    0: Show all (default)
+    1: Hide in member list
+    2: Hide own in profile panel
+    3: Hide all */
+  --hide-nameplates: 0 ;
+  /* Clan tags
+    0: Show all (default)
+    1: Hide in member list
+    2: Hide all */
+  --hide-clanTags: 0 ;
+  /* Username holographic gradient & animation */
+  --disable-roleGradients: 0 ;
+  /* Super reaction animations */
+  --hide-reactionAnimations: 0 ;
+}
