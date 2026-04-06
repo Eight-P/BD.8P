@@ -1,14 +1,16 @@
-// * compileDevTheme.js v4.1
+// * compileDevTheme.js v4.2
 // watch and compile dev files to mod folders
 
 const Fs = require('fs');
 const Path = require('path');
 const Chokidar = require('chokidar');
-const Sass = require('sass');
+const Sass = require('sass-embedded');
 
-const SourceFolder = process.cwd();
+const Setup = getSetup();
 const DevFiles = getDevFiles();
 const OutputPaths = getOutputPaths();
+
+const Compiler = Sass.initCompiler();
 
 const SassOptions = {
   style: 'expanded',
@@ -17,11 +19,11 @@ const SassOptions = {
   silenceDeprecations: ["import", "if-function"]
 };
 
-Chokidar.watch(SourceFolder, {
+Chokidar.watch(Setup.watchFolder, {
   ignored: (path, stats) => stats?.isFile() && !path.endsWith('.scss')
 })
   .on('ready', () => {
-    console.log(`Listening for changes in:\n \u001b[36m${SourceFolder}\u001b[0m \nInput:`);
+    console.log(`Listening for changes in:\n \u001b[36m${Setup.watchFolder}\u001b[0m \nInput:`);
     for (let devFile of DevFiles) {
       console.log(` \u001b[36m${devFile}\u001b[0m`);
     }
@@ -41,9 +43,7 @@ function upateDevFiles(trigger) {
   for (let devFile of DevFiles) {
     let output ;
     try {
-      // Sync: To favor fewer dev files, as docs state it's faster.
-      // (and proper mt would need workers or so i think)
-      output = Sass.compile(devFile, SassOptions);
+      output = Compiler.compile(devFile, SassOptions);
     }
     catch (err) {
       if (DevFiles.length > 1) {
@@ -69,9 +69,31 @@ function upateDevFiles(trigger) {
   }
 }
 
+function getSetup() {
+
+  let config = {
+    watchFolder: "",
+    mods: []
+  };
+
+  let argList = process.argv.slice(2);
+  let useInitDirArg = argList.indexOf("init_dir");
+
+  if (useInitDirArg != -1 ) {
+    config.watchFolder = process.env.INIT_CWD ;
+    argList.splice(useInitDirArg, 1);
+  }
+  else {
+    config.watchFolder = process.cwd();
+  }
+  config.mods = argList ;
+
+  return config ;
+}
+
 function getDevFiles() {
   let devFiles = [] ;
-  let devFolder = checkPath(Path.join(SourceFolder, 'dev'));
+  let devFolder = checkPath(Path.join(process.cwd(), 'dev'));
   let dirEntries = Fs.readdirSync(devFolder, { withFileTypes:true });
 
   for (let entry of dirEntries) {
@@ -84,7 +106,6 @@ function getDevFiles() {
 
 function getOutputPaths() {
   let pathsList = [];
-  let argList = process.argv.slice(2);
 
   const modNames = {
     bd: 'betterdiscord',
@@ -103,10 +124,10 @@ function getOutputPaths() {
     return checkPath(modFolders[process.platform])
   }
 
-  if (argList[0]) {
-    for (let arg of argList) {
-      let modName = modNames[arg.toLowerCase()];
-      if (!modName) quitWithError(new Error(), "Invalid mod", arg);
+  if (Setup.mods[0]) {
+    for (let mod of Setup.mods) {
+      let modName = modNames[mod.toLowerCase()];
+      if (!modName) quitWithError(new Error(), "Invalid argument for mod:", mod);
       pathsList.push(getModFolder(modName));
     }
   }

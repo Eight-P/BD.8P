@@ -2,34 +2,44 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "T1-Dev-BD",
+      "label": "watch-T1-BD",
       "type": "shell",
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "isBackground": true,
-      "command": "npm run watch -w Themes/T1 BD"
+      "command": "npm run watch -w Themes/T1"
     },
     {
-      "label": "T1-Dev-Vencord",
+      "label": "watch-T1-VenBD",
       "type": "shell",
       "group": {
         "kind": "build",
         "isDefault": false
       },
       "isBackground": true,
-      "command": "npm run watch -w Themes/T1 Ven"
+      "command": "npm run watch -w Themes/T1 Ven BD"
     },
     {
-      "label": "T1-Dev-VenBD",
+      "label": "watch-Snippets-BD",
       "type": "shell",
       "group": {
         "kind": "build",
         "isDefault": false
       },
       "isBackground": true,
-      "command": "npm run watch -w Themes/T1 BD Ven"
+      "command": "npm run watch -w Themes/Snippets"
+    },
+    {
+      "label": "watch-Snippets-VenBD",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "isBackground": true,
+      "command": "npm run watch -w Themes/Snippets Ven BD"
     }
   ]
 }
