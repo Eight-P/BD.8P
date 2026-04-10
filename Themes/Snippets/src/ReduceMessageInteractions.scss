@@ -1,9 +1,9 @@
 /*!
-  ReduceMessageButtons v0.1.0
+  ReduceMessageButtons v0.1.1
   <github.com/Eight-P/BD.8P>
 */
 
-@use 'ReduceMessageButtons/ReduceMessageButtons' ;
+@use 'ReduceMessageInteractions/ReduceMessageInteractions' ;
 
 :root {
   /* Reduce message buttons unless hovered
@@ -16,4 +16,10 @@
     1: Hide until hovered
     2: Hidden */
   --hide-messageBtnEmojis: 0 ;
+
+  /* Removes the background highlight when hovering a message
+    0: Highlight on hover (default)
+    1: Hide until btns are hovered or expanded
+    2: Never highlight */
+  --hide-messageHover: 0 ;
 }
