@@ -42,7 +42,7 @@
     // Unhide all but emojis
     @container style(--hide-messageBtnEmojis: 2 ) {
       :is(
-        .button_f7ecac:not(:has(.emoji)), // don't unhide emojis if hideEmojis is 2
+        .button_f7ecac:not(:has(.emoji)),
         .separator_f84418
       ) {
         display: flex ;
@@ -53,17 +53,41 @@
 // <- hide emojis
 
 // -> hide bg highlight
+// highlight on btn hover/expanded
 @container style(--hide-messageHover: 1 ) {
   .message__5126c:hover:not(
     :has(.buttons__5126c:hover),
-    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])) {
-      background: none !important ;
+    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])
+  ){
+    background: none !important ;
+
+    &.mentioned__5126c {
+      background: var(--message-mentioned-background-default) !important ;
+    }
+    &.replying__5126c {
+      background: var(--message-highlight-background-default) !important ;
+    }
+    &.ephemeral__5126c {
+      background: var(--brand-05a) !important ;
+    }
   }
 }
 
+// never highlight
 @container style(--hide-messageHover: 2 ) {
-  .message__5126c:hover {
-      background: none !important ;
+  .message__5126c {
+    background: none !important ;
+  }
+  .message__5126c {
+    &.mentioned__5126c {
+      background: var(--message-mentioned-background-default) !important ;
+    }
+    &.replying__5126c {
+      background: var(--message-highlight-background-default) !important ;
+    }
+    &.ephemeral__5126c {
+      background: var(--brand-05a) !important ;
+    }
   }
 }
 // <- hide bg highlight
