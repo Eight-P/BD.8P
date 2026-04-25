@@ -260,31 +260,6 @@
     @include scrollbar(none);
   }
 
-  // test idk, prolly not
-  // .body__5be3e {
-  //   padding: 12px 10px 18px !important ;
-  // }
-
-  // .container__63ed3,
-  // .mutuals__530ce,
-  // .body__5be3e .buttons_bc38cd,
-  // .descriptionClamp_f5f93a,
-  // .card__39ec2,
-  // .section_bf424d,
-  // .roleListContainer_af3987 {
-  //   // background: var(--bg_items) !important;
-  //   @include shadowEffect("box_3");
-  //   padding: 5px 10px !important;
-  //   border-radius: 7px !important;
-  //   backdrop-filter: blur(16px);
-  // }
-
-  // .section_bf424d .roleListContainer_af3987 {
-  //   background: none !important;
-  //   box-shadow: none !important ;
-  // }
-
-
   // -> Name, Badges, ..
   // section container
   .container__63ed3 {
@@ -506,5 +481,8 @@
 
 }
 
-// User popout loading indicator
+// User popout loading indicator old
 .layer__59d0d .loadingPopout__58f1c { display: none }
+
+// popout placeholder while loading
+.layer__59d0d .profilePopout__1add6 { display: none }
