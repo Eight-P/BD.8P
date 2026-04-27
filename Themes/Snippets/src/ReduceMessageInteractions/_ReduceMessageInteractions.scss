@@ -138,8 +138,7 @@
 
       // override default hover with base color (feels suboptimal)
       &.mentioned__5126c {
-        // background: var(--message-mentioned-background-default) !important ;
-        background: red !important ;
+        background: var(--message-mentioned-background-default) !important ;
       }
       &.replying__5126c {
         background: var(--message-highlight-background-default) !important ;
