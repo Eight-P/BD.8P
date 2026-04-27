@@ -1,9 +1,9 @@
 /*!
   HideDecorations v0.1.0
   <github.com/Eight-P/BD.8P>
-*/
 
-@use 'HideDecorations/HideDecorations' ;
+  Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
+*/
 
 :root {
   /* Effects & Decorations
@@ -34,3 +34,7 @@
   /* Super reaction animations */
   --hide-reactionAnimations: 0 ;
 }
+/* <- end of root.
+Snippets css -> */
+
+@import 'HideDecorations/HideDecorations' ;

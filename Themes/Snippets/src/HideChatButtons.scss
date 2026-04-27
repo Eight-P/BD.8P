@@ -1,9 +1,9 @@
 /*!
   HideChatButtons v0.1.0
   <github.com/Eight-P/BD.8P>
-*/
 
-@use 'HideChatButtons/HideChatButtons';
+  Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
+*/
 
 :root {
   /* Show/Hide chat input buttons.
@@ -14,3 +14,7 @@
   --hide-chatBtn-emoji: 0 ;
   --hide-chatBtn-apps: 0 ;
 }
+/* <- end of root.
+Snippets css -> */
+
+@import 'HideChatButtons/HideChatButtons';

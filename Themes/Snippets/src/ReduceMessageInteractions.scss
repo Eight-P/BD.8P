@@ -1,25 +1,35 @@
 /*!
-  ReduceMessageInteractions v0.1.2
+  ReduceMessageInteractions v0.1.3
   <github.com/Eight-P/BD.8P>
-*/
 
-@use 'ReduceMessageInteractions/ReduceMessageInteractions' ;
+  Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
+*/
 
 :root {
   /* Reduce message buttons unless hovered
     0: Show all (default)
-    1: Reduce until hovered */
+    1: Reduce until hovered
+    2: Hidden */
   --reduce-messageBtns: 0 ;
 
-  /* Hide emojis in message buttons
+  /* Hide just the emojis in message buttons
     0: Show all (default)
     1: Hide until hovered
     2: Hidden */
   --hide-messageBtnEmojis: 0 ;
 
-  /* Removes the background highlight when hovering a message
+  /* Hide message background hover
     0: Highlight on hover (default)
     1: Hide until btns are hovered or expanded
     2: Never highlight */
   --hide-messageHover: 0 ;
+
+  /* Reduces the highlight background for mentions and similar
+    0: whole message (default)
+    1: reduced */
+  --reduce-highlightBackground: 0 ;
 }
+/* <- end of root.
+Snippets css -> */
+
+@import 'ReduceMessageInteractions/ReduceMessageInteractions' ;

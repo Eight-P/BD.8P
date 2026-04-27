@@ -13,7 +13,7 @@ Copy & Paste the individual code snippets into your CustomCSS / QuickCSS.
 
 <br/>
 
-### HideChatButtons
+### Hide chat input buttons
 <details open>
 <summary> css </summary>
 
@@ -32,9 +32,7 @@ Copy & Paste the individual code snippets into your CustomCSS / QuickCSS.
 ```
 </details open>
 
-<br/>
-
-### HideDecorations
+### Hide user decorations and effects
 <details open>
 <summary> css </summary>
 
@@ -42,39 +40,37 @@ Copy & Paste the individual code snippets into your CustomCSS / QuickCSS.
 /* Removes various user decorations */
 @import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/HideDecorations.css);
 
-/* Effects & Decorations: 0 = Visible | 1 = Hidden */
+/* Unless specified: 0 = Visible | 1 = Hidden */
 :root {
   /* Profile pop-out/modal background effects */
-  --hide-profileEffects: 1 ;
+  --hide-profileEffects: 0 ;
 
   /* User avatar decorations */
-  --hide-avatarDecorations: 1 ;
+  --hide-avatarDecorations: 0 ;
 
   /* Nameplates
     0: Show all (default)
     1: Hide in member list
     2: Hide own in profile panel
     3: Hide all */
-  --hide-nameplates: 3 ;
+  --hide-nameplates: 0 ;
 
   /* Clan tags
     0: Show all (default)
     1: Hide in member list
     2: Hide all */
-  --hide-clanTags: 1 ;
+  --hide-clanTags: 0 ;
 
   /* Username holographic gradient & animation */
-  --disable-roleGradients: 1 ;
+  --disable-roleGradients: 0 ;
 
   /* Super reaction animations */
-  --hide-reactionAnimations: 1 ;
+  --hide-reactionAnimations: 0 ;
 }
 ```
 </details open>
 
-<br/>
-
-### ReduceMessageInteractions
+### Reduce chat message buttons and hover effect
 <details open>
 <summary> css </summary>
 
@@ -85,27 +81,31 @@ Copy & Paste the individual code snippets into your CustomCSS / QuickCSS.
 :root {
   /* Reduce message buttons unless hovered
     0: Show all (default)
-    1: Reduce until hovered */
+    1: Reduce until hovered
+    2: Hidden */
   --reduce-messageBtns: 0 ;
 
-  /* Hide emojis in message buttons
+  /* Hide just the emojis in message buttons
     0: Show all (default)
     1: Hide until hovered
-    2: Always hidden */
-  --hide-messageBtnEmojis: 1 ;
+    2: Hidden */
+  --hide-messageBtnEmojis: 0 ;
 
-  /* Removes the background highlight when hovering a message
+  /* Hide message background hover
     0: Highlight on hover (default)
     1: Hide until btns are hovered or expanded
     2: Never highlight */
-  --hide-messageHover: 1 ;
+  --hide-messageHover: 0 ;
+
+  /* Reduce the highlight background for mentions and similar
+    0: whole message (default)
+    1: reduced */
+  --reduce-highlightBackground: 0 ;
 }
 ```
 </details open>
 
-<br/>
-
-### UnmaskLinks
+### Show URL of masked links
 <details open>
 <summary> css </summary>
 
@@ -116,8 +116,9 @@ Copy & Paste the individual code snippets into your CustomCSS / QuickCSS.
 :root {
   /* Show the URL next to a masked link
     0: Masked (default)
-    1: Show URL */
-  --unmask-links: 1 ;
+    1: Show URL in messages (except embeds)
+    2: Show URL everywhere */
+  --unmask-links: 0 ;
 }
 ```
 </details open>

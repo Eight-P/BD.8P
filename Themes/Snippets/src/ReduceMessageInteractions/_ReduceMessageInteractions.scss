@@ -1,17 +1,11 @@
-// -> hide all but last message btn
-@container style(--reduce-messageBtns: 1 ) {
-  .buttonsInner__5126c > { // can't do :is with pseudo class
-    .button_f7ecac, // for btns added by plugins
-    // all items but last two
-    .separator_f84418,
-    :nth-last-child(n+3) .button_f7ecac {
-      display: none ;
-    }
+// -> hide/reduce message btns
+@container style(--reduce-messageBtns: 1 ) or style(--reduce-messageBtns: 2 ) {
+  // makes it easier to hit
+  .buttonContainer_c19a55 .buttons__5126c {
+    top: -14px ;
   }
 }
-// <- hide all but last message btn
 
-// -> hide emojis
 @container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
   // separator unless there are plugin btns
   .separator_f84418:not(.button_f7ecac ~ .separator_f84418),
@@ -25,6 +19,19 @@
   }
 }
 
+// all but last message btn
+@mixin HideMsgBtns() {
+  .buttonsInner__5126c > { // can't do :is with pseudo class
+    .button_f7ecac, // for btns added by plugins
+    // all items but last two
+    .separator_f84418,
+    :nth-last-child(n+3) .button_f7ecac {
+      display: none ;
+    }
+  }
+}
+
+// Buttons
 .buttons__5126c {
   // opacity: 1 ; // debug
 
@@ -41,19 +48,65 @@
 
     // Unhide all but emojis
     @container style(--hide-messageBtnEmojis: 2 ) {
-      :is(
-        .button_f7ecac:not(:has(.emoji)),
-        .separator_f84418
-      ) {
+      :is( .button_f7ecac:not(:has(.emoji)), .separator_f84418) {
         display: flex ;
       }
     }
   }
+
+  // not hover or expanded
+  &:not(
+    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+    :hover
+  ) {
+    @container style(--reduce-messageBtns: 1 ) {
+      @include HideMsgBtns();
+    }
+  }
 }
-// <- hide emojis
+
+// always hide
+@container style(--reduce-messageBtns: 2 ) {
+  @include HideMsgBtns();
+}
+// <- hide/reduce message btns
+
+// -> Reduce highlight message background
+@container style(--reduce-highlightBackground: 1 ) {
+  .message__5126c {
+    background: none ;
+
+    &:before { display: none }
+
+    .contents_c19a55 .messageContent_c19a55 {
+      padding-left: 0 ;
+      margin-left: 0 ;
+
+      // could always have the border for spacing, but idk
+      // border-left: solid 2px transparent ;
+    }
+
+    &.mentioned__5126c .contents_c19a55 .messageContent_c19a55 {
+      padding-left: 6px ;
+      background: var(--message-mentioned-background-default);
+      border-left: solid 2px var(--icon-feedback-warning);
+    }
+    &.replying__5126c .contents_c19a55 .messageContent_c19a55 {
+      padding-left: 6px ;
+      background: var(--message-highlight-background-default);
+      border-left: solid 2px var(--brand-500);
+    }
+    &.ephemeral__5126c .contents_c19a55 .messageContent_c19a55 {
+      padding-left: 6px ;
+      background: var(--brand-05a);
+      border-left: solid 2px var(--brand-500);
+    }
+  }
+}
+// <- Reduce message background
 
 // -> hide bg highlight
-// highlight on btn hover/expanded
+// remove background hover except on btn hover/expanded
 @container style(--hide-messageHover: 1 ) {
   .message__5126c:hover:not(
     :has(.buttons__5126c:hover),
@@ -61,32 +114,45 @@
   ){
     background: none !important ;
 
-    &.mentioned__5126c {
-      background: var(--message-mentioned-background-default) !important ;
-    }
-    &.replying__5126c {
-      background: var(--message-highlight-background-default) !important ;
-    }
-    &.ephemeral__5126c {
-      background: var(--brand-05a) !important ;
+    // keep bg on highlight msgs if not reduced
+    @container not style(--reduce-highlightBackground: 1 ) {
+      &.mentioned__5126c {
+        background: var(--message-mentioned-background-default) !important ;
+      }
+      &.replying__5126c {
+        background: var(--message-highlight-background-default) !important ;
+      }
+      &.ephemeral__5126c {
+        background: var(--brand-05a) !important ;
+      }
     }
   }
 }
 
 // never highlight
 @container style(--hide-messageHover: 2 ) {
-  .message__5126c {
-    background: none !important ;
+
+  @container style(--reduce-highlightBackground: 0 ) {
+    .message__5126c:hover {
+      background: none !important ;
+
+      // override default hover with base color (feels suboptimal)
+      &.mentioned__5126c {
+        // background: var(--message-mentioned-background-default) !important ;
+        background: red !important ;
+      }
+      &.replying__5126c {
+        background: var(--message-highlight-background-default) !important ;
+      }
+      &.ephemeral__5126c {
+        background: var(--brand-05a) !important ;
+      }
+    }
   }
-  .message__5126c {
-    &.mentioned__5126c {
-      background: var(--message-mentioned-background-default) !important ;
-    }
-    &.replying__5126c {
-      background: var(--message-highlight-background-default) !important ;
-    }
-    &.ephemeral__5126c {
-      background: var(--brand-05a) !important ;
+
+  @container style(--reduce-highlightBackground: 1 ) {
+    .message__5126c {
+      background: none !important ;
     }
   }
 }

@@ -2,7 +2,7 @@
   * @name Snippets_DEV
   * @description Snippets Dev
   * @author Eight_P
-  * @version 0.1.0_D
+  * @version 0.1.1_D
 */
 
 @import '../src/HideChatButtons.scss' ;
@@ -20,7 +20,7 @@
   // <- HideChatButtons
 
   // -> HideDecorations
-  --hide-profileEffects: 0;
+  --hide-profileEffects: 0 ;
   --hide-avatarDecorations: 0 ;
   --hide-nameplates: 0 ; // (0/1/2/3)
   --hide-clanTags: 0 ; // (0/1/2)
@@ -29,13 +29,14 @@
   // <- HideDecorations
 
   // -> ReduceMessageInteractions
-  --reduce-messageBtns: 0 ;
+  --reduce-messageBtns: 0 ; // (0/1/2)
   --hide-messageBtnEmojis: 0 ; // (0/1/2)
   --hide-messageHover: 0 ;  // (0/1/2)
+  --reduce-highlightBackground: 0 ;
   // <- ReduceMessageInteractions
 
   // -> UnmaskLinks
-  --unmask-links: 0 ;
+  --unmask-links: 0 ; // (0/1/2)
   // <- UnmaskLinks
 
 }

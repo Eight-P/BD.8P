@@ -1,13 +1,18 @@
 /*!
-  UnmaskLinks v0.1.0
+  UnmaskLinks v0.1.1
   <github.com/Eight-P/BD.8P>
-*/
 
-@use 'UnmaskLinks/UnmaskLinks' ;
+  Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
+*/
 
 :root {
   /* Show the URL next to a masked link
     0: Masked (default)
-    1: Show URL */
+    1: Show URL in messages (except embeds)
+    2: Show URL everywhere */
   --unmask-links: 0 ;
 }
+/* <- end of root.
+Snippets css -> */
+
+@import 'UnmaskLinks/UnmaskLinks' ;
