@@ -1,12 +1,36 @@
 /*!
-  ReduceMessageInteractions v0.1.2
+  ReduceMessageInteractions v0.1.3
   <github.com/Eight-P/BD.8P>
+
+  Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
 */
-@container style(--reduce-messageBtns: 1 ) {
-  .buttonsInner__5126c > .button_f7ecac,
-  .buttonsInner__5126c > .separator_f84418,
-  .buttonsInner__5126c > :nth-last-child(n+3) .button_f7ecac {
-    display: none;
+:root {
+  /* Reduce message buttons unless hovered
+    0: Show all (default)
+    1: Reduce until hovered
+    2: Hidden */
+  --reduce-messageBtns: 0 ;
+  /* Hide just the emojis in message buttons
+    0: Show all (default)
+    1: Hide until hovered
+    2: Hidden */
+  --hide-messageBtnEmojis: 0 ;
+  /* Hide message background hover
+    0: Highlight on hover (default)
+    1: Hide until btns are hovered or expanded
+    2: Never highlight */
+  --hide-messageHover: 0 ;
+  /* Reduces the highlight background for mentions and similar
+    0: whole message (default)
+    1: reduced */
+  --reduce-highlightBackground: 0 ;
+}
+
+/* <- end of root.
+Snippets css -> */
+@container style(--reduce-messageBtns: 1 ) or style(--reduce-messageBtns: 2 ) {
+  .buttonContainer_c19a55 .buttons__5126c {
+    top: -14px;
   }
 }
 @container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
@@ -24,58 +48,93 @@
   }
 }
 @container style(--hide-messageBtnEmojis: 2 ) {
-  .buttons__5126c:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) :is(.button_f7ecac:not(:has(.emoji)),
-  .separator_f84418), .buttons__5126c:hover :is(.button_f7ecac:not(:has(.emoji)),
-  .separator_f84418) {
+  .buttons__5126c:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) :is(.button_f7ecac:not(:has(.emoji)), .separator_f84418), .buttons__5126c:hover :is(.button_f7ecac:not(:has(.emoji)), .separator_f84418) {
     display: flex;
   }
 }
+@container style(--reduce-messageBtns: 1 ) {
+  .buttons__5126c:not(:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+  :hover) .buttonsInner__5126c > .button_f7ecac,
+  .buttons__5126c:not(:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+  :hover) .buttonsInner__5126c > .separator_f84418,
+  .buttons__5126c:not(:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+  :hover) .buttonsInner__5126c > :nth-last-child(n+3) .button_f7ecac {
+    display: none;
+  }
+}
 
+@container style(--reduce-messageBtns: 2 ) {
+  .buttonsInner__5126c > .button_f7ecac,
+  .buttonsInner__5126c > .separator_f84418,
+  .buttonsInner__5126c > :nth-last-child(n+3) .button_f7ecac {
+    display: none;
+  }
+}
+@container style(--reduce-highlightBackground: 1 ) {
+  .message__5126c {
+    background: none;
+  }
+  .message__5126c:before {
+    display: none;
+  }
+  .message__5126c .contents_c19a55 .messageContent_c19a55 {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .message__5126c.mentioned__5126c .contents_c19a55 .messageContent_c19a55 {
+    padding-left: 6px;
+    background: var(--message-mentioned-background-default);
+    border-left: solid 2px var(--icon-feedback-warning);
+  }
+  .message__5126c.replying__5126c .contents_c19a55 .messageContent_c19a55 {
+    padding-left: 6px;
+    background: var(--message-highlight-background-default);
+    border-left: solid 2px var(--brand-500);
+  }
+  .message__5126c.ephemeral__5126c .contents_c19a55 .messageContent_c19a55 {
+    padding-left: 6px;
+    background: var(--brand-05a);
+    border-left: solid 2px var(--brand-500);
+  }
+}
 @container style(--hide-messageHover: 1 ) {
   .message__5126c:hover:not(:has(.buttons__5126c:hover),
   :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])) {
     background: none !important;
   }
-  .message__5126c:hover:not(:has(.buttons__5126c:hover),
-  :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])).mentioned__5126c {
-    background: var(--message-mentioned-background-default) !important;
-  }
-  .message__5126c:hover:not(:has(.buttons__5126c:hover),
-  :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])).replying__5126c {
-    background: var(--message-highlight-background-default) !important;
-  }
-  .message__5126c:hover:not(:has(.buttons__5126c:hover),
-  :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])).ephemeral__5126c {
-    background: var(--brand-05a) !important;
+  @container not style(--reduce-highlightBackground: 1 ) {
+    .message__5126c:hover:not(:has(.buttons__5126c:hover),
+    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])).mentioned__5126c {
+      background: var(--message-mentioned-background-default) !important;
+    }
+    .message__5126c:hover:not(:has(.buttons__5126c:hover),
+    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])).replying__5126c {
+      background: var(--message-highlight-background-default) !important;
+    }
+    .message__5126c:hover:not(:has(.buttons__5126c:hover),
+    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])).ephemeral__5126c {
+      background: var(--brand-05a) !important;
+    }
   }
 }
 @container style(--hide-messageHover: 2 ) {
-  .message__5126c {
-    background: none !important;
+  @container style(--reduce-highlightBackground: 0 ) {
+    .message__5126c:hover {
+      background: none !important;
+    }
+    .message__5126c:hover.mentioned__5126c {
+      background: red !important;
+    }
+    .message__5126c:hover.replying__5126c {
+      background: var(--message-highlight-background-default) !important;
+    }
+    .message__5126c:hover.ephemeral__5126c {
+      background: var(--brand-05a) !important;
+    }
   }
-  .message__5126c.mentioned__5126c {
-    background: var(--message-mentioned-background-default) !important;
+  @container style(--reduce-highlightBackground: 1 ) {
+    .message__5126c {
+      background: none !important;
+    }
   }
-  .message__5126c.replying__5126c {
-    background: var(--message-highlight-background-default) !important;
-  }
-  .message__5126c.ephemeral__5126c {
-    background: var(--brand-05a) !important;
-  }
-}
-:root {
-  /* Reduce message buttons unless hovered
-    0: Show all (default)
-    1: Reduce until hovered */
-  --reduce-messageBtns: 0 ;
-  /* Hide emojis in message buttons
-    0: Show all (default)
-    1: Hide until hovered
-    2: Hidden */
-  --hide-messageBtnEmojis: 0 ;
-  /* Removes the background highlight when hovering a message
-    0: Highlight on hover (default)
-    1: Hide until btns are hovered or expanded
-    2: Never highlight */
-  --hide-messageHover: 0 ;
 }

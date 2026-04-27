@@ -1,7 +1,35 @@
 /*!
   HideDecorations v0.1.0
   <github.com/Eight-P/BD.8P>
+
+  Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
 */
+:root {
+  /* Effects & Decorations
+    0: Visible | 1: Hidden */
+  /* Profile popout/modal background effects */
+  --hide-profileEffects: 0 ;
+  /* User avatar decorations */
+  --hide-avatarDecorations: 0 ;
+  /* Nameplates
+    0: Show all (default)
+    1: Hide in member list
+    2: Hide own in profile panel
+    3: Hide all */
+  --hide-nameplates: 0 ;
+  /* Clan tags
+    0: Show all (default)
+    1: Hide in member list
+    2: Hide all */
+  --hide-clanTags: 0 ;
+  /* Username holographic gradient & animation */
+  --disable-roleGradients: 0 ;
+  /* Super reaction animations */
+  --hide-reactionAnimations: 0 ;
+}
+
+/* <- end of root.
+Snippets css -> */
 @container style(--hide-avatarDecorations: 1) {
   .avatarDecoration__44b0c, .avatarDecoration_c19a55 {
     display: none;
@@ -70,27 +98,4 @@
   :is(.reaction__23977, .reaction_f8896c) .hideEmoji__23977 {
     opacity: 1 !important;
   }
-}
-:root {
-  /* Effects & Decorations
-    0: Visible | 1: Hidden */
-  /* Profile popout/modal background effects */
-  --hide-profileEffects: 0 ;
-  /* User avatar decorations */
-  --hide-avatarDecorations: 0 ;
-  /* Nameplates
-    0: Show all (default)
-    1: Hide in member list
-    2: Hide own in profile panel
-    3: Hide all */
-  --hide-nameplates: 0 ;
-  /* Clan tags
-    0: Show all (default)
-    1: Hide in member list
-    2: Hide all */
-  --hide-clanTags: 0 ;
-  /* Username holographic gradient & animation */
-  --disable-roleGradients: 0 ;
-  /* Super reaction animations */
-  --hide-reactionAnimations: 0 ;
 }

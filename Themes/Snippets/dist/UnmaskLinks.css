@@ -1,24 +1,51 @@
 /*!
-  UnmaskLinks v0.1.0
+  UnmaskLinks v0.1.1
   <github.com/Eight-P/BD.8P>
+
+  Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
 */
+:root {
+  /* Show the URL next to a masked link
+    0: Masked (default)
+    1: Show URL in messages (except embeds)
+    2: Show URL everywhere */
+  --unmask-links: 0 ;
+}
+
+/* <- end of root.
+Snippets css -> */
 @container style(--unmask-links: 1 ) {
-  .messageContent_c19a55 .anchor_edefb8[title$=")"]::after {
+  .messageContent_c19a55 .anchor_edefb8[href][title]::after {
     content: " (" attr(href) ")";
     position: relative;
     display: inline;
     font-size: 0.7rem;
     font-weight: 400;
     font-style: normal;
+    line-height: 100%;
     filter: grayscale(1) brightness(1.15);
   }
-  .messageContent_c19a55 .anchor_edefb8[title$=")"]:hover::after {
+  .messageContent_c19a55 .anchor_edefb8[href][title]:hover::after {
     text-decoration: underline;
   }
 }
-:root {
-  /* Show the URL next to a masked link
-    0: Masked (default)
-    1: Show URL */
-  --unmask-links: 0 ;
+@container style(--unmask-links: 2 ) {
+  .anchor_edefb8[href][title]::after {
+    content: " (" attr(href) ")";
+    position: relative;
+    display: inline;
+    font-size: 0.7rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    filter: grayscale(1) brightness(1.15);
+  }
+  .anchor_edefb8[href][title]:hover::after {
+    text-decoration: underline;
+  }
+}
+@container style(--unmask-links: 1 ) or style(--unmask-links: 2 ) {
+  .spoilerContent__299eb.hidden__299eb .anchor_edefb8[href][title]::after {
+    display: none;
+  }
 }
