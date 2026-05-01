@@ -1,5 +1,5 @@
 /*!
-  ReduceMessageInteractions v0.1.4
+  ReduceMessageInteractions v0.1.5
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -31,6 +31,9 @@ Snippets css -> */
 @container style(--reduce-messageBtns: 1 ) or style(--reduce-messageBtns: 2 ) {
   .buttonContainer_c19a55 .buttons__5126c {
     top: -14px;
+  }
+  .buttonsInner__5126c {
+    grid-template-rows: 28px;
   }
 }
 @container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {

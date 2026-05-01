@@ -1,5 +1,5 @@
 /*!
-  UnmaskLinks v0.1.1
+  UnmaskLinks v0.1.2
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -15,7 +15,7 @@
 /* <- end of root.
 Snippets css -> */
 @container style(--unmask-links: 1 ) {
-  .messageContent_c19a55 .anchor_edefb8[href][title]::after {
+  .messageContent_c19a55 .anchor_edefb8[href][title$=")"]::after {
     content: " (" attr(href) ")";
     position: relative;
     display: inline;
@@ -23,14 +23,14 @@ Snippets css -> */
     font-weight: 400;
     font-style: normal;
     line-height: 100%;
-    filter: grayscale(1) brightness(1.15);
+    color: var(--chat-text-muted);
   }
-  .messageContent_c19a55 .anchor_edefb8[href][title]:hover::after {
+  .messageContent_c19a55 .anchor_edefb8[href][title$=")"]:hover::after {
     text-decoration: underline;
   }
 }
 @container style(--unmask-links: 2 ) {
-  .anchor_edefb8[href][title]::after {
+  .anchor_edefb8:is([href][title], .embedLink__623de)::after {
     content: " (" attr(href) ")";
     position: relative;
     display: inline;
@@ -38,14 +38,17 @@ Snippets css -> */
     font-weight: 400;
     font-style: normal;
     line-height: 100%;
-    filter: grayscale(1) brightness(1.15);
+    color: var(--chat-text-muted);
   }
-  .anchor_edefb8[href][title]:hover::after {
+  .anchor_edefb8:is([href][title], .embedLink__623de):hover::after {
     text-decoration: underline;
+  }
+  .anchor_edefb8:not([title$=")"])[href][title*=http]::after {
+    display: none;
   }
 }
 @container style(--unmask-links: 1 ) or style(--unmask-links: 2 ) {
-  .spoilerContent__299eb.hidden__299eb .anchor_edefb8[href][title]::after {
+  .spoilerContent__299eb.hidden__299eb .anchor_edefb8[href]::after {
     display: none;
   }
 }
