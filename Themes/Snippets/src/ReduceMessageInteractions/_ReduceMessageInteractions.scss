@@ -4,6 +4,11 @@
   .buttonContainer_c19a55 .buttons__5126c {
     top: -14px ;
   }
+
+  // keep btns at same height
+  .buttonsInner__5126c  {
+    grid-template-rows: 28px ;
+  }
 }
 
 @container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
@@ -48,7 +53,7 @@
 
     // Unhide all but emojis
     @container style(--hide-messageBtnEmojis: 2 ) {
-      :is( .button_f7ecac:not(:has(.emoji)), .separator_f84418) {
+      :is(.button_f7ecac:not(:has(.emoji)), .separator_f84418) {
         display: flex ;
       }
     }
@@ -81,11 +86,9 @@
     .contents_c19a55 .messageContent_c19a55 {
       padding-left: 0 ;
       margin-left: 0 ;
-
-      // could always have the border for spacing, but idk
-      // border-left: solid 2px transparent ;
     }
 
+    // contents is needed
     &.mentioned__5126c .contents_c19a55 .messageContent_c19a55 {
       padding-left: 6px ;
       background: var(--message-mentioned-background-default);

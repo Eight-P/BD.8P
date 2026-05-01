@@ -9,7 +9,7 @@
     font-weight: 400 ;
     font-style: normal ;
     line-height: 100% ;
-    filter: grayscale(1.0) brightness(1.15);
+    color: var(--chat-text-muted);
   }
   &:hover::after {
     text-decoration: underline ;
@@ -18,21 +18,26 @@
 
 // only in messages (no embeds, channel desc, ...)
 @container style(--unmask-links: 1 ) {
-  .messageContent_c19a55 .anchor_edefb8[href][title] {
+  .messageContent_c19a55 .anchor_edefb8[href][title$=")"] {
     @include URLPreview();
   }
 }
 
 // pretty much everywhere
 @container style(--unmask-links: 2 ) {
-  .anchor_edefb8[href][title] {
+  .anchor_edefb8:is([href][title], .embedLink__623de) {
     @include URLPreview();
+  }
+
+  // remove from regular not masked links
+  .anchor_edefb8:not([title$=")"])[href][title*="http"]::after {
+    display: none ;
   }
 }
 
 @container style(--unmask-links: 1 ) or style(--unmask-links: 2 ) {
   // no need for hidden/collapsed spoilers
-  .spoilerContent__299eb.hidden__299eb .anchor_edefb8[href][title]::after {
+  .spoilerContent__299eb.hidden__299eb .anchor_edefb8[href]::after {
     display: none ;
   }
 }
