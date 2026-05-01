@@ -232,7 +232,7 @@ $iconScale: var(--sbIconScale);
   height: 40px ;
   margin: 14px 0 7px 0 ;
 
-  .pill__1f388 { display: none }
+  .item__58105 { display: none }
 
   .listItemWrapper__91816 {
     scale: 1 !important ;
@@ -253,8 +253,7 @@ $iconScale: var(--sbIconScale);
 
   .childWrapper__6e9f8 {
     transition: none ;
-    // background: none !important;
-    color: var(--header-secondary) !important;
+    color: var(--header-secondary) !important ;
 
     svg {
       height: 26px ;
@@ -276,8 +275,8 @@ $iconScale: var(--sbIconScale);
     }
   }
 
-  .wrapper__6e9f8:hover .childWrapper__6e9f8 {
-    color: var(--interactive-active);
+  .listItemWrapper__91816:not(.selected__91816):hover .childWrapper__6e9f8 {
+    color: var(--text-normal) !important;
   }
 
   path {
@@ -294,6 +293,10 @@ $iconScale: var(--sbIconScale);
     margin: 0 !important ;
     height: unset !important ;
     width: unset !important ;
+
+    &.selected__91816 {
+      pointer-events: none ;
+    }
   }
 
   .wrapper_cc5dd2 {
@@ -324,8 +327,8 @@ $iconScale: var(--sbIconScale);
     width: 100% ;
   }
 
-  // Drag&Drop target
-  .wrapper_d144f8 { display: none }
+  // Drag&Drop target, pill
+  .wrapper_d144f8, .item__58105 { display: none }
 }
 
 // GuildsAdd
@@ -464,7 +467,7 @@ $iconScale: var(--sbIconScale);
 
   @include iconSep();
 
-  .pill_c9fddf { display: none }
+  .item__58105 { display: none }
 
   // remove margin and separator from following items
   + .listItem__650eb,
@@ -482,7 +485,7 @@ $iconScale: var(--sbIconScale);
 
   // .pill_e5445c {
   .pill_c9fddf {
-    display: flex !important ; // counter
+    // display: flex !important ; // counter
   }
 
   .wrapper_cc5dd2 {
@@ -508,7 +511,7 @@ $iconScale: var(--sbIconScale);
 }
 // <- Favorites
 
-// -> DMs
+// -> DMs container
 #guild-list-unread-dms {
   position: relative;
   margin: $iconSpacing 0 !important ;
@@ -519,6 +522,9 @@ $iconScale: var(--sbIconScale);
   > div:not([class]) {
     height: auto !important ;
   }
+
+  // pill
+  .listItem__650eb .item__58105 { display: none }
 
   // remove margin from following items
   &:not(:empty) + .listItem__650eb {
@@ -555,17 +561,16 @@ $iconScale: var(--sbIconScale);
 // <- notification center exp.
 
 // -> Guilds error
-.guildsError_e8d03f {
-  border: none !important ;
-  background: none !important ;
-  color: var(--red-secondary) !important ;
+// .guildsError_e8d03f {
+//   border: none !important ;
+//   background: none !important ;
+//   color: var(--red-secondary) !important ;
 
-  &:hover {
-    color: var(--red) !important ;
-  }
-}
+//   &:hover {
+//     color: var(--red) !important ;
+//   }
+// }
 // <- Guilds error
 
 // <- Right side icons
-
 }

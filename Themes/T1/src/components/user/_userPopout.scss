@@ -93,7 +93,6 @@
     height: auto ;
 
     // banner: mask, separator, gif indicator, avatar/status react action
-    // :is(.mask__68edb mask, .banner__68edb:before, .gifTag__68edb, .popover__2d0ab) { display: none }
     .mask__68edb mask, .banner__68edb:before, .gifTag__68edb, .popover__2d0ab { display: none }
 
     // -> Avatar / Status icon
@@ -273,7 +272,7 @@
     gap: 0 ;
   }
 
-  :has(.pointerEvents__44b0c) .usernameRow__63ed3 .clickableUsername__63ed3 {
+  :has(.pointerEvents__44b0c) .displayNameRow__26b1f .clickable__26b1f {
     margin-left: 24px ;
   }
 

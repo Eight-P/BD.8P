@@ -5,10 +5,6 @@
 
   &.custom-user-profile-theme {
     --user-profile-overlay-background: var(--background-modifier-accent);
-
-    .inner_c0bea0 {
-      background: none ;
-    }
   }
 
   .scrollerBase_d125d2 {
@@ -20,10 +16,22 @@
     margin-top: 3px ;
   }
 
-  .footer__7f9c0 {
+  .footer__272c7 {
 
-    .footerButton__7f9c0 {
+    .footerButton__272c7 {
       height: 46px ;
+      width: max-content ;
+      margin: 0 auto ;
+
+      .text-sm\/normal_cf4812 {
+        color: $BtnTextNormal !important ;
+      }
+
+      &:hover .text-sm\/normal_cf4812 {
+        color: $BtnTextHover !important ;
+      }
+      // custom color profile
+      &::before, &::after { display: none }
     }
 
     @include divider(top);
