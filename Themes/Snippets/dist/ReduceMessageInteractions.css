@@ -1,5 +1,5 @@
 /*!
-  ReduceMessageInteractions v0.1.5
+  ReduceMessageInteractions v0.1.6
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -47,7 +47,7 @@ Snippets css -> */
 }
 @container style(--hide-messageBtnEmojis: 1 ) {
   .buttons__5126c:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) :is(.button_f7ecac, .separator_f84418), .buttons__5126c:hover :is(.button_f7ecac, .separator_f84418) {
-    display: flex !important;
+    display: flex;
   }
 }
 @container style(--hide-messageBtnEmojis: 2 ) {
@@ -62,7 +62,7 @@ Snippets css -> */
   :hover) .buttonsInner__5126c > .separator_f84418,
   .buttons__5126c:not(:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
   :hover) .buttonsInner__5126c > :nth-last-child(n+3) .button_f7ecac {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -70,7 +70,7 @@ Snippets css -> */
   .buttonsInner__5126c > .button_f7ecac,
   .buttonsInner__5126c > .separator_f84418,
   .buttonsInner__5126c > :nth-last-child(n+3) .button_f7ecac {
-    display: none;
+    display: none !important;
   }
 }
 @container style(--reduce-highlightBackground: 1 ) {
