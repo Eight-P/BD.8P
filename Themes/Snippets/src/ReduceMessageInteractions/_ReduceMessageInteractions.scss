@@ -31,7 +31,7 @@
     // all items but last two
     .separator_f84418,
     :nth-last-child(n+3) .button_f7ecac {
-      display: none ;
+      display: none !important ;
     }
   }
 }
@@ -47,7 +47,7 @@
     // Unhide all
     @container style(--hide-messageBtnEmojis: 1 ) {
       :is(.button_f7ecac, .separator_f84418) {
-        display: flex !important ;
+        display: flex ;
       }
     }
 
