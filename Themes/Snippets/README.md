@@ -3,13 +3,20 @@
   # CSS Snippets
 </div>
 
-<br/>
+<div align="center">
 
-> All snippets are included with [T1](/Themes/T1/) by default.
+| <sub>All snippets are included with [T1](/Themes/T1/) by default.</sub> |
+| -------- |
 
-Copy & Paste the individual code snippets into your CustomCSS / QuickCSS.
+</div>
 
+
+Copy & Paste the css into your CustomCSS / QuickCSS.
 - make sure to save and apply any changes.
+
+> [!IMPORTANT]
+> All imports must be at the **top** of the css! <br/>
+> Paste the variables into a root section **below** the imports to configure the snippets.
 
 <br/>
 
