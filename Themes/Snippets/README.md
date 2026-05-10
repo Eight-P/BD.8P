@@ -9,14 +9,11 @@
 | -------- |
 
 </div>
-
-
-Copy & Paste the css into your CustomCSS / QuickCSS.
-- make sure to save and apply any changes.
+<br/>
 
 > [!IMPORTANT]
-> All imports must be at the **top** of the css! <br/>
-> Paste the variables into a root section **below** the imports to configure the snippets.
+> - Copy the imports to the **top** of your CustomCSS/QuickCSS to add the snippet. <br/>
+> - Copy the variables **below** the imports to configure the snippets.
 
 <br/>
 
@@ -27,7 +24,8 @@ Copy & Paste the css into your CustomCSS / QuickCSS.
 ```css
 /* Removes buttons from chat input */
 @import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/HideChatButtons.css);
-
+```
+```css
 /* 0 = Visible | 1 = Hidden */
 :root {
   --hide-chatBtn-nitro: 1 ;
@@ -46,7 +44,8 @@ Copy & Paste the css into your CustomCSS / QuickCSS.
 ```css
 /* Removes various user decorations */
 @import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/HideDecorations.css);
-
+```
+```css
 /* Unless specified: 0 = Visible | 1 = Hidden */
 :root {
   /* Profile pop-out/modal background effects */
@@ -82,9 +81,10 @@ Copy & Paste the css into your CustomCSS / QuickCSS.
 <summary> css </summary>
 
 ```css
-/* Reduces the message buttons and/or background highlight on hover */
-@import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/ReduceMessageButtons.css);
-
+/* Reduces the message buttons, hover effect and background for highlighted messages */
+@import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/ReduceMessageInteractions.css);
+```
+```css
 :root {
   /* Reduce message buttons unless hovered
     0: Show all (default)
@@ -100,7 +100,7 @@ Copy & Paste the css into your CustomCSS / QuickCSS.
 
   /* Hide message background hover
     0: Highlight on hover (default)
-    1: Hide until btns are hovered or expanded
+    1: Hide unless btns are hovered or expanded
     2: Never highlight */
   --hide-messageHover: 0 ;
 
@@ -119,7 +119,8 @@ Copy & Paste the css into your CustomCSS / QuickCSS.
 ```css
 /* Shows the url next to a link that would otherwise be masked */
 @import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/UnmaskLinks.css);
-
+```
+```css
 :root {
   /* Show the URL next to a masked link
     0: Masked (default)
