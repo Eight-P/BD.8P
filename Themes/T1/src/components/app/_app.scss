@@ -58,11 +58,7 @@ path[fill="currentColor"] {
 .lottieIcon__5eb9b  {
   --__lottieIconColor: #{$BtnIconNormal} !important ;
 }
-// not ideal
-// :is(
-//   .button__201d5, .button__9db96, .button__71c22,
-//   .button__06eda, .button_f7ecac, .button__24af7, .button_e6e74f
-// ) {
+// hate it
 .button__201d5, .button__9db96, .button__71c22,
 .button__06eda, .button_f7ecac, .button__24af7, .button_e6e74f
 {

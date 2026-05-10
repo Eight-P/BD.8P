@@ -225,23 +225,21 @@
 
   // -> meta/info bar
   .container__34c2c {
-    margin: 12px 0 0 13px ;
+    margin: 0px 2px 0 15px ;
     padding: 4px 10px ;
-    background: var(--background-modifier-accent) !important;
+    background: var(--background-modifier-accent) !important ;
     border: none ;
     border-radius: 5px ;
 
-    @include shadowEffect("box_2");
+    @include shadowEffect("box_3");
 
-    // :is(.addReactButton__34c2c, .buttonInner__34c2c) {
     .addReactButton__34c2c, .buttonInner__34c2c {
       background: none  ;
     }
 
     // when sticky
     &.header__34c2c {
-      background: var(--background-secondary-alt) !important;
-      top: 0px ;
+      background: var(--background-secondary-alt) !important ;
     }
   }
   // <- meta/info bar

@@ -1,5 +1,8 @@
 // Chat | Messages
 
+:root {
+  --reduce-highlightBackground: 1 ;
+}
 
 // -> Messages separator
 .divider__5126c {
@@ -53,7 +56,9 @@
   // -> general msg
   $spacing: 15px ;
 
-  background: none !important ;
+  --message-background-hover: #{$BG_MsgHighlight} ;
+
+  // background: none !important ;
   padding: 3px 30px 3px ($spacing * 2 + 40px) !important ;
   border-radius: 0 !important ;
 
@@ -78,117 +83,61 @@
     margin: 0 ;
     padding: 0 ;
   }
+
+  &.mentioned__5126c {
+    --message-background-hover: var(--message-mentioned-background-hover);
+  }
+  &.replying__5126c, &.ephemeral__5126c {
+    --message-background-hover: var(--brand-10a);
+  }
   // <- general msg
 
-  // -> Msg types
-  // Mention
-  &.mentioned__5126c .contents_c19a55 .messageContent_c19a55 {
-    padding-left: 6px ;
-    border-left: solid 2px var(--border-mentioned);
-    background: var(--background-mentioned);
-  }
-
-  // client-side info/error messages
-  &.ephemeral__5126c .contents_c19a55 .messageContent_c19a55 {
-    padding-left: 6px ;
-    border-left: solid 2px var(--Blurple);
-    background: var(--Blurple-light);
-  }
-
-  // selected for reply bg highlight
-  &.replying__5126c {
-    background: $BG_MsgHighlight !important ;
-
-    .buttons__5126c::before {
-      background-blend-mode: overlay ;
-    }
-  }
-  // <- Msg types
-
   // -> Message Buttons
+  // reduced buttons
+  @container style(--reduce-messageBtns: 1 ) or style(--reduce-messageBtns: 2 ) {
+    .buttons__5126c:not(
+      :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+      :hover
+    ) .button_f7ecac {
+      color: $BtnIconHover !important ;
+    }
+  }
 
-  // -> btn hover and appear behavior
-  // reduce btns to menu icon
-  @mixin reducedBtns() {
-    .buttonsInner__5126c > {
-      // sticking with class vs span for performance?
-      .button_f7ecac, // for btns added by plugins
-      // all items but last two
-      .separator_f84418,
-      :nth-last-child(n+3) .button_f7ecac {
-        display: none ;
+  // reaction emojis (kinda nice, but hate :has() on span)
+  // @container style(--hide-messageBtnEmojis: 0 ) {
+  //   // shift positions emojis to the left (e.g. when plugin btns) (best solution?)
+  //   .buttonsInner__5126c > span:has(.emoji__040f0) {
+  //     order: -1 ;
+  //   }
+  // }
+
+  // message hover (selected e.g.: when user popout opened from msg)
+  @container style(--hide-messageHover: 0 ) {
+    &:hover, &.selected__5126c {
+      .buttons__5126c::before {
+        background-blend-mode: screen ;
       }
     }
-
-    .button_f7ecac {
-      color: $BtnIconHover !important; // !important bc of general btn design
-    }
   }
 
-  // hide emojis until hover
-  @container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
-    // separator unless there are plugin btns
-    .separator_f84418:not(.button_f7ecac ~ .separator_f84418),
-    .button_f7ecac:has(.emoji) {
-      display: none
-    }
-  }
-
-  @container style(--reduce-messageBtns: 1 ) {
-    @include reducedBtns();
-  }
-
-  // hide btns on: concatenating Msg, System msg
-  // &:is(:not(.groupStart__5126c), .isSystemMessage_c19a55) {
-  &:not(.groupStart__5126c), &.isSystemMessage_c19a55 {
-    @include reducedBtns();
-  }
-
-  // hover on btns (is this ideal?)
-  &:has(.buttons__5126c:hover),
-  // extended msg btns on hovered msg
-  &:hover:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) {
-    background: $BG_MsgHighlight !important ;
-
-    .buttons__5126c::before {
-      background-blend-mode: overlay ;
-    }
-
-    @container style(--hide-messageBtnEmojis: 2 ) {
-      .button_f7ecac:not(:has(.emoji)), // don't unhide emojis if hideEmojis is 2
-      .separator_f84418 {
-        display: flex ;
+  @container style(--hide-messageHover: 1 ) {
+    .buttons__5126c {
+      &:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+      &:hover {
+        &::before {
+          background-blend-mode: screen ;
+        }
       }
     }
-
-    @container NOT style(--hide-messageBtnEmojis: 2 ) {
-      // :is(.button_f7ecac, .separator_f84418) {
-      .button_f7ecac, .separator_f84418 {
-        display: flex !important;
-      }
-    }
-
-    .button_f7ecac:not(:hover) {
-      color: $BtnIconNormal !important; // !important bc of general btn design
-    }
   }
-  // <- btn hover and appear behavior
-
 
   // -> Button container
   .buttonContainer_c19a55 {
     z-index: 9 ; // to not interfere with the hover btns on images and similar
   }
 
-  // to not shift positions (e.g. of plugin btns) when hover (couldn't avoid span or :has i think)
-  .buttonsInner__5126c > span:has(.emoji__040f0) {
-    order: -1 ;
-  }
-
   .buttons__5126c {
-    // opacity: 1 ; // debug
-
-    top: 0 ;
+    top: 0 !important ; // override snippet
     padding: 1px ;
 
     &:before {
@@ -197,19 +146,15 @@
       height: 100% ;
       width: 100% ;
       inset: 0px ;
-      background: var(--background-app) $BG_MsgHighlight ;
+      background: var(--background-app) var(--message-background-hover);
       background-position: center ;
       background-size: cover ;
       background-repeat: no-repeat ;
       background-attachment: fixed ;
-
       border-radius: 0 0 0 8px ;
 
       $blur-main: blur(calc(var(--backgroundBlur-app) / 100 * 1px));
       $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
-
-      // --blur: blur(calc(var(--backgroundBlur-app, 0) / 100 * 1px));
-      // --brightness: brightness(calc((var(--backgroundBrightness-app, 80) / 100)));
 
       filter: $blur-main $brightness-main ;
     }
@@ -247,39 +192,12 @@
     }
   }
   // <- Button container
-
   // <- Message Buttons
-
-  // -> Unmask links
-  @container style(--unmask-links: 1 ) {
-    .messageContent_c19a55 .anchor_edefb8[title$=")"] {
-      &::after {
-        content: " (" attr(href) ")" ;
-        position: relative ;
-        display: inline ;
-        // height: 100% ;
-        // max-height: 22px ;
-        // width: 100% ;
-        // max-width: max-content ;
-        font-size: 0.7rem ;
-        font-weight: 400 ;
-        font-style: normal ;
-        filter: grayscale(1.0) brightness(1.15);
-        // overflow: hidden ;
-        // white-space: normal ;
-      }
-      &:hover::after {
-        text-decoration: underline ;
-      }
-    }
-  }
-  // <- Unmask links
 
   // -> Message content
   $embedBg: var(--background-modifier-accent);
   $embedBg-hover: var(--background-modifier-selected);
 
-  // :is(.contents_c19a55, .container_b7e1cb) {
   .contents_c19a55, .container_b7e1cb {
     --bg-overlay-floating: #{$embedBg} ;
     --chat-background-default: #{$embedBg} ;

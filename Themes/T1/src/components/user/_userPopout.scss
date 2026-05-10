@@ -28,8 +28,10 @@
   // Body items
   --bg_items: hsl(from var(--user-profile-overlay-background) h s 35% / .1 );
   --bg_itemsHover: var(--user-profile-overlay-background-hover);
-  --c_items: hsl(from var(--text-strong) h s 70% / 1 );
-  --c_itemsHover: var(--text-strong);
+  // --c_items: hsl(from var(--text-strong) h s 70% / 1 );
+  --c_items: var(--interactive-text-default);
+  // --c_itemsHover: var(--text-strong);
+  --c_itemsHover: var(--interactive-text-hover);
 
   --custom-user-profile-base-layer-z-index: 3 ; // keep profile effect below
 
@@ -478,6 +480,17 @@
   }
   // <- Footer
 
+  // -> Private profile
+  // notice about private profile
+  &.isPrivate_c0bea0 .overlay_c0bea0 {
+    // just so it's visually distinct to a regular section.
+    background: none ;
+
+    .banner__24928 {
+      padding: var(--space-12) 0 ;
+    }
+  }
+  // <- Private profile
 }
 
 // User popout loading indicator old

@@ -201,7 +201,6 @@ $ChatScrollerBottomSpacing: 16px ;
 
 @container not style(--hide-reactionAnimations: 1) {
 
-  // :is(.reaction__23977, .reaction_f8896c) {
   .reaction__23977, .reaction_f8896c {
     background: var(--background-modifier-hover);
 
@@ -210,7 +209,6 @@ $ChatScrollerBottomSpacing: 16px ;
     }
   }
 
-  // :is(.reactionMe__23977, .reactionMe_f8896c) {
   .reactionMe__23977, .reactionMe_f8896c {
     background-color: var(--Blurple-light);
 
@@ -218,7 +216,6 @@ $ChatScrollerBottomSpacing: 16px ;
       background-color: var(--Blurple-light-hover);
     }
 
-    // :is(.reactionCount__23977, .reactionCount_f8896c) {
     .reactionCount__23977, .reactionCount_f8896c {
       color: var(--Blurple);
     }
@@ -227,25 +224,15 @@ $ChatScrollerBottomSpacing: 16px ;
 
 @container style(--hide-reactionAnimations: 1) {
 
-  // :is(.reaction__23977, .reaction_f8896c) {
   .reaction__23977, .reaction_f8896c {
     background: var(--background-modifier-hover) !important ;
-    animation: none !important ;
 
     &:hover {
       background: var(--background-modifier-selected) !important ;
     }
-
-    // :is(.burstGlow__23977, .effectsWrapper_a9ddb3) { display: none }
-    .burstGlow__23977, .effectsWrapper_a9ddb3 { display: none }
-
-    .hideEmoji__23977 {
-      opacity: 1 !important ;
-    }
   }
 
   // Active reaction
-  // :is(.reactionMe__23977, .reactionMe_f8896c) {
   .reactionMe__23977, .reactionMe_f8896c {
     background-color: var(--Blurple-light) !important ;
 
@@ -253,7 +240,6 @@ $ChatScrollerBottomSpacing: 16px ;
       background-color: var(--Blurple-light-hover) !important ;
     }
 
-    // :is(.reactionCount__23977, .reactionCount_f8896c) {
     .reactionCount__23977, .reactionCount_f8896c {
       color: var(--Blurple) !important ;
     }
@@ -324,7 +310,6 @@ $ChatScrollerBottomSpacing: 16px ;
     }
 
     // channel name & icon
-    // :is(.channelNameText_a7e67f, .channelNameIcon_a7e67f) {
     .channelNameText_a7e67f, .channelNameIcon_a7e67f {
       padding-right: 6px ;
       color: var(--text-normal);
@@ -350,6 +335,5 @@ $ChatScrollerBottomSpacing: 16px ;
   }
   // <- Body
 }
-// <- Search results popout
-
+// <- Search results sidebar
 }

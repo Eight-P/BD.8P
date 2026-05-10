@@ -2,7 +2,7 @@
   * @name T1_DEV
   * @description T1 Dev
   * @author Eight_P
-  * @version 0.10.1_D
+  * @version 0.10.2_D
 */
 
 @import '../src/T1.main.scss' ;
@@ -10,48 +10,32 @@
 // @import url(https://eight-p.github.io/BD.8P/Themes/T1/dist/T1.css);
 
 :root {
-  // -> Chat
+  // HideChatButtons
   --hide-chatBtn-nitro: 1 ;
   --hide-chatBtn-gif: 0 ;
   --hide-chatBtn-sticker: 0 ;
   --hide-chatBtn-emoji: 0 ;
   --hide-chatBtn-apps: 0 ;
-  --hide-chatBtn-media: 0 ;
 
-  --reduce-messageBtns: 0 ;
-
-  --hide-messageBtnEmojis: 1 ;
-
-  --keep-voiceChannelBtns: 0 ;
-
-  --highlight-focusedChatInput: 0 ;
-
-  --unmask-links: 0 ;
-  // <- Chat
-
-  // -> Effects & Decorations
+  // HideDecorations
   --hide-profileEffects: 0 ;
-
   --hide-avatarDecorations: 0 ;
-
-  --hide-nameplates: 0 ;
-
-  --hide-clanTags: 0 ;
-
+  --hide-nameplates: 0 ; // (0/1/2/3)
+  --hide-clanTags: 0 ; // (0/1/2)
   --disable-roleGradients: 0 ;
-
   --hide-reactionAnimations: 0 ;
-  // <- Effects & Decorations
 
-  // -> Server bar / Guilds list
+  // ReduceMessageInteractions
+  --reduce-messageBtns: 0 ; // (0/1/2)
+  --hide-messageBtnEmojis: 1 ; // (0/1/2)
+  --hide-messageHover: 1 ;  // (0/1/2)
+
+  // Server bar / Guilds list
   --serverBar-FolderStyle: 1 ;
-
   --serverBar-Spacing: 17px ;
-
   --serverBar-IconSize: 100 ;
-  // <- Server bar / Guilds list
 
-  // -> Backgrounds
+  // Backgrounds
   --background-app: url(https://eight-p.github.io/BD.8P/Themes/T1/assets/Main-bg.jpg);
   --background-server: url(https://eight-p.github.io/BD.8P/Themes/T1/assets/Server-bg.jpg);
 
@@ -60,18 +44,18 @@
 
   --backgroundBlur-app: 0 ;
   --backgroundBlur-server: 0 ;
-  // <- Backgrounds
 
   // -> Misc
+  --unmask-links: 0 ; // (0/1/2)
+  --keep-voiceChannelBtns: 0 ;
+  --highlight-focusedChatInput: 0 ;
   --hide-friendsActivity: 1 ;
-
   --hide-serverBoostStats: 0 ;
 
   --show-sidebarScrollbar: 0 ;
   --show-memberListScrollbar: 0 ;
 
   --font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
-  // <- Misc
 }
 
 // Dev build indicator
