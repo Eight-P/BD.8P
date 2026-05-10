@@ -1,5 +1,5 @@
 /*!
-  HideDecorations v0.1.0
+  HideDecorations v0.1.1
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -92,7 +92,7 @@ Snippets css -> */
   :is(.reaction__23977, .reaction_f8896c) {
     animation: none !important;
   }
-  :is(.reaction__23977, .reaction_f8896c) :is(.burstGlow__23977, .effectsWrapper_a9ddb3) {
+  :is(.reaction__23977, .reaction_f8896c) .burstGlow__23977, :is(.reaction__23977, .reaction_f8896c) .effectsWrapper_a9ddb3 {
     display: none;
   }
   :is(.reaction__23977, .reaction_f8896c) .hideEmoji__23977 {

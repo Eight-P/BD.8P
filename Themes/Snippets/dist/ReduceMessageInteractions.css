@@ -1,5 +1,5 @@
 /*!
-  ReduceMessageInteractions v0.1.6
+  ReduceMessageInteractions v0.2.0
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -28,31 +28,31 @@
 
 /* <- end of root.
 Snippets css -> */
+@container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
+  .buttonsInner__5126c > span:has(.emoji__040f0) {
+    order: -1;
+  }
+}
+@container style(--hide-messageBtnEmojis: 1 ) {
+  .buttons__5126c:not(:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+  :hover) .separator_f84418:not(.button_f7ecac ~ .separator_f84418),
+  .buttons__5126c:not(:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+  :hover) .button_f7ecac:has(.emoji) {
+    display: none;
+  }
+}
+@container style(--hide-messageBtnEmojis: 2 ) {
+  .buttons__5126c .separator_f84418:not(.button_f7ecac ~ .separator_f84418),
+  .buttons__5126c .button_f7ecac:has(.emoji) {
+    display: none;
+  }
+}
 @container style(--reduce-messageBtns: 1 ) or style(--reduce-messageBtns: 2 ) {
   .buttonContainer_c19a55 .buttons__5126c {
     top: -14px;
   }
   .buttonsInner__5126c {
     grid-template-rows: 28px;
-  }
-}
-@container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
-  .separator_f84418:not(.button_f7ecac ~ .separator_f84418),
-  .button_f7ecac:has(.emoji) {
-    display: none;
-  }
-  .buttonsInner__5126c > span:has(.emoji__040f0) {
-    order: -1;
-  }
-}
-@container style(--hide-messageBtnEmojis: 1 ) {
-  .buttons__5126c:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) :is(.button_f7ecac, .separator_f84418), .buttons__5126c:hover :is(.button_f7ecac, .separator_f84418) {
-    display: flex;
-  }
-}
-@container style(--hide-messageBtnEmojis: 2 ) {
-  .buttons__5126c:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]) :is(.button_f7ecac:not(:has(.emoji)), .separator_f84418), .buttons__5126c:hover :is(.button_f7ecac:not(:has(.emoji)), .separator_f84418) {
-    display: flex;
   }
 }
 @container style(--reduce-messageBtns: 1 ) {
@@ -65,11 +65,10 @@ Snippets css -> */
     display: none !important;
   }
 }
-
 @container style(--reduce-messageBtns: 2 ) {
-  .buttonsInner__5126c > .button_f7ecac,
-  .buttonsInner__5126c > .separator_f84418,
-  .buttonsInner__5126c > :nth-last-child(n+3) .button_f7ecac {
+  .buttons__5126c .buttonsInner__5126c > .button_f7ecac,
+  .buttons__5126c .buttonsInner__5126c > .separator_f84418,
+  .buttons__5126c .buttonsInner__5126c > :nth-last-child(n+3) .button_f7ecac {
     display: none !important;
   }
 }
@@ -101,43 +100,49 @@ Snippets css -> */
   }
 }
 @container style(--hide-messageHover: 1 ) {
-  .message__5126c:hover:not(:has(.buttons__5126c:hover),
-  :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])) {
-    background: none !important;
-  }
   @container not style(--reduce-highlightBackground: 1 ) {
-    .message__5126c:hover:not(:has(.buttons__5126c:hover),
+    .message__5126c:not(:has(.buttons__5126c:hover),
+    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])) {
+      background: none !important;
+    }
+    .message__5126c:not(:has(.buttons__5126c:hover),
     :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])).mentioned__5126c {
       background: var(--message-mentioned-background-default) !important;
     }
-    .message__5126c:hover:not(:has(.buttons__5126c:hover),
+    .message__5126c:not(:has(.buttons__5126c:hover),
     :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])).replying__5126c {
       background: var(--message-highlight-background-default) !important;
     }
-    .message__5126c:hover:not(:has(.buttons__5126c:hover),
+    .message__5126c:not(:has(.buttons__5126c:hover),
     :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])).ephemeral__5126c {
       background: var(--brand-05a) !important;
     }
   }
 }
-@container style(--hide-messageHover: 2 ) {
-  @container style(--reduce-highlightBackground: 0 ) {
-    .message__5126c:hover {
-      background: none !important;
-    }
-    .message__5126c:hover.mentioned__5126c {
-      background: var(--message-mentioned-background-default) !important;
-    }
-    .message__5126c:hover.replying__5126c {
-      background: var(--message-highlight-background-default) !important;
-    }
-    .message__5126c:hover.ephemeral__5126c {
-      background: var(--brand-05a) !important;
-    }
+@container style(--hide-messageHover: 1 ) and style(--reduce-highlightBackground: 1 ) {
+  .message__5126c:not(:has(.buttons__5126c:hover),
+  :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])) {
+    background: none !important;
   }
-  @container style(--reduce-highlightBackground: 1 ) {
+}
+@container style(--hide-messageHover: 2 ) {
+  @container not style(--reduce-highlightBackground: 1 ) {
     .message__5126c {
       background: none !important;
     }
+    .message__5126c.mentioned__5126c {
+      background: var(--message-mentioned-background-default) !important;
+    }
+    .message__5126c.replying__5126c {
+      background: var(--message-highlight-background-default) !important;
+    }
+    .message__5126c.ephemeral__5126c {
+      background: var(--brand-05a) !important;
+    }
+  }
+}
+@container style(--hide-messageHover: 2 ) and style(--reduce-highlightBackground: 1 ) {
+  .message__5126c {
+    background: none !important;
   }
 }
