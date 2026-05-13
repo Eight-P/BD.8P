@@ -1,5 +1,5 @@
 /*!
-  HideDecorations v0.1.1
+  HideDecorations v0.1.2
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -34,10 +34,16 @@ Snippets css -> */
   .avatarDecoration__44b0c, .avatarDecoration_c19a55 {
     display: none;
   }
+  .shop__6db1d .avatarDecoration__44b0c, .shop__6db1d .avatarDecoration_c19a55, .profilePreviewContainer__1abfe .avatarDecoration__44b0c, .profilePreviewContainer__1abfe .avatarDecoration_c19a55 {
+    display: block;
+  }
 }
 @container style(--hide-profileEffects: 1) {
   .profileEffects__0dd08 {
     display: none;
+  }
+  .shop__6db1d .profileEffects__0dd08, .profilePreviewContainer__1abfe .profileEffects__0dd08 {
+    display: block;
   }
 }
 @container style(--hide-nameplates: 1 ) or style(--hide-nameplates: 3 ) {
@@ -58,6 +64,9 @@ Snippets css -> */
 @container style(--hide-nameplates: 2 ) or style(--hide-nameplates: 3 ) {
   .container__37e49 .container_df39b2 {
     display: none;
+  }
+  .container__37e49 .plated__67645:hover {
+    background-color: var(--control-secondary-background-hover) !important;
   }
 }
 @container style(--disable-roleGradients: 1 ) {
