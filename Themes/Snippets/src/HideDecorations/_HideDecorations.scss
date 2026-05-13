@@ -1,12 +1,20 @@
 // -> Profile picture decorations
 @container style(--hide-avatarDecorations: 1) {
   .avatarDecoration__44b0c, .avatarDecoration_c19a55 { display: none }
+
+  .shop__6db1d, .profilePreviewContainer__1abfe {
+    .avatarDecoration__44b0c, .avatarDecoration_c19a55 { display: block }
+  }
 }
 // <- Profile picture decorations
 
 // -> Profile Animations effects
 @container style(--hide-profileEffects: 1) {
   .profileEffects__0dd08 { display: none }
+
+  .shop__6db1d, .profilePreviewContainer__1abfe {
+    .profileEffects__0dd08 { display: block }
+  }
 }
 // <- Profile Animations effects
 
@@ -31,8 +39,16 @@
 }
 
 @container style(--hide-nameplates: 2 ) or style(--hide-nameplates: 3 ) {
-  // sidebar profile panel
-  .container__37e49 .container_df39b2 { display: none }
+  // own profile sidebar panel
+  .container__37e49 {
+    // nameplate
+    .container_df39b2 { display: none }
+
+    // btns
+    .plated__67645:hover {
+      background-color: var(--control-secondary-background-hover) !important ;
+    }
+  }
 }
 // <- Nameplates
 
