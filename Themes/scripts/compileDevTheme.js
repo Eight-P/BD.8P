@@ -1,4 +1,4 @@
-// * compileDevTheme.js v4.2
+// * compileDevTheme.js v4.3
 // watch and compile dev files to mod folders
 
 const Fs = require('fs');
@@ -34,8 +34,11 @@ Chokidar.watch(Setup.watchFolder, {
     console.log("\n");
     upateDevFiles();
   })
-  .on('change', (trigger) => { upateDevFiles(trigger) }
-);
+  .on('change', (trigger) => {
+    upateDevFiles(Path.parse(trigger).name);
+  })
+  .on('error', (err) => { console.error(`Chokidar error:\n${err}`) })
+;
 
 function upateDevFiles(trigger) {
   let hadError = false ;
@@ -59,23 +62,22 @@ function upateDevFiles(trigger) {
     for (let outputPath of OutputPaths) {
       outputFile = Path.join(outputPath, devFileName + '.css');
 
-      Fs.writeFile(outputFile, output.css, (err) => {
+      // sync seems better for bd
+      Fs.writeFileSync(outputFile, output.css, (err) => {
         if (err) { throw err }
       });
     }
   }
   if (trigger && !hadError) {
-    console.log(`${getTimestamp()} Recompiled \u001b[34m${Path.parse(trigger).name}\u001b[0m`);
+    console.log(`${getTimestamp()} Recompiled \u001b[34m${trigger}\u001b[0m`);
   }
 }
 
 function getSetup() {
-
   let config = {
     watchFolder: "",
     mods: []
   };
-
   let argList = process.argv.slice(2);
   let useInitDirArg = argList.indexOf("init_dir");
 
@@ -97,11 +99,14 @@ function getDevFiles() {
   let dirEntries = Fs.readdirSync(devFolder, { withFileTypes:true });
 
   for (let entry of dirEntries) {
-    if (entry.isFile() && entry.name.endsWith('.scss')) {
+    if (entry.isFile() && entry.name.endsWith('.theme.scss')) {
       devFiles.push(Path.join(entry.parentPath, entry.name));
     }
   }
-  return devFiles;
+  if (devFiles[0]) {
+    return devFiles ;
+  }
+  quitWithError(new Error(), "Dev files need to end in .theme.scss. No dev file found in", devFolder);
 }
 
 function getOutputPaths() {
@@ -111,7 +116,9 @@ function getOutputPaths() {
     bd: 'betterdiscord',
     betterdiscord: 'betterdiscord',
     ven: 'vencord',
-    vencord: 'vencord'
+    vencord: 'vencord',
+    vesk: 'vesktop',
+    vesktop: 'vesktop'
   }
 
   function getModFolder(mod) {
@@ -127,7 +134,7 @@ function getOutputPaths() {
   if (Setup.mods[0]) {
     for (let mod of Setup.mods) {
       let modName = modNames[mod.toLowerCase()];
-      if (!modName) quitWithError(new Error(), "Invalid argument for mod:", mod);
+      if (!modName) quitWithError(new Error(), "Invalid argument for mod", mod);
       pathsList.push(getModFolder(modName));
     }
   }
