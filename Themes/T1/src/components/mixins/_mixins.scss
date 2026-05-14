@@ -1,12 +1,22 @@
 @use "sass:map";
 @use "sass:string";
 @use "sass:list";
+@use "sass:math";
 
 @import 'userVars' ;
 @import 'userVarsComp' ;
 @import 'colors' ;
 
 // -- Mixins & Variables (to be reworked later)
+
+@function unitCheck($args, $unit) {
+  @each $arg in $args {
+    @if (math.unit($arg) != $unit) {
+      @return false ;
+    }
+  }
+  @return true ;
+}
 
 // -> Mixins
 // Scrollbar design | @include scrollbar();
@@ -65,9 +75,18 @@
 
 // Scroller fade out effect | @include scrollerFadeOut();
 @mixin scrollerFadeOut ($top:5px, $bottom:5px) {
-
-  $LG: to bottom, transparent, #000 $top, #000 calc(100% - $bottom), transparent;
-  -webkit-mask-image: linear-gradient($LG);
+  @if ($top == none) {
+    mask-image: none !important ;
+    -webkit-mask-image: none !important ;
+  }
+  @else if (unitCheck(($top, $bottom), "px") == false ) {
+    @warn "scrollerFadeOut(#{$top}, #{$bottom}) expects arguments to be px" ;
+  }
+  @else {
+    $LG: to bottom, transparent, #000 $top, #000 calc(100% - $bottom), transparent;
+    mask-image: linear-gradient($LG);
+    -webkit-mask-image: linear-gradient($LG);
+  }
 }
 
 // Set width and height restrictions | @include restrictions();
@@ -82,7 +101,7 @@
 @mixin searchbar ($inner, $flat:false) {
   border: none ;
 
-  @if ($flat) {
+  @if $flat {
     background: none ;
     border-radius: 0 ;
 

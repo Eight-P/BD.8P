@@ -162,10 +162,42 @@
 // <- Forum channel
 
 // -> Forum / Threads chat
+// idk
 .channelChatWrapper_cb9592 {
   background: none ;
 }
-// -> main container
+
+.chatContent_f75fb0 {
+  // -> meta/info bar
+  .container__34c2c {
+    margin: 0px 2px 0 15px ;
+    padding: 4px 10px ;
+    background: var(--background-modifier-accent) !important ;
+    border: none ;
+    border-radius: 5px ;
+
+    @include shadowEffect("box_3");
+
+    --control-secondary-text-default: #{$BtnIconNormal} ;
+
+    .addReactButton__34c2c, .buttonInner__34c2c {
+      background: none  ;
+    }
+
+    // when sticky
+    &.header__34c2c {
+      background: var(--background-secondary-alt) !important ;
+    }
+  }
+  // <- meta/info bar
+
+  .divider_ee23ac {
+    visibility: hidden ;
+  }
+}
+
+// -> split and floating chat
+// main container
 .chatLayerWrapper__01ae2  {
   // for floating resize
   width: 100% ;
@@ -199,9 +231,7 @@
     }
   }
 }
-// <- main container
 
-// -> split and floating chat
 .container__01ae2 {
   pointer-events: auto ;
   border: none ;
@@ -222,27 +252,6 @@
       }
     }
   }
-
-  // -> meta/info bar
-  .container__34c2c {
-    margin: 0px 2px 0 15px ;
-    padding: 4px 10px ;
-    background: var(--background-modifier-accent) !important ;
-    border: none ;
-    border-radius: 5px ;
-
-    @include shadowEffect("box_3");
-
-    .addReactButton__34c2c, .buttonInner__34c2c {
-      background: none  ;
-    }
-
-    // when sticky
-    &.header__34c2c {
-      background: var(--background-secondary-alt) !important ;
-    }
-  }
-  // <- meta/info bar
 
   // -> floating
   &.floating__01ae2.chatTarget__01ae2 {

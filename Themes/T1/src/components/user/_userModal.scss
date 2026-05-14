@@ -1,5 +1,5 @@
 // -> User modal (gonna break with profile editing experiment)
-.root__9c3be {
+.root_b92f52 {
   pointer-events: none ;
 
   @include scrollbar(none);
@@ -13,8 +13,8 @@
 
     .user-profile-modal-v2  {
       // width: 800px ;
-      min-width: 800px ;
-      max-width: 800px ;
+      min-width: 850px ;
+      max-width: 850px ;
       margin: auto ;
       border: none ;
       background: none ;
@@ -175,13 +175,18 @@
           }
         }
         // <- Games
+
+        // Shop wishlist
+        .grid_eb8860 {
+          justify-content: center ;
+        }
         // <- body
       }
       // <- right side info
     }
   }
 
-  [style*="--profile"] .modalHeaderButtons__9c3be { display: none }
+  [style*="--profile"] .modalHeaderButtons_b92f52 { display: none }
 
   // save changes banner
   .pendingChangesNotice__9fc7d {

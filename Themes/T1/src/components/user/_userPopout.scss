@@ -360,6 +360,31 @@
         color: var(--c_itemsHover) !important;
       }
     }
+
+    // sort of a, more info - open modal btn
+    .appWidgetPreview__39ec2 {
+      margin: 0 ;
+      pointer-events: auto ;
+      border-radius: 3px ;
+      background: var(--bg_items) !important ;
+      color: var(--c_items) !important ;
+
+      &:hover {
+        background: var(--bg_itemsHover) !important;
+        color: var(--c_itemsHover) !important;
+      }
+    }
+  }
+
+  // full game preview card design (idk)
+  .container__82fb2 {
+    background: var(--bg_items);
+    padding: 6px 6px 0 6px ;
+    margin: 0 0 3px 0 ;
+
+    &:hover {
+      background: var(--bg_itemsHover);
+    }
   }
 
   // games collection (maybe more?) has acrylic effect
@@ -461,7 +486,7 @@
   .footer__5be3e {
     padding: 0 ;
 
-    --footerDivider: rgb(from var(--channel-text-area-placeholder) r g b / .5 );
+    --footerDivider: rgb(from var(--c_items) r g b / .5 );
 
     @include divider(top, ("color": var(--footerDivider)));
 
@@ -470,6 +495,10 @@
       border-radius: 0 ;
       background: var(--background-secondary-alt);
       background: none ;
+    }
+
+    .placeholder__1b31f {
+      color: var(--c_items);
     }
 
     // edit profile (overriding btn design)

@@ -103,14 +103,6 @@
     }
   }
 
-  // reaction emojis (kinda nice, but hate :has() on span)
-  // @container style(--hide-messageBtnEmojis: 0 ) {
-  //   // shift positions emojis to the left (e.g. when plugin btns) (best solution?)
-  //   .buttonsInner__5126c > span:has(.emoji__040f0) {
-  //     order: -1 ;
-  //   }
-  // }
-
   // message hover (selected e.g.: when user popout opened from msg)
   @container style(--hide-messageHover: 0 ) {
     &:hover, &.selected__5126c {
@@ -127,6 +119,25 @@
         &::before {
           background-blend-mode: screen ;
         }
+      }
+    }
+  }
+
+  // hide btns on: concatenating Msg, System msg
+  &:not(.groupStart__5126c), &.isSystemMessage_c19a55 {
+
+    .buttonsInner__5126c:not(:hover) {
+      > {
+        .button_f7ecac, // for btns added by plugins
+        // all items but last two
+        .separator_f84418,
+        span:nth-last-child(n+3) .button_f7ecac {
+          display: none ;
+        }
+      }
+
+      .button_f7ecac {
+        color: $BtnIconHover !important; // !important bc of general btn design
       }
     }
   }
@@ -242,6 +253,16 @@
   // code block in text file wrapper
   .container__4d95d .hljs {
     background: none ;
+  }
+
+  // in message scroller (no fade out)
+  .scrollerBase_d125d2 {
+    @include scrollerFadeOut(none);
+  }
+
+  // text file
+  .textContainer__4d95d {
+     background: $embedBg ;
   }
 
   // expanded text file preview
