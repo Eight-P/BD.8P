@@ -1,0 +1,68 @@
+/*!
+  CompactChannelSearch v0.1.0
+  <github.com/Eight-P/BD.8P>
+
+*/
+.toolbar__9293f {
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.toolbar__9293f .search__49676 {
+  overflow: hidden;
+  margin: 0;
+}
+@keyframes searchExpand {
+  from {
+    min-width: 32px;
+  }
+  to {
+    min-width: 244px;
+  }
+}
+.toolbar__9293f .searchBar_c322aa {
+  cursor: pointer;
+  padding: 0;
+  overflow: visible;
+  transition: none !important;
+  --iconColorNormal: var(--icon-muted);
+  --iconColorHover: var(--icon-subtle);
+}
+.toolbar__9293f .searchBar_c322aa .iconLayout__0c4c4 {
+  height: 100%;
+  width: 30px;
+  min-width: 30px;
+  max-width: 30px;
+  margin: 0;
+  cursor: pointer;
+  --interactive-text-default: var(--iconColorNormal);
+}
+.toolbar__9293f .searchBar_c322aa .iconLayout__0c4c4:hover .icon__0c4c4 {
+  color: var(--iconColorHover);
+}
+.toolbar__9293f .search_c322aa:not(.open_c322aa) .searchBar_c322aa {
+  height: 32px;
+  width: 32px;
+  background: none;
+  border-color: transparent;
+}
+.toolbar__9293f .search_c322aa:not(.open_c322aa) .DraftEditor-root {
+  padding: 0;
+}
+.toolbar__9293f .search_c322aa:not(.open_c322aa) .icon__0c4c4:not(.clear__0c4c4) {
+  stroke: currentcolor;
+}
+.toolbar__9293f .open_c322aa .searchBar_c322aa {
+  width: auto;
+  animation: 0.13s ease-out normal forwards searchExpand;
+}
+.toolbar__9293f .open_c322aa .searchBar_c322aa:hover:not(:has(.DraftEditor-root:hover)) .icon__0c4c4 {
+  color: var(--iconColorHover);
+}
+.toolbar__9293f .open_c322aa .DraftEditor-root {
+  padding: 4px var(--space-4) 2px 4px;
+  height: unset;
+  cursor: text;
+}
+.toolbar__9293f .open_c322aa .iconLayout__0c4c4:not(.pointer__0c4c4) {
+  pointer-events: none;
+}

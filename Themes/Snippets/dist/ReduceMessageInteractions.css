@@ -1,5 +1,5 @@
 /*!
-  ReduceMessageInteractions v0.2.0
+  ReduceMessageInteractions v0.2.1
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -17,7 +17,7 @@
   --hide-messageBtnEmojis: 0 ;
   /* Hide message background hover
     0: Highlight on hover (default)
-    1: Hide until btns are hovered or expanded
+    1: Hide unless btns are hovered or expanded
     2: Never highlight */
   --hide-messageHover: 0 ;
   /* Reduces the highlight background for mentions and similar
@@ -61,14 +61,14 @@ Snippets css -> */
   .buttons__5126c:not(:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
   :hover) .buttonsInner__5126c > .separator_f84418,
   .buttons__5126c:not(:has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
-  :hover) .buttonsInner__5126c > :nth-last-child(n+3) .button_f7ecac {
+  :hover) .buttonsInner__5126c > span:nth-last-child(n+3) .button_f7ecac {
     display: none !important;
   }
 }
 @container style(--reduce-messageBtns: 2 ) {
   .buttons__5126c .buttonsInner__5126c > .button_f7ecac,
   .buttons__5126c .buttonsInner__5126c > .separator_f84418,
-  .buttons__5126c .buttonsInner__5126c > :nth-last-child(n+3) .button_f7ecac {
+  .buttons__5126c .buttonsInner__5126c > span:nth-last-child(n+3) .button_f7ecac {
     display: none !important;
   }
 }

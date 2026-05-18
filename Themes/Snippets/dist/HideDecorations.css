@@ -1,5 +1,5 @@
 /*!
-  HideDecorations v0.1.2
+  HideDecorations v0.1.3
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -65,8 +65,8 @@ Snippets css -> */
   .container__37e49 .container_df39b2 {
     display: none;
   }
-  .container__37e49 .plated__67645:hover {
-    background-color: var(--control-secondary-background-hover) !important;
+  .container__37e49 .plated__37e49, .container__37e49 .plated__67645 {
+    --custom-nameplate: var(--control-secondary-background-hover) !important ;
   }
 }
 @container style(--disable-roleGradients: 1 ) {
