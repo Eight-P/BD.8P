@@ -17,6 +17,18 @@
 
 <br/>
 
+### Compact channel search
+<details open>
+<summary> css </summary>
+
+```css
+/* Collapses the channel search box into an icon. */
+@import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/CompactChannelSearch.css);
+```
+</details open>
+
+<br/>
+
 ### Hide chat input buttons
 <details open>
 <summary> css </summary>
@@ -36,6 +48,8 @@
 }
 ```
 </details open>
+
+<br/>
 
 ### Hide user decorations and effects
 <details open>
@@ -76,6 +90,8 @@
 ```
 </details open>
 
+<br/>
+
 ### Reduce chat message buttons and hover effect
 <details open>
 <summary> css </summary>
@@ -111,6 +127,8 @@
 }
 ```
 </details open>
+
+<br/>
 
 ### Show URL of masked links
 <details open>

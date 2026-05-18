@@ -50,7 +50,7 @@
     .button_f7ecac, // for btns added by plugins
     // all items but last two
     .separator_f84418,
-    :nth-last-child(n+3) .button_f7ecac {
+    span:nth-last-child(n+3) .button_f7ecac {
       display: none !important ;
     }
   }
@@ -72,7 +72,6 @@
     @include HideMsgBtns();
   }
 }
-
 // <- collapse msg btns
 
 // -> Reduce highlight message background

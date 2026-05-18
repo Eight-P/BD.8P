@@ -1,5 +1,5 @@
 /*!
-  ReduceMessageInteractions v0.2.0
+  ReduceMessageInteractions v0.2.1
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -20,7 +20,7 @@
 
   /* Hide message background hover
     0: Highlight on hover (default)
-    1: Hide until btns are hovered or expanded
+    1: Hide unless btns are hovered or expanded
     2: Never highlight */
   --hide-messageHover: 0 ;
 

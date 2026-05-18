@@ -44,9 +44,9 @@
     // nameplate
     .container_df39b2 { display: none }
 
-    // btns
-    .plated__67645:hover {
-      background-color: var(--control-secondary-background-hover) !important ;
+    // (profile section, btns) background hover
+    .plated__37e49, .plated__67645 {
+      --custom-nameplate: var(--control-secondary-background-hover) !important ;
     }
   }
 }
