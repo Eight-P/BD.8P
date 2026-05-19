@@ -1,86 +1,93 @@
-// toolbar container
-// .title_f75fb0 .toolbar__9293f {
-.toolbar__9293f {
+// chat toolbar container
+.title_f75fb0 .toolbar__9293f {
   flex-shrink: 0 ; // to overflow children
   max-width: 100% ;
+}
 
-  // main outer search container
-  .search__49676 {
-    overflow: hidden ;
+// main outer search container
+.search__49676 {
+  overflow: hidden ;
+  margin: 0 ;
+}
+
+// main inner container
+.searchBar_c322aa {
+  padding: 0 ;
+  transition: none !important ;
+
+  // discord defaults
+  --iconColorNormal: var(--icon-muted);
+  --iconColorHover: var(--icon-subtle);
+  --backgroundOpen: var(--background-gradient-low, var(--input-background-default));
+  --borderColorOpen: var(--input-border-default);
+
+  @keyframes expandSearchWidth {
+    from { min-width: 32px }
+    to { min-width: 244px }
+  }
+
+  .iconLayout__0c4c4 {
+    height: 100% ;
+    width: 30px ;
+    min-width: 30px ;
+    max-width: 30px ;
     margin: 0 ;
+    cursor: pointer ;
 
-    @keyframes searchExpand {
-      from { min-width: 32px }
-      to { min-width: 244px }
+    --interactive-text-default: var(--iconColorNormal);
+
+    &:hover .icon__0c4c4 {
+      color: var(--iconColorHover);
     }
   }
 
-  // main inner container
-  .searchBar_c322aa {
-    cursor: pointer;
-    padding: 0 ;
-    overflow: visible ; // let DraftEditor-root overlap the border
-    transition: none !important ;
-
-    // discord defaults
-    --iconColorNormal: var(--icon-muted);
-    --iconColorHover: var(--icon-subtle);
-
-    .iconLayout__0c4c4 {
-      height: 100% ;
-      width: 30px ;
-      min-width: 30px ;
-      max-width: 30px ;
-      margin: 0 ;
-      cursor: pointer ;
-
-      --interactive-text-default: var(--iconColorNormal);
-
-      &:hover .icon__0c4c4 {
-        color: var(--iconColorHover);
-      }
-    }
-  }
-
+  // not using :not(open) to reduce first load styling delay
   // -> search bar collapsed
-  .search_c322aa:not(.open_c322aa) {
-    .searchBar_c322aa {
-      height: 32px ;
-      width: 32px ;
-      background: none ;
-      border-color: transparent ;
-    }
+  cursor: default ; // "avoids" small non clickable area when collapsed
+  width: 32px ;
+  background: none ;
+  border-color: transparent ;
 
-    .DraftEditor-root {
-      padding: 0 ;
-    }
+  .DraftEditor-root {
+    padding: 0 ;
+  }
 
-    .icon__0c4c4:not(.clear__0c4c4) {
-      stroke: currentcolor ;
-    }
+  .icon__0c4c4 {
+    stroke: currentcolor ;
   }
   // <- search bar collapsed
+}
 
-  // -> search bar open
-  .open_c322aa {
-    .searchBar_c322aa {
-      width: auto ;
-      animation: .13s ease-out normal forwards searchExpand ;
+// -> search bar open
+.open_c322aa {
+  .searchBar_c322aa {
+    cursor: pointer ;
+    width: auto ;
+    animation: .12s ease-out normal forwards expandSearchWidth ;
+    overflow: visible ; // let DraftEditor-root overlap the border
+    // discord default, to override collapsed style
+    background: var(--backgroundOpen);
+    border-color: var(--borderColorOpen);
 
-      &:hover:not(:has(.DraftEditor-root:hover)) .icon__0c4c4 {
-        color: var(--iconColorHover);
-      }
-    }
-
-    .DraftEditor-root {
-      padding: 4px var(--space-4) 2px 4px ; // to overlap searchBar_c322aa border
-      height: unset ;
-      cursor: text ;
-    }
-
-    .iconLayout__0c4c4:not(.pointer__0c4c4) {
-      pointer-events: none ;
+    &:hover:not(:has(.DraftEditor-root:hover)) .icon__0c4c4 {
+      color: var(--iconColorHover);
     }
   }
-  // <- search bar open
+
+  .DraftEditor-root {
+    height: unset ;
+    cursor: text ;
+    // to overlap searchBar_c322aa border
+    padding: 4px var(--space-4) 2px 6px !important ;
+    margin-left: -2px ;
+  }
+
+  .iconLayout__0c4c4:not(.pointer__0c4c4) {
+    pointer-events: none ;
+  }
+
+  .icon__0c4c4 {
+    stroke: none ;
+  }
 }
+// <- search bar open
