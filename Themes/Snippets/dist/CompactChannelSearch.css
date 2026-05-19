@@ -1,17 +1,27 @@
 /*!
-  CompactChannelSearch v0.1.0
+  CompactChannelSearch v1.1
   <github.com/Eight-P/BD.8P>
 
 */
-.toolbar__9293f {
+.title_f75fb0 .toolbar__9293f {
   flex-shrink: 0;
   max-width: 100%;
 }
-.toolbar__9293f .search__49676 {
+
+.search__49676 {
   overflow: hidden;
   margin: 0;
 }
-@keyframes searchExpand {
+
+.searchBar_c322aa {
+  padding: 0;
+  transition: none !important;
+  --iconColorNormal: var(--icon-muted);
+  --iconColorHover: var(--icon-subtle);
+  --backgroundOpen: var(--background-gradient-low, var(--input-background-default));
+  --borderColorOpen: var(--input-border-default);
+}
+@keyframes expandSearchWidth {
   from {
     min-width: 32px;
   }
@@ -19,15 +29,7 @@
     min-width: 244px;
   }
 }
-.toolbar__9293f .searchBar_c322aa {
-  cursor: pointer;
-  padding: 0;
-  overflow: visible;
-  transition: none !important;
-  --iconColorNormal: var(--icon-muted);
-  --iconColorHover: var(--icon-subtle);
-}
-.toolbar__9293f .searchBar_c322aa .iconLayout__0c4c4 {
+.searchBar_c322aa .iconLayout__0c4c4 {
   height: 100%;
   width: 30px;
   min-width: 30px;
@@ -36,33 +38,42 @@
   cursor: pointer;
   --interactive-text-default: var(--iconColorNormal);
 }
-.toolbar__9293f .searchBar_c322aa .iconLayout__0c4c4:hover .icon__0c4c4 {
+.searchBar_c322aa .iconLayout__0c4c4:hover .icon__0c4c4 {
   color: var(--iconColorHover);
 }
-.toolbar__9293f .search_c322aa:not(.open_c322aa) .searchBar_c322aa {
-  height: 32px;
+.searchBar_c322aa {
+  cursor: default;
   width: 32px;
   background: none;
   border-color: transparent;
 }
-.toolbar__9293f .search_c322aa:not(.open_c322aa) .DraftEditor-root {
+.searchBar_c322aa .DraftEditor-root {
   padding: 0;
 }
-.toolbar__9293f .search_c322aa:not(.open_c322aa) .icon__0c4c4:not(.clear__0c4c4) {
+.searchBar_c322aa .icon__0c4c4 {
   stroke: currentcolor;
 }
-.toolbar__9293f .open_c322aa .searchBar_c322aa {
+
+.open_c322aa .searchBar_c322aa {
+  cursor: pointer;
   width: auto;
-  animation: 0.13s ease-out normal forwards searchExpand;
+  animation: 0.12s ease-out normal forwards expandSearchWidth;
+  overflow: visible;
+  background: var(--backgroundOpen);
+  border-color: var(--borderColorOpen);
 }
-.toolbar__9293f .open_c322aa .searchBar_c322aa:hover:not(:has(.DraftEditor-root:hover)) .icon__0c4c4 {
+.open_c322aa .searchBar_c322aa:hover:not(:has(.DraftEditor-root:hover)) .icon__0c4c4 {
   color: var(--iconColorHover);
 }
-.toolbar__9293f .open_c322aa .DraftEditor-root {
-  padding: 4px var(--space-4) 2px 4px;
+.open_c322aa .DraftEditor-root {
   height: unset;
   cursor: text;
+  padding: 4px var(--space-4) 2px 6px !important;
+  margin-left: -2px;
 }
-.toolbar__9293f .open_c322aa .iconLayout__0c4c4:not(.pointer__0c4c4) {
+.open_c322aa .iconLayout__0c4c4:not(.pointer__0c4c4) {
   pointer-events: none;
+}
+.open_c322aa .icon__0c4c4 {
+  stroke: none;
 }
