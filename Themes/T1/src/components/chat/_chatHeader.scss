@@ -7,7 +7,6 @@
   .children__9293f {
 
     // "#" / "@", "AKA" icon, separator dot
-    // :is(.iconWrapper__9293f, .akaBadge__488b1, .dot__9293f) { display: none }
     .iconWrapper__9293f, .akaBadge__488b1, .dot__9293f { display: none }
   }
 
@@ -29,7 +28,6 @@
     color: var(--header-secondary);
 
     // Mentions/Channels, Web links
-    // :is(.interactive, .anchor_edefb8) {
     .interactive, .anchor_edefb8 {
       pointer-events: none ;
       opacity: .8 ;
@@ -38,7 +36,6 @@
     &:hover {
       color: var(--interactive-hover);
 
-      // :is(.interactive, .anchor_edefb8) {
       .interactive, .anchor_edefb8 {
         opacity: 1 ;
       }
@@ -55,77 +52,22 @@
       // margin: 0 2px ;
     }
   }
+
+  // channel search
+  .searchBar_c322aa {
+    background: none ;
+    border-radius: 0 ;
+
+    // CCS snippet vars
+    --iconColorNormal: #{$BtnIconNormal} !important ;
+    --iconColorHover: #{$BtnIconHover} !important ;
+    --backgroundOpen: none !important ;
+    --borderColorOpen:
+      transparent transparent var(--header-secondary) transparent !important ;
+  }
   // <- Right side btns
 }
 // <- Channel & DMs header
 
-// -> Searchbar icon & input
-.title_f75fb0 {
-
-  // Searchbar outer
-  .search__49676 {
-    margin: 0 ;
-  }
-
-  // second container
-  .search_c322aa {
-
-    // inner
-    .searchBar_c322aa {
-      padding: 0 ;
-      height: 28px ;
-      width: 28px ;
-      cursor: pointer;
-      border: none ;
-      border-radius: 0 ;
-      background: none ;
-    }
-
-    &.open_c322aa {
-
-      .searchBar_c322aa {
-        min-width: 240px ;
-        width: min-content ;
-        border-bottom: 1px solid var(--header-secondary);
-      }
-
-      .DraftEditor-root {
-        position: relative ;
-      }
-    }
-
-    .public-DraftEditorPlaceholder-root {
-      display: none ;
-    }
-
-    .DraftEditor-root {
-      position: absolute ;
-      width: 100% ;
-      padding: 0 ;
-    }
-
-    // Icon container
-    .icon_c322aa {
-      height: 28px ;
-      width: 28px ;
-      pointer-events: none ;
-    }
-    // icon inner
-    .icon__0c4c4 {
-      color: $BtnIconNormal ;
-    }
-
-    .pointer__0c4c4 {
-      pointer-events: auto ;
-    }
-
-    &:hover .icon__0c4c4 {
-      color: $BtnIconHover ;
-    }
-  }
-}
-
 // discord fix for empty tooltip below search bar
 .clickTrapContainer__59d0d .container__55c99:empty { display: none }
-
-// <- Searchbar icon & input
