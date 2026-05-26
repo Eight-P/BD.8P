@@ -12,7 +12,7 @@
 <br/>
 
 > [!IMPORTANT]
-> - Copy the imports to the **top** of your CustomCSS/QuickCSS to add the snippet. <br/>
+> - Copy the imports to the **top** of your CustomCSS/QuickCSS to add the snippets. <br/>
 > - Copy the variables **below** the imports to configure the snippets.
 
 <br/>
@@ -81,7 +81,10 @@
     2: Hide all */
   --hide-clanTags: 0 ;
 
-  /* Username holographic gradient & animation */
+  /* Username holographic gradient & animation
+    0: Show (default)
+    1: Hide using color 1
+    2: Hide using color 2 */
   --disable-roleGradients: 0 ;
 
   /* Super reaction animations */

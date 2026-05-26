@@ -53,6 +53,14 @@
 // <- Nameplates
 
 // -> User name (holographic) gradient effect
+@mixin nameColor($g:1) {
+  .usernameGradient_e5de78 {
+    background: var(--custom-gradient-color-#{$g});
+    background-clip: text ;
+    background-size: 100px auto ;
+  }
+}
+
 @container style(--disable-roleGradients: 1 ) {
   .animateGradient_e5de78 {
     animation: none ;
@@ -60,14 +68,15 @@
     &::after { display: none }
   }
 
-  .usernameGradient_e5de78 {
-    background: var(--custom-gradient-color-1);
-    background-clip: text ;
-    background-size: 100px auto ;
-  }
-
   // member list
   .usernameGlow_e5de78 { display: none }
+}
+
+@container style(--disable-roleGradients: 1 ) {
+  @include nameColor(1);
+}
+@container style(--disable-roleGradients: 2 ) {
+  @include nameColor(2);
 }
 // <- User name (holographic) gradient effect
 
@@ -91,7 +100,7 @@
 // -> Super reaction animations
 @container style(--hide-reactionAnimations: 1) {
 
-  :is(.reaction__23977, .reaction_f8896c) {
+  .reaction__23977, .reaction_f8896c {
     animation: none !important ;
 
     .burstGlow__23977, .effectsWrapper_a9ddb3 { display: none }
