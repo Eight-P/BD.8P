@@ -1,0 +1,96 @@
+name: Snippet Bug Report
+description: Report a problem/issue with a CSS Snippet.
+labels: [bug, snippet]
+assignees:
+  - Eight-P
+
+body:
+
+  # Divider line
+  - type: markdown
+    attributes:
+      value: "##"
+
+  # Main Info
+  - type: markdown
+    attributes:
+      value: |
+        ### Please try and isolate the root cause of the issue first!
+        __If the issue is caused in combination with another add-on/CSS let me know.__
+
+        __It can also help to share how you add/use the snippet(s) and variables.__
+
+  # Snippet name
+  - type: dropdown
+    attributes:
+      label: "Snippet name:"
+      multiple: true
+      options:
+        - CompactChannelSearch
+        - HideChatButtons
+        - HideDecorations
+        - ReduceMessageInteractions
+        - UnmaskLinks
+    validations:
+      required: true
+
+  # Main report text
+  - type: textarea
+    attributes:
+      label: "Snippet Issue:"
+      description: "__(Screenshots can often help)__"
+    validations:
+      required: true
+
+  # Additional info section header
+  - type: markdown
+    attributes:
+      value: |
+        <br/>
+
+        Some additional information that can be helpful:
+
+  # Discord client
+  - type: dropdown
+    attributes:
+      label: "Discord client (release channel):"
+      description: "__Stable is highly recommended.__"
+      multiple: true
+      options:
+        - Stable (Default)
+        - PTB
+        - Canary
+
+  # Mod
+  - type: dropdown
+    attributes:
+      label: "Discord Mod:"
+      multiple: true
+      options:
+        - BetterDiscord
+        - Vencord
+        - Other (include in report)
+
+  # Platform
+  - type: dropdown
+    attributes:
+      label: "Platform:"
+      description: "__Browsers are not really supported, but you can still report any issues.__"
+      multiple: true
+      options:
+        - Windows
+        - Mac
+        - Linux
+        - Web (Browser)
+
+  # Divider line
+  - type: markdown
+    attributes:
+      value: |
+
+        ##
+
+  # Footnote
+  - type: markdown
+    attributes:
+      value: "#### Thank you for taking the time to fill out this bug report. <3"

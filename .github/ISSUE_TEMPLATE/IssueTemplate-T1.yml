@@ -1,0 +1,80 @@
+name: T1 Bug Report
+description: Report a problem/issue with T1.
+labels: [bug, t1]
+assignees:
+  - Eight-P
+
+body:
+
+  # Divider line
+  - type: markdown
+    attributes:
+      value: "##"
+
+  # Main Info
+  - type: markdown
+    attributes:
+      value: |
+        ### Please try and isolate the root cause of the issue first!
+        __If the issue is caused in combination with another add-on/CSS let me know.__
+
+  # Main report text
+  - type: textarea
+    attributes:
+      label: "T1 Issue:"
+      description: "__(Screenshots can often help)__"
+    validations:
+      required: true
+
+  # Additional info section header
+  - type: markdown
+    attributes:
+      value: |
+        <br/>
+
+        Some additional information that can be helpful:
+
+  # Discord client
+  - type: dropdown
+    attributes:
+      label: "Discord client (release channel):"
+      description: "__Stable is highly recommended.__"
+      multiple: true
+      options:
+        - Stable (Default)
+        - PTB
+        - Canary
+
+  # Mod
+  - type: dropdown
+    attributes:
+      label: "Discord Mod:"
+      multiple: true
+      options:
+        - BetterDiscord
+        - Vencord
+        - Other (include in report)
+
+  # Platform
+  - type: dropdown
+    attributes:
+      label: "Platform:"
+      description: "__Browsers are not really supported, but you can still report any issues.__"
+      multiple: true
+      options:
+        - Windows
+        - Mac
+        - Linux
+        - Web (Browser)
+
+  # Divider line
+  - type: markdown
+    attributes:
+      value: |
+
+        ##
+
+  # Footnote
+  - type: markdown
+    attributes:
+      value: "#### Thank you for taking the time to fill out this bug report. <3"
