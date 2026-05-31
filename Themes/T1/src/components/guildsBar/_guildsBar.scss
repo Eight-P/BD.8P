@@ -7,8 +7,9 @@ $iconBaseSize: 40px ;
 
 body {
   --sbInnerSpacing: calc(var(--serverBar-Spacing) * .5 );
-  --sbDmSpacing: calc(var(--serverBar-Spacing) * .8 );
   --sbIconScale: calc(var(--serverBar-IconSize) * 0.01 );
+  --sbDmSpacing: calc(var(--serverBar-Spacing) * .9 );
+  --sbSIconSpacing: calc(var(--sbDmSpacing) * .5 );
 
   // discord vars
   --guildbar-avatar-size: #{$iconBaseSize} ;
@@ -18,6 +19,7 @@ body {
 $iconSpacing: var(--serverBar-Spacing);
 $halfSpacing: var(--sbInnerSpacing);
 $dmSpacing: var(--sbDmSpacing);
+$specialIconSpacing: var(--sbSIconSpacing);
 $iconScale: var(--sbIconScale);
 
 
@@ -59,13 +61,6 @@ $iconScale: var(--sbIconScale);
   transform-origin: top left ;
   outline: none ;
 }
-
-// :is(
-//   // Unread mentions indicators
-//   .unreadMentionsIndicatorTop_ef3116,
-//   .unreadMentionsIndicatorBottom_ef3116,
-//   .listItem__650eb:has(.guildSeparator__252b6) // default separator
-// ) { display: none }
 
 // Unread mentions indicators
 .unreadMentionsIndicatorTop_ef3116,
@@ -146,13 +141,11 @@ $iconScale: var(--sbIconScale);
     @include shadowEffect("server_1");
   }
 
-  // :is(mask, g) { display: none }
   mask, g { display: none }
 
   foreignObject { mask: none }
 
   // more inner wrapper
-  // .wrapper__6e9f8:hover :is(.icon__6e9f8, .avatar__44b0c) {
   .wrapper__6e9f8:hover {
     .icon__6e9f8, .avatar__44b0c
     {
@@ -168,7 +161,6 @@ $iconScale: var(--sbIconScale);
 
   // -> Server item
   // Image, default avatar (group dm)
-  // :is(.icon__6e9f8, .avatar__44b0c) {
   .icon__6e9f8, .avatar__44b0c {
     border-radius: 50% ;
     transition: .2s ;
@@ -213,7 +205,6 @@ $iconScale: var(--sbIconScale);
 
 // this way instead of wrapper bc of icon when drag
 // (servers, left icons, dms) (span to only apply to dms and avoid the double wrapper)
-// :is(.blobContainer_e5445c, .listItemWrapper__91816, span > .wrapper_cc5dd2) {
 .blobContainer_e5445c, .listItemWrapper__91816, span > .wrapper_cc5dd2 {
   transform: rotate(90deg) !important ; // "important" for server details plugin idk
   scale: $iconScale ;
@@ -332,10 +323,9 @@ $iconScale: var(--sbIconScale);
 }
 
 // GuildsAdd
-// .scroller_ef3116 > :is(.tutorialContainer__650eb, .listItem__650eb):nth-last-child(3) {
 .scroller_ef3116 {
-  & > .tutorialContainer__650eb:nth-last-child(3),
-  & > .listItem__650eb:nth-last-child(3) {
+  > .tutorialContainer__650eb:nth-last-child(3),
+  > .listItem__650eb:nth-last-child(3) {
     grid-area: GuildsAdd ;
     margin: 3px 0 3px 0 ;
 
@@ -344,10 +334,9 @@ $iconScale: var(--sbIconScale);
 }
 
 // Discovery
-// .scroller_ef3116 > :is(.tutorialContainer__650eb, .listItem__650eb):nth-last-child(2) {
 .scroller_ef3116 {
-  & > .tutorialContainer__650eb:nth-last-child(2),
-  & > .listItem__650eb:nth-last-child(2) {
+  > .tutorialContainer__650eb:nth-last-child(2),
+  > .listItem__650eb:nth-last-child(2) {
     grid-area: Discovery ;
     margin: 3px 0 12px 0 ;
 
@@ -483,21 +472,12 @@ $iconScale: var(--sbIconScale);
 .listItem__650eb:has(.favoriteIcon_c9fddf) {
   pointer-events: none ;
 
-  // .pill_e5445c {
-  .pill_c9fddf {
-    // display: flex !important ; // counter
-  }
-
-  .wrapper_cc5dd2 {
+  .wrapper_cc5dd2, .wrapper__6e9f8 {
     pointer-events: auto ;
   }
 
   .svg_cc5dd2 {
     pointer-events: none ;
-  }
-
-  .wrapper__6e9f8 {
-    pointer-events: auto ;
   }
 
   .childWrapper__6e9f8 {
@@ -514,7 +494,7 @@ $iconScale: var(--sbIconScale);
 // -> DMs container
 #guild-list-unread-dms {
   position: relative;
-  margin: $iconSpacing 0 !important ;
+  margin: $dmSpacing 0 !important ;
   gap: $dmSpacing !important ;
 
   @include iconSep();
@@ -540,13 +520,17 @@ $iconScale: var(--sbIconScale);
 
 // -> notification center exp.
 .listItem__650eb:has(.notificationsIcon__4f4b6) {
+  margin: $specialIconSpacing 0 !important ;
+
+  &::before {
+    top: calc($specialIconSpacing * -1) !important ;
+  }
 
   .wrapper_cc5dd2 {
     transform: rotate(90deg);
-    scale: $iconScale;
-    margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ;
+    scale: $iconScale ;
+    margin: 0 ;
     height: $iconBaseSize !important ;
-    width: $iconBaseSize !important ;
   }
 
   .childWrapper__6e9f8 {

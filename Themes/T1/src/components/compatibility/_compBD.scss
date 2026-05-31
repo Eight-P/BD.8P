@@ -1,12 +1,11 @@
-// - ReadAllNotificationsButton by DevilBro (v1.8.4)
-// - SpotifyControls by DevilBro (v1.5.2)
-// - ServerDetails by DevilBro (v1.3.2)
-// - ServerFolders by DevilBro (v7.4.3)
-// - InvisibleTyping by Strencher (v1.4.4)
-// - FriendNotifications by DevilBro (v2.1.4)
-// - BetterAnimations by arg0NNY (v2.0.6) (partial)
-// - NewOldUserPopouts by KingGamingYT (v1.0.0)
-// - MemberCount by Arashiryuu (v3.0.12)
+// - ReadAllNotificationsButton by DevilBro (v1.8.5)
+// - SpotifyControls by DevilBro (v1.5.3)
+// - ServerDetails by DevilBro (v1.3.6)
+// - ServerFolders by DevilBro (v7.4.9)
+// - InvisibleTyping by Strencher (v1.4.7)
+// - FriendNotifications by DevilBro (v2.1.6)
+// - GameActivityToggle by DevilBro (v1.4.0)
+// - MemberCount by Arashiryuu (v3.0.17)
 
 #app-mount {
 
@@ -41,12 +40,22 @@
 .panels__5e434 .container_791eb8 {
   display: contents ;
 
-  &.maximized_791eb8 .coverWrapper_791eb8 {
-    width: 100% ;
+  .inner_791eb8 {
+    width: auto ;
+    margin: 0 3px 0 6px ;
   }
 
   .timeline_791eb8 {
-    margin: 6px ;
+    margin: 6px 9px 0 6px ;
+  }
+
+  &.maximized_791eb8 {
+    .inner_791eb8 {
+      margin: 0 3px 0 0 ;
+    }
+    .coverWrapper_791eb8 {
+      width: 100% ;
+    }
   }
 }
 // <- SpotifyControls by DevilBro
@@ -118,6 +127,8 @@
   left: -19px ;
   z-index: 1 ;
 
+  &::before { display: none }
+
   .friendsOnline_aa9717 {
     color: var(--text-normal);
     font-size: 10px ;
@@ -127,103 +138,23 @@
 }
 // <- FriendNotifications by DevilBro
 
-}
+// -> GameActivityToggle
+.gameActivityToggleAdded_fd3fb5 {
+  @container (width < 225px) {
 
-// -> BetterAnimations by arg0NNY
-// more of a band aid solution
-.BA__module_servers #app-mount {
-
-  .BA__baseEnhancedLayout {
-
-    // inner server view container
-    &[data-fullscreen="false"] > .BA__content > .BA__content {
-      display: flex !important ;
-    }
-
-    // when switching
-    .BA__content[data-baa-switch] {
-
-      // server name, quick switch (home)
-      // .sidebarList__5e434 :is(.container_f37cb1, .searchBar_e6b769) {
-      .sidebarList__5e434 {
-        .container_f37cb1, .searchBar_e6b769 {
-          display: none !important ;
-        }
-      }
-    }
-
-    // sidebar
-    .container__2637a {
-      padding-bottom: calc(var(--custom-app-panels-height, 0) + var(--space-xs) - 16px);
-    }
-
-    // -> profile panels
-    .panels__5e434 {
-      display: block ;
-      width: calc(
-        var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - var(--space-xs) * 2
-      ) !important ;
-
-      @include shadowEffect("box_3");
-
-      $blur-main: blur(calc(var(--backgroundBlur-app) / 100 * 1px));
-      $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
-
-      &::before {
-        content: "" ;
-        position: absolute ;
-        inset: 0px ;
-        background: var(--background-app);
-        background-position: center ;
-        background-size: cover ;
-        background-repeat: no-repeat ;
-        background-attachment: fixed ;
-        filter: $blur-main $brightness-main ;
-      }
-
-      // quest thing
-      > .mask__0d616 {
-        display: block ;
-
-        .wrapper__0d616 {
-          margin-right: unset ;
-        }
-      }
-
-      // profile panel
-      .container__37e49 {
-        overflow: hidden ;
-      }
-
-      // nameplate in profile panel
-      .container_df39b2 {
-        left: 0 ;
-      }
-    }
-
-    &[data-fullscreen="true"] .panels__5e434 {
-      display: none !important ;
-    }
-    // <- profile panels
+    .nameTag__37e49 { display: none }
   }
 }
-// <- BetterAnimations by arg0NNY
 
-// -> NewOldUserPopouts by KingGamingYT
-.user-profile-popout:has(>.userPopout) {
-  width: fit-content !important ;
-  padding: var(--custom-user-profile-theme-padding) !important;
+.gameActivityToggleButton_fd3fb5 {
+  display: flex ;
+  margin: 0 ;
+  min-width: 34px ;
+  flex: 0 10000 42px ;
+  justify-content: center ;
 }
-
-// .userPopout :is(.header, .body, .footer) {
-.userPopout {
-  .header, .body, .footer {
-    // idk
-    --background-tertiary: var(--background-base-lowest);
-    --background-secondary: var(--background-base-lower);
-  }
+// <- GameActivityToggle
 }
-// <- NewOldUserPopouts by KingGamingYT
 
 // -> MemberCount by Arashiryuu
 #MemberCount {

@@ -57,28 +57,44 @@
 
 // -> Panels
 .panels__5e434 {
-  display: contents ; // only works with hsb
+  display: contents ;
 
   // -> Profile
   .container__37e49 {
     order: -1 ;
     height: 48px ;
     container-type: inline-size ;
-    gap: 0 ; // helps with GameActivityToggle
+    gap: 0 ;
 
-    @container (width < 195px) {
+    .accountPopoutButtonWrapper__37e49 {
+      min-width: 0 !important ;
+      justify-content: center ;
+      flex: 10000 1 auto ;
+    }
+
+    // btn containers
+    // (GameActivityToggle compatibility)
+    .buttons__37e49 {
+      display: contents ;
+    }
+
+    // audio btns, settings btn
+    .audioButtonParent__5e764, .buttons__37e49 > .button__201d5 {
+      // width doubles as dynamic padding
+      flex: 0 10000 42px ; // 36 + 6 gap
+      min-width: 34px ;
+      pointer-events: none ; // so only the icon has the event
+      justify-content: center ;
+    }
+
+    // btn icon
+    .button__201d5 .contents__201d5 {
+      pointer-events: auto ;
+    }
+
+    @container (width < 190px) {
 
       .nameTag__37e49 { display: none }
-
-      .accountPopoutButtonWrapper__37e49 {
-        flex: unset ;
-        margin: 0 auto ;
-        padding: 5px 0 ;
-      }
-
-      .buttons__37e49 {
-        margin: 0 auto ;
-      }
     }
 
     // nameplate
@@ -104,11 +120,6 @@
     .plated__67645 {
       background: none !important ;
       backdrop-filter: none ;
-    }
-
-    // -> Buttons
-    .buttons__37e49 {
-      gap: 5px ;
     }
 
     // right click for dummies

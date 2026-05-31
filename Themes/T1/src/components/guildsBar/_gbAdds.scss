@@ -49,8 +49,8 @@
 // -> Server options btn
 .sidebarList__5e434 {
   overflow: visible ;
-  backdrop-filter: unset ;
-  -webkit-backdrop-filter: unset ;
+  backdrop-filter: unset !important ;
+  -webkit-backdrop-filter: unset !important ;
 
   // channels list spacer for banner image
   /// (content not unique), needs [style="height: 130px;"]
@@ -75,7 +75,6 @@
     display: block !important;
 
     // some containers between main and text
-    // :is(.headerContent_f37cb1, .header_f37cb1, .guildBadgeAndName_f37cb1) {
     .headerContent_f37cb1, .header_f37cb1, .guildBadgeAndName_f37cb1 {
       display: contents !important ;
     }
@@ -105,19 +104,7 @@
       @include shadowEffect("text_1");
     }
 
-    // Icons, Chevron, star icon in favorites tab, banner image
-    // :is(
-    //   .guildIconV2Container__85d16,
-    //   .guildIconContainer__85d16,
-    //   .headerChildren_f37cb1,
-    //   .favoritesIcon_f37cb1,
-    //   .animatedContainer_f37cb1,
-    //   .headerEllipseBackdrop_f37cb1,
-    //   .headerEllipseForeground_f37cb1,
-    //   .headerGlass_f37cb1,
-    //   .inviteButton_f37cb1
-    // ) { display: none }
-
+  // Icons, Chevron, star icon in favorites tab, banner image
   .guildIconV2Container__85d16,
   .guildIconContainer__85d16,
   .headerChildren_f37cb1,

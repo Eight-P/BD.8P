@@ -147,16 +147,16 @@
   .buttons__74017 {
     gap: 6px ;
 
-    // :is(.button__74017, .buttonContainer_e6e74f) {
     .button__74017, .buttonContainer_e6e74f {
        background: none ;
     }
 
     // Emoji icon
     .spriteContainer__04eed {
-      --custom-emoji-sprite-size: 19px !important ;
-      height: 19px ;
-      width: 19px ;
+      // makes it move up&down .-.
+      // --custom-emoji-sprite-size: 19px !important ;
+      // height: 19px ;
+      // width: 19px ;
     }
 
     .spriteGreyscale__04eed {
