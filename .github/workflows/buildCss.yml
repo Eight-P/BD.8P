@@ -1,4 +1,4 @@
-# CSS build action v2.3
+# CSS build action v2.5
 # Build CSS and deploy to dist branch
 name: buildCss
 
@@ -30,7 +30,7 @@ jobs:
 
     - name: Identify file changes.
       if: github.event_name != 'workflow_dispatch'
-      uses: dorny/paths-filter@v4
+      uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d
       id: filter
       with:
         filters: |
@@ -48,7 +48,7 @@ jobs:
       with:
         node-version: 24.x
 
-    - run: npm ci
+    - run: npm ci --omit=dev
 
     # Just gonna do all cp recursively.
     - name: Build T1 css
