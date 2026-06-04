@@ -1,6 +1,10 @@
 @use '../mixins/mixins' as * ;
 
-// -- App
+// Snippets
+@use 'HideDecorations/HideDecorations' ;
+
+@use 'UnmaskLinks/UnmaskLinks' ;
+
 
 // Background images
 @import 'appBackgrounds' ;
@@ -94,11 +98,6 @@ path[fill="currentColor"] {
     }
   }
 
-  // :is(
-  //   .closeIcon_e8b59c,
-  //   .controlIcon_f1ceac,
-  //   .addButtonIcon__29444
-  // ) {
   .closeIcon_e8b59c,
   .controlIcon_f1ceac,
   .addButtonIcon__29444
@@ -108,14 +107,6 @@ path[fill="currentColor"] {
 }
 
 // basic
-// :is(
-//   .searchClearHistory__56fec, // search popout clear
-//   .searchLearnMore__56fec, // search popout help link btn
-//   .closeIcon__972a0, // remove dms
-//   .embedSuppressButton__623de, // remove embed from msg
-//   .closeIcon__6e2b9 // close discord notice bar
-// ) {
-
 .searchClearHistory__56fec, // search popout clear
 .searchLearnMore__56fec, // search popout help link btn
 .closeIcon__972a0, // remove dms
@@ -162,7 +153,6 @@ path[fill="currentColor"] {
   }
 
   // Danger
-  // &:is(.critical-secondary_a22cb0, .critical-primary_a22cb0) {
   &.critical-secondary_a22cb0, &.critical-primary_a22cb0 {
     color: $BtnTextDanger ;
 
@@ -182,11 +172,6 @@ path[fill="currentColor"] {
 }
 
 // border from .theme-midnight
-// :is(
-//   .content_f75fb0, // chat
-//   .tabBody__133bf, // home
-//   .subtitleContainer_f75fb0 // titlebar
-// ) {
 .content_f75fb0, // chat
 .tabBody__133bf, // home
 .subtitleContainer_f75fb0 // titlebar
@@ -195,15 +180,6 @@ path[fill="currentColor"] {
 }
 
 // -> Some selectable items (not a fan)
-// :is(
-//   .settingsTabBar_dc2e0e,
-//   .tabBar_ab6641, // inbox
-//   .tabBar__133bf, .tabBar_f8303a, // some nav/tab bars
-//   .tabBar__81b3e, // roles settings
-//   .nav__409aa,
-//   .side_aa8da2 // settings sidebar
-// ) {
-
 .settingsTabBar_dc2e0e,
 .tabBar_ab6641, // inbox
 .tabBar__133bf, .tabBar_f8303a, // some nav/tab bars
@@ -213,7 +189,6 @@ path[fill="currentColor"] {
 {
   border: none ;
 
-  // :is(.item_caf372, .item_aa8da2, .settingsTabBarItem_dc2e0e) {
   .item_caf372, .item_aa8da2, .settingsTabBarItem_dc2e0e {
     background: none !important ;
     border: none ;
@@ -228,7 +203,6 @@ path[fill="currentColor"] {
       color: var(--interactive-hover);
     }
 
-    // &:is(.selected_aa8da2, .active_caf372) {
     &.selected_aa8da2, .active_caf372 {
       color: var(--interactive-active);
 
@@ -257,12 +231,6 @@ path[fill="currentColor"] {
   // <- search bars
 
   // -> Scrollbars
-  // :is(
-  //   .scrollerBase_d125d2,
-  //   .scrollerBase_c8b5c7
-  //   // .auto__99f8c,
-  //   // .scrollerBase__99f8c
-  // ) {
   .scrollerBase_d125d2,
   .scrollerBase_c8b5c7
     // .auto__99f8c,

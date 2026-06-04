@@ -1,8 +1,9 @@
 :root {
+  /* 0 = Off/Visible | 1 = On/Hidden | unless overwise stated */
+
   /* Chat */
 
-  /* Show/Hide chat input buttons.
-    0: Visible | 1: Hidden */
+  /* Show/Hide chat input buttons. */
   --hide-chatBtn-nitro: 1 ;
   --hide-chatBtn-gif: 0 ;
   --hide-chatBtn-sticker: 0 ;
@@ -32,9 +33,7 @@
     1: Always show  */
   --keep-voiceChannelBtns: 0 ;
 
-  /* Visualize chat input when focused/selected
-    0: Off (default)
-    1: Highlight */
+  /* Visualize chat input when focused/selected */
   --highlight-focusedChatInput: 0 ;
 
   /* Show the URL next to a masked link
@@ -43,8 +42,7 @@
     2: Show URL everywhere */
   --unmask-links: 0 ;
 
-  /* Effects & Decorations
-    0: Visible | 1: Hidden */
+  /* Effects & Decorations */
 
   /* Profile pop-out/modal background effects */
   --hide-profileEffects: 0 ;
@@ -61,11 +59,14 @@
 
   /* Clan tags
     0: Show all (default)
-    1: Hide in member list
-    2: Hide all */
+    1: Hide in member/dm list
+    2: Hide everywhere */
   --hide-clanTags: 0 ;
 
-  /* Username holographic gradient & animation */
+  /* Username holographic gradient & animation
+    0: Show (default)
+    1: Hide using color 1
+    2: Hide using color 2 */
   --disable-roleGradients: 0 ;
 
   /* Super reaction animations */
@@ -109,9 +110,7 @@
     2: Always Hide */
   --hide-friendsActivity: 1 ;
 
-  /* Server boost goal in the channel sidebar
-    0: Visible (default)
-    1: Hidden */
+  /* Server boost goal in the channel sidebar */
   --hide-serverBoostStats: 0 ;
 
   /* Add Scrollbars */

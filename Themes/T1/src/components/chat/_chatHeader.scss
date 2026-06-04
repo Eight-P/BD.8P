@@ -52,19 +52,6 @@
       // margin: 0 2px ;
     }
   }
-
-  // channel search
-  .searchBar_c322aa {
-    background: none ;
-    border-radius: 0 ;
-
-    // CCS snippet vars
-    --iconColorNormal: #{$BtnIconNormal} !important ;
-    --iconColorHover: #{$BtnIconHover} !important ;
-    --backgroundOpen: none !important ;
-    --borderColorOpen:
-      transparent transparent var(--header-secondary) transparent !important ;
-  }
   // <- Right side btns
 }
 // <- Channel & DMs header

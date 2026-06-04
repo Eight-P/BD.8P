@@ -1,9 +1,23 @@
 @use '../mixins/mixins' as * ;
 
-// -- Chat
-
 $BG_MsgHighlight: rgba(255, 255, 255, 0.05);
 $ChatScrollerBottomSpacing: 16px ;
+
+// Snippets
+@use 'CompactChannelSearch/CompactChannelSearch' with (
+  $iconColorNormal: $BtnIconNormal,
+  $iconColorHover: $BtnIconHover,
+  $backgroundOpen: none,
+  $borderColorOpen: transparent transparent var(--header-secondary) transparent,
+  $borderRadius: 0
+);
+
+@use 'HideChatButtons/HideChatButtons' ;
+
+@use 'ReduceMessageInteractions/ReduceMessageInteractions' with (
+  $highlightReducedBtnColor: $BtnIconHover
+);
+
 
 // Forums & Threads
 @import 'chatForums' ;
@@ -28,7 +42,7 @@ $ChatScrollerBottomSpacing: 16px ;
 // -> Chat container
 .page__5e434 {
   border: none ;
-  // :is(.scrollerBase__99f8c, .scrollerBase_d125d2) {
+
   .scrollerBase_d125d2 {
     @include scrollerFadeOut();
 
@@ -41,7 +55,6 @@ $ChatScrollerBottomSpacing: 16px ;
 .chatContent_f75fb0 {
 
   // "#" Icon at the channels very top, idk
-  // .container__00de6 :is(.emptyChannelIcon__00de6, .iconWrapper__54b20) { display: none }
   .container__00de6 {
     .emptyChannelIcon__00de6, .iconWrapper__54b20 { display: none }
   }
@@ -120,7 +133,6 @@ $ChatScrollerBottomSpacing: 16px ;
   // <- general
 
   // -> Summaries
-  // :is(.barButtonAlt__0f481, .newTopicsBarTopicSection__0f481) {
   .barButtonAlt__0f481, .newTopicsBarTopicSection__0f481 {
     color: var(--interactive-hover);
     background: none ;
@@ -181,13 +193,11 @@ $ChatScrollerBottomSpacing: 16px ;
 
 // -> Reactions
 // Reaction item chat, forum post
-// :is(.reaction__23977, .reaction_f8896c) {
 .reaction__23977, .reaction_f8896c {
   border: none ;
   border-radius:4px ;
 
   // number
-  // :is(.reactionCount__23977, .reactionCount_f8896c) {
   .reactionCount__23977, .reactionCount_f8896c {
     font-size: 0.875rem ;
   }
