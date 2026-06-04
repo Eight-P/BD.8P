@@ -1,3 +1,6 @@
+$highlightReducedBtnColor: false !default ;
+
+
 // -> hide emojis in msg btns
 @container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
   // to not shift positions (e.g. of plugin btns) when hover (best solution?)
@@ -16,7 +19,7 @@
 // hide emoji unless hovered or expanded
 @container style(--hide-messageBtnEmojis: 1 ) {
   .buttons__5126c:not(
-    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+    :has(path[d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
     :hover
   ) {
     @include hideEmojis();
@@ -59,10 +62,15 @@
 // hide msg btn unless hovered or expanded
 @container style(--reduce-messageBtns: 1 ) {
   .buttons__5126c:not(
-    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+    :has(path[d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
     :hover
   ) {
     @include HideMsgBtns();
+    @if $highlightReducedBtnColor {
+      .button_f7ecac {
+        color: $highlightReducedBtnColor !important ;
+      }
+    }
   }
 }
 
@@ -70,6 +78,12 @@
 @container style(--reduce-messageBtns: 2 ) {
   .buttons__5126c {
     @include HideMsgBtns();
+
+    @if $highlightReducedBtnColor {
+      &:not(:hover) .button_f7ecac {
+        color: $highlightReducedBtnColor !important ;
+      }
+    }
   }
 }
 // <- collapse msg btns
@@ -125,7 +139,7 @@
   @container not style(--reduce-highlightBackground: 1 ) {
     .message__5126c:not(
       :has(.buttons__5126c:hover),
-      :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])
+      :has(path[d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])
     ) {
       background: none !important ;
 
@@ -138,7 +152,7 @@
 @container style(--hide-messageHover: 1 ) and style(--reduce-highlightBackground: 1 ) {
   .message__5126c:not(
     :has(.buttons__5126c:hover),
-    :has([d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])
+    :has(path[d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "])
   ) {
     background: none !important ;
   }

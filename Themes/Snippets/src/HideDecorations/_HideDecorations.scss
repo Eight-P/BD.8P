@@ -80,16 +80,15 @@
 }
 // <- User name (holographic) gradient effect
 
-// -> Clan tags
-// member list
+// -> Clan tags sidebars
 @container style(--hide-clanTags: 1 ) or style(--hide-clanTags: 2 ) {
-
-  .username__5d473 .clanTag__5d473 { display: none }
+  .username__5d473 .clanTag__5d473, // member list
+  .name__20a53 .clanTag__972a0 // dm list
+  { display: none !important }
 }
 
 // Clan tags all
 @container style(--hide-clanTags: 2 ) {
-
   .clanTagChiplet_c19a55, // chat
   .guildTagContainer__63ed3, // user pop-out/modal
   .voiceUser__07f91 .clanTag__07f91 // user in voice
@@ -99,7 +98,6 @@
 
 // -> Super reaction animations
 @container style(--hide-reactionAnimations: 1) {
-
   .reaction__23977, .reaction_f8896c {
     animation: none !important ;
 

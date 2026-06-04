@@ -1,5 +1,5 @@
 /*!
-  HideDecorations v1.0.0
+  HideDecorations v1.0.1
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -24,8 +24,8 @@
 
   /* Clan tags
     0: Show all (default)
-    1: Hide in member list
-    2: Hide all */
+    1: Hide in member/dm list
+    2: Hide everywhere */
   --hide-clanTags: 0 ;
 
   /* Username holographic gradient & animation

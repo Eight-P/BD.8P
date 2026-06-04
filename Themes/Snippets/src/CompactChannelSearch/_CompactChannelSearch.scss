@@ -1,3 +1,9 @@
+$iconColorNormal: var(--icon-muted) !default ;
+$iconColorHover: var(--icon-subtle) !default ;
+$backgroundOpen: var(--background-gradient-low, var(--input-background-default)) !default ;
+$borderColorOpen: var(--input-border-default) !default ;
+$borderRadius: var(--radius-sm) !default ;
+
 // chat toolbar container
 .title_f75fb0 .toolbar__9293f {
   flex-shrink: 0 ; // to overflow children
@@ -17,12 +23,7 @@
 .searchBar_c322aa {
   padding: 0 ;
   transition: none !important ;
-
-  // discord defaults
-  --iconColorNormal: var(--icon-muted);
-  --iconColorHover: var(--icon-subtle);
-  --backgroundOpen: var(--background-gradient-low, var(--input-background-default));
-  --borderColorOpen: var(--input-border-default);
+  border-radius: $borderRadius ;
 
   @keyframes expandSearchWidth {
     from { min-width: 32px }
@@ -37,10 +38,10 @@
     margin: 0 ;
     cursor: pointer ;
 
-    --interactive-text-default: var(--iconColorNormal);
+    --interactive-text-default: #{$iconColorNormal} ;
 
     &:hover .icon__0c4c4 {
-      color: var(--iconColorHover);
+      color: $iconColorHover ;
     }
   }
 
@@ -68,12 +69,11 @@
     width: auto ;
     animation: .12s ease-out normal forwards expandSearchWidth ;
     overflow: visible ; // let DraftEditor-root overlap the border
-    // discord default, to override collapsed style
-    background: var(--backgroundOpen);
-    border-color: var(--borderColorOpen);
+    background: $backgroundOpen ;
+    border-color: $borderColorOpen ;
 
     &:hover:not(:has(.DraftEditor-root:hover)) .icon__0c4c4 {
-      color: var(--iconColorHover);
+      color: $iconColorHover ;
     }
   }
 
