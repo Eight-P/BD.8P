@@ -1,5 +1,5 @@
 /*!
-  CompactChannelSearch v1.2.1
+  CompactChannelSearch v1.2.2
   <github.com/Eight-P/BD.8P>
 
 */
@@ -11,6 +11,7 @@
 .search__49676 {
   overflow: hidden;
   margin: 0;
+  width: auto;
   min-width: unset;
   max-width: unset;
   flex-basis: auto;
