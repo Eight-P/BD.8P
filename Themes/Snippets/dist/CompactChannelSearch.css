@@ -1,5 +1,5 @@
 /*!
-  CompactChannelSearch v1.2
+  CompactChannelSearch v1.2.1
   <github.com/Eight-P/BD.8P>
 
 */
@@ -19,10 +19,7 @@
 .searchBar_c322aa {
   padding: 0;
   transition: none !important;
-  --iconColorNormal: var(--icon-muted);
-  --iconColorHover: var(--icon-subtle);
-  --backgroundOpen: var(--background-gradient-low, var(--input-background-default));
-  --borderColorOpen: var(--input-border-default);
+  border-radius: var(--radius-sm);
 }
 @keyframes expandSearchWidth {
   from {
@@ -39,10 +36,10 @@
   max-width: 30px;
   margin: 0;
   cursor: pointer;
-  --interactive-text-default: var(--iconColorNormal);
+  --interactive-text-default: var(--icon-muted) ;
 }
 .searchBar_c322aa .iconLayout__0c4c4:hover .icon__0c4c4 {
-  color: var(--iconColorHover);
+  color: var(--icon-subtle);
 }
 .searchBar_c322aa {
   cursor: default;
@@ -62,11 +59,11 @@
   width: auto;
   animation: 0.12s ease-out normal forwards expandSearchWidth;
   overflow: visible;
-  background: var(--backgroundOpen);
-  border-color: var(--borderColorOpen);
+  background: var(--background-gradient-low, var(--input-background-default));
+  border-color: var(--input-border-default);
 }
 .open_c322aa .searchBar_c322aa:hover:not(:has(.DraftEditor-root:hover)) .icon__0c4c4 {
-  color: var(--iconColorHover);
+  color: var(--icon-subtle);
 }
 .open_c322aa .DraftEditor-root {
   height: unset;
