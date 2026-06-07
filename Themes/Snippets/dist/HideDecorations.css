@@ -1,5 +1,5 @@
 /*!
-  HideDecorations v1.0.1
+  HideDecorations v1.0.2
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -72,7 +72,7 @@ Snippets css -> */
     --custom-nameplate: var(--control-secondary-background-hover) !important ;
   }
 }
-@container style(--disable-roleGradients: 1 ) {
+@container style(--disable-roleGradients: 1 ) or style(--disable-roleGradients: 2 ) {
   .animateGradient_e5de78 {
     animation: none;
   }
