@@ -4,7 +4,6 @@
 // -> Server guide/home
 .homeContent__7449f {
 
-  // :is(.row_d13feb, .card__73069) {
   .row_d13feb, .card__73069 {
     background: var(--background-modifier-accent);
     border: none ;
@@ -203,52 +202,52 @@
 
 
 // -> Server Boosts
-.page__5e434 .container__89463 {
-  container-type: inline-size ;
-}
+// .page__5e434 .container__89463 {
+//   container-type: inline-size ;
+// }
 
-.contentContainer__89463 {
-  @container (width < 950px) {
-    flex-direction: column-reverse ;
+// .contentContainer__89463 {
+//   @container (width < 950px) {
+//     flex-direction: column-reverse ;
 
-    .sidebarContainer__89463 {
-      flex-direction: row ;
-      width: auto ;
-      border: none ;
-      max-height: 33% ;
+//     .sidebarContainer__89463 {
+//       flex-direction: row ;
+//       width: auto ;
+//       border: none ;
+//       max-height: 33% ;
 
-      .header__2281b { display: none }
+//       .header__2281b { display: none }
 
-      // "become a server booster"
-      .container__6c253 {
-        margin: 0 var(--space-16) ;
-        background: none ;
-        border: none ;
+//       // "become a server booster"
+//       .container__6c253 {
+//         margin: 0 var(--space-16) ;
+//         background: none ;
+//         border: none ;
 
-        .image__6c253 { display: none }
+//         .image__6c253 { display: none }
 
-        // boost this server btn
-        .shinyButton__6a443 {
-          color: var(--button-filled-brand-text) !important ;
-          border: 1px solid var(--button-filled-brand-border) !important ;
+//         // boost this server btn
+//         .shinyButton__6a443 {
+//           color: var(--button-filled-brand-text) !important ;
+//           border: 1px solid var(--button-filled-brand-border) !important ;
 
-          &:hover {
-            color: var(--guild-boosting-pink) !important ;
-          }
-        }
+//           &:hover {
+//             color: var(--guild-boosting-pink) !important ;
+//           }
+//         }
 
-        .exampleMessage__6c253 {
-          order: 5 ;
-        }
-      }
+//         .exampleMessage__6c253 {
+//           order: 5 ;
+//         }
+//       }
 
-      // boots history
-      .container__2281b {
-        padding: 16px ;
-        max-height: 100% ;
-        flex: 1 1 100% ;
-      }
-    }
-  }
-}
+//       // boots history
+//       .container__2281b {
+//         padding: 16px ;
+//         max-height: 100% ;
+//         flex: 1 1 100% ;
+//       }
+//     }
+//   }
+// }
 // <- Server Boosts

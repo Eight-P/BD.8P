@@ -2,7 +2,8 @@
 
 // -- Settings
 
-$T1_v: null !default ;
+$T1V: null !default ;
+$T1FV: null !default ;
 
 // -> User settings
 // layer container inner (not an ideal class)
@@ -43,30 +44,49 @@ $T1_v: null !default ;
 
   .fixedContent__409aa::after { display: none }
 
+  @container not style(--T1Fv: 11 ) {
+    .fixedContent__409aa .section__409aa::after {
+      content: "Version #{$T1FV} for T1 is available" ;
+      position: relative ;
+      display: block ;
+      width: 100% ;
+      padding: 8px ;
+      box-sizing: border-box ;
+      font-size: 15px ;
+      font-weight: 600 ;
+      text-align: center ;
+      white-space: pre-line ;
+      color: var(--header-secondary);
+      background-color: var(--background-floating);
+      border-radius: 10px ;
+
+      @include shadowEffect("box_3");
+    }
+  }
+
   // log out item
   [data-list-item-id="settings-sidebar___logout_sidebar_item"] {
     color: var(--red);
   }
 
   // T1 version (bd, regular)
-  // .bd-version-info, .clickable__973df.compact__973df {
-  .clickable__081d7.compact__081d7 {
+  .bd-version-info, .clickable__081d7.compact__081d7 {
     margin: 45px 0 10px 0 ;
     position: relative ;
     padding-left: 6px ;
 
     &::before {
-      content: "T1 - Theme: \a v#{$T1_v} by Eight_P" !important;
-      display: block !important;
+      content: "T1 - Theme: \a v#{$T1V} by Eight_P" ;
+      display: block ;
       position: absolute ;
       top: -45px ;
       width: 100% ;
       height: auto ;
-      font-size: 12px !important;
-      font-weight: 600 !important;
-      color: rgb(114, 118, 125) !important;
-      white-space: break-spaces !important;
-      text-transform: none !important;
+      font-size: 12px ;
+      font-weight: 600 ;
+      color: rgb(114, 118, 125);
+      white-space: pre-line ;
+      text-transform: none ;
       pointer-events: none ;
     }
   }
@@ -123,7 +143,7 @@ $T1_v: null !default ;
 .sidebarRegion__23e6b {
 
   // delete channel button
-  .tabBarItemContainer_c7e907:has([d="M5.06 7a1 1 0 0 0-1 1.06l.76 12.13a3 3 0 0 0 3 2.81h8.36a3 3 0 0 0 3-2.81l.75-12.13a1 1 0 0 0-1-1.06H5.07ZM11 12a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"]) {
+  .tabBarItemContainer_c7e907:has(path[d="M5.06 7a1 1 0 0 0-1 1.06l.76 12.13a3 3 0 0 0 3 2.81h8.36a3 3 0 0 0 3-2.81l.75-12.13a1 1 0 0 0-1-1.06H5.07ZM11 12a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"]) {
     color: var(--red) ;
   }
 }

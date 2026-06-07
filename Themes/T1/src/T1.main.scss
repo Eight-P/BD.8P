@@ -1,11 +1,15 @@
 @use "sass:meta";
 
-$T1_version: "0.9.4" ;
+$Version: "0.9.5" ;
+$FileVersion: "0.11.0" ;
 
 /*!
   T1 Theme (c) Eight_P <github.com/Eight-P/BD.8P>
-  version #{$T1_version} for Fv0.11.0
+  version #{$Version} for Fv#{$FileVersion}
 
 */
 
-@include meta.load-css("components", $with: ( "T1_v": $T1_version ));
+@include meta.load-css("components", $with: (
+  "T1V": $Version,
+  "T1FV": $FileVersion
+));

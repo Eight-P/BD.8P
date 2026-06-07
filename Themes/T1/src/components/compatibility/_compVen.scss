@@ -18,7 +18,6 @@
   transform: rotate(90deg) translateY(calc(50% - 6px)) translateX(-5px);
 }
 
-// :is(#vc-friendcount, #vc-guildcount) + :is(#vc-friendcount, #vc-guildcount) {
 #vc-friendcount, #vc-guildcount {
   & + #vc-friendcount,
   & + #vc-guildcount {

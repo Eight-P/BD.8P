@@ -7,7 +7,6 @@
   // -> Header bar
   .children__9293f {
     // friends icon & text
-    // :is(.dot__9293f, .iconWrapper__9293f, .titleWrapper__9293f) { display: none }
     .dot__9293f, .iconWrapper__9293f, .titleWrapper__9293f { display: none }
   }
 
@@ -48,7 +47,6 @@
     }
 
     // activity, idk, online-status
-    // :is(.statusText__19b6d, .text_c9d15c, .sub_0a06ed6ea040aa1b-text) {
     .statusText__19b6d, .text_c9d15c, .sub_0a06ed6ea040aa1b-text {
       color: var(--header-secondary) !important;
     }
@@ -129,7 +127,6 @@
     }
 
     // containers for activity
-    // :is(.body__00943, .wrapper__11054) {
     .body__00943, .wrapper__11054 {
       background: none ;
     }

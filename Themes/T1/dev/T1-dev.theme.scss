@@ -2,7 +2,7 @@
   * @name T1_DEV
   * @description T1 Dev
   * @author Eight_P
-  * @version 0.10.2_D
+  * @version 0.11.0_D
 */
 
 @import '../src/T1.main.scss' ;
@@ -22,13 +22,13 @@
   --hide-avatarDecorations: 0 ;
   --hide-nameplates: 0 ; // (0/1/2/3)
   --hide-clanTags: 0 ; // (0/1/2)
-  --disable-roleGradients: 0 ;
+  --disable-roleGradients: 0 ; // (0/1/2)
   --hide-reactionAnimations: 0 ;
 
   // ReduceMessageInteractions
   --reduce-messageBtns: 0 ; // (0/1/2)
   --hide-messageBtnEmojis: 1 ; // (0/1/2)
-  --hide-messageHover: 1 ;  // (0/1/2)
+  --hide-messageHover: 1 ; // (0/1/2)
 
   // Server bar / Guilds list
   --serverBar-FolderStyle: 1 ;
@@ -57,6 +57,8 @@
 
   --font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
 }
+
+:root { --T1Fv: 11 }
 
 // Dev build indicator
 .platform-win .app__160d8::after {

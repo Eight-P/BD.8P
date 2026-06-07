@@ -34,7 +34,6 @@ $C_Header: var(--interactive-normal);
 }
 
 // Popouts & Tooltips & Context menus, Modals
-// :is(.layer__59d0d, .layer_bc663c):not(.theme-light) {
 .layer__59d0d:not(.theme-light), .layer_bc663c:not(.theme-light) {
 
   --background-surface-high: #{$BG_Meta} ;
@@ -55,7 +54,6 @@ $C_Header: var(--interactive-normal);
   --bg-surface-overlay: #{$BG_Body} ;
 
   // -> Settings items/options
-  // :is(.select_a16aea, .pauseContainer_c38e9f) {
   .select_a16aea, .pauseContainer_c38e9f {
     border: none ;
   }

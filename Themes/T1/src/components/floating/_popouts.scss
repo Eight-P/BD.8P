@@ -3,18 +3,6 @@
 
   // -> General content
   // first inner container with class (not a fan)
-  // :is(
-  //   .menu_c1e9c4, // context menus
-
-  //   .wrapper_c0e32c, // add reactions pop-out
-  //   .contentWrapper__9c62c, // Apps&Cmds
-  //   .contentWrapper__08434, // Chat picker
-  //   .container_d9c882, // Threads
-  //   .messagesPopoutWrap_e8b59c, // Pinned Msgs
-  //   .popoutContainer__4ad69, // Bookmarks
-  //   .recentMentionsPopout__95796 // Inbox
-  // ) {
-
   .menu_c1e9c4, // context menus
   .wrapper_c0e32c, // add reactions pop-out
   .contentWrapper__9c62c, // Apps&Cmds
@@ -29,11 +17,6 @@
   }
 
   // scroller
-  // &:not(.theme-light) :is(
-  //   .scrollerBase_d125d2,
-  //   .scrollerBase__99f8c,
-  //   .container_d9c882 // Threads
-  // ) {
   &:not(.theme-light) {
     .scrollerBase_d125d2,
     .scrollerBase__99f8c,
@@ -42,13 +25,6 @@
       background: $BG_Body ;
     }
   }
-
-  // :is(
-  //   .container_d9c882, // Threads
-  //   .messagesPopoutWrap_e8b59c, // Pinned Msgs
-  //   .popoutContainer__4ad69, // Bookmarks
-  //   .recentMentionsPopout__95796 // Inbox
-  // ) {
 
   .container_d9c882, // Threads
   .messagesPopoutWrap_e8b59c, // Pinned Msgs
@@ -69,7 +45,6 @@
     color: $C_Header !important ;
   }
 
-  // :is(.header_d9c882, .header_e8b59c, .header_ab6641) {
   .header_d9c882, .header_e8b59c, .header_ab6641 {
     border: none ;
     z-index: 1 ;
@@ -84,7 +59,6 @@
     box-shadow: none ;
   }
 
-  // :is(.contentWrapper__08434, .wrapper_c0e32c) {
   .contentWrapper__08434, .wrapper_c0e32c {
     border: none ;
     @include shadowEffect("box_2");
@@ -147,7 +121,6 @@
     // <- Add reactions
 
     // hover indicator, nitro upsell banner Gifs
-    // :is(.inspectedIndicator_c6367b, .upsellContainer__0b69f) {
     .inspectedIndicator_c6367b, .upsellContainer__0b69f {
       display: none ;
     }
@@ -155,12 +128,10 @@
 
     // -> left side category items
     // default emoji shortcut, sticker shortcut - category
-    // :is(.unicodeShortcut_b9ee0c, .standardStickerShortcut__3ad28) {
     .unicodeShortcut_b9ee0c, .standardStickerShortcut__3ad28 {
       background: $BG_Body ;
     }
 
-    // :is(.stickerCategory__3ad28, .categoryItem_b9ee0c) {
     .stickerCategory__3ad28, .categoryItem_b9ee0c {
       background: none ;
 
@@ -170,7 +141,6 @@
     }
     // <- left side category items
 
-    // :is(.inspector_aeaaeb, .nitroTopDividerContainer_b3fb5f, .nitroBottomDivider_c656ac) {
     .inspector_aeaaeb, .nitroTopDividerContainer_b3fb5f, .nitroBottomDivider_c656ac {
       display: none ;
     }
@@ -182,14 +152,12 @@
     background: $BG_Meta ;
 
     // -> Nitro locked
-    // :is(.upsellContainer__0b69f, .nitroTopDividerContainer_b3fb5f) { display: none }
     .upsellContainer__0b69f, .nitroTopDividerContainer_b3fb5f { display: none }
 
     .sectionContainerNitroLocked__61424 .sectionTitle__61424 {
       color: rgb(166, 103, 228);
     }
 
-    // :is(.sectionContainerNitroLocked__61424, .soundRowNitroLocked__61424) {
     .sectionContainerNitroLocked__61424, .soundRowNitroLocked__61424 {
       background: none ;
     }
@@ -201,7 +169,6 @@
   .container_d9c882 {
 
     // Header icon & text
-    // :is(.threadIcon_d9c882, .title_d9c882) {
     .threadIcon_d9c882, .title_d9c882 {
       color: $C_Header !important ;
     }
@@ -233,7 +200,6 @@
   // <- Pins
 
   // -> Bookmarks (solo, inbox)
-  // :is(.popoutContainer__4ad69, .recentMentionsPopout__95796) {
   .popoutContainer__4ad69, .recentMentionsPopout__95796 {
 
     .messagesScroller__4ad69 {

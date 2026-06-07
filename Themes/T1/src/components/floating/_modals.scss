@@ -15,7 +15,6 @@
   }
 
   // image view control btns
-  // .topBar__6088c :is(.actionButtons_cc1819, .closeButton__6088c .buttonInner_aec7ab) {
   .topBar__6088c {
     .actionButtons_cc1819, .closeButton__6088c .buttonInner_aec7ab
     {
@@ -27,131 +26,6 @@
   .carouselModal_d3a6f0 .nav_b2eddf .buttonInner_aec7ab {
     border: none ;
   }
-
-  // :is(.small__8a031, .medium__8a031) {
-  //   max-height: 75vh ;
-  //   height: auto ;
-  //   border: none ;
-  // }
-
-  // // -> most modals (not user modal)
-  // // .root__8a031:not(.root__9c3be) {
-  // .container__8a031:not(.root__9c3be) {
-  //   // -> General
-  //   background: $BG_Meta ;
-  //   overflow: hidden ;
-  //   padding-bottom: 6px ;
-
-  //   @include scrollbar(none); // not sure why
-
-  //   // -> Header
-  //   // .header__8a031 {
-  //   .header__8a031 {
-  //     background: $BG_Meta ;
-  //     padding-bottom: 8px ;
-
-  //     // @include shadowEffect("box_2");
-
-  //     .headerText__67dba {
-  //       margin-bottom: 14px ;
-  //     }
-
-  //     .marginTop8_fd297e { display: none }
-  //   }
-  //   // <- Header
-
-  //   // -> Body
-  //   .scrollerBase_d125d2 {
-  //     background: $BG_Body ;
-  //     max-height: unset ;
-
-  //     @include scrollbar();
-  //     @include scrollerFadeOut(2px, 2px);
-  //   }
-
-  //   :is(.bodySpacerTop__8a031, .bodySpacerBottom__8a031 ){
-  //     display: none ;
-  //   }
-
-  //   .bodyControls__8a031 {
-  //     padding-bottom: 6px ;
-
-  //     &:after { display: none }
-  //   }
-
-  //   .bodyInner__8a031 {
-  //     margin: 12px 0 20px 0 ;
-  //   }
-
-  //   .content__8a031 {
-  //     padding-top: 20px ;
-  //   }
-  //   // <- Body
-
-  //   // -> Footer
-  //   .actionBar__8a031 {
-  //     background: $BG_Meta ;
-  //     padding-top: 8px ;
-
-  //     .h5_b717a1 {
-  //       font-size: 14px ;
-  //       color: var(--header-secondary);
-  //     }
-  //   }
-  //   // <- Footer
-
-  //   // <- General
-
-  //   // -> Invite to server
-  //   :is(.scroller__67dba, .inviteRowEmptyState__67dba) {
-  //     height: 100vh ; // fix height to max
-  //   }
-  //   // <- Invite to server
-
-  //   // -> Create group DM (hopefully)
-  //   &.popout_cba592 {
-  //     height: 100vh ; // fix height to max
-
-  //     .header__8a031 {
-  //       box-shadow: none ;
-  //     }
-
-  //     .friendSelected_bbd192:not(:hover) {
-  //       background: none ;
-  //     }
-
-  //     .searchBar_cba592 {
-  //       background: $BG_Meta ;
-
-  //       @include shadowEffect("box_3");
-  //     }
-  //   }
-  //   // <- Create group DM
-
-  //   // join new server
-  //   .templatesList_c04f35 {
-  //     margin: 0 ;
-  //   }
-  // }
-
-  // (per Server) Notification Settings
-  // .container__8a031 {
-  //   .bodySpacerTopBorder__8a031 { display: none }
-
-    // .header__8a031 {
-    //   padding-bottom: 16px ;
-    //   z-index: 1 ;
-
-    //   @include shadowEffect("box_3");
-    // }
-
-    // .body__8a031 {
-    //   background: $BG_Body ;
-
-    //   // @include scrollbar();
-    //   @include scrollerFadeOut(2px, 2px);
-    // }
-  // }
 
   // "share a clip" full screen modal layer (maybe more)
   .modalContent_e44912 .modalContainer__578ba {

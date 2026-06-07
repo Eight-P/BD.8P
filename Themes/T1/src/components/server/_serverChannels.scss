@@ -81,10 +81,6 @@
 
     &:hover .name__2ea32 { color: var(--interactive-hover) }
 
-    // :is(
-    //   .dismissButton__29444, // Suggested channels in sidebar
-    //   .actionIcon_c69b6d // channels item btns
-    // ) {
     .dismissButton__29444, // Suggested channels in sidebar
     .actionIcon_c69b6d // channels item btns
     {
@@ -224,10 +220,9 @@
   .category__3b43f {
     background: var(--background-modifier-active);
   }
-  // .channel__3b43f :is(.category__3b43f, .channelName__3b43f, .channelIcon__3b43f) {
+
   .channel__3b43f {
-    .category__3b43f, .channelName__3b43f, .channelIcon__3b43f
-    {
+    .category__3b43f, .channelName__3b43f, .channelIcon__3b43f {
       background: var(--background-modifier-accent);
     }
   }

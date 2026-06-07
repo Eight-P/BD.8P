@@ -6,20 +6,12 @@ body {
 $blur-main: blur(calc(var(--backgroundBlur-app) / 100 * 1px));
 $brightness-main: brightness(calc((var(--backgroundBrightness-app) / 100)));
 
-// :is(
-//   .bg__960e4, // main
-//   .container__01ae2, // floating threat/forum
-//   .header_c6bf1b, // role settings header
-//   .typing_b88801:has(.dots__5ad89), // chat input typing indicator bar
-//   .outerContainer_e44912 .container__8a031.modal_e44912 // user settings (suboptimal class)
-// )::before {
-  .bg__960e4, // main
-  .container__01ae2, // floating threat/forum
-  .header_c6bf1b, // role settings header
-  .typing_b88801:has(.dots__5ad89), // chat input typing indicator bar
-  .outerContainer_e44912 .container__8a031.modal_e44912 // user settings (suboptimal class)
-{
-  &::before {
+.bg__960e4, // main
+.container__01ae2, // floating threat/forum
+.header_c6bf1b, // role settings header
+.typing_b88801:has(.dots__5ad89), // chat input typing indicator bar
+.outerContainer_e44912 .container__8a031.modal_e44912 // user settings (suboptimal class)
+{ &::before {
     content: "" ;
     position: absolute ;
     inset: 0px ;
