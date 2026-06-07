@@ -61,7 +61,7 @@
   }
 }
 
-@container style(--disable-roleGradients: 1 ) {
+@container style(--disable-roleGradients: 1 ) or style(--disable-roleGradients: 2 ) {
   .animateGradient_e5de78 {
     animation: none ;
 
