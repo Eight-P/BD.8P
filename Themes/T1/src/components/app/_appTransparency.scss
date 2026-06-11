@@ -36,6 +36,8 @@ $Classes:
   ".container_f369db",
   ".pageBody__41ed7",
   ".container_ca49a1",
+  // empty favorites page
+  ".noChannelFavorites__01d5c",
   // Chat box text input
   ".channelTextArea_f75fb0",
   ".channelAttachmentArea_b77158",
@@ -154,13 +156,11 @@ body, #app-mount { background: none !important }
 @each $class in $Classes {
 
   @if string.slice($class, 1, 1) == "!" {
-    // #app-mount #{string.slice($class, 2, -1)} {
     #{string.slice($class, 2, -1)} {
       background: none !important
     }
   }
   @else {
-    // #app-mount #{$class} { background: none }
     #{$class} { background: none }
   }
 }

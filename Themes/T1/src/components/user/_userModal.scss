@@ -11,14 +11,14 @@
 
   .layoutContainer__9c3be:not(.editingPanelEnabled__9c3be) {
 
-    .user-profile-modal-v2  {
+    .user-profile-modal-v2 {
       // width: 800px ;
       min-width: 850px ;
       max-width: 850px ;
       margin: auto ;
       border: none ;
       background: none ;
-      max-height: 75vh ; // affected by general modal design (_modals:9)
+      max-height: 75vh ; // affected by general modal design
       outline: none ;
 
       // main layout container
@@ -48,7 +48,7 @@
       .profile__9c3be {
         width: 375px ; // 350px ?
         border-radius: var(--radius-lg);
-        overflow: hidden ;
+        // overflow: hidden ;
         z-index: 1 ;
         pointer-events: auto ;
         outline: none ;
@@ -184,9 +184,10 @@
       }
       // <- right side info
     }
-  }
 
-  [style*="--profile"] .modalHeaderButtons_b92f52 { display: none }
+    // close btn
+    .modalHeaderButtons_b92f52 { display: none }
+  }
 
   // save changes banner
   .pendingChangesNotice__9fc7d {

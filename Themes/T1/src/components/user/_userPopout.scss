@@ -14,11 +14,10 @@
   border-radius: 12px ;
   width: $PopoutWidht ;
   padding: 0 ; // nitro border
-  overflow: hidden scroll ;
 
   @include shadowEffect("box_2");
-  @include scrollbar(none);
 
+  // -> Colors
   // Floating over banner items
   --bg_floating: var(--control-overlay-secondary-background-default);
   --bg_floatingHover: var(--control-overlay-secondary-background-hover);
@@ -47,11 +46,14 @@
   &.custom-user-profile-theme.theme-light {
     --bg_itemsHover: hsl(from var(--user-profile-overlay-background-hover) h s 30% / .15 );
   }
+  // <- Colors
 
   .inner_c0bea0 {
     padding: 0 ;
     gap: 0px ;
-    overflow: visible ;
+    overflow: visible scroll ;
+
+    @include scrollbar(none);
   }
   // <- General
 
@@ -257,6 +259,7 @@
     background: none ;
     overflow: visible !important ;
     z-index: var(--custom-user-profile-top-layer-z-index);
+    flex-shrink: 0 ;
 
     @include scrollbar(none);
   }
