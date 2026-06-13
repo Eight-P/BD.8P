@@ -8,7 +8,7 @@
 }
 // <- Profile picture decorations
 
-// -> Profile Animations effects
+// -> Profile animations effects
 @container style(--hide-profileEffects: 1) {
   .profileEffects__0dd08 { display: none }
 
@@ -16,7 +16,13 @@
     .profileEffects__0dd08 { display: block }
   }
 }
-// <- Profile Animations effects
+// <- Profile animations effects
+
+// -> Profile frames
+@container style(--hide-profileFrames: 1 ) {
+  .profileFrameContainer__7d80f { display: none }
+}
+// <- Profile frames
 
 // -> Nameplates
 @container style(--hide-nameplates: 1 ) or style(--hide-nameplates: 3 ) {

@@ -2,15 +2,29 @@
   * @name Snippets_DEV
   * @description Snippets Dev
   * @author Eight_P
-  * @version 0.1.1_D
+  * @version 0.1.2_D
 */
 
-@import '../src/HideChatButtons.scss' ;
-@import '../src/HideDecorations.scss' ;
-@import '../src/ReduceMessageInteractions.scss' ;
-@import '../src/UnmaskLinks.scss' ;
+@import '../src/CompactChannelSearch' ;
+// @import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/CompactChannelSearch.css);
+
+@import '../src/HideChatButtons' ;
+// @import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/HideChatButtons.css);
+
+@import '../src/HideDecorations' ;
+// @import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/HideDecorations.css);
+
+@import '../src/ReduceMessageInteractions' ;
+// @import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/ReduceMessageInteractions.css);
+
+@import '../src/UnmaskLinks' ;
+// @import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/UnmaskLinks.css);
 
 :root {
+  // -> CompactChannelSearch
+  --alignSearchLeft: 0 ;
+  // <- CompactChannelSearch
+
   // -> HideChatButtons
   --hide-chatBtn-nitro: 1 ;
   --hide-chatBtn-gif: 0 ;
@@ -22,9 +36,10 @@
   // -> HideDecorations
   --hide-profileEffects: 0 ;
   --hide-avatarDecorations: 0 ;
+  --hide-profileFrames: 0 ;
   --hide-nameplates: 0 ; // (0/1/2/3)
   --hide-clanTags: 0 ; // (0/1/2)
-  --disable-roleGradients: 0 ;
+  --disable-roleGradients: 0 ; // (0/1/2)
   --hide-reactionAnimations: 0 ;
   // <- HideDecorations
 

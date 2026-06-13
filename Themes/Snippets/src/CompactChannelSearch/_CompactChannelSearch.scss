@@ -18,6 +18,10 @@ $borderRadius: var(--radius-sm) !default ;
   min-width: unset ;
   max-width: unset ;
   flex-basis: auto ;
+
+  @container style(--alignSearchLeft: 1 ) {
+    order: -1 ;
+  }
 }
 
 // main inner container

@@ -13,7 +13,7 @@
 
 > [!IMPORTANT]
 > - Copy the imports to the **top** of your CustomCSS/QuickCSS to add the snippets. <br/>
-> - Copy the variables **below** the imports to configure the snippets.
+> - Copy the variables **below** any import to configure the snippets.
 
 <br/>
 
@@ -23,7 +23,14 @@
 
 ```css
 /* Collapses the channel search box into an icon. */
-@import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/CompactChannelSearch.css);
+@import url('https://eight-p.github.io/BD.8P/Themes/Snippets/dist/CompactChannelSearch.css');
+```
+```css
+:root {
+  /* Change the position of the search icon within the toolbar
+    0: Right | 1: Left */
+  --alignSearchLeft: 0 ;
+}
 ```
 </details open>
 
@@ -35,11 +42,11 @@
 
 ```css
 /* Removes buttons from chat input */
-@import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/HideChatButtons.css);
+@import url('https://eight-p.github.io/BD.8P/Themes/Snippets/dist/HideChatButtons.css');
 ```
 ```css
-/* 0 = Visible | 1 = Hidden */
 :root {
+  /* HideChatButtons | 0 = Visible | 1 = Hidden */
   --hide-chatBtn-nitro: 1 ;
   --hide-chatBtn-gif: 0 ;
   --hide-chatBtn-sticker: 0 ;
@@ -52,21 +59,26 @@
 <br/>
 
 ### Hide user decorations and effects
+Name fonts can be disabled in Discord's accessibility settings.
 <details open>
 <summary> css </summary>
 
 ```css
 /* Removes various user decorations */
-@import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/HideDecorations.css);
+@import url('https://eight-p.github.io/BD.8P/Themes/Snippets/dist/HideDecorations.css');
 ```
 ```css
-/* Unless specified: 0 = Visible | 1 = Hidden */
 :root {
-  /* Profile pop-out/modal background effects */
+  /* HideDecorations | Unless specified: 0 = Visible | 1 = Hidden */
+
+  /* Profile effects */
   --hide-profileEffects: 0 ;
 
-  /* User avatar decorations */
+  /* Avatar decorations */
   --hide-avatarDecorations: 0 ;
+
+  /* Profile frames */
+  --hide-profileFrame: 0 ;
 
   /* Nameplates
     0: Show all (default)
@@ -77,8 +89,8 @@
 
   /* Clan tags
     0: Show all (default)
-    1: Hide in member list
-    2: Hide all */
+    1: Hide in member/dm list
+    2: Hide everywhere */
   --hide-clanTags: 0 ;
 
   /* Username holographic gradient & animation
@@ -101,7 +113,7 @@
 
 ```css
 /* Reduces the message buttons, hover effect and background for highlighted messages */
-@import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/ReduceMessageInteractions.css);
+@import url('https://eight-p.github.io/BD.8P/Themes/Snippets/dist/ReduceMessageInteractions.css');
 ```
 ```css
 :root {
@@ -139,7 +151,7 @@
 
 ```css
 /* Shows the url next to a link that would otherwise be masked */
-@import url(https://eight-p.github.io/BD.8P/Themes/Snippets/dist/UnmaskLinks.css);
+@import url('https://eight-p.github.io/BD.8P/Themes/Snippets/dist/UnmaskLinks.css');
 ```
 ```css
 :root {

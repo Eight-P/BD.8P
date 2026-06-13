@@ -2,6 +2,15 @@
   CompactChannelSearch v1.2.2
   <github.com/Eight-P/BD.8P>
 
+  Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
 */
+
+:root {
+  /* Change the position of the search icon within the toolbar
+    0: Right | 1: Left */
+  --alignSearchLeft: 0 ;
+}
+/* <- end of root.
+Snippets css -> */
 
 @import 'CompactChannelSearch/CompactChannelSearch';

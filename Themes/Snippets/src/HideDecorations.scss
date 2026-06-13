@@ -9,11 +9,14 @@
   /* Effects & Decorations
     0: Visible | 1: Hidden */
 
-  /* Profile popout/modal background effects */
+  /* Profile effects */
   --hide-profileEffects: 0 ;
 
-  /* User avatar decorations */
+  /* Avatar decorations */
   --hide-avatarDecorations: 0 ;
+
+  /* Profile frames */
+  --hide-profileFrames: 0 ;
 
   /* Nameplates
     0: Show all (default)
