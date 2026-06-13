@@ -7,10 +7,12 @@
 :root {
   /* Effects & Decorations
     0: Visible | 1: Hidden */
-  /* Profile popout/modal background effects */
+  /* Profile effects */
   --hide-profileEffects: 0 ;
-  /* User avatar decorations */
+  /* Avatar decorations */
   --hide-avatarDecorations: 0 ;
+  /* Profile frames */
+  --hide-profileFrames: 0 ;
   /* Nameplates
     0: Show all (default)
     1: Hide in member list
@@ -47,6 +49,11 @@ Snippets css -> */
   }
   .shop__6db1d .profileEffects__0dd08, .profilePreviewContainer__1abfe .profileEffects__0dd08 {
     display: block;
+  }
+}
+@container style(--hide-profileFrames: 1 ) {
+  .profileFrameContainer__7d80f {
+    display: none;
   }
 }
 @container style(--hide-nameplates: 1 ) or style(--hide-nameplates: 3 ) {
