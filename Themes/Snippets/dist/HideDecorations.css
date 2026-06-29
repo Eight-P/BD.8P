@@ -1,5 +1,5 @@
 /*!
-  HideDecorations v1.0.2
+  HideDecorations v1.0.3
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -39,7 +39,7 @@ Snippets css -> */
   .avatarDecoration__44b0c, .avatarDecoration_c19a55 {
     display: none;
   }
-  .shop__6db1d .avatarDecoration__44b0c, .shop__6db1d .avatarDecoration_c19a55, .profilePreviewContainer__1abfe .avatarDecoration__44b0c, .profilePreviewContainer__1abfe .avatarDecoration_c19a55 {
+  .productPreviewContainer_fcbddd .avatarDecoration__44b0c, .productPreviewContainer_fcbddd .avatarDecoration_c19a55, .avatarPreviewContainer__349b1 .avatarDecoration__44b0c, .avatarPreviewContainer__349b1 .avatarDecoration_c19a55, .previewContainer__7f14f .avatarDecoration__44b0c, .previewContainer__7f14f .avatarDecoration_c19a55 {
     display: block;
   }
 }
@@ -47,13 +47,16 @@ Snippets css -> */
   .profileEffects__0dd08 {
     display: none;
   }
-  .shop__6db1d .profileEffects__0dd08, .profilePreviewContainer__1abfe .profileEffects__0dd08 {
+  .previewContainer_ebb2cf .profileEffects__0dd08, .previewContainer__7f14f .profileEffects__0dd08 {
     display: block;
   }
 }
 @container style(--hide-profileFrames: 1 ) {
   .profileFrameContainer__7d80f {
     display: none;
+  }
+  .previewContainer_c9a5b2 .profileFrameContainer__7d80f, .previewContainer__7f14f .profileFrameContainer__7d80f {
+    display: block;
   }
 }
 @container style(--hide-nameplates: 1 ) or style(--hide-nameplates: 3 ) {
