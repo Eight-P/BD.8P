@@ -1,6 +1,6 @@
 // Chat | Forums & Threads & voice channel sidebar
 
-#app-mount {
+// #app-mount {
 
 // -> Forum channel
 .container_f369db {
@@ -141,9 +141,8 @@
 
 // main chat with split view thread
 .threadSidebarOpen_f75fb0 {
-  // border-radius: 0 ;
-  border: none ;
-  overflow: visible ;
+  border: none !important ;
+  // overflow: visible ; // ?
 
   &::after {
     content: "";
@@ -159,6 +158,7 @@
 }
 
 // <- Forum channel
+
 
 // -> Forum / Threads chat
 // idk
@@ -285,4 +285,4 @@
 
 // <- Forum / Threads chat
 
-}
+// }

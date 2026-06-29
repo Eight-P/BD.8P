@@ -27,9 +27,7 @@
   // Body items
   --bg_items: hsl(from var(--user-profile-overlay-background) h s 35% / .1 );
   --bg_itemsHover: var(--user-profile-overlay-background-hover);
-  // --c_items: hsl(from var(--text-strong) h s 70% / 1 );
   --c_items: var(--interactive-text-default);
-  // --c_itemsHover: var(--text-strong);
   --c_itemsHover: var(--interactive-text-hover);
 
   --custom-user-profile-base-layer-z-index: 3 ; // keep profile effect below
@@ -39,7 +37,6 @@
   }
 
   &.custom-user-profile-theme:not(.theme-light) {
-    // --bg_items: hsl(from var(--user-profile-overlay-background) h s l / .15 );
     --bg_items: hsl(from var(--user-profile-overlay-background) h s l / .1 );
   }
 
@@ -262,6 +259,21 @@
     flex-shrink: 0 ;
 
     @include scrollbar(none);
+
+    &:has(> div > .warning__35859) {
+      gap: 0 ;
+    }
+  }
+
+  .warning__35859 {
+    position: absolute ;
+    width: unset ;
+    top: -$AvatarPadding - 40px - 5px ;
+    left: $AvatarPadding * 2 + 80px ;
+    right: $ActionBtnPadding + 2px ;
+    padding: 5px ;
+
+    .iconDiv__35859 { display: none }
   }
 
   // -> Name, Badges, ..

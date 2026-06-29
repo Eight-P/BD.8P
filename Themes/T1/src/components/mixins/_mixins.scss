@@ -76,15 +76,15 @@
 @mixin scrollerFadeOut ($top:5px, $bottom:5px) {
   @if ($top == none) {
     mask-image: none !important ;
-    -webkit-mask-image: none !important ;
+    -webkit-mask: none !important ;
   }
   @else if (unitCheck(($top, $bottom), "px") == false ) {
     @warn "scrollerFadeOut(#{$top}, #{$bottom}) expects arguments to be px" ;
   }
   @else {
     $LG: to bottom, transparent, #000 $top, #000 calc(100% - $bottom), transparent;
-    mask-image: linear-gradient($LG);
-    -webkit-mask-image: linear-gradient($LG);
+    mask: linear-gradient($LG);
+    -webkit-mask: linear-gradient($LG);
   }
 }
 

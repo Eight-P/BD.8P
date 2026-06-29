@@ -57,6 +57,7 @@ $iconScale: var(--sbIconScale);
   height: 100vw ;
   min-height: 100vw ;
   width: $sb_height ;
+  background: none !important ;
   transform: rotate(-90deg) translateX(-#{$sb_height});
   transform-origin: top left ;
   outline: none ;
@@ -412,6 +413,7 @@ $iconScale: var(--sbIconScale);
     .folderPreviewWrapper__48112 {
       transition: .2s ;
       pointer-events: auto ;
+      background-color: var(--custom-preview-background, transparent);
 
       &:hover {
         border-radius: 15% ;

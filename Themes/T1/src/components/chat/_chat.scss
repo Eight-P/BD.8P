@@ -329,11 +329,18 @@ $ChatScrollerBottomSpacing: 16px ;
       @include shadowEffect("box_3");
     }
   }
+  // <- Body
 
-  // Switch page btns
+  // -> Footer (page switcher)
+  .paginationDock_a98f3b {
+    direction: ltr ;
+  }
+
   .pageButton_c15210 {
     background: none ;
     color: var(--interactive-normal);
+    min-height: 46px - 16px ;
+    max-height: 46px - 16px ;
 
     &:hover {
       color: var(--interactive-hover);
@@ -343,7 +350,7 @@ $ChatScrollerBottomSpacing: 16px ;
       color: var(--interactive-active);
     }
   }
-  // <- Body
+  // <- Footer
 }
 // <- Search results sidebar
 }
