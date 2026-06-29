@@ -2,7 +2,8 @@
 @container style(--hide-avatarDecorations: 1) {
   .avatarDecoration__44b0c, .avatarDecoration_c19a55 { display: none }
 
-  .shop__6db1d, .profilePreviewContainer__1abfe {
+  // shop cards, left side preview, right main preview
+  .productPreviewContainer_fcbddd, .avatarPreviewContainer__349b1, .previewContainer__7f14f {
     .avatarDecoration__44b0c, .avatarDecoration_c19a55 { display: block }
   }
 }
@@ -12,7 +13,8 @@
 @container style(--hide-profileEffects: 1) {
   .profileEffects__0dd08 { display: none }
 
-  .shop__6db1d, .profilePreviewContainer__1abfe {
+  // shop cards/left side preview, right main preview
+  .previewContainer_ebb2cf, .previewContainer__7f14f {
     .profileEffects__0dd08 { display: block }
   }
 }
@@ -21,6 +23,11 @@
 // -> Profile frames
 @container style(--hide-profileFrames: 1 ) {
   .profileFrameContainer__7d80f { display: none }
+
+  // shop cards/left side preview, right main preview
+  .previewContainer_c9a5b2, .previewContainer__7f14f {
+    .profileFrameContainer__7d80f { display: block }
+  }
 }
 // <- Profile frames
 
