@@ -1,5 +1,10 @@
 // User | DMs sidebar
+.content_f75fb0 > .aside_f58343 {
+  display: contents ;
+}
+
 .content_f75fb0 .outer_c0bea0 {
+  box-shadow: none ;
 
   --user-profile-overlay-background: var(--background-modifier-accent);
 
@@ -16,24 +21,41 @@
     margin-top: 3px ;
   }
 
-  .footer__272c7 {
+  &:not(.custom-profile-frame) {
+    .redesignFooter__272c7 {
+      height: 45px ;
 
-    .footerButton__272c7 {
-      height: 46px ;
-      width: max-content ;
-      margin: 0 auto ;
-
-      .text-sm\/normal_cf4812 {
-        color: $BtnTextNormal !important ;
-      }
-
-      &:hover .text-sm\/normal_cf4812 {
-        color: $BtnTextHover !important ;
-      }
-      // custom color profile
-      &::before, &::after { display: none }
+      @include divider(top);
     }
-
-    @include divider(top);
   }
+
+  @container style(--hide-profileFrames: 1 ) {
+    .redesignFooter__272c7 {
+      height: 45px ;
+
+      @include divider(top);
+    }
+  }
+
+  // old footer
+  // .footer__272c7 {
+
+  //   .footerButton__272c7 {
+  //     height: 46px ;
+  //     width: max-content ;
+  //     margin: 0 auto ;
+
+  //     .text-sm\/normal_cf4812 {
+  //       color: $BtnTextNormal !important ;
+  //     }
+
+  //     &:hover .text-sm\/normal_cf4812 {
+  //       color: $BtnTextHover !important ;
+  //     }
+  //     // custom color profile
+  //     &::before, &::after { display: none }
+  //   }
+
+  //   @include divider(top);
+  // }
 }

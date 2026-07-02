@@ -55,10 +55,11 @@
   // <- General
 
   // -> Background effects
-  .profileEffects__01370 {
+  .profileEffects__0dd08 {
     z-index: 1 ;
+    inset: 0px ;
 
-    &:not(.hovered__01370) {
+    &:not(.hovered__0dd08) {
       opacity: .8 ;
     }
   }
@@ -526,14 +527,14 @@
 
   // -> Private profile
   // notice about private profile
-  &.isPrivate_c0bea0 .overlay_c0bea0 {
-    // just so it's visually distinct to a regular section.
-    background: none ;
+  // &.isPrivate_c0bea0 .overlay_c0bea0 {
+  //   // just so it's visually distinct to a regular section.
+  //   background: none ;
 
-    .banner__24928 {
-      padding: var(--space-12) 0 ;
-    }
-  }
+  //   .banner__24928 {
+  //     padding: var(--space-12) 0 ;
+  //   }
+  // }
   // <- Private profile
 }
 
