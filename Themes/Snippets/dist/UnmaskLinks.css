@@ -13,7 +13,7 @@
 }
 
 /* <- end of root.
-Snippets css -> */
+Snippet -> */
 @container style(--unmask-links: 1 ) {
   .messageContent_c19a55 .anchor_edefb8[href][title$=")"]::after {
     content: " (" attr(href) ")";

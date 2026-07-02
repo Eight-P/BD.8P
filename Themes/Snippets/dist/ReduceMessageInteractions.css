@@ -27,7 +27,7 @@
 }
 
 /* <- end of root.
-Snippets css -> */
+Snippet -> */
 @container style(--hide-messageBtnEmojis: 1 ) OR style(--hide-messageBtnEmojis: 2 ) {
   .buttonsInner__5126c > span:has(.emoji__040f0) {
     order: -1;

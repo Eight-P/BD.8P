@@ -1,5 +1,5 @@
 /*!
-  HideDecorations v1.0.3
+  HideDecorations v1.0.4
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -34,7 +34,7 @@
 }
 
 /* <- end of root.
-Snippets css -> */
+Snippet -> */
 @container style(--hide-avatarDecorations: 1) {
   .avatarDecoration__44b0c, .avatarDecoration_c19a55 {
     display: none;
@@ -54,6 +54,9 @@ Snippets css -> */
 @container style(--hide-profileFrames: 1 ) {
   .profileFrameContainer__7d80f {
     display: none;
+  }
+  .aside_f58343 > .outer_c0bea0 {
+    margin: 0;
   }
   .previewContainer_c9a5b2 .profileFrameContainer__7d80f, .previewContainer__7f14f .profileFrameContainer__7d80f {
     display: block;
