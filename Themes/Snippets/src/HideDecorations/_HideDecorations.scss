@@ -24,6 +24,11 @@
 @container style(--hide-profileFrames: 1 ) {
   .profileFrameContainer__7d80f { display: none }
 
+  // dm profile sidebar
+  .aside_f58343 > .outer_c0bea0 {
+    margin: 0 ;
+  }
+
   // shop cards/left side preview, right main preview
   .previewContainer_c9a5b2, .previewContainer__7f14f {
     .profileFrameContainer__7d80f { display: block }
