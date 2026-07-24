@@ -57,7 +57,13 @@ $borderRadius: var(--radius-sm) !default ;
   background: none ;
   border-color: transparent ;
 
+  // stable (old?)
   .DraftEditor-root {
+    padding: 0 ;
+  }
+
+  // canary (new?)
+  .editor__25bec {
     padding: 0 ;
   }
 
@@ -83,11 +89,19 @@ $borderRadius: var(--radius-sm) !default ;
   }
 
   .DraftEditor-root {
-    height: unset ;
     cursor: text ;
     // to overlap searchBar_c322aa border
-    padding: 4px var(--space-4) 2px 6px !important ;
+    padding: 6px var(--space-4) 2px 6px !important ;
     margin-left: -2px ;
+    box-sizing: content-box ;
+  }
+
+  .editor__25bec {
+    cursor: text ;
+    // to overlap searchBar_c322aa border
+    padding: 8px var(--space-4) 8px 8px !important ;
+    margin-left: -2px ;
+    box-sizing: content-box ;
   }
 
   .iconLayout__0c4c4:not(.pointer__0c4c4) {
