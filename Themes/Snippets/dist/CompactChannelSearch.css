@@ -1,5 +1,5 @@
 /*!
-  CompactChannelSearch v1.2.2
+  CompactChannelSearch v1.2.3
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -65,6 +65,9 @@ Snippet -> */
 .searchBar_c322aa .DraftEditor-root {
   padding: 0;
 }
+.searchBar_c322aa .editor__25bec {
+  padding: 0;
+}
 .searchBar_c322aa .icon__0c4c4 {
   stroke: currentcolor;
 }
@@ -81,10 +84,16 @@ Snippet -> */
   color: var(--icon-subtle);
 }
 .open_c322aa .DraftEditor-root {
-  height: unset;
   cursor: text;
-  padding: 4px var(--space-4) 2px 6px !important;
+  padding: 6px var(--space-4) 2px 6px !important;
   margin-left: -2px;
+  box-sizing: content-box;
+}
+.open_c322aa .editor__25bec {
+  cursor: text;
+  padding: 8px var(--space-4) 8px 8px !important;
+  margin-left: -2px;
+  box-sizing: content-box;
 }
 .open_c322aa .iconLayout__0c4c4:not(.pointer__0c4c4) {
   pointer-events: none;
