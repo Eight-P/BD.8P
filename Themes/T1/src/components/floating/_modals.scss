@@ -6,12 +6,17 @@
 .layer_bc663c {
 
   .container__8a031 {
-    background: $BG_Body ;
+    // background: $BG_Body ;
+    background: $BG_Meta ;
 
     .bodyControls__8a031 {
 
       &:after { display: none }
     }
+  }
+
+  .modalTextContainer__4d95d, .codeView__4d95d {
+    background: $BG_Body ;
   }
 
   // image view control btns

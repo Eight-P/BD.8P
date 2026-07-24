@@ -107,20 +107,17 @@ $iconScale: var(--sbIconScale);
 
   // Pill
   .item__58105 {
-    visibility: hidden ;
-    height: calc($iconBaseSize * $iconScale * 0.20 ) !important ;
+    height: calc($iconBaseSize * $iconScale * 0.22 ) !important ;
     margin-left: -4px ;
 
-    // Server selected
-    &[style^="opacity: 1; height: 40px"] {
-      visibility: visible ;
-      height: calc($iconBaseSize * $iconScale * 0.87 ) !important ;
-      border-radius: 0 8px 8px 0 ;
+    &.hovered__58105 {
+      display: none ;
     }
 
-    // Unread indicator
-    &[style^="opacity: 1; height: 8px"] {
-      visibility: visible ;
+    &.selected__58105 {
+      height: calc($iconBaseSize * $iconScale * 0.87 ) !important ;
+      border-radius: 0 8px 8px 0 ;
+      display: block !important ;
     }
   }
 

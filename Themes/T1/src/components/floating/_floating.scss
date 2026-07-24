@@ -85,7 +85,7 @@ $C_Header: var(--interactive-normal);
 // <- Layers general
 
 // -> Tooltips
-.layer__59d0d:not(.theme-light) {
+// .layer__59d0d:not(.theme-light) {
 
   .tooltipPrimary_c36707 {
     background: $BG_Floating ;
@@ -97,12 +97,12 @@ $C_Header: var(--interactive-normal);
     }
   }
 
-  .tooltip__4e35b {
+  .tooltip_fa450d {
     background: $BG_Floating ;
 
-    .caretFill__4e35b {
+    .caretFill_fa450d {
       fill: $BG_Floating ;
     }
   }
-}
+// }
 // <- Tooltips

@@ -7,9 +7,9 @@
   .contentWrapper__9c62c, // Apps&Cmds
   .contentWrapper__08434, // Chat picker
   .container_d9c882, // Threads
-  .messagesPopoutWrap_e8b59c, // Pinned Msgs
+  .messagesPopoutWrap__432f4, // Pinned Msgs
   .popoutContainer__4ad69, // Bookmarks
-  .recentMentionsPopout__95796 // Inbox
+  .container__8cb2e // Inbox
   {
     border: none ;
     @include shadowEffect("box_2");
@@ -26,9 +26,9 @@
   }
 
   .container_d9c882, // Threads
-  .messagesPopoutWrap_e8b59c, // Pinned Msgs
+  .messagesPopoutWrap__432f4, // Pinned Msgs
   .popoutContainer__4ad69, // Bookmarks
-  .recentMentionsPopout__95796 // Inbox
+  .container__8cb2e // Inbox
   {
     width: 50vw ;
     min-width: min(480px, 95vw);
@@ -37,14 +37,14 @@
   }
 
   // "Pro tip" footer
-  .footer_e8b59c { display: none }
+  .footer__432f4 { display: none }
 
   // Header text (bookmarks & Pins)
-  .titleContainer_e8b59c .text-lg\/semibold_cf4812 {
+  .titleContainer__432f4 .text-lg\/semibold_cf4812 {
     color: $C_Header !important ;
   }
 
-  .header_d9c882, .header_e8b59c, .header_ab6641 {
+  .header_d9c882, .header__432f4, .header__06f80 {
     border: none ;
     z-index: 1 ;
 
@@ -175,31 +175,15 @@
   // <- Threads
 
   // -> Pins
-  // .messagesPopoutWrap_e8b59c {
+  // message action btns
+  .actionButtons__432f4 .buttonContainer__432f4 {
 
-  // }
-
-  // jump to message btns
-  .actionButtons_e8b59c {
-
-    .jumpButton_e8b59c {
-      background: $BG_Meta ;
-      padding: 4px 16px ;
-
-      @include shadowEffect("box_3");
-
-      + .button__201d5 {
-        width: 24px ;
-        background: $BG_Meta !important ;
-
-        @include shadowEffect("box_3");
-      }
-    }
+    @include shadowEffect("box_3");
   }
   // <- Pins
 
   // -> Bookmarks (solo, inbox)
-  .popoutContainer__4ad69, .recentMentionsPopout__95796 {
+  .popoutContainer__4ad69, .container__8cb2e {
 
     .messagesScroller__4ad69 {
       gap: 8px ;
@@ -231,19 +215,19 @@
   // <- Bookmarks
 
   // -> Inbox
-  .recentMentionsPopout__95796 {
+  .container__8cb2e {
 
     // -> Header
     // Header icon & text
-    .inboxIcon_ab6641, .inboxTitle_ab6641 {
+    .inboxIcon__06f80, .inboxTitle__06f80 {
       color: $C_Header !important ;
     }
 
-    .tabBar_ab6641 {
-      margin: 16px 16px 0 16px ;
+    .tabBar__06f80 {
+      // margin: 16px 16px 0 16px ;
       justify-content: space-around ;
 
-      .tab_ab6641 {
+      .tab__06f80 {
         margin: 0 ;
 
         &::after {
@@ -252,7 +236,7 @@
       }
     }
 
-    .friendRequestsButton__523aa {
+    .friendRequestsButton_c7a32c {
       border: none ;
     }
     // <- Header
@@ -270,39 +254,33 @@
       }
     }
 
-    // for you empty
-    .container_a54d1d {
-      margin: 0 ;
-      background: $BG_Body ;
+    // for you empty (gone ?)
+    // .container_a54d1d {
+    //   margin: 0 ;
+    //   background: $BG_Body ;
+    // }
+
+    // channel item inner
+    .box__376cb {
+      border-radius: 0 ;
+      border-width: 1px 0 ;
+      margin: 2px 0 ;
+      box-sizing: content-box ;
     }
 
-    // -> Unreads
-    // channel item
-    .channel__427f0 {
-      padding-bottom: 3px ;
+    .channelHeader__5d903  {
+      background: $BG_Meta ;
+      top: 0 ;
 
-      // Collapse btn
-      .collapseButton__35a7e {
-        order: 2 ;
-        display: flex ;
-        align-items: center ;
-        justify-content: center ;
-        height: 30px ;
-        width: 30px ;
-        margin-right: var(--space-8) ;
-        padding: 0 ;
-        color: var(--interactive-normal);
-
-        &:hover {
-          color: var(--interactive-hover);
-        }
-      }
-
-      // other action btns
-      .buttonGroup__427f0 {
-        order: 3 ;
-      }
+      @include shadowEffect("box_3");
     }
+
+    .chevron__5d903 { display: none }
+
+    .channelNameSection__5d903 {
+      margin-left: 5px ;
+    }
+
     // msg divider general
     .divider__908e2 {
       margin: 30px 0 30px 0 ;
@@ -310,41 +288,22 @@
       .content__908e2 {
         background: $BG_Body ;
       }
-
-      // divider in channel item
-      &.divider__1ccd1 {
-        margin: 20px 0 20px 16px ;
-      }
     }
-    .forumPost__7d15e {
-      margin: 0 ;
-      padding: 10px 12px 16px 12px ;
-      background: none ;
-      border: none ;
-      border-radius: 0 ;
-      border-bottom: 1px solid var(--background-modifier-accent);
-      transition: none ;
+
+    .jumpButton_ade175 {
+      background: $BG_BodyAlt ;
 
       &:hover {
-        background: var(--background-modifier-hover);
+        background: $BG_Meta  ;
       }
     }
-    // <- Unreads
-
-    // -> Mentions
-    .container__95796 {
-      padding: 0 ;
+    .forumPost__8a0ec {
+      margin: 0 ;
+      padding: 10px 12px 16px 12px ;
+      border-bottom: 1px solid var(--background-modifier-accent);
+      transition: none ;
     }
-
-    // mention header
-    .channelHeader__35a7e {
-      padding: 12px 16px ;
-
-      @include shadowEffect("box_3");
-    }
-    // <- Mentions
-
-      // <- Body
+    // <- Body
   }
   // <- Inbox
 
