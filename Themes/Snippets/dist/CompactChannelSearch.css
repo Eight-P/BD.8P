@@ -1,5 +1,5 @@
 /*!
-  CompactChannelSearch v1.2.3
+  CompactChannelSearch v1.3.0
   <github.com/Eight-P/BD.8P>
 
   Copy & paste the root section with the variables into your CustomCSS/QuickCSS to configure this snippet.
@@ -24,11 +24,7 @@ Snippet -> */
   min-width: unset;
   max-width: unset;
   flex-basis: auto;
-}
-@container style(--alignSearchLeft: 1 ) {
-  .search__49676 {
-    order: -1;
-  }
+  order: calc(var(--alignSearchLeft, 0) * -1);
 }
 
 .searchBar_c322aa {
@@ -62,14 +58,16 @@ Snippet -> */
   background: none;
   border-color: transparent;
 }
-.searchBar_c322aa .DraftEditor-root {
-  padding: 0;
-}
+.searchBar_c322aa .DraftEditor-root,
 .searchBar_c322aa .editor__25bec {
   padding: 0;
 }
 .searchBar_c322aa .icon__0c4c4 {
   stroke: currentcolor;
+}
+
+.chat_f75fb0:has(> .content_f75fb0 > .searchResultsWrap_a98f3b) .searchBar_c322aa {
+  animation-duration: 0s !important;
 }
 
 .open_c322aa .searchBar_c322aa {
