@@ -19,8 +19,8 @@
 }
 
 #vc-friendcount, #vc-guildcount {
-  & + #vc-friendcount,
-  & + #vc-guildcount {
+  + #vc-friendcount,
+  + #vc-guildcount {
     height: 12px !important ;
     transform: rotate(90deg) translateY(calc(50% - 14px)) translateX(-40px);
   }
@@ -32,7 +32,7 @@
   color: transparent ;
   width: 18px ;
   height: 18px ;
-  margin: 6px auto ;
+  margin: 10px auto ;
   overflow: hidden ; // keeps size constrained to height and width
 
   // not 100% sure why they are positioned they way they are.

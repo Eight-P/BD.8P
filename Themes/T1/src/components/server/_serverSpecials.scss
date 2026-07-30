@@ -38,14 +38,14 @@
     // option items
     .optionButtonWrapper__270d7 {
       background: var(--background-modifier-accent);
-      border-color: transparent ;
+      border: none ;
 
       &:hover {
-        background: var(--background-modifier-hover);
+        background: var(--background-modifier-hover) !important ;
       }
 
       &.selected__270d7 {
-        border-color: var(--interactive-muted);
+        background: var(--background-modifier-selected);
       }
 
       .text-md\/medium_cf4812 {
@@ -77,29 +77,34 @@
 
     // -> Category header
     .categoryRow_e4503a {
-      justify-content: space-around ;
-      justify-content: center ;
+      justify-content: start ;
       gap: 20px ;
+      margin-top: 20px ;
 
       @include divider(top);
+
+      &.uncategorized_e4503a {
+        padding: var(--space-md) 0 var(--space-xs);
+      }
     }
 
     .categoryText_e4503a {
       color: var(--header-secondary) !important ;
-      font-size: 14px ;
     }
 
-    .selectAll_e4503a {
-      background: var(--background-modifier-hover);
-      padding: 2px 6px ;
+    // follow bnt & txt
+    .categoryRow_e4503a .container__5a838 {
+      display: flex ;
 
-      .checkbox_f525d3 {
-        border-color: transparent ;
+      // follow category text
+      .labelContainer__5a838 {
+        display: none ;
       }
+    }
 
-      &:hover {
-        background: var(--background-modifier-selected);
-      }
+    // search
+    .header__41ed7 {
+      margin-bottom: 1px ;
     }
     // <- Category header
 
@@ -112,19 +117,39 @@
       }
     }
 
-    .iconContainer__2ea32 {
-      margin-right: 6px ;
+    .channelSubtitles_e4503a {
+      margin-left: 20px + 3px + 8px ;
+
+      .defaultColor__4bd52 {
+        color: var(--header-secondary);
+      }
     }
 
-    .viewChannelButton_e4503a {
+    .iconContainer__2ea32 {
+      margin-right: 3px ;
+    }
+
+    .viewChannelButtonWrapper_e4503a {
       display: block ;
     }
-    // <- Row item
 
-    .checkbox_f525d3 {
-      background: none ;
-      border-color: var(--interactive-normal) ;
+    .checkboxIndicator__714a9 {
+      background: none !important ;
     }
+    .checkboxOption__714a9[data-selected] .checkboxIndicator__714a9 {
+      border: none ;
+    }
+    .checkboxOption__714a9[data-selected]:hover {
+
+      .checkStroke__714a9 {
+        color: var(--red) !important ;
+
+        path {
+          d: path("M 18.4 4 L 12 10.4 L 5.6 4 L 4 5.6 L 10.4 12 L 4 18.4 L 5.6 20 L 12 13.6 L 18.4 20 L 20 18.4 L 13.6 12 L 20 5.6 L 18.4 4 Z");
+        }
+      }
+    }
+    // <- Row item
   }
   // <- Channels list
 
@@ -199,55 +224,3 @@
   }
 }
 // <- Server shop
-
-
-// -> Server Boosts
-// .page__5e434 .container__89463 {
-//   container-type: inline-size ;
-// }
-
-// .contentContainer__89463 {
-//   @container (width < 950px) {
-//     flex-direction: column-reverse ;
-
-//     .sidebarContainer__89463 {
-//       flex-direction: row ;
-//       width: auto ;
-//       border: none ;
-//       max-height: 33% ;
-
-//       .header__2281b { display: none }
-
-//       // "become a server booster"
-//       .container__6c253 {
-//         margin: 0 var(--space-16) ;
-//         background: none ;
-//         border: none ;
-
-//         .image__6c253 { display: none }
-
-//         // boost this server btn
-//         .shinyButton__6a443 {
-//           color: var(--button-filled-brand-text) !important ;
-//           border: 1px solid var(--button-filled-brand-border) !important ;
-
-//           &:hover {
-//             color: var(--guild-boosting-pink) !important ;
-//           }
-//         }
-
-//         .exampleMessage__6c253 {
-//           order: 5 ;
-//         }
-//       }
-
-//       // boots history
-//       .container__2281b {
-//         padding: 16px ;
-//         max-height: 100% ;
-//         flex: 1 1 100% ;
-//       }
-//     }
-//   }
-// }
-// <- Server Boosts

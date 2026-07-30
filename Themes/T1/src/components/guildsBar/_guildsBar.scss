@@ -28,7 +28,6 @@ $iconScale: var(--sbIconScale);
 
 
 @mixin itemSeparator() {
-
   $separatorPadding: 11px ;
 
   content: "" ;
@@ -107,7 +106,7 @@ $iconScale: var(--sbIconScale);
 
   // Pill
   .item__58105 {
-    height: calc($iconBaseSize * $iconScale * 0.22 ) !important ;
+    height: calc($iconBaseSize * $iconScale * 0.2 ) !important ;
     margin-left: -4px ;
 
     &.hovered__58105 {
@@ -115,7 +114,7 @@ $iconScale: var(--sbIconScale);
     }
 
     &.selected__58105 {
-      height: calc($iconBaseSize * $iconScale * 0.87 ) !important ;
+      height: calc($iconBaseSize * $iconScale * 0.8 ) !important ;
       border-radius: 0 8px 8px 0 ;
       display: block !important ;
     }

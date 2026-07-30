@@ -10,17 +10,17 @@
   --hide-chatBtn-emoji: 0 ;
   --hide-chatBtn-apps: 0 ;
 
-  /* Reduce message buttons unless hovered
-    0: Show all (default)
-    1: Reduce until hovered
-    2: Hidden */
-  --reduce-messageBtns: 0 ;
-
-  /* Hide just the emojis in message buttons
+  /* Hide the emojis in message buttons (unless hovered)
     0: Show all (default)
     1: Hide until hovered
     2: Hidden */
   --hide-messageBtnEmojis: 1 ;
+
+  /* Hide all message buttons (unless hovered)
+    0: Show all (default)
+    1: Hide until hovered
+    2: Hidden */
+  --reduce-messageBtns: 0 ;
 
   /* Hide message background hover
     0: Highlight on hover (default)
@@ -115,6 +115,10 @@
 
   /* Server boost goal in the channel sidebar */
   --hide-serverBoostStats: 0 ;
+
+  /* Change the position of the search icon within the toolbar
+    0: Right | 1: Left */
+  --alignSearchLeft: 0 ;
 
   /* Add Scrollbars */
   --show-sidebarScrollbar: 0 ;

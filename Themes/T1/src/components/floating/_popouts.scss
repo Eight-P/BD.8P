@@ -219,12 +219,14 @@
 
     // -> Header
     // Header icon & text
+    .header__06f80 {
+      border-bottom: 3px solid $BG_Body ;
+    }
     .inboxIcon__06f80, .inboxTitle__06f80 {
       color: $C_Header !important ;
     }
 
     .tabBar__06f80 {
-      // margin: 16px 16px 0 16px ;
       justify-content: space-around ;
 
       .tab__06f80 {
@@ -244,27 +246,20 @@
     // -> Body
     .scrollerBase_d125d2 {
       padding: 0 !important ;
-      border-top: 2px solid $BG_Body ;
 
       @include scrollbar(none);
-
-      // jump to msg btn mentions & unreads
-      .jumpButton_ed0c8c {
-        background: $BG_Meta ;
-      }
     }
 
-    // for you empty (gone ?)
-    // .container_a54d1d {
-    //   margin: 0 ;
-    //   background: $BG_Body ;
-    // }
+    .emptyContainer__4a7f0 {
+      background: $BG_Body ;
+    }
 
+    // -> Content
     // channel item inner
     .box__376cb {
       border-radius: 0 ;
-      border-width: 1px 0 ;
-      margin: 2px 0 ;
+      border: none ;
+      margin: 0 0 3px 0 ;
       box-sizing: content-box ;
     }
 
@@ -303,6 +298,7 @@
       border-bottom: 1px solid var(--background-modifier-accent);
       transition: none ;
     }
+    // <- Content
     // <- Body
   }
   // <- Inbox
@@ -342,7 +338,7 @@
 
 // -> Context menus
 .menu_c1e9c4 {
-  border: none ;
+  border: none !important ;
   @include shadowEffect("box_2");
 
   .scrollerBase_d125d2::-webkit-scrollbar-thumb {

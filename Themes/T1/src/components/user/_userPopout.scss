@@ -273,6 +273,8 @@
     left: $AvatarPadding * 2 + 80px ;
     right: $ActionBtnPadding + 2px ;
     padding: 5px ;
+    background: var(--bg_floating);
+    border-width: 2px ;
 
     .iconDiv__35859 { display: none }
   }
