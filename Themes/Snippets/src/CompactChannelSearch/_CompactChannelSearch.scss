@@ -4,6 +4,9 @@ $backgroundOpen: var(--background-gradient-low, var(--input-background-default))
 $borderColorOpen: var(--input-border-default) !default ;
 $borderRadius: var(--radius-sm) !default ;
 
+$searchWidthClosed: 32px ;
+$searchWidthOpen: 244px ;
+
 // chat toolbar container
 .title_f75fb0 .toolbar__9293f {
   flex-shrink: 0 ; // to overflow children
@@ -18,10 +21,7 @@ $borderRadius: var(--radius-sm) !default ;
   min-width: unset ;
   max-width: unset ;
   flex-basis: auto ;
-
-  @container style(--alignSearchLeft: 1 ) {
-    order: -1 ;
-  }
+  order: calc(var(--alignSearchLeft, 0) * -1);
 }
 
 // main inner container
@@ -31,8 +31,8 @@ $borderRadius: var(--radius-sm) !default ;
   border-radius: $borderRadius ;
 
   @keyframes expandSearchWidth {
-    from { min-width: 32px }
-    to { min-width: 244px }
+    from { min-width: $searchWidthClosed }
+    to { min-width: $searchWidthOpen }
   }
 
   .iconLayout__0c4c4 {
@@ -53,16 +53,13 @@ $borderRadius: var(--radius-sm) !default ;
   // not using :not(open) to reduce first load styling delay
   // -> search bar collapsed
   cursor: default ; // "avoids" small non clickable area when collapsed
-  width: 32px ;
+  width: $searchWidthClosed ;
   background: none ;
   border-color: transparent ;
 
-  // stable (old?)
-  .DraftEditor-root {
-    padding: 0 ;
-  }
-
-  // canary (new?)
+  // old
+  .DraftEditor-root,
+  // new
   .editor__25bec {
     padding: 0 ;
   }
@@ -73,7 +70,13 @@ $borderRadius: var(--radius-sm) !default ;
   // <- search bar collapsed
 }
 
+
 // -> search bar open
+// avoids reopening when switching channels
+.chat_f75fb0:has(> .content_f75fb0 > .searchResultsWrap_a98f3b) .searchBar_c322aa {
+  animation-duration: 0s !important ;
+}
+
 .open_c322aa {
   .searchBar_c322aa {
     cursor: pointer ;
@@ -88,6 +91,7 @@ $borderRadius: var(--radius-sm) !default ;
     }
   }
 
+  // old
   .DraftEditor-root {
     cursor: text ;
     // to overlap searchBar_c322aa border
@@ -96,6 +100,7 @@ $borderRadius: var(--radius-sm) !default ;
     box-sizing: content-box ;
   }
 
+  // new
   .editor__25bec {
     cursor: text ;
     // to overlap searchBar_c322aa border
