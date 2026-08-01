@@ -6,9 +6,15 @@
   $BG-Body: var(--background-tertiary);
 
   $PopoutWidht: 340px ;
-  $ProfileTop: 20 + 21 + 12 + 1 + 8 - 4 ;
-  $ProfileLeft: -64 ;
-  $AvatarPadding: (119 - 80px) * .5 ;
+  // banner original: 300x105 (20:7) -> 340x119
+  $BannerHeight: 119px ;
+  $AvatarHeight: 80px ;
+  $AvatarPadding: ($BannerHeight - $AvatarHeight) * .5 ;
+
+  // Status SVG offset + avatar padding + body padding + user name/2 + self/2
+  $StatusOffsetTop: 4 + stripUnit($AvatarPadding) + 12 + (24 * .5) + (16 * .5) ;
+  $StatusOffsetLeft: -63 ;
+
   $ActionBtnPadding: 8px ;
 
   border-radius: 12px ;
@@ -52,6 +58,19 @@
 
     @include scrollbar(none);
   }
+
+  // "private profile" banner
+  .banner__43147 {
+    position: absolute ;
+    left: $PopoutWidht * 0.5 ;
+    padding: 3px 10px 5px 10px ;
+    transform: translateX(-50%);
+    background: var(--bg_floating);
+    color: var(--c_floating);
+    border-radius: 0 0 4px 4px ;
+
+    .text__43147 { display: none }
+  }
   // <- General
 
   // -> Background effects
@@ -92,29 +111,36 @@
   // -> Header
   .header__5be3e {
     min-height: unset ;
-    height: auto ;
+    height: $BannerHeight ;
 
-    // banner: mask, separator, gif indicator, avatar/status react action
-    .mask__68edb mask, .banner__68edb:before, .gifTag__68edb, .popover__2d0ab { display: none }
+    // banner: separator, gif indicator, avatar/status react action
+    .banner__68edb:before, .gifTag_b83360, .popover__2d0ab { display: none }
+
+    .banner_b83360 {
+      height: $BannerHeight !important ;
+    }
+
+    // banner inner
+    .fill_b83360 {
+      mask: none ;
+    }
 
     // -> Avatar / Status icon
     // Main container
     .avatar__75742 {
       top: $AvatarPadding ;
       left: $AvatarPadding ;
-      // z-index: 10 ; // for status icon
 
-      // -> Image / Status icon
       .svg__44b0c {
-        top: $ProfileTop * 1px ;
-        left: $ProfileLeft * 1px ;
+        top: $StatusOffsetTop * 1px ;
+        left: $StatusOffsetLeft * 1px ;
         contain: none ;
         overflow: visible ;
 
         foreignObject {
           position: absolute ;
-          x: $ProfileLeft * -1 ;
-          y: $ProfileTop * -1 ;
+          x: $StatusOffsetLeft * -1 ;
+          y: $StatusOffsetTop * -1 ;
           mask: none ;
           overflow: visible ;
           pointer-events: auto ;
@@ -139,6 +165,9 @@
         &:not([src$="animated=true"]) { @include shadowEffect("drop_1") }
       }
 
+      // Avatar decorations cutout for status icon
+      .avatarDecorationContainer__44b0c > foreignObject { mask: none }
+
       // -> Status
       // Status icon
       .pointerEvents__44b0c {
@@ -156,11 +185,6 @@
       // Status icon shadow
       [style^="opacity:"] { display: none }
       // <- Status
-
-      // Avatar decorations cutout for status icon
-      .avatarDecorationContainer__44b0c > foreignObject { mask: none }
-
-      // <- Image / Status icon
     }
     // <- Avatar / status icon
 
@@ -321,7 +345,8 @@
 
   .botTag__82f07 {
     position: absolute ;
-    top: - 122 - 2 * 1px ;
+    margin: 0 !important ;
+    top: $BannerHeight * -1 ;
     left: $PopoutWidht * 0.5 ;
     padding: 3px 8px ;
     transform: translateX(-50%);

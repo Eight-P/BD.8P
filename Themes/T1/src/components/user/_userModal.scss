@@ -1,4 +1,4 @@
-// -> User modal (gonna break with profile editing experiment)
+// -> User modal
 .root_b92f52 {
   pointer-events: none ;
 
@@ -9,12 +9,16 @@
     pointer-events: auto ;
   }
 
+  // not self
   .layoutContainer__9c3be:not(.editingPanelEnabled__9c3be) {
 
+    $modalWidth: 850px ;
+    $leftSideWidth: 375px ;
+    $borderRadius: 16px ;
+
     .user-profile-modal-v2 {
-      // width: 800px ;
-      min-width: 850px ;
-      max-width: 850px ;
+      min-width: $modalWidth ;
+      max-width: $modalWidth ;
       margin: auto ;
       border: none ;
       background: none ;
@@ -26,6 +30,13 @@
         padding: 0 ;
         gap: 0px ;
         background: none ;
+      }
+
+      // private profile banner
+      .banner__43147 {
+        height: 44px ;
+        margin-left: $leftSideWidth + 10 ;
+        border-radius: $borderRadius ;
       }
 
       .backgroundImage__9c3be {
@@ -46,8 +57,8 @@
 
       // -> left side profile section
       .profile__9c3be {
-        width: 375px ; // 350px ?
-        border-radius: var(--radius-lg);
+        width: $leftSideWidth ;
+        border-radius: $borderRadius ;
         // overflow: hidden ;
         z-index: 1 ;
         pointer-events: auto ;
@@ -60,6 +71,10 @@
 
           @include scrollerFadeOut();
         }
+
+        .profileHeaderBannerContainer__9c3be {
+          border-radius: $borderRadius $borderRadius 0 0 ;
+        }
       }
       // <- left side profile section
 
@@ -71,7 +86,7 @@
         margin: 0 ;
         align-self: center ;
         padding: 10px 0 0 0 ;
-        border-radius: 0 var(--radius-lg) var(--radius-lg) 0 ;
+        border-radius: 0 $borderRadius $borderRadius 0 ;
         pointer-events: auto ;
         gap: 0 ;
         background: linear-gradient(
