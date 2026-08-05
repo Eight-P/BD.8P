@@ -38,10 +38,11 @@ $iconScale: var(--sbIconScale);
   background-color: var(--interactive-normal);
 }
 
-@scope (.guilds__5e434) {
+// @scope (.guilds__5e434) {
+.guilds__5e434 {
 
 // -> Containers
-:scope {
+// :scope {
   position: fixed ;
   left: 0 ;
   bottom: 0 ;
@@ -50,7 +51,7 @@ $iconScale: var(--sbIconScale);
   width: 100vw !important ;
   margin: 0 !important ;
   mask: none !important ; // for server btn
-}
+// }
 
 .tree_ef3116 {
   height: 100vw ;
@@ -284,6 +285,10 @@ $iconScale: var(--sbIconScale);
 
     &.selected__91816 {
       pointer-events: none ;
+
+      .circleIconButton__5bc7e {
+        color: var(--text-normal);
+      }
     }
   }
 
@@ -316,13 +321,20 @@ $iconScale: var(--sbIconScale);
   }
 
   // Drag&Drop target, pill
-  .wrapper_d144f8, .item__58105 { display: none }
+  .wrapper_d144f8, .item__58105 { display: none !important }
 }
 
 // GuildsAdd
 .scroller_ef3116 {
-  > .tutorialContainer__650eb:nth-last-child(3),
-  > .listItem__650eb:nth-last-child(3) {
+  // > .tutorialContainer__650eb:nth-last-child(3),
+  // > .listItem__650eb:nth-last-child(3) {
+
+  // > .tutorialContainer__650eb:has([data-list-item-id="guildsnav___create-join-button"]) {
+
+  // > .tutorialContainer__650eb:nth-last-child(2),
+  // > .listItem__650eb:nth-last-child(2),
+
+  > .tutorialContainer__650eb {
     grid-area: GuildsAdd ;
     margin: 3px 0 3px 0 ;
 
@@ -332,8 +344,15 @@ $iconScale: var(--sbIconScale);
 
 // Discovery
 .scroller_ef3116 {
-  > .tutorialContainer__650eb:nth-last-child(2),
-  > .listItem__650eb:nth-last-child(2) {
+  // > .tutorialContainer__650eb:nth-last-child(2),
+  // > .listItem__650eb:nth-last-child(2) {
+
+  // > .listItem__650eb:last-child:has(.discoveryIcon_ef3116) {
+
+  // > .tutorialContainer__650eb:nth-last-child(1),
+  // > .listItem__650eb:nth-last-child(1),
+
+  > .listItem__650eb:last-child {
     grid-area: Discovery ;
     margin: 3px 0 12px 0 ;
 
