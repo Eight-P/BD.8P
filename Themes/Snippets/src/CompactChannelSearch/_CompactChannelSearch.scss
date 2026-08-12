@@ -57,9 +57,6 @@ $searchWidthOpen: 244px ;
   background: none ;
   border-color: transparent ;
 
-  // old
-  .DraftEditor-root,
-  // new
   .editor__25bec {
     padding: 0 ;
   }
@@ -82,25 +79,15 @@ $searchWidthOpen: 244px ;
     cursor: pointer ;
     width: auto ;
     animation: .12s ease-out normal forwards expandSearchWidth ;
-    overflow: visible ; // let DraftEditor-root overlap the border
+    overflow: visible ; // let editor overlap the border
     background: $backgroundOpen ;
     border-color: $borderColorOpen ;
 
-    &:hover:not(:has(.DraftEditor-root:hover)) .icon__0c4c4 {
+    &:hover:not(:has(.editor__25bec:hover)) .icon__0c4c4 {
       color: $iconColorHover ;
     }
   }
 
-  // old
-  .DraftEditor-root {
-    cursor: text ;
-    // to overlap searchBar_c322aa border
-    padding: 6px var(--space-4) 2px 6px !important ;
-    margin-left: -2px ;
-    box-sizing: content-box ;
-  }
-
-  // new
   .editor__25bec {
     cursor: text ;
     // to overlap searchBar_c322aa border
