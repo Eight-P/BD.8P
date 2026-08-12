@@ -15,16 +15,8 @@ $C_Header: var(--interactive-normal);
 @import 'modals' ;
 
 .layerContainer__59d0d {
-  // z-index: 9999999 ; // against title bar border
-  // need to move up the modal instead (settings issue)
 
-// -> Searchbar
-.container_a45028 { @include searchbar(".inner_a45028", true) }
-// Threads / Sticker-picker / Apps & Cmds
-.container__5a838 { @include searchbar(".container__0f084", true) }
-// Create group DM, ...
-.container__0e476 { @include searchbar(".inner__0e476", true) }
-// <- Searchbar
+  .container__72c38 { @include searchbar(".container__75098", true) }
 }
 
 // -> Layers general

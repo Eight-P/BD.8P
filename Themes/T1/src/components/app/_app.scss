@@ -216,27 +216,9 @@ path[fill="currentColor"] {
   // <- Some selectable items
 
 .app_a3002d {
-
-  // -> search bars
-  // settings / friends list
-  .container__72c38 {
-    @include searchbar(".container__0f084") {
-      // min-height: 30px ;
-      // padding-left: 0 ;
-    }
-  }
-
-  .container_a45028 {
-    @include searchbar(".inner_a45028");
-  }
-  // <- search bars
-
   // -> Scrollbars
   .scrollerBase_d125d2,
-  .scrollerBase_c8b5c7
-    // .auto__99f8c,
-    // .scrollerBase__99f8c
-  {
+  .scrollerBase_c8b5c7 {
     @include scrollbar();
   }
   // <- Scrollbars

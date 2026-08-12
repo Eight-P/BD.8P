@@ -255,7 +255,7 @@
     }
 
     // -> Content
-    // channel item inner
+    // channel item | header + messages
     .box__376cb {
       border-radius: 0 ;
       border: none ;
@@ -263,9 +263,15 @@
       box-sizing: content-box ;
     }
 
+    // -> Channel header
+    // channel header container
+    .headerContainer__5d903 {
+      top: 0 ;
+    }
+
+    // channel header inner
     .channelHeader__5d903  {
       background: $BG_Meta ;
-      top: 0 ;
 
       @include shadowEffect("box_3");
     }
@@ -275,6 +281,7 @@
     .channelNameSection__5d903 {
       margin-left: 5px ;
     }
+    // <- Channel header
 
     // msg divider general
     .divider__908e2 {
@@ -342,7 +349,7 @@
   @include shadowEffect("box_2");
 
   .scrollerBase_d125d2::-webkit-scrollbar-thumb {
-    background-color: transparent ;
+    // background-color: transparent ;
   }
 
   .separator_c1e9c4 {

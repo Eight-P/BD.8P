@@ -17,6 +17,7 @@
     $borderRadius: 16px ;
 
     .user-profile-modal-v2 {
+      // -> Main
       min-width: $modalWidth ;
       max-width: $modalWidth ;
       margin: auto ;
@@ -54,6 +55,7 @@
           background: var(--background-secondary-alt);
         }
       }
+      // <- Main
 
       // -> left side profile section
       .profile__9c3be {
@@ -82,7 +84,7 @@
       .container__37bfc {
         // -> main container
         position: relative ;
-        height: 85% ;
+        height: calc(100% - 120px);
         margin: 0 ;
         align-self: center ;
         padding: 10px 0 0 0 ;
@@ -94,7 +96,6 @@
             var(--profile-gradient-overlay-color) 80% ,
             var(--profile-gradient-modal-background-color)
           ),
-
           color-mix(in oklab,
             var(--profile-gradient-overlay-color) 20% ,
             var(--profile-gradient-modal-background-color)
