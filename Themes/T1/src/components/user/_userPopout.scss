@@ -114,14 +114,14 @@
     height: $BannerHeight ;
 
     // banner: separator, gif indicator, avatar/status react action
-    .banner__68edb:before, .gifTag_b83360, .popover__2d0ab { display: none }
+    .banner__68edb:before, .gifTag_f7e69e, .popover__2d0ab { display: none }
 
-    .banner_b83360 {
+    .banner_f7e69e {
       height: $BannerHeight !important ;
     }
 
     // banner inner
-    .fill_b83360 {
+    .fill_f7e69e {
       mask: none ;
     }
 
@@ -368,6 +368,16 @@
   // <- Roles
 
   // -> Item cards (Activities, Game Collection)
+  .overlay_c0bea0 {
+    background: var(--bg_items);
+    margin: 0 0 3px 0 ;
+    border: none ;
+  }
+
+  .container__82fb2:hover {
+    background: var(--bg_itemsHover);
+  }
+
   .body__5be3e .button_a22cb0 {
     background: var(--bg_items) !important ;
     color: var(--c_items) !important;
@@ -416,17 +426,6 @@
         background: var(--bg_itemsHover) !important;
         color: var(--c_itemsHover) !important;
       }
-    }
-  }
-
-  // full game preview card design (idk)
-  .container__82fb2 {
-    background: var(--bg_items);
-    padding: 6px 6px 0 6px ;
-    margin: 0 0 3px 0 ;
-
-    &:hover {
-      background: var(--bg_itemsHover);
     }
   }
 
@@ -553,14 +552,7 @@
   // <- Footer
 
   // -> Private profile
-  // notice about private profile
-  // &.isPrivate_c0bea0 .overlay_c0bea0 {
-  //   // just so it's visually distinct to a regular section.
-  //   background: none ;
-
-  //   .banner__24928 {
-  //     padding: var(--space-12) 0 ;
-  //   }
+  // &.isPrivate_c0bea0 {
   // }
   // <- Private profile
 }
