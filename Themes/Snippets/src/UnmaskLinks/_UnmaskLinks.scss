@@ -18,26 +18,26 @@
 
 // only in messages (no embeds, channel desc, ...)
 @container style(--unmask-links: 1 ) {
-  .messageContent_c19a55 .anchor_edefb8[href][title$=")"] {
+  .messageContent_c19a55 .anchor__14d82[href][title$=")"] {
     @include URLPreview();
   }
 }
 
 // pretty much everywhere
 @container style(--unmask-links: 2 ) {
-  .anchor_edefb8:is([href][title], .embedLink__623de) {
+  .anchor__14d82:is([href][title], .embedLink__623de) {
     @include URLPreview();
   }
 
   // remove from regular not masked links
-  .anchor_edefb8:not([title$=")"])[href][title*="http"]::after {
+  .anchor__14d82:not([title$=")"])[href][title*="http"]::after {
     display: none ;
   }
 }
 
 @container style(--unmask-links: 1 ) or style(--unmask-links: 2 ) {
   // no need for hidden/collapsed spoilers
-  .spoilerContent__299eb.hidden__299eb .anchor_edefb8[href]::after {
+  .spoilerContent__299eb.hidden__299eb .anchor__14d82[href]::after {
     display: none ;
   }
 }
