@@ -28,7 +28,7 @@
     color: var(--header-secondary);
 
     // Mentions/Channels, Web links
-    .interactive, .anchor_edefb8 {
+    .interactive, .anchor__14d82 {
       pointer-events: none ;
       opacity: .8 ;
     }
@@ -36,7 +36,7 @@
     &:hover {
       color: var(--interactive-hover);
 
-      .interactive, .anchor_edefb8 {
+      .interactive, .anchor__14d82 {
         opacity: 1 ;
       }
     }

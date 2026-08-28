@@ -549,16 +549,11 @@
       color: var(--text-default) !important;
     }
   }
+  &.custom-profile-frame .footer__5be3e {
+    padding-bottom: calc(var(--custom-profile-frame-overflow-bottom) / 16 * 1px);
+  }
   // <- Footer
-
-  // -> Private profile
-  // &.isPrivate_c0bea0 {
-  // }
-  // <- Private profile
 }
-
-// User popout loading indicator old
-.layer__59d0d .loadingPopout__58f1c { display: none }
 
 // popout placeholder while loading
 .layer__59d0d .profilePopout__1add6 { display: none }
