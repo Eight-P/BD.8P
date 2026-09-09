@@ -8,6 +8,9 @@
 @import 'colors' ;
 
 // -- Mixins & Variables (to be reworked later)
+:root {
+  --font-primary: var(--font);
+}
 
 @function unitCheck($args, $unit) {
   @each $arg in $args {

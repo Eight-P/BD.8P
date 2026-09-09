@@ -125,10 +125,6 @@
   --show-memberListScrollbar: 0 ;
 
   /* Change default font
-    Prioritization: left to right | Fonts should be installed & may need quotation marks */
+    Prioritization: left to right | Fonts should be installed locally & may need quotation marks */
   --font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
-
-  /* Discord */
-  --font-primary: var(--font);
-  --font-display: var(--font);
 }

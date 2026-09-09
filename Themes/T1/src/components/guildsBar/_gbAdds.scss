@@ -176,7 +176,7 @@
 }
 // <- Discovery Text
 
-// Tooltips (shouldn't need them anyway)
-.clickTrapContainer__59d0d > .layer__59d0d:has(.tooltip__4e35b) {
-  pointer-events: none ;
+// force tooltips in server bar
+#popover-portal .tooltipLayer_fa450d.layer__529b0 {
+  visibility: visible !important ;
 }
