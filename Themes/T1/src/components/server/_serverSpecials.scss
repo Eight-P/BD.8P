@@ -4,7 +4,8 @@
 // -> Server guide/home
 .homeContent__7449f {
 
-  .row_d13feb, .card__73069 {
+  // .card_b5dd01,
+  .row_d13feb {
     background: var(--background-modifier-accent);
     border: none ;
   }
@@ -169,11 +170,8 @@
     border: none ;
   }
 
-  .horizatonalScroller__09a38 {
-
-    &::-webkit-scrollbar {
-      height: 14px ;
-    }
+  .horizontalScroller__09a38::-webkit-scrollbar {
+    height: 14px ;
   }
 
   .table_b4ec0b {

@@ -96,8 +96,8 @@
     .iconItem_c69b6d { display: none }
     &:hover .iconItem_c69b6d { display: block }
 
-    // Channel badges (e.g. "NEW" (suggested panel), "LIVE")
-    .textBadge__2b1f5 {
+    // Channel badges (e.g. "NEW" (suggested panel), "LIVE") (not channelInfo children)
+    .textBadge__463b7 {
       background: none !important ;
       color: var(--interactive-hover);
     }

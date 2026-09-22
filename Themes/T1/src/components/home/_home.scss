@@ -34,7 +34,7 @@
       background: none ;
       color: var(--channels-default);
 
-      &.selected_bf202d {
+      &.selected_f88cfd {
         border-left: 3px solid var(--interactive-hover);
       }
 
@@ -46,8 +46,7 @@
   }
 
   // "new" badge on shop
-  .textBadge__2b1f5 {
-    // display: none ;
+  .textBadge__463b7 {
     background: none !important ;
     color: var(--interactive-hover);
   }
@@ -66,9 +65,9 @@
     margin: 16px ;
   }
 
-  .headerBar__0920e, .root__52b47 {
-    display: none
-  }
+  // .headerBar__0920e, .root__97f53 {
+  //   display: none
+  // }
 
   .whatsNewSectionContainer_c880e8 {
     background: none ,

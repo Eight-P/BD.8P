@@ -10,17 +10,6 @@
     .iconWrapper__9293f, .akaBadge__488b1, .dot__9293f { display: none }
   }
 
-  // DM group name
-  .channelName__754bd {
-    margin: 0 3px ;
-
-    .input__4f074 {
-      padding: 0 12px ;
-    }
-
-    .container__4f074 { @include searchbar(".input__4f074") }
-  }
-
   // Channel description
   .topic__6ec1a {
     margin: 0 8px ;
