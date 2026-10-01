@@ -4,10 +4,20 @@
 // -> Server guide/home
 .homeContent__7449f {
 
-  // .card_b5dd01,
-  .row_d13feb {
+  .channelIconContainer_c66e86, .rulesIconContainer_c66e86 {
+    background: none ;
+  }
+
+  .card_b5dd01, .row_d13feb {
     background: var(--background-modifier-accent);
     border: none ;
+    transition: none ;
+  }
+
+  .card_b5dd01.clickableAction_c66e86, .row_d13feb[role="button"] {
+    &:hover {
+      background: var(--background-modifier-selected);
+    }
   }
 }
 // <- Server guide/home
@@ -223,3 +233,9 @@
   }
 }
 // <- Server shop
+
+// pending application
+.page__99a7e .confirmation__1051d {
+  background: var(--background-modifier-accent);
+  border: none ;
+}

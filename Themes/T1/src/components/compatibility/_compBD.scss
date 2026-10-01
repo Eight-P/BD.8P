@@ -1,7 +1,7 @@
 // - ReadAllNotificationsButton by DevilBro (v1.8.5)
 // - SpotifyControls by DevilBro (v1.5.3)
 // - ServerDetails by DevilBro (v1.3.6)
-// - ServerFolders by DevilBro (v7.4.9)
+// - ServerFolders by DevilBro (v7.5.0)
 // - InvisibleTyping by Strencher (v1.4.7)
 // - FriendNotifications by DevilBro (v2.1.6)
 // - GameActivityToggle by DevilBro (v1.4.0)
@@ -92,14 +92,21 @@
     height: 100vw ;
     margin: 0 ;
     padding: 0 ;
+    justify-content: space-around ;
 
     &::before, &::after { display: none }
   }
 
-  // folders container
-  .stack_dbd263 {
-    justify-content: space-around ;
+  // -> Separator between folders (plugin option)
+  .stack_dbd263 > .listItem__650eb {
+    display: flex !important ;
   }
+
+  .guildSeparator__252b6 {
+    background-color: var(--interactive-normal);
+    height: 2px ;
+  }
+  // <- Separator
 
   // folder icon
   .hiddenVisually_b18fe2 {

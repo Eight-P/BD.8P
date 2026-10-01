@@ -38,11 +38,8 @@ $iconScale: var(--sbIconScale);
   background-color: var(--interactive-normal);
 }
 
-// @scope (.guilds__5e434) {
 .guilds__5e434 {
-
 // -> Containers
-// :scope {
   position: fixed ;
   left: 0 ;
   bottom: 0 ;
@@ -51,7 +48,6 @@ $iconScale: var(--sbIconScale);
   width: 100vw !important ;
   margin: 0 !important ;
   mask: none !important ; // for server btn
-// }
 
 .tree_ef3116 {
   height: 100vw ;
@@ -88,6 +84,8 @@ $iconScale: var(--sbIconScale);
   ;
   grid-auto-rows: min-content ;
   align-items: center !important ;
+
+  @include scrollbar(none); // especially for serverFolders
 
   &::before {
     @include itemSeparator();
@@ -326,14 +324,6 @@ $iconScale: var(--sbIconScale);
 
 // GuildsAdd
 .scroller_ef3116 {
-  // > .tutorialContainer__650eb:nth-last-child(3),
-  // > .listItem__650eb:nth-last-child(3) {
-
-  // > .tutorialContainer__650eb:has([data-list-item-id="guildsnav___create-join-button"]) {
-
-  // > .tutorialContainer__650eb:nth-last-child(2),
-  // > .listItem__650eb:nth-last-child(2),
-
   > .tutorialContainer__650eb {
     grid-area: GuildsAdd ;
     margin: 3px 0 3px 0 ;
@@ -344,14 +334,6 @@ $iconScale: var(--sbIconScale);
 
 // Discovery
 .scroller_ef3116 {
-  // > .tutorialContainer__650eb:nth-last-child(2),
-  // > .listItem__650eb:nth-last-child(2) {
-
-  // > .listItem__650eb:last-child:has(.discoveryIcon_ef3116) {
-
-  // > .tutorialContainer__650eb:nth-last-child(1),
-  // > .listItem__650eb:nth-last-child(1),
-
   > .listItem__650eb:last-child {
     grid-area: Discovery ;
     margin: 3px 0 12px 0 ;
@@ -460,16 +442,16 @@ $iconScale: var(--sbIconScale);
 // <- Servers
 
 // -> Right side icons (Favorites, Dms, Server preview, ...)
-@mixin iconSep() {
+@mixin iconSep($spacing: $specialIconSpacing) {
   &::before {
     @include itemSeparator();
-    top: calc($dmSpacing * -1);
+    top: calc($spacing * -1);
   }
 }
 
 // non dm items
 .scrollerBase_d125d2 > .listItem__650eb:not(.stack_dbd263:not([id]) ~ .listItem__650eb) {
-  margin: $dmSpacing 0 ;
+  margin: $specialIconSpacing 0 ;
 
   @include iconSep();
 
@@ -478,7 +460,8 @@ $iconScale: var(--sbIconScale);
   // remove margin and separator from following items
   + .listItem__650eb,
   + #guild-list-unread-dms,
-  + #guild-list-unread-dms:empty + .listItem__650eb {
+  + #guild-list-unread-dms:empty + .listItem__650eb, // ?
+  + #guild-list-unread-dms + .container__93fc9 {
     margin-top: 0 !important ;
 
     &::before { display: none }
@@ -508,13 +491,62 @@ $iconScale: var(--sbIconScale);
 }
 // <- Favorites
 
+// -> Pending folder
+.container__93fc9 {
+  margin: $specialIconSpacing 0 ;
+  position: relative ;
+
+   @include iconSep($specialIconSpacing);
+
+  // background
+  .folderGroupBackground__48112 {
+    $folderheight: $sb_height - 20 ;
+
+    @container style(--serverBar-FolderStyle: 1) {
+      width: calc($folderheight * $iconScale) ;
+      left: calc(($sb_height - ($folderheight * $iconScale)) / 2 );
+      top: 2px ;
+      bottom: 2px ;
+      border: none ;
+      border-radius: 10px ;
+      background-color: rgba(30, 30, 30, .5);
+    }
+
+    @container not style(--serverBar-FolderStyle: 1) {
+      display: none ;
+    }
+  }
+
+  // folder icon
+  .pendingFolderButtonIcon__93fc9 {
+    background: none ;
+    transform: rotate(90deg);
+    color: var(--header-secondary);
+
+    &:hover {
+      color: var(--text-normal);
+    }
+  }
+
+  .folderGroup__48112 > .stack_dbd263 {
+    height: auto !important ;
+    gap: var(--serverBar-Spacing) !important ;
+    padding: var(--sbInnerSpacing) 0 var(--sbInnerSpacing) 0 !important ;
+
+    .listItem__650eb {
+      margin: 0 ;
+    }
+  }
+}
+// <- Pending folder
+
 // -> DMs container
 #guild-list-unread-dms {
-  position: relative;
+  position: relative ;
   margin: $dmSpacing 0 !important ;
   gap: $dmSpacing !important ;
 
-  @include iconSep();
+  @include iconSep($dmSpacing);
 
   > div:not([class]) {
     height: auto !important ;
@@ -531,7 +563,13 @@ $iconScale: var(--sbIconScale);
   }
 
   // remove if empty
-  &:empty { display: none }
+  &:empty {  display: none }
+
+  &:not(:empty) + .container__93fc9 { // Pending folder
+    margin-top: 0 !important ;
+
+    &::before { display: none }
+  }
 }
 // <- DMs
 
@@ -539,14 +577,11 @@ $iconScale: var(--sbIconScale);
 .listItem__650eb:has(.notificationsIcon__4f4b6) {
   margin: $specialIconSpacing 0 !important ;
 
-  &::before {
-    top: calc($specialIconSpacing * -1) !important ;
-  }
-
   .wrapper_cc5dd2 {
     transform: rotate(90deg);
     scale: $iconScale ;
     margin: 0 ;
+    // margin: calc(($iconBaseSize - ( $iconBaseSize * $iconScale ) ) / 2 * -1) 0 ; // badge could use more space
     height: $iconBaseSize !important ;
   }
 
