@@ -1,3 +1,4 @@
 node_modules
 .vscode
-Themes/scripts/classes_mapping*
+**/dev/**
+**/config.json
