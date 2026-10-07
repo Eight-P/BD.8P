@@ -120,7 +120,7 @@
     background: none ;
 
     &:hover {
-      background: var(--background-modifier-hover);
+      // background: var(--background-modifier-hover);
     }
 
     // subsequent cards
@@ -138,6 +138,10 @@
       background: none ;
       padding: 6px 0 0 12px ;
     }
+  }
+  .wrapper__00943 {
+    // background: var(--background-modifier-hover);
+    border: none ;
   }
   // <- User activity card
 }

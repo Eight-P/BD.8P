@@ -360,11 +360,11 @@ $iconScale: var(--sbIconScale);
 
     // open folder background
     .folderGroupBackground__48112 {
-      $folderheight: $sb_height - 20 ;
+      $folderHeight: $sb_height - 20 ;
 
       @container style(--serverBar-FolderStyle: 1) {
-        width: calc($folderheight * $iconScale) ;
-        left: calc(($sb_height - ($folderheight * $iconScale)) / 2 );
+        width: calc($folderHeight * $iconScale) ;
+        left: calc(($sb_height - ($folderHeight * $iconScale)) / 2 );
         top: 2px ;
         bottom: 2px ;
         border: none ;
@@ -442,7 +442,7 @@ $iconScale: var(--sbIconScale);
 // <- Servers
 
 // -> Right side icons (Favorites, Dms, Server preview, ...)
-@mixin iconSep($spacing: $specialIconSpacing) {
+@mixin iconSep($spacing: $dmSpacing) {
   &::before {
     @include itemSeparator();
     top: calc($spacing * -1);
@@ -451,7 +451,7 @@ $iconScale: var(--sbIconScale);
 
 // non dm items
 .scrollerBase_d125d2 > .listItem__650eb:not(.stack_dbd263:not([id]) ~ .listItem__650eb) {
-  margin: $specialIconSpacing 0 ;
+  margin: $dmSpacing 0 ;
 
   @include iconSep();
 
@@ -471,6 +471,11 @@ $iconScale: var(--sbIconScale);
 // -> Favorites
 .listItem__650eb:has(.favoriteIcon_c9fddf) {
   pointer-events: none ;
+  margin: $specialIconSpacing 0 !important ;
+
+  &::before {
+    top: calc($specialIconSpacing * -1) !important ;
+  }
 
   .wrapper_cc5dd2, .wrapper__6e9f8 {
     pointer-events: auto ;
@@ -493,18 +498,18 @@ $iconScale: var(--sbIconScale);
 
 // -> Pending folder
 .container__93fc9 {
-  margin: $specialIconSpacing 0 ;
+  margin: $specialIconSpacing 0 !important ;
   position: relative ;
 
-   @include iconSep($specialIconSpacing);
+  @include iconSep($specialIconSpacing);
 
   // background
   .folderGroupBackground__48112 {
-    $folderheight: $sb_height - 20 ;
+    $folderHeight: $sb_height - 20 ;
 
     @container style(--serverBar-FolderStyle: 1) {
-      width: calc($folderheight * $iconScale) ;
-      left: calc(($sb_height - ($folderheight * $iconScale)) / 2 );
+      width: calc($folderHeight * $iconScale) ;
+      left: calc(($sb_height - ($folderHeight * $iconScale)) / 2 );
       top: 2px ;
       bottom: 2px ;
       border: none ;
@@ -546,7 +551,7 @@ $iconScale: var(--sbIconScale);
   margin: $dmSpacing 0 !important ;
   gap: $dmSpacing !important ;
 
-  @include iconSep($dmSpacing);
+  @include iconSep();
 
   > div:not([class]) {
     height: auto !important ;
@@ -576,6 +581,10 @@ $iconScale: var(--sbIconScale);
 // -> notification center exp.
 .listItem__650eb:has(.notificationsIcon__4f4b6) {
   margin: $specialIconSpacing 0 !important ;
+
+  &::before {
+    top: calc($specialIconSpacing * -1) !important ;
+  }
 
   .wrapper_cc5dd2 {
     transform: rotate(90deg);
