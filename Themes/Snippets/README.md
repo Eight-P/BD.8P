@@ -78,7 +78,7 @@ Name fonts can be disabled in Discord's accessibility settings.
   --hide-avatarDecorations: 0 ;
 
   /* Profile frames */
-  --hide-profileFrame: 0 ;
+  --hide-profileFrames: 0 ;
 
   /* Nameplates
     0: Show all (default)
