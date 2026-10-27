@@ -6,31 +6,37 @@ export const CWD = process.cwd();
 export const ScriptDir = import.meta.dirname ?? quit("No meta directory");
 
 
-export function setConfig(defaultConfig, configPath, configKey="undefined") {
+export function setConfig(defaultConfig, configPath, scriptKey) {
 	if (!checkPath(configPath, { file:true, soft:true} )) return ;
 
 	const configFile = FS.readFileSync(configPath, { encoding: 'utf8' });
-	const config = JSON.parse(configFile)[configKey];
+	const baseConfig = JSON.parse(configFile);
+	const scriptConfig = baseConfig[scriptKey];
+	const configs = [ baseConfig ];
 
-	if (!config) {
-		LogE(`${Red("No config for")}: "${configKey}" in:\n · ${Cyan(configPath)}`);
-		return ;
-	};
+	if (scriptConfig) configs.push(scriptConfig);
 
-	Object.assign(defaultConfig, Object.fromEntries(
-		Object.entries(config).filter(([key, value]) => {
-			if (!Object.hasOwn(defaultConfig, key)) return false ;
+	for (const config of configs) {
+		Object.assign(defaultConfig, Object.fromEntries(
+			Object.entries(config).filter(testConfigEntry)
+		))
+	}
 
-			const defaultType = typeof defaultConfig[key];
-			const configFileType = typeof value ;
+	function testConfigEntry(pair) {
+		const key = pair[0], value = pair[1];
 
-			if (defaultType !== configFileType) {
-				Log(`\n(Config) "${key}" should be ${defaultType}, but is ${configFileType}`);
-				return false ;
-			}
-			return true ;
-		})
-	));
+		if (!Object.hasOwn(defaultConfig, key)) return false ;
+
+		const defaultType = typeof defaultConfig[key];
+		const configFileType = typeof value ;
+
+		if (defaultType !== configFileType) {
+			Log(`\n"${scriptKey}" Config:`)
+			LogE(`\n"${key}" is type ${configFileType}, expected ${defaultType}`);
+			return false ;
+		}
+		return true ;
+	}
 }
 
 export async function handleArguments(Arguments, config) {
@@ -170,11 +176,11 @@ export function getMultiOutputName(filePath) {
 	return filePath ;
 }
 
-export function time() {
+export function localTime() {
 	return new Date().toLocaleTimeString('en-GB');
 }
 
-export function date(input) {
+export function localDate(input) {
 	const date = input ? new Date(input) : new Date();
 	return date.toLocaleString();
 }

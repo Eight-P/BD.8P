@@ -1,6 +1,6 @@
 // Mapping class changes with confidence score
 // Using class modules from https://github.com/itmesarah/DiscordClasses
-// Requires: ./config.json with: { "mapClassChanges": { "token": "github_pat" } }
+// Requires: ./config.json: `{ "token": "github_pat" }`
 // · https://github.com/settings/personal-access-tokens
 
 // Score = numSharedKeys / max(numKeysModuleA, numKeysModuleB) / (numTopMatchesA + numTopMatchesB)
@@ -17,8 +17,8 @@ const Config = {
 	cacheFile: "classHistory.json",
 	changesFile: "classChanges.json",
 	maxTimeframeMs: 1000 * 60 * 60 * 24 * 365,
-	maxFetched: 100,
-	maxCached: 1000,
+	maxFetched: 200,
+	maxCached: 500,
 	readCache: true,
 	offline: false,
 	writeCache: true,
@@ -99,7 +99,7 @@ const Setup = {
 
 
 try {
-	if (Config.debug) Log(`\n${Config}\n${Setup}\n`);
+	if (Config.debug) Log(Config);
 	if (!Config.token || Config.token == "undefined") U.cancel("No api token found");
 
 	const classHistory = Config.dummy ?
@@ -108,7 +108,7 @@ try {
 
 	mapClassChanges(classHistory);
 }
-catch (err) {Log(Config.debug ? `\n${Config}\n${Setup}\n` :""); LogE((err.custom ?? err), "\n")}
+catch (err) {Log(Config.debug ? Setup : ""); LogE((err.custom ?? err), "\n")}
 
 
 function mapClassChanges(classHistory) {
@@ -215,7 +215,7 @@ function mapClassChanges(classHistory) {
 
 		if (Config.debugOutput) {
 			const debugOutput = {
-				timestamp: U.date(),
+				timestamp: U.localDate(),
 				moduleInfo,
 				classListOld, classListNew,
 				keyIndexOld, keyIndexNew,
@@ -333,7 +333,7 @@ function logHistoryInfo(history) {
 
 	function logCommitDetails(commit, preTxt="") {
 		const commitOid = commit.abbreviatedOid ;
-		const commitDate = U.date(commit.committedDate);
+		const commitDate = U.localDate(commit.committedDate);
 		const [channel, build] = Object.entries(commit.meta.channel)[0];
 
 		Log(`\n${preTxt} commit: ${U.Blue(commitOid)} ${U.Gray(commitDate)}\n`,

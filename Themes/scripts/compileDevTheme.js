@@ -140,7 +140,7 @@ function updateDevFiles(trigger) {
 		}
 	}
 	if (trigger && !hadError) {
-		Log(U.Green(U.time()), U.Blue(Path.parse(trigger).name));
+		Log(U.Green(U.localTime()), U.Blue(Path.parse(trigger).name));
 	}
 }
 

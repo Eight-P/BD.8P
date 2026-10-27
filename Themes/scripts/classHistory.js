@@ -15,8 +15,8 @@ const Config = {
   maxTimeframeMs: 1000 * 60 * 60 * 24 * 365,
   commitIdStart: null,
   commitIdEnd: null,
-  maxFetched: 100,
-  maxCached: 1000,
+  maxFetched: 200,
+  maxCached: 500,
   readCache: true,
   offline: false,
   writeCache: true,
@@ -32,18 +32,20 @@ const Github = {
     repo: 'DiscordClasses',
     owner: 'itmesarah',
     branch: 'refs/heads/main',
-    file: 'discordclasses.json',
+    file: 'canaryclasses.json',
+    // file: 'discordclasses.json', // old file. fetch old then new + lax cache
   }
 }
 
 const Setup = {};
 
+// get class history commits new to old
 async function getClassHistory(params) {
   await setup(params);
 
   if (Config.offline && !Config.readCache) U.cancel(U.Red("Can not use 'offline' and ignore cache"));
 
-  const cachedHistory = Config.readCache ? await getCache() : [];
+  const cachedHistory = await getCache();
   let wasCached = false, reachedCache = false, newestCachedCommit = false ;
 
   if (cachedHistory.length) {
@@ -58,12 +60,11 @@ async function getClassHistory(params) {
   else if (Config.offline) U.cancel(U.Red("Set as 'offline', but no cache found"));
   else if (Config.readCache) Log("\nNo cached commits found");
 
-  if (Config.debug) Log(Setup);
-
   Log(U.Magenta("\nFinding new class history..."));
-  const startTime = performance.now();
+  if (Config.debug) Log(getSearchDates(wasCached));
 
-  const commitHistory = await getCommitHistory(newestCachedCommit);
+  const startTime = performance.now();
+  const commitHistory = await getCommitHistory();
 
   if (commitHistory.length && newestCachedCommit && newestCachedCommit == commitHistory.at(-1).oid) {
     reachedCache = true ;
@@ -79,11 +80,10 @@ async function getClassHistory(params) {
   if (!newHistory.length) {
     const msg =
       `No new commits${!wasCached ? " or cache found:" : ", but cache found."}` +
-      `\nSearched from: ${U.Blue(U.date(Setup.startDate))}` +
-      `\nUntil ${wasCached ? "cache:" : ""} ${U.Blue(U.date(Setup.endDate))}`
+      (Config.debug ? "" : ` Searched:\n${getSearchDates(wasCached)}`)
     ;
-      // no fetched commits and no cache
-    if (!wasCached) U.cancel(msg);
+
+    if (!wasCached) U.cancel(msg); // no fetched commits and no cache
     Log("\n" + msg);
   }
   // fetched commits, no cache
@@ -100,8 +100,8 @@ async function getClassHistory(params) {
   }
   // fetched commits, didn't reached cache, but had to.
   else {
-    const lastFetchedTime = U.Blue( U.IsoDateReadable(newHistory.at(-1).committedDate) );
-    const newestCachedTime = U.Blue( U.IsoDateReadable(cachedHistory[0].committedDate) );
+    const lastFetchedTime = U.Blue(newHistory.at(-1).committedDate);
+    const newestCachedTime = U.Blue(cachedHistory[0].committedDate);
 
     U.cancel(U.Red("Unable to connect new commits to cache.") +
       `\nFetched ${U.Yellow(newHistory.length)} commits from: ${U.Green(newHistory[0].abbreviatedOid)}` +
@@ -113,7 +113,10 @@ async function getClassHistory(params) {
   if (wasCached) newHistory.push(...cachedHistory);
 
 	newHistory.splice(Config.maxCached);
-	if (Config.writeCache) cacheHistory(newHistory);
+	if (Config.writeCache) {
+    cacheHistory(newHistory);
+    if (Config.debug) Log(`\nCache file: ${U.Cyan(Setup.cacheFile)}`);
+  }
 
 	return newHistory ;
 }
@@ -156,11 +159,11 @@ async function getCommitDate(id) {
 }
 
 async function getCache() {
-  const cachedHistory = [];
   const cacheFile = U.checkPath(Setup.cacheFile, { file:true, soft:true});
 
-  if (!Config.readCache || !cacheFile) return cachedHistory;
+  if (!Config.readCache || !cacheFile) return [];
 
+  const cachedHistory = [];
   const rl = Readline.createInterface({
     input: FS.createReadStream(cacheFile, { encoding: 'utf8' }), crlfDelay: Infinity
   });
@@ -172,7 +175,7 @@ async function getCache() {
   return cachedHistory ;
 }
 
-async function getCommitHistory(newestCachedCommit) {
+async function getCommitHistory() {
   const commitHistory = [];
   const maxPageSize = 50 ; // api limit = 100, might timeout tho if to high.
   const maxRetries = 3 ; // per page
@@ -276,7 +279,7 @@ async function getCommitHistory(newestCachedCommit) {
     remaining -= variables.pageSize ;
 
     process.stdout.write(
-      `\x1b[2K\r${U.Green(U.time())} Found ${commitHistory.length} commits and searching...`
+      `\x1b[2K\r${U.Green(U.localTime())} Found ${commitHistory.length} commits and searching...`
     );
   }
 
@@ -287,6 +290,10 @@ async function getClasses(commitHistory) {
   const newHistory = [];
 
   for (const node of commitHistory) {
+    if (!node?.file?.object?.oid) {
+      LogE(`\n${U.Red("Skipped invalid commit")}: ${node.abbreviatedOid}`);
+      continue ;
+    }
     const res = await fetch(`${Github.classesUrl}/${node.file.object.oid}`, {
       method: 'GET',
       headers: {
@@ -315,7 +322,7 @@ async function getClasses(commitHistory) {
     newHistory.push(node);
 
     process.stdout.write(
-      `\x1b[2K\r${U.Green(U.time())} Fetching commits ${newHistory.length}/${commitHistory.length}`
+      `\x1b[2K\r${U.Green(U.localTime())} Fetching commits ${newHistory.length}/${commitHistory.length}`
     );
   }
 
@@ -327,6 +334,50 @@ async function cacheHistory(classHistory) {
     for (const moduleObj of classHistory) yield JSON.stringify(moduleObj) + "\n" ;
   }
   await Pipeline(Readable.from(linesGen()), FS.createWriteStream(Setup.cacheFile, { encoding: 'utf8' }));
+}
+
+function getSearchDates(wasCached=false) {
+  return ` From: ${U.Blue(Setup.startDate)}\n Until${wasCached ? " cache:" : ":"} ${U.Blue(Setup.endDate)}`
+}
+
+
+export async function getNewestCommit(historyFile) {
+  if (!historyFile) throw new Error("getNewestCommit() requires historyFile path");
+
+  const rl = Readline.createInterface({
+    input: FS.createReadStream(historyFile, { encoding: 'utf8' }),
+    crlfDelay: Infinity
+  });
+
+  for await (const line of rl) {
+    if (line.trim()) return JSON.parse(line);
+  }
+
+  throw new Error("No class history found");
+}
+
+export async function getCurrentClasses(params={historyFile:null, log:false}) {
+  if (!params.historyFile) throw new Error("getCurrentClasses() requires historyFile path");
+
+  const classes = await getNewestCommit(params.historyFile);
+  const classList = new Set();
+
+  for (const moduleObj of Object.values(classes.file)) {
+    for (const cls of Object.values(moduleObj)) {
+      classList.add(cls.split(' ')[0]);
+    }
+  }
+
+  if (!params.log) return classList ;
+
+  const commitDate = U.localDate(classes.committedDate);
+  const [channel, build] = Object.entries(classes.meta.channel)[0];
+
+  Log(`\nNewest build from: ${U.Blue(classes.abbreviatedOid)} ${U.Gray(commitDate)}\n`,
+    `· Release channel: ${U.Gray(channel)} build: ${U.Blue(build)}`
+  );
+
+  return classList ;
 }
 
 const OutputHistoryExample = [
