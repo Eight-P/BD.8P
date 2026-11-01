@@ -92,7 +92,7 @@
   }
   // <- general msg
 
-  // -> Message Buttons
+  // -> Message Buttons (not a fan)
 
   // message hover (selected e.g.: when user popout opened from msg)
   @container style(--hide-messageHover: 0 ) {
@@ -117,8 +117,11 @@
   // hide btns on: concatenating Msg, System msg
   &:not(.groupStart__5126c), &.isSystemMessage_c19a55 {
 
-    .buttonsInner__5126c:not(:hover) {
-      > {
+    .buttons__5126c:not(
+      :has(path[d^="M18 17h-1.24a3 3 0 1 1 .26 4.25 1 1 0 1 0-1.33 1.5A4.98 4.98 0 0 0 24 19a5 "]),
+      :hover
+    ) {
+      .buttonsInner__5126c > {
         .button_f7ecac, // for btns added by plugins
         // all items but last two
         .separator_f84418,
@@ -126,9 +129,8 @@
           display: none ;
         }
       }
-
       .button_f7ecac {
-        color: $BtnIconHover !important; // !important bc of general btn design
+        color: $BtnIconHover !important ;
       }
     }
   }
@@ -141,6 +143,8 @@
   .buttons__5126c {
     top: 0 !important ; // override snippet
     padding: 1px ;
+
+    // opacity: 1 !important ;
 
     &:before {
       content: "";
@@ -175,7 +179,7 @@
     // btn item
     .hoverBarButton_f84418 {
       background: none ;
-      padding: 0 2px ;
+      padding: 0 2px !important ;
     }
 
     // Inner button icon
