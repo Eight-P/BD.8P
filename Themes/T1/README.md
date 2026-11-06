@@ -7,6 +7,9 @@
 
 [ThemesReadMe-link]:https://github.com/Eight-P/BD.8P/tree/master/Themes
 
+> [!IMPORTANT]
+> [Please read](https://github.com/Eight-P/BD.8P/issues/61)
+
 <div align="center">
   
   # T1
